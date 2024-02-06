@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 book:
-  title: "Soil Description Hadnbook"
+  title: "Soil Description Handbook"
   author: "Lauren O'Brien"
   date: "2024-01-23"
   language: en
@@ -15,6 +15,55 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - part: "Setting and site"
+      chapters:
+        - ss_00_intro.qmd
+        - ss_01_location.qmd
+        - ss_02_landscape.qmd
+        - ss_03_parent_material.qmd
+        - ss_04_climate.qmd
+        - ss_05_biota.qmd
+        - ss_06_landuse_mgmt.qmd
+        
+    - part: "Soil profile"
+      chapters:
+        - pr_00_intro.qmd
+        - pr_01_reference.qmd
+        - pr_02_surface.qmd
+
+    - part: "Soil horizons"
+      chapters:
+        - hr_00_intro.qmd
+        - hr_01_colour.qmd
+        - hr_02_texture_stones.qmd
+        - hr_03_structure_peds.qmd
+        - hr_04_secondary_features.qmd
+        - hr_05_physical_properties.qmd
+        - hr_06_chemical_properties.qmd
+        - hr_07_roots.qmd
+        - hr_08_voids_pores.qmd
+        
+    - part: "Soil interpretations"
+      chapters:
+        - in_00_intro.qmd
+        - in_01_horizon_properties.qmd
+        - in_02_profile_properties.qmd
+        - in_03_site_setting_properties.qmd
+        - in_04_nzsc.qmd
+        - in_05_wrb.qmd
+        - in_06_luc.qmd
+        - in_07_suitability.qmd
+        
+    - part: "Appendices"
+      chapters: 
+        - ap_00_intro.qmd
+        - ap_01_equipment.qmd
+        - ap_02_fieldrecording.qmd
+        - ap_03_databasedesign.qmd
+        - ap_0n_samplingprograms.qmd
+        
+        
+    
     - references.qmd
 
 bibliography: soil_desc_refs_2024.bib
