@@ -12,6 +12,7 @@ book:
   publisher-place: "Palmerston North, New Zealand"
   reader-mode: true
   search: true
+  back-to-top-navigation: true
   chapters:
     - index.qmd
     - intro.qmd
@@ -70,8 +71,22 @@ format:
   html:
     theme: cosmo
     date-modified: last-modified
-
-editor: visual
+  epub: 
+    split-level: 2
+    toc: true
+  pdf:
+    documentclass: scrreport
+    toc: true
+    number-sections: true
+    number-depth: 3
+    top-level-division: chapter
+    font-family: Ebrima
+    monofont: "Fira Code"
+    linkcolor: "#0563C1"
+    papersize: "A5"
+    
+    
+    
 
 # global knitr options
 knitr:
