@@ -1,4 +1,18 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
 # Horizon colour
+
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+library(gtExtras)
+library(munsell)
+```
 
 ## Matrix colour
 
@@ -6,9 +20,83 @@
 
 ### Colour coding
 
--   munsell and short code options
--   how to record accurately (good light, sunnies off)
+Colour is recorded using the Munsell Soil Colour system [@munsellcolorcompany2009], which conceptualises colour using Hue, Value and Chroma parameters.
+
+```{r}
+#| label: tbl-hr-coloreg
+#| tbl-cap: "Examples of Munsell Colour codes and their approximate matches in other systems."
+#| classes : no-stripe
+
+dat_hr_munsell <-
+  tribble(~Munsell, ~RGB, ~Hex,
+          '10YR5/4', '148, 118, 80', '#947650',
+          '7.5YR3/2', '88, 69, 55', '#584537',
+          '5R3/8', '130, 41, 48', '#822930',
+          'N4/0', '97, 97, 97', '#616161')
+
+tbl_hr_munsell <- gt(dat_hr_munsell) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  data_color(fn = \(x) dat_hr_munsell$Hex) |>
+  cols_width(Munsell ~ pct(33), Hex ~ pct(33)) |>
+  cols_align('center')
+
+tbl_hr_munsell
+
+```
+
+The colour charts must be used in clear daylight. Remove sunglasses and turn to keep the main light source behind your shoulder. You may not be able to find a perfectly matching chip for a given sample; just record the closest match available. Do not interpolate between chips.
+
+Record the **moist** colour of each soil sample to standardise the readings across profiles. Use a spray bottle to gently wet up a sample, if necessary, or wait for a saturated sample to dry out slightly. In both cases wait until the sample surface is no longer glistening. Do not record the colour of a texture bolus or a smeared sample as these can be altered by e.g. mixing in mottles.
+
+Dry colours are sometimes necessary as well, e.g. for diagnosing a bleached E horizon.
+
+For sands, which may have multicoloured grains from multiple parent materials, colour matching can be difficult, but try to pick the colour of the dominant mineral component. Additional colour information can be stored as notes.
+
+TODO
+
 -   note: obtaining colour data from photos (infobox)
+-   note: testing colour vision acuity
+
+
+#### Colour short codes
+
+In some circumstances (e.g. rapid assessment of redox mottles), a series of single letter codes can be used.
+
+```{r}
+#| label: tbl-hr-colorshort
+#| tbl-cap: "Short codes for major soil colours, adapted from [@nationalcommitteeonsoilandterrain2009, pp. 161]. NB: The Munsell colour ranges are a general guide only, do not interpret them strictly."
+#| classes : no-stripe
+
+dat_hr_colorshort <-
+  tribble(~Code, ~Name, ~Description,
+         'R', 'Red', '2.5YR or redder, with value < 7 and chroma > 2',
+         'O', 'Orange', '5YR or 7.5YR, with value < 7 and chroma > 2',
+         'B', 'Brown', '7.5YR or 10YR, with value > 4 and chroma > 2',
+         'Y', 'Yellow', '2.5Y or 5Y, with value > 4 and chroma > 2',
+         'G', 'Grey', 'Any non-gley hue, value 4--7, chroma 1',
+         'D', 'Dark', 'Any non-gley hue, values ≤ 3 and chromas ≤ 2',
+         'P', 'Pale', 'Any non-gley hue, values ≥ 7 and chromas ≤ 2',
+         'L', 'Gley', 'Gley charts')
+
+tbl_hr_colorshort <- gt(dat_hr_colorshort) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
+  
+tbl_hr_colorshort
+
+```
 
 ## Colour patterns
 

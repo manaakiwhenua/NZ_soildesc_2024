@@ -79,13 +79,13 @@ format:
     number-sections: true
     number-depth: 3
     top-level-division: chapter
-    font-family: Ebrima
+    mainfont: Ebrima
     monofont: "Fira Code"
     linkcolor: "#0563C1"
     papersize: "A5"
-    
-    
-    
+    include-in-header:
+      - text: |
+          \usepackage[table]{xcolor}
 
 # global knitr options
 knitr:
