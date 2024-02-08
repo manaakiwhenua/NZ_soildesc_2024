@@ -1,8 +1,15 @@
 # Landscape
 
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+library(gtExtras)
+```
+
 -   setup - going big to small
 -   purpose - interpretive context
-- note: discuss when a DEM/terrain derivatives can and can't be used post-field
+-   note: discuss when a DEM/terrain derivatives can and can't be used post-field
 
 ## Regional landscape
 
@@ -21,7 +28,7 @@
 
 ### Mesoscale topographic index
 
-- ref to RECCE, connect to Geomorphons concept
+-   ref to RECCE, connect to Geomorphons concept
 
 ### Landscape description
 
@@ -37,17 +44,126 @@
 
 ### Slope
 
--   gradient - range, units, precision
+Slope is the inclination of the land surface relative to the horizontal plane. Slope steepness affects many soil processes, notably water runoff and infiltration behaviour.
+
+Direct measurements of slope should be taken at the landform scale over a minimum distance of 20 meters. Stand 10m upslope from the soil site and measure downhill. Record in units of degrees, with a maximum precision of 0.1. Precision needs will vary with slope and survey purpose; whole number degrees are fine on any slope over about 5 degrees, but finer gradations can be useful for defining low-relief landforms, e.g. on alluvial plains.
+
+Slope classes may be applied to the recorded data; some options are presented in @sec-slopeclass.
+
+-   TODO Note about getting slope from DEM
 
 ### Aspect
 
--   direction - range, units, precision, *direction*
+Aspect is the direction a slope faces. Slope aspect helps determine exposure to sun, rain and prevailing winds, and so influences the biome growing in a particular soil. In some environments it also helps determine how much new material is received by aeolian or fluvial deposition.
 
-### Slope morphology
+Aspect should be measured at the same time and over the same transect as slope. Record aspect in whole degrees clockwise from North, using the range \[0-359\] (360 == 0). Use NA for flat ground. Use NR if unable to record.
 
--   pick up aus system and tweak
+For rapid assessment, record compass bearing on an 8 or 16 point scale (e.g. NE, SSE).
+
+-   TODO Note: defining 'flat' in soil survey.
+-   TODO Note: map vs magnetic north, and consequences for field-measured vs DEM-derived aspect measurements
+
+### Landform element morphology
+
+The following is adapted from [@nationalcommitteeonsoilandterrain2009, pp. 19-26].
+
+Landform elements can be assigned to a morphological type - one of a series of raw shapes - at the scale of observation. These are:
+
+```{r}
+#| label: tbl-hr-elemmorph
+#| tbl-cap: "Landform Element Morphologies"
+
+dat_hr_elemmorph <-
+  tribble(~Code, ~Name,
+          'CR', 'Crest',
+          'RI', 'Ridge',
+          'SL', 'Slope',
+          'FL', 'Flat',
+          'DO', 'Open depression',
+          'DC', 'Closed depression')
+
+# TODO add some little graphics in a third column
+
+tbl_hr_elemmorph <- gt(dat_hr_elemmorph) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_hr_elemmorph
+
+```
+
+Note that these are paired mirror images, e.g. a closed depression is the opposite of a crest. Each morphological type extends to a break of slope or point of 0-curvature.
+
+Slopes can be further refined by including additional information appended about their relationship to their neighbouring elements. Up and down slope, four options are available.
+
+```{r}
+#| label: tbl-hr-slopeinc
+#| tbl-cap: "Slope element relative inclination"
+
+dat_hr_slopeinc <-
+  tribble(~Code, ~Name, ~Description,
+          'X', 'Waxing', 'element upslope is gentler, element downslope is steeper.',
+          'N', 'Waning', 'element upslope is steeper, element downslope is gentler.',
+          'A', 'Maximal', 'element upslope is gentler, element downslope is gentler.',
+          'I', 'Minimal', 'element upslope is steeper, element downslope is steeper.')
+
+tbl_hr_slopeinc <- gt(dat_hr_slopeinc) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20))
+
+tbl_hr_slopeinc
+
+```
+
+Two more are available across the slope.
+
+```{r}
+#| label: tbl-hr-slopeenc
+#| tbl-cap: "Slope element relative enclosure"
+
+# I'm stepping into new territory here D:
+
+dat_hr_slopeenc <-
+  tribble(~Code, ~Name, ~Description,
+          'L', 'Enclosed', 'Adjacent slope elements face towards each other',
+          'E', 'Exposed', 'Adjacent slope elements face away from each other')
+
+tbl_hr_slopeenc <- gt(dat_hr_slopeenc) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20))
+
+tbl_hr_slopeenc
+
+```
+
+This combination of properties gives rise to more complex shapes. For example, an open hollow could be described as an enclosed maximal slope ([**L-A-SL**]{style="color: red"}). A shoulder would be an exposed waxing slope ([**E-X-SL**]{style="color: red"}). Adding further information about slope and aspect, once classified, can define a complete element. For instance a gently sloping, northeast facing fan - GE NE E N SL.
+
+-   TODO add graphics
 
 ### Slope length
+
+The length of a slope element is measured downslope, and provides information on...
 
 -   mention RUSLE connection
 
@@ -59,4 +175,3 @@
 
 -   shortcut terms, noting that they don't form a conceptual tesselation
 -   longform descriptions
-
