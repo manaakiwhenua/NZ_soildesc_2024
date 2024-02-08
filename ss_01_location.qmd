@@ -1,37 +1,149 @@
 # Location
 
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+library(gtExtras)
+```
+
+A soil description is essentially useless without a confident location. Confidence includes clear communication of equipment used, datum, measurement units, and expected error.
+
 ## Absolute location
 
--   appropriate coordinate systems - horizontal plus vertical
+### Equipment
 
--   vertical - absolute elevation, elevation above local low point/drainage
+Use a location sensor with an expected accuracy of, at minimum, +/-3m. Some applications may require centimetre accuracy. Project-level metadata should record the equipment used against the following schema:
 
--   measuring equipment
+```{r}
+#| label: tbl-ss-locsrc
+#| tbl-cap: "Location data source"
 
--   required precision for various applications
+dat_ss_elevsrc <-
+  tribble(~Code, ~Name, ~Description,
+          'GS', 'Single-band GNSS', 'Satellite based location, single band',
+          'GM', 'Multi-band GNSS', 'Satellite based location, multiple band',
+          'GR', 'Differential GNSS', 'Satellite based location, on-ground correction',
+          'LM', 'Multi-sensor', 'Combined GNSS and other location data e.g. mobile phone towers, wifi routers and nearby devices.')
 
--   storing spatial data (i.e. use points) (too in the weeds???)
+tbl_ss_elevsrc <- gt(dat_ss_elevsrc) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
 
--   NZ-specific concerns e.g. earthquake shifts, uplift (feed in epoch concept too)
+tbl_ss_elevsrc
 
--   temporal - YYYY-MM-DD
+```
 
--   notes
+::: callout-tip
+Multi-constellation GNSS is not the same as multi-band GNSS. The former signifies access to multiple location satellite networks operated by various parties, e.g. GPS (USA), Galileo (EU), BeiDou (China). This can improve signal *consistency* due to having access to more satellites, but not necessarily overall accuracy.
 
-    -   use of alternative coord systems e.g. w3w (i.e. don't)
-    -   use of DGGS (stick to post-processing for now)
+Multi-band GNSS involves receiving multiple signals from location satellites on different frequency bands. The extra data can significantly improve connection speed, accuracy and reliability, particularly when open sky is restricted by rough terrain, dense vegetation or poor weather.
+:::
+
+::: callout-warning
+Most consumer electronic devices capable of reporting location will be [**LM**]{style="color: red"} type by default, unless using an app that actively forces a GNSS-only connection. At the time of writing, most of these devices can still only report [**GS**]{style="color: red"} quality data due to hardware limitations. As such, these devices can be extremely accurate in urban areas and much less so elsewhere.
+:::
+
+::: callout-note
+Estimating location manually using e.g. topographic maps is also an option, but should be considered a last resort.
+:::
+
+### Coordinate systems
+
+For X and Y coordinates, use New Zealand Transverse Meractor coordinates (EPSG:2193). For Z coordinates (elevation), use the New Zealand Vertical Datum 2016 (EPSG:1169). X and Y precision does not need to exceed 1m, and Z precision will rarely need to exceed 0.1m.
+
+::: callout-info
+Many location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around 3m, and coordinate accuracy also degrades over time due to continental drift. This is compensated for using a date-based 'epoch' adjustment. Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.
+:::
+
+::: callout-warning
+Alternate geocoding systems involving e.g. text-based encoding or nested hashes should be avoided during fieldwork. The systems are often proprietary, sometimes prone to ambiguity or edge-case errors, and at their core often wrap around WGS84 anyway.
+:::
+
+### Expected Error
+
+X and Y coordinate measurement error can be automatically reported by measuring equipment, or estimated. When estimating, record in whole meters e.g. +/- 5m. Record Z coordinate error separately in the same units, as it will differ.
+
+::: callout-note
+The expected error of consumer-grade GPS data can often be considerably improved by revising the locations in GIS after fieldwork.
+:::
+
+### Elevation data source
+
+Parts of New Zealand still lack highly accurate elevation data. Elevation can also change suddenly in response to major tectonic activity. Project-level metadata should record the data source used against the following schema:
+
+```{r}
+#| label: tbl-ss-elevsrc
+#| tbl-cap: "Elevation data sources"
+
+dat_ss_elevsrc <-
+  tribble(~Code, ~Name,
+          'E', 'Estimate',
+          'M', 'Interpolated from contour map with interval of <20m, or extracted from a DEM built from same',
+          'G1', 'Measured by consumer-grade GPS',
+          'G2', 'Measured by high-precision GPS',
+          'A', 'Measured by a calibrated altimeter',
+          'D', 'Extracted from Lidar DEM or similar')
+
+
+tbl_ss_elevsrc <- gt(dat_ss_elevsrc) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_ss_elevsrc
+
+```
+
+-  The [**M**]{style="color: red"} code should be used for most older non-LiDAR DEMs, as those available for public use were constructed in large part from interpolated contour data.
+-  Where the [**A**]{style="color: red"} code is used, the time and location of the most recent altimeter calibration should be noted.
+-  It is acknowledged that advances in positioning technology are likely to render the difference between [**G1**]{style="color: red"} and [**G2**]{style="color: red"} codes negligible within the next few years.
+
+::: callout-note
+Where DEMs are used, they should be as contemporary as possible; New Zealand’s rate of landscape evolution is relatively high and these data sources will become less reliable with age. DEMs more than 20 years old should be accompanied by a vertical error estimate adjusted upwards for age.
+:::
+
+### Temporal location
+
+Record the date of observation using the ISO 8601 standard, [**YYYY-MM-DD**]{style="color: red"}. Time is not essential but may be useful for correlating site descriptions with photographs.
+
 
 ## Relative location
 
-### triangulating off local features
+Absolute locations are enhanced by information about what is nearby. This context is useful for checking that a site's coordinates are correct and for revisiting a site in future.
 
--   what counts as sufficiently permanent
--   when to bother (e.g. poor location signal)
+### Relative elevation
 
-### longform descriptions
+Elevation above the nearest downslope drainage (open/flowing water, swampy ground, or a closed depression) is useful for landscape interpretations. The data can also be used to group site descriptions, for instance when identifying sets of related terraces along river systems. The drainage feature to record against must be identified by tracing a path downslope from the observation point, and may be far from the point of observation. As such, it will normally be more efficient to estimate this parameter after fieldwork using elevation and imagery data.
 
--   site approach instructions
--   importance for relocating monitoring points
+::: callout-note
+With sufficiently detailed inputs, a Relative Elevation Model (REM) can be constructed to estimate this parameter, but will need to be ground-truthed.
+:::
+
+### Triangulating off local features
+
+Absolute location data can be backed up by measuring to nearby permanent or long-term features. This is particularly useful for relocating long-term monitoring plots. For this to work well, features should be within ~50m of the target location and sufficiently sturdy to last until at least the next expected visit. Examples include fencelines, buildings, roads, and rock outcrops. 
+
+For single-point sites, measure distance and direction using a tape and compass. Accuracy is improved by measuring to two or more features. For plot-based sites, one can measure from at least two corners to the target feature. Photographing the point/plot and reference points together is also useful.
+
+[add a diagram here]{style="background-color:'lightgreen'}
+
+### Longform descriptions
+
+For observation points that will be revisited, record practical information about how to return. This may include landholder contact details and records of previous interactions, notes about track conditions, locked gates, and potential hazards like water crossings.
 
 ### region data
 
@@ -39,7 +151,9 @@
 -   options: regional, district council; property boundaries
 -   code list for RCs?
 
-### temporal
+### Temporal
+
+Relative temporal data includes season and time since significant weather events. These can provide context about site disturbance, wetness conditions, etc.
 
 -   season
 -   time since significant weather events (see FAO)
