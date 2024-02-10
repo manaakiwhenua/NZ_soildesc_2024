@@ -7,13 +7,13 @@ library(gt)
 library(gtExtras)
 ```
 
-A soil description is essentially useless without a confident location. Confidence includes clear communication of equipment used, datum, measurement units, and expected error.
+A soil description is essentially useless without a confident location. Confidence includes clear communication of equipment used, datum and coordinate reference system, measurement units, and expected error.
 
 ## Absolute location
 
 ### Equipment
 
-Use a location sensor with an expected accuracy of, at minimum, +/-3m. Some applications may require centimetre accuracy. Project-level metadata should record the equipment used against the following schema:
+Use a location sensor with an expected horizontal accuracy of, at minimum, +/-3m. Some applications may require centimetre accuracy. Record sensor type against the schema in @tbl-ss-locsrc.
 
 ```{r}
 #| label: tbl-ss-locsrc
@@ -42,9 +42,9 @@ tbl_ss_elevsrc
 ```
 
 ::: callout-tip
-Multi-constellation GNSS is not the same as multi-band GNSS. The former signifies access to multiple location satellite networks operated by various parties, e.g. GPS (USA), Galileo (EU), BeiDou (China). This can improve signal *consistency* due to having access to more satellites, but not necessarily overall accuracy.
+Multi-constellation GNSS is not the same as multi-band GNSS. The former signifies access to multiple location satellite networks operated by various parties, e.g. GPS (USA), Galileo (EU), BeiDou (China). This can improve signal *consistency* due to having access to more total satellites, but not necessarily overall accuracy.
 
-Multi-band GNSS involves receiving multiple signals from location satellites on different frequency bands. The extra data can significantly improve connection speed, accuracy and reliability, particularly when open sky is restricted by rough terrain, dense vegetation or poor weather.
+Multi-band GNSS involves receiving multiple signals from location satellites on several frequency bands. The extra data can significantly improve connection reliability and accuracy, particularly when open sky is restricted by rough terrain, dense vegetation or poor weather.
 :::
 
 ::: callout-warning
@@ -55,29 +55,9 @@ Most consumer electronic devices capable of reporting location will be [**LM**]{
 Estimating location manually using e.g. topographic maps is also an option, but should be considered a last resort.
 :::
 
-### Coordinate systems
+#### Elevation measurement
 
-For X and Y coordinates, use New Zealand Transverse Meractor coordinates (EPSG:2193). For Z coordinates (elevation), use the New Zealand Vertical Datum 2016 (EPSG:1169). X and Y precision does not need to exceed 1m, and Z precision will rarely need to exceed 0.1m.
-
-::: callout-info
-Many location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around 3m, and coordinate accuracy also degrades over time due to continental drift. This is compensated for using a date-based 'epoch' adjustment. Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.
-:::
-
-::: callout-warning
-Alternate geocoding systems involving e.g. text-based encoding or nested hashes should be avoided during fieldwork. The systems are often proprietary, sometimes prone to ambiguity or edge-case errors, and at their core often wrap around WGS84 anyway.
-:::
-
-### Expected Error
-
-X and Y coordinate measurement error can be automatically reported by measuring equipment, or estimated. When estimating, record in whole meters e.g. +/- 5m. Record Z coordinate error separately in the same units, as it will differ.
-
-::: callout-note
-The expected error of consumer-grade GPS data can often be considerably improved by revising the locations in GIS after fieldwork.
-:::
-
-### Elevation data source
-
-Parts of New Zealand still lack highly accurate elevation data. Elevation can also change suddenly in response to major tectonic activity. Project-level metadata should record the data source used against the following schema:
+Parts of New Zealand still lack highly accurate elevation data. Elevation can also change suddenly in response to major tectonic activity. Record the elevation data source used against the schema in @tbl-ss-locsrc, or use one of the additional options in @tbl-ss-elevsrc below.
 
 ```{r}
 #| label: tbl-ss-elevsrc
@@ -86,11 +66,9 @@ Parts of New Zealand still lack highly accurate elevation data. Elevation can al
 dat_ss_elevsrc <-
   tribble(~Code, ~Name,
           'E', 'Estimate',
-          'M', 'Interpolated from contour map with interval of <20m, or extracted from a DEM built from same',
-          'G1', 'Measured by consumer-grade GPS',
-          'G2', 'Measured by high-precision GPS',
           'A', 'Measured by a calibrated altimeter',
-          'D', 'Extracted from Lidar DEM or similar')
+          'M', 'Interpolated from contour map with interval of <= 20 m, or extracted from similar-quality Digital Elevation Model (DEM)',
+          'D',  'Extracted from high-accuracy DEM (Lidar or similar)')
 
 
 tbl_ss_elevsrc <- gt(dat_ss_elevsrc) |>
@@ -108,18 +86,46 @@ tbl_ss_elevsrc
 
 ```
 
--  The [**M**]{style="color: red"} code should be used for most older non-LiDAR DEMs, as those available for public use were constructed in large part from interpolated contour data.
--  Where the [**A**]{style="color: red"} code is used, the time and location of the most recent altimeter calibration should be noted.
--  It is acknowledged that advances in positioning technology are likely to render the difference between [**G1**]{style="color: red"} and [**G2**]{style="color: red"} codes negligible within the next few years.
+The [**M**]{style="color: red"} code should be used for most non-Lidar DEMs, as those available for public use were constructed from interpolated contour data or other methods with comparable vertical accuracy [see @barringer2002; @uuemaa2020] .
+
+Where the [**A**]{style="color: red"} code is used, the time and location of the most recent altimeter calibration should be noted.
 
 ::: callout-note
 Where DEMs are used, they should be as contemporary as possible; New Zealand’s rate of landscape evolution is relatively high and these data sources will become less reliable with age. DEMs more than 20 years old should be accompanied by a vertical error estimate adjusted upwards for age.
 :::
 
+### Coordinate reference system (CRS)
+
+Record X and Y location coordinates using New Zealand Transverse Mercator (EPSG:2193). For Z coordinates (elevation), use the New Zealand Vertical Datum 2016 (EPSG:1169). X and Y precision does not need to exceed 1 m, and Z precision will rarely need to exceed 0.1 m.
+
+Example: [**1586090E, 5405722N (462 m)**]{style="color: red"}
+
+```{r}
+# map goes here - its the centre of NZ
+
+```
+
+::: callout-warning
+Many location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around 3m, and coordinate accuracy also degrades over time due to continental drift. This is compensated for using a date-based 'epoch' adjustment. Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.
+:::
+
+::: callout-warning
+Alternate geocoding systems involving e.g. text-based encoding or nested hashes should be avoided during fieldwork. The systems are often proprietary, sometimes prone to ambiguity or edge-case errors, and at their core often wrap around WGS84 anyway. They may still be useful during data analysis.
+:::
+
+### Expected Error
+
+Expected horizontal error can be automatically reported by equipment, or estimated. When estimating, record in meters with a maximum precision of 0.01 (1 cm) e.g. [**+/- 5.1 m**]{style="color: red"}. Record expected vertical elevation error separately in the same units, as it will differ.
+
+::: callout-note
+Site location data quality can often be improved by revising the locations in GIS after fieldwork. Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error.
+:::
+
+
+
 ### Temporal location
 
-Record the date of observation using the ISO 8601 standard, [**YYYY-MM-DD**]{style="color: red"}. Time is not essential but may be useful for correlating site descriptions with photographs.
-
+Record the date of observation using the ISO 8601 standard, [**YYYY-MM-DD**]{style="color: red"} [@internationalorganizationforstandardization]. Time is not essential but may be useful for correlating site descriptions with photographs.
 
 ## Relative location
 
@@ -129,39 +135,241 @@ Absolute locations are enhanced by information about what is nearby. This contex
 
 Elevation above the nearest downslope drainage (open/flowing water, swampy ground, or a closed depression) is useful for landscape interpretations. The data can also be used to group site descriptions, for instance when identifying sets of related terraces along river systems. The drainage feature to record against must be identified by tracing a path downslope from the observation point, and may be far from the point of observation. As such, it will normally be more efficient to estimate this parameter after fieldwork using elevation and imagery data.
 
+Record relative elevation in meters, with a precision of no more than 0.01 (1 cm).
+
 ::: callout-note
 With sufficiently detailed inputs, a Relative Elevation Model (REM) can be constructed to estimate this parameter, but will need to be ground-truthed.
 :::
 
 ### Triangulating off local features
 
-Absolute location data can be backed up by measuring to nearby permanent or long-term features. This is particularly useful for relocating long-term monitoring plots. For this to work well, features should be within ~50m of the target location and sufficiently sturdy to last until at least the next expected visit. Examples include fencelines, buildings, roads, and rock outcrops. 
+Absolute location data can be backed up by measuring to nearby permanent or long-term features. This is particularly useful for relocating long-term monitoring plots. For this to work well, features should be within \~50m of the target location and sufficiently sturdy to last until at least the next expected visit. Examples include fencelines, buildings, roads, and rock outcrops.
 
 For single-point sites, measure distance and direction using a tape and compass. Accuracy is improved by measuring to two or more features. For plot-based sites, one can measure from at least two corners to the target feature. Photographing the point/plot and reference points together is also useful.
 
-[add a diagram here]{style="background-color:'lightgreen'}
+[add a diagram here]{style="background-color:lightgreen"}
 
 ### Longform descriptions
 
 For observation points that will be revisited, record practical information about how to return. This may include landholder contact details and records of previous interactions, notes about track conditions, locked gates, and potential hazards like water crossings.
 
-### region data
+### Administrative location
 
--   talk about when to tag sites to human administrative boundaries
--   options: regional, district council; property boundaries
--   code list for RCs?
+Tagging sites with their administrative region(s) can help with discoverability (searching and filtering) in databases, and simplify information security and privacy arrangements. This does not need to be done in the field, provided accurate locations are recorded.
+
+In New Zealand, relevant boundaries include Regional Council [@statsnz] and Territorial Authority (District Council, Stats NZ [-@statsnza]) areas. Note that these are periodically updated so need to be related to date of observation.
 
 ### Temporal
 
-Relative temporal data includes season and time since significant weather events. These can provide context about site disturbance, wetness conditions, etc.
+Relative temporal data includes season and time since significant soil-influencing events. These can provide context for the parameters recorded, and some are especially useful when interpreting laboratory results.
 
--   season
--   time since significant weather events (see FAO)
+#### Season
+
+Season can be calculated from date of observation, so does not need to be recorded in the field.
+
+```{r}
+#| label: tbl-ss-seasons
+#| tbl-cap: "Seasons"
+
+dat_ss_seasons <-
+  tribble(~Code, ~Name, ~Description,
+          'SP', 'Spring', 'September to November',
+          'SU', 'Summer', 'December to February',
+          'AU', 'Autumn', 'March to May',
+          'WI', 'Winter', 'June to August')
+
+tbl_ss_seasons <- gt(dat_ss_seasons) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_ss_seasons
+```
+
+#### Current Weather
+
+Record the current weather using the codes in @tbl-ss-weatherc, plus temperature in degrees Celsius. These are not always essential, but can affect colour recording and some field tests.
+
+```{r}
+#| label: tbl-ss-weatherc
+#| tbl-cap: "Current weather conditions "
+
+dat_ss_weatherc <-
+  tribble(~Code, ~Name,
+          'SU', 'Sunny',
+          'PC', 'Partly cloudy',
+          'OV', 'Overcast',
+          'RA', 'Rain',
+          'SL', 'Sleet',
+          'SN', 'Snow')
+
+tbl_ss_weatherc <- gt(dat_ss_weatherc) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_ss_weatherc
+```
+
+#### Recent rainfall
+
+Record recent rainfall using the codes in @tbl-ss-weatherp.
+
+```{r}
+#| label: tbl-ss-weatherp
+#| tbl-cap: "Recent rainfall, adapted from FAO [-@un-fao2006], Table 2"
+
+dat_ss_weatherp <-
+  tribble(~Code, ~Name,
+          'NM', 'No rain in the last month',
+          'NW', 'No rain in the last week',
+          'ND', 'No rain in the last 24 hours',
+          'RD', 'Rain but no heavy rain in the last 24 hours',
+          'RH', 'Heavy rain for some days or excessive rain in the last 24 hours',
+          'RE', 'Extremely rainy or snow melting',
+          'UK', 'Unknown/uncertain')
+
+tbl_ss_weatherp <- gt(dat_ss_weatherp) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_ss_weatherp
+```
+
+#### Other recent events
+
+Only include recent events directly affecting the site. 'Recent' includes events that happened within the previous month, but which do not occur on a regular basis over that same timescale.
+
+```{r}
+#| label: tbl-ss-eventp
+#| tbl-cap: "Recent soil-affecting events"
+
+dat_ss_eventp <-
+  tribble(~Code, ~Name,
+          'MC', 'Mechanical disturbance (e.g. tillage, deep ripping)',
+          'CL', 'Mechanical vegetation clearance (e.g. clearfelling)',
+          'SL', 'Landslide event - soil lost from site',
+          'SD', 'Landslide event - soil added to site',
+          'WI', 'Wind-induced treefall',
+          'FC', 'Fire - controlled burn',
+          'FW', 'Fire - uncontrolled burn',
+          'FL', 'Flooding - freshwater',
+          'FS', 'Flooding - saline water (e.g. storm surge event)',
+          'PO', 'Pollution event (e.g. petrol spill)',
+          'NO', 'No recent events',
+          'UK', 'Unknown')
+
+tbl_ss_eventp <- gt(dat_ss_eventp) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_ss_eventp
+```
 
 ## Explaining location
 
--   i.e. why and how the spot was singled out; when this matters
--   codes for why
--   codes for how
+### Site choice method
 
-------------------------------------------------------------------------
+Spatial sampling strategies vary in their statistical properties. Soil data is stored for long periods and is often re-used for multiple projects; specific uses may not be appropriate.
+
+Record the spatial sampling strategy used using the schema in @tbl-ss-sampstrat.
+
+```{r}
+#| label: tbl-ss-sampstrat
+#| tbl-cap: "Spatial sampling strategies"
+
+dat_ss_sampstrat <-
+  tribble(~Code, ~Name,
+          'A', 'Arbitrary/opportunistic',
+          'D', 'Data-driven',
+          'M', 'Model-based',
+          'R', 'Random',
+          'T', 'Transect',
+          'G', 'Grid')
+
+tbl_ss_sampstrat <- gt(dat_ss_sampstrat) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_ss_sampstrat
+```
+
+The difference between data-driven [**D**]{style="color: red"} and model-based [**M**]{style="color: red"} centres around replicability. Data-driven sites are nominated using a loose set of rules or principles (e.g. “visit the major landforms on this farm but don’t go too far off the tracks”) and may be subject to minor changes once the worker is on-ground. Model-based site choices formalise this process with reference to specific input datasets, and the worker is committed to sample at the exact point chosen. Model-based methods may include ‘backup points’ for where an intended location cannot be physically accessed, but these are also pre-determined. Importantly, model-based choices can be regenerated from the same inputs.
+
+Arbitrary [**A**]{style="color: red"} points are not pre-determined at all; rather, they are chosen after the worker is on site, in response to direct observation of on-ground conditions. These are often practical and efficient but are also likely to over-sample the more easily accessible and/or interesting parts of the landscape, to the detriment of overall representativeness.
+
+Random, transect and grid sampling [**R, T, G**]{style="color: red"} effectively ignore environmental parameters. This is useful when the spatial distribution of a parameter of interest is unknown or poorly understood.
+
+Some of these methods can be combined - for example, data-driven transect choices with randomised locations along each. In such cases, the 'last choice' should be recorded - in this case, [**R**]{style="color: red"}. The details of the full sampling strategy should be discussed in project metadata.
+
+### Site purpose
+
+The original task for which a site was observed can affect what data is recorded and is relevant to data re-use decisions.
+
+Record the spatial sampling strategy used using the schema in @tbl-ss-reason. This parameter does not need to be recorded in the field.
+
+```{r}
+#| label: tbl-ss-reason
+#| tbl-cap: "Site purpose"
+
+dat_ss_reason <-
+  tribble(~Code, ~Name,
+          'E', 'Mapping exploration',
+          'V', 'Mapping validation',
+          'R', 'Research',
+          'M', 'Monitoring',
+          'T', 'Reference',
+          'D', 'Development')
+
+tbl_ss_reason <- gt(dat_ss_reason) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_ss_reason
+```
+
+[**D**]{style="color: red"} sites are often carried out as part of planning for a resource consent. The soil they describe may be removed or sealed after observation, limiting data re-use potential. [**M**]{style="color: red"} monitoring sites imply repeated, regular re-sampling activity and perhaps an expectation of minimal major disturbance between visits.
+
+[**V**]{style="color: red"} validation sites may be low-detail, as they are intended to confirm or deny a prediction. [**T**]{style="color: red"} reference sites (T for ‘type’) may be expected to have high morphological detail and a lot of accompanying analytical data, as they represent ‘ideal’ profiles for particular soil classes.
+
+[**E**]{style="color: red"} mapping exploration sites may have biased, opportunistic sample locations and moderate location precision, while [**R**]{style="color: red"} sites are more likely to have been predetermined by a model and located with high precision.
