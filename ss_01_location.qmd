@@ -7,13 +7,13 @@ library(gt)
 library(gtExtras)
 ```
 
-A soil description is essentially useless without a confident location. Confidence includes clear communication of equipment used, datum and coordinate reference system, measurement units, and expected error.
+A soil description is essentially useless without a confident location. Confidence is supported by clear communication about equipment, datum and coordinate reference system, measurement units, and expected error.
 
 ## Absolute location
 
 ### Equipment
 
-Use a location sensor with an expected horizontal accuracy of, at minimum, +/-3m. Some applications may require centimetre accuracy. Record sensor type against the schema in @tbl-ss-locsrc.
+Use a GNSS (Global Navigation Satellite System) with an expected horizontal accuracy of ± 3 m or better. Some applications may require centimetre accuracy. Record sensor type against the schema in @tbl-ss-locsrc.
 
 ```{r}
 #| label: tbl-ss-locsrc
@@ -24,7 +24,8 @@ dat_ss_elevsrc <-
           'GS', 'Single-band GNSS', 'Satellite based location, single band',
           'GM', 'Multi-band GNSS', 'Satellite based location, multiple band',
           'GR', 'Differential GNSS', 'Satellite based location, on-ground correction',
-          'LM', 'Multi-sensor', 'Combined GNSS and other location data e.g. mobile phone towers, wifi routers and nearby devices.')
+          'LM', 'Multi-sensor', 'Combined GNSS and other location data e.g. mobile phone towers, wifi routers and nearby devices.',
+          'NO', 'None', 'Location determined manually.')
 
 tbl_ss_elevsrc <- gt(dat_ss_elevsrc) |>
    tab_options(
@@ -44,18 +45,18 @@ tbl_ss_elevsrc
 ::: callout-tip
 Multi-constellation GNSS is not the same as multi-band GNSS. The former signifies access to multiple location satellite networks operated by various parties, e.g. GPS (USA), Galileo (EU), BeiDou (China). This can improve signal *consistency* due to having access to more total satellites, but not necessarily overall accuracy.
 
-Multi-band GNSS involves receiving multiple signals from location satellites on several frequency bands. The extra data can significantly improve connection reliability and accuracy, particularly when open sky is restricted by rough terrain, dense vegetation or poor weather.
+Multi-band GNSS involves receiving signals from location satellites on multiple frequency bands. The extra data from each satellite can significantly improve connection reliability and accuracy, particularly when open sky is restricted by rough terrain, dense vegetation or poor weather.
 :::
 
 ::: callout-warning
-Most consumer electronic devices capable of reporting location will be [**LM**]{style="color: red"} type by default, unless using an app that actively forces a GNSS-only connection. At the time of writing, most of these devices can still only report [**GS**]{style="color: red"} quality data due to hardware limitations. As such, these devices can be extremely accurate in urban areas and much less so elsewhere.
+Most consumer electronic devices capable of reporting location will be [**LM**]{style="color: red"} type by default, unless using an app that actively forces a GNSS-only connection. At the time of writing, most of these devices can still only report [**GS**]{style="color: red"} quality data with such apps due to hardware limitations. As such, these devices can be extremely accurate in urban areas and much less so elsewhere.
 :::
 
 ::: callout-note
-Estimating location manually using e.g. topographic maps is also an option, but should be considered a last resort.
+Estimating location manually using e.g. topographic maps and orienteering methods remains an option, but should usually be considered a last resort.
 :::
 
-#### Elevation measurement
+### Elevation measurement
 
 Parts of New Zealand still lack highly accurate elevation data. Elevation can also change suddenly in response to major tectonic activity. Record the elevation data source used against the schema in @tbl-ss-locsrc, or use one of the additional options in @tbl-ss-elevsrc below.
 
@@ -67,7 +68,7 @@ dat_ss_elevsrc <-
   tribble(~Code, ~Name,
           'E', 'Estimate',
           'A', 'Measured by a calibrated altimeter',
-          'M', 'Interpolated from contour map with interval of <= 20 m, or extracted from similar-quality Digital Elevation Model (DEM)',
+          'M', 'Interpolated from contour map with interval of ≤ 20 m, or extracted from similar-quality Digital Elevation Model (DEM)',
           'D',  'Extracted from high-accuracy DEM (Lidar or similar)')
 
 
@@ -96,7 +97,9 @@ Where DEMs are used, they should be as contemporary as possible; New Zealand’s
 
 ### Coordinate reference system (CRS)
 
-Record X and Y location coordinates using New Zealand Transverse Mercator (EPSG:2193). For Z coordinates (elevation), use the New Zealand Vertical Datum 2016 (EPSG:1169). X and Y precision does not need to exceed 1 m, and Z precision will rarely need to exceed 0.1 m.
+Record X and Y location coordinates using New Zealand Transverse Mercator (EPSG:2193). For Z coordinates (elevation), use the New Zealand Vertical Datum 2016 (EPSG:1169).
+
+X and Y precision does not need to exceed 1 m for pits, or 0.1 m for cores and auger holes. Z precision will rarely need to exceed 0.1 m.
 
 Example: [**1586090E, 5405722N (462 m)**]{style="color: red"}
 
@@ -106,7 +109,7 @@ Example: [**1586090E, 5405722N (462 m)**]{style="color: red"}
 ```
 
 ::: callout-warning
-Many location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around 3m, and coordinate accuracy also degrades over time due to continental drift. This is compensated for using a date-based 'epoch' adjustment. Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.
+Many location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around 3 m, and coordinate accuracy also degrades over time due to continental drift. This is compensated for using a date-based 'epoch' adjustment. Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.
 :::
 
 ::: callout-warning
@@ -115,15 +118,13 @@ Alternate geocoding systems involving e.g. text-based encoding or nested hashes 
 
 ### Expected Error
 
-Expected horizontal error can be automatically reported by equipment, or estimated. When estimating, record in meters with a maximum precision of 0.01 (1 cm) e.g. [**+/- 5.1 m**]{style="color: red"}. Record expected vertical elevation error separately in the same units, as it will differ.
+Expected horizontal error can be automatically reported by equipment, or estimated. When estimating, record in meters with a maximum precision of 0.01 (1 cm) e.g. [**± 5.1 m**]{style="color: red"}. Record expected vertical elevation error separately in the same units, as it will differ.
 
 ::: callout-note
 Site location data quality can often be improved by revising the locations in GIS after fieldwork. Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error.
 :::
 
-
-
-### Temporal location
+### Temporal location {#sec-ss-dt}
 
 Record the date of observation using the ISO 8601 standard, [**YYYY-MM-DD**]{style="color: red"} [@internationalorganizationforstandardization]. Time is not essential but may be useful for correlating site descriptions with photographs.
 
@@ -133,7 +134,7 @@ Absolute locations are enhanced by information about what is nearby. This contex
 
 ### Relative elevation
 
-Elevation above the nearest downslope drainage (open/flowing water, swampy ground, or a closed depression) is useful for landscape interpretations. The data can also be used to group site descriptions, for instance when identifying sets of related terraces along river systems. The drainage feature to record against must be identified by tracing a path downslope from the observation point, and may be far from the point of observation. As such, it will normally be more efficient to estimate this parameter after fieldwork using elevation and imagery data.
+Elevation above the nearest down-slope drainage (open/flowing water, swampy ground, or a closed depression) is useful for landscape interpretations. The data can also be used to group site descriptions, for instance when identifying sets of related terraces along river systems. The drainage feature to record against must be identified by tracing a path down-slope from the observation point, and may be far from the point of observation. As such, it will normally be more efficient to estimate this parameter after fieldwork using elevation and imagery data.
 
 Record relative elevation in meters, with a precision of no more than 0.01 (1 cm).
 
@@ -157,7 +158,7 @@ For observation points that will be revisited, record practical information abou
 
 Tagging sites with their administrative region(s) can help with discoverability (searching and filtering) in databases, and simplify information security and privacy arrangements. This does not need to be done in the field, provided accurate locations are recorded.
 
-In New Zealand, relevant boundaries include Regional Council [@statsnz] and Territorial Authority (District Council, Stats NZ [-@statsnza]) areas. Note that these are periodically updated so need to be related to date of observation.
+In New Zealand, relevant boundaries include Regional Council [@statsnz] and Territorial Authority (District Council, Stats NZ [-@statsnza]) areas. Note that these boundaries are periodically updated so need to be related to date of observation.
 
 ### Temporal
 
@@ -198,7 +199,7 @@ Record the current weather using the codes in @tbl-ss-weatherc, plus temperature
 
 ```{r}
 #| label: tbl-ss-weatherc
-#| tbl-cap: "Current weather conditions "
+#| tbl-cap: "Current weather conditions, Schoeneberger et al. [-@schoeneberger2012], 1-1"
 
 dat_ss_weatherc <-
   tribble(~Code, ~Name,
@@ -257,7 +258,7 @@ tbl_ss_weatherp
 
 #### Other recent events
 
-Only include recent events directly affecting the site. 'Recent' includes events that happened within the previous month, but which do not occur on a regular basis over that same timescale.
+Only include recent events directly affecting the site. 'Recent' is a relatively flexible concept which highlights the reasons some parameters observed might be locally unusual. Some of these events recur regularly (e.g. tillage) so only need to be noted if very recent (e.g. previous week).
 
 ```{r}
 #| label: tbl-ss-eventp
@@ -296,9 +297,9 @@ tbl_ss_eventp
 
 ### Site choice method
 
-Spatial sampling strategies vary in their statistical properties. Soil data is stored for long periods and is often re-used for multiple projects; specific uses may not be appropriate.
+Spatial sampling strategies vary in their statistical properties. Soil data is stored for long periods and is often re-used for multiple projects; specific re-uses may not be appropriate.
 
-Record the spatial sampling strategy used using the schema in @tbl-ss-sampstrat.
+Record the spatial sampling strategy used using the schema in @tbl-ss-sampstrat. This parameter does not usually need to be recorded in the field.
 
 ```{r}
 #| label: tbl-ss-sampstrat
@@ -329,7 +330,7 @@ tbl_ss_sampstrat
 
 The difference between data-driven [**D**]{style="color: red"} and model-based [**M**]{style="color: red"} centres around replicability. Data-driven sites are nominated using a loose set of rules or principles (e.g. “visit the major landforms on this farm but don’t go too far off the tracks”) and may be subject to minor changes once the worker is on-ground. Model-based site choices formalise this process with reference to specific input datasets, and the worker is committed to sample at the exact point chosen. Model-based methods may include ‘backup points’ for where an intended location cannot be physically accessed, but these are also pre-determined. Importantly, model-based choices can be regenerated from the same inputs.
 
-Arbitrary [**A**]{style="color: red"} points are not pre-determined at all; rather, they are chosen after the worker is on site, in response to direct observation of on-ground conditions. These are often practical and efficient but are also likely to over-sample the more easily accessible and/or interesting parts of the landscape, to the detriment of overall representativeness.
+Arbitrary [**A**]{style="color: red"} points are not pre-determined at all; rather, they are chosen after the worker is on site, in response to direct observation of on-ground conditions. These are often practical and time-efficient but are also likely to over-sample the more easily accessible and/or interesting parts of the landscape, to the detriment of overall representativeness.
 
 Random, transect and grid sampling [**R, T, G**]{style="color: red"} effectively ignore environmental parameters. This is useful when the spatial distribution of a parameter of interest is unknown or poorly understood.
 
@@ -339,7 +340,7 @@ Some of these methods can be combined - for example, data-driven transect choice
 
 The original task for which a site was observed can affect what data is recorded and is relevant to data re-use decisions.
 
-Record the spatial sampling strategy used using the schema in @tbl-ss-reason. This parameter does not need to be recorded in the field.
+Record the reason for sampling using the schema in @tbl-ss-reason. This parameter does not need to be recorded in the field.
 
 ```{r}
 #| label: tbl-ss-reason
