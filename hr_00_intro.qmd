@@ -73,9 +73,8 @@ dat_hr_bdst <-
   tribble(~Code, ~Name, ~Description,
           'S', 'Sharp', '< 0.5 cm', 
           'A', 'Abrupt', '0.5 - 2.0 cm',
-          'C', 'Clear', '2.0 - 5.0 cm',
-          'G', 'Gradual', '5.0 - 15.0 cm',
-          'D', 'Diffuse', '> 15 cm')
+          'D', 'Distinct', '2.0 - 5.0 cm',
+          'G', 'Gradual', '5.0 - 15.0 cm')
 
 tbl_hr_bdst <- gt(dat_hr_bdst) |>
    tab_options(
@@ -91,7 +90,9 @@ tbl_hr_bdst <- gt(dat_hr_bdst) |>
 tbl_hr_bdst
 ```
 
-[change points - using WRB cutoff for gradual/diffuse (15 not 10 cm); using Aus codes for uniqueness (Distinct and Diffuse were problematic).]{style="background-color:orange"}
+Where a transition is thicker than 15 cm, it should be defined as a new horizon. Use transitional horizon names as needed [CROSSLINK].
+
+[change points - using WRB cutoff for gradual/diffuse (15 not 10 cm), dropping diffuse as an option]{style="background-color:orange"}
 
 ::: callout-note
 when to make a new horizon instead of reporting a transition
