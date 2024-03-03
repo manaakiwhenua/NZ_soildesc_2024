@@ -13,6 +13,10 @@ library(gtExtras)
 
 ## Regional landscape
 
+The regional landscape around a soil observation comprises a distinct geomorphological pattern with repeating elements. The scale of observation varies but commonly extends from a few hundred to a few thousand meters [@heck2017]. New Zealand currently lacks a national classification scheme focusing on this concept, although the 'landform trees' in S-Map are a step in that direction (REF??).
+
+In the absence of such a system, one can describe a regional landscape in terms of a short list of parameters: relief, characteristic slope(s), surface drainage pattern,
+
 -   scale: 100s-1000s of meters (ref Ontario guide for this idea)
 -   don't have a nationally accepted ecozone system yet
 -   do have LUC (brief discussion)
@@ -20,15 +24,19 @@ library(gtExtras)
 
 ### Relief
 
-### Modal slope
+Relief is the degree of separation between high and low points in a landscape. As described in [@nationalcommitteeonsoilandterrain2009, pp. 45], relief can be visualised by picturing two surfaces roughly parallel to the land surface - one passing through local crests and one through local depressions. The median vertical distance between the two surfaces is the relief.
 
-### RMS
+[add a diagram here]{style="background-color:lightgreen"}
 
--   adapt from aus
+Relief is usually best determined from a DEM, but can be estimated in the field. Record in whole meters if estimating.
 
-### Mesoscale topographic index
+### Characteristic slope
 
--   ref to RECCE, connect to Geomorphons concept
+The characteristic slope is the most common range of slopes within a regional landscape. These are often controlled by local geology. This measure is often expressed as the modal value among a set of slope classes, but can also be expressed as a median value plus or minus an appropriate range (e.g. 1 standard deviation to capture 68% of slopes in a landscape).
+
+Characteristic slope is usually best determined from a DEM-derived slope dataset, but can be estimated in the field. Record as a \[low, high\] range of degrees.
+
+### Drainage pattern
 
 ### Landscape description
 
@@ -166,6 +174,18 @@ This combination of properties gives rise to more complex shapes. For example, a
 The length of a slope element is measured downslope, and provides information on...
 
 -   mention RUSLE connection
+
+### Mesoscale topographic index
+
+The Mesoscale Topographic Index (MTI) [@hurst2007, p. 32] is a simple measure of how sheltered or exposed a location is within a landscape. To measure in-field, use a compass and clinometer to measure angle to the horizon at the 8 cardinal compass bearings. Record positive values if looking up and negative when looking down. The index formula is then `(average)/-1`, with high values signifying a sheltered area and low values signifying exposure.
+
+::: callout-tip
+The closest automated equivalents of the MTI appear to be the 'Morphometric Protection Index' (MPI) as implemented in SAGA-GIS [@yokoyama2002; @conrad2015], and the 'intensity' output of the 'Geomorphons' module as implemented in GRASS-GIS [@jasiewicz2013; @grassdevelopmentteam2023]. In the case of geomorphon intensity, the output also reports the mean relative elevation in meters of the 8 defining points rather than their average angles above or below the central point.
+:::
+
+::: callout-warning
+Field and computer-based measurement of MTI may differ slightly. The in-field version measures against magnetic north rather than 'map north', which will vary with spatial data projection.
+:::
 
 ### Active geomorphic agents
 
