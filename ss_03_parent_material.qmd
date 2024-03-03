@@ -1,19 +1,168 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
 # Parent material
+
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+library(gtExtras)
+```
 
 ## Geology
 
-- map codes - when useful, when not
-- don't just intersect a published map - scale limitations
+Geological mapping, particularly surface and near-surface stratigraphy, is an essential resource for understanding the landscape. However, the scale and focus of the available products don't always align with soil observation needs. Some caution is needed when interpreting geological maps in a soils context. Keep the following in mind:
+
+-   Read the accompanying reports for a given area as well as looking at the maps. They contain a wealth of contextual information.
+-   When working in a depositional area, get familiar with the 'source' geologies - upstream, uphill, upwind. Those will be the main contributors to the parent material, which will often be mapped with closer reference to age and particle size than lithology.
 
 ## Lithology
 
-- LUC Rock Class system
-- NZSC level 4 parent material system
-- note strengths and weaknesses
-- note: brief discussion of e.g. classification by silica index cf NSW
+segue in here from strat assemblages to local lith
+
+### NZLRI Rock Type
+
+An identification and coding system for New Zealand rock types is available in [@lynn1991]. This system is tuned for land resource assessment, particularly assessment of erosivity, and is used in the NZ Land Resource Inventory and Land Use Classification methodology [@lynn2009]. The system is mentioned here as an option where consistency with LUC mapping is desired.
+
+[repeat codes, or just xref??]{style="background-color: lightgreen"}
+
+### NZSC Parent Material {#sec-ss-pmat}
+
+Level 4 of the NZSC, the soil Family [@webb2011], uses a shorter list of lithology codes along with a separate 'origin' code, whereas the NZLRI rock type conflates the two concepts. The lithology codes are available in @tbl-ss-pm below.
+
+```{r}
+#| label: tbl-ss-pm
+#| tbl-cap: "NZSC Lithology"
+
+dat_ss_pm <-
+  tribble(~Code, ~Name,
+    'Cb',	'Carbonaceous Rock (Coal)',
+    'Sq',	'Soft Quartzitic Sediments',
+    'Hq',	'Hard Quartzitic Sediments',
+    'Sm',	'Soft mudstone',
+    'Ss',	'Soft sandstone',
+    'Hm',	'Hard mudstone',
+    'Hs',	'Hard sandstone',
+    'Tm',	'Tuffaceous mudstone',
+    'Ts',	'Tuffaceous sandstone',
+    'Sc',	'Schist',
+    'Ls',	'Soft calcareous',
+    'Li',	'Hard calcareous',
+    'Ma',	'Marble',
+    'Rh',	'Rhyolite',
+    'Ig',	'Ignimbrite',
+    'An',	'Andesite',
+    'Ba',	'Basalt',
+    'Gr',	'Granite and Gneiss',
+    'Di',	'Diorite',
+    'Ga',	'Gabbro',
+    'Fe',	'Iron Sands')
+      
+tbl_ss_pm <- gt(dat_ss_pm) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_ss_pm
+
+```
+
+::: callout-note
+'Soft' rocks in this context can at most be broken readily with a light hammer blow, and can be scraped and peeled by a pocket knife. 'Hard' rocks can at best be scratched with a knife but not scraped or peeled, and require a firm hammer blow to crack [@lynn1991, p. 11].
+:::
+
+### Other lithology classifications
+
+Soil parent material classifications have largely focused on major geological origin (igneous, metamorphic, sedimentary), grain size, and some obvious compositional classes. [@gray2016] contend that the major differentiator for soil formation should first be silica (SiO~2~) content and propose an alternate lithology classification per @tbl-ss-sio2lith below.
+
+```{r}
+#| label: tbl-ss-sio2lith
+#| tbl-cap: "Silica-content Lithology classification"
+
+dat_ss_sio2lith <-
+  tribble(~Code, ~Name, ~ Description,
+          1, 'Extremely siliceous', 'Quartz sands, chert, pure quartzite, jasper, quartz reefs, silicified rocks',
+          2, 'Siliceous Upper', 'Quartz sandstone, quartz siltstone, unqualified quartzite and alluvial sands',
+          3, 'Siliceous Mid', 'Granite, rhyolite and siliceous tuff, arkose sandstone, most unqualified sandstone',
+          4, 'Siliceous Lower', 'Adamellite, granodiorite, dacite, monzogranite, siliceous/ intermediate tuff, most greywacke & lithic
+sandstone, unqualified siltstone',
+          5, 'Intermediate upper', 'Syenite, trachyte, most argillaceous rocks (mudstone, claystone, shale, slate, phyllite and schist),
+alluvial loams and non-cracking clays',
+          6, 'Intermediate lower', 'Monzonite, trachy-andesite, diorite, andesite, intermediate tuff, alluvial cracking clays (not black)',
+          7, 'Mafic', 'Gabbro, dolerite, basalt, mafic tuff, amphibolite, alluvial black cracking clays',
+          8, 'Ultramafic', 'Serpentinite, dunite, peridotite, tremolite-chlorite-talc schists',
+          9, 'Calcareous', 'Limestone, dolomite, calcareous shale, calcareous sands',
+          10, 'Sesquioxide', 'Laterite, bauxite, ferruginous sandstone, ironstone',
+          11, 'Organic', 'Peat, coal, humified vegetative matter',
+          12, 'Evaporite', 'Gypsum, halite, anhydrite')
+        
+tbl_ss_sio2lith <- gt(dat_ss_sio2lith) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_ss_sio2lith
+```
+
+This system can be applied to the New Zealand context relatively easily, although class [**10**]{style="color: red"} may be very rare. Iron sands would map to one of classes [**6**]{style="color: red"} to [**8**]{style="color: red"}, depending on deposit purity.
+
+-   Folk 1970, blair and mcpherson 1999
+-   juilleret subsolum stuff
 
 ## Parent material origin
 
-- cross reference to active geomorphic agent from landscape section
-- code list from NZSC level 4
+Parent material origin, or mode of emplacement, describes how soil parent materials have arrived at the point of observation. Multiple modes may have operated in different parts of the soil profile, in which case these codes may also be employed on a horizon basis.
 
+```{r}
+#| label: tbl-ss-pmo
+#| tbl-cap: "Parent material origin"
+
+dat_ss_pmo <-
+  tribble(~Code, ~Name, ~Description,
+          'AN', 'Anthropic', 'Deposits made by the direct actions of humans, including truncation, mixing, or deposition.',
+          'CL', 'Colluvium', 'Weathered soil and rock material mantling slopes that has been transported primarily by gravity and sheet wash.',
+          'FL', 'Alluvium', 'Sediments that have been deposited by streams, rivers and other running water.',
+          'GL', 'Glacial till', 'Poorly stratified, poorly sorted gravel, sand and mud, surface or near-surface deposits resulting from the transportation by and deposition from ice or meltwater from beneath or in close proximity to glacial ice.',
+          'LC', 'Lacustrine', 'Formed in and around lake beds; comprising extremely fine sediment deposited under very low-flow freshwater conditions.',
+          'MR', 'Marine' , 'Unconsolidated sediments saturated by brackish or saline water.',
+          'LH', 'Lahar', 'A flow of volcanic material, both ash and coarser products, mixed with water; often caused by the spilling over of a crater lake. Also used to describe the mounds formed on volcanic ring-plains where lahars stop.',
+          'TP', 'Tephra', 'A general term for all solid (rather than molten) materials ejected from a volcano during an eruption: includes boulders, lapilli and ash.',
+          'LI', 'Litter', 'Partly or fully decomposed forest litter, equal to or greater than 30 cm depth that is **not** almost continually saturated in the natural state (**F** and **H** horizons).',
+          'PT', 'Peat', 'Partly decomposed plant remains in a water-saturated environment, such as a bog',
+          'LO', 'Loess', 'A blanket deposit of silt-sized particles (0.002--0.06 mm diameter); usually carried by wind from dry riverbeds or outwash plains during glacial and post-glacial periods.',
+          'SA', 'Aeolian sand', 'Wind-deposited sand-sized particles (0.05--2.0 mm diameter), i.e. dune sand.',
+          'RW', 'Highly Weathered Rock', 'Highly to completely weathered rock, formed in place by chemical weathering.',
+          'RX', 'Rock', '*In situ* unweathered to moderately weathered lithified geologic material comprising one or more minerals showing rock structure.'
+          )
+
+tbl_ss_pmo <- gt(dat_ss_pmo) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20))
+
+tbl_ss_pmo
+```
+
+Parent material origin is not currently part of the NZSC, but was recognised as necessary for adequately grouping soil siblings for mapping purposes not long after the publication of Webb and Lilburne [-@webb2011]. As such it is currently recorded when describing soils for S-Map.
