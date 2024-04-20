@@ -1,26 +1,51 @@
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+library(gtExtras)
+```
+
 # Land surface
 
--   scale is landform - immediate surrounds
+The land surface at a site is assessed at the landform scale.
 
 ## Surface cover
 
--   record components as percent composition of the following categories:
-    -   bare ground (sediment or soil, \<2mm)
-    -   bare rock fragments, shells, or bones
-    -   bare rock outcrop
-    -   open water/ice/snow
-    -   peat
-    -   dry leaf litter (includes seed pods)
-    -   grass/moss/herbs/annual crops
-    -   stems/trunks/roots/perennial crops
-    -   sealed (building, concrete, asphalt etc.)
-    
-[Turn the above into a 3x3 grid with labels underneath conceptual diagrams]{style="background-color:lightgreen"}
+Record the following generalised surface cover components as a percentage composition of the area surrounding a point observation, or the area within a sampling plot.
 
--   record only to nearest 5-10%, no need to get carried away. It will be unusual to encounter more than three components at any one site.
--   this should be able to be connected back to landform characteristics - don't repeat yourself here by e.g. recording lithology again
+```{r}
+#| label: tbl-pr-surfcov
+#| tbl-cap: "Surface cover types"
 
-[unresolved: assess to what height? I'm thinking like, 20cm tops]{style="background-color:lightgreen"}
+dat_pr_surfcov <-
+  tribble(~Code, ~Name, ~Description,
+          'BE', 'Bare earth', 'Sediment or soil, < 2 mm', 
+          'BR', 'Bare rock', 'Rock fragments, shells, or bones, > 2 mm',
+          'BO', 'Outcrop', 'Bare rock outcrop',
+          'WT', 'Water', 'Open water, ice or snow',
+          'PT', 'Peat', 'Plant material decomposing under wet to saturated conditions',
+          'LH', 'Litter', 'Plant material decomposing under dry to moist conditions',
+          'GR', 'Small plants', 'Grass, herbs, moss, sedges, annual crops',
+          'TR', 'Large plants', 'Shrubs, trees (stems and roots), perennial crops',
+          'SL', 'Sealed', 'Building, concrete, asphalt and similar')
+
+tbl_pr_surfcov <- gt(dat_pr_surfcov) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20))
+
+tbl_pr_surfcov
+```
+
+[GRAPHIC: Turn the above into a 3x3 grid with labels underneath conceptual diagrams]{style="background-color:lightgreen"}
+
+These parameters should be recorded only to nearest 5-10%. It will be unusual to encounter more than three components at any one site.
 
 ```{r}
 
@@ -30,23 +55,127 @@
 
 ```
 
-## Surface condition
-
--   aus list should be ok - but that requires dry conditions, something of an issue in NZ
--   include crusts here
-
 ## Surface cracking
 
--   modal width
--   modal distance
--   spatial arrangement (note connection to freeze-thaw, slip)
--   note: WRB includes crack persistence but this might be a problem - speculative
--   note: requires season and recent weather data for context
+Soil surface cracking can occur for a number of reasons:
+
+-   Soil parent material includes shrink-swell clays.
+-   Sediment originally deposited underwater (e.g. during a flood) cracks on drying out.
+-   Cracks can be induced by mass movement or earthquakes.
+
+Within the landform, record surface crack presence/persistence using the codes in @tbl-pr-cracktype. If present, record spatial arrangement using the codes in @tbl-pr-crackshape. For detailed descriptions, report median width and spacing between cracks in cm.
+
+e.g. [**RT P 0.5 cm, 15 cm**]{style="color: red"} for surface cracking patterns common to Vertic Melanic soils.
+
+```{r}
+#| label: tbl-pr-cracktype
+#| tbl-cap: "Crack persistence (WRB 2022)"
+
+dat_pr_cracktype <-
+  tribble(~Code, ~Name, ~Description,
+          'NO', 'No surface cracks', NA, 
+          'RT', 'Reversible cracks', 'Cracks that open and close with changing soil moisture',
+          'IT', 'Irreversible cracks', 'Cracks that persist year-round')
+
+tbl_pr_cracktype <- gt(dat_pr_cracktype) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_pr_cracktype
+```
+
+```{r}
+#| label: tbl-pr-crackshape
+#| tbl-cap: "Crack spatial arrangement (WRB 2022)"
+
+dat_pr_crackshape <-
+  tribble(~Code, ~Name, ~Description,
+          'P', 'Polygonal', 'Surface cracks forming closed shapes on the land surface', 
+          'L', 'Linear', 'Surface cracks running roughly parallel to each other',
+          'I', 'Irregular', 'Surface cracks with no discernible pattern')
+
+tbl_pr_crackshape <- gt(dat_pr_crackshape) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_pr_crackshape
+```
+
+::: callout-note
+Recent weather data is useful for interpreting surface crack information. See @sec-ss-recentrain.
+:::
 
 ## Surface water
 
--   (where known)
--   flood frequency basically (use wrb list)
+Where surface water is present within the landform, as well as noting its areal dominance above, note the type and degree of persistence using the codes in @tbl-pr-swater and @tbl-pr-swatert below. 
+
+```{r}
+#| label: tbl-pr-swater
+#| tbl-cap: "Surface water character (WRB 2022)"
+
+dat_pr_swater <-
+  tribble(~Code, ~Name, ~Description,
+          'S', 'Seawater', 'Saline ocean or brackish tidal waters', 
+          'I', 'Surface water', 'Waters flowing over the surface from further inland',
+          'G', 'Groundwater', 'Waters rising from adjacent springs or an elevated natural water table',
+          'R', 'Rainfall', 'Rain falling on or near the site and perching on the surface',
+          'A', 'Anthropic', 'Water from a manmade discharge location or backing up behind a dam')
+
+tbl_pr_swater <- gt(dat_pr_swater) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_pr_swater
+```
+
+```{r}
+#| label: tbl-pr-swater
+#| tbl-cap: "Surface water persistence (WRB 2022)"
+
+dat_pr_swater <-
+  tribble(~Code, ~Name, ~Description,
+          'P', 'Permanent', 'Surface water persists year-round', 
+          'S', 'Seasonal',  'Surface water is present during wet seasons',
+          'T', 'Temporary', 'Surface water is present due to a specific event')
+
+tbl_pr_swater <- gt(dat_pr_swater) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_pr_swater
+```
 
 ## Microrelief
 
