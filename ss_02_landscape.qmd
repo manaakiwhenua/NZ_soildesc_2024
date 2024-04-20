@@ -32,9 +32,9 @@ Relief is usually best determined from a DEM, but can be estimated in the field.
 
 ### Characteristic slope
 
-The characteristic slope is the most common range of slopes within a regional landscape. These are often controlled by local geology. This measure is often expressed as the modal value among a set of slope classes, but can also be expressed as a median value plus or minus an appropriate range (e.g. 1 standard deviation to capture 68% of slopes in a landscape).
+The characteristic slope is the most common range of slopes within a regional landscape. These are often controlled by local geology. This measure is often expressed as the modal value of local slope classes, but can also be expressed as a median value in degrees, plus or minus an appropriate range (e.g. 1 standard deviation to capture 68% of slopes in a landscape).
 
-Characteristic slope is usually best determined from a DEM-derived slope dataset, but can be estimated in the field. Record as a \[low, high\] range of degrees.
+Characteristic slope is usually best determined from a DEM-derived slope dataset, but can be estimated in the field. Record in the field as a \[low, high\] range of degrees.
 
 ### Drainage pattern
 
@@ -52,13 +52,24 @@ Characteristic slope is usually best determined from a DEM-derived slope dataset
 
 ### Slope
 
-Slope is the inclination of the land surface relative to the horizontal plane. Slope steepness affects many soil processes, notably water runoff and infiltration behaviour.
+Slope is the inclination of the land surface relative to the horizontal plane. Slope steepness affects many soil processes, notably water run-off and infiltration behaviour.
 
-Direct measurements of slope should be taken at the landform scale over a minimum distance of 20 meters. Stand 10m upslope from the soil site and measure downhill. Record in units of degrees, with a maximum precision of 0.1. Precision needs will vary with slope and survey purpose; whole number degrees are fine on any slope over about 5 degrees, but finer gradations can be useful for defining low-relief landforms, e.g. on alluvial plains.
+Direct measurements of slope should be taken at the landform scale, over a minimum distance of 20 meters. Stand 10 m up-slope from the soil site and measure downhill. Record in units of degrees, with a maximum precision of 0.1. Precision needs will vary with slope and survey purpose; whole number degrees are fine on any slope over about 5 degrees, but finer gradations can be useful for defining low-relief landforms.
 
 Slope classes may be applied to the recorded data; some options are presented in @sec-slopeclass.
 
 -   TODO Note about getting slope from DEM
+
+::: callout-note
+## Extracting slope from DEMs
+
+Slope data for a site can be extracted from a DEM, provided some conditions are met:
+
+-   Cell size should be less than 10 m; larger cells systematically underestimate local slope
+-   DEM source should ideally be of type [**D**]{style="color: red"} for acceptable accuracy (see @sec-loc-abs-elev)
+-   Extract the median slope within a 20 m radius, not the single value directly under the recorded point
+-   Review and, if necessary, adjust slopes extracted from sites described on exposures. These may be overestimates (e.g. where a track cuts into a slope, the values upslope behind the site would better represent the landform). Similarly, sites close to landform or landscape boundaries may also need review.
+:::
 
 ### Aspect
 
