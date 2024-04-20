@@ -73,7 +73,7 @@ Slope data for a site can be extracted from a DEM, provided some conditions are 
 
 ### Aspect
 
-Aspect is the direction a slope faces. Slope aspect helps determine exposure to sun, rain and prevailing winds, and so influences the biome growing in a particular soil. In some environments it also helps determine how much new material is received by aeolian or fluvial deposition.
+Aspect is the direction a slope faces. Slope aspect helps determine exposure to sun, rain and prevailing winds, and so influences the biome growing in a particular soil. In some environments it also helps determine how much new material is received by deposition.
 
 Aspect should be measured at the same time and over the same transect as slope. Record aspect in whole degrees clockwise from North, using the range \[0-359\] (360 == 0). Use NA for flat ground. Use NR if unable to record.
 
@@ -86,7 +86,7 @@ For rapid assessment, record compass bearing on an 8 or 16 point scale (e.g. NE,
 
 The following is adapted from [@nationalcommitteeonsoilandterrain2009, pp. 19-26].
 
-Landform elements can be assigned to a morphological type - one of a series of raw shapes - at the scale of observation. These are:
+Landform elements can be assigned to a morphological type - one of a series of simple shapes - at the scale of observation. These are:
 
 ```{r}
 #| label: tbl-hr-elemmorph
@@ -120,7 +120,7 @@ tbl_hr_elemmorph
 
 Note that these are paired mirror images, e.g. a closed depression is the opposite of a crest. Each morphological type extends to a break of slope or point of 0-curvature.
 
-Slopes can be further refined by including additional information appended about their relationship to their neighbouring elements. Up and down slope, four options are available.
+Slopes can be further refined by including information about their relationship to their neighbouring elements. Up and down slope, four options are available.
 
 ```{r}
 #| label: tbl-hr-slopeinc
@@ -148,7 +148,7 @@ tbl_hr_slopeinc
 
 ```
 
-Two more are available across the slope.
+Three more are available across the slope.
 
 ```{r}
 #| label: tbl-hr-slopeenc
@@ -159,7 +159,8 @@ Two more are available across the slope.
 dat_hr_slopeenc <-
   tribble(~Code, ~Name, ~Description,
           'L', 'Enclosed', 'Adjacent slope elements face towards each other',
-          'E', 'Exposed', 'Adjacent slope elements face away from each other')
+          'E', 'Exposed', 'Adjacent slope elements face away from each other',
+          'F', 'Flat', 'Adjacent slope elements face the same direction')
 
 tbl_hr_slopeenc <- gt(dat_hr_slopeenc) |>
    tab_options(
@@ -188,7 +189,7 @@ The length of a slope element is measured downslope, and provides information on
 
 ### Mesoscale topographic index
 
-The Mesoscale Topographic Index (MTI) [@hurst2007, p. 32] is a simple measure of how sheltered or exposed a location is within a landscape. To measure in-field, use a compass and clinometer to measure angle to the horizon at the 8 cardinal compass bearings. Record positive values if looking up and negative when looking down. The index formula is then `(average)/-1`, with high values signifying a sheltered area and low values signifying exposure.
+The Mesoscale Topographic Index (MTI) [@hurst2007, p. 32] is a measure of how sheltered or exposed a location is within a landscape. To measure in the field, use a compass and clinometer to measure angle to the horizon at the 8 cardinal compass bearings. Record positive values if looking up and negative when looking down. The index formula is then `(average)/-1`, with high values signifying a sheltered area and low values signifying exposure.
 
 ::: callout-tip
 The closest automated equivalents of the MTI appear to be the 'Morphometric Protection Index' (MPI) as implemented in SAGA-GIS [@yokoyama2002; @conrad2015], and the 'intensity' output of the 'Geomorphons' module as implemented in GRASS-GIS [@jasiewicz2013; @grassdevelopmentteam2023]. In the case of geomorphon intensity, the output also reports the mean relative elevation in meters of the 8 defining points rather than their average angles above or below the central point.
