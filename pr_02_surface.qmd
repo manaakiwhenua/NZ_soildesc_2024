@@ -179,6 +179,38 @@ tbl_pr_swater
 
 ## Microrelief
 
+Microrelief occurs within a landform, so its components are smaller than the landform itself - usually too small to be sensed remotely. Microrelief emerges from slope processes, biota and climate effects. Its presence helps signify particular soil types and influences many small-scale soil processes such as local water infiltration, accumulation of surface litter, and topsoil development.
+
+Record the dominant microrelief type using the codes in @tbl-pr-micreltype. For detailed descriptions, record the average height and spacing of repeating microrelief elements in cm.
+
+```{r}
+#| label: tbl-pr-micreltype
+#| tbl-cap: "Types of microrelief (Aus 2023 and WRB 2022)"
+
+dat_pr_micreltype <-
+  tribble(~Code, ~Name, ~Description,
+          'N', 'None',   'Landform surface is naturally smooth or level', 
+          'G', 'Gilgai', 'Induced by shrink-swell clay activity',
+          'S', 'Swamp',  'Hummocky landforms common in wetland areas, derived by biotic activity',
+          'K', 'Karst',  'Induced by subsurface collapse in limestone-dominated landscapes',
+          'A', 'Animal', 'Terracettes, trampling or pugging induced by larger animals (cows, pigs, ungulates)',
+          'F', 'Frost',  'Induced by freeze-thaw activity')
+
+tbl_pr_micreltype <- gt(dat_pr_micreltype) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_pr_micreltype
+```
+
 -   get something a bit simpler out of the aus and wrb systems
 -   nz - creep and slump features, terracettes, etc
 
