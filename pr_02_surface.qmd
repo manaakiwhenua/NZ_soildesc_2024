@@ -55,6 +55,62 @@ These parameters should be recorded only to nearest 5-10%. It will be unusual to
 
 ```
 
+## Surface water
+
+Where surface water is present within the landform, as well as noting its areal dominance above, note the type and degree of persistence using the codes in @tbl-pr-swater and @tbl-pr-swatert below.
+
+```{r}
+#| label: tbl-pr-swater
+#| tbl-cap: "Surface water character (WRB 2022)"
+
+dat_pr_swater <-
+  tribble(~Code, ~Name, ~Description,
+          'S', 'Seawater', 'Saline ocean or brackish tidal waters', 
+          'I', 'Surface water', 'Waters flowing over the surface from further inland',
+          'G', 'Groundwater', 'Waters rising from adjacent springs or an elevated natural water table',
+          'R', 'Rainfall', 'Rain falling on or near the site and perching on the surface',
+          'A', 'Anthropic', 'Water from a manmade discharge location or backing up behind a dam')
+
+tbl_pr_swater <- gt(dat_pr_swater) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_pr_swater
+```
+
+```{r}
+#| label: tbl-pr-swater
+#| tbl-cap: "Surface water persistence (WRB 2022)"
+
+dat_pr_swater <-
+  tribble(~Code, ~Name, ~Description,
+          'P', 'Permanent', 'Surface water persists year-round', 
+          'S', 'Seasonal',  'Surface water is present during wet seasons',
+          'T', 'Temporary', 'Surface water is present due to a specific event')
+
+tbl_pr_swater <- gt(dat_pr_swater) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_pr_swater
+```
+
 ## Surface cracking
 
 Soil surface cracking can occur for a number of reasons:
@@ -121,65 +177,14 @@ tbl_pr_crackshape
 Recent weather data is useful for interpreting surface crack information. See @sec-ss-recentrain.
 :::
 
-## Surface water
-
-Where surface water is present within the landform, as well as noting its areal dominance above, note the type and degree of persistence using the codes in @tbl-pr-swater and @tbl-pr-swatert below. 
-
-```{r}
-#| label: tbl-pr-swater
-#| tbl-cap: "Surface water character (WRB 2022)"
-
-dat_pr_swater <-
-  tribble(~Code, ~Name, ~Description,
-          'S', 'Seawater', 'Saline ocean or brackish tidal waters', 
-          'I', 'Surface water', 'Waters flowing over the surface from further inland',
-          'G', 'Groundwater', 'Waters rising from adjacent springs or an elevated natural water table',
-          'R', 'Rainfall', 'Rain falling on or near the site and perching on the surface',
-          'A', 'Anthropic', 'Water from a manmade discharge location or backing up behind a dam')
-
-tbl_pr_swater <- gt(dat_pr_swater) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20)) |>
-  sub_missing(missing_text = '')
-
-tbl_pr_swater
-```
-
-```{r}
-#| label: tbl-pr-swater
-#| tbl-cap: "Surface water persistence (WRB 2022)"
-
-dat_pr_swater <-
-  tribble(~Code, ~Name, ~Description,
-          'P', 'Permanent', 'Surface water persists year-round', 
-          'S', 'Seasonal',  'Surface water is present during wet seasons',
-          'T', 'Temporary', 'Surface water is present due to a specific event')
-
-tbl_pr_swater <- gt(dat_pr_swater) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20)) |>
-  sub_missing(missing_text = '')
-
-tbl_pr_swater
-```
 
 ## Microrelief
 
-Microrelief occurs within a landform, so its components are smaller than the landform itself - usually too small to be sensed remotely. Microrelief emerges from slope processes, biota and climate effects. Its presence helps signify particular soil types and influences many small-scale soil processes such as local water infiltration, accumulation of surface litter, and topsoil development.
+Microrelief occurs within a landform, so its components are smaller than the landform itself - usually too small to be sensed remotely. Its presence helps signify particular soil types and influences many small-scale soil processes such as local water infiltration, accumulation of surface litter, and topsoil development.
+
+### Natural Microrelief
+
+Natural microrelief emerges from slope processes, biotic activity and climate effects. 
 
 Record the dominant microrelief type using the codes in @tbl-pr-micreltype. For detailed descriptions, record the average height and spacing of repeating microrelief elements in cm.
 
@@ -211,9 +216,38 @@ tbl_pr_micreltype <- gt(dat_pr_micreltype) |>
 tbl_pr_micreltype
 ```
 
--   get something a bit simpler out of the aus and wrb systems
--   nz - creep and slump features, terracettes, etc
+### Anthropogenic microrelief
 
-## Anthropogenic alterations
+Small-scale human alterations to the soil surface are common in agricultural areas (current and former). These include creation of some microrelief, but more commonly its removal. 
 
--   start with WRB list but needs some development/local tuning
+Record the dominant anthropogenic microrelief type using the codes in @tbl-pr-amicreltype. For detailed descriptions, record the average height and spacing of repeating elements in cm.
+
+```{r}
+#| label: tbl-pr-amicreltype
+#| tbl-cap: "Types of Anthropogenic microrelief (Aus 2023 and WRB 2022)"
+
+dat_pr_micreltype <-
+  tribble(~Code, ~Name, ~Description,
+          'N', 'None',        'Landform surface is unaltered by humans', 
+          'S', 'Smoothed',    'Landform surface has been smoothed, infilled or levelled',
+          'R', 'Raised Beds', 'Elevated areas have been created for specific crops',
+          'T', 'Terraces and tracks', 'Hillsides have been cut/filled into terraces, or tracks cut in across the slope',
+          'D', 'Drained',     'Open drainage ditches have been installed'
+          # might be a few more to go here...
+          )
+
+tbl_pr_micreltype <- gt(dat_pr_micreltype) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_pr_micreltype
+```
+
