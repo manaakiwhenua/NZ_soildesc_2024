@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Profile properties
 
 ```{r}
@@ -8,6 +13,7 @@ library(gtExtras)
 ```
 
 Intro/context statement goes here
+None of this necessarily needs to be done in the field but it is a good skill to have for rapid assessment.
 
 ## NZSC Family
 
@@ -19,7 +25,7 @@ The soil profile material code comprises a brief summary of the overall characte
 
 @tbl-in-pmat below defines the available classes and should be used as a key. For Organic soils, skip the 'M' codes and start at [**Sl**]{style="color: red"}.
 
-Applying the key accurately requires familiarity with the major NZSC diagnostic criteria. Links to glossary definitions are provided below, but the source material [@hewitt2010] should also be consulted.
+Applying the key accurately requires familiarity with the major NZSC Diagnostic Criteria. Links to glossary definitions are provided below, but the source material [@hewitt2010] should also be consulted.
 
 ```{r}
 #| label: tbl-in-pmat
@@ -62,8 +68,8 @@ tbl_in_pmat
 Rock class in an NZSC Family context uses the lithology codes in @tbl-ss-pm, with specific restrictions around how they are applied to the whole profile:
 
 -   Rock class is only defined in reference to stones \> 2 mm and bedrock (where encountered within 100 cm). The rock class of the fine earth fraction is accounted for elsewhere.
--   The 'deep and stoneless' classes ([**Mt**]{style="color: red"}, [**Md**]{style="color: red"}, [**So**]{style="color: red"} and [**Sd**]{style="color: red"}) can still have up to a total of \< 3% by volume stones in the top 100 cm.
--   Include pumice in rock class only where pumice strength is more than 'extremely weak' [@lynn1991, p. 10] - i.e., it can only be broken by hand with difficulty. If the pumice's lithology is uncertain, use the dominant lithology of the volcano of origin (e.g. [**Rh**]{style="color: red"} in the Taupō Volcanic Centre and [**An**]{style="color: red"} around Taranaki).
+-   The 'deep and stoneless' classes ([**Mt**]{style="color: red"}, [**Md**]{style="color: red"}, [**So**]{style="color: red"} and [**Sd**]{style="color: red"}) can still have a total of \< 3% by volume stones in the top 100 cm.
+-   Include pumice in rock class only where pumice strength is more than 'extremely weak' [@lynn1991, p. 10] - i.e., it can only be broken by hand with difficulty. If the pumice's lithology is uncertain, use the dominant lithology of the probable volcano of origin (e.g. [**Rh**]{style="color: red"} in the Taupō Volcanic Centre and [**An**]{style="color: red"} around Taranaki).
 -   Where in-profile stone lithology contrasts with bedrock lithology, two codes separated by '[**/**]{style="color: red"}' can be used e.g. [**Sc/Gw**]{style="color: red"}.
 -   Where two lithologies are close to co-dominant in a stony profile, two codes separated by '[**+**]{style="color: red"}' can be used e.g. [**An+Rh**]{style="color: red"}.
 -   More complicated combinations are not allowed, e.g. no [**An+Rh/Gw**]{style="color: red"}.
@@ -79,27 +85,162 @@ The same rock class codes in @tbl-ss-pm can be applied to report the dominant li
 -   Where two lithologies are close to co-dominant, two codes separated by '[**+**]{style="color: red"}' can be used e.g. [**An+Rh**]{style="color: red"}.
 -   More complicated combinations are not allowed, e.g. no [**An+Rh/Sm+Ss/Gw**]{style="color: red"}.
 
-## Drainage
+## NZSC Sibling
+
+These codes help define level 5 of the NZSC.
+
+### Soil Depth {#sec-in-sibdepth}
+
+Soil depth from a sibling perspective is the depth to where digging becomes difficult, e.g.
+
+-   A horizon with ≥ 35% stones by volume (**V** or **X** functional horizons)
+-   A soft- or hard-rock surface (**M** rooting barrier)
+-   A shattered-lithic contact (**F** rooting barrier)
+-   A pan (**Q** functional horizons)
+-   Firm strength with massive or coarse structure (**\*Cf** functional horizons)
+
+Use the codes in @tbl-in-sibdepth to assign a depth class to a profile.
+
+```{r}
+#| label: tbl-in-sibdepth
+#| tbl-cap: "Sibling depth classes"
+#| classes : no-stripe
+
+dat_in_sibdepth <-
+  tribble(~Code, ~Name, ~Description, 
+         'd', 'Deep', '> 100 cm', 
+         'md', 'Moderately deep', '≥ 45 - < 100 cm',
+         's', 'Shallow', '≥ 20 - < 45 cm',
+         'vs', 'Very Shallow' , '< 20 cm')
+
+tbl_in_sibdepth <- gt(dat_in_sibdepth) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~ pct(40))
+  
+tbl_in_sibdepth
+
+```
+
+### Topsoil stoniness
+
+Topsoil stoniness assesses the amount of rock fragments (as % by volume) in the top 20 cm of the soil profile, including those resting on the soil surface.
+
+A weighted average calculation is required if the top 20 cm contains more than one horizon. As an example, 
+
+
+    | Horizon Thickness (cm) | Relevant thickness (cm) | Horizon proportion of top 20 cm | Horizon stone (%) | Weighted average topsoil stone (%) |
+    |------------------------|-------------------------|---------------------------------|-------------------|------------------------------------|
+    | 12                     | 12                      | 0.6                             | 15                | 9                                  |
+    | 20                     | 8                       | 0.4                             | 25                | 10                                 |
+    |                        |                         |                                 |                   | **19 (Class 3)**                   |
+
+Use the codes in @tbl-in-sibstone to assign stoniness. 
+
+```{r}
+#| label: tbl-in-sibstone
+#| tbl-cap: "Sibling topsoil stoniness classes"
+#| classes : no-stripe
+
+dat_in_sibstone <-
+  tribble(~Code, ~Name, ~Description, 
+         '1', 'Stoneless', '< 1 %', 
+         '2', 'Slightly stony', '≥ 1 - < 5 %',
+         '3', 'Moderately stony', '≥ 5 - < 35 %',
+         '4', 'Very stony' , '≥ 35 % ')
+
+tbl_in_sibstone <- gt(dat_in_sibstone) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~ pct(40))
+  
+tbl_in_sibstone
+```
+
+### Sibling texture classes
+
+These classes are assessed over the top 100 cm, or to rock or gravel layer contact if those are shallower. Note that this is deeper than the family-level texture control section. The following rules apply:
+
+-   **Mf**, **Mr**, **Ma**, **Ml**, and **Mp** soils must match their family texture code (**c**, **s**, **l**, or **z**).
+-   **Sl** and **Sp** soils must use one of **Tp**, **Tc**, **Tl** or **Ts** to align with their family texture code of **p**.
+-   **Sd** soils must use **Tp**.
+-   Upper and lower textures can be defined for other soil profile classes, but only the dominant two are recorded. Both contributing layers must be at least 20 cm thick.
+-   When there are more than two texture layers within the control section, then the texture profile is identified according to the uppermost texture contrast.
+    -   For example, if a sandy horizon occurs at 80 cm depth and a clayey horizon overlays a silty horizon at 40 cm, then the texture contrast is reported as clayey over silty (**c/z**) and the sandy layer is ignored.
+-   Silty and loamy horizons are not considered contrasting and can be added together where contiguous.
+    -   For example, a profile with silty (0--15 cm) over loamy (15--25 cm) over sandy (25-90 cm) is considered to have a contrasting upper layer of 25 cm, and is identified as silty over sandy (**z/s**). The texture specification uses the uppermost of the silty or loamy layers together with the lower layer.
+-   Skeletal horizons (**k**) may only be used for **Ms**, **Mm**, **Mt** and **So** soils. The skeletal material must be non-tephric.
+-   Skeletal horizons in moderately deep gravelly soils (**Mg**) are ignored in favour of describing the overlying fine sediments.
+
+Use the codes in @tbl-in-sibtexture to assign sibling level texture class(es). 
+
+```{r}
+#| label: tbl-in-sibtexture
+#| tbl-cap: "Sibling texture classes"
+#| classes : no-stripe
+
+dat_in_sibtexture <-
+  tribble(~Code, ~Name, ~Org, ~Silt, ~Clay, ~Stone, 
+           'k', 'Skeletal',                  NA,     NA,            NA, '≥ 35',
+          'Tp', 'Peat or litter',        '≥ 30',     NA,            NA, '< 35',
+          'Tc', 'Clayey peat',    '≥ 18 - < 30',     NA,        '≥ 35', '< 35',
+          'Tl', 'Loamy peat',     '≥ 18 - < 30',     NA,  '≥ 8 - < 35', '< 35',
+          'Ts', 'Sandy peat',     '≥ 18 - < 30', '< 40',         '< 8', '< 35', 
+          'c',  'Clayey',                '< 18',     NA,        '≥ 35', '< 35',
+          's',  'Sandy',                 '< 18', '< 40',         '< 8', '< 35',
+          'l',  'Loamy',                 '< 18', '< 40',  '≥ 8 - < 35', '< 35', 
+          'z',  'Silty',                 '< 18', '≥ 40',         '< 3', '< 35') 
+
+tbl_in_sibtexture <- gt(dat_in_sibtexture) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_label(Org ~ 'Organic Carbon %',
+             Silt ~ 'Silt %',
+             Clay ~ 'Clay %', 
+             Stone ~ 'Stone %')|>
+  sub_missing(missing_text = '') |>
+  cols_width(Code ~pct(10), Name ~ pct(30))
+  
+tbl_in_sibtexture
+```
+
+
+### Drainage {#sec-in-pdrng}
 
 Profile drainage is determined by the depth to the most poorly-drained horizon (see @tbl-in-intdrng). This horizon may be perched.
 
-
-
-@tbl-in-pdrng describes some potential additional signifier of drainage condition that might be considered. These may be useful when estimating drainage in a new landscape that has not yet been examined in detail.
+@tbl-in-pdrng describes some potential additional signifiers of drainage condition that might be considered. These may be useful when estimating drainage in a new landscape that has not yet been examined in detail.
 
 ```{r}
 #| label: tbl-in-pdrng
 #| tbl-cap: "Profile drainage signifiers"
 #| classes : no-stripe
 
-dat_hr_colorshort <-
+dat_in_profdrng <-
   tribble(~Code, ~Name, ~relel, ~Landform, ~Slope, ~Veg, ~Other, 
          'VP', 'Very poor', 'Very low (0-1m)', 'Waning/minimal/enclosed flats and depressions', 'Low-slope or level ground', 'Wetland plants', 'Persistent surface water ponding or seeps nearby',
          'PO', 'Poor', 'Low relative elevation (0-10m)', 'Waning/minimal slopes and flats', 'Low-slope or level ground', 'Wetland plants', 'Seasonal ponding or seeps nearby',
-         'SP', 'Slightly Poor', 'Variable relative elevation', 'Flat to moderate slopes', '', '', '',
-         'IP', 'Imperfect', 'Variable relative elevation', 'Flat to moderate slopes', '', '', '')
+         'IP', 'Imperfect', 'Variable relative elevation', 'Flat to moderate slopes', 'TBD...', '', '')
 
-tbl_hr_colorshort <- gt(dat_hr_colorshort) |>
+tbl_in_profdrng <- gt(dat_in_profdrng) |>
   tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
@@ -110,9 +251,14 @@ tbl_hr_colorshort <- gt(dat_hr_colorshort) |>
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(20), Name ~ pct(20))
   
-tbl_hr_colorshort
+tbl_in_profdrng
 
 ```
 
+Critical depths for profile drainage are as follows
+
+**table here**
 
 ## Permeability
+
+-   
