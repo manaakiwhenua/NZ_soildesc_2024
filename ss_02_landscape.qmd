@@ -159,8 +159,8 @@ Three more are available across the slope.
 dat_hr_slopeenc <-
   tribble(~Code, ~Name, ~Description,
           'L', 'Enclosed', 'Adjacent slope elements face towards each other',
-          'E', 'Exposed', 'Adjacent slope elements face away from each other',
-          'F', 'Flat', 'Adjacent slope elements face the same direction')
+          'X', 'Exposed', 'Adjacent slope elements face away from each other',
+          'E', 'Even', 'Adjacent slope elements face the same direction')
 
 tbl_hr_slopeenc <- gt(dat_hr_slopeenc) |>
    tab_options(
