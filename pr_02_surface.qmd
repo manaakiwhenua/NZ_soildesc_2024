@@ -57,11 +57,11 @@ These parameters should be recorded only to nearest 5-10%. It will be unusual to
 
 ## Surface water
 
-Where surface water is present within the landform, as well as noting its areal dominance above, note the type and degree of persistence using the codes in @tbl-pr-swater and @tbl-pr-swatert below.
+Where surface water is present within the landform, as well as noting its areal dominance above, note the type and degree of persistence using the codes in @tbl-pr-swater and @tbl-pr-swaterp below.
 
 ```{r}
 #| label: tbl-pr-swater
-#| tbl-cap: "Surface water character (WRB 2022)"
+#| tbl-cap: "Surface water character (adapted from WRB 2022)"
 
 dat_pr_swater <-
   tribble(~Code, ~Name, ~Description,
@@ -87,16 +87,16 @@ tbl_pr_swater
 ```
 
 ```{r}
-#| label: tbl-pr-swater
-#| tbl-cap: "Surface water persistence (WRB 2022)"
+#| label: tbl-pr-swaterp
+#| tbl-cap: "Surface water persistence (adapted from WRB 2022)"
 
-dat_pr_swater <-
+dat_pr_swaterp <-
   tribble(~Code, ~Name, ~Description,
           'P', 'Permanent', 'Surface water persists year-round', 
           'S', 'Seasonal',  'Surface water is present during wet seasons',
           'T', 'Temporary', 'Surface water is present due to a specific event')
 
-tbl_pr_swater <- gt(dat_pr_swater) |>
+tbl_pr_swaterp <- gt(dat_pr_swaterp) |>
    tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
@@ -108,7 +108,7 @@ tbl_pr_swater <- gt(dat_pr_swater) |>
   cols_width(Code ~pct(20), Name ~pct(20)) |>
   sub_missing(missing_text = '')
 
-tbl_pr_swater
+tbl_pr_swaterp
 ```
 
 ## Surface cracking
@@ -218,9 +218,9 @@ tbl_pr_micreltype
 
 ### Anthropogenic microrelief
 
-Small-scale human alterations to the soil surface are common in agricultural areas (current and former). These include creation of some microrelief, but more commonly its removal. 
+Small-scale human alterations to the soil surface are common in agricultural areas (current and former). These include creation of microrelief, but just as commonly its removal. 
 
-Record the dominant anthropogenic microrelief type using the codes in @tbl-pr-amicreltype. For detailed descriptions, record the average height and spacing of repeating elements in cm.
+Record the dominant anthropogenic microrelief type using the codes in @tbl-pr-amicreltype. For detailed descriptions of induced microrelief, record the average height and spacing of repeating elements in cm.
 
 ```{r}
 #| label: tbl-pr-amicreltype
@@ -228,9 +228,9 @@ Record the dominant anthropogenic microrelief type using the codes in @tbl-pr-am
 
 dat_pr_micreltype <-
   tribble(~Code, ~Name, ~Description,
-          'N', 'None',        'Landform surface is unaltered by humans', 
-          'S', 'Smoothed',    'Landform surface has been smoothed, infilled or levelled',
-          'R', 'Raised Beds', 'Elevated areas have been created for specific crops',
+          'N', 'None',        'Landform surface is not significantly altered by humans', 
+          'S', 'Smoothed',    'Landform surface has been smoothed, rock-picked, infilled or levelled, beyond normal tillage effects',
+          'R', 'Raised Beds', 'Elevated areas have been created and maintained for specific crops, e.g. raised rows or puke for kūmara',
           'T', 'Terraces and tracks', 'Hillsides have been cut/filled into terraces, or tracks cut in across the slope',
           'D', 'Drained',     'Open drainage ditches have been installed'
           # might be a few more to go here...
