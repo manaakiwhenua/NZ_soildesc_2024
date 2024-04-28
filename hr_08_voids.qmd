@@ -1,15 +1,73 @@
+
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+library(gtExtras)
+```
+
 # Voids
 
-- NB surface cracks already covered
+-   NB surface cracks already covered
 
 ## Pores
 
-- abundance 
-- macro v micro sizes
-- inferred origin
-- direct and indirect observation for connectivity
+-   abundance
+-   macro v micro sizes
+-   inferred origin
+-   direct and indirect observation for connectivity
 
 ## Other voids
 
-- non-infilled space between coarse gravels (assessed via packing)
-- spaces between dry peds (where shrink-swell is significant)
+-   non-infilled space between coarse gravels (assessed via packing)
+-   spaces between dry peds (where shrink-swell is significant)
+
+```{r}
+#| label: tbl-hr-cracktype
+#| tbl-cap: "Crack persistence (WRB 2022)"
+
+dat_hr_cracktype <-
+  tribble(~Code, ~Name, ~Description,
+          'NO', 'No cracks', NA, 
+          'RT', 'Reversible cracks', 'Cracks that open and close with changing soil moisture',
+          'IT', 'Irreversible cracks', 'Cracks that persist year-round')
+
+tbl_hr_cracktype <- gt(dat_hr_cracktype) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_hr_cracktype
+```
+
+```{r}
+#| label: tbl-hr-crackdepth
+#| tbl-cap: "Crack depth (WRB 2022)"
+
+dat_hr_crackdepth <-
+  tribble(~Code, ~Name, ~Description,
+          'AC', 'All', 'All cracks continue into the underlying layer', 
+          'HC', 'Most', 'At least half, but not all of the cracks continue into the underlying layer',
+          'SC', 'Some', 'At least one, but less than half of the cracks continue into the underlying layer',
+          'NC', 'None', 'Cracks do not continue into the underlying layer')
+
+tbl_hr_crackdepth <- gt(dat_hr_crackdepth) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20))
+
+tbl_hr_crackdepth
+```
