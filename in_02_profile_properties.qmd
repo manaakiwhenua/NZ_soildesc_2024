@@ -63,7 +63,7 @@ tbl_in_pmat
 
 ```
 
-### Rock Class of stone and bedrock
+### Rock class of stone and bedrock
 
 Rock class in an NZSC Family context uses the lithology codes in @tbl-ss-pm, with specific restrictions around how they are applied to the whole profile:
 
@@ -84,6 +84,89 @@ The same rock class codes in @tbl-ss-pm can be applied to report the dominant li
 -   Where a lithological discontinuity exists in the profile, two codes separated by '[**/**]{style="color: red"}' can be used e.g. [**Sc/Gw**]{style="color: red"}.
 -   Where two lithologies are close to co-dominant, two codes separated by '[**+**]{style="color: red"}' can be used e.g. [**An+Rh**]{style="color: red"}.
 -   More complicated combinations are not allowed, e.g. no [**An+Rh/Sm+Ss/Gw**]{style="color: red"}.
+
+### Family texture class
+
+The family texture class describes the dominant character of the top 60 cm, or to the profile material class-defining rock or gravel layer contact if that is shallower. Use the codes in @tbl-in-famtex. Note that 18% organic carbon corresponds to approximately 30% organic matter.
+
+```{r}
+#| label: tbl-in-famtex
+#| tbl-cap: "Family texture classes"
+#| classes : no-stripe
+
+dat_in_famtex <-
+  tribble(~Code, ~Name, ~Orgc, ~Silt, ~Clay, 
+         'c', 'Clayey', '< 18', NA, '≥ 35', 
+         's', 'Sandy', '< 18', '< 40', '< 8',
+         'l', 'Loamy', '< 18', '< 40', '≥ 8 - < 35',
+         'z', 'Silty' , '< 18', '≥ 40', '≥ 8 - < 35',
+         'p', 'Peaty', '≥ 18', NA, NA)
+
+tbl_in_famtex <- gt(dat_in_famtex) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_in_famtex
+
+```
+
+### Permeability class
+
+This class estimates the permeability of the top 100 cm in units of mm/hr. Use the codes in @tbl-in-famperm and follow the rules in @fig-in-famperm to assign permeability class.
+
+```{r}
+#| label: tbl-in-famperm
+#| tbl-cap: "Family permeability classes"
+#| classes : no-stripe
+
+dat_in_sibdepth <-
+  tribble(~Code, ~Name, ~Description, 
+         's', 'Slow', '< 4 mm/hr', 
+         'm', 'Moderate', '≥ 4 - < 72 mm/hr',
+         'r', 'Rapid', '≥ 72 mm/hr')
+
+tbl_in_sibdepth <- gt(dat_in_sibdepth) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~ pct(40))
+  
+tbl_in_sibdepth
+
+```
+
+Follow the flowchart to assign family permeability class:
+
+```{mermaid}
+%%| label: fig-in-famperm
+%%| fig-cap: "NZSC Family permeability flowchart"
+
+graph TD
+  A[Identify the uppermost horizon with the slowest permeability,<br />or rock above 100 cm. This is Horizon X.]-->B[Does Horizon X have > 30 cm of<br /> contrasting permeability above?]
+  B-->|Yes|C(Use m/s, r/s, r/m)
+  B--> |No|D["Does the profile have a horizon ≥ 20 cm thick"<br /> below Horizon X with a different permeability class?]
+  D-->|Yes|E(Use s/m, s/r or m/r)
+  D-->|No|F(Use s, m, or r)
+  
+```
+
+Some additional rules apply for particular soil profile material classes:
+
+-   For soils with an **S\*** profile material class, assess family permeability class from 20-100 cm or to rock (i.e. ignore the surface 20 cm).
+-   Soils with profile material class **Ml** or **Mp** and any soil with an '**M**' root barrier must use **m/s** or **r/s**.
+    -   Exception: **Ml** with **F** barrier can't be **\*/s**.
 
 ## NZSC Sibling
 
@@ -134,12 +217,35 @@ Topsoil stoniness assesses the amount of rock fragments (as % by volume) in the 
 
 A weighted average calculation is required if the top 20 cm contains more than one horizon. As an example, 
 
+```{r}
+#| label: tbl-in-sibdcalc
+#| classes : no-stripe
 
-    | Horizon Thickness (cm) | Relevant thickness (cm) | Horizon proportion of top 20 cm | Horizon stone (%) | Weighted average topsoil stone (%) |
-    |------------------------|-------------------------|---------------------------------|-------------------|------------------------------------|
-    | 12                     | 12                      | 0.6                             | 15                | 9                                  |
-    | 20                     | 8                       | 0.4                             | 25                | 10                                 |
-    |                        |                         |                                 |                   | **19 (Class 3)**                   |
+dat_in_sibdcalc <-
+  tribble(~hthick, ~relthick, ~prop, ~stonepc, ~wavgstone,
+          12, 12, 0.6, 15, 9,
+          20, 8, 0.4, 25,10,
+          NA, NA, NA, NA, 19)
+
+tbl_in_sibdcalc <- gt(dat_in_sibdcalc) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  cols_label(hthick ~ "Horizon Thickness (cm)",
+             relthick ~ "Relevant thickness (cm)",
+			       prop ~ "Horizon proportion of top 20 cm",
+             stonepc ~ "Horizon stone (%)",
+             wavgstone ~ "Weighted average topsoil stone (%)" ) |>
+  tab_style(style = list(cell_text(weight = 'bold')), 
+                         locations = cells_body(rows = 3, columns = 5)) |>
+  sub_missing(missing_text = '')
+  
+tbl_in_sibdcalc
+
+```
 
 Use the codes in @tbl-in-sibstone to assign stoniness. 
 
@@ -227,6 +333,40 @@ tbl_in_sibtexture
 
 Profile drainage is determined by the depth to the most poorly-drained horizon (see @tbl-in-intdrng). This horizon may be perched.
 
+```{r}
+#| label: tbl-in-intdrng
+#| tbl-cap: "Profile drainage rules"
+#| classes : no-stripe
+
+
+dat_in_intdrng <-
+  tribble(   
+    ~depth,      ~VP,          ~PO,          ~IP,          ~MW,      ~WE,
+  '0 - 15', 'PO, VP', 'MW, IP, PO', 'WE, MW, IP',     'WE, MW',     'WE',
+ '15 - 30',     'VP', 'MW, IP, PO', 'WE, MW, IP',     'WE, MW',     'WE',
+ '30 - 60',     'VP',     'PO, VP',     'IP, PO',     'WE, MW',     'WE',
+ '60 - 90',     'VP',     'PO, VP',     'IP, PO',     'MW, IP',     'WE',
+    '> 90',     'VP',     'PO, VP', 'IP, PO, VP', 'MW, IP, PO', 'WE, MW')
+
+tbl_in_intdrng <- gt(dat_in_intdrng) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_label (VP ~ 'Very Poor',
+              PO ~ 'Poor',
+              IP ~ 'Imperfect', 
+              MW ~ 'Moderately Well',
+              WE ~ 'Well',
+              depth ~ 'Depth (cm)')
+tbl_in_intdrng
+
+```
+
 @tbl-in-pdrng describes some potential additional signifiers of drainage condition that might be considered. These may be useful when estimating drainage in a new landscape that has not yet been examined in detail.
 
 ```{r}
@@ -236,9 +376,11 @@ Profile drainage is determined by the depth to the most poorly-drained horizon (
 
 dat_in_profdrng <-
   tribble(~Code, ~Name, ~relel, ~Landform, ~Slope, ~Veg, ~Other, 
-         'VP', 'Very poor', 'Very low (0-1m)', 'Waning/minimal/enclosed flats and depressions', 'Low-slope or level ground', 'Wetland plants', 'Persistent surface water ponding or seeps nearby',
-         'PO', 'Poor', 'Low relative elevation (0-10m)', 'Waning/minimal slopes and flats', 'Low-slope or level ground', 'Wetland plants', 'Seasonal ponding or seeps nearby',
-         'IP', 'Imperfect', 'Variable relative elevation', 'Flat to moderate slopes', 'TBD...', '', '')
+         'VP', 'Very poor', 'Very low (0-1m)', 'Waning/minimal/enclosed flats and depressions', 'Level to very gentle', 'Exclusively wetland plants', 'Persistent surface water ponding or seeps nearby',
+         'PO', 'Poor', 'Low (0-10m)', 'Waning/minimal slopes and flats', 'Low-slope or level ground', 'Wetland plants', 'Seasonal ponding or seeps nearby',
+         'IP', 'Imperfect', 'Variable', 'Slopes, hollows, flats in front of slopes', 'Gentle to moderately steep', '', '',
+         'MW', 'Moderately Well', 'Variable', 'footslopes and fans', 'Gentle to moderately steep', '' ,'',
+         'WE', 'Well', 'Moderate to high (>10 m)', 'crests, ridges and spurs', 'Gentle to very steep' , '', '' , '')
 
 tbl_in_profdrng <- gt(dat_in_profdrng) |>
   tab_options(
@@ -249,16 +391,11 @@ tbl_in_profdrng <- gt(dat_in_profdrng) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
+  cols_label(relel ~ 'elevation above local drainage',
+             Veg ~ 'Vegetation') |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_in_profdrng
 
 ```
 
-Critical depths for profile drainage are as follows
-
-**table here**
-
-## Permeability
-
--   
