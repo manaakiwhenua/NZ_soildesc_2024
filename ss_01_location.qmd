@@ -118,13 +118,13 @@ Alternate geocoding systems involving e.g. text-based encoding or nested hashes 
 
 ### Expected Error
 
-Expected horizontal error can be automatically reported by equipment, or estimated. When estimating, record in meters with a maximum precision of 0.01 (1 cm) e.g. [**± 5.1 m**]{style="color: red"}. Record expected vertical elevation error separately in the same units, as it will differ.
+Expected horizontal error can be automatically reported by equipment, or estimated. When estimating, record in meters with a maximum precision of 0.01 (1 cm) e.g. [**± 5.1 m**]{style="color: red"}. Record expected vertical elevation error separately in the same units, as it will differ.
 
 ::: callout-note
 Site location data quality can often be improved by revising the locations in GIS after fieldwork. Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error.
 :::
 
-### Temporal location {#sec-ss-dt}
+### Temporal {#sec-ss-dt}
 
 Record the date of observation using the ISO 8601 standard, [**YYYY-MM-DD**]{style="color: red"} [@internationalorganizationforstandardization]. Time is not essential but may be useful for correlating site descriptions with photographs.
 
@@ -136,7 +136,7 @@ Absolute locations are enhanced by information about what is nearby. This contex
 
 Elevation above the nearest down-slope drainage (open/flowing water, swampy ground, or a closed depression) is useful for landscape interpretations. The data can also be used to group site descriptions, for instance when identifying sets of related terraces along river systems. The drainage feature to record against must be identified by tracing a path down-slope from the observation point, and may be far from the point of observation. As such, it will normally be more efficient to estimate this parameter after fieldwork using elevation and imagery data.
 
-Record relative elevation in meters, with a precision of no more than 0.01 (1 cm).
+Record relative elevation in meters, with a precision of no more than 0.01 (1 cm).
 
 ::: callout-note
 With sufficiently detailed inputs, a Relative Elevation Model (REM) can be constructed to estimate this parameter, but will need to be ground-truthed.
@@ -144,15 +144,15 @@ With sufficiently detailed inputs, a Relative Elevation Model (REM) can be const
 
 ### Triangulating off local features
 
-Absolute location data can be backed up by measuring to nearby permanent or long-term features. This is particularly useful for relocating long-term monitoring plots. For this to work well, features should be within \~50m of the target location and sufficiently sturdy to last until at least the next expected visit. Examples include fencelines, buildings, roads, and rock outcrops.
+Absolute location data can be backed up by measuring to nearby permanent or long-term features. This is particularly useful for relocating long-term monitoring plots. For this to work well, features should be within \~50 m of the target location and sufficiently sturdy to last until at least the next expected visit. Examples include fencelines, buildings, roads, and rock outcrops.
 
 For single-point sites, measure distance and direction using a tape and compass. Accuracy is improved by measuring to two or more features. For plot-based sites, one can measure from at least two corners to the target feature. Photographing the point/plot and reference points together is also useful.
 
 [add a diagram here]{style="background-color:lightgreen"}
 
-### Longform descriptions
+### Long-form descriptions
 
-For observation points that will be revisited, record practical information about how to return. This may include landholder contact details and records of previous interactions, notes about track conditions, locked gates, and potential hazards like water crossings.
+For observation points that will be revisited, record practical information about how to return. This may include landholder contact details and records of previous interactions, notes about track conditions, locked gates, and potential hazards like water crossings. Spatial data recording the track from the nearest public road to the target location is particularly valuable.
 
 ### Administrative location
 
@@ -162,103 +162,11 @@ In New Zealand, relevant boundaries include Regional Council [@statsnz] and Terr
 
 ### Temporal
 
-Relative temporal data includes season and time since significant soil-influencing events. These can provide context for the parameters recorded, and some are especially useful when interpreting laboratory results.
-
-#### Season
-
-Season can be calculated from date of observation, so does not need to be recorded in the field.
-
-```{r}
-#| label: tbl-ss-seasons
-#| tbl-cap: "Seasons"
-
-dat_ss_seasons <-
-  tribble(~Code, ~Name, ~Description,
-          'SP', 'Spring', 'September to November',
-          'SU', 'Summer', 'December to February',
-          'AU', 'Autumn', 'March to May',
-          'WI', 'Winter', 'June to August')
-
-tbl_ss_seasons <- gt(dat_ss_seasons) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20))
-
-tbl_ss_seasons
-```
-
-#### Current Weather
-
-Record the current weather using the codes in @tbl-ss-weatherc, plus temperature in degrees Celsius. These are not always essential, but can affect colour recording and some field tests.
-
-```{r}
-#| label: tbl-ss-weatherc
-#| tbl-cap: "Current weather conditions, Schoeneberger et al. [-@schoeneberger2012], 1-1"
-
-dat_ss_weatherc <-
-  tribble(~Code, ~Name,
-          'SU', 'Sunny',
-          'PC', 'Partly cloudy',
-          'OV', 'Overcast',
-          'RA', 'Rain',
-          'SL', 'Sleet',
-          'SN', 'Snow')
-
-tbl_ss_weatherc <- gt(dat_ss_weatherc) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20))
-
-tbl_ss_weatherc
-```
-
-#### Recent rainfall {#sec-ss-recentrain}
-
-Record recent rainfall using the codes in @tbl-ss-weatherp.
-
-```{r}
-#| label: tbl-ss-weatherp
-#| tbl-cap: "Recent rainfall, adapted from FAO [-@un-fao2006], Table 2"
-
-dat_ss_weatherp <-
-  tribble(~Code, ~Name,
-          'NM', 'No rain in the last month',
-          'NW', 'No rain in the last week',
-          'ND', 'No rain in the last 24 hours',
-          'RD', 'Rain but no heavy rain in the last 24 hours',
-          'RH', 'Heavy rain for some days or excessive rain in the last 24 hours',
-          'RE', 'Extremely rainy or snow melting',
-          'UK', 'Unknown/uncertain')
-
-tbl_ss_weatherp <- gt(dat_ss_weatherp) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20))
-
-tbl_ss_weatherp
-```
-
-#### Other recent events
+Relative temporal data focuses on time since significant soil-influencing events. These can provide context for the parameters recorded, and some are especially useful when interpreting laboratory results.
 
 Only include recent events directly affecting the site. 'Recent' is a relatively flexible concept which highlights the reasons some parameters observed might be locally unusual. Some of these events recur regularly (e.g. tillage) so only need to be noted if very recent (e.g. previous week).
+
+If the time since the event is known with certainty, also record as number of days since the event.
 
 ```{r}
 #| label: tbl-ss-eventp

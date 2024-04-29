@@ -1,34 +1,183 @@
-# Climate
+# Climate and Weather
 
-- note: not weather! most of this is better off not measured in-field
-- note: limitations of available climate data, use local records where possible
-- talk about getting data from LENZ vs more local sources
-- calculation from terrain for insolation
+## Climate
 
-## Global-Regional
+-   note: most of this is better off not measured in-field
+-   note: limitations of available climate data, use local records where possible
+-   talk about getting data from LENZ vs more local sources
+-   calculation from terrain for insolation
 
-- Koppen
-- most work programs will take place within one zone
-- Season (WRB list)
+### Global-Regional
 
-## Local
+The Köppen-Geiger climate classification [@köppen1936] is the most well-known and accepted global system, and has been periodically updated (e.g. [@kottek2006; @beck2018; @beck2023]). Current maps and projections under various climate change scenarios are available from <https://www.gloh2o.org/koppen/>.
 
-### Rainfall regime
+In and around New Zealand, the Köppen regions that currently occur are listed in @tbl-ss-koppenz.
 
-- total annual
-- rainfall seasonality (mean/sd off monthly totals)
-- summer/winter ratio  (Dec+Jan+Feb)/(June+Jul+Aug)
+```{r}
+#| label: tbl-ss-koppenz
+#| tbl-cap: "Köppen climate regions of New Zealand and its neighbours"
 
-### Temperature regime
+dat_ss_koppenz <-
+  tribble(~Code, ~Name, ~Locations,
+          'Af', 'Tropical, rainforest', 'Pacific Islands e.g. Tonga, Samoa',
+          'Am' , 'Tropical, monsoon', 'Northwest coast of Fijian islands',
+          'Bsk', 'Arid, steppe, cold', 'Central Otago, Melbourne, Northwest Victoria',
+          'Cfa', 'Temperate, no dry season, hot summer', 'Coastal New South Wales and southern Queensland',
+          'Cfb', 'Temperate, no dry season, warm summer', 'Majority of New Zealand; Chatham Islands; coastal southeastern Australia; Tasmania',
+          'Cfc', 'Temperate, no dry season, cold summer', 'Small areas of North Island e.g. upper Ruahines; lower mountains in South Island e.g. Peel Range, Nelson',
+          'Dfb', 'Cold, no dry season, warm summer', 'Sheltered pockets in the Southern Alps',
+          'Dfc', 'Cold, no dry season, cold summer', 'Lower slopes of major volcanoes and the Southern Alps',
+          'ET', 'Polar, tundra', 'Upper slopes of major volcanoes and the Southern Alps',
+          'EF', 'Polar, frost', 'Antarctica')
 
-- mean annual, etc
-- frostiness
+tbl_ss_koppenz <- gt(dat_ss_koppenz) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10))
 
-### Insolation regime
+tbl_ss_koppenz
+```
 
-- day length average and variability
+!!! map goes here !!!
 
-### Prevailing winds
+Since most work programs will take place within one zone, regional climate rarely needs to be noted in the field.
 
-- direction, strength by season
-- rationale: aspect effects
+Where a study area appears to deviate from a regional map, the extent and nature of the deviation should be discussed in project reporting.
+
+### Local
+
+Various classifications specific to New Zealand have been produced [@robertson1956].
+
+NIWA have published a useful summary classification at https://niwa.co.nz/climate-and-weather/overview-new-zealands-climate, although it is not accompanied by spatial data. The classification is briefly reproduced in @tbl-ss-climnz below.
+
+```{r}
+#| label: tbl-ss-climnz
+#| tbl-cap: "NIWA climate regions of New Zealand"
+
+dat_ss_climnz <-
+  tribble(~Code, ~Name, ~Locations,
+          'NiN', 'Northern New Zealand', 'Auckland, Tauranga, and regions north',
+          'NiC', 'Central North Island', 'Hamilton, Taupō, Rotorua',
+          'NiW', 'South-West North Island', 'New Plymouth, Wanganui, Palmerston North, Wellington',
+          'NiE', 'Eastern North Island', 'Gisborne, Napier, Masterton',
+          'SiN', 'Northern South Island', 'Nelson, Blenheim',
+          'SiW', 'Western South Island', 'Westport, Hokitika, Milford Sound',
+          'SiE', 'Eastern South Island', 'Kaikoura, Christchurch, Timaru',
+          'SiI', 'Inland South Island', 'Lake Tekapo, Queenstown, Alexandra, Manapouri',
+          'SiM', 'Mountainous South Island', 'Mount Cook and other alpine areas',
+          'SiS', 'Southern New Zealand', 'Dunedin, Invercargill',
+          'Chi', 'Chatham Islands', 'Chatham Islands',
+          'Ant', 'Antarctica', 'Scott Base')
+
+tbl_ss_climnz <- gt(dat_ss_climnz) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10))
+
+tbl_ss_climnz
+```
+
+#### Rainfall regime
+
+-   total annual
+-   rainfall seasonality (mean/sd off monthly totals)
+-   summer/winter ratio (Dec+Jan+Feb)/(June+Jul+Aug)
+
+#### Temperature regime
+
+-   mean annual, etc
+-   frostiness
+
+#### Insolation regime
+
+-   day length average and variability
+
+#### Prevailing winds
+
+-   direction, strength by season
+-   rationale: aspect effects
+
+## Paleoclimate
+
+???
+
+## Weather
+
+Contemporary weather conditions have not necessarily had a strong influence on soil formation, except perhaps in young and/or rapidly developing soils. These parameters are more relevant for agricultural suitability assessment and for interpreting soil descriptions.
+
+### Current Weather
+
+Record the weather at the time of observation using the codes in @tbl-ss-weatherc, plus temperature in degrees Celsius. These are not always essential, but can affect colour recording and some field tests.
+
+e.g. [**SU 23**]{style="color: red"}
+
+```{r}
+#| label: tbl-ss-weatherc
+#| tbl-cap: "Current weather conditions, Schoeneberger et al. [-@schoeneberger2012], 1-1"
+
+dat_ss_weatherc <-
+  tribble(~Code, ~Name,
+          'SU', 'Sunny',
+          'PC', 'Partly cloudy',
+          'OV', 'Overcast',
+          'RA', 'Rain',
+          'SL', 'Sleet',
+          'SN', 'Snow')
+
+tbl_ss_weatherc <- gt(dat_ss_weatherc) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_ss_weatherc
+```
+
+### Recent rainfall {#sec-ss-recentrain}
+
+Record recent rainfall using the codes in @tbl-ss-weatherp.
+
+```{r}
+#| label: tbl-ss-weatherp
+#| tbl-cap: "Recent rainfall, adapted from FAO [-@un-fao2006], Table 2"
+
+dat_ss_weatherp <-
+  tribble(~Code, ~Name,
+          'NM', 'No rain in the last month',
+          'NW', 'No rain in the last week',
+          'ND', 'No rain in the last 24 hours',
+          'RD', 'Rain but no heavy rain in the last 24 hours',
+          'RH', 'Heavy rain for some days or excessive rain in the last 24 hours',
+          'RE', 'Extremely rainy or snow melting',
+          'UK', 'Unknown/uncertain')
+
+tbl_ss_weatherp <- gt(dat_ss_weatherp) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_ss_weatherp
+```
