@@ -1,41 +1,200 @@
-# Soil texture
 
--   size domain
--   clearly explain how fine earth fractions are compositional, but so is fine earth + coarse fraction
--   example of how to adjust to get a full composition
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+library(gtExtras)
+```
 
-## Fine earth
+# Soil texture and particle size distribution
 
-### Perceived texture
+The particle size distribution in a soil extends from the finest mineral nanomaterials up to large boulders. Mineral particles are grouped into size classes for reporting. The fine fraction (≤ 2 mm) is considered separately to the coarse, and its compositional information is called 'soil texture'.
 
--   discussion of difference between percieved texture and PSD by lab analysis
--   influence of non-mineral components - OM, water
--   influence of particle mineralogy, particularly clay
--   influence of particle shape
+## Fine fraction
+
+### Field textures and laboratory measurements
+
+Texture can be measured both in the field by working a moist sample in the hand, and in the laboratory. These measures are correlated but are not identical.
+
+Hand texture is a rapid method that can reveal information about clay mineral type, angularity or roundedness in the sand and silt fractions, organic matter content, and the influence of secondary minerals, as well as the mineral particle size distribution itself. However, the method has precision limits and requires careful user calibration.
+
+Laboratory particle size measurement can involve measurements of particle shape and mineralogy but these methods are labour-intensive and generally confined to a research context. High-throughput analyses confine themselves to assessment of particle size alone, making assumptions about shape and mineralogy (see Loveland and Whalley, 2000, for a more detailed discussion.) 
+
+Particle size analysis usually involves removal of organic materials and soluble minerals as well as more aggressive aggregate dispersion using shaking and chemical solutions. Following dispersion, measurements of 3-8 specific size fractions are recorded. These data are then summarised into a three part sand/silt/clay composition.
+
+The boundaries of these three size fractions are somewhat unsettled. The silt-clay boundary aligns with some major changes in particle properties; chief among them the emergence of electrostatic behaviour in the clay fraction. The sand/silt boundary can range from 0.02-0.063um. See Table XXX for the fractions used in NZ and other jurisdictions.
+
+Sand/silt/clay compositional data can be displayed on a triangle plot, and domains within the plot ('texture classes') are labelled for ease of communication. It is important to realise that these classes do not have sharp changes in hand-feel texture at their boundaries.
+
+### Texture classes
+
+PSA image
+
+Hand-texture classes can be accompanied by additional information about the sand fraction. These codes can be appended to a texture class as a prefix, e.g. [**(K)LS**]{style="color: red"} for coarse loamy sand.
+
+Note that appreciable coarse sand in a sample leads to underestimates of clay content in hand texturing.
+
+```{r}
+#| label: tbl-hr-sandquals
+#| tbl-cap: "Sand fraction qualifiers"
+#| classes : no-stripe
+
+dat_hr_sandquals <-
+  tribble(~Code, ~Name, ~Description,
+         'K', 'Coarse', 'Sand is dominantly 2.0 - 0.6 mm',
+         'M', 'Medium', 'Sand is dominantly 0.6 - 0.2 mm',
+         'F', 'Fine',   'Sand is dominantly 0.2 - 0.06 mm')
+
+tbl_hr_sandquals <- gt(dat_hr_sandquals) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
+  
+tbl_hr_sandquals
+
+```
+
+Hand-texture classes can also be modified to express the presence of elevated soil organic matter and its degree of decomposition (where it remains below the cutoff for organic soil materials). These codes can be appended to a texture class as a suffix, e.g. [**SL(T)**]{style="color: red"} for slightly organic sandy loam, or [**SL(TF)**]{style="color: red"} for slightly organic, fibric sandy loam.
+
+Either of the organic matter abundance qualifiers can be used to signify the 'peaty topsoil' NZSC diagnostic.
+
+```{r}
+#| label: tbl-hr-orgmquals
+#| tbl-cap: "Organic matter qualifiers - amount"
+#| classes : no-stripe
+
+dat_hr_orgmquals <-
+  tribble(~Code, ~Name, ~Description,
+         'T', 'Slightly organic', '17-30% organic matter',
+         'P', 'Moderately organic', '30-50% organic matter')
+
+tbl_hr_orgmquals <- gt(dat_hr_orgmquals) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
+  
+tbl_hr_orgmquals
+
+```
+
+```{r}
+#| label: tbl-hr-orgmdec
+#| tbl-cap: "Organic matter qualifiers - decomposition"
+#| classes : no-stripe
+
+dat_hr_orgmdec <-
+  tribble(~Code, ~Name, ~Description,
+         'F', 'Fibric', 'Organic matter weakly decomposed and dominated by visible plant remains',
+         'M', 'Mesic', 'Organic matter moderately decomposed, some visible plant structures but mostly amorphous',
+         'H', 'Humic', 'Organic matter no longer identifiable, minimal fibre content')
+
+tbl_hr_orgmdec <- gt(dat_hr_orgmdec) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
+  
+tbl_hr_orgmdec
+```
 
 ### Particle size estimate
 
--   how to (refer to literature)
--   recording on a triangle
--   mean/sd of sand/silt/clay
+Estimating particle size in the field involves compensating for the influences described above and arriving at estimates of sand and clay content (silt can be determined by difference). Record clay and silt to the nearest whole percent. Optionally, add a separate error estimate (+/- x%) as an expression of confidence.
 
-note: influence of size fraction divisions
+## Coarse fraction
 
-## Coarse minerals
+The mineral fraction \> 2 mm is still part of the soil macrofabric, but for practical reasons is measured separately. Coarse mineral fractions, or rock fragments, are expressed on a (MATHS) size scale, as follows (TABLE)
 
--   record presence, abundance to nearest 5-10%
--   record modal, min and max size - measure on longest dimension
--   optional roundedness
--   optional lithology
--   still need to think more about how to structure this
--   note: shape not much use without in situ orientation
+For rapid assessment, estimate total rock fragment abundance as an integer percentage, recording 0 when confirming absence.
 
-## other coarse components
+More detailed assessments can be made by estimating abundance for separate fractions and also recording roundedness, lithology, and *in situ* orientation.
 
-### natural
+## Other coarse soil components
 
--   shell, bone, charcoal, timber
+### Natural
 
-### artefacts
+Biologically-derived coarse materials can alter the soil's water holding capacity and other parameters just as rock fragments can, although in general they can themselves hold far more water. They will also break down faster.
 
--   per WRB list (maybe compress a little)
+Where present in significant amounts, record natural non-rock fragments as a percentage abundance of the following:
+
+```{r}
+#| label: tbl-hr-nonrock
+#| tbl-cap: "Non-rock fragment types"
+#| classes : no-stripe
+
+dat_hr_nonrock <-
+  tribble(~Code, ~Name, ~Description,
+         'S', 'Shell',    'Seashells or chitinous material',
+         'B', 'Bone',     'Skeletal fragments',
+         'T', 'Timber',   'Wood from trees and shrubs, coarse roots',
+         'C', 'Charcoal', 'Burnt timber fragments')
+
+tbl_hr_nonrock <- gt(dat_hr_nonrock) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
+  
+tbl_hr_nonrock
+
+```
+
+### Artefacts
+
+Artefacts can both function like rock fragments and signify strong human influence on the soil profile. 
+
+Where present in significant amounts, record artefact fragments as a percentage abundance of the following:
+
+```{r}
+#| label: tbl-hr-artefacts
+#| tbl-cap: "Artefact types"
+#| classes : no-stripe
+
+dat_hr_artefs <-
+  tribble(~Code, ~Name, ~Description,
+         'As', 'Asphalt',  'Ashpalt and other bitumen-containing materials',
+         'Br', 'Brick',    'Fired clay building materials, usually unglazed',
+         'Cr', 'Ceramic',  'Fired clay objects, usually glazed',
+         'Ce', 'Concrete', 'Concrete materials',
+         'Gl', 'Glass',    'Fragments from windows, containers, etc',
+         'Tn', 'Textiles - natural', 'Fabrics and carpets made from e.g. wool',
+         'Tx', 'Textiles - artificial', 'Fabrics derived or dominated by plastics')
+         # still working on this)
+
+tbl_hr_artefs <- gt(dat_hr_artefs) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
+  
+tbl_hr_artefs
+
+```
+
