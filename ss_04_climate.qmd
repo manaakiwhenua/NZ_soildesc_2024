@@ -1,9 +1,17 @@
 # Climate and Weather
 
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+library(gtExtras)
+```
+
 ## Climate
 
 -   note: most of this is better off not measured in-field
 -   note: limitations of available climate data, use local records where possible
+-   note: use classifications where numerical data can't be reliably obtained
 -   talk about getting data from LENZ vs more local sources
 -   calculation from terrain for insolation
 
@@ -52,9 +60,9 @@ Where a study area appears to deviate from a regional map, the extent and nature
 
 ### Local
 
-Various classifications specific to New Zealand have been produced [@robertson1956].
+Various classifications specific to New Zealand have been produced [@robertson1956; @garr1991; @sturman1999].
 
-NIWA have published a useful summary classification at https://niwa.co.nz/climate-and-weather/overview-new-zealands-climate, although it is not accompanied by spatial data. The classification is briefly reproduced in @tbl-ss-climnz below.
+NIWA have more recently published a useful summary classification at https://niwa.co.nz/climate-and-weather/overview-new-zealands-climate, although it is not accompanied by spatial data. The classification is briefly reproduced in @tbl-ss-climnz below.
 
 ```{r}
 #| label: tbl-ss-climnz
@@ -111,7 +119,7 @@ tbl_ss_climnz
 
 ## Paleoclimate
 
-???
+Soil formation, as a long-term phenomenon, has in many cases a stronger connection to past climates than the present one. Understanding of New Zealand paleoclimates is relatively well-developed, partly due to the intensive study of volcanic and seismic activity on the North Island [@williams2015]. ...
 
 ## Weather
 
@@ -121,7 +129,7 @@ Contemporary weather conditions have not necessarily had a strong influence on s
 
 Record the weather at the time of observation using the codes in @tbl-ss-weatherc, plus temperature in degrees Celsius. These are not always essential, but can affect colour recording and some field tests.
 
-e.g. [**SU 23**]{style="color: red"}
+e.g. [**SU 23**]{style="color: red"} for a perfect day in the field.
 
 ```{r}
 #| label: tbl-ss-weatherc
