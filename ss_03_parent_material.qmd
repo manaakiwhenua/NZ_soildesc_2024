@@ -135,20 +135,20 @@ Parent material origin, or mode of emplacement, describes how soil parent materi
 
 dat_ss_pmo <-
   tribble(~Code, ~Name, ~Description,
-          'AN', 'Anthropic', 'Deposits made by the direct actions of humans, including truncation, mixing, or deposition.',
-          'CL', 'Colluvium', 'Weathered soil and rock material mantling slopes that has been transported primarily by gravity and sheet wash.',
-          'FL', 'Alluvium', 'Sediments that have been deposited by streams, rivers and other running water.',
-          'GL', 'Glacial till', 'Poorly stratified, poorly sorted rock fragments, sand and mud, surface or near-surface deposits resulting from the transportation by and deposition from ice or meltwater from beneath or in close proximity to glacial ice.',
-          'LC', 'Lacustrine', 'Formed in and around lake beds; comprising extremely fine sediment deposited under very low-flow freshwater conditions.',
-          'MR', 'Marine' , 'Unconsolidated sediments saturated by brackish or saline water.',
-          'LH', 'Lahar', 'A flow of volcanic material, both ash and coarser products, mixed with water; often caused by the spilling over of a crater lake. Also used to describe the mounds formed on volcanic ring-plains where lahars stop.',
-          'TP', 'Tephra', 'A general term for all solid (rather than molten) materials ejected from a volcano during an eruption: includes boulders, lapilli and ash.',
-          'LI', 'Litter', 'Partly or fully decomposed forest litter, equal to or greater than 30 cm depth that is **not** almost continually saturated in the natural state (**F** and **H** horizons).',
-          'PT', 'Peat', 'Partly decomposed plant remains in a water-saturated environment, such as a bog',
-          'LO', 'Loess', 'A blanket deposit of silt-sized particles (0.002--0.06 mm diameter); usually carried by wind from dry riverbeds or outwash plains during glacial and post-glacial periods.',
-          'SA', 'Aeolian sand', 'Wind-deposited sand-sized particles (0.05--2.0 mm diameter), i.e. dune sand.',
-          'RW', 'Highly Weathered Rock', 'Highly to completely weathered rock, formed in place by chemical weathering.',
-          'RX', 'Rock', '*In situ* unweathered to moderately weathered lithified geologic material comprising one or more minerals showing rock structure.'
+          'An', 'Anthropic', 'Deposits made by the direct actions of humans, including truncation, mixing, or deposition.',
+          'Cl', 'Colluvium', 'Weathered soil and rock material mantling slopes that has been transported primarily by gravity and sheet wash.',
+          'Fl', 'Alluvium', 'Sediments that have been deposited by streams, rivers and other running water.',
+          'Gl', 'Glacial till', 'Poorly stratified, poorly sorted rock fragments, sand and mud, surface or near-surface deposits resulting from the transportation by and deposition from ice or meltwater from beneath or in close proximity to glacial ice.',
+          'Lc', 'Lacustrine', 'Formed in and around lake beds; comprising extremely fine sediment deposited under very low-flow freshwater conditions.',
+          'Mr', 'Marine' , 'Unconsolidated sediments saturated by brackish or saline water.',
+          'Lh', 'Lahar', 'A flow of volcanic material, both ash and coarser products, mixed with water; often caused by the spilling over of a crater lake. Also used to describe the mounds formed on volcanic ring-plains where lahars stop.',
+          'Tp', 'Tephra', 'A general term for all solid (rather than molten) materials ejected from a volcano during an eruption: includes boulders, lapilli and ash.',
+          'Li', 'Litter', 'Partly or fully decomposed forest litter, equal to or greater than 30 cm depth that is **not** almost continually saturated in the natural state (**F** and **H** horizons).',
+          'Pt', 'Peat', 'Partly decomposed plant remains in a water-saturated environment, such as a bog',
+          'Lo', 'Loess', 'A blanket deposit of silt-sized particles (0.002--0.06 mm diameter); usually carried by wind from dry riverbeds or outwash plains during glacial and post-glacial periods.',
+          'Sa', 'Aeolian sand', 'Wind-deposited sand-sized particles (0.05--2.0 mm diameter), i.e. dune sand.',
+          'Rw', 'Highly Weathered Rock', 'Highly to completely weathered rock, formed in place by chemical weathering.',
+          'Rx', 'Rock', '*In situ* unweathered to moderately weathered lithified geologic material comprising one or more minerals showing rock structure.'
           )
 
 tbl_ss_pmo <- gt(dat_ss_pmo) |>
