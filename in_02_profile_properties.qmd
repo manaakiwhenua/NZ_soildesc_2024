@@ -378,9 +378,9 @@ dat_in_profdrng <-
   tribble(~Code, ~Name, ~relel, ~Landform, ~Slope, ~Veg, ~Other, 
          'VP', 'Very poor', 'Very low (0-1m)', 'Waning/minimal/enclosed flats and depressions', 'Level to very gentle', 'Exclusively wetland plants', 'Persistent surface water ponding or seeps nearby',
          'PO', 'Poor', 'Low (0-10m)', 'Waning/minimal slopes and flats', 'Low-slope or level ground', 'Wetland plants', 'Seasonal ponding or seeps nearby',
-         'IP', 'Imperfect', 'Variable', 'Slopes, hollows, flats in front of slopes', 'Gentle to moderately steep', '', '',
-         'MW', 'Moderately Well', 'Variable', 'footslopes and fans', 'Gentle to moderately steep', '' ,'',
-         'WE', 'Well', 'Moderate to high (>10 m)', 'crests, ridges and spurs', 'Gentle to very steep' , '', '' , '')
+         'IP', 'Imperfect', 'Variable', 'Slopes, hollows, flats', 'Gentle to moderately steep', 'Any', 'More common below high dropoffs',
+         'MW', 'Moderately Well', 'Variable', 'Most landforms', 'Gentle to moderately steep', 'Any' ,'',
+         'WE', 'Well', 'Moderate to high (>10 m)', 'crests, ridges and spurs', 'Gentle to very steep' , 'Any, dry-tolerant may outcompete', '')
 
 tbl_in_profdrng <- gt(dat_in_profdrng) |>
   tab_options(
@@ -391,7 +391,7 @@ tbl_in_profdrng <- gt(dat_in_profdrng) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_label(relel ~ 'elevation above local drainage',
+  cols_label(relel ~ 'Elevation above local drainage',
              Veg ~ 'Vegetation') |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
