@@ -1,6 +1,44 @@
 # Profile
 
-- what are we doing here 
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+library(gtExtras)
+```
+
+## Reference data
+
+Reference data clearly identifies the soil profile description within a larger dataset, linking it to other profiles, samples, analytical results and photographs. Reference data also covers:
+
+-  who completed the description
+-  when and where it was located (previously discussed)
+-  what level of detail was achieved
+-  why the work was done
+-  how the profile was exposed and examined.
+
+## Naming/numbering sites and site collections
+
+-   tips for robust systems for projects of varying scale
+-   tips for working across multiple teams
+-   distinguishing site ID's from database ID's (e.g. you might want a UUID but you don't want to be writing one out by hand)
+-   tagging by e.g. transect membership
+
+## Date/Time
+
+See @sec-ss-dt for recording requirements.
+
+## Authors
+
+Each profile description should have a responsible author. Additional participants may also be noted. 
+
+::: callout-caution
+## Data privacy
+
+New Zealand data privacy laws are strict. Personally identifying information must be stored securely and not distributed without a good reason. Personal details such as names may not be publishable without explicit consent. Data storage solutions must respect these requirements.
+
+:::
+
 
 ## Depth of observation
 
@@ -17,10 +55,44 @@
 - how to dig a pit safely
 - how to measure depth on significant slopes
 
-### Method of profile exposure
+## Exposure type
 
-- code list
- 
+The method by which the soil was exposed for observation affects which parameters can be recorded, or at least recorded reliably.
+
+```{r}
+#| label: tbl-pr-gear
+#| tbl-cap: "Method of profile exposure"
+
+dat_pr_gear <-
+  tribble(~Code, ~Name,
+          'P1', 'Quick pit – up to 0.5 m wide and generally no deeper than 1m',
+          'P2', 'Full pit > 1 m wide, exposing the complete profile to regolith or bedrock',
+          'E', 'Exposure – road cutting or similar, chipped back and cleaned',
+          'C1', 'Relatively undisturbed soil core, < 50 mm diameter',
+          'C2', 'Relatively undisturbed soil core, ≥ 50 mm diameter',
+          'A', 'Auger sample (hand or mechanical, including e.g. post hole diggers)')
+
+tbl_pr_gear <- gt(dat_pr_gear) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_pr_gear
+```
+
+-   [**A**]{style="color: red"} samples generally cannot be used to determine soil structure due to the degree of disturbance.
+-   Combined sampling is common in field mapping, e.g. small pit excavation to \~0.50-0.75 m and augering to a required depth in relatively well-understood landscapes. Record these as [**P1**]{style="color: red"}.
+-   Gouge-style augers used in soft marine sediments may be included in [**C2**]{style="color: red"} even though they commonly narrow to \< 50 mm at their maximum depth.
+-   [**C1**]{style="color: red"} style samplers are common in paddock-scale monitoring and research, where they are used for rapid surface measurement. These are not generally suitable for mapping as they cannot sample below the topsoil.
+
+[add some gear pics/diagrams here]{style="background-color: lightgreen"}
+
 ### Regolith stuff
 
 TBD
