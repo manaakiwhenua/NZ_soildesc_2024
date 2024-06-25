@@ -20,20 +20,18 @@ Soil drainage is an assessment of how fast water leaves a soil profile relative 
 
 Drainage should first be assessed on a per-horizon basis. These interpretations are later summarised at a profile level (see @sec-in-pdrng). @tbl-in-intdrng below summarises the common characteristics associated with each horizon drainage class. A 'balance of evidence' approach should be taken when assigning a drainage class to a horizon. When in doubt, choose the poorest class available.
 
-[NB: Still working out the details here!!]{style="background-color:orange"}
-
 ```{r}
 #| label: tbl-in-intdrng
-#| tbl-cap: "Internal drainage - horizon characteristics"
+#| tbl-cap: "Horizon-level drainage characteristics"
 #| column: page
 
 dat_in_intdrng <-
-  tribble(~Code, ~Name, ~HNames, ~sws, ~mcol, ~Mottles, ~Texture, ~StrGr, ~secfts, ~cons, ~Roots, ~voids,
-          'VP', 'Very poor', 'O*, *r', 'Saturated or wet', 'Dark or gley', 'None to Few (<10%)', 'Peaty, clayey, silty. Rarely sandy, very rarely stony', 'Apedal', 'Few to None', 'Deformable', 'None', 'None',
-          'PO', 'Poor', '*r, *g', 'Wet', 'Dark, gley or grey', 'None to Few (<10%)', 'Clayey, silty, occasionally peaty and more often just highly organic (e.g. drained ex-peat). Rarely sandy, very rarely stony', 'Apedal to weak', 'Few to none', 'Deformable or semi-deformable',  'Few to None', 'Few',
-          'IP', 'Imperfect', '*(g)', 'Moist to slightly moist', 'Dark, grey, yellow or pale', 'Abundant to Profuse (50 - >75%)', 'Any',  'Apedal to moderate', 'Nodules and/or pans', 'Friable to semi-deformable', 'Few to common', 'Few to common',
-          'MW', 'Moderately Well', '*(f)', 'Moist to Dry', 'Any non-gley', 'Few to Many (2-%) and non-gley', 'Variable but usually not clayey', 'Any', 'Nodules', 'Very friable to brittle',  'Common to Many', 'Common to Many',
-          'WE', 'Well', 'No redox suffixes', 'Moist to Dry', 'Any non-gley', 'None', 'Variable but usually not clayey', 'Any', 'Very Few to None (<2%) and non-gley', 'Very friable to brittle', 'Common to Many', 'Common to Many')
+  tribble(~Code, ~Name, ~HNames, ~sws, ~mcol, ~Mottles, ~Texture, ~StrGr, ~secfts, ~cons,
+          'VP', 'Very poor', 'O*, *r', 'Saturated or wet', 'Dark or gley', '<2%', 'Peaty, clayey, silty. Rarely sandy, very rarely stony', 'Apedal', 'Few to None', 'Deformable', 
+          'PO', 'Poor', '*r, *g', 'Wet', 'Dark, gley, grey, pale', '2-50%', 'Clayey, silty, occasionally peaty and more often just highly organic (e.g. drained ex-peat). Less comonly sandy or stony', 'Apedal to weak', 'Few to none', 'Deformable or semi-deformable',
+          'IP', 'Imperfect', '*(g)', 'Wet to Moist', 'Dark, grey, yellow or pale', '25-75%', 'Any non-peaty',  'Apedal to moderate', 'Fe and/or Mn-rich segregations, nodules and pans', 'Friable to semi-deformable',
+          'MW', 'Moderately Well', '*(f)', 'Wet to Dry', 'Any non-gley', '2-50% (non-gley)', 'Any', 'Any', 'Mottles more often in ped interiors', 'Very friable to brittle', 
+          'WE', 'Well', 'No redox suffixes', 'Moist to Dry', 'Any non-gley', 'None', 'Variable but usually not clayey', 'Any', '<2% (non-gley)', 'Very friable to brittle')
 
 tbl_in_intdrng <- gt(dat_in_intdrng) |>
    tab_options(
@@ -47,20 +45,24 @@ tbl_in_intdrng <- gt(dat_in_intdrng) |>
   tab_style(style = list(cell_text(weight = 'bold')),
             locations = cells_body(columns = 2)) |>
   cols_label(HNames = 'Horizon Names',
-             sws    = 'Soil Moisture',
+             sws    = 'Typical Moisture',
              mcol   = 'Matrix colour',
              StrGr  = 'Structure Grade',
              secfts = 'Secondary features',
-             cons   = 'Consistence',
-             voids  = 'Voids/cracks')
+             cons   = 'Consistence')
 
 tbl_in_intdrng
 ```
 
-::: callout-note
-note here about the 'somewhat poor' concept and why its not included yet
-:::
+### Classifying topsoil drainage
+
+Morphological features associated with drainage status can be hard to spot in A horizons, mostly due to their darker colour. **When otherwise in doubt**, a well developed A horizon should be assigned a drainage class one better than the horizon below it (usually a B, E, or C horizon). A poorly developed A horizon should receive the same class assignment as the horizon below. Use the 'distinct topsoil' NZSC diagnostic criteria to identify well developed A horizons. 
+
+The reasoning behind this rule of thumb is that the lack of topsoil development may be partially explained by lack of contrast in the drainage regime between the topsoil and the layer below.
+
+<!-- example diagram here --->
 
 ::: callout-note
-note here about the difference between wet soils and wet-and-anoxic soils, crosslink to field tests
+Soils that are persistently wet may also become anoxic. This is more common in low-permeability soils, where slow percolation allows enough time for oxygen to be consumed entirely. 
+<!--- add more --->
 :::
