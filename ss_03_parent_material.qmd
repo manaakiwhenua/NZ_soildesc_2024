@@ -127,7 +127,11 @@ This system can be applied to the New Zealand context relatively easily, althoug
 
 ## Parent material origin
 
-Parent material origin, or mode of emplacement, describes how soil parent materials have arrived at the point of observation. Multiple modes may have operated in different parts of the soil profile, in which case these codes may also be employed on a horizon basis.
+Parent material origin, or mode of emplacement, describes how soil parent materials have arrived at the point of observation. Multiple modes may have operated in different parts of the soil profile. 
+
+Record one parent material origin code per soil horizon. 
+
+Parent material origin is summarised across the top 100 cm of the soil profile as part of defining the [NZSC Soil Family]().
 
 ```{r}
 #| label: tbl-ss-pmo
@@ -148,7 +152,8 @@ dat_ss_pmo <-
           'Lo', 'Loess', 'A blanket deposit of silt-sized particles (0.002--0.06 mm diameter); usually carried by wind from dry riverbeds or outwash plains during glacial and post-glacial periods.',
           'Sa', 'Aeolian sand', 'Wind-deposited sand-sized particles (0.05--2.0 mm diameter), i.e. dune sand.',
           'Rw', 'Highly Weathered Rock', 'Highly to completely weathered rock, formed in place by chemical weathering.',
-          'Rx', 'Rock', '*In situ* unweathered to moderately weathered lithified geologic material comprising one or more minerals showing rock structure.'
+          'Rx', 'Rock', '*In situ* unweathered to moderately weathered lithified geologic material comprising one or more minerals showing rock structure.',
+          'Uk', 'Unknown', 'Origin cannot be determined with certainty.'
           )
 
 tbl_ss_pmo <- gt(dat_ss_pmo) |>
@@ -165,4 +170,4 @@ tbl_ss_pmo <- gt(dat_ss_pmo) |>
 tbl_ss_pmo
 ```
 
-Parent material origin is not currently part of the NZSC, but was recognised as necessary for adequately grouping soil siblings for mapping purposes not long after the publication of Webb and Lilburne [-@webb2011]. As such it is currently recorded when describing soils for S-Map.
+
