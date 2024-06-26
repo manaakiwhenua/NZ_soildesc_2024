@@ -11,6 +11,8 @@ The land surface at a site is assessed at the landform scale.
 
 ## Surface cover
 
+Surface cover helps visualise the landscape and provides some information on infiltration behaviour. 
+
 Record the following generalised surface cover components as a percentage composition of the area surrounding a point observation, or the area within a sampling plot.
 
 ```{r}
@@ -19,12 +21,12 @@ Record the following generalised surface cover components as a percentage compos
 
 dat_pr_surfcov <-
   tribble(~Code, ~Name, ~Description,
-          'BE', 'Earth', 'Sediment or soil, < 2 mm', 
-          'BR', 'Fragments', 'Rock fragments, shells, or bones, > 2 mm',
+          'BE', 'Earth', 'Bare sediment or soil, < 2 mm', 
+          'BR', 'Fragments', 'Bare rock fragments, shells, or bones, > 2 mm',
           'BO', 'Rock', 'Bare rock outcrop',
           'WT', 'Water', 'Open water, ice or snow',
-          'PT', 'Peat', 'Plant material decomposing under wet to saturated conditions',
-          'LH', 'Litter', 'Plant material decomposing under dry to moist conditions',
+          'PT', 'Peat', 'Plant material decomposing under persistently saturated conditions',
+          'LH', 'Litter', 'Plant material decomposing under intermittently wet to dry conditions',
           'GR', 'Small plants', 'Grass, herbs, moss, sedges, annual crops',
           'TR', 'Large plants', 'Shrubs, trees (stems and roots), perennial crops',
           'SL', 'Sealed', 'Building, concrete, asphalt and similar')
@@ -56,6 +58,8 @@ These parameters should be recorded only to nearest 5-10%. It will be unusual to
 ```
 
 ## Surface water
+
+Information about surface water presence can contribute to drainage assessments. 
 
 Where surface water is present within the landform, as well as noting its areal dominance above, note the type and degree of persistence using the codes in @tbl-pr-swater and @tbl-pr-swaterp below.
 
@@ -218,7 +222,7 @@ tbl_pr_micreltype
 
 ### Anthropogenic microrelief
 
-Small-scale human alterations to the soil surface are common in agricultural areas (current and former). These include creation of microrelief, but just as commonly its removal. 
+Small-scale human alterations to the soil surface are common in agricultural areas (current and former). Microrelief can be removed or created by these activities. 
 
 Record the dominant anthropogenic microrelief type using the codes in @tbl-pr-amicreltype. For detailed descriptions of induced microrelief, record the average height and spacing of repeating elements in cm.
 
