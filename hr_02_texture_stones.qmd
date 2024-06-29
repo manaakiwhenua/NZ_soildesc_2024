@@ -1,9 +1,16 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 
 ```{r}
-library(dplyr)
-library(tibble)
+library(tidyverse) 
 library(gt)
 library(gtExtras)
+library(ggtern)
+library(extrafont)
+loadfonts(quiet = TRUE)
 ```
 
 # Soil texture and particle size distribution
@@ -22,13 +29,97 @@ Laboratory particle size measurement can involve measurements of particle shape 
 
 Particle size analysis usually involves removal of organic materials and soluble minerals as well as more aggressive aggregate dispersion using shaking and chemical solutions. Following dispersion, measurements of 3-8 specific size fractions are recorded. These data are then summarised into a three part sand/silt/clay composition.
 
-The boundaries of these three size fractions are somewhat unsettled. The silt-clay boundary aligns with some major changes in particle properties; chief among them the emergence of electrostatic behaviour in the clay fraction. The sand/silt boundary can range from 0.02-0.063um. See Table XXX for the fractions used in NZ and other jurisdictions.
+The boundaries of these three size fractions are somewhat unsettled. The silt-clay boundary aligns with some major changes in particle properties; chief among them the emergence of electrostatic behaviour in the clay fraction. The sand/silt boundary can range from 0.02-0.063um. See @tbl-hr-texcompar for the fractions used in NZ and other jurisdictions.
 
-Sand/silt/clay compositional data can be displayed on a triangle plot, and domains within the plot ('texture classes') are labelled for ease of communication. It is important to realise that these classes do not have sharp changes in hand-feel texture at their boundaries.
+```{r}
+#| label: tbl-hr-texcompar
+#| tbl-cap: "Size fraction limits: New Zealand and elsewhere" 
+#| classes : no-stripe
+
+# can also build out to coarse/med/fine sand and fine clay etc
+
+dat_hr_texcompar <-
+  tribble(~Jurisdiction, ~Sand, ~Silt, ~Clay,
+          'New Zealand, UK', '< 2.0 mm',  '< 0.06 mm', '< 0.002 mm',
+          'Australia  ',     '< 2.0 mm',  '< 0.02 mm', '< 0.002 mm',
+          'USA, Canada',     '< 2.0 mm',  '< 0.05 mm', '< 0.002 mm',
+          'Global',          '< 2.0 mm', '< 0.063 mm', '< 0.002 mm')
+
+tbl_hr_texcompar <- gt(dat_hr_texcompar) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Jurisdiction ~pct(40))
+  
+tbl_hr_texcompar
+
+
+```
 
 ### Texture classes
 
-PSA image
+Sand/silt/clay compositional data can be displayed on a triangle plot (see @fig-texture-tri), and domains within the plot, or 'texture classes', are labelled for ease of communication. It is important to remember that these classes do not have sharp changes in hand-feel texture at their boundaries.
+
+```{r}
+#| label: fig-texture-tri
+#| fig-cap: "New Zealand Soil Texture Triangle"
+
+nztt_dat <- readRDS(file.path('data', 'NZTT.RDS'))
+
+nztt_labels <- readRDS(file.path('data', 'NZTT_LABELS.RDS'))
+
+nz_tri <-
+  ggtern(data = nztt_dat, aes(x = SAND, y = CLAY, z = SILT)) +
+  geom_polygon(aes(group = NAME),
+               fill = NA, colour = 'grey50') +
+  geom_text(data = nztt_labels, aes(label = cat_texture_code), 
+            colour = 'grey40') +
+  theme_showarrows() +
+  theme_nomask() +
+  labs(x = 'Sand %', y = 'Clay %', z = 'Silt %') +
+  theme(panel.border = element_rect(colour = 'grey40'),
+        panel.background = element_rect(fill = NA),
+        tern.panel.grid.ontop = FALSE,
+        panel.grid = element_line(colour = 'grey90'),
+        text = element_text(family = "Ebrima"),
+        legend.key = element_blank(),
+        tern.axis.title.show = FALSE,
+        legend.position = 'bottom')
+
+nz_tri
+```
+
+```{r}
+#| label: tbl-texture-tri
+#| tbl-cap: "New Zealand Texture Triangle class names and compositional limits"
+#| classes : no-stripe
+
+tbl_hr_textri <- nztt_labels |>
+  dplyr::select(matches('cat_'), matches('txt_'), -cat_texture_group) |>
+  dplyr::select(cat_texture_code, cat_texture_name, everything()) |>
+  gt() |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(cat_texture_code ~pct(20), cat_texture_name ~ pct(20)) |>
+  cols_label(cat_texture_name = 'Name', cat_texture_code = 'Code',
+             txt_clay_range = 'Clay range',
+             txt_silt_range = 'Silt range',
+             txt_sand_range = 'Sand range')
+  
+tbl_hr_textri
+
+```
 
 Hand-texture classes can be accompanied by additional information about the sand fraction. These codes can be appended to a texture class as a prefix, e.g. [**(K)LS**]{style="color: red"} for coarse loamy sand.
 
@@ -116,21 +207,75 @@ tbl_hr_orgmdec
 
 ### Particle size estimate
 
-Estimating particle size in the field involves compensating for the influences described above and arriving at estimates of sand and clay content (silt can be determined by difference). Record clay and silt to the nearest whole percent. Optionally, add a separate error estimate (+/- x%) as an expression of confidence.
+Estimating particle size in the field involves compensating for the influences described above and arriving at estimates of sand and clay content (silt can be determined by difference). Record clay and sand to the nearest whole percent. Optionally, add a separate error estimate (+/- x%) as an expression of confidence.
 
 ## Coarse fraction
 
-The mineral fraction \> 2 mm is still part of the soil macrofabric, but for practical reasons is measured separately. Coarse mineral fractions, or rock fragments, are expressed on a (MATHS) size scale, as follows (TABLE)
+The mineral fraction \> 2 mm is still part of the soil macrofabric, but for practical reasons is measured separately. Coarse mineral fractions, or rock fragments, can be classified on a size scale with ranges of $2*10^n - 6*10^n$, as follows @tbl-hr-rockfrsz.
 
-For rapid assessment, estimate total rock fragment abundance as an integer percentage, recording 0 when confirming absence.
+```{r}
+#| label: tbl-hr-rockfrsz
+#| tbl-cap: "Coarse fragment Size classes"
+#| classes : no-stripe
 
-More detailed assessments can be made by estimating abundance for separate fractions and also recording roundedness, lithology, and *in situ* orientation.
+dat_hr_rockfrsz <-
+  tribble(~Code, ~Name, ~Description,
+         1, 'Fine gravel',   '2 - 6 mm',
+         2, 'Medium gravel', '6 - 20 mm',
+         3, 'Coarse gravel', '20 - 60 mm',
+         4, 'Cobbles',        '60 - 200 mm',
+         5, 'Stones',         '200 - 600 mm',
+         6, 'Boulders',       '600 - 2000 mm', 
+         7, 'Large boulders', '>2000 mm') 
+
+tbl_hr_rockfrsz <- gt(dat_hr_rockfrsz) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
+  
+tbl_hr_rockfrsz
+```
+
+-   For rapid assessment, estimate total rock fragment abundance as an integer percentage, recording [**0%**]{style="color: red"} when confirming absence. 
+-   For routine assessment, split abundance over the size classes in @tbl-hr-rockfrsz.
+-   For detailed assessments, append further information on any or all of dominant fragment lithology using the codes in @tbl-ss-pm and shape using the codes in @tbl-hr-rockfrshp below.
+
+```{r}
+#| label: tbl-hr-rockfrshp
+#| tbl-cap: "Coarse fragment shape classes"
+#| classes : no-stripe
+
+dat_hr_rockfrshp <-
+  tribble(~Code, ~Name, ~Description,
+         'R', 'Rounded',   'Rock fragments considerably smoothed by transport processes',
+         'A', 'Angular', 'Rock fragments with little smoothing by transport processes',
+         'M', 'Mixed', 'Both rounded and angular fragments mixed together',) 
+
+tbl_hr_rockfrshp <- gt(dat_hr_rockfrshp) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
+  
+tbl_hr_rockfrshp
+```
 
 ## Other coarse soil components
 
 ### Natural
 
-Biologically-derived coarse materials can alter the soil's water holding capacity and other parameters just as rock fragments can, although in general they can themselves hold far more water. They will also break down faster.
+Biologically-derived coarse materials can alter the soil's water holding capacity and other parameters just as rock fragments can, although in general they can themselves hold more water. They will also break down faster.
 
 Where present in significant amounts, record natural non-rock fragments as a percentage abundance of the following:
 
@@ -165,7 +310,7 @@ tbl_hr_nonrock
 
 Artefacts can both function like rock fragments and signify strong human influence on the soil profile. 
 
-Where present in significant amounts, record artefact fragments as a percentage abundance of the following:
+Where present in significant amounts, record artefact fragments as a percentage abundance of the categories in @tbl-hr-artefacts. Where further details are required, describe the materials present in free-text notes.
 
 ```{r}
 #| label: tbl-hr-artefacts
@@ -180,8 +325,11 @@ dat_hr_artefs <-
          'Ce', 'Concrete', 'Concrete materials',
          'Gl', 'Glass',    'Fragments from windows, containers, etc',
          'Tn', 'Textiles - natural', 'Fabrics and carpets made from e.g. wool',
-         'Tx', 'Textiles - artificial', 'Fabrics derived or dominated by plastics')
-         # still working on this)
+         'Tx', 'Textiles - artificial', 'Fabrics derived from or dominated by plastics',
+         'Mt', 'Metals', 'Refined ore products',
+         'Ms', 'Mine Spoil', 'Materials leftover from ore processing activities',
+         'Ws', 'Wastes', 'Other domestic or commercial rubbish')
+         # still working on this - could split into wastes vs e.g. items of arch. interest)
 
 tbl_hr_artefs <- gt(dat_hr_artefs) |>
   tab_options(
