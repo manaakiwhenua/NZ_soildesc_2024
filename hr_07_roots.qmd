@@ -1,13 +1,87 @@
 # Roots and plant materials
 
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+library(gtExtras)
+```
+
 ## Roots
 
--   live and dead
--   abundance
--   size (modal, range)
--   position in relation to peds
+Plant roots affect water infiltration and help define the functional horizon topsoil (see @sec-in-fh-ts). Their position in the soil profile can also provide information about ped development, particle packing, and the presence of pans. Note that this section does not apply to peats.
+
+### Root abundance
+
+Measure abundance by estimating the volumetric abundance of live roots in the visible soil horizon. For roots \< 2 mm it may be more practical to sample a cube \~100 mm on a side. When augering for rapid assessment, also use a spade to sample the topsoil.
+
+Provide separate estimates for roots \< 2 mm, 2 - 10 mm and \> 10 mm. Record as whole percentages, confirming [**0%**]{style="color: red"} where no roots are observable in a given size range. The data may be classified using @tbl-hr-rtab.
+
+```{r}
+#| label: tbl-hr-rtab
+#| tbl-cap: "Plant root abundance classes"
+#| classes : no-stripe
+
+dat_hr_rtab <-
+  tribble(~Code,      ~Name,  ~Description,
+              0,     'None',          '0%',
+              1,      'Few',   '> 0 - 25%',
+              2,   'Common',  '> 25 - 50%',
+              3,     'Many',  '> 50 - 75%',
+              4, 'Abundant',       '> 75%')
+
+tbl_hr_rtab <- gt(dat_hr_rtab) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_rtab
+
+```
+
+[practice change: Counting individual roots is impractical at both small and large size ranges. Switching to estimates of volumetric percentage. This brings roots into alignment with abundance assessment of other soil components (textures, stone, artefacts, voids), allowing total soil compositional data to be calculated.]{style="background-color: orange"}
+
+### Root position
+
+Where abundance is \> 0%, record how roots are distributed within the horizon using the codes in @tbl-hr-rpos. Position may not be reliably observable outside of pits or exposures, in which case record [**U**]{style="color: red"}.
+
+```{r}
+#| label: tbl-hr-rpos
+#| tbl-cap: "Plant root position codes"
+#| classes : no-stripe
+
+dat_hr_rpos <-
+  tribble(~Code,        ~Name,  ~Description,
+            'W',     'Within', 'Roots are primarily located within peds.',
+            'B',    'Between', 'Roots are primarily located between peds',
+            'T', 'Throughout', 'Roots are spread throughout the soil mass.',
+            'U',    'Unknown', 'Sampling method did not allow reliable observation.')
+
+tbl_hr_rpos <- gt(dat_hr_rpos) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_rpos
+
+```
+
+## Other parameters
+
+Notes about particular plant species contributing to the root mass and spatial organisation beyond the positional classes above (e.g. presence of mats) may prove useful in certain contexts. No coding system is provided for these.
 
 ## Timber and fibre
 
--   peat-specific usually
--   preserved organics can be encountered in non-peat situations where volcanic events have buried surface
+Where non-peat plant remains are encountered in significant volume (e.g. buried by volcanic or landslide activity), record as per @sec-hr-nonrock.
