@@ -61,7 +61,7 @@ tbl_hr_texcompar
 
 ```
 
-### Texture classes
+### Texture classes {#sec-hr-tex}
 
 Sand/silt/clay compositional data can be displayed on a triangle plot (see @fig-texture-tri), and domains within the plot, or 'texture classes', are labelled for ease of communication. It is important to remember that these classes do not have sharp changes in hand-feel texture at their boundaries.
 
@@ -69,19 +69,26 @@ Sand/silt/clay compositional data can be displayed on a triangle plot (see @fig-
 #| label: fig-texture-tri
 #| fig-cap: "New Zealand Soil Texture Triangle"
 
-nztt_dat <- readRDS(file.path('data', 'NZTT.RDS'))
+nztt_dat <- readRDS(file.path('data', 'NZTT.RDS')) %>% 
+  mutate(GROUP = case_match(CODE, 
+                            c('S', 'LS')        ~ 'Sandy',
+                            c('SL', 'SC', 'CL') ~ 'Loamy',
+                            c('Z', 'ZL', 'LZ')  ~ 'Silty',
+                            c('ZC', 'LC', 'C')  ~ 'Clayey'))
 
 nztt_labels <- readRDS(file.path('data', 'NZTT_LABELS.RDS'))
 
 nz_tri <-
   ggtern(data = nztt_dat, aes(x = SAND, y = CLAY, z = SILT)) +
-  geom_polygon(aes(group = NAME),
-               fill = NA, colour = 'grey50') +
+  geom_polygon(aes(group = NAME, fill = GROUP),
+               colour = 'grey50', alpha = 0.7) +
   geom_text(data = nztt_labels, aes(label = cat_texture_code), 
-            colour = 'grey40') +
+            colour = 'grey30') +
+  scale_fill_manual(values = c('Sandy' = '#ffffb3', 'Silty' = '#bebada',
+                               'Loamy' = '#8dd3c7', 'Clayey' = '#fb8072')) +
   theme_showarrows() +
   theme_nomask() +
-  labs(x = 'Sand %', y = 'Clay %', z = 'Silt %') +
+  labs(x = 'Sand %', y = 'Clay %', z = 'Silt %', fill = 'Texture Group') +
   theme(panel.border = element_rect(colour = 'grey40'),
         panel.background = element_rect(fill = NA),
         tern.panel.grid.ontop = FALSE,
@@ -89,7 +96,7 @@ nz_tri <-
         text = element_text(family = "Ebrima"),
         legend.key = element_blank(),
         tern.axis.title.show = FALSE,
-        legend.position = 'bottom')
+        legend.position = 'right')
 
 nz_tri
 ```
@@ -121,6 +128,8 @@ tbl_hr_textri
 
 ```
 
+#### Sand modifiers
+
 Hand-texture classes can be accompanied by additional information about the sand fraction. These codes can be appended to a texture class as a prefix, e.g. [**(K)LS**]{style="color: red"} for coarse loamy sand.
 
 Note that appreciable coarse sand in a sample leads to underestimates of clay content in hand texturing.
@@ -150,6 +159,8 @@ tbl_hr_sandquals <- gt(dat_hr_sandquals) |>
 tbl_hr_sandquals
 
 ```
+
+#### Organics modifiers
 
 Hand-texture classes can also be modified to express the presence of elevated soil organic matter and its degree of decomposition (where it remains below the cutoff for organic soil materials). These codes can be appended to a texture class as a suffix, e.g. [**SL(T)**]{style="color: red"} for slightly organic sandy loam, or [**SL(TF)**]{style="color: red"} for slightly organic, fibric sandy loam.
 
@@ -207,11 +218,11 @@ tbl_hr_orgmdec
 
 ### Particle size estimate
 
-Estimating particle size in the field involves compensating for the influences described above and arriving at estimates of sand and clay content (silt can be determined by difference). Record clay and sand to the nearest whole percent. Optionally, add a separate error estimate (+/- x%) as an expression of confidence.
+Estimating particle size in the field involves compensating for the influences described above and arriving at estimates of sand and clay content (silt can be determined by difference). Record estimated clay and sand to the nearest whole percent. Optionally, add a separate error estimate (+/- x%) as an expression of confidence.
 
-## Coarse fraction
+## Coarse fraction {#sec-hr-stone}
 
-The mineral fraction \> 2 mm is still part of the soil macrofabric, but for practical reasons is measured separately. Coarse mineral fractions, or rock fragments, can be classified on a size scale with ranges of $2*10^n - 6*10^n$, as follows @tbl-hr-rockfrsz.
+The mineral fraction \> 2 mm is still part of the soil macrofabric, but for practical reasons is measured separately. These rock fragments can be classified on a size scale with ranges of $2*10^n - 6*10^n$, as follows @tbl-hr-rockfrsz.
 
 ```{r}
 #| label: tbl-hr-rockfrsz
@@ -220,9 +231,9 @@ The mineral fraction \> 2 mm is still part of the soil macrofabric, but for prac
 
 dat_hr_rockfrsz <-
   tribble(~Code, ~Name, ~Description,
-         1, 'Fine gravel',   '2 - 6 mm',
-         2, 'Medium gravel', '6 - 20 mm',
-         3, 'Coarse gravel', '20 - 60 mm',
+         1, 'Fine gravel',    '2 - 6 mm',
+         2, 'Medium gravel',  '6 - 20 mm',
+         3, 'Coarse gravel',  '20 - 60 mm',
          4, 'Cobbles',        '60 - 200 mm',
          5, 'Stones',         '200 - 600 mm',
          6, 'Boulders',       '600 - 2000 mm', 
@@ -244,7 +255,7 @@ tbl_hr_rockfrsz
 
 -   For rapid assessment, estimate total rock fragment abundance as an integer percentage, recording [**0%**]{style="color: red"} when confirming absence. 
 -   For routine assessment, split abundance over the size classes in @tbl-hr-rockfrsz.
--   For detailed assessments, append further information on any or all of dominant fragment lithology using the codes in @tbl-ss-pm and shape using the codes in @tbl-hr-rockfrshp below.
+-   For detailed assessments, append further information on dominant fragment lithology using the codes in @tbl-ss-pm and shape using the codes in @tbl-hr-rockfrshp below.
 
 ```{r}
 #| label: tbl-hr-rockfrshp
@@ -273,7 +284,7 @@ tbl_hr_rockfrshp
 
 ## Other coarse soil components
 
-### Natural
+### Natural {#sec-hr-nonrock}
 
 Biologically-derived coarse materials can alter the soil's water holding capacity and other parameters just as rock fragments can, although in general they can themselves hold more water. They will also break down faster.
 
@@ -288,7 +299,7 @@ dat_hr_nonrock <-
   tribble(~Code, ~Name, ~Description,
          'S', 'Shell',    'Seashells or chitinous material',
          'B', 'Bone',     'Skeletal fragments',
-         'T', 'Timber',   'Wood from trees and shrubs, coarse roots',
+         'T', 'Timber',   'Dead wood from trees and shrubs, coarse roots',
          'C', 'Charcoal', 'Burnt timber fragments')
 
 tbl_hr_nonrock <- gt(dat_hr_nonrock) |>
