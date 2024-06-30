@@ -1,5 +1,5 @@
 ---
-title: "Horizon Properties"
+title: "Horizon properties"
 editor: visual
 editor_options: 
   chunk_output_type: console
@@ -14,7 +14,7 @@ library(gtExtras)
 
 # Functional horizons {#sec-in-fh}
 
-Functional horizons provide a shorthand for groups of soil morphology properties that have been linked to soil physical behaviour. Functional horizons help define level 5 of the New Zealand Soil Classification, the soil sibling (see @sec-in-sib). 
+Functional horizons provide a shorthand for groups of soil morphology properties that have been linked to soil physical behaviour. Functional horizons help define level 5 of the New Zealand Soil Classification, the soil sibling (see @sec-in-sib).
 
 ## Code Components {#sec-in-fh-cc}
 
@@ -40,16 +40,16 @@ tbl_in_fhts <- gt(dat_in_fhts) |>
     table.width = '85%'
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1, rows = 2)) |>
-  tab_style(style = list(cell_text(style = 'italic')),
             locations = cells_body(columns = 1, rows = 1)) |>
+  tab_style(style = list(cell_text(style = 'italic')),
+            locations = cells_body(columns = 1, rows = 2)) |>
   fmt_markdown(columns = 3) |>
   cols_width(Code ~pct(20), Name ~ pct(20))
   
 tbl_in_fhts
 ```
 
-The topsoil code can be appended to any horizon - it is not restricted to the first functional horizon in the profile. This enables buried topsoils or multi-horizon topsoils to be adequately described.
+The topsoil code can be prefixed to any horizon - it is not restricted to the first functional horizon in the profile. This enables buried topsoils or multi-horizon topsoils to be adequately described.
 
 [Note slight change to roots requirement, see @tbl-hr-rtab - may need further adjustment]{style="background-color: orange"}
 
@@ -77,13 +77,12 @@ tbl_in_fhvc <- gt(dat_in_fhvc) |>
             locations = cells_body(columns = 1, rows = 1:2)) |>
   tab_style(style = list(cell_text(style = 'italic')),
             locations = cells_body(columns = 1, rows = 3)) |>
-  fmt_markdown(columns = 3) |>
   cols_width(Code ~pct(20), Name ~ pct(20))
   
 tbl_in_fhvc
 ```
 
-Tephric codes cannot be used in combination with **O\***, **J** or **Q** functional horizon textures (see below).
+Tephric codes cannot be used in combination with [**O\***]{style="color: red"}, [**J**]{style="color: red"} or [**Q**]{style="color: red"} functional horizon textures (see below).
 
 [TODO add cross links to nzsc diagnostics above]{style="background-color: skyblue"}
 
@@ -130,7 +129,7 @@ dat_in_fhtx <-
   tribble(~Code, ~Name, ~Description,
          'A', 'Sandy',          'Sand and Loamy Sand [texture classes](hr_02_texture_stones.qmd#sec-hr-tex)',
          'L', 'Loamy or Silty', 'Loamy and Silty [texture classes](hr_02_texture_stones.qmd#sec-hr-tex)',
-         'Y', 'Clayey',         '> 35% clay', 
+         'Y', 'Clayey',         'Clayey [texture classes](hr_02_texture_stones.qmd#sec-hr-tex)', 
          'O', 'Organic',        'Organic soil materials',
          'J', 'Fluid',          'Moderately or very fluid',
          'Q', 'Pan',            'Indurated pan')
@@ -150,6 +149,9 @@ tbl_in_fhtx <- gt(dat_in_fhtx) |>
 tbl_in_fhtx
 ```
 
+-   Texture [**J**]{style="color: red"} is used where fluid behaviour is observed (generally in saturated loose fine sediments below the permanent water table) and is not used in concert with any other codes.
+-   Texture [**Q**]{style="color: red"} is used where a pan is observed and is not used in concert with any other codes.
+
 [TODO get some crosslinks going/review definitions above]{style="background-color: skyblue"}
 
 ### Texture suffixes
@@ -162,7 +164,7 @@ tbl_in_fhtx
 dat_in_fhtxx <-
   tribble(~Code, ~Name, ~Description,
          'a', 'Dune sand', 'Clean, [medium to coarse sand](hr_02_texture_stones.qmd#tbl-hr-sandquals)',
-         'x', 'Fragmental', '> 85% rock fragments with minimal interstitial material',
+         'x', 'Fragmental', '\\> 85% rock fragments with minimal interstitial material',
          'h', 'Humified', 'Non-fibrous peats - conventional horizons **Om**, **Oh**', 
          'r', 'Fibrous',  'Fibrous peats and thick litter layers - conventional horizons **Of**, **H**, **F**')
 
@@ -181,6 +183,10 @@ tbl_in_fhtxx <- gt(dat_in_fhtxx) |>
 tbl_in_fhtxx
 ```
 
+-   Texture suffix [**a**]{style="color: red"} can only be used with Sandy textures (e.g. Aa)
+-   Texture suffix [**x**]{style="color: red"} can only be used where extremely stony (e.g. Xx)
+-   Texture suffixes [**r**]{style="color: red"} and [**h**]{style="color: red"} can only be used with Organic texture (e.g. Oh)
+
 ### Structure {#sec-in-fh-str}
 
 ```{r}
@@ -190,10 +196,8 @@ tbl_in_fhtxx
 
 dat_in_fhtxx <-
   tribble(~Code, ~Name, ~Description,
-         'C', 'Coarse', '-   At least 50% peds of size > 40 mm, *or* 
-         - Apedal massive structure',
-         'F', 'Fine', '-   At least 50% peds of size < 40 mm
-         - includes coarse structure breaking to finer nested peds',
+         'C', 'Coarse', 'At least 50% peds of size > 40 mm, *or* apedal massive structure',
+         'F', 'Fine', 'At least 50% peds of size < 40 mm, including horizons where coarse structure breaks to finer nested peds',
          'E', 'Earthy', 'Weak soil strength with very weak ped strength', 
          'K', 'Platy',  'At least 50% peds of any size, with a platy shape')
 
@@ -206,13 +210,15 @@ tbl_in_fhtxx <- gt(dat_in_fhtxx) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  fmt_markdown(columns = 3) |>
   cols_width(Code ~pct(20), Name ~ pct(20))
   
 tbl_in_fhtxx
 ```
 
-[TODO are we keeping Earthy? is there really no lower limit on platy ped size? check aligned with wherever structure ends up and also add crosslinks]{style="background-color: skyblue"}
+-   Structure codes ([**C**]{style="color: red"}, [**F**]{style="color: red"}) can only be used with [**L**]{style="color: red"} or [**Y**]{style="color: red"} texture codes, and only where consistence is not [**w**]{style="color: red"}.
+-   Structures [**E**]{style="color: red"} and [**K**]{style="color: red"} can only be used with texture [**L**]{style="color: red"}.
+
+[TODO are we keeping Earthy? is there really no lower limit on platy ped size? is it still 40 mm like in Webb or 20mm like in SMap Manual? check aligned with wherever structure ends up and also add crosslinks]{style="background-color: skyblue"}
 
 ### Consistence
 
@@ -246,13 +252,16 @@ tbl_in_fhcon <- gt(dat_in_fhcon) |>
 tbl_in_fhcon
 ```
 
+-   Consistence [**ws**]{style="color: red"} can only be used with texture [**Y**]{style="color: red"}.
+-   Consistence [**w**]{style="color: red"}, [**ws**]{style="color: red"}, [**s**]{style="color: red"}, and [**f**]{style="color: red"} can only be used with non-stony or stony ([**S**]{style="color: red"}) codes. [**V**]{style="color: red"} and [**X**]{style="color: red"} codes use consistence [**l**]{style="color: red"}, [**c**]{style="color: red"}, or [**d**]{style="color: red"} instead.
+
 [TODO are we keeping ws??]{style="background-color: skyblue"}
 
 ### Permeability
 
-The permeability class represents saturated hydraulic conductivity (Ksat) measured as the rate of water infiltrating into a soil horizon when water is ponded at 10 mm deep at the top of the horizon. Assign one of the classes in @tbl-in-hznperm to each horizon. Note that [**'xs'**]{style="color: red"} represents effective impermeability. The classes have been slightly simplified from those in Griffiths [-@griffiths1991] and Griffiths et al [-@griffiths1999].
+The permeability class represents saturated hydraulic conductivity (*K*~sat~) measured as the rate of water infiltrating into a soil horizon when water is ponded at 10 mm deep at the top of the horizon. Assign one of the classes in @tbl-in-hznperm to each horizon. Note that [**'xs'**]{style="color: red"} represents effective impermeability. The classes have been slightly simplified from those in Griffiths [-@griffiths1991] and Griffiths et al [-@griffiths1999].
 
-Each of these classes is associated with soil morphological parameters as described in @sec-in-fh. As such, each functional horizon has a default permeability class and usually one or more additional allowable classes. Use the functional horizon name to narrow down the appropriate choice of permeability rating, per @tbl-in-fh below.
+Permeability is very difficult to assess in the field, but considerable work has been done to associate particular ranges of values with the components of the functional horizon. As such, each functional horizon has a default permeability class and usually one or more additional allowable classes. Use the functional horizon name to narrow down the appropriate choice of permeability rating, per @tbl-in-fh below.
 
 ```{r}
 #| label: tbl-in-hznperm
@@ -286,11 +295,14 @@ tbl_in_hznperm
 
 ## Functional horizon names
 
-The horizon names available for use are listed below, along with allowed permeability classes
+Valid combinations of the above components are listed below, along with associated permeability classes.
 
+-   The [**t**]{style="color: red"} prefix can be added to any of these.
+-   The [**z**]{style="color: red"} *or* [**b**]{style="color: red"} prefix can be added to any of these, except for [**Oh**]{style="color: red"}, [**Or**]{style="color: red"}, [**J**]{style="color: red"}, and [**Q**]{style="color: red"}.
+-   A good reason is needed to deviate from the default permeability (e.g. an Lw with r permeability would need a low clay content).
 
 | Code      | Name                                   | Allowed permeabilities | Topsoil allowed permeabilities |
-|-----------|----------------------------------------|------------------------|--------------------------------|
+|---------------|------------------------|---------------|-------------------|
 | **J**     | Fluid                                  | **xs**                 | **xs**                         |
 | **Or**    | Fibric organic                         | r **m**                | **r** m                        |
 | **Oh**    | Humic organic                          | **m** ms s             | **m** ms                       |
@@ -345,27 +357,26 @@ The horizon names available for use are listed below, along with allowed permeab
 
 : Functional horizon names and allowed permeability classes. Default permeabilities are bolded {#tbl-in-fh}
 
-
-## Drainage
+## Horizon drainage {#sec-in-hdrng}
 
 Soil drainage is an assessment of how fast water leaves a soil profile relative to supply. This characteristic can be controlled by morphological characteristics that occur in a range of combinations.
 
-Drainage should first be assessed on a per-horizon basis. These interpretations are later summarised at a profile level (see @sec-in-pdrng). @tbl-in-intdrng below summarises the common characteristics associated with each horizon drainage class. A 'balance of evidence' approach should be taken when assigning a drainage class to a horizon. When in doubt, choose the poorest class available.
+Drainage should first be assessed on a per-horizon basis. These interpretations are later summarised at a profile level (see @sec-in-pdrng). @tbl-in-hdrng below highlights the common characteristics associated with each horizon drainage class. A 'balance of evidence' approach should be taken when assigning a drainage class to a horizon. When in doubt, choose the poorest class available.
 
 ```{r}
-#| label: tbl-in-intdrng
+#| label: tbl-in-hdrng
 #| tbl-cap: "Horizon-level drainage characteristics"
 #| column: page
 
-dat_in_intdrng <-
+dat_in_hdrng <-
   tribble(~Code, ~Name, ~HNames, ~sws, ~mcol, ~Mottles, ~Texture, ~StrGr, ~secfts, ~cons,
           'VP', 'Very poor', 'O*, *r', 'Saturated or wet', 'Dark or gley', '<2%', 'Peaty, clayey, silty. Rarely sandy, very rarely stony', 'Apedal', 'Few to None', 'Deformable', 
-          'PO', 'Poor', '*r, *g', 'Wet', 'Dark, gley, grey, pale', '2-50%', 'Clayey, silty, occasionally peaty and more often just highly organic (e.g. drained ex-peat). Less comonly sandy or stony', 'Apedal to weak', 'Few to none', 'Deformable or semi-deformable',
+          'PO', 'Poor', '*r, *g', 'Wet', 'Dark, gley, grey, pale', '2-50%', 'Clayey, silty, occasionally peaty and more often just highly organic (e.g. drained ex-peat). Less commonly sandy or stony', 'Apedal to weak', 'Few to none, mottles more often on ped surfaces than internals', 'Deformable or semi-deformable',
           'IP', 'Imperfect', '*(g)', 'Wet to Moist', 'Dark, grey, yellow or pale', '25-75%', 'Any non-peaty',  'Apedal to moderate', 'Fe and/or Mn-rich segregations, nodules and pans', 'Friable to semi-deformable',
           'MW', 'Moderately Well', '*(f)', 'Wet to Dry', 'Any non-gley', '2-50% (non-gley)', 'Any', 'Any', 'Mottles more often in ped interiors', 'Very friable to brittle', 
           'WE', 'Well', 'No redox suffixes', 'Moist to Dry', 'Any non-gley', 'None', 'Variable but usually not clayey', 'Any', '<2% (non-gley)', 'Very friable to brittle')
 
-tbl_in_intdrng <- gt(dat_in_intdrng) |>
+tbl_in_hdrng <- gt(dat_in_hdrng) |>
    tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
@@ -383,7 +394,7 @@ tbl_in_intdrng <- gt(dat_in_intdrng) |>
              secfts = 'Secondary features',
              cons   = 'Consistence')
 
-tbl_in_intdrng
+tbl_in_hdrng
 ```
 
 ### Classifying topsoil drainage
