@@ -13,14 +13,9 @@ library(gtExtras)
 
 # Horizon names
 
-Names as shorthand for full profile descriptions
+Horizon names operate as a shorthand for describing the full profile, making it easier to compare and contrast groups of profiles, and easier to classify them. Horizons are given a particular designation according to their position in the profile and according to soil properties that reflect the kind and degree of pedogenic alteration. As designations are made in the field, they are defined mainly by morphological properties that differentiate horizons from those above or below, or from a presumed parent material. Laboratory data may be needed to confirm identification, especially in marginal cases. This scheme was developed from the system used in England and Wales [@avery1980] by Clayden and Hewitt [-@clayden2015], and is broadly similar to those used overseas (e.g. WRB [-@iussworkinggroupwrb2022]. However, note that significant differences in suffix use exist between all of these systems as they have become adapted to regional conditions.
 
-## Conventional horizon names
-
--   support for NZSC level one-three (four??)
--   profile position, major processes, significantly developed features
-
-### Primary Divisions
+## Primary Divisions
 
 These codes can be used by themselves for rapid assessment, or where criteria for secondary divisions are not met.
 
@@ -81,9 +76,9 @@ tbl_hr_horprime
 
 ```
 
-### Secondary Divisions
+## Secondary Divisions
 
-#### O horizons {#sec-hor-o}
+### O horizons {#sec-hor-o}
 
 ```{r}
 #| label: tbl-hr-hortwoorg
@@ -114,7 +109,7 @@ tbl_hr_hortwoorg
 
 -   Add the **p** suffix wherever the **O** horizon is affected by cultivation e.g. **Ohp**.
 
-#### A Horizons {#sec-hor-a}
+### A Horizons {#sec-hor-a}
 
 ```{r}
 #| label: tbl-hr-hortwoa
@@ -145,7 +140,7 @@ tbl_hr_hortwoa
 -   Add the **g** suffix wherever the **A** horizon has ≥ 2% redox segregations.\
     *Note:* As **A** horizons are expected to generally be dark and/or low-chroma from elevated organic matter, the [other redox modifiers](#sec-hor-redox) available in deeper horizons may not be applied.
 
-#### E horizons {#sec-hor-e}
+### E horizons {#sec-hor-e}
 
 ```{r}
 #| label: tbl-hr-hortwoe
@@ -174,7 +169,7 @@ tbl_hr_hortwoe <- gt(dat_hr_hortwoe) |>
 tbl_hr_hortwoe
 ```
 
-#### B Horizons {#sec-hor-b}
+### B Horizons {#sec-hor-b}
 
 ```{r}
 #| label: tbl-hr-hortwob
@@ -253,7 +248,7 @@ tbl_hr_hortwob <- gt(dat_hr_hortwob) |>
 tbl_hr_hortwob
 ```
 
-#### C Horizons {#sec-hor-c}
+### C Horizons {#sec-hor-c}
 
 ```{r}
 #| label: tbl-hr-hortwoc
@@ -282,7 +277,7 @@ tbl_hr_hortwoc <- gt(dat_hr_hortwoc) |>
 tbl_hr_hortwoc
 ```
 
-#### R Horizons {#sec-hor-r}
+### R Horizons {#sec-hor-r}
 
 ```{r}
 #| label: tbl-hr-hortwor
@@ -308,7 +303,7 @@ tbl_hr_hortwor <- gt(dat_hr_hortwor) |>
 tbl_hr_hortwor
 ```
 
-### Redox suffixes {#sec-hor-redox}
+## Redox suffixes {#sec-hor-redox}
 
 The following suffixes can be added to most [**E**]{style="color: red"}, [**B**]{style="color: red"}, or [**C**]{style="color: red"} horizons to signify the degree to which they have been affected by water saturation and reducing conditions, e.g. [**Bg**]{style="color: red"}. Some exceptions exist:
 
@@ -349,7 +344,7 @@ tbl_hr_hortwor <- gt(dat_hr_hortwor) |>
 tbl_hr_hortwor
 ```
 
-### Other suffixes {#sec-hor-other}
+## Other suffixes {#sec-hor-other}
 
 One or more of these suffixes may be added to the designations defined above to provide more specific information about a horizon. For example, a [**Bg**]{style="color: red"} horizon containing more than 5% by volume of concretions is designated [**Bgc**]{style="color: red"}.
 
@@ -411,26 +406,10 @@ tbl_hr_horother <- gt(dat_hr_horother) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_hr_horother
-```                                                                                                  
+```
 
 ### Prefixes
 
 -   [**b**]{style="color: red"} may be used to signify the presence of a paleosol, where pedologically altered materials have been buried.
 -   Numbers [**1**-***N***]{style="color: red"} may be used to signify lithological discontinuities, where the parent material changes significantly between layers e.g. [**2C**]{style="color: red"}
 -   Number and b prefixes may be combined to describe multiple instances of buried soils and discontinuities, although this is somewhat rare in the top 100 cm.
-
-## Functional horizon names
-
--   link to NZSC level 5
--   physical/water movement focus missing from conventional system
--   so, complementary
--   more directly derived - so can theoretically automate if inputs are present
-
-### Names
-
--   import from cheatsheets doc
-
-### Components
-
--   import from cheatsheets doc
-
