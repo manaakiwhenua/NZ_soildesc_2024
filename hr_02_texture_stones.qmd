@@ -69,12 +69,7 @@ Sand/silt/clay compositional data can be displayed on a triangle plot (see @fig-
 #| label: fig-texture-tri
 #| fig-cap: "New Zealand Soil Texture Triangle"
 
-nztt_dat <- readRDS(file.path('data', 'NZTT.RDS')) %>% 
-  mutate(GROUP = case_match(CODE, 
-                            c('S', 'LS')        ~ 'Sandy',
-                            c('SL', 'SC', 'CL') ~ 'Loamy',
-                            c('Z', 'ZL', 'LZ')  ~ 'Silty',
-                            c('ZC', 'LC', 'C')  ~ 'Clayey'))
+nztt_dat <- readRDS(file.path('data', 'NZTT.RDS')) 
 
 nztt_labels <- readRDS(file.path('data', 'NZTT_LABELS.RDS'))
 
