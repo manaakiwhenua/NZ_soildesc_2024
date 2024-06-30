@@ -295,24 +295,30 @@ tbl_in_sibtexture
 
 ## Drainage {#sec-in-pdrng}
 
-Profile drainage is determined by the depth to the most poorly-drained horizon (see @tbl-in-intdrng). This horizon may be perched.
+Profile drainage is built from horizon drainage ratings completed according to @sec-in-hdrng. 
+
+- The dominant drainage class in each of the control sections in @tbl-in-pdrng forms a sequence, e.g. 'WE-WE-MW-MW-IP'. Each of these sequences is unique to a profile drainage class - in the case of this example, 'MW'. 
+- Any sequence where the drainage class does not change (e.g. PO-PO-PO-PO-PO) will also be PO at profile level.
+- For shallower profiles, the drainage sequence stops early. For example, with a 25 cm profile over rock, one might get the sequence WE-MW-XX-XX-XX. That sequence can occur in the MW, IP and PO profile ratings, but since the IP and PO classes are not identified at horizon level, MW must be chosen at profile level.
+- For perched profiles, sequences like IP-PO-PO-WE-WE might be identified, where the perching layer prevents development of poor-drainage diagnostic features below. In this case, when classifying drainage, one must stop at the base of the perched layer, as if it were a shallow profile, ignoring the ‘improvement’ in drainage below this point.
 
 ```{r}
-#| label: tbl-in-intdrng
+#| label: tbl-in-pdrng
 #| tbl-cap: "Profile drainage rules"
-#| classes : no-stripe
+#| column: page
 
 
-dat_in_intdrng <-
+
+dat_in_pdrng <-
   tribble(   
-    ~depth,      ~VP,          ~PO,          ~IP,          ~MW,      ~WE,
-  '0 - 15', 'PO, VP', 'MW, IP, PO', 'WE, MW, IP',     'WE, MW',     'WE',
- '15 - 30',     'VP', 'MW, IP, PO', 'WE, MW, IP',     'WE, MW',     'WE',
- '30 - 60',     'VP',     'PO, VP',     'IP, PO',     'WE, MW',     'WE',
- '60 - 90',     'VP',     'PO, VP',     'IP, PO',     'MW, IP',     'WE',
-    '> 90',     'VP',     'PO, VP', 'IP, PO, VP', 'MW, IP, PO', 'WE, MW')
+    ~depth,      ~VP,              ~PO,          ~IP,              ~MW,          ~WE,
+  '0 - 15', 'PO, VP', 'WE, MW, IP, PO', 'WE, MW, IP',         'WE, MW',         'WE',
+ '15 - 30',     'VP',     'MW, IP, PO', 'WE, MW, IP',         'WE, MW',         'WE',
+ '30 - 60',     'VP',         'PO, VP',         'IP',         'WE, MW',         'WE',
+ '60 - 90',     'VP',         'PO, VP', 'IP, PO, VP',     'MW, IP, PO',         'WE',
+    '> 90',     'VP',         'PO, VP', 'IP, PO, VP', 'MW, IP, PO, VP', 'WE, MW, IP')
 
-tbl_in_intdrng <- gt(dat_in_intdrng) |>
+tbl_in_pdrng <- gt(dat_in_pdrng) |>
   tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
@@ -327,18 +333,23 @@ tbl_in_intdrng <- gt(dat_in_intdrng) |>
               MW ~ 'Moderately Well',
               WE ~ 'Well',
               depth ~ 'Depth (cm)')
-tbl_in_intdrng
+tbl_in_pdrng
 
 ```
 
-@tbl-in-pdrng describes some potential additional signifiers of drainage condition that might be considered. These may be useful when estimating drainage in a new landscape that has not yet been examined in detail.
+Workers classifying drainage for NZSC Sibling construction have no need to subdivide within those overall ratings. For other types of work e.g. agricultural suitability assessment, it may be useful to recognise subgroups – e.g. for a deep-rooted, wetness-intolerant crop, there’s a difference between an imperfectly drained profile that’s WE-IP-IP-IP-PO vs WE-IP-IP-PO-PO.
+
+### Helper information for profile drainage
+
+@tbl-in-drngl describes some potential additional signifiers of profile drainage condition that might be considered. These may be useful when estimating drainage in a new landscape that has not yet been examined in detail, or when handling edge cases where a particular control section has ambiguous horizon-level drainage.
 
 ```{r}
-#| label: tbl-in-pdrng
+#| label: tbl-in-drngl
 #| tbl-cap: "Profile drainage signifiers"
 #| classes : no-stripe
+#| column: page
 
-dat_in_profdrng <-
+dat_in_drngl <-
   tribble(~Code, ~Name, ~relel, ~Landform, ~Slope, ~Veg, ~Other, 
          'VP', 'Very poor', 'Very low (0-1m)', 'Waning/minimal/enclosed flats and depressions', 'Level to very gentle', 'Exclusively wetland plants', 'Persistent surface water ponding or seeps nearby',
          'PO', 'Poor', 'Low (0-10m)', 'Waning/minimal slopes and flats', 'Low-slope or level ground', 'Wetland plants', 'Seasonal ponding or seeps nearby',
@@ -346,7 +357,7 @@ dat_in_profdrng <-
          'MW', 'Moderately Well', 'Variable', 'Most landforms', 'Gentle to moderately steep', 'Any' ,'',
          'WE', 'Well', 'Moderate to high (>10 m)', 'crests, ridges and spurs', 'Gentle to very steep' , 'Any, dry-tolerant may outcompete', '')
 
-tbl_in_profdrng <- gt(dat_in_profdrng) |>
+tbl_in_drngl <- gt(dat_in_drngl) |>
   tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
@@ -359,7 +370,37 @@ tbl_in_profdrng <- gt(dat_in_profdrng) |>
              Veg ~ 'Vegetation') |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
-tbl_in_profdrng
+tbl_in_drngl
+
+```
+
+### Natural vs Artificial drainage
+
+Profile drainage is often modified by human activity. Many of these modifications require ongoing maintenance. Use the codes in @tbl-in-natdrng to signify the degree of drainage modification.
+
+```{r}
+#| label: tbl-in-natdrng
+#| tbl-cap: "Profile drainage modification level"
+#| classes : no-stripe
+
+dat_in_natdrng <-
+  tribble(~Code, ~Name, ~Description, 
+         'N', 'Natural', 'No evidence of human impacts on the local drainage regime', 
+         'M', 'Minor', 'Drainage regime passively altered by e.g. conversion to or from forest; or ambiguous evidence of any human impacts beyond clearing',
+         'A', 'Major', 'Clear evidence of directed human alteration to the drainage regime e.g. drain or dam construction adjacent to site, flow diversions, infill, levelling or contouring works')
+
+tbl_in_natdrng <- gt(dat_in_natdrng) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
+  
+tbl_in_natdrng
 
 ```
 
