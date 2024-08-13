@@ -1,17 +1,114 @@
 ---
-title: "Setting properties"
-editor: visual
+title: "Site and Setting properties"
+editor: source
 editor_options: 
   chunk_output_type: console
 ---
 
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+library(gtExtras)
+```
+
 # Site and setting properties
+
+Many of the Landscape and Landform parameters described in @sec-landscape are inherently categorical. Classifying the numeric measurements can be useful for efficient communication. However, in the absence of inherent groupings in these data, class boundaries need to be chosen carefully.
 
 ## Slope classification {#sec-slopeclass}
 
--   talk through LUC and other systems
+### LUC Slope {#sec-slopeclass-luc}
 
-## Aspect classification
+The most commonly-used slope classification in New Zealand is the one associated with the Land Use Capability (LUC) framework. These classes were formulated primarily to support pastoral agriculture, and the class boundaries focus on slope as an activity limiter, rather than an inherent landscape property. This means that the classification can potentially underperform in landscapes where natural slopes are close to the class boundaries. This is acknowledged in the LUC Handbook [@lynn2009] by the inclusion of various options for describing these cases.
+
+The class boundaries are reproduced from Table 26 of the LUC Handbook in @tbl-in-slpluc. Some generalised groupings are also included - these are discussed in Appendix 1 of the Handbook but are not explicitly defined.
+
+```{r}
+#| label: tbl-in-slpluc
+#| tbl-cap: "LUC Slope Classes"
+
+dat_in_slpluc <-
+  tribble(~Code,   ~Limits, ~Group, 
+            'A',   '0 - 3', 'Wheelable',
+            'B',   '4 - 7', 'Wheelable',
+            'C',  '8 - 15', 'Wheelable',
+            'D', '16 - 20', 'Hilly',
+            'E', '21 - 25', 'Hilly',
+            'F', '26 - 35', 'Steep',
+            'G',     '>35', 'Steep')
+
+tbl_in_slpluc <- gt(dat_in_slpluc, groupname_col = 'Group', 
+                    row_group_as_column = FALSE) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%',
+    row_group.font.weight = 'bold',
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Limits ~pct(30)) |>
+  cols_label(Limits = 'Slope angle (degrees)')
+
+tbl_in_slpluc
+```
+
+::: callout-tip
+Note that the Handbook does not provide fully closed limits for slope classes. For consistency, class A should be considered to be 0 - ≤4, B as \>4 - ≤8, etc.
+:::
+
+## Natural Log classifications {#sec-slopeclass-log}
+
+Work by Speight [@speight1971] promotes the use of slope classes with natural-log derived limits on the basis that they come closest to a universal set of 'characteristic slopes'. The limits proposed are shown in @tbl-in-slpaus. These classes are commonly used in Australian soil survey, and focus more on splitting up low-slope areas of the landscape. As such, these may be more useful for interpreting alluvial plains landforms than the LUC classes.
+
+```{r}
+#| label: tbl-in-slpaus
+#| tbl-cap: "Natural-log Slope Classes"
+
+dat_in_slpaus <-
+  tribble(~Code,         ~Name,     ~Limits_p,        ~Limits_d, 
+           'LE',       'Level',      '0 - ≤ 1',     '0 - ≤ 0.57',
+           'VG', 'Very Gentle',     '>1 - ≤ 3', '>0.57 - ≤ 1.72',
+           'GE',      'Gentle',    '>3 - ≤ 10', '>1.72 - ≤ 5.71', 
+           'MO',    'Moderate',   '>10 - ≤ 32', '>5.71 - ≤ 17.7',
+           'ST',       'Steep',   '>32 - ≤ 56',  '>18 - ≤ 29.25',
+           'VS',  'Very Steep',  '>56 - ≤ 100',  '>29.25 - ≤ 45',
+           'PR', 'Precipitous', '>100 - ≤ 300',   '>45 - ≤ 71.6',
+           'CL',     'Cliffed',         '>300',          '>71.6')
+
+tbl_in_slpaus <- gt(dat_in_slpaus) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20)) |>
+  cols_label(Limits_p = 'Slope angle (percent)',
+             Limits_d = 'Slope angle (degrees)')
+
+tbl_in_slpaus
+```
+
+::: callout-tip
+The Australian Soil and Land Survey Field Handbook [@nationalcommitteeonsoilandterrain2023] notes that in certain circumstances it may be useful to split the classes [VG]{.ceg}, [GE]{.ceg} and [MO]{.ceg}, at 1.8% (1.0°), 5.6% (3.2°), and 18% (10.2°) respectively. The document does not, however, elucidate those circumstances.
+:::
+
+## Critical-limit classifications {#sec-slopeclass-clm}
+
+Landslide-related etc, TBD
+
+## Data-driven classifications {#sec-slopeclass-dat}
+
+Where high-precision DEMs are available and the areal limits of landscapes are identified, data-driven slope classification is possible. This cannot be done universally; since the classification is an expression of local geomorphology the area of interest must first be carefully delineated before proceeding. Classes defined in this way may be very useful in accurately defining landforms, but hard to convert to practical use.
+
+## Aspect classification {#sec-aspectclass}
+
+The broadest aspect classification available divides the landscape into flat/sunny/shady (\@tbl-aspcl-ssh). In New Zealand, 'sunny' is roughly 'north-facing',
 
 -   talk through cardinal compass direction and more tailored options
 
