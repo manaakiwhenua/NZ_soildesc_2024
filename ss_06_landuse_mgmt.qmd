@@ -1,28 +1,85 @@
-# Land use and management
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+library(gtExtras)
+```
 
-- link to Landscape and Landform scales - information on whether site is typical of the broader area
+# Land use, management, and cover
+
+Land use and land management information is captured as part of soil survey when it is relevant to interpreting the landscape, landform, and soil profile description, and especially where it is likely to have affected the soil classification. Land use data is particularly important for long-term monitoring sites, where uses may change significantly between sampling events.
+
+New Zealand currently lacks an official land use classification framework, but a proposal has been developed (REF) and can be implemented during soil survey work. The classification has three nested levels, with increasing specificity. This classification can be applied independent of scale, so advice on how and when to apply it to Landscapes, Landforms, and Profiles follows. 
+
+Land use classification does not have to be done in the field provided adequate supporting information (notes and photographs) are available for later use. Given that the classification is expected to evolve over time, the observation date can be used to infer the edition in use.
 
 ## Landscape scale
 
-- simple list - natural, pastoral, forested, intensive ag, lifestyle, urban
+The Landscape will most likely contain multiple land uses. Record the primary land use and up to two ancillary land uses, but only to the second level of the classification. Uses recorded must be considered to occupy at least 20% of the landscape under examination.
+
+This parameter is optional as it may only be useful when writing high-level reports on soil survey programmes.
 
 ## Landform scale
 
-### LCDB cover class
+The Landform is a more local concept. As such it is less likely to contain multiple land uses, and these should be recorded at the third level of the classification. Record the primary land use and up to two ancillary land uses. These do not have to be contained within the land uses recorded at Landscape level, as they may be locally distinct. The uses recorded should occupy at least 20% of the landform under consideration.
+
+Where more than one use occurs within a Landform, the primary use is the one considered to have had the most impact on the soil profile being described. Attribute each Landform-scale land use with the degree to which it is considered to have impacted the soil profile, using @tbl-ss-luimp.
+
+Example for a site on a mixed sheep and beef farm in hill country: 
+Landscape (series of steep valleys with some forestry blocks and new waterway exclusion fencing: [2.2]{.ceg} ([2.1]{.ceg}, [1.4]{.ceg})
+Landform (mid-slope with pasture cover): [2.2.3]{.ceg} ([M]{.ceg})
+
+```{r}
+#| label: tbl-ss-luimp
+#| tbl-cap: "Land Use impact on the soil profile"
+#| classes : no-stripe
+
+# NOT SO SURE ABOUT THIS TBQH
+
+dat_ss_luimp <-
+  tribble(~Code, ~Name, ~Description, 
+         'N', 'None', 'The land use has not significantly impacted the soil profile', 
+         'M', 'Indirect', 'The land use has impacted flows of energy/matter into/out of the profile but not physically disturbed it (e.g. by fertiliser application or drainage alteration)',
+         'E', 'Direct', 'The land use has caused physical disturbance to the soil profile (e.g. from tillage or excavation')
+
+tbl_ss_luimp <- gt(dat_ss_luimp) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~ pct(40))
+  
+tbl_ss_luimp
+
+```
+
+
+
+
+### LCDB cover class {.todo}
 
 - go through system and common classes briefly
 
-### Cultivation type
+### Cultivation type {.todo}
 
 - wrb cultivation types? or similar
 
-### Management practices
+### Management practices {.todo}
 
 - maybe only relevant to paddock-scale research and management
 
 ---
 
-## Current and past use(s)
+## Current and past use(s) {.todo}
 
 - where known and relevant - e.g. previous forestry means a lot of surface disturbance
 - time since clearing
