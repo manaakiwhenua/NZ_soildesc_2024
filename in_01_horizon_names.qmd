@@ -1,9 +1,3 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: console
----
-
 ```{r}
 library(dplyr)
 library(tibble)
@@ -107,7 +101,7 @@ tbl_hr_hortwoorg
       
 ```
 
--   Add the **p** suffix wherever the **O** horizon is affected by cultivation e.g. **Ohp**.
+-   Add the [p]{.ceg} suffix wherever the [O]{.ceg} horizon is affected by cultivation e.g. [Ohp]{.ceg}.
 
 ### A Horizons {#sec-hor-a}
 
@@ -137,8 +131,8 @@ tbl_hr_hortwoa <- gt(dat_hr_hortwoa) |>
 tbl_hr_hortwoa
 ```
 
--   Add the **g** suffix wherever the **A** horizon has ≥ 2% redox segregations.\
-    *Note:* As **A** horizons are expected to generally be dark and/or low-chroma from elevated organic matter, the [other redox modifiers](#sec-hor-redox) available in deeper horizons may not be applied.
+-   Add the [g]{.ceg} suffix wherever the [A]{.ceg} horizon has ≥ 2% redox segregations.\
+    *Note:* As [A]{.ceg} horizons are expected to generally be dark and/or low-chroma from elevated organic matter, the [other redox modifiers](#sec-hor-redox) available in deeper horizons may not be applied.
 
 ### E horizons {#sec-hor-e}
 
@@ -305,10 +299,10 @@ tbl_hr_hortwor
 
 ## Redox suffixes {#sec-hor-redox}
 
-The following suffixes can be added to most [**E**]{style="color: red"}, [**B**]{style="color: red"}, or [**C**]{style="color: red"} horizons to signify the degree to which they have been affected by water saturation and reducing conditions, e.g. [**Bg**]{style="color: red"}. Some exceptions exist:
+The following suffixes can be added to most [E]{.ceg}, [B]{.ceg}, or [C]{.ceg} horizons to signify the degree to which they have been affected by water saturation and reducing conditions, e.g. [Bg]{.ceg}. Some exceptions exist:
 
--   [**g**]{style="color: red"} and [**r**]{style="color: red"} suffixes cannot be used with [**Ew**]{style="color: red"} or [**Bw**]{style="color: red"} horizons, which are defined by their development under well-aerated conditions.
--   [**g**]{style="color: red"} and [**r**]{style="color: red"} suffixes cannot be used with [**Cu**]{style="color: red"}, as it is partly defined by a lack of strong gleying.
+-   [g]{.ceg} and [r]{.ceg} suffixes cannot be used with [Ew]{.ceg} or [Bw]{.ceg} horizons, which are defined by their development under well-aerated conditions.
+-   [g]{.ceg} and [r]{.ceg} suffixes cannot be used with [Cu]{.ceg}, as it is partly defined by a lack of strong gleying.
 
 Per below, low-chroma colours have:
 
@@ -346,7 +340,7 @@ tbl_hr_hortwor
 
 ## Other suffixes {#sec-hor-other}
 
-One or more of these suffixes may be added to the designations defined above to provide more specific information about a horizon. For example, a [**Bg**]{style="color: red"} horizon containing more than 5% by volume of concretions is designated [**Bgc**]{style="color: red"}.
+One or more of these suffixes may be added to the designations defined above to provide more specific information about a horizon. For example, a [Bg]{.ceg} horizon containing more than 5% by volume of concretions is designated [Bgc]{.ceg}.
 
 ```{r}
 #| label: tbl-hr-horother
@@ -410,6 +404,6 @@ tbl_hr_horother
 
 ### Prefixes
 
--   [**b**]{style="color: red"} may be used to signify the presence of a paleosol, where pedologically altered materials have been buried.
--   Numbers [**1**-***N***]{style="color: red"} may be used to signify lithological discontinuities, where the parent material changes significantly between layers e.g. [**2C**]{style="color: red"}
+-   [b]{.ceg} may be used to signify the presence of a paleosol, where pedologically altered materials have been buried.
+-   Numbers [1-*N*]{.ceg} may be used to signify lithological discontinuities, where the parent material changes significantly between layers e.g. [2C]{.ceg}
 -   Number and b prefixes may be combined to describe multiple instances of buried soils and discontinuities, although this is somewhat rare in the top 100 cm.

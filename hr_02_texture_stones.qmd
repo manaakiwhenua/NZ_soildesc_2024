@@ -125,7 +125,7 @@ tbl_hr_textri
 
 #### Sand modifiers
 
-Hand-texture classes can be accompanied by additional information about the sand fraction. These codes can be appended to a texture class as a prefix, e.g. [**(K)LS**]{style="color: red"} for coarse loamy sand.
+Hand-texture classes can be accompanied by additional information about the sand fraction. These codes can be appended to a texture class as a prefix, e.g. [(K)LS]{.ceg} for coarse loamy sand.
 
 Note that appreciable coarse sand in a sample leads to underestimates of clay content in hand texturing.
 
@@ -157,7 +157,7 @@ tbl_hr_sandquals
 
 #### Organics modifiers
 
-Hand-texture classes can also be modified to express the presence of elevated soil organic matter and its degree of decomposition (where it remains below the cutoff for organic soil materials). These codes can be appended to a texture class as a suffix, e.g. [**SL(T)**]{style="color: red"} for slightly organic sandy loam, or [**SL(TF)**]{style="color: red"} for slightly organic, fibric sandy loam.
+Hand-texture classes can also be modified to express the presence of elevated soil organic matter and its degree of decomposition (where it remains below the cutoff for organic soil materials). These codes can be appended to a texture class as a suffix, e.g. [SL(T)]{.ceg} for slightly organic sandy loam, or [SL(TF)]{.ceg} for slightly organic, fibric sandy loam.
 
 Either of the organic matter abundance qualifiers can be used to signify the 'peaty topsoil' NZSC diagnostic.
 
@@ -248,7 +248,7 @@ tbl_hr_rockfrsz <- gt(dat_hr_rockfrsz) |>
 tbl_hr_rockfrsz
 ```
 
--   For rapid assessment, estimate total rock fragment abundance as an integer percentage, recording [**0%**]{style="color: red"} when confirming absence. 
+-   For rapid assessment, estimate total rock fragment abundance as an integer percentage, recording [0%]{.ceg} when confirming absence. 
 -   For routine assessment, split abundance over the size classes in @tbl-hr-rockfrsz.
 -   For detailed assessments, append further information on dominant fragment lithology using the codes in @tbl-ss-pm and shape using the codes in @tbl-hr-rockfrshp below.
 

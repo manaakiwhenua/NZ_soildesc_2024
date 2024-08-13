@@ -7,15 +7,15 @@ library(gt)
 library(gtExtras)
 ```
 
-A soil horizon is a distinct layer within a soil profile. Horizons are distinguished by differences in texture, stoniness, structure, colour, consistence or other soil properties as described in this section. Delineated horizons should ideally represent depth intervals over which important soil attributes change minimally. Conversely, the horizon boundaries should represent depth intervals over which there is a relatively high rate of change of important soil properties.
+A soil horizon is a distinct layer within a soil profile. [Horizons are distinguished by differences in texture, stoniness, structure, colour, consistence or other soil properties as described in]{.milne} this section. [Delineated horizons should ideally represent depth intervals over which important soil attributes change minimally. Conversely, the horizon boundaries should represent depth intervals over which there is a relatively high rate of change of important soil properties.]{.milne}
 
-Not all important soil properties change from one horizon to the next or at the same rate with depth. In some instances confident interpretation of the suitability of a soil for a particular end use may depend on the rate of change of a single property at a horizon boundary. For this reason the basis for separating the horizon may need to be explicitly stated, not just the traditional generalised estimate of the amount of overall change.
+[Not all important soil properties change from one horizon to the next or at the same rate with depth. In some instances confident interpretation of the suitability of a soil for a particular end use may depend on the rate of change of a single property at a horizon boundary. For this reason the basis for separating the horizon may need to be explicitly stated, not just the traditional generalised estimate of the amount of overall change.]{.milne}
 
 ## Depth
 
-When examining single small cores or auger points on a local landform (see @tbl-pr-gear, type [**A**]{style="color:red"}, [**C1**]{style="color:red"} and perhaps [**C2**]{style="color:red"}), record the observable upper and lower depth of each horizon in whole centimetres (e.g. "28-38cm").
+When examining single small cores or auger points on a local landform (see @tbl-pr-gear, type [A]{.ceg}, [C1]{.ceg} and perhaps [C2]{.ceg}), record the observable upper and lower depth of each horizon in whole centimetres (e.g. "28-38cm").
 
-Where a wider exposure (see @tbl-pr-gear, type [**E**]{style="color:red"}, [**P1**]{style="color:red"}, [**P2**]{style="color:red"}) or multiple undisturbed cores are available on a local landform and greater detail is desired, one may choose to record upper and lower depths as a median and range, again in whole centimetres (e.g. "28cm (27-29), 38 cm (37-40)"). At least 5 measurements should contribute to such an assessment.
+Where a wider exposure (see @tbl-pr-gear, type [E]{.ceg}, [P1]{.ceg}, [P2]{.ceg}) or multiple undisturbed cores are available on a local landform and greater detail is desired, one may choose to record upper and lower depths as a median and range, again in whole centimetres (e.g. "28cm (27-29), 38 cm (37-40)"). At least 5 measurements should contribute to such an assessment.
 
 Measure to and from the midpoint of each horizon transition zone (see @sec-hr-bdydist).
 
@@ -24,12 +24,12 @@ Measure to and from the midpoint of each horizon transition zone (see @sec-hr-bd
 Where depths are correctly measured, thickness should be calculated after fieldwork.
 
 ::: callout-important
-Talk about adjusting depths on steep slopes per WRB
+Talk about adjusting depths on steep slopes per WRB.
 :::
 
 ## Boundary shape
 
-Horizon boundary shape can only be observed on wider exposures (see @tbl-pr-gear, type [**E**]{style="color:red"}, [**P1**]{style="color:red"}, [**P2**]{style="color:red"}). Record against the following schema:
+Horizon boundary shape can only be observed on wider exposures (see @tbl-pr-gear, type [E]{.ceg}, [P1]{.ceg}, [P2]{.ceg}). Record against the following schema:
 
 ```{r}
 #| label: tbl-hr-bshp
@@ -57,7 +57,7 @@ tbl_hr_bshp <- gt(dat_hr_bshp) |>
 tbl_hr_bshp
 ```
 
-[change point - abandoning occluded as a modifier to the other codes, giving it its own code instead.]{style="background-color:orange"}
+[change point - abandoning occluded as a modifier to the other codes, giving it its own code instead.]{.majch}
 
 ## Boundary distinctness {#sec-hr-bdydist}
 
@@ -92,20 +92,26 @@ tbl_hr_bdst
 
 Where a transition is thicker than 15 cm, it should be defined as a new horizon. Use transitional horizon names as needed [CROSSLINK].
 
-[change points - using WRB cutoff for gradual/diffuse (15 not 10 cm), dropping diffuse as an option]{style="background-color:orange"}
+[change points - using WRB cutoff for gradual/diffuse (15 not 10 cm), dropping diffuse as an option]{.majch}
 
 ::: callout-note
 when to make a new horizon instead of reporting a transition
 :::
 
-[put a diagram unifying the previous three concepts here]{style="background-color:lightgreen"}
+[put a diagram unifying the previous three concepts here]{.diags}
 
 ## In situ moisture content
 
-Report soil moisture status at the time of observation. This parameter supports assessments of drainage and permeability, and contextualises consistence tests.
+Report soil moisture status for each horizon at the time of observation. This parameter supports assessments of drainage and permeability, and contextualises consistence tests.
 
--   at time of obs
+[-   at time of obs
 -   table 4 not table 3 - reconcile with WRB Table 8.28
--   discussion of field vs lab measurement
+-   discussion of field vs lab measurement]{.todo}
 
-QN: keep this here or move to e.g. consistence???
+[QN: keep this here or move to e.g. consistence???]{.todo}
+
+## Depth to free water
+
+Depth to free water can be determined from the upper depth of the first saturated horizon, or specifically recorded in whole centimetres. Depending on the soil's transmissivity, the presence of water table by the pit or core filling with water. 
+
+[add comment on how long a wet core or pit should be expected to take to equilibrate]{.todo}

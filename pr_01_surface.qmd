@@ -7,11 +7,11 @@ library(gt)
 library(gtExtras)
 ```
 
-The land surface at a site is assessed at the landform scale.
+The land surface at a site is assessed at the Landform scale.
 
 ## Surface cover
 
-Surface cover helps visualise the landscape and provides some information on infiltration behaviour. 
+Surface cover helps visualise the Landform and provides some information on infiltration behaviour. 
 
 Record the following generalised surface cover components as a percentage composition of the area surrounding a point observation, or the area within a sampling plot.
 
@@ -45,7 +45,7 @@ tbl_pr_surfcov <- gt(dat_pr_surfcov) |>
 tbl_pr_surfcov
 ```
 
-[GRAPHIC: Turn the above into a 3x3 grid with labels underneath conceptual diagrams]{style="background-color:lightgreen"}
+[GRAPHIC: Turn the above into a 3x3 grid with labels underneath conceptual diagrams]{.diag}
 
 These parameters should be recorded only to nearest 5-10%. It will be unusual to encounter more than three components at any one site.
 
@@ -61,7 +61,7 @@ These parameters should be recorded only to nearest 5-10%. It will be unusual to
 
 Information about surface water presence can contribute to drainage assessments. 
 
-Where surface water is present within the landform, as well as noting its areal dominance above, note the type and degree of persistence using the codes in @tbl-pr-swater and @tbl-pr-swaterp below.
+Where water is present above the landform surface, as well as noting its areal dominance above, note the type and degree of persistence using the codes in @tbl-pr-swater and @tbl-pr-swaterp below.
 
 ```{r}
 #| label: tbl-pr-swater
@@ -115,6 +115,8 @@ tbl_pr_swaterp <- gt(dat_pr_swaterp) |>
 tbl_pr_swaterp
 ```
 
+e.g. [R T 20%]{.ceg} for a paddock experiencing limited surface ponding from a recent cyclone at the time of observation.
+
 ## Surface cracking
 
 Soil surface cracking can occur for a number of reasons:
@@ -125,7 +127,7 @@ Soil surface cracking can occur for a number of reasons:
 
 Within the landform, record surface crack presence/persistence using the codes in @tbl-pr-cracktype. If present, record spatial arrangement using the codes in @tbl-pr-crackshape. For detailed descriptions, report median width and spacing between cracks in cm.
 
-e.g. [**RT P 0.5 cm, 15 cm**]{style="color: red"} for surface cracking patterns common to Vertic Melanic soils.
+e.g. [RT P 0.5 cm, 15 cm]{.ceg} for surface cracking patterns common to Vertic Melanic soils.
 
 ```{r}
 #| label: tbl-pr-cracktype
@@ -255,3 +257,6 @@ tbl_pr_micreltype <- gt(dat_pr_micreltype) |>
 tbl_pr_micreltype
 ```
 
+## Erosion and Deposition {.todo}
+
+ref Milne p. 23-5

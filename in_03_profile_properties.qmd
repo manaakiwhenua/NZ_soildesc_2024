@@ -1,8 +1,9 @@
 ---
 title: "Profile properties"
+editor: source
+editor_options: 
+  chunk_output_type: console
 ---
-
-
 ```{r}
 library(dplyr)
 library(tibble)
@@ -10,13 +11,11 @@ library(gt)
 library(gtExtras)
 ```
 
-# Profile properties
-
 ## Soil Profile Material
 
 The soil profile material concept is a brief summary of the overall character of the profile, in particular its mineral and stone content and major erosional/depositional origin. Some information on the likely range of bulk density values is implicit.
 
-@tbl-in-pmat below defines the available classes and should be used as a key. For Organic soils, skip the 'M' codes and start at [**Sl**]{style="color: red"}. Choose one code only per profile.
+@tbl-in-pmat below defines the available classes and should be used as a key. For Organic soils, skip the 'M' codes and start at [Sl]{.ceg}. Choose one code only per profile.
 
 Soil Profile material is the first parameter used to define the [NZSC Soil Family](in_03_profile_properties.qmd#sec-in-nzscfam). Applying the key accurately requires familiarity with the major NZSC Diagnostic Criteria. Links to glossary definitions are provided below, but the source material [@hewitt2010] should also be consulted.
 

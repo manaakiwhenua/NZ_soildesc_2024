@@ -28,7 +28,7 @@ segue in here from strat assemblages to local lith
 
 An identification and coding system for New Zealand rock types is available in [@lynn1991]. This system is tuned for land resource assessment, particularly assessment of erosivity, and is used in the NZ Land Resource Inventory and Land Use Classification methodology [@lynn2009]. The system is mentioned here as an option where consistency with LUC mapping is desired.
 
-[repeat codes, or just xref??]{style="background-color: lightgreen"}
+[repeat codes, or just xref??]{.todo}
 
 ### NZSC Parent Material {#sec-ss-pmat}
 
@@ -91,17 +91,17 @@ Soil parent material classifications have largely focused on major geological or
 
 dat_ss_sio2lith <-
   tribble(~Code, ~Name, ~ Description,
-          1, 'Extremely siliceous', 'Quartz sands, chert, pure quartzite, jasper, quartz reefs, silicified rocks',
-          2, 'Siliceous Upper', 'Quartz sandstone, quartz siltstone, unqualified quartzite and alluvial sands',
-          3, 'Siliceous Mid', 'Granite, rhyolite and siliceous tuff, arkose sandstone, most unqualified sandstone',
-          4, 'Siliceous Lower', 'Adamellite, granodiorite, dacite, monzogranite, siliceous/ intermediate tuff, most greywacke & lithic
+           1, 'Extremely siliceous', 'Quartz sands, chert, pure quartzite, jasper, quartz reefs, silicified rocks',
+           2, 'Siliceous Upper', 'Quartz sandstone, quartz siltstone, unqualified quartzite and alluvial sands',
+           3, 'Siliceous Mid', 'Granite, rhyolite and siliceous tuff, arkose sandstone, most unqualified sandstone',
+           4, 'Siliceous Lower', 'Adamellite, granodiorite, dacite, monzogranite, siliceous/ intermediate tuff, most greywacke & lithic
 sandstone, unqualified siltstone',
-          5, 'Intermediate upper', 'Syenite, trachyte, most argillaceous rocks (mudstone, claystone, shale, slate, phyllite and schist),
+           5, 'Intermediate upper', 'Syenite, trachyte, most argillaceous rocks (mudstone, claystone, shale, slate, phyllite and schist),
 alluvial loams and non-cracking clays',
-          6, 'Intermediate lower', 'Monzonite, trachy-andesite, diorite, andesite, intermediate tuff, alluvial cracking clays (not black)',
-          7, 'Mafic', 'Gabbro, dolerite, basalt, mafic tuff, amphibolite, alluvial black cracking clays',
-          8, 'Ultramafic', 'Serpentinite, dunite, peridotite, tremolite-chlorite-talc schists',
-          9, 'Calcareous', 'Limestone, dolomite, calcareous shale, calcareous sands',
+           6, 'Intermediate lower', 'Monzonite, trachy-andesite, diorite, andesite, intermediate tuff, alluvial cracking clays (not black)',
+           7, 'Mafic', 'Gabbro, dolerite, basalt, mafic tuff, amphibolite, alluvial black cracking clays',
+           8, 'Ultramafic', 'Serpentinite, dunite, peridotite, tremolite-chlorite-talc schists',
+           9, 'Calcareous', 'Limestone, dolomite, calcareous shale, calcareous sands',
           10, 'Sesquioxide', 'Laterite, bauxite, ferruginous sandstone, ironstone',
           11, 'Organic', 'Peat, coal, humified vegetative matter',
           12, 'Evaporite', 'Gypsum, halite, anhydrite')
@@ -120,7 +120,7 @@ tbl_ss_sio2lith <- gt(dat_ss_sio2lith) |>
 tbl_ss_sio2lith
 ```
 
-This system can be applied to the New Zealand context relatively easily, although class [**10**]{style="color: red"} may be very rare. Iron sands would map to one of classes [**6**]{style="color: red"} to [**8**]{style="color: red"}, depending on deposit purity.
+This system can be applied to the New Zealand context relatively easily, although class [10]{.ceg} may be very rare. Iron sands would map to one of classes [6]{.ceg} to [8]{.ceg}, depending on deposit purity.
 
 -   Folk 1970, blair and mcpherson 1999
 -   juilleret subsolum stuff

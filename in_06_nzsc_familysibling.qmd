@@ -30,24 +30,24 @@ Profile material class places restrictions on other parts of the family and sibl
 
 Rock class in an NZSC Family context uses the lithology codes in @tbl-ss-pm, with specific restrictions around how they are applied to the whole profile:
 
--   [**Md**]{style="color: red"} soils effectively have no stone or bedrock. Leave the property undefined.
+-   [Md]{.ceg} soils effectively have no stone or bedrock. Leave the property undefined.
 -   Rock class is only defined in reference to stones \> 2 mm and bedrock (where encountered within 100 cm). The rock class of the fine earth fraction is accounted for below.
--   The 'deep and stoneless' classes ([**Mt**]{style="color: red"}, [**Md**]{style="color: red"}, [**So**]{style="color: red"} and [**Sd**]{style="color: red"}) can still have a total of \< 3% by volume stones in the top 100 cm.
--   Include pumice in rock class only where pumice strength is more than 'extremely weak' [@lynn1991, p. 10] - i.e., it can only be broken by hand with difficulty. If the pumice's lithology is uncertain, use the dominant lithology of the probable volcano of origin (e.g. [**Rh**]{style="color: red"} in the Taupō Volcanic Centre and [**An**]{style="color: red"} around Taranaki).
--   Where in-profile stone lithology contrasts with bedrock lithology, two codes separated by '[**/**]{style="color: red"}' can be used e.g. [**Sc/Gw**]{style="color: red"}.
--   Where two lithologies are close to co-dominant in a stony profile, two codes separated by '[**+**]{style="color: red"}' can be used e.g. [**An+Rh**]{style="color: red"}.
--   More complicated combinations are not allowed, e.g. no [**An+Rh/Gw**]{style="color: red"}.
+-   The 'deep and stoneless' classes ([Mt]{.ceg}, [Md]{.ceg}, [So]{.ceg} and [Sd]{.ceg}) can still have a total of \< 3% by volume stones in the top 100 cm.
+-   Include pumice in rock class only where pumice strength is more than 'extremely weak' [@lynn1991, p. 10] - i.e., it can only be broken by hand with difficulty. If the pumice's lithology is uncertain, use the dominant lithology of the probable volcano of origin (e.g. [Rh]{.ceg} in the Taupō Volcanic Centre and [An]{.ceg} around Taranaki).
+-   Where in-profile stone lithology contrasts with bedrock lithology, two codes separated by '[/]{.ceg}' can be used e.g. [Sc/Gw]{.ceg}.
+-   Where two lithologies are close to co-dominant in a stony profile, two codes separated by '[+]{.ceg}' can be used e.g. [An+Rh]{.ceg}.
+-   More complicated combinations are not allowed, e.g. no [An+Rh/Gw]{.ceg}.
 
-[might need an ok/not ok table here, although what would actually be better is separating profile and bedrock rock class entirely]{style="background-color:lightgreen"}
+[might need an ok/not ok table here, although what would actually be better is separating profile and bedrock rock class entirely]{.todo}
 
 ## Rock class of fines
 
 The same rock class codes in @tbl-ss-pm can be applied to report the dominant lithology of the fine earth (\< 2 mm) fraction of the full profile. Again, some rules apply:
 
--   [**Sd**]{style="color: red"} soils and [**Mf**]{style="color: red"} soils effectively have no fine earth fraction. Leave the property undefined.
--   Where a lithological discontinuity exists in the profile, two codes separated by '[**/**]{style="color: red"}' can be used e.g. [**Sc/Gw**]{style="color: red"}.
--   Where two lithologies are close to co-dominant, two codes separated by '[**+**]{style="color: red"}' can be used e.g. [**An+Rh**]{style="color: red"}.
--   More complicated combinations are not allowed, e.g. no [**An+Rh/Sm+Ss/Gw**]{style="color: red"}.
+-   [Sd]{.ceg} soils and [Mf]{.ceg} soils effectively have no fine earth fraction. Leave the property undefined.
+-   Where a lithological discontinuity exists in the profile, two codes separated by '[/]{.ceg}' can be used e.g. [Sc/Gw]{.ceg}.
+-   Where two lithologies are close to co-dominant, two codes separated by '[+]{.ceg}' can be used e.g. [An+Rh]{.ceg}.
+-   More complicated combinations are not allowed, e.g. no [An+Rh/Sm+Ss/Gw]{.ceg}.
 
 ## Family texture class
 
@@ -128,9 +128,9 @@ graph TD
 
 Some additional rules apply for particular soil profile material classes:
 
--   For soils with an **S\*** profile material class, assess family permeability class from 20-100 cm or to rock (i.e. ignore the surface 20 cm).
--   Soils with profile material class **Ml** or **Mp** and any soil with an '**M**' root barrier must use **m/s** or **r/s**.
-    -   Exception: **Ml** with **F** barrier can't be **\*/s**.
+-   For soils with an [S\*]{.ceg} profile material class, assess family permeability class from 20-100 cm or to rock (i.e. ignore the surface 20 cm).
+-   Soils with profile material class [Ml]{.ceg} or [Mp]{.ceg} and any soil with an [M]{.ceg} root barrier must use [m/s]{.ceg} or [r/s]{.ceg}.
+    -   Exception: [Ml]{.ceg} with [F]{.ceg} barrier can't be [\*/s]{.ceg}.
 
 # NZSC Sibling {#sec-in-sib}
 
@@ -140,11 +140,11 @@ These codes help define level 5 of the NZSC.
 
 Soil depth from a sibling perspective is the depth to where digging becomes difficult, e.g.
 
--   A horizon with ≥ 35% stones by volume (**V** or **X** functional horizons)
--   A soft- or hard-rock surface (**M** rooting barrier)
--   A shattered-lithic contact (**F** rooting barrier)
--   A pan (**Q** functional horizons)
--   Firm strength with massive or coarse structure (**\*Cf** functional horizons)
+-   A horizon with ≥ 35% stones by volume (V or X functional horizons)
+-   A soft- or hard-rock surface (M rooting barrier)
+-   A shattered-lithic contact (F rooting barrier)
+-   A pan (Q functional horizons)
+-   Firm strength with massive or coarse structure (\*Cf functional horizons)
 
 Use the codes in @tbl-in-sibdepth to assign a depth class to a profile.
 
@@ -243,16 +243,16 @@ tbl_in_sibstone
 
 These classes are assessed over the top 100 cm, or to rock or gravel layer contact if those are shallower. Note that this is deeper than the family-level texture control section. The following rules apply:
 
--   **Mf**, **Mr**, **Ma**, **Ml**, and **Mp** soils must match their family texture code (**c**, **s**, **l**, or **z**).
--   **Sl** and **Sp** soils must use one of **Tp**, **Tc**, **Tl** or **Ts** to align with their family texture code of **p**.
--   **Sd** soils must use **Tp**.
+-   [Mf]{.ceg}, [Mr]{.ceg}, [Ma]{.ceg}, [Ml]{.ceg}, and [Mp]{.ceg} soils must match their family texture code ([c]{.ceg}, [s]{.ceg}, [l]{.ceg}, or [z]{.ceg}).
+-   [Sl]{.ceg} and [Sp]{.ceg} soils must use one of [Tp]{.ceg}, [Tc]{.ceg}, [Tl]{.ceg} or [Ts]{.ceg} to align with their family texture code of [p]{.ceg}.
+-   [Sd]{.ceg} soils must use [Tp]{.ceg}.
 -   Upper and lower textures can be defined for other soil profile classes, but only the dominant two are recorded. Both contributing layers must be at least 20 cm thick.
 -   When there are more than two texture layers within the control section, then the texture profile is identified according to the uppermost texture contrast.
-    -   For example, if a sandy horizon occurs at 80 cm depth and a clayey horizon overlays a silty horizon at 40 cm, then the texture contrast is reported as clayey over silty (**c/z**) and the sandy layer is ignored.
+    -   For example, if a sandy horizon occurs at 80 cm depth and a clayey horizon overlays a silty horizon at 40 cm, then the texture contrast is reported as clayey over silty ([c/z]{.ceg}) and the sandy layer is ignored.
 -   Silty and loamy horizons are not considered contrasting and can be added together where contiguous.
-    -   For example, a profile with silty (0--15 cm) over loamy (15--25 cm) over sandy (25-90 cm) is considered to have a contrasting upper layer of 25 cm, and is identified as silty over sandy (**z/s**). The texture specification uses the uppermost of the silty or loamy layers together with the lower layer.
--   Skeletal horizons (**k**) may only be used for **Ms**, **Mm**, **Mt** and **So** soils. The skeletal material must be non-tephric.
--   Skeletal horizons in moderately deep gravelly soils (**Mg**) are ignored in favour of describing the overlying fine sediments.
+    -   For example, a profile with silty (0--15 cm) over loamy (15--25 cm) over sandy (25-90 cm) is considered to have a contrasting upper layer of 25 cm, and is identified as silty over sandy ([z/s]{.ceg}). The texture specification uses the uppermost of the silty or loamy layers together with the lower layer.
+-   Skeletal horizons ([k]{.ceg}) may only be used for [Ms]{.ceg}, [Mm]{.ceg}, [Mt]{.ceg} and [So]{.ceg} soils. The skeletal material must be non-tephric.
+-   Skeletal horizons in moderately deep gravelly soils ([Mg]{.ceg}) are ignored in favour of describing the overlying fine sediments.
 
 Use the codes in @tbl-in-sibtexture to assign sibling level texture class(es). 
 

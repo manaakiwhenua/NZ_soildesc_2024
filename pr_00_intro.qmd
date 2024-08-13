@@ -9,10 +9,10 @@ library(gtExtras)
 
 ## Reference data
 
-Reference data clearly identifies the soil profile description within a larger dataset, linking it to other profiles, samples, analytical results and photographs. Reference data also covers:
+Reference data clearly identifies a soil profile description within a larger dataset, linking it to other profiles, samples, analytical results and photographs. Reference data also covers:
 
 -  who completed the description
--  when and where it was located (previously discussed)
+-  when and where it was located (as [previously discussed](ss_01_location.qmd))
 -  what level of detail was achieved
 -  why the work was done
 -  how the profile was exposed and examined.
@@ -24,13 +24,13 @@ Reference data clearly identifies the soil profile description within a larger d
 -   distinguishing site ID's from database ID's (e.g. you might want a UUID but you don't want to be writing one out by hand)
 -   tagging by e.g. transect membership
 
+## Authors
+
+Each profile description should have a single responsible author. Additional participants may also be noted. A short unique identifier for each officer is recommended, for example the last three or four letters of a surname followed by the first letter of a first name, e.g. [SMIJ]{.ceg} for John Smith. These may be linked to more robust [UUIDs]{.glossary} in a database.
+
 ## Date/Time
 
 See @sec-ss-dt for recording requirements.
-
-## Authors
-
-Each profile description should have a responsible author. Additional participants may also be noted. 
 
 ::: callout-caution
 ## Data privacy
@@ -86,12 +86,12 @@ tbl_pr_gear <- gt(dat_pr_gear) |>
 tbl_pr_gear
 ```
 
--   [**A**]{style="color: red"} samples generally cannot be used to determine soil structure due to the degree of disturbance.
--   Combined sampling is common in field mapping, e.g. small pit excavation to \~0.50-0.75 m and augering to a required depth in relatively well-understood landscapes. Record these as [**P1**]{style="color: red"}.
--   Gouge-style augers used in soft marine sediments may be included in [**C2**]{style="color: red"} even though they commonly narrow to \< 50 mm at their maximum depth.
--   [**C1**]{style="color: red"} style samplers are common in paddock-scale monitoring and research, where they are used for rapid surface measurement. These are not generally suitable for mapping as they cannot sample below the topsoil.
+-   [A]{.ceg} samples generally cannot be used to determine soil structure due to the degree of disturbance.
+-   Combined sampling is common in field mapping, e.g. small pit excavation to \~0.50-0.75 m and augering to a required depth in relatively well-understood landscapes. Record these as [P1]{.ceg}.
+-   Gouge-style augers used in soft marine sediments may be included in [C2]{.ceg} even though they commonly narrow to \< 50 mm at their maximum depth.
+-   [C1]{.ceg} style samplers are common in paddock-scale monitoring and research, where they are used for rapid surface measurement. These are not generally suitable for mapping as they cannot sample below the topsoil.
 
-[add some gear pics/diagrams here]{style="background-color: lightgreen"}
+[add some gear pics/diagrams here]{.diag}
 
 ### Regolith stuff
 

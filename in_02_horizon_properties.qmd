@@ -1,6 +1,6 @@
 ---
 title: "Horizon properties"
-editor: visual
+editor: source
 editor_options: 
   chunk_output_type: console
 ---
@@ -51,7 +51,7 @@ tbl_in_fhts
 
 The topsoil code can be prefixed to any horizon - it is not restricted to the first functional horizon in the profile. This enables buried topsoils or multi-horizon topsoils to be adequately described.
 
-[Note slight change to roots requirement, see @tbl-hr-rtab - may need further adjustment]{style="background-color: orange"}
+[Note slight change to roots requirement, see @tbl-hr-rtab - may need further adjustment]{.majch}
 
 ### Tephric character {#sec-in-fh-vc}
 
@@ -82,9 +82,9 @@ tbl_in_fhvc <- gt(dat_in_fhvc) |>
 tbl_in_fhvc
 ```
 
-Tephric codes cannot be used in combination with [**O\***]{style="color: red"}, [**J**]{style="color: red"} or [**Q**]{style="color: red"} functional horizon textures (see below).
+Tephric codes cannot be used in combination with [O\*]{.ceg}, [J]{.ceg} or [Q]{.ceg} functional horizon textures (see below).
 
-[TODO add cross links to nzsc diagnostics above]{style="background-color: skyblue"}
+[TODO add cross links to nzsc diagnostics above]{.todo}
 
 ### Stone content
 
@@ -149,10 +149,10 @@ tbl_in_fhtx <- gt(dat_in_fhtx) |>
 tbl_in_fhtx
 ```
 
--   Texture [**J**]{style="color: red"} is used where fluid behaviour is observed (generally in saturated loose fine sediments below the permanent water table) and is not used in concert with any other codes.
--   Texture [**Q**]{style="color: red"} is used where a pan is observed and is not used in concert with any other codes.
+-   Texture [J]{.ceg} is used where fluid behaviour is observed (generally in saturated loose fine sediments below the permanent water table) and is not used in concert with any other codes.
+-   Texture [Q]{.ceg} is used where a pan is observed and is not used in concert with any other codes.
 
-[TODO get some crosslinks going/review definitions above]{style="background-color: skyblue"}
+[TODO get some crosslinks going/review definitions above]{.todo}
 
 ### Texture suffixes
 
@@ -183,9 +183,9 @@ tbl_in_fhtxx <- gt(dat_in_fhtxx) |>
 tbl_in_fhtxx
 ```
 
--   Texture suffix [**a**]{style="color: red"} can only be used with Sandy textures (e.g. Aa)
--   Texture suffix [**x**]{style="color: red"} can only be used where extremely stony (e.g. Xx)
--   Texture suffixes [**r**]{style="color: red"} and [**h**]{style="color: red"} can only be used with Organic texture (e.g. Oh)
+-   Texture suffix [a]{.ceg} can only be used with Sandy textures (e.g. [Aa]{.ceg})
+-   Texture suffix [x]{.ceg} can only be used where extremely stony (e.g. [Xx]{.ceg})
+-   Texture suffixes [r]{.ceg} and [h]{.ceg} can only be used with Organic texture (e.g. [Oh]{.ceg})
 
 ### Structure {#sec-in-fh-str}
 
@@ -215,10 +215,10 @@ tbl_in_fhtxx <- gt(dat_in_fhtxx) |>
 tbl_in_fhtxx
 ```
 
--   Structure codes ([**C**]{style="color: red"}, [**F**]{style="color: red"}) can only be used with [**L**]{style="color: red"} or [**Y**]{style="color: red"} texture codes, and only where consistence is not [**w**]{style="color: red"}.
--   Structures [**E**]{style="color: red"} and [**K**]{style="color: red"} can only be used with texture [**L**]{style="color: red"}.
+-   Structure codes ([C]{.ceg}, [F]{.ceg}) can only be used with [L]{.ceg} or [Y]{.ceg} texture codes, and only where consistence is not [w]{.ceg}.
+-   Structures [E]{.ceg} and [K]{.ceg} can only be used with texture [L]{.ceg}.
 
-[TODO are we keeping Earthy? is there really no lower limit on platy ped size? is it still 40 mm like in Webb or 20mm like in SMap Manual? check aligned with wherever structure ends up and also add crosslinks]{style="background-color: skyblue"}
+[TODO are we keeping Earthy? is there really no lower limit on platy ped size? is it still 40 mm like in Webb or 20mm like in SMap Manual? check aligned with wherever structure ends up and also add crosslinks]{.todo}
 
 ### Consistence
 
@@ -252,14 +252,14 @@ tbl_in_fhcon <- gt(dat_in_fhcon) |>
 tbl_in_fhcon
 ```
 
--   Consistence [**ws**]{style="color: red"} can only be used with texture [**Y**]{style="color: red"}.
--   Consistence [**w**]{style="color: red"}, [**ws**]{style="color: red"}, [**s**]{style="color: red"}, and [**f**]{style="color: red"} can only be used with non-stony or stony ([**S**]{style="color: red"}) codes. [**V**]{style="color: red"} and [**X**]{style="color: red"} codes use consistence [**l**]{style="color: red"}, [**c**]{style="color: red"}, or [**d**]{style="color: red"} instead.
+-   Consistence [ws]{.ceg} can only be used with texture [Y]{.ceg}.
+-   Consistence [w]{.ceg}, [ws]{.ceg}, [s]{.ceg}, and [f]{.ceg} can only be used with non-stony or stony ([S]{.ceg}) codes. [V]{.ceg} and [X]{.ceg} codes use consistence [l]{.ceg}, [c]{.ceg}, or [d]{.ceg} instead.
 
-[TODO are we keeping ws??]{style="background-color: skyblue"}
+[TODO are we keeping ws??]{.todo}
 
 ### Permeability
 
-The permeability class represents saturated hydraulic conductivity (*K*~sat~) measured as the rate of water infiltrating into a soil horizon when water is ponded at 10 mm deep at the top of the horizon. Assign one of the classes in @tbl-in-hznperm to each horizon. Note that [**'xs'**]{style="color: red"} represents effective impermeability. The classes have been slightly simplified from those in Griffiths [-@griffiths1991] and Griffiths et al [-@griffiths1999].
+The permeability class represents saturated hydraulic conductivity (*K*~sat~) measured as the rate of water infiltrating into a soil horizon when water is ponded at 10 mm deep at the top of the horizon. Assign one of the classes in @tbl-in-hznperm to each horizon. Note that ['xs']{.ceg} represents effective impermeability. The classes have been slightly simplified from those in Griffiths [-@griffiths1991] and Griffiths et al [-@griffiths1999].
 
 Permeability is very difficult to assess in the field, but considerable work has been done to associate particular ranges of values with the components of the functional horizon. As such, each functional horizon has a default permeability class and usually one or more additional allowable classes. Use the functional horizon name to narrow down the appropriate choice of permeability rating, per @tbl-in-fh below.
 
@@ -297,12 +297,12 @@ tbl_in_hznperm
 
 Valid combinations of the above components are listed below, along with associated permeability classes.
 
--   The [**t**]{style="color: red"} prefix can be added to any of these.
--   The [**z**]{style="color: red"} *or* [**b**]{style="color: red"} prefix can be added to any of these, except for [**Oh**]{style="color: red"}, [**Or**]{style="color: red"}, [**J**]{style="color: red"}, and [**Q**]{style="color: red"}.
--   A good reason is needed to deviate from the default permeability (e.g. an Lw with r permeability would need a low clay content).
+-   The [t]{.ceg} prefix can be added to any of these.
+-   The [z]{.ceg} *or* [b]{.ceg} prefix can be added to any of these, except for [Oh]{.ceg}, [Or]{.ceg}, [J]{.ceg}, and [Q]{.ceg}.
+-   A good reason is needed to deviate from the default permeability (e.g. an [Lw]{.ceg} with [r]{.ceg} permeability would need a low clay content).
 
 | Code      | Name                                   | Allowed permeabilities | Topsoil allowed permeabilities |
-|---------------|------------------------|---------------|-------------------|
+|-----------------|----------------------|-----------------|-----------------|
 | **J**     | Fluid                                  | **xs**                 | **xs**                         |
 | **Or**    | Fibric organic                         | r **m**                | **r** m                        |
 | **Oh**    | Humic organic                          | **m** ms s             | **m** ms                       |

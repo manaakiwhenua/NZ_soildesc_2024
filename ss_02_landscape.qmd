@@ -1,4 +1,4 @@
-# Landscape
+# Landscape {#sec-landscape}
 
 ```{r}
 library(dplyr)
@@ -26,7 +26,7 @@ In the absence of such a system, one can describe a regional landscape in terms 
 
 Relief is the degree of separation between high and low points in a landscape. As described in [@nationalcommitteeonsoilandterrain2009, pp. 45], relief can be visualised by picturing two surfaces roughly parallel to the land surface - one passing through local crests and one through local depressions. The median vertical distance between the two surfaces is the relief.
 
-[add a diagram here]{style="background-color:lightgreen"}
+[add a diagram here]{.diag}
 
 Relief is usually best determined from a DEM, but can be estimated in the field. Record in whole meters if estimating.
 
@@ -64,7 +64,7 @@ Slope classes may be applied to the recorded data; some options are presented in
 Slope data for a site can be extracted from a DEM, provided some conditions are met:
 
 -   Cell size should be less than 10 m; larger cells systematically underestimate local slope
--   DEM source should ideally be of type [**D**]{style="color: red"} for acceptable accuracy (see @sec-loc-abs-elev)
+-   DEM source should ideally be of type [D]{.ceg} for acceptable accuracy (see @sec-loc-abs-elev)
 -   Extract the median slope within a 20 m radius, not the single value directly under the recorded point
 -   Review and, if necessary, adjust slopes extracted from sites described on exposures. These may be overestimates (e.g. where a track cuts into a slope, the values upslope behind the site would better represent the landform). Similarly, sites close to landform or landscape boundaries may also need review.
 :::
@@ -73,12 +73,12 @@ Slope data for a site can be extracted from a DEM, provided some conditions are 
 
 Aspect is the direction a slope faces. Slope aspect helps determine exposure to sun, rain and prevailing winds, and so influences the biome growing in a particular soil. In some environments it also helps determine how much new material is received by deposition.
 
-Aspect should be measured at the same time and over the same transect as slope. Record aspect in whole degrees clockwise from North, using the range \[0-359\] (360 == 0). Use NA for flat ground. Use NR if unable to record.
+Aspect should be measured at the same time and over the same transect as slope. Record aspect in whole degrees clockwise from North, using the range \[0-359\] (360 == 0). Use [NA]{.ceg} for flat ground. Use [NR]{.ceg} if unable to record.
 
-For rapid assessment, record compass bearing on an 8 or 16 point scale (e.g. NE, SSE).
+For rapid assessment, record compass bearing on an 8 or 16 point scale (e.g. [NE]{.ceg}, [SSE]{.ceg}).
 
--   TODO Note: defining 'flat' in soil survey.
--   TODO Note: map vs magnetic north, and consequences for field-measured vs DEM-derived aspect measurements
+-   [TODO Note: defining 'flat' in soil survey.]{.todo}
+-   [TODO Note: map vs magnetic north, and consequences for field-measured vs DEM-derived aspect measurements]{.todo}
 
 ### Landform element morphology
 
@@ -175,9 +175,9 @@ tbl_hr_slopeenc
 
 ```
 
-This combination of properties gives rise to more complex shapes. For example, an open hollow could be described as an enclosed maximal slope ([**L-A-SL**]{style="color: red"}). A shoulder would be an exposed waxing slope ([**E-X-SL**]{style="color: red"}). Adding further information about slope and aspect, once classified, can define a complete element. For instance a gently sloping, northeast facing fan - GE NE E N SL.
+This combination of properties gives rise to more complex shapes. For example, an open hollow could be described as an enclosed maximal slope ([L-A-SL]{.ceg}). A shoulder would be an exposed waxing slope ([E-X-SL]{.ceg}). Adding further information about slope and aspect, once classified, can define a complete element. For instance a gently sloping, northeast facing fan - GE NE E N SL.
 
--   TODO add graphics
+-   [TODO add graphics]{.diag}
 
 ### Slope length
 
@@ -205,3 +205,4 @@ Field and computer-based measurement of MTI may differ slightly. The in-field ve
 
 -   shortcut terms, noting that they don't form a conceptual tesselation
 -   longform descriptions
+-   NB 10.1016/j.geomorph.2019.04.020 for loess landslide terms

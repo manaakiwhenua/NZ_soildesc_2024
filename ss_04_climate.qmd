@@ -1,4 +1,9 @@
-# Climate and Weather
+---
+title: "Climate and Weather"
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
 
 ```{r}
 library(dplyr)
@@ -9,11 +14,11 @@ library(gtExtras)
 
 ## Climate
 
--   note: most of this is better off not measured in-field
+[-   note: most of this is better off not measured in-field
 -   note: limitations of available climate data, use local records where possible
 -   note: use classifications where numerical data can't be reliably obtained
 -   talk about getting data from LENZ vs more local sources
--   calculation from terrain for insolation
+-   calculation from terrain for insolation]{.todo}
 
 ### Global-Regional
 
@@ -52,7 +57,7 @@ tbl_ss_koppenz <- gt(dat_ss_koppenz) |>
 tbl_ss_koppenz
 ```
 
-!!! map goes here !!!
+[map goes here]{.diag}
 
 Since most work programs will take place within one zone, regional climate rarely needs to be noted in the field.
 
@@ -129,7 +134,7 @@ Contemporary weather conditions have not necessarily had a strong influence on s
 
 Record the weather at the time of observation using the codes in @tbl-ss-weatherc, plus temperature in degrees Celsius. These are not always essential, but can affect colour recording and some field tests.
 
-e.g. [**SU 23**]{style="color: red"} for a perfect day in the field.
+e.g. [SU 21]{.ceg} for a perfect day in the field.
 
 ```{r}
 #| label: tbl-ss-weatherc

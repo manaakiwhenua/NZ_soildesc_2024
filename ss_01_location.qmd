@@ -49,7 +49,7 @@ Multi-band GNSS involves receiving signals from location satellites on multiple 
 :::
 
 ::: callout-warning
-Most consumer electronic devices capable of reporting location will be [**LM**]{style="color: red"} type by default, unless using an app that actively forces a GNSS-only connection. At the time of writing, most of these devices can still only report [**GS**]{style="color: red"} quality data with such apps due to hardware limitations. As such, these devices can be extremely accurate in urban areas and much less so elsewhere.
+Most consumer electronic devices capable of reporting location will be [LM]{.ceg} type by default, unless using an app that actively forces a GNSS-only connection. At the time of writing, most of these devices can still only report [GS]{.ceg} quality data with such apps due to hardware limitations. As such, these devices can be extremely accurate in urban areas and much less so elsewhere.
 :::
 
 ::: callout-note
@@ -87,9 +87,9 @@ tbl_ss_elevsrc
 
 ```
 
-The [**M**]{style="color: red"} code should be used for most non-Lidar DEMs, as those available for public use were constructed from interpolated contour data or other methods with comparable vertical accuracy [see @barringer2002; @uuemaa2020] .
+The [M]{.ceg} code should be used for most non-Lidar DEMs, as those available for public use were constructed from interpolated contour data or other methods with comparable vertical accuracy [see @barringer2002; @uuemaa2020] .
 
-Where the [**A**]{style="color: red"} code is used, the time and location of the most recent altimeter calibration should be noted.
+Where the [A]{.ceg} code is used, the time and location of the most recent altimeter calibration should be noted.
 
 ::: callout-note
 Where DEMs are used, they should be as contemporary as possible; New Zealand’s rate of landscape evolution is relatively high and these data sources will become less reliable with age. DEMs more than 20 years old should be accompanied by a vertical error estimate adjusted upwards for age.
@@ -101,7 +101,7 @@ Record X and Y location coordinates using New Zealand Transverse Mercator (EPSG:
 
 X and Y precision does not need to exceed 1 m for pits, or 0.1 m for cores and auger holes. Z precision will rarely need to exceed 0.1 m.
 
-Example: [**1586090E, 5405722N (462 m)**]{style="color: red"}
+Example: [1586090E, 5405722N (462 m)]{.ceg}
 
 ```{r}
 # map goes here - its the centre of NZ
@@ -118,7 +118,7 @@ Alternate geocoding systems involving e.g. text-based encoding or nested hashes 
 
 ### Expected Error
 
-Expected horizontal error can be automatically reported by equipment, or estimated. When estimating, record in meters with a maximum precision of 0.01 (1 cm) e.g. [**± 5.1 m**]{style="color: red"}. Record expected vertical elevation error separately in the same units, as it will differ.
+Expected horizontal error can be automatically reported by equipment, or estimated. When estimating, record in meters with a maximum precision of 0.01 (1 cm) e.g. [± 5.1 m]{.ceg}. Record expected vertical elevation error separately in the same units, as it will differ.
 
 ::: callout-note
 Site location data quality can often be improved by revising the locations in GIS after fieldwork. Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error.
@@ -126,7 +126,7 @@ Site location data quality can often be improved by revising the locations in GI
 
 ### Temporal {#sec-ss-dt}
 
-Record the date of observation using the ISO 8601 standard, [**YYYY-MM-DD**]{style="color: red"} [@internationalorganizationforstandardization]. Time is not essential but may be useful for correlating site descriptions with photographs.
+Record the date of observation using the ISO 8601 standard, [YYYY-MM-DD]{.ceg} [@internationalorganizationforstandardization]. Time is not essential but may be useful for correlating site descriptions with photographs.
 
 ## Relative location
 
@@ -236,13 +236,13 @@ tbl_ss_sampstrat <- gt(dat_ss_sampstrat) |>
 tbl_ss_sampstrat
 ```
 
-The difference between data-driven [**D**]{style="color: red"} and model-based [**M**]{style="color: red"} centres around replicability. Data-driven sites are nominated using a loose set of rules or principles (e.g. “visit the major landforms on this farm but don’t go too far off the tracks”) and may be subject to minor changes once the worker is on-ground. Model-based site choices formalise this process with reference to specific input datasets, and the worker is committed to sample at the exact point chosen. Model-based methods may include ‘backup points’ for where an intended location cannot be physically accessed, but these are also pre-determined. Importantly, model-based choices can be regenerated from the same inputs.
+The difference between data-driven [D]{.ceg} and model-based [M]{.ceg} centres around replicability. Data-driven sites are nominated using a loose set of rules or principles (e.g. “visit the major landforms on this farm but don’t go too far off the tracks”) and may be subject to minor changes once the worker is on-ground. Model-based site choices formalise this process with reference to specific input datasets, and the worker is committed to sample at the exact point chosen. Model-based methods may include ‘backup points’ for where an intended location cannot be physically accessed, but these are also pre-determined. Importantly, model-based choices can be regenerated from the same inputs.
 
-Arbitrary [**A**]{style="color: red"} points are not pre-determined at all; rather, they are chosen after the worker is on site, in response to direct observation of on-ground conditions. These are often practical and time-efficient but are also likely to over-sample the more easily accessible and/or interesting parts of the landscape, to the detriment of overall representativeness.
+Arbitrary [A]{.ceg} points are not pre-determined at all; rather, they are chosen after the worker is on site, in response to direct observation of on-ground conditions. These are often practical and time-efficient but are also likely to over-sample the more easily accessible and/or interesting parts of the landscape, to the detriment of overall representativeness.
 
-Random, transect and grid sampling [**R, T, G**]{style="color: red"} effectively ignore environmental parameters. This is useful when the spatial distribution of a parameter of interest is unknown or poorly understood.
+Random, transect and grid sampling [R]{.ceg}, [T]{.ceg}, [G]{.ceg} effectively ignore environmental parameters. This is useful when the spatial distribution of a parameter of interest is unknown or poorly understood.
 
-Some of these methods can be combined - for example, data-driven transect choices with randomised locations along each. In such cases, the 'last choice' should be recorded - in this case, [**R**]{style="color: red"}. The details of the full sampling strategy should be discussed in project metadata.
+Some of these methods can be combined - for example, data-driven transect choices with randomised locations along each. In such cases, the 'last choice' should be recorded - in this case, [R]{.ceg}. The details of the full sampling strategy should be discussed in project metadata.
 
 ### Site purpose
 
@@ -277,8 +277,8 @@ tbl_ss_reason <- gt(dat_ss_reason) |>
 tbl_ss_reason
 ```
 
-[**D**]{style="color: red"} sites are often carried out as part of planning for a resource consent. The soil they describe may be removed or sealed after observation, limiting data re-use potential. [**M**]{style="color: red"} monitoring sites imply repeated, regular re-sampling activity and perhaps an expectation of minimal major disturbance between visits.
+[D]{.ceg} sites are often carried out as part of planning for a resource consent. The soil they describe may be removed or sealed after observation, limiting data re-use potential. [M]{.ceg} monitoring sites imply repeated, regular re-sampling activity and perhaps an expectation of minimal major disturbance between visits.
 
-[**V**]{style="color: red"} validation sites may be low-detail, as they are intended to confirm or deny a prediction. [**T**]{style="color: red"} reference sites (T for ‘type’) may be expected to have high morphological detail and a lot of accompanying analytical data, as they represent ‘ideal’ profiles for particular soil classes.
+[V]{.ceg} validation sites may be low-detail, as they are intended to confirm or deny a prediction. [T]{.ceg} reference sites (T for ‘type’) may be expected to have high morphological detail and a lot of accompanying analytical data, as they represent ‘ideal’ profiles for particular soil classes.
 
-[**E**]{style="color: red"} mapping exploration sites may have biased, opportunistic sample locations and moderate location precision, while [**R**]{style="color: red"} sites are more likely to have been predetermined by a model and located with high precision.
+[E]{.ceg} mapping exploration sites may have biased, opportunistic sample locations and moderate location precision, while [R]{.ceg} sites are more likely to have been predetermined by a model and located with high precision.
