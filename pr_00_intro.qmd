@@ -1,59 +1,13 @@
-# Profile
+---
+output: html_document
+title: "The soil profile"
+editor_options: 
+  chunk_output_type: console
+---
 
-```{r}
-library(dplyr)
-library(tibble)
-library(gt)
-library(gtExtras)
-```
+[what is etc]{.todo}
 
-## Reference data
-
-Reference data clearly identifies a soil profile description within a larger dataset, linking it to other profiles, samples, analytical results and photographs. Reference data also covers:
-
--  who completed the description
--  when and where it was located (as [previously discussed](ss_01_location.qmd))
--  what level of detail was achieved
--  why the work was done
--  how the profile was exposed and examined.
-
-## Naming/numbering sites and site collections
-
--   tips for robust systems for projects of varying scale
--   tips for working across multiple teams
--   distinguishing site ID's from database ID's (e.g. you might want a UUID but you don't want to be writing one out by hand)
--   tagging by e.g. transect membership
-
-## Authors
-
-Each profile description should have a single responsible author. Additional participants may also be noted. A short unique identifier for each officer is recommended, for example the last three or four letters of a surname followed by the first letter of a first name, e.g. [SMIJ]{.ceg} for John Smith. These may be linked to more robust [UUIDs]{.glossary} in a database.
-
-## Date/Time
-
-See @sec-ss-dt for recording requirements.
-
-::: callout-caution
-## Data privacy
-
-New Zealand data privacy laws are strict. Personally identifying information must be stored securely and not distributed without a good reason. Personal details such as names may not be publishable without explicit consent. Data storage solutions must respect these requirements.
-
-:::
-
-
-## Depth of observation
-
-- requirements to classify against the NZSC
-- requirements for mapping
-- requirements for research
-
-## Equipment options
-
-- for NZ conditions
-
-## Profile exposure options
-
-- how to dig a pit safely
-- how to measure depth on significant slopes
+The soil profile description starts with an observation of the surface and works down. The chief task is delineating soil layers, or horizons, and describing their morphological character. Prior to that, some additional reference data should be recorded:
 
 ## Exposure type
 
@@ -91,8 +45,40 @@ tbl_pr_gear
 -   Gouge-style augers used in soft marine sediments may be included in [C2]{.ceg} even though they commonly narrow to \< 50 mm at their maximum depth.
 -   [C1]{.ceg} style samplers are common in paddock-scale monitoring and research, where they are used for rapid surface measurement. These are not generally suitable for mapping as they cannot sample below the topsoil.
 
-[add some gear pics/diagrams here]{.diag}
+## Depth of observation
 
-### Regolith stuff
+Record the maximum depth of observation in whole centimetres (e.g. '[100 cm]{.ceg}').
 
-TBD
+A full profile description ideally extends to bedrock, but this may not always be accessible with the equipment and time available. The target depth of observation for most applications in New Zealand is 100 cm. Classification systems like the NZSC and LUC rely on ruling out certain soil features within that depth range, as well as positively identifying others.
+
+See [Appendix X](ap_01_equipment.qmd) for information on appropriate excavation equipment.
+
+## Stopping early
+
+When the target depth cannot be achieved, note the reason for stopping early using the codes in @tbl-ss-stoppage.
+
+```{r}
+#| label: tbl-ss-stoppage
+#| tbl-cap: "Stoppage reason"
+
+dat_ss_stoppage <-
+  tribble(~Code, ~Name, ~Description,
+          'B', 'Bedrock', 'underlying rock mass encountered, no more soil to describe',
+          'R', 'Resistance', 'soil too difficult to extract with available equipment',
+          'C', 'Collapse', 'excavation unstable or unsafe due to wetness or loose particle packing',
+          'I', 'Identified', 'the depth required to confirm a key parameter was reached',
+          'O', 'Other', 'circumstances unrelated to the soil itself caused early stoppage')
+
+tbl_ss_stoppage <- gt(dat_ss_stoppage) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_ss_stoppage
+```

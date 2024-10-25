@@ -11,6 +11,45 @@ A soil description is essentially useless without a confident location. Confiden
 
 ## Absolute location
 
+### Recording location
+
+Record X and Y location coordinates using New Zealand Transverse Mercator (EPSG:2193). For Z coordinates (elevation), use the New Zealand Vertical Datum 2016 (EPSG:1169).
+
+X and Y precision does not need to exceed 1 m for pits, or 0.1 m for cores and auger holes. Z precision will rarely need to exceed 0.1 m.
+
+Example: [1586090E, 5405722N (462 m)]{.ceg}
+
+```{r}
+# map goes here - its the centre of NZ
+
+```
+
+::: {callout-warning collapse="true" appearance="minimal"}
+## Use of WGS84
+
+Many location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around 3 m, and coordinate accuracy also degrades over time due to continental drift. This is compensated for using a date-based 'epoch' adjustment. Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.
+:::
+
+::: {callout-warning collapse="true" appearance="minimal"}
+## Alternate geocoding systems
+
+Alternate geocoding systems involving e.g. text-based encoding or nested hashes should not be used during fieldwork. These systems are often proprietary, sometimes prone to ambiguity or edge-case errors, and at their core often wrap around WGS84 anyway. They may still be useful during data analysis.
+:::
+
+### Expected Error
+
+Expected horizontal error can be automatically reported by equipment, or estimated. When estimating, record in meters with a maximum precision of 0.01 (1 cm) e.g. [± 5.1 m]{.ceg}. Record expected vertical elevation error separately in the same units, as it will differ.
+
+::: {callout-note collapse="true" appearance="minimal"}
+## Revising locations
+
+Location data quality can often be improved by revising the locations in GIS after fieldwork, with reference to e.g. satellite imagery. Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error.
+:::
+
+### Temporal {#sec-ss-dt}
+
+Record the date of observation using the ISO 8601 standard, [YYYY-MM-DD]{.ceg} [@internationalorganizationforstandardization]. Time is not essential but may be useful for correlating site descriptions with photographs.
+
 ### Equipment
 
 Use a GNSS (Global Navigation Satellite System) with an expected horizontal accuracy of ± 3 m or better. Some applications may require centimetre accuracy. Record sensor type against the schema in @tbl-ss-locsrc.
@@ -24,7 +63,7 @@ dat_ss_elevsrc <-
           'GS', 'Single-band GNSS', 'Satellite based location, single band',
           'GM', 'Multi-band GNSS', 'Satellite based location, multiple band',
           'GR', 'Differential GNSS', 'Satellite based location, on-ground correction',
-          'LM', 'Multi-sensor', 'Combined GNSS and other location data e.g. mobile phone towers, wifi routers and nearby devices.',
+          'LM', 'Multi-sensor', 'Combined GNSS and other location data',
           'NO', 'None', 'Location determined manually.')
 
 tbl_ss_elevsrc <- gt(dat_ss_elevsrc) |>
@@ -42,14 +81,17 @@ tbl_ss_elevsrc
 
 ```
 
-::: callout-tip
+::: {callout-tip collapse="true" appearance="minimal"}
+## GNSS types
+
 Multi-constellation GNSS is not the same as multi-band GNSS. The former signifies access to multiple location satellite networks operated by various parties, e.g. GPS (USA), Galileo (EU), BeiDou (China). This can improve signal *consistency* due to having access to more total satellites, but not necessarily overall accuracy.
 
 Multi-band GNSS involves receiving signals from location satellites on multiple frequency bands. The extra data from each satellite can significantly improve connection reliability and accuracy, particularly when open sky is restricted by rough terrain, dense vegetation or poor weather.
-:::
 
-::: callout-warning
-Most consumer electronic devices capable of reporting location will be [LM]{.ceg} type by default, unless using an app that actively forces a GNSS-only connection. At the time of writing, most of these devices can still only report [GS]{.ceg} quality data with such apps due to hardware limitations. As such, these devices can be extremely accurate in urban areas and much less so elsewhere.
+Multi-sensor GNSS involves receiving signals not just from location satellites, but from other on-ground equipment, like mobile phone towers, wifi routers and nearby personal electronic devices. These devices can be extremely accurate in urban areas, but much less so elsewhere.
+
+Most consumer electronic devices capable of reporting location will be of [LM]{.ceg} type by default, unless using an app that actively forces a GNSS-only connection. At the time of writing, most of these apps can still only return [GS]{.ceg}-quality data due to hardware limitations. 
+
 :::
 
 ::: callout-note
@@ -95,38 +137,7 @@ Where the [A]{.ceg} code is used, the time and location of the most recent altim
 Where DEMs are used, they should be as contemporary as possible; New Zealand’s rate of landscape evolution is relatively high and these data sources will become less reliable with age. DEMs more than 20 years old should be accompanied by a vertical error estimate adjusted upwards for age.
 :::
 
-### Coordinate reference system (CRS)
 
-Record X and Y location coordinates using New Zealand Transverse Mercator (EPSG:2193). For Z coordinates (elevation), use the New Zealand Vertical Datum 2016 (EPSG:1169).
-
-X and Y precision does not need to exceed 1 m for pits, or 0.1 m for cores and auger holes. Z precision will rarely need to exceed 0.1 m.
-
-Example: [1586090E, 5405722N (462 m)]{.ceg}
-
-```{r}
-# map goes here - its the centre of NZ
-
-```
-
-::: callout-warning
-Many location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around 3 m, and coordinate accuracy also degrades over time due to continental drift. This is compensated for using a date-based 'epoch' adjustment. Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.
-:::
-
-::: callout-warning
-Alternate geocoding systems involving e.g. text-based encoding or nested hashes should be avoided during fieldwork. The systems are often proprietary, sometimes prone to ambiguity or edge-case errors, and at their core often wrap around WGS84 anyway. They may still be useful during data analysis.
-:::
-
-### Expected Error
-
-Expected horizontal error can be automatically reported by equipment, or estimated. When estimating, record in meters with a maximum precision of 0.01 (1 cm) e.g. [± 5.1 m]{.ceg}. Record expected vertical elevation error separately in the same units, as it will differ.
-
-::: callout-note
-Site location data quality can often be improved by revising the locations in GIS after fieldwork. Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error.
-:::
-
-### Temporal {#sec-ss-dt}
-
-Record the date of observation using the ISO 8601 standard, [YYYY-MM-DD]{.ceg} [@internationalorganizationforstandardization]. Time is not essential but may be useful for correlating site descriptions with photographs.
 
 ## Relative location
 
@@ -200,85 +211,3 @@ tbl_ss_eventp <- gt(dat_ss_eventp) |>
 
 tbl_ss_eventp
 ```
-
-## Explaining location
-
-### Site choice method
-
-Spatial sampling strategies vary in their statistical properties. Soil data is stored for long periods and is often re-used for multiple projects; specific re-uses may not be appropriate.
-
-Record the spatial sampling strategy used using the schema in @tbl-ss-sampstrat. This parameter does not usually need to be recorded in the field.
-
-```{r}
-#| label: tbl-ss-sampstrat
-#| tbl-cap: "Spatial sampling strategies"
-
-dat_ss_sampstrat <-
-  tribble(~Code, ~Name,
-          'A', 'Arbitrary/opportunistic',
-          'D', 'Data-driven',
-          'M', 'Model-based',
-          'R', 'Random',
-          'T', 'Transect',
-          'G', 'Grid')
-
-tbl_ss_sampstrat <- gt(dat_ss_sampstrat) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20))
-
-tbl_ss_sampstrat
-```
-
-The difference between data-driven [D]{.ceg} and model-based [M]{.ceg} centres around replicability. Data-driven sites are nominated using a loose set of rules or principles (e.g. “visit the major landforms on this farm but don’t go too far off the tracks”) and may be subject to minor changes once the worker is on-ground. Model-based site choices formalise this process with reference to specific input datasets, and the worker is committed to sample at the exact point chosen. Model-based methods may include ‘backup points’ for where an intended location cannot be physically accessed, but these are also pre-determined. Importantly, model-based choices can be regenerated from the same inputs.
-
-Arbitrary [A]{.ceg} points are not pre-determined at all; rather, they are chosen after the worker is on site, in response to direct observation of on-ground conditions. These are often practical and time-efficient but are also likely to over-sample the more easily accessible and/or interesting parts of the landscape, to the detriment of overall representativeness.
-
-Random, transect and grid sampling [R]{.ceg}, [T]{.ceg}, [G]{.ceg} effectively ignore environmental parameters. This is useful when the spatial distribution of a parameter of interest is unknown or poorly understood.
-
-Some of these methods can be combined - for example, data-driven transect choices with randomised locations along each. In such cases, the 'last choice' should be recorded - in this case, [R]{.ceg}. The details of the full sampling strategy should be discussed in project metadata.
-
-### Site purpose
-
-The original task for which a site was observed can affect what data is recorded and is relevant to data re-use decisions.
-
-Record the reason for sampling using the schema in @tbl-ss-reason. This parameter does not need to be recorded in the field.
-
-```{r}
-#| label: tbl-ss-reason
-#| tbl-cap: "Site purpose"
-
-dat_ss_reason <-
-  tribble(~Code, ~Name,
-          'E', 'Mapping exploration',
-          'V', 'Mapping validation',
-          'R', 'Research',
-          'M', 'Monitoring',
-          'T', 'Reference',
-          'D', 'Development')
-
-tbl_ss_reason <- gt(dat_ss_reason) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20))
-
-tbl_ss_reason
-```
-
-[D]{.ceg} sites are often carried out as part of planning for a resource consent. The soil they describe may be removed or sealed after observation, limiting data re-use potential. [M]{.ceg} monitoring sites imply repeated, regular re-sampling activity and perhaps an expectation of minimal major disturbance between visits.
-
-[V]{.ceg} validation sites may be low-detail, as they are intended to confirm or deny a prediction. [T]{.ceg} reference sites (T for ‘type’) may be expected to have high morphological detail and a lot of accompanying analytical data, as they represent ‘ideal’ profiles for particular soil classes.
-
-[E]{.ceg} mapping exploration sites may have biased, opportunistic sample locations and moderate location precision, while [R]{.ceg} sites are more likely to have been predetermined by a model and located with high precision.

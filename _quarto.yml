@@ -19,26 +19,29 @@ book:
     - part: "Setting and site"
       chapters:
         - ss_00_intro.qmd
-        - ss_01_location.qmd
-        - ss_02_landscape.qmd
-        - ss_03_parent_material.qmd
-        - ss_04_climate.qmd
-        - ss_05_biota.qmd
-        - ss_06_landuse_mgmt.qmd
+        - ss_01_reference.qmd
+        - ss_02_location.qmd
+        - ss_03_landscape.qmd
+        - ss_04_parent_material.qmd
+        - ss_05_climate.qmd
+        - ss_06_biota.qmd
+        - ss_07_landuse_mgmt.qmd
         
     - part: "Soil profile"
       chapters:
-        - pr_00_intro.qmd     ## reference data
-        - pr_01_surface.qmd
+        - pr_00_intro.qmd                ## Horizonation
+        - pr_01_surface.qmd              ## Rocks etc
+        - pr_02_layers.qmd               ## soil moisture
 
     - part: "Soil horizons"
       chapters:
-        - hr_00_intro.qmd
+        - hr_00_intro.qmd                ## Composition         
+        - hr_01_architecture.qmd         ## Structure voids
         - hr_01_colour.qmd
         - hr_02_texture_stones.qmd
         - hr_03_structure_peds.qmd
         - hr_04_secondary_features.qmd
-        - hr_05_physical_properties.qmd
+        - hr_05_physical_properties.qmd  ##
         - hr_06_chemical_properties.qmd
         - hr_07_roots.qmd
         - hr_08_voids.qmd
@@ -64,6 +67,7 @@ book:
     - ap_05_glossary.qmd
     
 bibliography: soil_desc_refs_2024.bib
+csl: mwlr-citation-style-second-ed.csl
 
 format:
   html:
