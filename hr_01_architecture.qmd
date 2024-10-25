@@ -1,11 +1,47 @@
-# Roots and plant materials
-
 ```{r}
 library(dplyr)
 library(tibble)
 library(gt)
 library(gtExtras)
 ```
+
+# Soil architecture
+
+[Preamble: Physical arrangement of etc, build on:
+
+Soil architecture comprises presence and arrangement of fine earth. stones, roots, voids and other materials]{.todo}
+
+## Structure
+
+### ped presence
+
+-   single grain
+-   massive
+-   weak moderate strong
+
+### ped shape
+
+-   standard set but add angular blocky back in
+-   be clear about vertical orientation for some shapes
+-   note: nut and crumb vs the world
+
+### ped size
+
+-   modal vertical dimension, and horizontal for tabular ped shapes (prism, lens, etc)
+-   record in mm
+
+### nesting peds
+
+-   'parting to' etc
+-   db note: 1:1 cascading relationship not 1:n at horizon level
+
+### non-ped aggregates
+
+-   clods and fragments from cultivation
+
+unresolved: - distinguishing earthworm casts - peds or nah? - reconciling peds, cutans and other ped coatings, and 'fabric'
+
+# Roots and plant materials
 
 ## Roots
 
@@ -85,3 +121,71 @@ Notes about particular plant species contributing to the root mass and spatial o
 ## Timber and fibre
 
 Where non-peat plant remains are encountered in significant volume (e.g. buried by volcanic or landslide activity), record as per @sec-hr-nonrock.
+
+
+# Voids
+
+-   NB surface cracks already covered
+
+## Pores
+
+-   abundance
+-   macro v micro sizes
+-   inferred origin
+-   direct and indirect observation for connectivity
+
+## Other voids
+
+-   non-infilled space between coarse gravels (assessed via packing)
+-   spaces between dry peds (where shrink-swell is significant)
+
+```{r}
+#| label: tbl-hr-cracktype
+#| tbl-cap: "Crack persistence (WRB 2022)"
+
+dat_hr_cracktype <-
+  tribble(~Code, ~Name, ~Description,
+          'NO', 'No cracks', NA, 
+          'RT', 'Reversible cracks', 'Cracks that open and close with changing soil moisture',
+          'IT', 'Irreversible cracks', 'Cracks that persist year-round')
+
+tbl_hr_cracktype <- gt(dat_hr_cracktype) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_hr_cracktype
+```
+
+```{r}
+#| label: tbl-hr-crackdepth
+#| tbl-cap: "Crack depth (WRB 2022)"
+
+dat_hr_crackdepth <-
+  tribble(~Code, ~Name, ~Description,
+          'AC', 'All', 'All cracks continue into the underlying layer', 
+          'HC', 'Most', 'At least half, but not all of the cracks continue into the underlying layer',
+          'SC', 'Some', 'At least one, but less than half of the cracks continue into the underlying layer',
+          'NC', 'None', 'Cracks do not continue into the underlying layer')
+
+tbl_hr_crackdepth <- gt(dat_hr_crackdepth) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20))
+
+tbl_hr_crackdepth
+```
+

@@ -1,117 +1,39 @@
-# Horizons
+---
+title: "Soil Horizon description"
+editor: source
+---
 
 ```{r}
-library(dplyr)
-library(tibble)
+library(tidyverse) 
 library(gt)
 library(gtExtras)
+library(ggtern)
+library(extrafont)
+loadfonts(quiet = TRUE)
 ```
 
-A soil horizon is a distinct layer within a soil profile. [Horizons are distinguished by differences in texture, stoniness, structure, colour, consistence or other soil properties as described in]{.milne} this section. [Delineated horizons should ideally represent depth intervals over which important soil attributes change minimally. Conversely, the horizon boundaries should represent depth intervals over which there is a relatively high rate of change of important soil properties.]{.milne}
+## Identification
 
-[Not all important soil properties change from one horizon to the next or at the same rate with depth. In some instances confident interpretation of the suitability of a soil for a particular end use may depend on the rate of change of a single property at a horizon boundary. For this reason the basis for separating the horizon may need to be explicitly stated, not just the traditional generalised estimate of the amount of overall change.]{.milne}
 
-## Depth
 
-When examining single small cores or auger points on a local landform (see @tbl-pr-gear, type [A]{.ceg}, [C1]{.ceg} and perhaps [C2]{.ceg}), record the observable upper and lower depth of each horizon in whole centimetres (e.g. "28-38cm").
+## Composition
 
-Where a wider exposure (see @tbl-pr-gear, type [E]{.ceg}, [P1]{.ceg}, [P2]{.ceg}) or multiple undisturbed cores are available on a local landform and greater detail is desired, one may choose to record upper and lower depths as a median and range, again in whole centimetres (e.g. "28cm (27-29), 38 cm (37-40)"). At least 5 measurements should contribute to such an assessment.
+Each soil horizon is first described in terms of its broad composition. Composition is divided into 
 
-Measure to and from the midpoint of each horizon transition zone (see @sec-hr-bdydist).
+- Mineral fraction
+    - fine earth (mineral particles < 2mm)
+    - rock fragments (mineral particles > 2mm)
+- Biological fraction
+   - Fine organic matter
+   - Coarse organic matter (timber, plant roots)
+- Liquid fraction (moisture content)
+- Voids
 
-## Thickness
+These fractions are all measured as percentage by volume.
 
-Where depths are correctly measured, thickness should be calculated after fieldwork.
+[complicated exploding pie chart goes here]{.diag}
 
-::: callout-important
-Talk about adjusting depths on steep slopes per WRB.
-:::
+## Architecture
 
-## Boundary shape
 
-Horizon boundary shape can only be observed on wider exposures (see @tbl-pr-gear, type [E]{.ceg}, [P1]{.ceg}, [P2]{.ceg}). Record against the following schema:
 
-```{r}
-#| label: tbl-hr-bshp
-#| tbl-cap: "Horizon boundary shape"
-
-dat_hr_bshp <-
-  tribble(~Code, ~Name, ~Description,
-          'S', 'Smooth', 'the boundary surface is a plane with few or no irregularities and usually occurs at the same depth across the profile face', 
-          'W', 'Wavy', 'the boundary surface has broad, shallow, relatively regular pockets and none deeper than they are wide',
-          'I', 'Irregular', 'the boundary surface has pockets which are deeper than they are wide but not recurved',
-          'C', 'Convolute', 'the boundary surface has pockets which are deeper than they are wide and, in parts, recurved',
-          'O', 'Occluded', 'the boundary is discontinuous, usually due to external disturbance')
-
-tbl_hr_bshp <- gt(dat_hr_bshp) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20))
-
-tbl_hr_bshp
-```
-
-[change point - abandoning occluded as a modifier to the other codes, giving it its own code instead.]{.majch}
-
-## Boundary distinctness {#sec-hr-bdydist}
-
-Horizon boundaries comprise state changes over short distances. These can be reported as a direct measurement in the same way as horizon upper and lower depths, by reporting the range either side of the boundary. Report in 0.1 centimetre increments (e.g. "0.5 cm").
-
-For rapid assessment, horizon boundaries can be classified using the following schema:
-
-```{r}
-#| label: tbl-hr-bdst
-#| tbl-cap: "Horizon boundary distinctness"
-
-dat_hr_bdst <-
-  tribble(~Code, ~Name, ~Description,
-          'S', 'Sharp', '< 0.5 cm', 
-          'A', 'Abrupt', '0.5 - 2.0 cm',
-          'D', 'Distinct', '2.0 - 5.0 cm',
-          'G', 'Gradual', '5.0 - 15.0 cm')
-
-tbl_hr_bdst <- gt(dat_hr_bdst) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20))
-
-tbl_hr_bdst
-```
-
-Where a transition is thicker than 15 cm, it should be defined as a new horizon. Use transitional horizon names as needed [CROSSLINK].
-
-[change points - using WRB cutoff for gradual/diffuse (15 not 10 cm), dropping diffuse as an option]{.majch}
-
-::: callout-note
-when to make a new horizon instead of reporting a transition
-:::
-
-[put a diagram unifying the previous three concepts here]{.diags}
-
-## In situ moisture content
-
-Report soil moisture status for each horizon at the time of observation. This parameter supports assessments of drainage and permeability, and contextualises consistence tests.
-
-[-   at time of obs
--   table 4 not table 3 - reconcile with WRB Table 8.28
--   discussion of field vs lab measurement]{.todo}
-
-[QN: keep this here or move to e.g. consistence???]{.todo}
-
-## Depth to free water
-
-Depth to free water can be determined from the upper depth of the first saturated horizon, or specifically recorded in whole centimetres. Depending on the soil's transmissivity, the presence of water table by the pit or core filling with water. 
-
-[add comment on how long a wet core or pit should be expected to take to equilibrate]{.todo}
