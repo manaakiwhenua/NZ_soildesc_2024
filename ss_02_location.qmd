@@ -9,9 +9,9 @@ library(gtExtras)
 
 A soil description is essentially useless without a confident location. Confidence is supported by clear communication about equipment, datum and coordinate reference system, measurement units, and expected error.
 
-## Absolute location
+## Absolute location {#sec-ss-loc-abs}
 
-### Recording location
+### Recording location {#sec-ss-loc-rec}
 
 Record X and Y location coordinates using New Zealand Transverse Mercator (EPSG:2193). For Z coordinates (elevation), use the New Zealand Vertical Datum 2016 (EPSG:1169).
 
@@ -24,33 +24,27 @@ Example: [1586090E, 5405722N (462 m)]{.ceg}
 
 ```
 
-::: {callout-warning collapse="true" appearance="minimal"}
-## Use of WGS84
-
-Many location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around 3 m, and coordinate accuracy also degrades over time due to continental drift. This is compensated for using a date-based 'epoch' adjustment. Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.
+::: {#wrn-wgs84 .callout-warning collapse="true" appearance="minimal" title="Use of WGS84"}
+Location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around 3 m, and coordinate accuracy also degrades over time due to continental drift. This is compensated for using a date-based 'epoch' adjustment. Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.
 :::
 
-::: {callout-warning collapse="true" appearance="minimal"}
-## Alternate geocoding systems
-
+::: {#wrn-altgeo .callout-warning collapse="true" appearance="minimal" title="Alternate geocoding systems"}
 Alternate geocoding systems involving e.g. text-based encoding or nested hashes should not be used during fieldwork. These systems are often proprietary, sometimes prone to ambiguity or edge-case errors, and at their core often wrap around WGS84 anyway. They may still be useful during data analysis.
 :::
 
-### Expected Error
+### Expected Error {#sec-ss-loc-err}
 
 Expected horizontal error can be automatically reported by equipment, or estimated. When estimating, record in meters with a maximum precision of 0.01 (1 cm) e.g. [± 5.1 m]{.ceg}. Record expected vertical elevation error separately in the same units, as it will differ.
 
-::: {callout-note collapse="true" appearance="minimal"}
-## Revising locations
-
+::: {#nte-locrev .callout-note collapse="true" appearance="minimal" title="Revising locations"}
 Location data quality can often be improved by revising the locations in GIS after fieldwork, with reference to e.g. satellite imagery. Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error.
 :::
 
-### Temporal {#sec-ss-dt}
+### Temporal {#sec-ss-loc-dt}
 
 Record the date of observation using the ISO 8601 standard, [YYYY-MM-DD]{.ceg} [@internationalorganizationforstandardization]. Time is not essential but may be useful for correlating site descriptions with photographs.
 
-### Equipment
+### Equipment {#sec-ss-loc-eq}
 
 Use a GNSS (Global Navigation Satellite System) with an expected horizontal accuracy of ± 3 m or better. Some applications may require centimetre accuracy. Record sensor type against the schema in @tbl-ss-locsrc.
 
@@ -81,9 +75,7 @@ tbl_ss_elevsrc
 
 ```
 
-::: {callout-tip collapse="true" appearance="minimal"}
-## GNSS types
-
+::: {#tip-gnss .callout-tip collapse="true" appearance="minimal" title="GNSS types"}
 Multi-constellation GNSS is not the same as multi-band GNSS. The former signifies access to multiple location satellite networks operated by various parties, e.g. GPS (USA), Galileo (EU), BeiDou (China). This can improve signal *consistency* due to having access to more total satellites, but not necessarily overall accuracy.
 
 Multi-band GNSS involves receiving signals from location satellites on multiple frequency bands. The extra data from each satellite can significantly improve connection reliability and accuracy, particularly when open sky is restricted by rough terrain, dense vegetation or poor weather.
@@ -91,10 +83,9 @@ Multi-band GNSS involves receiving signals from location satellites on multiple 
 Multi-sensor GNSS involves receiving signals not just from location satellites, but from other on-ground equipment, like mobile phone towers, wifi routers and nearby personal electronic devices. These devices can be extremely accurate in urban areas, but much less so elsewhere.
 
 Most consumer electronic devices capable of reporting location will be of [LM]{.ceg} type by default, unless using an app that actively forces a GNSS-only connection. At the time of writing, most of these apps can still only return [GS]{.ceg}-quality data due to hardware limitations. 
-
 :::
 
-::: callout-note
+::: {#nte-locman .callout-note collapse="true" appearance="minimal" title="Manual locations"}
 Estimating location manually using e.g. topographic maps and orienteering methods remains an option, but should usually be considered a last resort.
 :::
 
@@ -133,27 +124,25 @@ The [M]{.ceg} code should be used for most non-Lidar DEMs, as those available fo
 
 Where the [A]{.ceg} code is used, the time and location of the most recent altimeter calibration should be noted.
 
-::: callout-note
+::: {#nte-dems .callout-note collapse="true" appearance="minimal" title="DEMs and location"}
 Where DEMs are used, they should be as contemporary as possible; New Zealand’s rate of landscape evolution is relatively high and these data sources will become less reliable with age. DEMs more than 20 years old should be accompanied by a vertical error estimate adjusted upwards for age.
 :::
 
-
-
-## Relative location
+## Relative location {#sec-ss-loc-rel}
 
 Absolute locations are enhanced by information about what is nearby. This context is useful for checking that a site's coordinates are correct and for revisiting a site in future.
 
-### Relative elevation
+### Relative elevation {#sec-ss-loc-relel}
 
-Elevation above the nearest down-slope drainage (open/flowing water, swampy ground, or a closed depression) is useful for landscape interpretations. The data can also be used to group site descriptions, for instance when identifying sets of related terraces along river systems. The drainage feature to record against must be identified by tracing a path down-slope from the observation point, and may be far from the point of observation. As such, it will normally be more efficient to estimate this parameter after fieldwork using elevation and imagery data.
+Elevation above the nearest down-slope drainage (open/flowing water, swampy ground, or a closed depression) is useful for landscape interpretations. The data can also be used to group profile descriptions, for instance when identifying sets of related terraces along river systems. The drainage feature to record against must be identified by tracing a path down-slope from the observation point, and may be far from the point of observation. As such, it will normally be more efficient to estimate this parameter after fieldwork using elevation and imagery data.
 
-Record relative elevation in meters, with a precision of no more than 0.01 (1 cm).
+Record relative elevation in meters, with a precision of no more than 0.01 (1 cm), e.g. [25.5 m]{.ceg}.
 
-::: callout-note
-With sufficiently detailed inputs, a Relative Elevation Model (REM) can be constructed to estimate this parameter, but will need to be ground-truthed.
+::: {#nte-rem .callout-note collapse="true" appearance="minimal" title="Relative elevation models"}
+With a sufficiently detailed DEM and stream network data, a Relative Elevation Model (REM) can be constructed to estimate this parameter. The result will need to be ground-truthed.
 :::
 
-### Triangulating off local features
+### Triangulating off local features {#sec-ss-loc-reltri}
 
 Absolute location data can be backed up by measuring to nearby permanent or long-term features. This is particularly useful for relocating long-term monitoring plots. For this to work well, features should be within \~50 m of the target location and sufficiently sturdy to last until at least the next expected visit. Examples include fencelines, buildings, roads, and rock outcrops.
 
@@ -161,17 +150,17 @@ For single-point sites, measure distance and direction using a tape and compass.
 
 [add a diagram here]{style="background-color:lightgreen"}
 
-### Long-form descriptions
+### Long-form descriptions {#sec-ss-loc-reldesc}
 
 For observation points that will be revisited, record practical information about how to return. This may include landholder contact details and records of previous interactions, notes about track conditions, locked gates, and potential hazards like water crossings. Spatial data recording the track from the nearest public road to the target location is particularly valuable.
 
-### Administrative location
+### Administrative location {#sec-ss-loc-admin}
 
 Tagging sites with their administrative region(s) can help with discoverability (searching and filtering) in databases, and simplify information security and privacy arrangements. This does not need to be done in the field, provided accurate locations are recorded.
 
 In New Zealand, relevant boundaries include Regional Council [@statsnz] and Territorial Authority (District Council, Stats NZ [-@statsnza]) areas. Note that these boundaries are periodically updated so need to be related to date of observation.
 
-### Temporal
+### Temporal {#sec-ss-loc-reldt}
 
 Relative temporal data focuses on time since significant soil-influencing events. These can provide context for the parameters recorded, and some are especially useful when interpreting laboratory results.
 
