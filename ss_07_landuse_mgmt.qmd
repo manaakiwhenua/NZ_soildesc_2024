@@ -3,6 +3,7 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
+
 ```{r}
 library(dplyr)
 library(tibble)
@@ -10,29 +11,98 @@ library(gt)
 library(gtExtras)
 ```
 
-# Land use, management, and cover
+# Land cover, land use, and land management
 
-Land use and land management information is captured as part of soil survey when it is relevant to interpreting the landscape, landform, and soil profile description, and especially where it is likely to have affected the soil classification. Land use data is particularly important for long-term monitoring sites, where uses may change significantly between sampling events.
+Land cover is the physical cover over the earth's surface, both natural and human made. Land use is the purpose(s) for which the land is used and provides context for why a particular land cover is present. Land management describes specific activities affecting land cover, driven by land use.
 
-New Zealand currently lacks an official land use classification framework, but a proposal has been developed (REF) and can be implemented during soil survey work. The classification has three nested levels, with increasing specificity. This classification can be applied independent of scale, so advice on how and when to apply it to Landscapes, Landforms, and Profiles follows. 
+Land cover, use and management information is captured as part of soil survey when it is relevant to interpreting the landscape, landform, and soil profile description, and especially where it is likely to have affected the soil classification. Land use data is particularly important for long-term monitoring sites, where uses may change significantly between sampling events.
+
+## Land cover
+
+Land cover in New Zealand is monitored using the Land Cover Database (LCDB, @landcareresearchnewzealandltd2020). The database is used to publish a semi-automated map of land cover, derived from satellite imagery, with a minimum unit size of 1 hectare. The LCDB categories can also be applied on-ground. The categories are listed below, excluding some where it would be physically impossible to observe the soil. The full set of category definitions are available in @manaakiwhenualandcareresearch2018.  
+
+Record the dominant land cover at the landform scale.
+
+```{r}
+#| label: tbl-ss-lcdb
+#| tbl-cap: "Land Cover Database categories. The six most common categories are listed first."
+#| classes : no-stripe
+
+dat_ss_lcdb <-
+  tribble(~Code, ~Name, ~Description, 
+          40, 'High producing Exotic Grassland', 'Exotic sward grassland of good pastoral quality and vigour reflecting relatively high soil fertility and intensive grazing management.',
+          41, 'Low Producing Grassland', 'Exotic sward grassland and indigenous short tussock grassland of poor pastoral quality reflecting lower soil fertility and extensive grazing management or non-agricultural use.',
+          43, 'Tall Tussock Grassland', 'Indigenous snow tussocks in mainly alpine mountain-lands and red tussock in the central North Island and locally in poorly-drained valley floors, terraces and basins of both islands.',
+          52, 'Mānuka and/or Kānuka', 'Scrub dominated by mānuka and/or kānuka.',
+          69, 'Indigenous Forest', 'Tall forest dominated by indigenous conifer, broadleaved or beech species.',
+          71, 'Exotic Forest', 'Planted or naturalised forest.',
+          1, 'Built-up Area (settlement)', 'Commercial, industrial or residential buildings, including associated infrastructure and amenities, not resolvable as other classes. Low density \'lifestyle\' residential areas are included where hard surfaces, landscaping and gardens dominate other land covers.',
+          2, 'Urban Parkland/Open Space', 'Open, mainly grassed or sparsely-treed, amenity, utility and recreation areas. The class includes parks and playing fields, public gardens, cemeteries, golf courses, berms and other vegetated areas usually within or associated with built-up areas.',
+          6, 'Surface Mine or Dump', 'Bare surfaces arising from open-cast and other surface mining activities, quarries, gravel-pits and areas of solid waste disposal such as refuse dumps, clean-fill dumps and active reclamation sites.',
+          10, 'Sand or Gravel', 'Bare surfaces dominated by unconsolidated materials generally finer than coarse gravel (60 mm). Typically mapped along sandy seashores and the margins of lagoons and estuaries, lakes and rivers and some areas subject to surficial erosion, soil toxicity and extreme exposure.',
+          12, 'Landslide', 'Bare surfaces arising from mass-movement erosion generally in mountain-lands and steep hill-country.',
+          15, 'Alpine Grass/Herbfield', 'Typically, sparse communities above the actual or theoretical treeline dominated by herbaceous cushion, mat, turf, and rosette plants and lichens. Grasses are a minor or infrequent component, whereas stones, boulders and bare rock are usually conspicuous.',
+          30, 'Short-rotation Cropland', 'Land regularly cultivated for the production of cereal, root, and seed crops, vegetables, strawberries and field nurseries, often including intervening grassland, fallow land, and other covers not delineated separately',
+          33, 'Orchards, Vineyards or Other Perennial Crops', 'Land managed for the production of grapes, pip, citrus and stone fruit, nuts, olives, berries, kiwifruit, and other perennial crops.',
+          44, 'Depleted Grassland', 'Areas, of mainly former short tussock grassland in the drier eastern South Island high country, degraded by over-grazing, fire, rabbits and weed invasion among which Hieracium species are conspicuous. Short tussocks usually occur, as do exotic grasses, but bare ground is more prominent.',
+          45, 'Herbaceous Freshwater Vegetation', 'Herbaceous wetland communities occurring in freshwater habitats where the water table is above or just below the substrate surface for most of the year. The class includes rush, sedge, restiad, and sphagnum communities and other wetland species, but not flax nor willows which are mapped as Flaxland and Deciduous Hardwoods respectively.',
+          46, 'Herbaceous Saline Vegetation', 'Herbaceous wetland communities occurring in saline habitats subject to tidal inundation or saltwater intrusion. Commonly includes club rush, wire rush and glasswort, but not mangrove which is mapped separately.',
+          47, 'Flaxland', 'Areas dominated by New Zealand flax usually swamp flax (harakeke) but occasionally mountain flax (wharariki) on cliffs and mountain slopes.',
+          50, 'Fernland', 'Bracken fern, umbrella fern, or ring fern, commonly on sites with low fertility and a history of burning. Mānuka, gorse, and/or other shrubs are often a component of these communities.',
+          51, 'Gorse and/or Broom', 'Scrub communities dominated by gorse or Scotch broom.',
+          54, 'Broadleaved Indigenous Hardwoods', 'Lowland scrub communities dominated by indigenous mixed broadleaved shrubs such as wineberry, mahoe, five-finger, *Pittosporum* spp, fuchsia, tutu, titoki and tree ferns. This class is usually indicative of advanced succession toward indigenous forest.', 
+          55, 'Sub Alpine Shrubland', 'Highland scrub dominated by indigenous low-growing shrubs including species of *Hebe*, *Dracophyllum*, *Olearia*, and *Cassinia*. This class is also recorded where temperature inversions have created cooler micro-climates at lower elevations e.g. the \'frost flats\' of the central North Island.',
+          56, 'Mixed exotic shrubland', 'Communities of introduced shrubs and climbers such as boxthorn, hawthorn, elderberry, blackberry, sweet briar, buddleja, and old man\'s beard.',
+          58, 'Matagouri or Grey Scrub', 'Scrub and shrubland comprising small-leaved, often divaricating shrubs such as matagouri, *Coprosma* spp., *Muehlenbeckia* spp., *Cassinia* spp., and *Parsonsia* spp. These, from a distance, often have a grey appearance.',
+          64, 'Forest - Harvested', 'Predominantly bare ground arising from the harvesting of exotic forest or, less commonly, the clearing of indigenous forest.',
+          68, 'Deciduous Hardwoods', 'Exotic deciduous woodlands, predominantly of willows or poplars but also of oak, elm, ash or other species. Commonly alongside inland water (or as part of wetlands), or as erosion-control, shelter and amenity plantings.',
+          70, 'Mangrove', 'Shrubs or small trees of the New Zealand mangrove (*Avicennia marina* subspecies *australascia*).',
+          80, 'Peat Shrubland (Chatham Is)', 'Low-growing shrubland communities usually dominated by *Dracophyllum* spp. in association with *Cyathodes* spp. and ground ferns. Mapped only on the Chatham Islands.',
+          81, 'Dune Shrubland (Chatham Is)', 'Low-growing shrubland communities dominated by *Leucopogon* spp., *Pimelia arenaria* and *Coprosma* spp., in association with sedges and scattered herbs and grasses. Mapped only on the Chatham Islands.')
+          
+tbl_ss_lcdb <- gt(dat_ss_lcdb) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  # heavier line after first 6 rows:
+  tab_style(style = list(cell_borders(sides = 'bottom', weight = px(2))),
+            locations = cells_body(rows = 6)) |>
+  # italics etc for Description:
+  fmt_markdown(columns = 3) |>
+  cols_width(Code ~pct(10), Name ~ pct(25))
+  
+tbl_ss_lcdb
+```
+
+## Land Use
+
+New Zealand currently lacks an official land use classification framework, but a proposal has been developed [@law2024] and can be implemented during soil survey work. As show in @fig-ss-nzluc, the classification has three nested levels with increasing specificity. The system also allows for recording further information as 'attributes' of the land use (e.g tenure or management practices). This classification can be applied independent of scale, so advice on how and when to apply it to Landscapes, Landforms, and Profiles follows.
 
 Land use classification does not have to be done in the field provided adequate supporting information (notes and photographs) are available for later use. Given that the classification is expected to evolve over time, the observation date can be used to infer the edition in use.
 
-## Landscape scale
+![Overview of the New Zealand Land Use Management classification system (reproduced from @law2024, p. 44)](data/nzluc_snip.png){#fig-ss-nzluc fig-alt='A diagram of the NZ Land Use CLassification' width=95%}
 
-The Landscape will most likely contain multiple land uses. Record the primary land use and up to two ancillary land uses, but only to the second level of the classification. Uses recorded must be considered to occupy at least 20% of the landscape under examination.
+### Landscape scale
+
+The Landscape will most likely contain multiple land uses. Optionally, record the primary land use and up to two ancillary land uses, but only to the second level of the classification. Uses recorded must be considered to occupy at least 20% of the landscape under examination.
 
 This parameter is optional as it may only be useful when writing high-level reports on soil survey programmes.
 
-## Landform scale
+### Landform scale
 
 The Landform is a more local concept. As such it is less likely to contain multiple land uses, and these should be recorded at the third level of the classification. Record the primary land use and up to two ancillary land uses. These do not have to be contained within the land uses recorded at Landscape level, as they may be locally distinct. The uses recorded should occupy at least 20% of the landform under consideration.
 
 Where more than one use occurs within a Landform, the primary use is the one considered to have had the most impact on the soil profile being described. Attribute each Landform-scale land use with the degree to which it is considered to have impacted the soil profile, using @tbl-ss-luimp.
 
 Example for a site on a mixed sheep and beef farm in hill country: 
-Landscape (series of steep valleys with some forestry blocks and new waterway exclusion fencing: [2.2]{.ceg} ([2.1]{.ceg}, [1.4]{.ceg})
-Landform (mid-slope with pasture cover): [2.2.3]{.ceg} ([M]{.ceg})
+
+- Landscape: Series of steep valleys with some forestry blocks and new waterway exclusion fencing - [2.2]{.ceg} ([2.1]{.ceg}, [1.4]{.ceg})
+- Landform: Moderate slope with pasture cover - [2.2.3 M]{.ceg} 
 
 ```{r}
 #| label: tbl-ss-luimp
@@ -56,31 +126,21 @@ tbl_ss_luimp <- gt(dat_ss_luimp) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(40))
+  cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_ss_luimp
 
 ```
 
+## Land Management
 
+A fully developed vocabulary for land management does not currently exist. Given the multidimensional and constantly evolving nature of land management practice, it will generally be easier to record such information as free text and, if necessary, use text-mining techniques to extract patterns. Key soil-relevant aspects to record may include the following:
 
-
-### LCDB cover class {.todo}
-
-- go through system and common classes briefly
-
-### Cultivation type {.todo}
-
-- wrb cultivation types? or similar
-
-### Management practices {.todo}
-
-- maybe only relevant to paddock-scale research and management
-
----
-
-## Current and past use(s) {.todo}
-
-- where known and relevant - e.g. previous forestry means a lot of surface disturbance
-- time since clearing
-- time since major soil-altering disturbance e.g. eruption, flooding with >0.5m deposition
+- Tillage frequency (for arable land)
+- Harvest frequency (for forestry)
+- Crop rotation sequence
+- Stocking rates
+- Weed control practices
+- Soil amendment practices
+- Periodic drainage or flooding
+- Permanent drainage
