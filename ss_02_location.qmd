@@ -13,7 +13,7 @@ A soil description is essentially useless without a confident location. Confiden
 
 ### Recording location {#sec-ss-loc-rec}
 
-Record X and Y location coordinates using New Zealand Transverse Mercator (EPSG:2193). For Z coordinates (elevation), use the New Zealand Vertical Datum 2016 (EPSG:1169).
+Record X and Y location coordinates as eastings and northings using New Zealand Transverse Mercator (EPSG:2193). For Z coordinates (elevation), use the New Zealand Vertical Datum 2016 (EPSG:1169).
 
 X and Y precision does not need to exceed 1 m for pits, or 0.1 m for cores and auger holes. Z precision will rarely need to exceed 0.1 m.
 
@@ -37,16 +37,16 @@ Alternate geocoding systems involving e.g. text-based encoding or nested hashes 
 Expected horizontal error can be automatically reported by equipment, or estimated. When estimating, record in meters with a maximum precision of 0.01 (1 cm) e.g. [± 5.1 m]{.ceg}. Record expected vertical elevation error separately in the same units, as it will differ.
 
 ::: {#nte-locrev .callout-note collapse="true" appearance="minimal" title="Revising locations"}
-Location data quality can often be improved by revising the locations in GIS after fieldwork, with reference to e.g. satellite imagery. Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error.
+Location data quality can sometimes be improved by revising the location data in GIS after fieldwork, with reference to e.g. satellite imagery. Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error.
 :::
 
 ### Elevation measurement {#sec-loc-abs-elev}
 
-Parts of New Zealand still lack highly accurate elevation data. Elevation can also change suddenly in response to major tectonic activity. Record the elevation measurement method using the codes in @tbl-ss-elevsrc below. 
+Parts of New Zealand still lack highly accurate elevation data. Record the elevation measurement method using the codes in @tbl-ss-elevsrc below. 
 
 ```{r}
 #| label: tbl-ss-elevsrc
-#| tbl-cap: "Non-GPS elevation data sources"
+#| tbl-cap: "Elevation data sources"
 
 dat_ss_elevsrc <-
   tribble(~Code, ~Name,
@@ -76,10 +76,10 @@ The [M]{.ceg} code should be used for most non-Lidar DEMs, as those available fo
 
 Where the [A]{.ceg} code is used, the time and location of the most recent altimeter calibration should be noted.
 
-[G]{.ceg} type elevation measurements are unlikely to be accurate if not using a [GR]{.ceg} sensor, and may require additional conversion to the NZ Vertical Datum.
+[G]{.ceg} type elevation measurements are unlikely to be accurate if not using a [GR]{.ceg}-type sensor (see below), and may require additional conversion to the NZ Vertical Datum.
 
 ::: {#nte-dems .callout-note collapse="true" appearance="minimal" title="DEMs and location"}
-Where DEMs are used, they should be as contemporary as possible; New Zealand’s rate of landscape evolution is relatively high and these data sources will become less reliable with age. DEMs more than 20 years old should be accompanied by a vertical error estimate adjusted upwards for age.
+Where DEMs (Digital Elevation Models) are used, they should be as contemporary as possible; New Zealand’s rate of landscape evolution is relatively high and these data sources will become less reliable with age. DEMs more than 20 years old should be accompanied by a vertical error estimate adjusted upwards for age.
 :::
 
 ### Equipment {#sec-ss-loc-eq}
@@ -118,7 +118,7 @@ Multi-constellation GNSS is not the same as multi-band GNSS. The former signifie
 
 Multi-band GNSS involves receiving signals from location satellites on multiple frequency bands. The extra data from each satellite can significantly improve connection reliability and accuracy, particularly when open sky is restricted by rough terrain, dense vegetation or poor weather.
 
-Multi-sensor GNSS involves receiving signals not just from location satellites, but from other on-ground equipment, like mobile phone towers, wifi routers and nearby personal electronic devices. These devices can be extremely accurate in urban areas, but much less so elsewhere.
+Multi-sensor GNSS involves receiving signals not just from location satellites, but from other on-ground equipment, like mobile phone towers, wifi routers and nearby personal electronic devices. These sensors can be extremely accurate in urban areas, but much less so elsewhere.
 
 Most consumer electronic devices capable of reporting location will be of [LM]{.ceg} type by default, unless using an app that actively forces a GNSS-only connection. At the time of writing, most of these apps can still only return [GS]{.ceg}-quality data due to hardware limitations. 
 :::
@@ -165,7 +165,7 @@ Relative temporal data focuses on time since significant site-influencing events
 
 Only include recent events directly affecting the site. 'Recent' is a relatively flexible concept which highlights the reasons some parameters observed might be locally unusual. Some of these events recur regularly (e.g. tillage) so only need to be noted if very recent (e.g. previous week).
 
-If the time since the event is known with certainty, also record as number of days since the event.
+If the time since the event is known with certainty, also record as number of days since the event e.g. [CL 35]{.ceg} for a forestry block cleared last month.
 
 ```{r}
 #| label: tbl-ss-eventp
