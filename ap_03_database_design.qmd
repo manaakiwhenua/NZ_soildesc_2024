@@ -1,6 +1,138 @@
 # Database design
 
-- security and user mgmt out of scope
-- tooling suggestions for different scales of work e.g. PhD project vs running a business
-- relational vs non relational
-- high level example erd
+The following diagrams demonstrate one way in which the data model defined in this manual can be structured. The diagrams only deal with the data themselves - security, user management, change tracking and other helper functionalities are left out for clarity. The model is optimised to highlight the relationships between the various data points and contains some structures that support the controlled vocabulary lists, but is not optimised for performance.
+
+## Setting and site data
+
+```{mermaid}
+%%| fig-cap: "Overview - main tables only"
+
+erDiagram
+  site ||--|| location : "has one"
+  location ||--o{ siteEvents : "may have some"
+  site ||--|| landscape : "has one"
+  landscape ||--|{ landform : "has at least one"
+  
+
+```
+
+```{mermaid}
+%%| fig-cap: "Overview - including support tables"
+
+erDiagram
+  site ||--|| location : "has one"
+  location ||--o{ siteEvents : "may have some"
+  sitePurposes }|--|{ site : "code comes from"
+  siteSelMethods }|--|{ site : "code comes from"
+  siteEventTypes  }|--|{ siteEvents : "code comes from"
+  site ||--|| landscape : "has one"
+  landscape ||--|{ landform : "has at least one"
+  
+
+```
+
+
+
+```{mermaid}
+%%| fig-cap: "Details"
+
+erDiagram
+  site ||--|| location : "has one"
+  location ||--o{ siteEvents : "may have some"
+  sitePurposes }|--|{ site : "code comes from"
+  siteSelMethods }|--|{ site : "code comes from"
+  siteEventTypes  }|--|{ siteEvents : "code comes from"
+  site ||--|| landscape : "has one"
+  landscape ||--|{ landform : "has at least one"
+  lscapeTypes }|--|{ landscape : "code comes from"
+  
+  site {
+  id siteIdentifier "Section 3.1"
+  text author "Section 3.2"
+  date visitDate "Section 3.4"
+  catu sitePurposeCode "Section 3.5"
+  catu siteSelMethodCode "Section 3.6"
+  }
+  
+  sitePurposes {
+  id sitePurposeIdentifier
+  catu sitePurposeCode "Table 3.1"
+  text sitePurposeName "Table 3.1"
+  text sitePurposeDesc "Table 3.1"
+  }
+  
+  siteSelMethods {
+  id siteSelMethodIdentifier
+  catu siteSelMethodCode "Table 3.2"
+  text siteSelMethodName "Table 3.2"
+  text siteSelMethodDesc "Table 3.2" 
+  }
+  
+  location {
+  id siteIdentifier "Section 3.1"
+  geo locationXY "Sections 3.3, 4.1.1"
+  number elevationAbsZ "Section 4.1.1"
+  number errorXY "Section 4.1.2"
+  number errorZ "Section 4.1.2"
+  catu elevMethod "Section 4.1.3"
+  catu GNSSType "Section 4.1.4"
+  number elevationRelZ "Section 4.2.1"
+  text triangulationNotes "Section 4.2.2"
+  text locationDesc "Section 4.2.3"
+  catu adminRC "Section 4.2.4 - Optional"
+  catu adminDC "Section 4.2.4 - Optional"
+  }
+  
+  siteEvents {
+  id siteIdentifier "Section 3.1"
+  id eventIdentifier 
+  catu siteEventCode "Section 4.2.5"
+  integer[0-Inf] daysSinceEvent "Section 4.2.5"
+}
+
+ siteEventTypes {
+  id siteEventIdentifier
+  catu siteEventCode "Table 4.3"
+  text siteEventName "Table 4.3"
+  text siteEventDesc "Table 4.3"
+  }
+  
+  landscape {
+  id siteIdentifier "Section 3.1"
+  catu lscapeTypeCode "Section 5.1.4"
+  number[0-Inf] lscapeReliefMedian "Section 5.1.1"
+  number[0-90]  lscapeSlopeMedian "Section 5.1.2"
+  number[0-Inf] lscapeSlopeRangeLo "Section 5.1.2"
+  number[0-Inf] lscapeSlopeRangeHi "Section 5.1.2"
+  }
+
+  lscapeTypes {
+  id lscapeTypeIdentifier
+  catu lscapeTypeCode "Table TBA"
+  text lscapeTypeName "Table TBA"
+  }
+  
+  landform {
+  id siteIdentifier "Section 3.1"
+  catu lformTypeCode "Section 5.1.4"
+  number[0-Inf] lformReliefMedian "Section 5.1.1"
+  number[0-90]  lformSlopeMedian "Section 5.1.2"
+  number[0-Inf] lformSlopeRangeLo "Section 5.1.2"
+  number[0-Inf] lformSlopeRangeHi "Section 5.1.2"
+  }
+
+
+
+```
+
+### Profile data
+
+
+
+
+
+### Horizon data
+
+
+
+
