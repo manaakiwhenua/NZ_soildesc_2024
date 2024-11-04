@@ -1,34 +1,63 @@
 ---
 title: "Defining soil horizons"
 editor: source
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r}
 library(dplyr)
 library(tibble)
+library(ggplot2)
 library(gt)
 library(gtExtras)
 ```
 
-A soil horizon is a distinct layer within a soil profile. [Horizons are distinguished by differences in texture, stoniness, structure, colour, consistence or other soil properties as described in]{.milne} this section. [Delineated horizons should ideally represent depth intervals over which important soil attributes change minimally. Conversely, the horizon boundaries should represent depth intervals over which there is a relatively high rate of change of important soil properties.]{.milne}
+A soil horizon is a distinct layer within a soil profile. [Horizons are distinguished by differences in texture, stoniness, structure, colour, consistence or other soil properties as described in]{.milne} the following section. [Delineated horizons should ideally represent depth intervals over which important soil attributes change minimally. Conversely, the horizon boundaries should represent depth intervals over which there is a relatively high rate of change of important soil properties.]{.milne}
 
 [Not all important soil properties change from one horizon to the next or at the same rate with depth. In some instances confident interpretation of the suitability of a soil for a particular end use may depend on the rate of change of a single property at a horizon boundary. For this reason the basis for separating the horizon may need to be explicitly stated, not just the traditional generalised estimate of the amount of overall change.]{.milne}
 
-## Depth
+## The soil surface
 
-When examining single small cores or auger points on a local landform (see @tbl-pr-gear, type [A]{.ceg}, [C1]{.ceg} and perhaps [C2]{.ceg}), record the observable upper and lower depth of each horizon in whole centimetres (e.g. "28-38cm").
+The soil surface has a slightly more restrictive definition than the land surface. The soil surface begins below the layer of fresh leaf litter or small living plants, but above organic soil materials such as peat. The mineral soil surface is further restricted, being the top of the first horizon dominated by mineral soil material. Horizon depths are defined only with reference to the soil surface overall - scrape back litter or grasses and measure from there.
 
-Where a wider exposure (see @tbl-pr-gear, type [E]{.ceg}, [P1]{.ceg}, [P2]{.ceg}) or multiple undisturbed cores are available on a local landform and greater detail is desired, one may choose to record upper and lower depths as a median and range, again in whole centimetres (e.g. "28cm (27-29), 38 cm (37-40)"). At least 5 measurements should contribute to such an assessment.
+[draw this]{.diags}
 
-Measure to and from the midpoint of each horizon transition zone (see @sec-hr-bdydist).
+## Recording depths
+
+When examining single small cores or auger points on, (see @tbl-pr-gear, type [A]{.ceg}, [C1]{.ceg} and perhaps [C2]{.ceg}), record the observable upper and lower depth of each horizon from the soil surface in whole centimetres.
+
+Where a wider exposure (see @tbl-pr-gear, type [E]{.ceg}, [P1]{.ceg}, [P2]{.ceg}) or multiple undisturbed cores are available and greater detail is desired, one may choose to record upper and lower depths as a median and range, again in whole centimetres (e.g. "28cm (27-29), 38 cm (37-40)"). At least 5 measurements should contribute to such an assessment.
+
+Measure boundaries to and from the midpoint of each horizon transition zone (see @sec-hr-bdydist).
+
+::: {#imp-stp .callout-important collapse="true" appearance="simple" title="Defining horizons on steep slopes"}
+On steeper slopes, measuring horizons from vertical exposures can exaggerate horizon thicknesses, as the soil horizons mantle the landscape perpendicular to the sloping surface [@prietzel2019]. This starts to matter at slopes \> 25°, and progressively becomes more important - especially when calculating volumetric stocks of soil components. @fig-hr-slpex shows how a vertical 30-cm depth represents a progressively shallower 'true depth' as slope increases.
+
+To adjust vertically measured horizon depths to correct for slope, apply the formula $depth * cos(slope)$. Supply depth in cm and slope in radians. Slopes measured in degrees can be converted to radians using the formula $(slope * pi) / 180$.
+
+```{r}
+#| label: fig-hr-slpex
+#| fig-cap: "Depth exaggeration by slope."
+
+deg2rad <- function(deg) {(deg * pi) / (180)}
+
+slp_dat <- data.frame('Slope' = seq(0, 50, 1),
+                      'Thickness' = 30 * cos(deg2rad(seq(0, 50, 1)))) |>
+                        mutate('Ratio' = Thickness/30)
+
+ggplot(slp_dat) +
+  geom_line(aes(y = Thickness, x = Slope),
+            linewidth = 1, colour = 'grey40') +
+  labs(x= 'Slope (°)', y = 'Horizon thickness (cm)') +
+  theme_minimal()
+
+```
+:::
 
 ## Thickness
 
 Where depths are correctly measured, thickness should be calculated after fieldwork.
-
-::: callout-important
-Talk about adjusting depths on steep slopes per WRB.
-:::
 
 ## Boundary shape
 
@@ -93,7 +122,7 @@ tbl_hr_bdst <- gt(dat_hr_bdst) |>
 tbl_hr_bdst
 ```
 
-Where a transition is thicker than 15 cm, it should be defined as a new horizon. Use transitional horizon names as needed [CROSSLINK].
+Where a transition is thicker than 15 cm, it should be defined as a new horizon. Use transitional horizon names as needed \[CROSSLINK\].
 
 [change points - using WRB cutoff for gradual/diffuse (15 not 10 cm), dropping diffuse as an option]{.majch}
 
@@ -103,18 +132,82 @@ when to make a new horizon instead of reporting a transition
 
 [put a diagram unifying the previous three concepts here]{.diags}
 
-## In situ moisture content
+## Soil moisture status
 
 Report soil moisture status for each horizon at the time of observation. This parameter supports assessments of drainage and permeability, and contextualises consistence tests.
 
-[-   at time of obs
--   table 4 not table 3 - reconcile with WRB Table 8.28
--   discussion of field vs lab measurement]{.todo}
+```{r}
+#| label: tbl-hr-soilmst
+#| tbl-cap: "Soil water status (adapted from @griffiths1985)."
+
+dat_hr_bdst <-
+  tribble(~Code, ~Name, ~Sands, ~Light, ~Medium, ~Clays,
+          'D', 'Dry', 'loose, single grain', 'loose', 'easily broken down to powder', 'hard, baked, cracked',
+          'T', 'Moderately moist', 'will not form a ball', 'forms weak ball, breaks easily', 'forms a ball, very pliable', 'forms a ball, somewhat pliable',
+          'M', 'Moist', 'forms very weak ball', 'forms weak ball, breaks easily', 'forms a ball, very pliable', 'easily forms a ball',
+          'W', 'Wet', 'fluid, non-plastic, non-sticky', 'slightly fluid, slightly plastic', 'deformable, plastic', 'semi-deformable, very plastic',
+          'S', 'Saturated', 'water films visible, or below water table',  '',  '', '')
+
+tbl_hr_bdst <- gt(dat_hr_bdst) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  tab_style(style = list(cell_text(align='center', style='italic')),
+            locations = cells_body(columns = 3:6, rows = 5)) |>
+  tab_spanner(label = 'Behaviour of fine earth',
+              columns = Sands:Clays) |>
+  cols_label(Sands = '> 80% Sand',
+             Light = html("< 80% Sand<br />< 18% Clay"),
+             Medium = html('> 18% Clay<br />< 35% Clay'),
+             Clays = '>35% Clay') |>
+  cols_merge(columns = 3:6, hide_columns = FALSE, rows = 5 ) |>
+  cols_width(Code ~pct(10), Name ~pct(15))
+
+tbl_hr_bdst
+```
+
+[Add xref to an appendix about soil water field measurement]{.todo}
 
 [QN: keep this here or move to e.g. consistence???]{.todo}
 
 ## Depth to free water
 
-Depth to free water can be determined from the upper depth of the first saturated horizon, or specifically recorded in whole centimetres. Depending on the soil's transmissivity, the presence of water table may be revealed by the pit or core filling with water. 
+Depth to free water can be determined from the upper depth of the first [S]{.ceg} saturated horizon, or specifically recorded in whole centimetres. Depending on the soil's transmissivity, the presence of the water table may be revealed by the pit or core filling with water.
+
+-   If the water table is not encountered, record [NA]{.ceg}
+-   If the water table is encountered, use @tbl-hr-frw to code its position in the profile, then record the depth above or below in whole centimetres. Do not record negative numbers to signify a water table above the surface.
+
+e.g. ['B 80']{.ceg} for a profile saturated below 80 cm deep; ['A 1']{.ceg} for a barely-walkable peat.
+
+```{r}
+#| label: tbl-hr-frw
+#| tbl-cap: "Free water location"
+
+dat_hr_frw <-
+  tribble(~Code, ~Name, ~Description,
+          'NA', 'Not applicable', 'Water table not encountered',
+          'B', 'Below', 'Water table observed below the soil surface',
+          'A', 'Above', 'Water table observed at or above the soil surface')
+
+tbl_hr_frw <- gt(dat_hr_frw) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20))
+
+tbl_hr_frw
+```
 
 [add comment on how long a wet core or pit should be expected to take to equilibrate]{.todo}
+
+[figure out how to minimise redundancy vs land surface water codes]{.todo}
