@@ -1,42 +1,326 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
 # Consistence
 
--   context and use
--   note that some of these assessments can only be reliably conducted on undisturbed samples of soil, which usually rules out cored or augered samples
-    -   need alternatives for those?
--   how to sample for these tests
--   may need to complete assessments post-field
--   expected accuracy vs lab tests (low)
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+library(gtExtras)
+```
 
-## Cohesive vs non Cohesive
+[Consistence is a general term for the field-assessed behaviour of soil materials in response to applied stress over a range of soil-water states from wet to dry. The consistence properties described are strength, failure, fluidity, penetration resistance, packing, sensitivity, induration, plasticity, stickiness, dilatancy, and dry coherence.]{.milne}
 
--   test instructions, cross link to remoulding, dilatency and plasticity tests (these are moved up front as well)
--   Note: that flow chart in fig 13 can literally just be a table
--   talk about dry coherence test here rather than 10 pages later
+Consistency tests should be performed down-profile, with at least one sample tested per horizon. Samples should be taken from the mid-point of each horizon. Additional samples in transition zones may also be of interest.
 
-## Remoulding
+::: {#nte-consnzsc .callout-note collapse=true title='Consistence and the NZSC'}
+For classifying using the NZSC, particular tests down to a certain depth may be required. At the order level:
 
--   currently missing clear instructions
+-   **Gley soils:** must not have any moderately or very fluid (@sec-cn-flu) layers within 30 cm of the soil surface. Unconfined soil strength (@sec-cn-stru) and cementation (@sec-cn-ind) tests may be required to confirm absence of an underlying fragipan.
+-   **Ultic soils:** need an assessment of soil strength (@sec-cn-stru) in the B horizon under moist conditions. May need assessment of failure mode (@sec-cn-fail) over a range of moisture conditions to rule out oxidic or cutanoxidic horizons. May need assessment of sensitivity (@sec-cn-sens) and stickiness (@sec-cn-sti) to rule out allophanic soil materials.
+-   **Podzols:** may need unconfined strength (@sec-cn-stru) and failure mode (@sec-cn-fail) tests to help identify a Podzolic B horizon, as well as the presence of humus- and ortstein-pans.
+-   **Allophanic soils:** may need assessment of sensitivity (@sec-cn-sens) and stickiness (@sec-cn-sti) to help confirm allophanic soil materials.
+-   **Melanic soils:** may require stickiness assessment (@sec-cn-sti) in the B horizon.
+-   **Semiarid soils:** may require cementation tests (@sec-cn-ind) to confirm fragipan absence.
+-   **Oxidic soils:** May need assessment of ped strength (@sec-cn-stra), soil strength (@sec-cn-stru), and failure mode (@sec-cn-fail) over a range of moisture conditions to confirm presence of an oxidic horizon. Stickiness (@sec-cn-sti) and plasticity (@sec-cn-pla) may also be helpful.
+-   **Granular soils:** May need assessment of ped strength (@sec-cn-stra), soil strength (@sec-cn-stru), and failure mode (@sec-cn-fail) over a range of moisture conditions to confirm presence of a cutanoxidic horizon. Stickiness (@sec-cn-sti) and plasticity (@sec-cn-pla) may also be helpful.
+-   **Pallic soils:** may require cementation tests (@sec-cn-ind) to confirm fragipan presence. May require assessment of failure mode (@sec-cn-fail) to help confirm Brittle-B horizon presence. May require ped strength assessment in the B horizon.
+-   **Recent soils:** must not have any moderately or very fluid (@sec-cn-flu) layers within 30 cm of the soil surface.
+:::
 
-## Plasticity
+## Preparing for consistence assessment {#sec-dn-prep}
 
--   test instructions
--   interpretation
+[The nature of the soil materials in each horizon determines what tests can and should be done. The first step is to determine if the sample is cohesive.]{.milne}
 
-## Stickiness
+-   [**Cohesive soil materials** may have plasticity and stickiness characteristics and have a strength which can be measured in unconfined compression. All listed properties, except particle packing, can be described for non-gravelly, cohesive soils.]{.milne}
+-   [**Non-cohesive soil materials** have no shear resistance other than that developed by internal friction between grains. Non-cohesive soil materials, by definition, have no unconfined dry strength or plasticity, and the only property that can be meaningfully described is degree of packing or particle packing.]{.milne}
 
--   (moving up because easy to do right after plasticity test)
--   instructions
--   interpretation
+[The range of properties which can be described in gravelly, cohesive soils varies with gravel content. In practice, this depends on the feasibility of obtaining samples for the required tests.]{.milne}
+
+[The distinction between cohesive and non-cohesive is recognised by performing moulding, plasticity, and dilatancy tests in the following sequence (@fig-cn-cohes).]{.milne} Where doubt still remains after these tests have been completed, the dry coherence test (@sec-cn-dryco) may be necessary.
+
+```{mermaid}
+%%| label:  fig-cn-cohes
+%%| fig-cap: Determining sample cohesion
+
+flowchart TD
+  q1["Can a sample cube be formed\n from remoulded material?"] -->|yes| q2[Is the material plastic?]
+  q2 ---->|yes| a1([Cohesive])
+  q1 -->|no| q3[Is the material plastic?]
+  q3 -->|yes| q4
+  q2 -->|no| q4["Does the material have a\n fast positive reaction to\n the dilatency test?"]
+  q4 -->|no| q5["Does the material have a\n distinctly negative reaction to\n the dilatency test?"]
+  q4 --->|yes| a2
+  q3 ---->|no| a2([Non-cohesive])
+  q5 -->|yes| a1
+  q5 -->|no| a2
+
+```
+
+### Dry coherence {#sec-cn-dryco}
+
+1.  Remould a 30 mm test sample into a cube, and air-dry.
+2.  If the cube collapses under its own weight or after being lightly touched, treat the soil as non-cohesive.
+
+## Strength {#sec-cn-str}
+
+Strength is also known as 'resistance to crushing'. This is assessed using hand or body-weight strength, so the user must calibrate themselves against the classes in @tbl-cn-str. @drohan2020 discuss various options for calibration, including the use of pinch gauges or push-pull gauges to learn what different levels of force feel like.
+
+Each of the tests in this section are evaluated against @tbl-cn-str.
+
+```{r}
+#| label: tbl-cn-str
+#| tbl-cap: "Strength (resistance to crushing) classes"
+
+dat_cn_str <-
+  tribble(~Code, ~Name, ~Failure_cond, ~amt_force_n,
+          1, 'Very Weak', 'Very gentle force in hand', '< 8',
+          2, 'Weak', 'Gentle force in hand', '8-20',
+          3, 'Slightly firm', 'Moderate force in hand', '20-40',
+          4, 'Firm', 'Strong/maximum force in hand', '40-75',
+          5, 'Very firm', 'Gentle force underfoot', '75-150',
+          6, 'Hard', 'Full body weight (~80 kg) applied slowly', '150-800',
+          7, 'Very hard', 'Withstands full body weight', '> 800'
+          )
+
+tbl_cn_str <- gt(dat_cn_str) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  tab_style(style = list(cell_text(align = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_label(Failure_cond = 'Failure condition',
+             amt_force_n = 'Force required (N)') |>
+  cols_width(Code ~pct(10), Name ~pct(20), amt_force_n ~pct(20))
+
+tbl_cn_str
+```
+
+### Unconfined soil strength {#sec-cn-stru}
+
+-   Test at observed field moisture condition.
+-   If a test cube cannot be formed, the result is [1]{.ceg} 'Very Weak' (see @tbl-cn-str). This can happen when soil pedality is weak or absent, but also when pedality is strong and peds are small.
+-   This test cannot be reliably performed on auger-extracted samples.
+
+*Procedure*
+
+1.  Perform the test on an minimally disturbed 30 mm cube.
+2.  Hold the cube between the thumb and forefinger. Both digits must be straight and fully extended.
+3.  Pinch down. If the cube can be crushed, rate the difficulty using categories [1-4]{.ceg} in @tbl-cn-str.
+4.  If the cube cannot be crushed by hand, attempt to crush it slowly underfoot, against a hard surface. Rate the difficulty using categories [5-7]{.ceg} in @tbl-cn-str.
+
+### Unconfined aggregate strength {#sec-cn-stra}
+
+-   Test at observed field moisture condition.
+-   Test on whole peds where they are under 50 mm in size. Larger peds should be shaved down to 30 mm.
+-   This test cannot be reliably performed on auger-extracted samples.
+
+*Procedure*
+
+1.  Perform the test on an extracted ped.
+2.  Hold the ped between the thumb and forefinger. Both digits must be straight and fully extended.
+3.  Pinch down. If the ped can be crushed, rate the difficulty using categories [1-4]{.ceg} in @tbl-cn-str.
+4.  If the ped cannot be crushed by hand, attempt to crush it slowly underfoot, against a hard surface. Rate the difficulty using categories [5-7]{.ceg} in @tbl-cn-str.
+
+### Remoulded strength {#sec-cn-strr}
+
+Some soils lose strength to a notable degree when remoulded, and their apparent clay content as estimated with hand texturing increases. This has implications for engineering.
+
+-   Test at observed field moisture condition. [check]{.todo}
+-   Perform the test on an extracted 30 mm cube or sample of equivalent volume.
+-   This test can be reliably performed on auger-extracted samples.
+
+*Procedure*
+
+1.  Perform the test on an extracted 30 mm cube or sample of equivalent volume.
+2.  Place the sample in a small plastic bag and seal with the air excluded (this maintains field moisture content while remoulding). Work the sample until its structure is completely broken down. This may take several minutes.
+3.  Still in the bag, remould the soil into a cube and assess its strength against @tbl-cn-str.
+4.  Use @tbl-cn-sens to also record the ratio of unconfined to remoulded strength ('sensitivity', @sec-cn-sens).
+
+### Strength at plastic limit {#sec-cn-strp}
+
+Soil strength at the plastic limit has engineering implications. [expand pls]{.todo}
+
+-   Test at the soil's plastic limit.
+-   Perform the test on an extracted 30 mm cube or sample of equivalent volume.
+-   This test can be reliably performed on auger-extracted samples.
+
+*Procedure*
+
+1.  Work the sample until its structure is completely broken down. This may take several minutes. Keep adding small amounts of water so that the sample is almost, but not quite, saturated.
+2.  Remould the soil into a cube and assess its strength against @tbl-cn-str.
+
+## Sensitivity {#sec-cn-sens}
+
+In soils with an unconfined strength class of [4]{.ceg} firm or greater, sensitivity is reported as the ratio of unconfined soil strength (@sec-cn-stru) to remoulded strength (@sec-cn-strr). For weaker soils, the 'shear test' is performed. The two methods are assigned equivalent classes in @tbl-cn-sens.
+
+-   Test soil at a moist or wet state.
+-   Perform the test on a minimally disturbed 30 mm sample cube.
+-   This test cannot be reliably performed on auger-extracted samples.
+
+*Procedure*
+
+1.  Hold the sample cube between extended thumb and forefinger as for @sec-cn-str.
+2.  Pinch and press the sample to create a lateral, 'shear' force, moving the finger forward and down over the thumb.
+3.  Assess the sample behaviour against @tbl-cn-sens.
+
+Note that this test is not analogous to the shear vane test of @newzealandgeotechnicalsociety2005 and cannot be used as a substitute.
+
+```{r}
+#| label: tbl-cn-sens
+#| tbl-cap: "Sensitivity (strength loss on remoulding) classes"
+
+dat_cn_sens <-
+  tribble(~Code, ~Name, ~rel_loss, ~Description,
+          1, 'Non-sensitive', '0-1', 'the sample does not smear under shear force, and may soften only slightly',
+          2, 'Weakly sensitive', '2', 'the sample smears and skids under moderate shear force (20-40 kPa)',
+          3, 'Moderately sensitive', '3', 'the sample suddenly turns fluid under moderate shear force (20-40 kPa) and the fingers skid. Some free water is evident on fingers after shearing',
+          4, 'Very sensitive', '>3', 'the soil suddenly turns fluid and slippery under only gentle shear force (<20 kPa). Free water is easily seen on the fingers after shearing')
+
+tbl_cn_sens <- gt(dat_cn_sens) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  tab_style(style = list(cell_text(align = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_label(rel_loss = 'Relative strength loss on remoulding (classes)',
+             Description = 'Shear test behaviour') |>
+  cols_width(Code ~pct(10), Name ~pct(20), rel_loss ~pct(20))
+
+tbl_cn_sens
+```
+
+## Plasticity {#sec-cn-pla}
+
+[Plasticity is the capacity of soil material to change shape continuously when stress is
+applied and to retain that shape after the removal of stress.]{.milne}
+
+-   Test soil at a wet state.
+-   Perform the test on 3-4 cm^2^ of soil.
+-   This test can be reliably performed on auger-extracted samples.
+
+*Procedure*
+
+1. Thoroughly remould the sample, keeping it in a wet state.
+2. Adjust the water content to slightly above the plastic limit. [In practice this water content is slightly above that at which a 4-mm diameter roll of sample crumbles but less than that when sample becomes sticky (@sec-cn-sti), if stickiness is exhibited.]{.milne}
+3. Attempt to roll the sample out into a rod of 40 mm length. Assess the minimum achievable diameter of the rod and its behaviour using @tbl-cn-plas.
+
+```{r}
+#| label: tbl-cn-plas
+#| tbl-cap: "Plasticity classes"
+
+dat_cn_plas <-
+  tribble(~Code, ~Name, ~Description,
+          1, 'Non-plastic', 'A roll 40 mm long and 6 mm thick that supports its own weight cannot be formed.',
+          2, 'Slightly plastic', 'A roll 40 mm long and 6 mm thick can be formed and will support its own weight, but a roll 4 mm thick will not support its own weight.',
+          3, 'Moderately plastic', 'A roll 40 mm long and 4 mm diameter can be formed, and will support its own weight, but a roll 2 mm thick will not support its own weight.',
+          4, 'Very plastic', 'A roll 40 mm long and 2 mm thick can be formed and will support its own weight.')
+
+tbl_cn_plas <- gt(dat_cn_plas) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  tab_style(style = list(cell_text(align = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20))
+
+tbl_cn_plas
+```
+
+## Stickiness {#sec-cn-sti}
+
+[Stickiness is the degree to which remoulded soil adheres to foreign objects. ]{.milne}
+
+-   Test soil at a wet state.
+-   Perform the test on 3-4 cm^2^ of soil.
+-   This test can be reliably performed on auger-extracted samples.
+
+*Procedure*
+
+1. Thoroughly remould the sample, keeping it in a wet state.
+2. [Press the remoulded material between thumb and forefinger, and note its adherence to the fingers.]{.milne}
+3. [Adjust the water content by working the sample in the hand to remove water, or by adding water as necessary to achieve the maximum stickiness that the material will exhibit]{.milne}
+4. Assess maximum stickiness and record using @tbl-cn-stik.
+
+```{r}
+#| label: tbl-cn-stik
+#| tbl-cap: "Stickiness classes"
+
+dat_cn_stik <-
+  tribble(~Code, ~Name, ~Description,
+          1, 'Non-sticky', 'After release of pressure, practically no soil material
+adheres to the thumb or forefinger',
+          2, 'Slightly sticky', 'After release of pressure, soil material adheres perceptibly
+to both thumb and forefinger but, as the digits are separated, it tends to come off one or the other cleanly. The material is not stretched appreciably when the thumb and finger are separated',
+          3, 'Moderately sticky', 'After release of pressure, soil material adheres to both thumb and forefinger and tends to stretch somewhat and pull apart rather than pulling free from either digit',
+          4, 'Very sticky', 'After release of pressure, soil material adheres so strongly to both thumb and forefinger that it is decidedly stretched when they are separated, and finally pulls apart leaving part of the soil on thumb and part on the forefinger.')
+
+tbl_cn_stik <- gt(dat_cn_stik) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  tab_style(style = list(cell_text(align = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20))
+
+tbl_cn_stik
+```
 
 ## Dilatency
 
--   test instructions
--   interpretation
+[Dilatancy occurs due to volume change during shearing and is used as a criterion for the distinguishing non-cohesive from cohesive soil materials.]{.milne} 
+
+-   Test soil at a moist to wet state.
+-   Perform the test on 3-4 cm^2^ of soil.
+-   This test can be reliably performed on auger-extracted samples.
+
+*Procedure*
+
+1. Adjust the soil to a moist to wet state.
+2. Roll into a ball ~30 mm diameter.
+3. Hold sample in upturned palm and slap the back of the hand containing the sample several times with the other hand.
+
+[A dilatant reaction is shown by a shiny surface caused by water extrusion, and by a dull surface when the palm of the hand is folded to partly remould the sample, causing water to be drawn into the sample.]{.milne} Record dilatent behaviour as a binary, [true/false]{.ceg}. 
 
 ## Thixotropy
 
--   instructions
--   interpretation
+Thixotropic materials liquefy when shaken, and solidify when compressed.
+
+-   Test soil at a moist to wet state.
+-   Perform the test on 3-4 cm^2^ of soil.
+-   This test can be reliably performed on auger-extracted samples.
+
+*Procedure*
+
+1. Adjust the soil to a wet state.
+2. Roll into a ball ~30 mm diameter.
+3. Hold sample in upturned palm and rapidly shake the hand back and forth.
+
+Thixotropic materials will collapse from a ball into a pancake shape when vibrated, but w 
 
 ## Penetration resistance
 
@@ -47,33 +331,57 @@
 ## Particle Packing
 
 -   non-cohesive soils
+
 -   do we keep all of this or just T19?
 
-## Unconfined strength
-
--   more clear distinction that two types of strength may be apparent (soil mass, individual peds)
--   test instructions
--   use of a pinch gauge for hand strength calibration (Drohan et al, 2020)
--   interpretation
-    -   SMap specific information
--   T13 (reconcile with WRB field guide - looks almost identical)
-
-### Remoulded strength
-
--   instructions
-
-### Strength at plastic limit
-
--   do we keep this?
-
-### Sensitivity
-
 -   ratio of natural to remoulded
+
 -   instructions
+
 -   when not to bother
+
 -   interpretation
 
-## Mode of failure
+## Mode of failure {#sec-cn-fail}
+
+[Failure is the manner in which unconfined soil yields to increasing stress.]{.milne}
+
+-   Test at observed field moisture condition.
+-   Perform the test on a minimally disturbed 30 mm cube or aggregate.
+-   If diagnosing Oxidic or Cutanoxidic soil material for the NZSC, repeat the test under dry to wet moisture conditions.
+
+*Procedure*
+
+1.  
+
+```{r}
+#| label: tbl-cn-fail
+#| tbl-cap: "Failure mode classes"
+
+dat_cn_fail <-
+  tribble(~Code, ~Name, ~Description,
+           'N', 'Not determinable', 'Soil is either too dry or too wet to reliably test',
+           'V', 'Very friable', 'Test specimen cannot be formed, or crumbles under very slight stress on crushing within the hand, into aggregates predominantly <2 mm in size. In most instances the test specimen is difficult to obtain.',
+          'F', 'Friable', 'Test sample cannot be formed, or crumbles under very slight stress on crushing within the hand, into aggregates predominantly >2 mm in size, or crumbles under slight stress on crushing within the hand into aggregates predominantly <2 mm in size.',
+          'B', 'Brittle', 'Under slowly increasing pressure between the extended thumb and forefinger, a test specimen retains its size and shape with few or no cracks until it fractures abruptly into aggregates predominantly > 2 mm in size.',
+          'S', 'Semi-deformable', 'Under increasing pressure between the extended thumb and forefinger the test specimen as a whole is perceptibly compressed in the direction along which pressure is exerted, but cracks develop and the specimen ruptures before it has been compressed to half its original thickness. Before rupture, parts crumble and fall away if the specimen is shaken while held between the thumb and forefinger.',
+          'D', 'Deformable', 'Under slowly increasing pressure between the extended thumb and forefinger, the test specimen can be compressed to at least half its original thickness without the appearance of cracks and without rupture.')
+
+tbl_cn_fail <- gt(dat_cn_fail) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  tab_style(style = list(cell_text(align = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20))
+
+tbl_cn_fail
+```
 
 -   link more clearly to NZSC
     -   cutanoxidic horizon - behaviour varies significantly with water content
@@ -81,14 +389,14 @@
     -   organic material - deformable in field condition
     -   Oxidic - consistently friable across moisture states
 
-## Fluidity
+## Fluidity {#sec-cn-flu}
 
 -   clearer statement that this test is for field-saturated soils only
 -   and that it effectively tests whether subaqueous deposition was the mode of emplacement
 -   instructions
 -   interpretation
 
-## Induration
+## Induration {#sec-cn-ind}
 
 -   instructions
 -   interpretation
