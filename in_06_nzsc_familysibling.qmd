@@ -14,21 +14,106 @@ library(gt)
 library(gtExtras)
 ```
 
-Intro/context statement goes here
-None of this necessarily needs to be done in the field but it is a good skill to have for rapid assessment.
-Specifics of how to use particular profile-level interpretations to classify to sibling level.
+Intro/context statement goes here None of this necessarily needs to be done in the field but it is a good skill to have for rapid assessment. Specifics of how to use particular profile-level interpretations to classify to sibling level.
 
 Intro, why the Family is useful, reference to webb and lilburne, things of that nature
 
-## Soil Profile Material
+## Soil Profile Material {#sec-fam-pm}
 
-The Soil Profile Material code is the first code defining a family. Choose one code from @tbl-in-pmat. 
+The soil profile material concept is a brief summary of the overall character of the profile, in particular its mineral and stone content and major erosional/depositional origin. Some information on the likely range of bulk density values is implicit.
+
+@tbl-in-pmat below defines the available classes and should be used as a key. For Organic soils, skip the 'M' codes and start at [Sl]{.ceg}. Choose one code only per profile. Applying the key accurately requires familiarity with the major NZSC Diagnostic Criteria. Links to glossary definitions are provided below, but the source material [@hewitt2010] should also be consulted.
+
+```{r}
+#| label: tbl-in-pmat
+#| tbl-cap: "Soil Profile Material"
+
+dat_in_pmat <-
+  tribble(~Code, ~Name, ~ Description,
+          'Mf', 'Fragmental', 'Rock fragments with minimal fine earth from within 20 cm to > 60 cm depth',
+          'Ml' ,'Lithic', 'Other soils with a coherent- or shattered [lithic contact](LINKME) within 45 cm',
+          'Mp', 'Paralithic', 'Other soils with a [paralithic contact](LINKME) within 45 cm',
+          'Mt', 'Tephric', 'Other soils with at least 30 cm of [tephric soil material](LINKME) within 100 cm',
+          'Mr', 'Rounded-stony', 'Other soils with ≥ 35% by volume [rounded or sub-rounded](LINKME) rock fragments from within 45 cm to > 100 cm.',
+          'Ma', 'Angular-stony', 'Other soils with ≥ 35% by volume [angular or sub-angular](LINKME) rock fragments from within 45 cm to > 100 cm.',
+          'Mm', 'Moderately deep on rock', 'Other soils with a lithic or paralithic contact at < 100 cm.',
+          'Mg', 'Moderately deep on rock fragments', 'Other soils with ≥ 35% by volume rounded or sub-rounded rock fragments from within 45-90 cm, extending continuously to 100 cm with a cumulative thickness of ≥ 50 cm (unless over rock).',
+          'Md', 'Stoneless', 'Other soils with weighted average < 3% rock fragments by volume in the top 100 cm.',
+          'Ms', 'Stony', 'Other mineral soils.',
+          'Sl', 'Organic-lithic', 'Organic soils with a coherent- or shattered lithic contact within 45 cm.',
+          'Sp', 'Organic-paralithic', 'Other organic soils with a paralithic contact within 45 cm.',
+          'Sd', 'Organic-deep', 'Other organic soils with continuous peat throughout the top 100 cm.',
+          'So', 'Organic-other', 'Other organic soils.')
+
+tbl_in_pmat <- gt(dat_in_pmat) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20))
+
+tbl_in_pmat
+
+```
 
 Profile material class places restrictions on other parts of the family and sibling definition. These are discussed as they arise below.
 
-## Rock class of stone and bedrock
+## Rock class {#sec-fam-rcl}
 
-Rock class in an NZSC Family context uses the lithology codes in @tbl-ss-pm, with specific restrictions around how they are applied to the whole profile:
+```{r}
+#| label: tbl-ss-pm
+#| tbl-cap: "NZSC Lithology"
+
+dat_ss_pm <-
+  tribble(~Code, ~Name,
+    'Cb',	'Carbonaceous Rock (Coal)',
+    'Sq',	'Soft Quartzitic Sediments',
+    'Hq',	'Hard Quartzitic Sediments',
+    'Sm',	'Soft mudstone',
+    'Ss',	'Soft sandstone',
+    'Hm',	'Hard mudstone',
+    'Hs',	'Hard sandstone',
+    'Tm',	'Tuffaceous mudstone',
+    'Ts',	'Tuffaceous sandstone',
+    'Sc',	'Schist',
+    'Ls',	'Soft calcareous',
+    'Li',	'Hard calcareous',
+    'Ma',	'Marble',
+    'Rh',	'Rhyolite',
+    'Ig',	'Ignimbrite',
+    'An',	'Andesite',
+    'Ba',	'Basalt',
+    'Gr',	'Granite and Gneiss',
+    'Di',	'Diorite',
+    'Ga',	'Gabbro',
+    'Fe',	'Iron Sands')
+      
+tbl_ss_pm <- gt(dat_ss_pm) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_ss_pm
+
+```
+
+::: callout-note
+'Soft' rocks in this context can at most be broken readily with a light hammer blow, and can be scraped and peeled by a pocket knife. 'Hard' rocks can at best be scratched with a knife but not scraped or peeled, and require a firm hammer blow to crack [@lynn1991, p. 11].
+:::
+
+### Rock class of stone and bedrock {#sec-fam-rclr}
+
+Rock class of in-profile stone and of bedrock (where encountered) uses the lithology codes in @tbl-ss-pm, with specific restrictions around how they are applied to the whole profile. These are:
 
 -   [Md]{.ceg} soils effectively have no stone or bedrock. Leave the property undefined.
 -   Rock class is only defined in reference to stones \> 2 mm and bedrock (where encountered within 100 cm). The rock class of the fine earth fraction is accounted for below.
@@ -40,16 +125,16 @@ Rock class in an NZSC Family context uses the lithology codes in @tbl-ss-pm, wit
 
 [might need an ok/not ok table here, although what would actually be better is separating profile and bedrock rock class entirely]{.todo}
 
-## Rock class of fines
+### Rock class of fines {#sec-fam-rclf}
 
-The same rock class codes in @tbl-ss-pm can be applied to report the dominant lithology of the fine earth (\< 2 mm) fraction of the full profile. Again, some rules apply:
+The same rock class codes in @tbl-ss-pm can be applied to report the dominant lithology of the fine earth (\< 2 mm) fraction of the full profile. Again, some restrictions apply:
 
 -   [Sd]{.ceg} soils and [Mf]{.ceg} soils effectively have no fine earth fraction. Leave the property undefined.
 -   Where a lithological discontinuity exists in the profile, two codes separated by '[/]{.ceg}' can be used e.g. [Sc/Gw]{.ceg}.
 -   Where two lithologies are close to co-dominant, two codes separated by '[+]{.ceg}' can be used e.g. [An+Rh]{.ceg}.
 -   More complicated combinations are not allowed, e.g. no [An+Rh/Sm+Ss/Gw]{.ceg}.
 
-## Family texture class
+## Family texture class {#sec-fam-tex}
 
 The family texture class describes the dominant character of the top 60 cm, or to the profile material class-defining rock or gravel layer contact if that is shallower. Use the codes in @tbl-in-famtex. Note that 18% organic carbon corresponds to approximately 30% organic matter.
 
@@ -81,7 +166,7 @@ tbl_in_famtex
 
 ```
 
-## Permeability class
+## Permeability class {#sec-fam-perm}
 
 This class estimates the permeability of the top 100 cm in units of mm/hr. Use the codes in @tbl-in-famperm and follow the rules in @fig-in-famperm to assign permeability class.
 
@@ -132,6 +217,49 @@ Some additional rules apply for particular soil profile material classes:
 -   Soils with profile material class [Ml]{.ceg} or [Mp]{.ceg} and any soil with an [M]{.ceg} root barrier must use [m/s]{.ceg} or [r/s]{.ceg}.
     -   Exception: [Ml]{.ceg} with [F]{.ceg} barrier can't be [\*/s]{.ceg}.
 
+## Parent material origin {#sec-fam-pmo}
+
+Parent material origin (PMO) is the final defining factor of the soil Family. It describes how soil parent materials have arrived at the point of observation. Allowable codes are listed in @tbl-ss-pmo.
+
+Multiple modes may have operated in different parts of the soil profile. Up to two may be recorded at Family level, in order of their occurrence down-profile (e.g. [Tp/Fl]{.ceg}). If PMO has been recorded at horizon level and more than two have been identified, the dominant two must be chosen on the basis of their cumulative thickness. Cumulative thicknesses \<20 cm should be ignored unless the layers include a significant pedological feature (e.g. a pan).
+
+```{r}
+#| label: tbl-ss-pmo
+#| tbl-cap: "Parent material origin"
+
+dat_ss_pmo <-
+  tribble(~Code, ~Name, ~Description,
+          'An', 'Anthropic', 'Deposits made by the direct actions of humans, including truncation, mixing, or deposition.',
+          'Cl', 'Colluvium', 'Weathered soil and rock material mantling slopes that has been transported primarily by gravity and sheet wash.',
+          'Fl', 'Alluvium', 'Sediments that have been deposited by streams, rivers and other running water.',
+          'Gl', 'Glacial till', 'Poorly stratified, poorly sorted rock fragments, sand and mud, surface or near-surface deposits resulting from the transportation by and deposition from ice or meltwater from beneath or in close proximity to glacial ice.',
+          'Lc', 'Lacustrine', 'Formed in and around lake beds; comprising extremely fine sediment deposited under very low-flow freshwater conditions.',
+          'Mr', 'Marine' , 'Unconsolidated sediments saturated by brackish or saline water.',
+          'Lh', 'Lahar', 'A flow of volcanic material, both ash and coarser products, mixed with water; often caused by the spilling over of a crater lake. Also used to describe the mounds formed on volcanic ring-plains where lahars stop.',
+          'Tp', 'Tephra', 'A general term for all solid (rather than molten) materials ejected from a volcano during an eruption: includes boulders, lapilli and ash.',
+          'Li', 'Litter', 'Partly or fully decomposed forest litter, equal to or greater than 30 cm depth that is **not** almost continually saturated in the natural state (**F** and **H** horizons).',
+          'Pt', 'Peat', 'Partly decomposed plant remains in a water-saturated environment, such as a bog',
+          'Lo', 'Loess', 'A blanket deposit of silt-sized particles (0.002--0.06 mm diameter); usually carried by wind from dry riverbeds or outwash plains during glacial and post-glacial periods.',
+          'Sa', 'Aeolian sand', 'Wind-deposited sand-sized particles (0.05--2.0 mm diameter), i.e. dune sand.',
+          'Rw', 'Highly Weathered Rock', 'Highly to completely weathered rock, formed in place by chemical weathering.',
+          'Rx', 'Rock', '*In situ* unweathered to moderately weathered lithified geologic material comprising one or more minerals showing rock structure.',
+          'Uk', 'Unknown', 'Origin cannot be determined with certainty.'
+          )
+
+tbl_ss_pmo <- gt(dat_ss_pmo) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(20))
+
+tbl_ss_pmo
+```
+
 # NZSC Sibling {#sec-in-sib}
 
 These codes help define level 5 of the NZSC.
@@ -140,7 +268,7 @@ These codes help define level 5 of the NZSC.
 
 Soil depth from a sibling perspective is the depth to where digging becomes difficult, e.g.
 
--   A horizon with ≥ 35% stones by volume (V or X functional horizons)
+-   A horizon with ≥ 35% stones by volume (V or X functional horizons, @sec-in-fh)
 -   A soft- or hard-rock surface (M rooting barrier)
 -   A shattered-lithic contact (F rooting barrier)
 -   A pan (Q functional horizons)
@@ -179,7 +307,7 @@ tbl_in_sibdepth
 
 Topsoil stoniness assesses the amount of rock fragments (as % by volume) in the top 20 cm of the soil profile, including those resting on the soil surface.
 
-A weighted average calculation is required if the top 20 cm contains more than one horizon. As an example, 
+A weighted average calculation is required if the top 20 cm contains more than one horizon. As an example,
 
 ```{r}
 #| label: tbl-in-sibdcalc
@@ -211,7 +339,7 @@ tbl_in_sibdcalc
 
 ```
 
-Use the codes in @tbl-in-sibstone to assign stoniness. 
+Use the codes in @tbl-in-sibstone to assign stoniness.
 
 ```{r}
 #| label: tbl-in-sibstone
@@ -254,7 +382,7 @@ These classes are assessed over the top 100 cm, or to rock or gravel layer cont
 -   Skeletal horizons ([k]{.ceg}) may only be used for [Ms]{.ceg}, [Mm]{.ceg}, [Mt]{.ceg} and [So]{.ceg} soils. The skeletal material must be non-tephric.
 -   Skeletal horizons in moderately deep gravelly soils ([Mg]{.ceg}) are ignored in favour of describing the overlying fine sediments.
 
-Use the codes in @tbl-in-sibtexture to assign sibling level texture class(es). 
+Use the codes in @tbl-in-sibtexture to assign sibling level texture class(es).
 
 ```{r}
 #| label: tbl-in-sibtexture
@@ -292,31 +420,25 @@ tbl_in_sibtexture <- gt(dat_in_sibtexture) |>
 tbl_in_sibtexture
 ```
 
-
 ## Drainage {#sec-in-pdrng}
 
-Profile drainage is built from horizon drainage ratings completed according to @sec-in-hdrng. 
-
-- The dominant drainage class in each of the control sections in @tbl-in-pdrng forms a sequence, e.g. 'WE-WE-MW-MW-IP'. Each of these sequences is unique to a profile drainage class - in the case of this example, 'MW'. 
-- Any sequence where the drainage class does not change (e.g. PO-PO-PO-PO-PO) will also be PO at profile level.
-- For shallower profiles, the drainage sequence stops early. For example, with a 25 cm profile over rock, one might get the sequence WE-MW-XX-XX-XX. That sequence can occur in the MW, IP and PO profile ratings, but since the IP and PO classes are not identified at horizon level, MW must be chosen at profile level.
-- For perched profiles, sequences like IP-PO-PO-WE-WE might be identified, where the perching layer prevents development of poor-drainage diagnostic features below. In this case, when classifying drainage, one must stop at the base of the perched layer, as if it were a shallow profile, ignoring the ‘improvement’ in drainage below this point.
+Profile drainage is determined from horizon depths and per-horizon drainage ratings completed according to @sec-in-hdrng.
 
 ```{r}
 #| label: tbl-in-pdrng
 #| tbl-cap: "Profile drainage rules"
-#| column: page
-
-
 
 dat_in_pdrng <-
   tribble(   
-    ~depth,      ~VP,              ~PO,          ~IP,              ~MW,          ~WE,
-  '0 - 15', 'PO, VP', 'WE, MW, IP, PO', 'WE, MW, IP',         'WE, MW',         'WE',
- '15 - 30',     'VP',     'MW, IP, PO', 'WE, MW, IP',         'WE, MW',         'WE',
- '30 - 60',     'VP',         'PO, VP',         'IP',         'WE, MW',         'WE',
- '60 - 90',     'VP',         'PO, VP', 'IP, PO, VP',     'MW, IP, PO',         'WE',
-    '> 90',     'VP',         'PO, VP', 'IP, PO, VP', 'MW, IP, PO, VP', 'WE, MW, IP')
+    ~Code,      ~Name,              ~Description,
+    'VP', 'Very Poor', 'Profiles with very poorly drained horizons starting <10cm from the land surface',
+    'PO',    'Poor', 'Profiles with poorly drained horizons starting <30cm from the land surface',
+    'IP',  'Imperfect', 'Profiles with poorly drained horizons starting 30-60cm from the land surface, *or*
+    Profiles with imperfectly drained horizons starting <30cm from the land surface',
+    'MW', 'Moderately Well', 'Profiles with moderately well-drained horizons starting <90cm from the surface, *or*
+    Profiles with poorly-drained horizons starting 60-90cm from the surface, *or*
+    Profiles with imperfectly drained horizons starting 30-90cm from the surface', 
+    'WE', 'Well', 'All horizons starting within 90cm of the surface are well-drained.'  )
 
 tbl_in_pdrng <- gt(dat_in_pdrng) |>
   tab_options(
@@ -325,23 +447,19 @@ tbl_in_pdrng <- gt(dat_in_pdrng) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(weight = 'bold')),
+  tab_style(style = list(cell_text(weight = 'bold', color = 'red')),
             locations = cells_body(columns = 1)) |>
-  cols_label (VP ~ 'Very Poor',
-              PO ~ 'Poor',
-              IP ~ 'Imperfect', 
-              MW ~ 'Moderately Well',
-              WE ~ 'Well',
-              depth ~ 'Depth (cm)')
+  fmt_markdown(columns = 3)
+
 tbl_in_pdrng
 
 ```
 
-Workers classifying drainage for NZSC Sibling construction have no need to subdivide within those overall ratings. For other types of work e.g. agricultural suitability assessment, it may be useful to recognise subgroups – e.g. for a deep-rooted, wetness-intolerant crop, there’s a difference between an imperfectly drained profile that’s WE-IP-IP-IP-PO vs WE-IP-IP-PO-PO.
+Workers classifying drainage for NZSC Sibling construction have no need to subdivide within those profile ratings. For other types of work e.g. agricultural suitability assessment, it may be useful to recognise subgroups – e.g. for a deep-rooted, wetness-intolerant crop, there’s a difference between a profile that is at its *worst* imperfectly drained in the top 1 m, vs one that is dominantly imperfectly drained but has poor drainage below 60 cm.
 
 ### Helper information for profile drainage
 
-@tbl-in-drngl describes some potential additional signifiers of profile drainage condition that might be considered. These may be useful when estimating drainage in a new landscape that has not yet been examined in detail, or when handling edge cases where a particular control section has ambiguous horizon-level drainage.
+@tbl-in-drngl describes some potential additional signifiers of profile drainage condition that might be considered. These may be useful when estimating drainage in a new landscape that has not yet been examined in detail.
 
 ```{r}
 #| label: tbl-in-drngl
@@ -403,4 +521,3 @@ tbl_in_natdrng <- gt(dat_in_natdrng) |>
 tbl_in_natdrng
 
 ```
-

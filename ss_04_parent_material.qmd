@@ -13,6 +13,8 @@ library(gt)
 library(gtExtras)
 ```
 
+Parent material can be explored in terms of geological units, lithology (rock type), and mineralogy.
+
 ## Geology
 
 Geological mapping, particularly surface and near-surface stratigraphy, is an essential resource for understanding the landscape. However, the scale and focus of the available products don't always align with soil observation needs. Some caution is needed when interpreting geological maps in a soils context. Keep the following in mind:
@@ -20,9 +22,11 @@ Geological mapping, particularly surface and near-surface stratigraphy, is an es
 -   Read the accompanying reports for a given area as well as looking at the maps. They contain a wealth of contextual information.
 -   When working in a depositional area, get familiar with the 'source' geologies - upstream, uphill, upwind. Those will be the main contributors to the parent material, which will often be mapped with closer reference to age and particle size than lithology.
 
+Geology mapping in New Zealand can be accessed through resources provided by [GNS Science - Te Pū Ao](https://www.gns.cri.nz/). This includes QMap, a unified 1:250,000 scale geological map of the country, and a large set of legacy geology maps produced at scales as detailed as 1:25,000.
+
 ## Lithology
 
-segue in here from strat assemblages to local lith
+The specific lithology, or rock type, of the parent material offers a more specific and soil-relevant categorisation than geology mapping generally supplies. The following options are in common use in New Zealand.
 
 ### NZLRI Rock Type
 
@@ -32,58 +36,17 @@ An identification and coding system for New Zealand rock types is available in [
 
 ### NZSC Parent Material {#sec-ss-pmat}
 
-Level 4 of the NZSC, the soil Family [@webb2011], uses a shorter list of lithology codes along with a separate 'origin' code, whereas the NZLRI rock type conflates the two concepts. The lithology codes are available in @tbl-ss-pm below.
+Level 4 of the NZSC, the soil Family [@webb2011], uses a shorter list of lithology codes along with a separate 'origin' code, whereas the NZLRI rock type conflates the two concepts. The lithology codes are available in @tbl-ss-pm, and the origin codes in @tbl-ss-pmo.
 
-```{r}
-#| label: tbl-ss-pm
-#| tbl-cap: "NZSC Lithology"
+## Other lithology classifications
 
-dat_ss_pm <-
-  tribble(~Code, ~Name,
-    'Cb',	'Carbonaceous Rock (Coal)',
-    'Sq',	'Soft Quartzitic Sediments',
-    'Hq',	'Hard Quartzitic Sediments',
-    'Sm',	'Soft mudstone',
-    'Ss',	'Soft sandstone',
-    'Hm',	'Hard mudstone',
-    'Hs',	'Hard sandstone',
-    'Tm',	'Tuffaceous mudstone',
-    'Ts',	'Tuffaceous sandstone',
-    'Sc',	'Schist',
-    'Ls',	'Soft calcareous',
-    'Li',	'Hard calcareous',
-    'Ma',	'Marble',
-    'Rh',	'Rhyolite',
-    'Ig',	'Ignimbrite',
-    'An',	'Andesite',
-    'Ba',	'Basalt',
-    'Gr',	'Granite and Gneiss',
-    'Di',	'Diorite',
-    'Ga',	'Gabbro',
-    'Fe',	'Iron Sands')
-      
-tbl_ss_pm <- gt(dat_ss_pm) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20))
+### Geological vocabularies
 
-tbl_ss_pm
+Several research-grade vocabularies for describing geology have been developed in recent years, including @geoscienceaustralia2016 and @mccormick2023. Both offer a detailed set of rock and mineral definitions in a hierarchical relationship structure, but both are currently missing one or more terms essential to the New Zealand context. Additionally, the hierarchies don't always align cleanly with those used in New Zealand geology.
 
-```
+### Silica-content classification
 
-::: callout-note
-'Soft' rocks in this context can at most be broken readily with a light hammer blow, and can be scraped and peeled by a pocket knife. 'Hard' rocks can at best be scratched with a knife but not scraped or peeled, and require a firm hammer blow to crack [@lynn1991, p. 11].
-:::
-
-### Other lithology classifications
-
-Soil parent material classifications have largely focused on major geological origin (igneous, metamorphic, sedimentary), grain size, and some obvious compositional classes. [@gray2016] contend that the major differentiator for soil formation should first be silica (SiO~2~) content and propose an alternate lithology classification per @tbl-ss-sio2lith below.
+Soil parent material classifications have largely focused on major geological origin (igneous, metamorphic, sedimentary), grain size, and some obvious compositional classes. [@gray2016] contend that the major differentiator for soil formation should first be silica (SiO~2~) content and propose an alternate lithology classification per @tbl-ss-sio2lith below. This is optional to record as it has not been extensively tested.
 
 ```{r}
 #| label: tbl-ss-sio2lith
@@ -115,7 +78,7 @@ tbl_ss_sio2lith <- gt(dat_ss_sio2lith) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20))
+  cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_ss_sio2lith
 ```
@@ -124,4 +87,3 @@ This system can be applied to the New Zealand context relatively easily, althoug
 
 -   Folk 1970, blair and mcpherson 1999
 -   juilleret subsolum stuff
-
