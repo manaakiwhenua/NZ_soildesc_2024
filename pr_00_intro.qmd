@@ -12,9 +12,11 @@ library(gt)
 library(gtExtras)
 ```
 
-[what is etc]{.todo}
+Soil profiles are described at sites. The 'site' concept is necessarily somewhat flexible to account for the range of sampling purposes and methods. Generally speaking, it is considered to include the immediate profile surrounds, up to a radius of \~10 m. As such, it will generally nest within a landform unless the site selection method was prescriptive and landform-blind.
 
-The soil profile description starts with an observation of the surface and works down. The chief task is delineating soil layers, or horizons, and describing their morphological character. Prior to that, some additional reference data should be recorded:
+Larger plots and long transects that definitely cover multiple landforms, or even landscapes, should be considered as being built from multiple related sites.
+
+The soil profile description starts with an observation of the site's surface and works down. The chief task is delineating soil layers, or horizons, and describing their morphological character. Prior to that, some additional reference data should be recorded:
 
 ## Exposure type
 
@@ -54,7 +56,7 @@ tbl_pr_gear
 
 ## Depth of observation
 
-Record the maximum depth of observation in whole centimetres (e.g. '[100 cm]{.ceg}').
+Record the maximum depth of observation from the soil surface in whole centimetres (e.g. '[100 cm]{.ceg}').
 
 A full profile description ideally extends to bedrock, but this may not always be accessible with the equipment and time available. The target depth of observation for most applications in New Zealand is 100 cm. Classification systems like the NZSC and LUC rely on ruling out certain soil features within that depth range, as well as positively identifying others.
 
@@ -88,4 +90,45 @@ tbl_ss_stoppage <- gt(dat_ss_stoppage) |>
   cols_width(Code ~pct(20))
 
 tbl_ss_stoppage
+```
+
+## Recent site disturbance {#sec-pr-dist}
+
+Site disturbances have the potential to influence the soil as well as its cover. Noting these events can provide context for the parameters recorded, and some are especially useful when interpreting laboratory results.
+
+Only record recent events directly affecting the site. 'Recent' is a relatively flexible concept which highlights the reasons some parameters observed might be locally unusual. Some of these events recur regularly (e.g. tillage) so only need to be noted if very recent (e.g. previous week).
+
+If the time since the event is known with certainty, also record as number of days since the event e.g. [CL 35]{.ceg} for a forestry block cleared last month.
+
+```{r}
+#| label: tbl-ss-eventp
+#| tbl-cap: "Recent site-affecting events"
+
+dat_ss_eventp <-
+  tribble(~Code, ~Name,
+          'MC', 'Mechanical disturbance (e.g. tillage, deep ripping)',
+          'CL', 'Mechanical vegetation clearance (e.g. clearfelling)',
+          'SL', 'Erosion event - material lost from site',
+          'SD', 'Deposition event - material added to site',
+          'WI', 'Wind-induced treefall',
+          'FC', 'Fire - controlled burn',
+          'FW', 'Fire - uncontrolled burn',
+          'FL', 'Flooding - freshwater',
+          'FS', 'Flooding - saline water (e.g. storm surge event)',
+          'PO', 'Pollution event (e.g. petrol spill)',
+          'NO', 'No recent events',
+          'UK', 'Unknown')
+
+tbl_ss_eventp <- gt(dat_ss_eventp) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20))
+
+tbl_ss_eventp
 ```
