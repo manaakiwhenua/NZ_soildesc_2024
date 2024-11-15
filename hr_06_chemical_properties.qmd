@@ -21,7 +21,7 @@ Field tests should be performed down-profile, with at least one sample tested pe
 
 For classifying using the NZSC, particular tests down to a certain depth may be required. At the order level, these are:
 
--   **Gley soils:** Detectable ferrous ions (Fe^2+^) in the soil solution within the top 30 cm, signifying a reduced/anoxic environment (@sec-ft-rdx)
+-   **Gley soils:** Detectable ferrous ions (Fe^2+^) in the soil solution within the top 30 cm, signifying a reduced/anoxic environment (@sec-ft-rdx). A slaking test may be required to confirm absence of an underlying duripan (@sec-ft-slak)
 -   **Ultic soils:** pH below 5.5 anywhere between the base of the A horizon and 60 cm depth (@sec-ft-phf or @sec-ft-phfw)
 -   **Allophanic soils:** Strong pH response to sodium fluoride in at least 35 cm of the top 60 cm (@sec-ft-naf)
 -   **Melanic soils:** Fine earth fraction reacts with 10% HCl, signifying carbonate presence (@sec-ft-ca)
@@ -271,12 +271,15 @@ This test indicates the presence of reactive hydroxy-aluminium sites on soil min
 #| tbl-cap: "Sodium fluoride reaction ratings"
 #| classes : no-stripe
 
+# Eyeballed these, but tweaked them a little using field photos
+# Soil materials sometimes interfere with the apparent colour a bit but
+# mentioning that feels like TMI
 dat_ft_naf <-
   tribble(~Code, ~Name, ~Description, ~Colour, 
           'N', 'No reaction',  'No colour change', '#FFFFFF',
           'L', 'Slight reaction', 'Paper turns faint pink within two minutes',  '#FFBADE',
-          'M', 'Moderate reaction', 'Paper turns moderate pink, usually within 30 seconds', '#CF3685',
-          'H', 'Strong reaction', 'Paper turns dark pink, usually instantly', '#A10A58'
+          'M', 'Moderate reaction', 'Paper turns moderate pink, usually within 30 seconds', '#CF3A69',
+          'H', 'Strong reaction', 'Paper turns dark pink, usually instantly', '#A11844'
   ) |>
   dplyr::mutate(fa_icon = 'fas fa-circle')
 
@@ -289,7 +292,8 @@ tbl_ft_naf <- gt(dat_ft_naf) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  fmt_icon(columns = fa_icon, fill_color = from_column("Colour"), height = '1.5em') |>
+  fmt_icon(columns = fa_icon, fill_color = from_column("Colour"), height = '1.5em',
+           fill_alpha = 0.9) |>
   cols_hide(Colour) |>
   cols_label(fa_icon = 'Colour') |>
   cols_width(Code ~pct(10), Name ~ pct(20), fa_icon ~ pct(10))
