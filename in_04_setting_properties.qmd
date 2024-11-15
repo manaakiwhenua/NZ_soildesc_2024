@@ -14,15 +14,15 @@ library(gtExtras)
 
 # Site and setting properties
 
-Many of the Landscape and Landform parameters described in @sec-landscape are inherently categorical. Classifying the numeric measurements can be useful for efficient communication. However, in the absence of inherent groupings in these data, class boundaries need to be chosen carefully.
+Many of the parameters described in Site and Setting are inherently categorical. Classifying the numeric measurements as well can be useful for efficient communication. However, in the absence of inherent groupings in these data, class boundaries need to be chosen carefully.
 
 ## Slope classification {#sec-slopeclass}
 
 ### LUC Slope {#sec-slopeclass-luc}
 
-The most commonly-used slope classification in New Zealand is the one associated with the Land Use Capability (LUC) framework. These classes were formulated primarily to support pastoral agriculture, and the class boundaries focus on slope as an activity limiter, rather than an inherent landscape property. This means that the classification can potentially underperform in landscapes where natural slopes are close to the class boundaries. This is acknowledged in the LUC Handbook [@lynn2009] by the inclusion of various options for describing these cases.
+The most commonly-used slope classification in New Zealand is the one associated with the Land Use Capability (LUC) framework. These classes were formulated primarily to support pastoral agriculture, and the class boundaries focus on slope as an activity limiter, rather than an inherent landscape property. This means that the classification can potentially underperform in landscapes where natural slopes are close to the class boundaries. This is acknowledged in the LUC Handbook [@lynn2009] by the inclusion of various options for modifying slope class.
 
-The class boundaries are reproduced from Table 26 of the LUC Handbook in @tbl-in-slpluc. Some generalised groupings are also included - these are discussed in Appendix 1 of the Handbook but are not explicitly defined.
+The class boundaries are reproduced from Table 26 of the LUC Handbook in @tbl-in-slpluc. Some generalised groupings are also included - these are discussed in Appendix 1 of the LUC Handbook but are not explicitly defined.
 
 ```{r}
 #| label: tbl-in-slpluc
@@ -61,7 +61,7 @@ Note that the Handbook does not provide fully closed limits for slope classes. F
 
 ## Natural Log classifications {#sec-slopeclass-log}
 
-Work by Speight [@speight1971] promotes the use of slope classes with natural-log derived limits on the basis that they come closest to a universal set of 'characteristic slopes'. The limits proposed are shown in @tbl-in-slpaus. These classes are commonly used in Australian soil survey, and focus more on splitting up low-slope areas of the landscape. As such, these may be more useful for interpreting alluvial plains landforms than the LUC classes.
+Work by Speight [@speight1971] promotes the use of slope classes with natural-log derived limits on the basis that they come closest to a universal set of 'characteristic slopes'. The limits proposed are shown in @tbl-in-slpaus. These classes are commonly used in Australian soil survey, and focus more on splitting up low-slope areas of the landscape. As such, these may be more useful for interpreting low-relief landscapes than the LUC classes.
 
 ```{r}
 #| label: tbl-in-slpaus
@@ -111,6 +111,41 @@ Where high-precision DEMs are available and the areal limits of landscapes are i
 The broadest aspect classification available divides the landscape into flat/sunny/shady (\@tbl-aspcl-ssh). In New Zealand, 'sunny' is roughly 'north-facing',
 
 -   talk through cardinal compass direction and more tailored options
+
+## Relief classification {#sec-reliefclass}
+
+The following classification system is used globally, and developed over many years [see e.g., @hammond1954; @löffler1977; @brabyn1998; @speight2009].
+
+Relief classifications are scale-dependant; these are calculated by convention over a 600 m diameter window. The classification can be adjusted to a smaller or larger window size using the formula $range_{new} = range_{old} × (window_{new} / window_{old})$, where all inputs are in meters.
+
+```{r}
+#| label: tbl-in-relief
+#| tbl-cap: "Relief classification"
+
+dat_in_relief <-
+  tribble(~Code,           ~Name,          ~Rng_m, ~avg_m,       
+            'P', 'Extremely low',           '≤ 9',   '~5', 
+            'R',      'Very Low',    '> 9 - ≤ 30',  '~15', 
+            'L',           'Low',   '> 30 - ≤ 90',  '~60',
+            'M',      'Moderate',  '> 90 - ≤ 150', '~120',
+            'H',          'High', '> 150 - ≤ 300', '~200',
+            'V',     'Very High',         '> 300', '~500')
+
+tbl_in_relief <- gt(dat_in_relief) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_label(Rng_m = 'Range (m)',
+             avg_m = 'Average (m)') |>
+  cols_width(Code ~pct(10)) 
+
+tbl_in_relief
+```
 
 ## Climate classification
 
