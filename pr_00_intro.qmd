@@ -98,7 +98,7 @@ Site disturbances have the potential to influence the soil as well as its cover.
 
 Only record recent events directly affecting the site. 'Recent' is a relatively flexible concept which highlights the reasons some parameters observed might be locally unusual. Some of these events recur regularly (e.g. tillage) so only need to be noted if very recent (e.g. previous week).
 
-If the time since the event is known with certainty, also record as number of days since the event e.g. [CL 35]{.ceg} for a forestry block cleared last month.
+If the time since the event is known with certainty, also record as number of days since the event e.g. [CL 35]{.ceg} for recent tree clearing.
 
 ```{r}
 #| label: tbl-ss-eventp
@@ -106,11 +106,13 @@ If the time since the event is known with certainty, also record as number of da
 
 dat_ss_eventp <-
   tribble(~Code, ~Name,
-          'MC', 'Mechanical disturbance (e.g. tillage, deep ripping)',
+          'MC', 'Mechanical disturbance (e.g. tillage, deep ripping, subsoiling)',
+          'AN', 'Animal disturbance (e.g. pugging, rooting, tunnelling, excretion)',
           'CL', 'Mechanical vegetation clearance (e.g. clearfelling)',
+          'CO', 'Selective vegetation clearance (e.g. tree removal or weed clearance)', 
+          'WI', 'Wind-induced treefall',
           'SL', 'Erosion event - material lost from site',
           'SD', 'Deposition event - material added to site',
-          'WI', 'Wind-induced treefall',
           'FC', 'Fire - controlled burn',
           'FW', 'Fire - uncontrolled burn',
           'FL', 'Flooding - freshwater',
