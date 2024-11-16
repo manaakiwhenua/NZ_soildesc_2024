@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Field tests {#sec-ft}
+# Chemical properties {#sec-chem}
 
 ```{r}
 library(dplyr)
@@ -12,6 +12,10 @@ library(tibble)
 library(gt)
 library(gtExtras)
 ```
+
+[Preamble, lab stuff]{.todo}
+
+## Field tests {#sec-ft}
 
 Field tests support confident soil profile descriptions in the field by providing immediate indications of key soil properties. As well as informing the description itself, the tests can help guide sampling decisions and later choice of laboratory analyses. In some cases, they can act as quality control measures (e.g. large inconsistencies in pH between field and laboratory may indicate unwanted sample oxidation in acid sulfate soils).
 
@@ -21,6 +25,7 @@ Field tests should be performed down-profile, with at least one sample tested pe
 
 For classifying using the NZSC, particular tests down to a certain depth may be required. At the order level, these are:
 
+::: {#nte-chemnzsc .callout-note collapse=true title='Field tests and the NZSC'}
 -   **Gley soils:** Detectable ferrous ions (Fe^2+^) in the soil solution within the top 30 cm, signifying a reduced/anoxic environment (@sec-ft-rdx). A slaking test may be required to confirm absence of an underlying duripan (@sec-ft-slak)
 -   **Ultic soils:** pH below 5.5 anywhere between the base of the A horizon and 60 cm depth (@sec-ft-phf or @sec-ft-phfw)
 -   **Allophanic soils:** Strong pH response to sodium fluoride in at least 35 cm of the top 60 cm (@sec-ft-naf)
@@ -32,7 +37,9 @@ For classifying using the NZSC, particular tests down to a certain depth may be 
 
 pH, carbonate, allophane and salinity tests are also common diagnostics at the group and subgroup level.
 
-## Colourimetric field pH (pH~f~) {#sec-ft-phf}
+:::
+
+### Colourimetric field pH (pH~f~) {#sec-ft-phf}
 
 This method, after @raupach1959, requires the use of a pre-made kit containing universal pH indicator, barium sulfate powder, and a calibrated colour card for interpreting results. These kits can be purchased at hardware or garden supply stores as well as specialist environmental field supply stores. The tests are simple but only precise to ± 0.5 units, and accurate (vs laboratory-based testing) to around the same degree. They are usually valid over pH range 2-10.
 
@@ -61,7 +68,7 @@ Some variability between colorimetric field and electronic laboratory pH is expe
 -   Samples taken for laboratory analysis may react during transport, in storage or during sample processing.
 :::
 
-## Field pH in water (pH~fw~) {#sec-ft-phfw}
+### Field pH in water (pH~fw~) {#sec-ft-phfw}
 
 pH~fw~ is measured with a field-ready electronic pH meter. Electronic meters are precise and can measure the full 0-14 pH range, but are sensitive to temperature fluctuations and must be regularly calibrated. Always refer to the device manual for specific maintenance requirements.
 
@@ -85,7 +92,7 @@ pH~fw~ is measured with a field-ready electronic pH meter. Electronic meters are
 Make sure to sample with clean hands; tests can be easily contaminated by residues. In particular, sunscreens will cause a falsely high pH reading.
 :::
 
-## Field pH in hydrogen peroxide (pH~fox~) {#sec-ft-phfox}
+### Field pH in hydrogen peroxide (pH~fox~) {#sec-ft-phfox}
 
 Field pH in concentrated hydrogen peroxide (30% H~2~O~2~) is paired with field pH in water to diagnose the presence of FeS~2~ (iron sulfide, or pyrite) and thus the presence of acid sulfate soil materials. A significant drop in pH~fox~ vs pH~fw~ is considered diagnostic; see the discussion in @sullivan2018, section A1.4.4 for further details.
 
@@ -147,7 +154,7 @@ tbl_ft_foxrx
 Field-adjacent incubation methods are available as an alternative low-cost method of identifying acid sulfate soils. These involve minimal equipment and no hazardous chemicals, but can take up to three months to complete. See [@sullivan2018a], Appendix C for further information.
 :::
 
-## Electrical conductivity (EC~f~) {#sec-ft-ec}
+### Electrical conductivity (EC~f~) {#sec-ft-ec}
 
 The soil solution's EC~f~ estimates its soluble salt content, which can affect plant nutrition and water uptake. Salinity is a diagnostic criteria in the NZSC, used within the Gley, Semi-Arid, Recent and Raw orders. In New Zealand, a 1:5 ratio of soil to water is used in the laboratory, and so this must be matched in the field.
 
@@ -171,7 +178,7 @@ The soil solution's EC~f~ estimates its soluble salt content, which can affect p
 EC ia most commonly reported in units of millisiemens/centimetre (mS/cm) or decisiemens per metre (dS/m), which are numerically equivalent. Other units less commonly used require specific conversion, e.g. electronic meters may report in µS/cm. 1 mS/cm = 1000 µS/cm.
 :::
 
-## Calcium carbonate (Ca~f~) {#sec-ft-ca}
+### Calcium carbonate (Ca~f~) {#sec-ft-ca}
 
 While large chunks of calcium carbonate (CaCO~3~) in the form of shells or rock are easy to spot, CaCO~3~ in the fine earth is not, and there can also be some doubt about the composition of segregations. This test should be considered for use when working in limestone-containing country, where field pH \> 7, or when white or pale segregations are observed.
 
@@ -227,7 +234,7 @@ tbl_ft_hcl
 While @milne1995 and some other publications [@rayment2011; @kalra1991] have attempted to use the degree of fizzing to estimate CaCO~3~ % content, the estimates and descriptions of fizzing vary and are not considered highly reliable. If a numeric estimate of CaCO~3~ % is required, it should be measured under laboratory conditions.
 :::
 
-## Manganese (Mn~f~) {#sec-ft-mn}
+### Manganese (Mn~f~) {#sec-ft-mn}
 
 Manganese segregations in soil are dark and often very small, so may be missed or mistaken for other minerals. Manganese oxides react to H~2~O~2~ in a similar fashion to iron sulfide (see @sec-ft-phfox). This test uses a safer dilute H~2~O~2~ solution. This test should be considered for use where dark flecks are observed in the soil profile, particularly under imperfect to poor drainage conditions.
 
@@ -244,7 +251,7 @@ Manganese segregations in soil are dark and often very small, so may be missed o
 
 Dilute H~2~O~2~ can also be applied directly to a soil exposure, but be careful not to include the tested patches in any soil samples. Note that H~2~O~2~ will also react with organic material, so this test is not definitive in highly organic samples. Using concentrated H~2~O~2~ will increase the likelihood of misinterpretation as it will attack organic material more vigorously.
 
-## Reactive aluminium (NaF~f~) {#sec-ft-naf}
+### Reactive aluminium (NaF~f~) {#sec-ft-naf}
 
 This test indicates the presence of reactive hydroxy-aluminium sites on soil minerals. In New Zealand, these sites are most often associated with the presence of the minerals allophane and imogolite. Reactive hydroxy-aluminium sites can also be found on ferrihydrite and aluminium-humus complexes, especially in podzolic B horizons. [The principle of the method is that fluoride ions at about pH 7 react with hydroxy-aluminium to release hydroxyl ions, causing a rise in pH. The test conditions have been chosen so that the released OH^-^ from soils containing reactive hydroxy-aluminium turn phenolphthalein indicator reagent red (pH \> 9) whilst most other soils remain at lower pH values so that the indicator remains colourless.]{.milne}
 
@@ -311,7 +318,7 @@ tbl_ft_naf
 Scales used to interpret the NaF~f~ test have been inconsistently presented over the decades since its original publication, with a tendency to get more complicated over time. The scale presented in @tbl-ft-naf is a return towards the simpler schemas seen in early reporting. No reliable connection between allophane content and reaction intensity can be made using available data.
 :::
 
-## Reducing conditions {#sec-ft-rdx}
+### Reducing conditions {#sec-ft-rdx}
 
 Reducing conditions can be suggested by low-chroma soil colours, redox mottling and other indicators of poor drainage. More confident diagnoses can be made by including field testing for reduced iron (Fe^2+^) as an indicator of persistently reducing conditions. Rapid testing for Fe^2+^ can be accomplished using ⍺-⍺-dipyridyl dye, which turns pinkish red in the presence of Fe^2+^. Test strips are also commercially available and may prove easier to use in the field [@berkowitz2017]. Note that these tests should only be conducted on wet soils; soils that are in a moist to dry condition will not be experiencing reducing conditions.
 
@@ -333,7 +340,7 @@ Some manuals have suggested the use of a spray bottle to apply ⍺-⍺-dipyridyl
 Current best practice for research-grade monitoring of redox potential in soils involves the use of IRIS indicator devices [@sapkota2022], sometimes in concert with electronic sensors. IRIS devices require specialist construction, installation for several weeks and careful post-processing.
 :::
 
-## Water repellence {#sec-ft-wtrep}
+### Water repellence {#sec-ft-wtrep}
 
 Water repellence in soils results from hydrophobic organic compounds (e.g. plant leaf waxes) accumulating under a specific range of soil moisture conditions [@dekker2009]. Repellency is thus locally and seasonally variable, and usually confined to surface layers. Water repellence is most commonly assessed under field conditions using distilled water.
 
@@ -348,7 +355,7 @@ Water repellence in soils results from hydrophobic organic compounds (e.g. plant
 2.  Use a dropper to place a single drop of distilled water onto the soil surface. Measure how long it takes for the drop to be absorbed.
 3.  If the drop takes longer than 5 seconds to disappear, record a positive result (e.g. [40 cm - ✔]{.ceg}).
 
-## Rapid slaking and dispersion {#sec-ft-slak}
+### Rapid slaking and dispersion {#sec-ft-slak}
 
 Soil aggregates can slake, or disintegrate, when wet up from a dry state, as trapped air rushes out of pore spaces. Over a longer time period, clay swelling may also contribute to aggregate breakdown by slaking. Aggregate resistance to slaking behaviour is modified by organic matter content and clay mineral type. Dispersive behaviour also causes aggregate breakdown in water but is driven by relative dominance of Na^+^ ions (and to some extent Mn^2+^ and K^+^) on clay reactive sites.
 
