@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Consistence
+# Consistence {#sec-cons}
 
 ```{r}
 library(dplyr)
@@ -267,10 +267,8 @@ tbl_cn_plas
 
 dat_cn_stik <-
   tribble(~Code, ~Name, ~Description,
-          1, 'Non-sticky', 'After release of pressure, practically no soil material
-adheres to the thumb or forefinger',
-          2, 'Slightly sticky', 'After release of pressure, soil material adheres perceptibly
-to both thumb and forefinger but, as the digits are separated, it tends to come off one or the other cleanly. The material is not stretched appreciably when the thumb and finger are separated',
+          1, 'Non-sticky', 'After release of pressure, practically no soil material adheres to the thumb or forefinger',
+          2, 'Slightly sticky', 'After release of pressure, soil material adheres perceptibly to both thumb and forefinger but, as the digits are separated, it tends to come off one or the other cleanly. The material is not stretched appreciably when the thumb and finger are separated',
           3, 'Moderately sticky', 'After release of pressure, soil material adheres to both thumb and forefinger and tends to stretch somewhat and pull apart rather than pulling free from either digit',
           4, 'Very sticky', 'After release of pressure, soil material adheres so strongly to both thumb and forefinger that it is decidedly stretched when they are separated, and finally pulls apart leaving part of the soil on thumb and part on the forefinger.')
 
@@ -398,6 +396,53 @@ tbl_cn_fail
 
 ## Induration {#sec-cn-ind}
 
--   instructions
--   interpretation
--   NB not a field test
+[Induration is the degree to which soil particles are held together by some combination of cementation and close packing.]{.milne}
+
+-   Perform the test on a minimally disturbed 30 mm cube or aggregate.
+- This test may also be performed on individual nodules and other solids < 30 mm.
+-   This test cannot be reliably performed on auger-extracted samples.
+-   This test requires a minimum one hour to complete so may be done immediately following fieldwork.
+
+*Equipment*
+
+- Sponge (~50mm diameter, flat)
+- Deionised water
+
+*Procedure*
+
+1. Test the soil strength at field-moist condition according to @sec-cn-stru.
+2. Place the sample cube on a wet sponge until thoroughly moistened, then immerse the sample in DI water for 1 hour.
+3. Retest the soil strength of the wet sample according to @sec-cn-stru.
+4. Assess the behaviour of the sample using @tbl-cn-ind.
+
+```{r}
+#| label: tbl-cn-ind
+#| tbl-cap: "Induration classes"
+
+dat_cn_ind <-
+  tribble(~Code, ~Name, ~Description,
+          1, 'Non-indurated', 'A wet test specimen slakes within one hour when placed in water',
+          2, 'Very weakly indurated', 'A wet test specimen that has been immersed for one hour and has not slaked has strength class of 2-4',
+          3, 'Weakly indurated', 'A wet test specimen that has been immersed for one hour has a stength class of 6',
+          4, 'Strongly indurated', 'A wet test specimen that has been immersed for an hour has a strength class of 7',
+          5, 'Very strongly indurated', 'A wet test specimen after immersion for an hour has a strength class of >7 and does not break when struck by a sharp blow with a hammer.')
+
+tbl_cn_ind <- gt(dat_cn_ind) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  tab_style(style = list(cell_text(align = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20))
+
+tbl_cn_ind
+```
+
+
+
+
