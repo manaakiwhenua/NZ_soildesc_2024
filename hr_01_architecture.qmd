@@ -1,3 +1,9 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
 ```{r}
 library(dplyr)
 library(tibble)
@@ -5,51 +11,135 @@ library(gt)
 library(gtExtras)
 ```
 
-# Soil architecture
+# Soil architecture {#sec-hr-arch}
 
-[Preamble: Physical arrangement of etc, build on:
+\[Preamble: Physical arrangement of etc, build on:
 
-Soil architecture comprises presence and arrangement of fine earth. stones, roots, voids and other materials]{.todo}
+Soil architecture comprises presence and arrangement of fine earth. stones, roots, voids and other materials\]{.todo}
 
-## Structure
+## Structure {#sec-hr-stru}
 
-### ped presence
+### Pedality {#sec-hr-stru-pedality}
 
--   single grain
--   massive
--   weak moderate strong
+Pedality refers to the degree of structural development evident within the horizon, independant of size or shape. Record pedality once per horizon using @tbl-hr-pedality.
 
-### ped shape
+```{r}
+#| label: tbl-hr-pedality
+#| tbl-cap: "Degree of pedality"
+#| classes : no-stripe
 
--   standard set but add angular blocky back in
--   be clear about vertical orientation for some shapes
--   note: nut and crumb vs the world
+dat_hr_pedality <-
+  tribble(~Code, ~Name,  ~Description,
+          'G', 'Single grain', 'Material with more than 85% by weight of discrete primary particles ranging in size from sand to very coarse gravel.',
+          'V', 'Massive', 'Material without dominant peds, clods, or fragments,and having no fissures at spacings of less than 200 mm',
+          'W', 'Weak', 'Material where 15-25% of the soil comprises coherent peds',
+          'M', 'Moderate', 'Material where 25-75% of the soil comprises coherent peds',
+          'S', 'Strong', 'Material where >75% of the soil comprises coherent peds',
+          'D', 'Disturbed', 'Material where ped structure has been altered or detroyed by disturbance, e.g. recent tillage or animal pugging')
 
-### ped size
+tbl_hr_pedality <- gt(dat_hr_pedality) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_pedality
 
--   modal vertical dimension, and horizontal for tabular ped shapes (prism, lens, etc)
+```
+
+### Ped shape {#sec-hr-stru-shp}
+
+Where natural peds can be identified (pedality types [W]{.ceg}, [M]{.ceg}, [S]{.ceg}), describe their dominant shape using @tbl-hr-pedshp.
+
++--------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| Code   | Name           | Description                                                                                                                            | Orientation                 |
++:=======+:===============+:=======================================================================================================================================+=============================+
+| AB     | Angular blocky | -   Bounded by relatively flat smooth, roughly equal faces                                                                             | None                        |
+|        |                | -   number of faces variable                                                                                                           |                             |
+|        |                | -   most vertices angular                                                                                                              |                             |
+|        |                | -   usually much accommodation to the faces of surrounding aggregates                                                                  |                             |
++--------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| BL     | Blocky         | -   Bounded by undulating rough faces                                                                                                  | None                        |
+|        |                | -   number of faces variable                                                                                                           |                             |
+|        |                | -   many vertices rounded                                                                                                              |                             |
+|        |                | -   limited accommodation to the faces of surrounding aggregates                                                                       |                             |
++--------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| PH     | Polyhedral     | -   Bounded by relatively flat smooth, unequal faces                                                                                   | None                        |
+|        |                | -   more than six faces; most vertices angular                                                                                         |                             |
+|        |                | -   usually much accommodation to the faces of surrounding aggregates                                                                  |                             |
+|        |                | -   re-entrant angles between adjoining faces - peds 'lock' together                                                                   |                             |
++--------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| SR     | Spheroidal     | -   bounded by curved or very irregular faces;                                                                                         | None                        |
+|        |                | -   limited accommodation to the faces of surrounding aggregates                                                                       |                             |
+|        |                | -   sometimes with many visible pores                                                                                                  |                             |
++--------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| LT     | Lenticular     | -   Bounded by curved faces                                                                                                            | Horizontal or shallow angle |
+|        |                | -   overlapping, lens-shaped aggregates generally parallel to the soil surface that are thick at the centre and taper toward the edges |                             |
+|        |                | -   usually much accommodation to the faces of surrounding aggregates                                                                  |                             |
++--------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| PM     | Prismatic      | -   Bounded by relatively flat faces                                                                                                   | Vertical                    |
+|        |                | -   vertically elongated units with angular vertices and flat tops                                                                     |                             |
+|        |                | -   much accommodation to the faces of surrounding aggregates                                                                          |                             |
++--------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| CO     | Columnar       | -   Bounded by relatively flat faces;                                                                                                  | Vertical                    |
+|        |                | -   vertically elongated units with angular to rounded vertices and rounded (domed) tops                                               |                             |
++--------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| PL     | Platy          | -   Bounded by relatively flat horizontal faces                                                                                        | Horizontal                  |
+|        |                | -   much accommodation to the faces of surrounding aggregates                                                                          |                             |
++--------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| LF     | Lentiform      | -   Bounded by curved faces                                                                                                            | Horizontal or shallow-angle |
+|        |                | -   overlapping, lens-shaped aggregates generally parallel to the soil surface that are thick at the centre and taper toward the edges |                             |
+|        |                | -   usually much accommodation to the faces of surrounding aggregates                                                                  |                             |
++--------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| WL     | Wedge-like     | -   Bounded by flat faces;                                                                                                             | Horizontal                  |
+|        |                | -   interlocking wedges or lenses that terminate in pronounced angular vertices;                                                       |                             |
+|        |                | -   ends of vertices may be missing;                                                                                                   |                             |
+|        |                | -   much accommodation to the faces of surrounding aggregates                                                                          |                             |
++--------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+
+: Ped shapes and identifying characteristics (adapted from @milne1995, @iussworkinggroupwrb2022, and @nationalcommitteeonsoilandterrain2009)
+
+[add diagrams]{.diags}
+
+::: {#nte-nut .callout-note collapse="true" title="shorthand terms for soil structure"}
+Some soil terms that don't seem to fit into the above schema are still in common use.
+
+-   Crumb structure: a very fine structure seen in many silty to loamy horizons. The appearance is as of breadcrumbs, with 0.5-2mm rounded peds loosely to firmly packed, depending on depth and drainage. Larger weak subangular blocky structures in well-drained allophanic soils almost always break down into moderately or strongly developed crumb structure.
+-   Nut structure: a larger version of crumb, usually on the order of 5-20 mm in diameter, often encased in a network of grass roots. Nut structures are more common in topsoils but can also occur in well-drained loamy subsoils.
+
+Both structures are more correctly described as spheroidal with a characteristic size range of 1 ± 0.5 mm for crumb and 15 ± 10 mm for nut. Their use is convenient, but care should be taken not to overuse these terms. They conflate size and shape in a way that the modern schemas seek to avoid.
+:::
+
+### Ped size {#sec-hr-stru-size}
+
+-    vertical dimension, and horizontal for tabular ped shapes (prism, lens, etc)
 -   record in mm
 
-### nesting peds
+#### Nesting peds {#sec-hr-stru-nest}
 
 -   'parting to' etc
 -   db note: 1:1 cascading relationship not 1:n at horizon level
 
-### non-ped aggregates
+### Non-ped aggregates {#sec-hr-stru-non}
 
 -   clods and fragments from cultivation
 
 unresolved: - distinguishing earthworm casts - peds or nah? - reconciling peds, cutans and other ped coatings, and 'fabric'
 
-# Roots and plant materials
+# Roots and plant materials {#sec-rtpl}
 
-## Roots
+## Roots {#sec-root}
 
 Plant roots affect water infiltration and help define the functional horizon topsoil (see @sec-in-fh-ts). Their position in the soil profile can also provide information about ped development, particle packing, and the presence of pans. Note that this section does not apply to peats.
 
-### Root abundance
+### Root abundance {#sec-root-abund}
 
-Measure abundance by estimating the volumetric abundance of live roots in the visible soil horizon. For roots \< 2 mm it may be more practical to sample a cube \~100 mm on a side. When augering for rapid assessment, also use a spade to sample the topsoil.
+Measure abundance by estimating the volumetric abundance of live roots in the visible soil horizon. For roots \< 2 mm it may be more practical to sample a cube \~100 mm on a side. When augering for rapid assessment, also use a spade to sample the topsoil.
 
 Provide separate estimates for roots \< 2 mm, 2 - 10 mm and \> 10 mm. Record as whole percentages, confirming [0%]{.ceg} where no roots are observable in a given size range. The data may be classified using @tbl-hr-rtab.
 
@@ -83,7 +173,7 @@ tbl_hr_rtab
 
 [practice change: Counting individual roots is impractical at both small and large size ranges. Switching to estimates of volumetric percentage. This brings roots into alignment with abundance assessment of other soil components (textures, stone, artefacts, voids), allowing total soil compositional data to be calculated.]{.majch}
 
-### Root position
+### Root position {#sec-root-pos}
 
 Where abundance is \> 0%, record how roots are distributed within the horizon using the codes in @tbl-hr-rpos. Position may not be reliably observable outside of pits or exposures, in which case record [U]{.ceg}.
 
@@ -114,27 +204,26 @@ tbl_hr_rpos
 
 ```
 
-## Other parameters
+## Other parameters {#sec-root-other}
 
 Notes about particular plant species contributing to the root mass and spatial organisation beyond the positional classes above (e.g. presence of mats) may prove useful in certain contexts. No coding system is provided for these.
 
-## Timber and fibre
+## Timber and fibre {#sec-root-burt}
 
 Where non-peat plant remains are encountered in significant volume (e.g. buried by volcanic or landslide activity), record as per @sec-hr-nonrock.
 
-
-# Voids
+# Voids {#sec-void}
 
 -   NB surface cracks already covered
 
-## Pores
+## Pores {#sec-void-pore}
 
 -   abundance
 -   macro v micro sizes
 -   inferred origin
 -   direct and indirect observation for connectivity
 
-## Other voids
+## Other voids {#sec-void-other}
 
 -   non-infilled space between coarse gravels (assessed via packing)
 -   spaces between dry peds (where shrink-swell is significant)
@@ -188,4 +277,3 @@ tbl_hr_crackdepth <- gt(dat_hr_crackdepth) |>
 
 tbl_hr_crackdepth
 ```
-
