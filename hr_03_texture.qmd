@@ -13,19 +13,15 @@ library(extrafont)
 loadfonts(quiet = TRUE)
 ```
 
-# Soil texture and particle size distribution
+# Soil texture {#sec-tex}
 
-## Fine fraction {#sec-tex-fine}
+Soil texture refers to the behaviour of the fine-earth fraction when thoroughly reworked under moist conditions. Texture provides a field estimate of particle size distribution, which is determined in the laboratory. The two measurements are analogous but not identical.
 
-### Field textures and laboratory measurements
+Soil texture is a rapid method that can suggest information about clay mineral type, angularity or roundedness in the sand and silt fractions, organic matter content, and the influence of secondary minerals, as well as the mineral particle size distribution itself. However, the method has precision limits and requires careful user calibration.
 
-Texture can be measured both in the field by working a moist sample in the hand, and in the laboratory. These measures are correlated but are not identical.
+Laboratory particle size measurement can involve measurements of particle shape and mineralogy but these methods are labour-intensive and generally confined to a research context. High-throughput analyses confine themselves to assessment of particle size alone, making assumptions about shape and mineralogy (see @loveland2001, for a more detailed discussion.)
 
-Hand texture is a rapid method that can reveal information about clay mineral type, angularity or roundedness in the sand and silt fractions, organic matter content, and the influence of secondary minerals, as well as the mineral particle size distribution itself. However, the method has precision limits and requires careful user calibration.
-
-Laboratory particle size measurement can involve measurements of particle shape and mineralogy but these methods are labour-intensive and generally confined to a research context. High-throughput analyses confine themselves to assessment of particle size alone, making assumptions about shape and mineralogy (see Loveland and Whalley, 2000, for a more detailed discussion.) 
-
-Particle size analysis usually involves removal of organic materials and soluble minerals as well as more aggressive aggregate dispersion using shaking and chemical solutions. Following dispersion, measurements of 3-8 specific size fractions are recorded. These data are then summarised into a three part sand/silt/clay composition.
+Particle size analysis usually involves removal of organic materials and soluble minerals as well as more aggressive aggregate dispersion using shaking and chemical solutions. Following dispersion, measurements of 3-8 specific size fractions are recorded. These data are then usually summarised into a three part sand/silt/clay composition and classified against a texture triangle for efficient communication.
 
 The boundaries of these three size fractions are somewhat unsettled. The silt-clay boundary aligns with some major changes in particle properties; chief among them the emergence of electrostatic behaviour in the clay fraction. The sand/silt boundary can range from 0.02-0.063um. See @tbl-hr-texcompar for the fractions used in NZ and other jurisdictions.
 
@@ -59,9 +55,9 @@ tbl_hr_texcompar
 
 ```
 
-### Texture classes {#sec-hr-tex}
+## Texture classes {#sec-hr-tex}
 
-Sand/silt/clay compositional data can be displayed on a triangle plot (see @fig-texture-tri), and domains within the plot, or 'texture classes', are labelled for ease of communication. It is important to remember that these classes do not have sharp changes in hand-feel texture at their boundaries.
+Sand/silt/clay compositional data can be displayed on a triangle plot (see @fig-texture-tri), and domains within the plot, or 'texture classes', are labelled for ease of communication. It is important to remember that these classes do not have sharp changes in hand-feel texture at their boundaries. A very large number of soil texture triangles have been defined in different jurisdictions.
 
 ```{r}
 #| label: fig-texture-tri
@@ -120,6 +116,45 @@ tbl_hr_textri <- nztt_labels |>
 tbl_hr_textri
 
 ```
+
+### Generalised texture classes
+
+Generalised texture classes for rapid assessment and simple communication are supplied below, including codes for gravelly and organic textures.
+
+```{r}
+#| label: tbl-hr-simpletex
+#| tbl-cap: "Generalised soil texture classes"
+#| classes : no-stripe
+
+dat_hr_sandquals <-
+  tribble(~Code, ~Name, ~Description,
+         'C', 'Clayey', 'Clay content ≥ 35%, texture class C, LC or ZC',
+         'Z', 'Silty', 'Clay content < 35%, silt content ≥ 40%; texture class Z, LZ, ZL', 
+         'L', 'Loamy', 'Clay content 8 - 35%, silt content < 40%; texture class SL, SC, CL',
+         'S', 'Sandy', 'Clay content < 8, silt content, < 40%, texture class S, LS',
+         'R', 'Rocky', 'Fine earth fraction < 15%, dominated by rock fragments > 2 mm',
+         'P', 'Peaty', 'Organic matter fraction > 30%')
+
+tbl_hr_sandquals <- gt(dat_hr_sandquals) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_sandquals
+
+```
+
+## Recording soil texture
+
+Soil texture is preferably assessed in the field but can also be assessed from representative bagged samples. Follow the procedure in \@fig-texturing. Record one texture code from @tbl-texture-tri per horizon. If desired, add modifiers as discussed below.
+
+[\@fig-texturing goes here]{.diags}
 
 #### Sand modifiers
 
@@ -209,8 +244,8 @@ tbl_hr_orgmdec <- gt(dat_hr_orgmdec) |>
 tbl_hr_orgmdec
 ```
 
-### Particle size estimate
+## Particle size estimate
 
 Estimating particle size in the field involves compensating for the influences described above and arriving at estimates of sand and clay content (silt can be determined by difference). Record estimated clay and sand to the nearest whole percent. Optionally, add a separate error estimate (+/- x%) as an expression of confidence.
 
-
+Example: [(K)LS, 70 ± 5% sand, 3% clay]{.ceg} for a coarse loamy sand.
