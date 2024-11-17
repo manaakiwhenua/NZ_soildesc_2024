@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.30">
+<meta name="generator" content="quarto-1.6.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Soil Description Handbook – 3&nbsp; Location</title>
+<title>12&nbsp; Defining soil horizons – Soil Description Handbook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -50,17 +49,17 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./ss_02_landscape.html" rel="next">
-<link href="./ss_00_intro.html" rel="prev">
+<link href="./hr_00_intro.html" rel="next">
+<link href="./pr_01_surface.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-98f67bc07761c90b1382d524a234aef8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -89,7 +88,37 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -98,13 +127,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ss_00_intro.html">Setting and site</a></li><li class="breadcrumb-item"><a href="./ss_01_location.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Location</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pr_00_intro.html">Soil surface and profile</a></li><li class="breadcrumb-item"><a href="./pr_02_layers.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Defining soil horizons</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -147,9 +176,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Setting and site</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Soil Setting</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -162,47 +191,53 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_01_location.html" class="sidebar-item-text sidebar-link active">
+  <a href="./ss_02_location.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Location</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_02_landscape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Landscape</span></span></a>
+  <a href="./ss_03_landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Geomorphology</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_03_parent_material.html" class="sidebar-item-text sidebar-link">
+  <a href="./ss_04_parent_material.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Parent material</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_04_climate.html" class="sidebar-item-text sidebar-link">
+  <a href="./ss_05_climate.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Climate and Weather</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_05_biota.html" class="sidebar-item-text sidebar-link">
+  <a href="./ss_06_biota.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Biota</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_06_landuse_mgmt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Land use and management</span></span></a>
+  <a href="./ss_07_landuse_mgmt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Land cover, land use, and land management</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ss_08_soils.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Soils</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Soil profile</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Soil surface and profile</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -210,22 +245,28 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pr_00_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Profile</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The soil site</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pr_01_surface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Land surface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Soil surface</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pr_02_layers.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Defining soil horizons</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Soil horizons</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -233,64 +274,52 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_00_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Horizons</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Horizon description</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hr_01_colour.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Horizon colour</span></span></a>
+  <a href="./hr_01_architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Horizon architecture</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hr_02_texture_stones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Soil texture and particle size distribution</span></span></a>
+  <a href="./hr_02_colour.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Horizon colour</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hr_03_structure_peds.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Structure</span></span></a>
+  <a href="./hr_03_texture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Soil texture</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_04_secondary_features.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Secondary features</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Secondary features</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_05_physical_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Consistence</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Consistence</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_06_chemical_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field tests</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./hr_07_roots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Roots and plant materials</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./hr_08_voids.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Voids</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chemical properties</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Soil interpretations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -310,49 +339,19 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_02_horizon_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Horizon Properties</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_03_profile_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Profile properties</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Horizon properties</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_04_setting_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Setting interpretations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_05_nzsc_toplevel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">The New Zealand Soil Classification</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Soil Setting properties</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_06_nzsc_familysibling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">NZSC Family and Sibling</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_07_luc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">NZ Land Use Classification</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_08_wrb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">The World Reference Base for Soil Resources</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_09_suitability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Crop Suitability Assessments</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">NZSC Family and Sibling</span></span></a>
   </div>
 </li>
       </ul>
@@ -365,9 +364,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -392,14 +391,14 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ap_04_sampling_programs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Sampling programs</span></span></a>
+  <a href="./ap_04_glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ap_05_glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+  <a href="./changelog.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Changes in the new edition</span></span></a>
   </div>
 </li>
       </ul>
@@ -414,36 +413,22 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#absolute-location" id="toc-absolute-location" class="nav-link active" data-scroll-target="#absolute-location"><span class="header-section-number">3.1</span> Absolute location</a>
-  <ul class="collapse">
-  <li><a href="#equipment" id="toc-equipment" class="nav-link" data-scroll-target="#equipment"><span class="header-section-number">3.1.1</span> Equipment</a></li>
-  <li><a href="#sec-loc-abs-elev" id="toc-sec-loc-abs-elev" class="nav-link" data-scroll-target="#sec-loc-abs-elev"><span class="header-section-number">3.1.2</span> Elevation measurement</a></li>
-  <li><a href="#coordinate-reference-system-crs" id="toc-coordinate-reference-system-crs" class="nav-link" data-scroll-target="#coordinate-reference-system-crs"><span class="header-section-number">3.1.3</span> Coordinate reference system (CRS)</a></li>
-  <li><a href="#expected-error" id="toc-expected-error" class="nav-link" data-scroll-target="#expected-error"><span class="header-section-number">3.1.4</span> Expected Error</a></li>
-  <li><a href="#sec-ss-dt" id="toc-sec-ss-dt" class="nav-link" data-scroll-target="#sec-ss-dt"><span class="header-section-number">3.1.5</span> Temporal</a></li>
-  </ul></li>
-  <li><a href="#relative-location" id="toc-relative-location" class="nav-link" data-scroll-target="#relative-location"><span class="header-section-number">3.2</span> Relative location</a>
-  <ul class="collapse">
-  <li><a href="#relative-elevation" id="toc-relative-elevation" class="nav-link" data-scroll-target="#relative-elevation"><span class="header-section-number">3.2.1</span> Relative elevation</a></li>
-  <li><a href="#triangulating-off-local-features" id="toc-triangulating-off-local-features" class="nav-link" data-scroll-target="#triangulating-off-local-features"><span class="header-section-number">3.2.2</span> Triangulating off local features</a></li>
-  <li><a href="#long-form-descriptions" id="toc-long-form-descriptions" class="nav-link" data-scroll-target="#long-form-descriptions"><span class="header-section-number">3.2.3</span> Long-form descriptions</a></li>
-  <li><a href="#administrative-location" id="toc-administrative-location" class="nav-link" data-scroll-target="#administrative-location"><span class="header-section-number">3.2.4</span> Administrative location</a></li>
-  <li><a href="#temporal" id="toc-temporal" class="nav-link" data-scroll-target="#temporal"><span class="header-section-number">3.2.5</span> Temporal</a></li>
-  </ul></li>
-  <li><a href="#explaining-location" id="toc-explaining-location" class="nav-link" data-scroll-target="#explaining-location"><span class="header-section-number">3.3</span> Explaining location</a>
-  <ul class="collapse">
-  <li><a href="#site-choice-method" id="toc-site-choice-method" class="nav-link" data-scroll-target="#site-choice-method"><span class="header-section-number">3.3.1</span> Site choice method</a></li>
-  <li><a href="#site-purpose" id="toc-site-purpose" class="nav-link" data-scroll-target="#site-purpose"><span class="header-section-number">3.3.2</span> Site purpose</a></li>
-  </ul></li>
+  <li><a href="#sec-pr-ssurf" id="toc-sec-pr-ssurf" class="nav-link active" data-scroll-target="#sec-pr-ssurf"><span class="header-section-number">12.1</span> The soil surface</a></li>
+  <li><a href="#sec-pr-depths" id="toc-sec-pr-depths" class="nav-link" data-scroll-target="#sec-pr-depths"><span class="header-section-number">12.2</span> Recording depths</a></li>
+  <li><a href="#sec-pr-thick" id="toc-sec-pr-thick" class="nav-link" data-scroll-target="#sec-pr-thick"><span class="header-section-number">12.3</span> Thickness</a></li>
+  <li><a href="#sec-pr-bdyshp" id="toc-sec-pr-bdyshp" class="nav-link" data-scroll-target="#sec-pr-bdyshp"><span class="header-section-number">12.4</span> Boundary shape</a></li>
+  <li><a href="#sec-pr-bdydist" id="toc-sec-pr-bdydist" class="nav-link" data-scroll-target="#sec-pr-bdydist"><span class="header-section-number">12.5</span> Boundary distinctness</a></li>
+  <li><a href="#sec-pr-sws" id="toc-sec-pr-sws" class="nav-link" data-scroll-target="#sec-pr-sws"><span class="header-section-number">12.6</span> Soil moisture status</a></li>
+  <li><a href="#depth-to-free-water" id="toc-depth-to-free-water" class="nav-link" data-scroll-target="#depth-to-free-water"><span class="header-section-number">12.7</span> Depth to free water</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ss_00_intro.html">Setting and site</a></li><li class="breadcrumb-item"><a href="./ss_01_location.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Location</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pr_00_intro.html">Soil surface and profile</a></li><li class="breadcrumb-item"><a href="./pr_02_layers.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Defining soil horizons</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Location</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Defining soil horizons</span></h1>
 </div>
 
 
@@ -455,7 +440,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 30, 2024</p>
+      <p class="date-modified">November 17, 2024</p>
     </div>
   </div>
     
@@ -466,38 +451,82 @@ div.csl-indent {
 </header>
 
 
-<p>A soil description is essentially useless without a confident location. Confidence is supported by clear communication about equipment, datum and coordinate reference system, measurement units, and expected error.</p>
-<section id="absolute-location" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="absolute-location"><span class="header-section-number">3.1</span> Absolute location</h2>
-<section id="equipment" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="equipment"><span class="header-section-number">3.1.1</span> Equipment</h3>
-<p>Use a GNSS (Global Navigation Satellite System) with an expected horizontal accuracy of ±&nbsp;3&nbsp;m or better. Some applications may require centimetre accuracy. Record sensor type against the schema in <a href="#tbl-ss-locsrc" class="quarto-xref">Table&nbsp;<span>3.1</span></a>.</p>
+<p>A soil horizon is a distinct layer within a soil profile. <span class="milne">Horizons are distinguished by differences in texture, stoniness, structure, colour, consistence or other soil properties as described in</span> the following section. <span class="milne">Delineated horizons should ideally represent depth intervals over which important soil attributes change minimally. Conversely, the horizon boundaries should represent depth intervals over which there is a relatively high rate of change of important soil properties.</span></p>
+<p><span class="milne">Not all important soil properties change from one horizon to the next or at the same rate with depth. In some instances confident interpretation of the suitability of a soil for a particular end use may depend on the rate of change of a single property at a horizon boundary. For this reason the basis for separating the horizon may need to be explicitly stated, not just the traditional generalised estimate of the amount of overall change.</span></p>
+<section id="sec-pr-ssurf" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="sec-pr-ssurf"><span class="header-section-number">12.1</span> The soil surface</h2>
+<p>The soil surface has a slightly more restrictive definition than the land surface. The soil surface begins below the layer of fresh leaf litter or small living plants, but above organic soil materials such as peat. The mineral soil surface is further restricted, being the top of the first horizon dominated by mineral soil material. Horizon depths are defined only with reference to the soil surface overall - scrape back litter or grasses and measure from there.</p>
+<p><span class="diags">draw this</span></p>
+</section>
+<section id="sec-pr-depths" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="sec-pr-depths"><span class="header-section-number">12.2</span> Recording depths</h2>
+<p>When examining single small cores or auger points on, (see <a href="pr_00_intro.html#tbl-pr-gear" class="quarto-xref">Table&nbsp;<span>10.3</span></a>, type <span class="ceg">A</span>, <span class="ceg">C1</span> and perhaps <span class="ceg">C2</span>), record the observable upper and lower depth of each horizon from the soil surface in whole centimetres.</p>
+<p>Where a wider exposure (see <a href="pr_00_intro.html#tbl-pr-gear" class="quarto-xref">Table&nbsp;<span>10.3</span></a>, type <span class="ceg">E</span>, <span class="ceg">P1</span>, <span class="ceg">P2</span>) or multiple undisturbed cores are available and greater detail is desired, one may choose to record upper and lower depths as a median and range, again in whole centimetres (e.g.&nbsp;“28cm (27-29), 38 cm (37-40)”). At least 5 measurements should contribute to such an assessment.</p>
+<p>Measure boundaries to and from the midpoint of each horizon transition zone (see <a href="#sec-pr-bdydist" class="quarto-xref"><span>Section 12.5</span></a>).</p>
+<div id="imp-stp" class="callout callout-style-simple callout-important callout-titled" title="Defining horizons on steep slopes">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important&nbsp;12.1: Defining horizons on steep slopes
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>On steeper slopes, measuring horizons from vertical exposures can exaggerate horizon thicknesses, as the soil horizons mantle the landscape perpendicular to the sloping surface <span class="citation" data-cites="prietzel2019">(<a href="references.html#ref-prietzel2019" role="doc-biblioref">Prietzel and Wiesmeier 2019</a>)</span>. This starts to matter at slopes &gt; 25°, and progressively becomes more important - especially when calculating volumetric stocks of soil components. <a href="#fig-hr-slpex" class="quarto-xref">Figure&nbsp;<span>12.1</span></a> shows how a vertical 30-cm depth represents a progressively shallower ‘true depth’ as slope increases.</p>
+<p>To adjust vertically measured horizon depths to correct for slope, apply the formula <span class="math inline">\(depth * cos(slope)\)</span>. Supply depth in cm and slope in radians. Slopes measured in degrees can be converted to radians using the formula <span class="math inline">\((slope * pi) / 180\)</span>.</p>
 <div class="cell" data-layout-align="center">
-<div id="tbl-ss-locsrc" class="cell quarto-float anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ss-locsrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.1: Location data source
-</figcaption>
-<div aria-describedby="tbl-ss-locsrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="yknwtnpwnz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yknwtnpwnz table {
+<div id="fig-hr-slpex" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hr-slpex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pr_02_layers_files/figure-html/fig-hr-slpex-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hr-slpex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.1: Depth exaggeration by slope.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-pr-thick" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="sec-pr-thick"><span class="header-section-number">12.3</span> Thickness</h2>
+<p>Where depths are correctly measured, thickness should be calculated after fieldwork.</p>
+</section>
+<section id="sec-pr-bdyshp" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="sec-pr-bdyshp"><span class="header-section-number">12.4</span> Boundary shape</h2>
+<p>Horizon boundary shape can only be observed on wider exposures (see <a href="pr_00_intro.html#tbl-pr-gear" class="quarto-xref">Table&nbsp;<span>10.3</span></a>, type <span class="ceg">E</span>, <span class="ceg">P1</span>, <span class="ceg">P2</span>). Record against the following schema:</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-hr-bshp" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hr-bshp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12.1: Horizon boundary shape
+</figcaption>
+<div aria-describedby="tbl-hr-bshp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="xydbsmocnd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xydbsmocnd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yknwtnpwnz thead, #yknwtnpwnz tbody, #yknwtnpwnz tfoot, #yknwtnpwnz tr, #yknwtnpwnz td, #yknwtnpwnz th {
+#xydbsmocnd thead, #xydbsmocnd tbody, #xydbsmocnd tfoot, #xydbsmocnd tr, #xydbsmocnd td, #xydbsmocnd th {
   border-style: none;
 }
 
-#yknwtnpwnz p {
+#xydbsmocnd p {
   margin: 0;
   padding: 0;
 }
 
-#yknwtnpwnz .gt_table {
+#xydbsmocnd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -523,12 +552,12 @@ Table&nbsp;3.1: Location data source
   border-left-color: #D3D3D3;
 }
 
-#yknwtnpwnz .gt_caption {
+#xydbsmocnd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yknwtnpwnz .gt_title {
+#xydbsmocnd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -540,7 +569,7 @@ Table&nbsp;3.1: Location data source
   border-bottom-width: 0;
 }
 
-#yknwtnpwnz .gt_subtitle {
+#xydbsmocnd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -552,7 +581,7 @@ Table&nbsp;3.1: Location data source
   border-top-width: 0;
 }
 
-#yknwtnpwnz .gt_heading {
+#xydbsmocnd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -564,13 +593,13 @@ Table&nbsp;3.1: Location data source
   border-right-color: #D3D3D3;
 }
 
-#yknwtnpwnz .gt_bottom_border {
+#xydbsmocnd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yknwtnpwnz .gt_col_headings {
+#xydbsmocnd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -585,7 +614,7 @@ Table&nbsp;3.1: Location data source
   border-right-color: #D3D3D3;
 }
 
-#yknwtnpwnz .gt_col_heading {
+#xydbsmocnd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -605,7 +634,7 @@ Table&nbsp;3.1: Location data source
   overflow-x: hidden;
 }
 
-#yknwtnpwnz .gt_column_spanner_outer {
+#xydbsmocnd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -617,15 +646,15 @@ Table&nbsp;3.1: Location data source
   padding-right: 4px;
 }
 
-#yknwtnpwnz .gt_column_spanner_outer:first-child {
+#xydbsmocnd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yknwtnpwnz .gt_column_spanner_outer:last-child {
+#xydbsmocnd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yknwtnpwnz .gt_column_spanner {
+#xydbsmocnd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -637,11 +666,11 @@ Table&nbsp;3.1: Location data source
   width: 100%;
 }
 
-#yknwtnpwnz .gt_spanner_row {
+#xydbsmocnd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yknwtnpwnz .gt_group_heading {
+#xydbsmocnd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -667,7 +696,7 @@ Table&nbsp;3.1: Location data source
   text-align: left;
 }
 
-#yknwtnpwnz .gt_empty_group_heading {
+#xydbsmocnd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -682,15 +711,15 @@ Table&nbsp;3.1: Location data source
   vertical-align: middle;
 }
 
-#yknwtnpwnz .gt_from_md > :first-child {
+#xydbsmocnd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yknwtnpwnz .gt_from_md > :last-child {
+#xydbsmocnd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yknwtnpwnz .gt_row {
+#xydbsmocnd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -709,7 +738,7 @@ Table&nbsp;3.1: Location data source
   overflow-x: hidden;
 }
 
-#yknwtnpwnz .gt_stub {
+#xydbsmocnd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -722,7 +751,7 @@ Table&nbsp;3.1: Location data source
   padding-right: 5px;
 }
 
-#yknwtnpwnz .gt_stub_row_group {
+#xydbsmocnd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -736,15 +765,15 @@ Table&nbsp;3.1: Location data source
   vertical-align: top;
 }
 
-#yknwtnpwnz .gt_row_group_first td {
+#xydbsmocnd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yknwtnpwnz .gt_row_group_first th {
+#xydbsmocnd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yknwtnpwnz .gt_summary_row {
+#xydbsmocnd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -754,16 +783,16 @@ Table&nbsp;3.1: Location data source
   padding-right: 5px;
 }
 
-#yknwtnpwnz .gt_first_summary_row {
+#xydbsmocnd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yknwtnpwnz .gt_first_summary_row.thick {
+#xydbsmocnd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yknwtnpwnz .gt_last_summary_row {
+#xydbsmocnd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -773,7 +802,7 @@ Table&nbsp;3.1: Location data source
   border-bottom-color: #D3D3D3;
 }
 
-#yknwtnpwnz .gt_grand_summary_row {
+#xydbsmocnd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -783,7 +812,7 @@ Table&nbsp;3.1: Location data source
   padding-right: 5px;
 }
 
-#yknwtnpwnz .gt_first_grand_summary_row {
+#xydbsmocnd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -793,7 +822,7 @@ Table&nbsp;3.1: Location data source
   border-top-color: #D3D3D3;
 }
 
-#yknwtnpwnz .gt_last_grand_summary_row_top {
+#xydbsmocnd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -803,11 +832,11 @@ Table&nbsp;3.1: Location data source
   border-bottom-color: #D3D3D3;
 }
 
-#yknwtnpwnz .gt_striped {
+#xydbsmocnd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yknwtnpwnz .gt_table_body {
+#xydbsmocnd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -816,7 +845,7 @@ Table&nbsp;3.1: Location data source
   border-bottom-color: #D3D3D3;
 }
 
-#yknwtnpwnz .gt_footnotes {
+#xydbsmocnd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -830,7 +859,7 @@ Table&nbsp;3.1: Location data source
   border-right-color: #D3D3D3;
 }
 
-#yknwtnpwnz .gt_footnote {
+#xydbsmocnd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -839,7 +868,7 @@ Table&nbsp;3.1: Location data source
   padding-right: 5px;
 }
 
-#yknwtnpwnz .gt_sourcenotes {
+#xydbsmocnd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -853,7 +882,7 @@ Table&nbsp;3.1: Location data source
   border-right-color: #D3D3D3;
 }
 
-#yknwtnpwnz .gt_sourcenote {
+#xydbsmocnd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -861,75 +890,84 @@ Table&nbsp;3.1: Location data source
   padding-right: 5px;
 }
 
-#yknwtnpwnz .gt_left {
+#xydbsmocnd .gt_left {
   text-align: left;
 }
 
-#yknwtnpwnz .gt_center {
+#xydbsmocnd .gt_center {
   text-align: center;
 }
 
-#yknwtnpwnz .gt_right {
+#xydbsmocnd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yknwtnpwnz .gt_font_normal {
+#xydbsmocnd .gt_font_normal {
   font-weight: normal;
 }
 
-#yknwtnpwnz .gt_font_bold {
+#xydbsmocnd .gt_font_bold {
   font-weight: bold;
 }
 
-#yknwtnpwnz .gt_font_italic {
+#xydbsmocnd .gt_font_italic {
   font-style: italic;
 }
 
-#yknwtnpwnz .gt_super {
+#xydbsmocnd .gt_super {
   font-size: 65%;
 }
 
-#yknwtnpwnz .gt_footnote_marks {
+#xydbsmocnd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yknwtnpwnz .gt_asterisk {
+#xydbsmocnd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yknwtnpwnz .gt_indent_1 {
+#xydbsmocnd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yknwtnpwnz .gt_indent_2 {
+#xydbsmocnd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yknwtnpwnz .gt_indent_3 {
+#xydbsmocnd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yknwtnpwnz .gt_indent_4 {
+#xydbsmocnd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yknwtnpwnz .gt_indent_5 {
+#xydbsmocnd .gt_indent_5 {
   text-indent: 25px;
+}
+
+#xydbsmocnd .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#xydbsmocnd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
-<col style="width: 20%">
+<col style="width: 10%">
 <col style="width: 20%">
 <col>
 </colgroup>
 <thead>
-<tr class="header gt_col_headings">
+<tr class="gt_col_headings header">
 <th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
 <th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
 <th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
@@ -937,29 +975,29 @@ Table&nbsp;3.1: Location data source
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">GS</td>
-<td class="gt_row gt_left" headers="Name">Single-band GNSS</td>
-<td class="gt_row gt_left" headers="Description">Satellite based location, single band</td>
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">S</td>
+<td class="gt_row gt_left" headers="Name">Smooth</td>
+<td class="gt_row gt_left" headers="Description">the boundary surface is a plane with few or no irregularities and usually occurs at the same depth across the profile face</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">GM</td>
-<td class="gt_row gt_left" headers="Name">Multi-band GNSS</td>
-<td class="gt_row gt_left" headers="Description">Satellite based location, multiple band</td>
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">W</td>
+<td class="gt_row gt_left" headers="Name">Wavy</td>
+<td class="gt_row gt_left" headers="Description">the boundary surface has broad, shallow, relatively regular pockets and none deeper than they are wide</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">GR</td>
-<td class="gt_row gt_left" headers="Name">Differential GNSS</td>
-<td class="gt_row gt_left" headers="Description">Satellite based location, on-ground correction</td>
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">I</td>
+<td class="gt_row gt_left" headers="Name">Irregular</td>
+<td class="gt_row gt_left" headers="Description">the boundary surface has pockets which are deeper than they are wide but not recurved</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">LM</td>
-<td class="gt_row gt_left" headers="Name">Multi-sensor</td>
-<td class="gt_row gt_left" headers="Description">Combined GNSS and other location data e.g. mobile phone towers, wifi routers and nearby devices.</td>
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">C</td>
+<td class="gt_row gt_left" headers="Name">Convolute</td>
+<td class="gt_row gt_left" headers="Description">the boundary surface has pockets which are deeper than they are wide and, in parts, recurved</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">NO</td>
-<td class="gt_row gt_left" headers="Name">None</td>
-<td class="gt_row gt_left" headers="Description">Location determined manually.</td>
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">D</td>
+<td class="gt_row gt_left" headers="Name">Discontinuous</td>
+<td class="gt_row gt_left" headers="Description">the boundary is discontinuous, usually due to external disturbance</td>
 </tr>
 </tbody>
 </table>
@@ -967,71 +1005,39 @@ Table&nbsp;3.1: Location data source
 </div>
 </div>
 </div>
-</div>
 </figure>
 </div>
 </div>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Multi-constellation GNSS is not the same as multi-band GNSS. The former signifies access to multiple location satellite networks operated by various parties, e.g.&nbsp;GPS (USA), Galileo (EU), BeiDou (China). This can improve signal <em>consistency</em> due to having access to more total satellites, but not necessarily overall accuracy.</p>
-<p>Multi-band GNSS involves receiving signals from location satellites on multiple frequency bands. The extra data from each satellite can significantly improve connection reliability and accuracy, particularly when open sky is restricted by rough terrain, dense vegetation or poor weather.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-warning">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Most consumer electronic devices capable of reporting location will be <span style="color: red"><strong>LM</strong></span> type by default, unless using an app that actively forces a GNSS-only connection. At the time of writing, most of these devices can still only report <span style="color: red"><strong>GS</strong></span> quality data with such apps due to hardware limitations. As such, these devices can be extremely accurate in urban areas and much less so elsewhere.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Estimating location manually using e.g.&nbsp;topographic maps and orienteering methods remains an option, but should usually be considered a last resort.</p>
-</div>
-</div>
-</div>
 </section>
-<section id="sec-loc-abs-elev" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="sec-loc-abs-elev"><span class="header-section-number">3.1.2</span> Elevation measurement</h3>
-<p>Parts of New Zealand still lack highly accurate elevation data. Elevation can also change suddenly in response to major tectonic activity. Record the elevation data source used against the schema in <a href="#tbl-ss-locsrc" class="quarto-xref">Table&nbsp;<span>3.1</span></a>, or use one of the additional options in <a href="#tbl-ss-elevsrc" class="quarto-xref">Table&nbsp;<span>3.2</span></a> below.</p>
+<section id="sec-pr-bdydist" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="sec-pr-bdydist"><span class="header-section-number">12.5</span> Boundary distinctness</h2>
+<p>Horizon boundaries comprise state changes over short distances. These can be reported as a direct measurement in the same way as horizon upper and lower depths, by reporting the range either side of the boundary. Report in 0.1 centimetre increments (e.g.&nbsp;“0.5&nbsp;cm”).</p>
+<p>For rapid assessment, horizon boundaries can be classified using the following schema:</p>
 <div class="cell" data-layout-align="center">
-<div id="tbl-ss-elevsrc" class="cell quarto-float anchored" data-layout-align="center">
+<div id="tbl-hr-bdst" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ss-elevsrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.2: Elevation data sources
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hr-bdst-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12.2: Horizon boundary distinctness
 </figcaption>
-<div aria-describedby="tbl-ss-elevsrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-hr-bdst-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="qcbzesrfqi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qcbzesrfqi table {
+<div id="eqelgwrhri" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eqelgwrhri table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qcbzesrfqi thead, #qcbzesrfqi tbody, #qcbzesrfqi tfoot, #qcbzesrfqi tr, #qcbzesrfqi td, #qcbzesrfqi th {
+#eqelgwrhri thead, #eqelgwrhri tbody, #eqelgwrhri tfoot, #eqelgwrhri tr, #eqelgwrhri td, #eqelgwrhri th {
   border-style: none;
 }
 
-#qcbzesrfqi p {
+#eqelgwrhri p {
   margin: 0;
   padding: 0;
 }
 
-#qcbzesrfqi .gt_table {
+#eqelgwrhri .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1057,12 +1063,12 @@ Table&nbsp;3.2: Elevation data sources
   border-left-color: #D3D3D3;
 }
 
-#qcbzesrfqi .gt_caption {
+#eqelgwrhri .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qcbzesrfqi .gt_title {
+#eqelgwrhri .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1074,7 +1080,7 @@ Table&nbsp;3.2: Elevation data sources
   border-bottom-width: 0;
 }
 
-#qcbzesrfqi .gt_subtitle {
+#eqelgwrhri .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1086,7 +1092,7 @@ Table&nbsp;3.2: Elevation data sources
   border-top-width: 0;
 }
 
-#qcbzesrfqi .gt_heading {
+#eqelgwrhri .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1098,13 +1104,13 @@ Table&nbsp;3.2: Elevation data sources
   border-right-color: #D3D3D3;
 }
 
-#qcbzesrfqi .gt_bottom_border {
+#eqelgwrhri .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qcbzesrfqi .gt_col_headings {
+#eqelgwrhri .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1119,7 +1125,7 @@ Table&nbsp;3.2: Elevation data sources
   border-right-color: #D3D3D3;
 }
 
-#qcbzesrfqi .gt_col_heading {
+#eqelgwrhri .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1139,7 +1145,7 @@ Table&nbsp;3.2: Elevation data sources
   overflow-x: hidden;
 }
 
-#qcbzesrfqi .gt_column_spanner_outer {
+#eqelgwrhri .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1151,15 +1157,15 @@ Table&nbsp;3.2: Elevation data sources
   padding-right: 4px;
 }
 
-#qcbzesrfqi .gt_column_spanner_outer:first-child {
+#eqelgwrhri .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qcbzesrfqi .gt_column_spanner_outer:last-child {
+#eqelgwrhri .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qcbzesrfqi .gt_column_spanner {
+#eqelgwrhri .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1171,11 +1177,11 @@ Table&nbsp;3.2: Elevation data sources
   width: 100%;
 }
 
-#qcbzesrfqi .gt_spanner_row {
+#eqelgwrhri .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qcbzesrfqi .gt_group_heading {
+#eqelgwrhri .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1201,7 +1207,7 @@ Table&nbsp;3.2: Elevation data sources
   text-align: left;
 }
 
-#qcbzesrfqi .gt_empty_group_heading {
+#eqelgwrhri .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1216,15 +1222,15 @@ Table&nbsp;3.2: Elevation data sources
   vertical-align: middle;
 }
 
-#qcbzesrfqi .gt_from_md > :first-child {
+#eqelgwrhri .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qcbzesrfqi .gt_from_md > :last-child {
+#eqelgwrhri .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qcbzesrfqi .gt_row {
+#eqelgwrhri .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1243,7 +1249,7 @@ Table&nbsp;3.2: Elevation data sources
   overflow-x: hidden;
 }
 
-#qcbzesrfqi .gt_stub {
+#eqelgwrhri .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1256,7 +1262,7 @@ Table&nbsp;3.2: Elevation data sources
   padding-right: 5px;
 }
 
-#qcbzesrfqi .gt_stub_row_group {
+#eqelgwrhri .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1270,15 +1276,15 @@ Table&nbsp;3.2: Elevation data sources
   vertical-align: top;
 }
 
-#qcbzesrfqi .gt_row_group_first td {
+#eqelgwrhri .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qcbzesrfqi .gt_row_group_first th {
+#eqelgwrhri .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qcbzesrfqi .gt_summary_row {
+#eqelgwrhri .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1288,16 +1294,16 @@ Table&nbsp;3.2: Elevation data sources
   padding-right: 5px;
 }
 
-#qcbzesrfqi .gt_first_summary_row {
+#eqelgwrhri .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qcbzesrfqi .gt_first_summary_row.thick {
+#eqelgwrhri .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qcbzesrfqi .gt_last_summary_row {
+#eqelgwrhri .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1307,7 +1313,7 @@ Table&nbsp;3.2: Elevation data sources
   border-bottom-color: #D3D3D3;
 }
 
-#qcbzesrfqi .gt_grand_summary_row {
+#eqelgwrhri .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1317,7 +1323,7 @@ Table&nbsp;3.2: Elevation data sources
   padding-right: 5px;
 }
 
-#qcbzesrfqi .gt_first_grand_summary_row {
+#eqelgwrhri .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1327,7 +1333,7 @@ Table&nbsp;3.2: Elevation data sources
   border-top-color: #D3D3D3;
 }
 
-#qcbzesrfqi .gt_last_grand_summary_row_top {
+#eqelgwrhri .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1337,11 +1343,11 @@ Table&nbsp;3.2: Elevation data sources
   border-bottom-color: #D3D3D3;
 }
 
-#qcbzesrfqi .gt_striped {
+#eqelgwrhri .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qcbzesrfqi .gt_table_body {
+#eqelgwrhri .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1350,7 +1356,7 @@ Table&nbsp;3.2: Elevation data sources
   border-bottom-color: #D3D3D3;
 }
 
-#qcbzesrfqi .gt_footnotes {
+#eqelgwrhri .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1364,7 +1370,7 @@ Table&nbsp;3.2: Elevation data sources
   border-right-color: #D3D3D3;
 }
 
-#qcbzesrfqi .gt_footnote {
+#eqelgwrhri .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1373,7 +1379,7 @@ Table&nbsp;3.2: Elevation data sources
   padding-right: 5px;
 }
 
-#qcbzesrfqi .gt_sourcenotes {
+#eqelgwrhri .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1387,7 +1393,7 @@ Table&nbsp;3.2: Elevation data sources
   border-right-color: #D3D3D3;
 }
 
-#qcbzesrfqi .gt_sourcenote {
+#eqelgwrhri .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1395,1214 +1401,114 @@ Table&nbsp;3.2: Elevation data sources
   padding-right: 5px;
 }
 
-#qcbzesrfqi .gt_left {
+#eqelgwrhri .gt_left {
   text-align: left;
 }
 
-#qcbzesrfqi .gt_center {
+#eqelgwrhri .gt_center {
   text-align: center;
 }
 
-#qcbzesrfqi .gt_right {
+#eqelgwrhri .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qcbzesrfqi .gt_font_normal {
+#eqelgwrhri .gt_font_normal {
   font-weight: normal;
 }
 
-#qcbzesrfqi .gt_font_bold {
+#eqelgwrhri .gt_font_bold {
   font-weight: bold;
 }
 
-#qcbzesrfqi .gt_font_italic {
+#eqelgwrhri .gt_font_italic {
   font-style: italic;
 }
 
-#qcbzesrfqi .gt_super {
+#eqelgwrhri .gt_super {
   font-size: 65%;
 }
 
-#qcbzesrfqi .gt_footnote_marks {
+#eqelgwrhri .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qcbzesrfqi .gt_asterisk {
+#eqelgwrhri .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qcbzesrfqi .gt_indent_1 {
+#eqelgwrhri .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qcbzesrfqi .gt_indent_2 {
+#eqelgwrhri .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qcbzesrfqi .gt_indent_3 {
+#eqelgwrhri .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qcbzesrfqi .gt_indent_4 {
+#eqelgwrhri .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qcbzesrfqi .gt_indent_5 {
+#eqelgwrhri .gt_indent_5 {
   text-indent: 25px;
+}
+
+#eqelgwrhri .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#eqelgwrhri div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
+<col style="width: 20%">
 <col style="width: 20%">
 <col>
 </colgroup>
 <thead>
-<tr class="header gt_col_headings">
+<tr class="gt_col_headings header">
 <th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
 <th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">E</td>
-<td class="gt_row gt_left" headers="Name">Estimate</td>
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">S</td>
+<td class="gt_row gt_left" headers="Name">Sharp</td>
+<td class="gt_row gt_left" headers="Description">&lt;&nbsp;0.5&nbsp;cm</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">A</td>
-<td class="gt_row gt_left" headers="Name">Measured by a calibrated altimeter</td>
+<td class="gt_row gt_left" headers="Name">Abrupt</td>
+<td class="gt_row gt_left" headers="Description">0.5&nbsp;-&nbsp;2.0&nbsp;cm</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">M</td>
-<td class="gt_row gt_left" headers="Name">Interpolated from contour map with interval of ≤&nbsp;20&nbsp;m, or extracted from similar-quality Digital Elevation Model (DEM)</td>
-</tr>
-<tr class="even">
 <td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">D</td>
-<td class="gt_row gt_left" headers="Name">Extracted from high-accuracy DEM (Lidar or similar)</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p>The <span style="color: red"><strong>M</strong></span> code should be used for most non-Lidar DEMs, as those available for public use were constructed from interpolated contour data or other methods with comparable vertical accuracy <span class="citation" data-cites="barringer2002 uuemaa2020">(see <a href="references.html#ref-barringer2002" role="doc-biblioref">Barringer, Pairman, and McNeill 2002</a>; <a href="references.html#ref-uuemaa2020" role="doc-biblioref">Uuemaa et al. 2020</a>)</span> .</p>
-<p>Where the <span style="color: red"><strong>A</strong></span> code is used, the time and location of the most recent altimeter calibration should be noted.</p>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Where DEMs are used, they should be as contemporary as possible; New Zealand’s rate of landscape evolution is relatively high and these data sources will become less reliable with age. DEMs more than 20 years old should be accompanied by a vertical error estimate adjusted upwards for age.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="coordinate-reference-system-crs" class="level3" data-number="3.1.3">
-<h3 data-number="3.1.3" class="anchored" data-anchor-id="coordinate-reference-system-crs"><span class="header-section-number">3.1.3</span> Coordinate reference system (CRS)</h3>
-<p>Record X and Y location coordinates using New Zealand Transverse Mercator (EPSG:2193). For Z coordinates (elevation), use the New Zealand Vertical Datum 2016 (EPSG:1169).</p>
-<p>X and Y precision does not need to exceed 1&nbsp;m for pits, or 0.1&nbsp;m for cores and auger holes. Z precision will rarely need to exceed 0.1&nbsp;m.</p>
-<p>Example: <span style="color: red"><strong>1586090E, 5405722N (462 m)</strong></span></p>
-<div class="callout callout-style-simple callout-warning">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Many location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around 3&nbsp;m, and coordinate accuracy also degrades over time due to continental drift. This is compensated for using a date-based ‘epoch’ adjustment. Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-warning">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Alternate geocoding systems involving e.g.&nbsp;text-based encoding or nested hashes should be avoided during fieldwork. The systems are often proprietary, sometimes prone to ambiguity or edge-case errors, and at their core often wrap around WGS84 anyway. They may still be useful during data analysis.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="expected-error" class="level3" data-number="3.1.4">
-<h3 data-number="3.1.4" class="anchored" data-anchor-id="expected-error"><span class="header-section-number">3.1.4</span> Expected Error</h3>
-<p>Expected horizontal error can be automatically reported by equipment, or estimated. When estimating, record in meters with a maximum precision of 0.01 (1&nbsp;cm) e.g.&nbsp;<span style="color: red"><strong>±&nbsp;5.1&nbsp;m</strong></span>. Record expected vertical elevation error separately in the same units, as it will differ.</p>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Site location data quality can often be improved by revising the locations in GIS after fieldwork. Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="sec-ss-dt" class="level3" data-number="3.1.5">
-<h3 data-number="3.1.5" class="anchored" data-anchor-id="sec-ss-dt"><span class="header-section-number">3.1.5</span> Temporal</h3>
-<p>Record the date of observation using the ISO 8601 standard, <span style="color: red"><strong>YYYY-MM-DD</strong></span> <span class="citation" data-cites="internationalorganizationforstandardization">(<a href="references.html#ref-internationalorganizationforstandardization" role="doc-biblioref">International Organization for Standardization 2019</a>)</span>. Time is not essential but may be useful for correlating site descriptions with photographs.</p>
-</section>
-</section>
-<section id="relative-location" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="relative-location"><span class="header-section-number">3.2</span> Relative location</h2>
-<p>Absolute locations are enhanced by information about what is nearby. This context is useful for checking that a site’s coordinates are correct and for revisiting a site in future.</p>
-<section id="relative-elevation" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="relative-elevation"><span class="header-section-number">3.2.1</span> Relative elevation</h3>
-<p>Elevation above the nearest down-slope drainage (open/flowing water, swampy ground, or a closed depression) is useful for landscape interpretations. The data can also be used to group site descriptions, for instance when identifying sets of related terraces along river systems. The drainage feature to record against must be identified by tracing a path down-slope from the observation point, and may be far from the point of observation. As such, it will normally be more efficient to estimate this parameter after fieldwork using elevation and imagery data.</p>
-<p>Record relative elevation in meters, with a precision of no more than 0.01 (1&nbsp;cm).</p>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>With sufficiently detailed inputs, a Relative Elevation Model (REM) can be constructed to estimate this parameter, but will need to be ground-truthed.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="triangulating-off-local-features" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="triangulating-off-local-features"><span class="header-section-number">3.2.2</span> Triangulating off local features</h3>
-<p>Absolute location data can be backed up by measuring to nearby permanent or long-term features. This is particularly useful for relocating long-term monitoring plots. For this to work well, features should be within ~50&nbsp;m of the target location and sufficiently sturdy to last until at least the next expected visit. Examples include fencelines, buildings, roads, and rock outcrops.</p>
-<p>For single-point sites, measure distance and direction using a tape and compass. Accuracy is improved by measuring to two or more features. For plot-based sites, one can measure from at least two corners to the target feature. Photographing the point/plot and reference points together is also useful.</p>
-<p><span style="background-color:lightgreen">add a diagram here</span></p>
-</section>
-<section id="long-form-descriptions" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="long-form-descriptions"><span class="header-section-number">3.2.3</span> Long-form descriptions</h3>
-<p>For observation points that will be revisited, record practical information about how to return. This may include landholder contact details and records of previous interactions, notes about track conditions, locked gates, and potential hazards like water crossings. Spatial data recording the track from the nearest public road to the target location is particularly valuable.</p>
-</section>
-<section id="administrative-location" class="level3" data-number="3.2.4">
-<h3 data-number="3.2.4" class="anchored" data-anchor-id="administrative-location"><span class="header-section-number">3.2.4</span> Administrative location</h3>
-<p>Tagging sites with their administrative region(s) can help with discoverability (searching and filtering) in databases, and simplify information security and privacy arrangements. This does not need to be done in the field, provided accurate locations are recorded.</p>
-<p>In New Zealand, relevant boundaries include Regional Council <span class="citation" data-cites="statsnz">(<a href="references.html#ref-statsnz" role="doc-biblioref">Stats NZ 2023a</a>)</span> and Territorial Authority (District Council, Stats NZ <span class="citation" data-cites="statsnza">(<a href="references.html#ref-statsnza" role="doc-biblioref">2023b</a>)</span>) areas. Note that these boundaries are periodically updated so need to be related to date of observation.</p>
-</section>
-<section id="temporal" class="level3" data-number="3.2.5">
-<h3 data-number="3.2.5" class="anchored" data-anchor-id="temporal"><span class="header-section-number">3.2.5</span> Temporal</h3>
-<p>Relative temporal data focuses on time since significant soil-influencing events. These can provide context for the parameters recorded, and some are especially useful when interpreting laboratory results.</p>
-<p>Only include recent events directly affecting the site. ‘Recent’ is a relatively flexible concept which highlights the reasons some parameters observed might be locally unusual. Some of these events recur regularly (e.g.&nbsp;tillage) so only need to be noted if very recent (e.g.&nbsp;previous week).</p>
-<p>If the time since the event is known with certainty, also record as number of days since the event.</p>
-<div class="cell" data-layout-align="center">
-<div id="tbl-ss-eventp" class="cell quarto-float anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ss-eventp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.3: Recent soil-affecting events
-</figcaption>
-<div aria-describedby="tbl-ss-eventp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div>
-<div id="dcsicnhefe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dcsicnhefe table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#dcsicnhefe thead, #dcsicnhefe tbody, #dcsicnhefe tfoot, #dcsicnhefe tr, #dcsicnhefe td, #dcsicnhefe th {
-  border-style: none;
-}
-
-#dcsicnhefe p {
-  margin: 0;
-  padding: 0;
-}
-
-#dcsicnhefe .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: 85%;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#dcsicnhefe .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#dcsicnhefe .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: bold;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#dcsicnhefe .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#dcsicnhefe .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#dcsicnhefe .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#dcsicnhefe .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#dcsicnhefe .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#dcsicnhefe .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#dcsicnhefe .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#dcsicnhefe .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#dcsicnhefe .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#dcsicnhefe .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#dcsicnhefe .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#dcsicnhefe .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#dcsicnhefe .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#dcsicnhefe .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#dcsicnhefe .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#dcsicnhefe .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#dcsicnhefe .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#dcsicnhefe .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#dcsicnhefe .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#dcsicnhefe .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#dcsicnhefe .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#dcsicnhefe .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#dcsicnhefe .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#dcsicnhefe .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#dcsicnhefe .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#dcsicnhefe .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#dcsicnhefe .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#dcsicnhefe .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#dcsicnhefe .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#dcsicnhefe .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#dcsicnhefe .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#dcsicnhefe .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#dcsicnhefe .gt_left {
-  text-align: left;
-}
-
-#dcsicnhefe .gt_center {
-  text-align: center;
-}
-
-#dcsicnhefe .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#dcsicnhefe .gt_font_normal {
-  font-weight: normal;
-}
-
-#dcsicnhefe .gt_font_bold {
-  font-weight: bold;
-}
-
-#dcsicnhefe .gt_font_italic {
-  font-style: italic;
-}
-
-#dcsicnhefe .gt_super {
-  font-size: 65%;
-}
-
-#dcsicnhefe .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#dcsicnhefe .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#dcsicnhefe .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#dcsicnhefe .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#dcsicnhefe .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#dcsicnhefe .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#dcsicnhefe .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 20%">
-<col>
-</colgroup>
-<thead>
-<tr class="header gt_col_headings">
-<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
-<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">MC</td>
-<td class="gt_row gt_left" headers="Name">Mechanical disturbance (e.g. tillage, deep ripping)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">CL</td>
-<td class="gt_row gt_left" headers="Name">Mechanical vegetation clearance (e.g. clearfelling)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">SL</td>
-<td class="gt_row gt_left" headers="Name">Landslide event - soil lost from site</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">SD</td>
-<td class="gt_row gt_left" headers="Name">Landslide event - soil added to site</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">WI</td>
-<td class="gt_row gt_left" headers="Name">Wind-induced treefall</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">FC</td>
-<td class="gt_row gt_left" headers="Name">Fire - controlled burn</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">FW</td>
-<td class="gt_row gt_left" headers="Name">Fire - uncontrolled burn</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">FL</td>
-<td class="gt_row gt_left" headers="Name">Flooding - freshwater</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">FS</td>
-<td class="gt_row gt_left" headers="Name">Flooding - saline water (e.g. storm surge event)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">PO</td>
-<td class="gt_row gt_left" headers="Name">Pollution event (e.g. petrol spill)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">NO</td>
-<td class="gt_row gt_left" headers="Name">No recent events</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">UK</td>
-<td class="gt_row gt_left" headers="Name">Unknown</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-</section>
-</section>
-<section id="explaining-location" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="explaining-location"><span class="header-section-number">3.3</span> Explaining location</h2>
-<section id="site-choice-method" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="site-choice-method"><span class="header-section-number">3.3.1</span> Site choice method</h3>
-<p>Spatial sampling strategies vary in their statistical properties. Soil data is stored for long periods and is often re-used for multiple projects; specific re-uses may not be appropriate.</p>
-<p>Record the spatial sampling strategy used using the schema in <a href="#tbl-ss-sampstrat" class="quarto-xref">Table&nbsp;<span>3.4</span></a>. This parameter does not usually need to be recorded in the field.</p>
-<div class="cell" data-layout-align="center">
-<div id="tbl-ss-sampstrat" class="cell quarto-float anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ss-sampstrat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.4: Spatial sampling strategies
-</figcaption>
-<div aria-describedby="tbl-ss-sampstrat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div>
-<div id="ufufncezil" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ufufncezil table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#ufufncezil thead, #ufufncezil tbody, #ufufncezil tfoot, #ufufncezil tr, #ufufncezil td, #ufufncezil th {
-  border-style: none;
-}
-
-#ufufncezil p {
-  margin: 0;
-  padding: 0;
-}
-
-#ufufncezil .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: 85%;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#ufufncezil .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#ufufncezil .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: bold;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#ufufncezil .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#ufufncezil .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#ufufncezil .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ufufncezil .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#ufufncezil .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#ufufncezil .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#ufufncezil .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#ufufncezil .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#ufufncezil .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#ufufncezil .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#ufufncezil .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#ufufncezil .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#ufufncezil .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#ufufncezil .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#ufufncezil .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#ufufncezil .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ufufncezil .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#ufufncezil .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#ufufncezil .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#ufufncezil .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ufufncezil .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#ufufncezil .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#ufufncezil .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ufufncezil .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ufufncezil .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#ufufncezil .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ufufncezil .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#ufufncezil .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ufufncezil .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#ufufncezil .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ufufncezil .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#ufufncezil .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ufufncezil .gt_left {
-  text-align: left;
-}
-
-#ufufncezil .gt_center {
-  text-align: center;
-}
-
-#ufufncezil .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#ufufncezil .gt_font_normal {
-  font-weight: normal;
-}
-
-#ufufncezil .gt_font_bold {
-  font-weight: bold;
-}
-
-#ufufncezil .gt_font_italic {
-  font-style: italic;
-}
-
-#ufufncezil .gt_super {
-  font-size: 65%;
-}
-
-#ufufncezil .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#ufufncezil .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#ufufncezil .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#ufufncezil .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#ufufncezil .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#ufufncezil .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#ufufncezil .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 20%">
-<col>
-</colgroup>
-<thead>
-<tr class="header gt_col_headings">
-<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
-<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">A</td>
-<td class="gt_row gt_left" headers="Name">Arbitrary/opportunistic</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">D</td>
-<td class="gt_row gt_left" headers="Name">Data-driven</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">M</td>
-<td class="gt_row gt_left" headers="Name">Model-based</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">R</td>
-<td class="gt_row gt_left" headers="Name">Random</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">T</td>
-<td class="gt_row gt_left" headers="Name">Transect</td>
+<td class="gt_row gt_left" headers="Name">Distinct</td>
+<td class="gt_row gt_left" headers="Description">2.0&nbsp;-&nbsp;5.0&nbsp;cm</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">G</td>
-<td class="gt_row gt_left" headers="Name">Grid</td>
+<td class="gt_row gt_left" headers="Name">Gradual</td>
+<td class="gt_row gt_left" headers="Description">5.0&nbsp;-&nbsp;10.0&nbsp;cm</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">D</td>
+<td class="gt_row gt_left" headers="Name">Diffuse</td>
+<td class="gt_row gt_left" headers="Description">10&nbsp;-&nbsp;30.0&nbsp;cm</td>
 </tr>
 </tbody>
 </table>
@@ -2610,45 +1516,40 @@ Table&nbsp;3.4: Spatial sampling strategies
 </div>
 </div>
 </div>
-</div>
 </figure>
 </div>
 </div>
-<p>The difference between data-driven <span style="color: red"><strong>D</strong></span> and model-based <span style="color: red"><strong>M</strong></span> centres around replicability. Data-driven sites are nominated using a loose set of rules or principles (e.g.&nbsp;“visit the major landforms on this farm but don’t go too far off the tracks”) and may be subject to minor changes once the worker is on-ground. Model-based site choices formalise this process with reference to specific input datasets, and the worker is committed to sample at the exact point chosen. Model-based methods may include ‘backup points’ for where an intended location cannot be physically accessed, but these are also pre-determined. Importantly, model-based choices can be regenerated from the same inputs.</p>
-<p>Arbitrary <span style="color: red"><strong>A</strong></span> points are not pre-determined at all; rather, they are chosen after the worker is on site, in response to direct observation of on-ground conditions. These are often practical and time-efficient but are also likely to over-sample the more easily accessible and/or interesting parts of the landscape, to the detriment of overall representativeness.</p>
-<p>Random, transect and grid sampling <span style="color: red"><strong>R, T, G</strong></span> effectively ignore environmental parameters. This is useful when the spatial distribution of a parameter of interest is unknown or poorly understood.</p>
-<p>Some of these methods can be combined - for example, data-driven transect choices with randomised locations along each. In such cases, the ‘last choice’ should be recorded - in this case, <span style="color: red"><strong>R</strong></span>. The details of the full sampling strategy should be discussed in project metadata.</p>
+<p>Where a diffuse transition is thicker than 30&nbsp;cm, it should be defined as a new horizon. Use transitional horizon names as needed <span class="todo">CROSSLINK</span>.</p>
+<p><span class="diags">put a diagram unifying the previous three concepts here</span></p>
 </section>
-<section id="site-purpose" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="site-purpose"><span class="header-section-number">3.3.2</span> Site purpose</h3>
-<p>The original task for which a site was observed can affect what data is recorded and is relevant to data re-use decisions.</p>
-<p>Record the reason for sampling using the schema in <a href="#tbl-ss-reason" class="quarto-xref">Table&nbsp;<span>3.5</span></a>. This parameter does not need to be recorded in the field.</p>
+<section id="sec-pr-sws" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="sec-pr-sws"><span class="header-section-number">12.6</span> Soil moisture status</h2>
+<p>Report soil moisture status for each horizon at the time of observation. This parameter supports assessments of drainage and permeability, and contextualises consistence tests.</p>
 <div class="cell" data-layout-align="center">
-<div id="tbl-ss-reason" class="cell quarto-float anchored" data-layout-align="center">
+<div id="tbl-hr-soilmst" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ss-reason-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.5: Site purpose
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hr-soilmst-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12.3: Soil water status (adapted from <span class="citation" data-cites="griffiths1985">Griffiths (<a href="references.html#ref-griffiths1985" role="doc-biblioref">1985</a>)</span>).
 </figcaption>
-<div aria-describedby="tbl-ss-reason-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-hr-soilmst-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="vmxoiekwfh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vmxoiekwfh table {
+<div id="lelvflhtfm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lelvflhtfm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vmxoiekwfh thead, #vmxoiekwfh tbody, #vmxoiekwfh tfoot, #vmxoiekwfh tr, #vmxoiekwfh td, #vmxoiekwfh th {
+#lelvflhtfm thead, #lelvflhtfm tbody, #lelvflhtfm tfoot, #lelvflhtfm tr, #lelvflhtfm td, #lelvflhtfm th {
   border-style: none;
 }
 
-#vmxoiekwfh p {
+#lelvflhtfm p {
   margin: 0;
   padding: 0;
 }
 
-#vmxoiekwfh .gt_table {
+#lelvflhtfm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2674,12 +1575,12 @@ Table&nbsp;3.5: Site purpose
   border-left-color: #D3D3D3;
 }
 
-#vmxoiekwfh .gt_caption {
+#lelvflhtfm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vmxoiekwfh .gt_title {
+#lelvflhtfm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2691,7 +1592,7 @@ Table&nbsp;3.5: Site purpose
   border-bottom-width: 0;
 }
 
-#vmxoiekwfh .gt_subtitle {
+#lelvflhtfm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2703,7 +1604,7 @@ Table&nbsp;3.5: Site purpose
   border-top-width: 0;
 }
 
-#vmxoiekwfh .gt_heading {
+#lelvflhtfm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2715,13 +1616,13 @@ Table&nbsp;3.5: Site purpose
   border-right-color: #D3D3D3;
 }
 
-#vmxoiekwfh .gt_bottom_border {
+#lelvflhtfm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vmxoiekwfh .gt_col_headings {
+#lelvflhtfm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2736,7 +1637,7 @@ Table&nbsp;3.5: Site purpose
   border-right-color: #D3D3D3;
 }
 
-#vmxoiekwfh .gt_col_heading {
+#lelvflhtfm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2756,7 +1657,7 @@ Table&nbsp;3.5: Site purpose
   overflow-x: hidden;
 }
 
-#vmxoiekwfh .gt_column_spanner_outer {
+#lelvflhtfm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2768,15 +1669,15 @@ Table&nbsp;3.5: Site purpose
   padding-right: 4px;
 }
 
-#vmxoiekwfh .gt_column_spanner_outer:first-child {
+#lelvflhtfm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vmxoiekwfh .gt_column_spanner_outer:last-child {
+#lelvflhtfm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vmxoiekwfh .gt_column_spanner {
+#lelvflhtfm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2788,11 +1689,11 @@ Table&nbsp;3.5: Site purpose
   width: 100%;
 }
 
-#vmxoiekwfh .gt_spanner_row {
+#lelvflhtfm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vmxoiekwfh .gt_group_heading {
+#lelvflhtfm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2818,7 +1719,7 @@ Table&nbsp;3.5: Site purpose
   text-align: left;
 }
 
-#vmxoiekwfh .gt_empty_group_heading {
+#lelvflhtfm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2833,15 +1734,15 @@ Table&nbsp;3.5: Site purpose
   vertical-align: middle;
 }
 
-#vmxoiekwfh .gt_from_md > :first-child {
+#lelvflhtfm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vmxoiekwfh .gt_from_md > :last-child {
+#lelvflhtfm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vmxoiekwfh .gt_row {
+#lelvflhtfm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2860,7 +1761,7 @@ Table&nbsp;3.5: Site purpose
   overflow-x: hidden;
 }
 
-#vmxoiekwfh .gt_stub {
+#lelvflhtfm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2873,7 +1774,7 @@ Table&nbsp;3.5: Site purpose
   padding-right: 5px;
 }
 
-#vmxoiekwfh .gt_stub_row_group {
+#lelvflhtfm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2887,15 +1788,15 @@ Table&nbsp;3.5: Site purpose
   vertical-align: top;
 }
 
-#vmxoiekwfh .gt_row_group_first td {
+#lelvflhtfm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vmxoiekwfh .gt_row_group_first th {
+#lelvflhtfm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vmxoiekwfh .gt_summary_row {
+#lelvflhtfm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2905,16 +1806,16 @@ Table&nbsp;3.5: Site purpose
   padding-right: 5px;
 }
 
-#vmxoiekwfh .gt_first_summary_row {
+#lelvflhtfm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vmxoiekwfh .gt_first_summary_row.thick {
+#lelvflhtfm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vmxoiekwfh .gt_last_summary_row {
+#lelvflhtfm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2924,7 +1825,7 @@ Table&nbsp;3.5: Site purpose
   border-bottom-color: #D3D3D3;
 }
 
-#vmxoiekwfh .gt_grand_summary_row {
+#lelvflhtfm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2934,7 +1835,7 @@ Table&nbsp;3.5: Site purpose
   padding-right: 5px;
 }
 
-#vmxoiekwfh .gt_first_grand_summary_row {
+#lelvflhtfm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2944,7 +1845,7 @@ Table&nbsp;3.5: Site purpose
   border-top-color: #D3D3D3;
 }
 
-#vmxoiekwfh .gt_last_grand_summary_row_top {
+#lelvflhtfm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2954,11 +1855,11 @@ Table&nbsp;3.5: Site purpose
   border-bottom-color: #D3D3D3;
 }
 
-#vmxoiekwfh .gt_striped {
+#lelvflhtfm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vmxoiekwfh .gt_table_body {
+#lelvflhtfm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2967,7 +1868,7 @@ Table&nbsp;3.5: Site purpose
   border-bottom-color: #D3D3D3;
 }
 
-#vmxoiekwfh .gt_footnotes {
+#lelvflhtfm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2981,7 +1882,7 @@ Table&nbsp;3.5: Site purpose
   border-right-color: #D3D3D3;
 }
 
-#vmxoiekwfh .gt_footnote {
+#lelvflhtfm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2990,7 +1891,7 @@ Table&nbsp;3.5: Site purpose
   padding-right: 5px;
 }
 
-#vmxoiekwfh .gt_sourcenotes {
+#lelvflhtfm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3004,7 +1905,7 @@ Table&nbsp;3.5: Site purpose
   border-right-color: #D3D3D3;
 }
 
-#vmxoiekwfh .gt_sourcenote {
+#lelvflhtfm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3012,102 +1913,142 @@ Table&nbsp;3.5: Site purpose
   padding-right: 5px;
 }
 
-#vmxoiekwfh .gt_left {
+#lelvflhtfm .gt_left {
   text-align: left;
 }
 
-#vmxoiekwfh .gt_center {
+#lelvflhtfm .gt_center {
   text-align: center;
 }
 
-#vmxoiekwfh .gt_right {
+#lelvflhtfm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vmxoiekwfh .gt_font_normal {
+#lelvflhtfm .gt_font_normal {
   font-weight: normal;
 }
 
-#vmxoiekwfh .gt_font_bold {
+#lelvflhtfm .gt_font_bold {
   font-weight: bold;
 }
 
-#vmxoiekwfh .gt_font_italic {
+#lelvflhtfm .gt_font_italic {
   font-style: italic;
 }
 
-#vmxoiekwfh .gt_super {
+#lelvflhtfm .gt_super {
   font-size: 65%;
 }
 
-#vmxoiekwfh .gt_footnote_marks {
+#lelvflhtfm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vmxoiekwfh .gt_asterisk {
+#lelvflhtfm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vmxoiekwfh .gt_indent_1 {
+#lelvflhtfm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vmxoiekwfh .gt_indent_2 {
+#lelvflhtfm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vmxoiekwfh .gt_indent_3 {
+#lelvflhtfm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vmxoiekwfh .gt_indent_4 {
+#lelvflhtfm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vmxoiekwfh .gt_indent_5 {
+#lelvflhtfm .gt_indent_5 {
   text-indent: 25px;
+}
+
+#lelvflhtfm .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#lelvflhtfm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
-<col style="width: 20%">
+<col style="width: 10%">
+<col style="width: 15%">
+<col>
+<col>
+<col>
 <col>
 </colgroup>
 <thead>
-<tr class="header gt_col_headings">
-<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
-<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<tr class="gt_col_headings gt_spanner_row header">
+<th rowspan="2" id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th rowspan="2" id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th colspan="4" id="Behaviour of fine earth" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Behaviour of fine earth
+</div></th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="Sands" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">&gt; 80% Sand</th>
+<th id="Light" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">&lt; 80% Sand<br>
+&lt; 18% Clay</th>
+<th id="Medium" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">&gt; 18% Clay<br>
+&lt; 35% Clay</th>
+<th id="Clays" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">&gt;35% Clay</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">E</td>
-<td class="gt_row gt_left" headers="Name">Mapping exploration</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">V</td>
-<td class="gt_row gt_left" headers="Name">Mapping validation</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">R</td>
-<td class="gt_row gt_left" headers="Name">Research</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">M</td>
-<td class="gt_row gt_left" headers="Name">Monitoring</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">T</td>
-<td class="gt_row gt_left" headers="Name">Reference</td>
-</tr>
-<tr class="even">
 <td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">D</td>
-<td class="gt_row gt_left" headers="Name">Development</td>
+<td class="gt_row gt_left" headers="Name">Dry</td>
+<td class="gt_row gt_left" headers="Sands">loose, single grain</td>
+<td class="gt_row gt_left" headers="Light">loose</td>
+<td class="gt_row gt_left" headers="Medium">easily broken down to powder</td>
+<td class="gt_row gt_left" headers="Clays">hard, baked, cracked</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">T</td>
+<td class="gt_row gt_left" headers="Name">Moderately moist</td>
+<td class="gt_row gt_left" headers="Sands">will not form a ball</td>
+<td class="gt_row gt_left" headers="Light">forms weak ball, breaks easily</td>
+<td class="gt_row gt_left" headers="Medium">forms a ball, very pliable</td>
+<td class="gt_row gt_left" headers="Clays">forms a ball, somewhat pliable</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">M</td>
+<td class="gt_row gt_left" headers="Name">Moist</td>
+<td class="gt_row gt_left" headers="Sands">forms very weak ball</td>
+<td class="gt_row gt_left" headers="Light">forms weak ball, breaks easily</td>
+<td class="gt_row gt_left" headers="Medium">forms a ball, very pliable</td>
+<td class="gt_row gt_left" headers="Clays">easily forms a ball</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">W</td>
+<td class="gt_row gt_left" headers="Name">Wet</td>
+<td class="gt_row gt_left" headers="Sands">fluid, non-plastic, non-sticky</td>
+<td class="gt_row gt_left" headers="Light">slightly fluid, slightly plastic</td>
+<td class="gt_row gt_left" headers="Medium">deformable, plastic</td>
+<td class="gt_row gt_left" headers="Clays">semi-deformable, very plastic</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">S</td>
+<td class="gt_row gt_left" headers="Name">Saturated</td>
+<td class="gt_row gt_left" headers="Sands" style="text-align: center; font-style: italic;">water films visible, or below water table</td>
+<td class="gt_row gt_left" headers="Light" style="text-align: center; font-style: italic;"></td>
+<td class="gt_row gt_left" headers="Medium" style="text-align: center; font-style: italic;"></td>
+<td class="gt_row gt_left" headers="Clays" style="text-align: center; font-style: italic;"></td>
 </tr>
 </tbody>
 </table>
@@ -3115,33 +2056,525 @@ Table&nbsp;3.5: Site purpose
 </div>
 </div>
 </div>
+</figure>
+</div>
+</div>
+<p><span class="todo">Add xref to an appendix about soil water field measurement</span></p>
+</section>
+<section id="depth-to-free-water" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="depth-to-free-water"><span class="header-section-number">12.7</span> Depth to free water</h2>
+<p>Depth to free water can be determined from the upper depth of the first <span class="ceg">S</span> saturated horizon, or specifically recorded in whole centimetres. Depending on the soil’s transmissivity, the presence of the water table may be revealed by the pit or core filling with water.</p>
+<ul>
+<li>If the water table is not encountered, record <span class="ceg">NA</span></li>
+<li>If the water table is encountered, use <a href="#tbl-hr-frw" class="quarto-xref">Table&nbsp;<span>12.4</span></a> to code its position in the profile, then record the depth above or below in whole centimetres. Do not record negative numbers to signify a water table above the surface.</li>
+</ul>
+<p>e.g.&nbsp;<span class="ceg">‘B&nbsp;80’</span> for a profile saturated below 80&nbsp;cm deep; <span class="ceg">‘A&nbsp;1’</span> for a barely-walkable peat.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-hr-frw" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hr-frw-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12.4: Free water location
+</figcaption>
+<div aria-describedby="tbl-hr-frw-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="qlpzedzvlq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qlpzedzvlq table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#qlpzedzvlq thead, #qlpzedzvlq tbody, #qlpzedzvlq tfoot, #qlpzedzvlq tr, #qlpzedzvlq td, #qlpzedzvlq th {
+  border-style: none;
+}
+
+#qlpzedzvlq p {
+  margin: 0;
+  padding: 0;
+}
+
+#qlpzedzvlq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#qlpzedzvlq .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#qlpzedzvlq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#qlpzedzvlq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#qlpzedzvlq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qlpzedzvlq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qlpzedzvlq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qlpzedzvlq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#qlpzedzvlq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#qlpzedzvlq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#qlpzedzvlq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#qlpzedzvlq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#qlpzedzvlq .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#qlpzedzvlq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#qlpzedzvlq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#qlpzedzvlq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#qlpzedzvlq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#qlpzedzvlq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#qlpzedzvlq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qlpzedzvlq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#qlpzedzvlq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#qlpzedzvlq .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#qlpzedzvlq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qlpzedzvlq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#qlpzedzvlq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#qlpzedzvlq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qlpzedzvlq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qlpzedzvlq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#qlpzedzvlq .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qlpzedzvlq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#qlpzedzvlq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qlpzedzvlq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qlpzedzvlq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qlpzedzvlq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qlpzedzvlq .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qlpzedzvlq .gt_left {
+  text-align: left;
+}
+
+#qlpzedzvlq .gt_center {
+  text-align: center;
+}
+
+#qlpzedzvlq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#qlpzedzvlq .gt_font_normal {
+  font-weight: normal;
+}
+
+#qlpzedzvlq .gt_font_bold {
+  font-weight: bold;
+}
+
+#qlpzedzvlq .gt_font_italic {
+  font-style: italic;
+}
+
+#qlpzedzvlq .gt_super {
+  font-size: 65%;
+}
+
+#qlpzedzvlq .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#qlpzedzvlq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#qlpzedzvlq .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#qlpzedzvlq .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#qlpzedzvlq .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#qlpzedzvlq .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#qlpzedzvlq .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#qlpzedzvlq .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#qlpzedzvlq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">NA</td>
+<td class="gt_row gt_left" headers="Name">Not applicable</td>
+<td class="gt_row gt_left" headers="Description">Water table not encountered</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">B</td>
+<td class="gt_row gt_left" headers="Name">Below</td>
+<td class="gt_row gt_left" headers="Description">Water table observed below the soil surface</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">A</td>
+<td class="gt_row gt_left" headers="Name">Above</td>
+<td class="gt_row gt_left" headers="Description">Water table observed at or above the soil surface</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
 </div>
 </figure>
 </div>
 </div>
-<p><span style="color: red"><strong>D</strong></span> sites are often carried out as part of planning for a resource consent. The soil they describe may be removed or sealed after observation, limiting data re-use potential. <span style="color: red"><strong>M</strong></span> monitoring sites imply repeated, regular re-sampling activity and perhaps an expectation of minimal major disturbance between visits.</p>
-<p><span style="color: red"><strong>V</strong></span> validation sites may be low-detail, as they are intended to confirm or deny a prediction. <span style="color: red"><strong>T</strong></span> reference sites (T for ‘type’) may be expected to have high morphological detail and a lot of accompanying analytical data, as they represent ‘ideal’ profiles for particular soil classes.</p>
-<p><span style="color: red"><strong>E</strong></span> mapping exploration sites may have biased, opportunistic sample locations and moderate location precision, while <span style="color: red"><strong>R</strong></span> sites are more likely to have been predetermined by a model and located with high precision.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-barringer2002" class="csl-entry" role="listitem">
-Barringer, James R. F., D. Pairman, and S. J. McNeill. 2002. <span>“Development of a High-Resolution Digital Elevation Model for New Zealand.”</span> Wellington, New Zealand.
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-griffiths1985" class="csl-entry" role="listitem">
+Griffiths E 1985. Interpretation of soil morphology for assessing moisture movement and storage. [Internet]. Havelock North, New Zealand. <a href="https://doi.org/10.7931/DL1-SBSR-74">https://doi.org/10.7931/DL1-SBSR-74</a>
 </div>
-<div id="ref-internationalorganizationforstandardization" class="csl-entry" role="listitem">
-International Organization for Standardization. 2019. <span>“Date and Time - Representations for Information Interchange - Part 1: Basic Rules.”</span>
-</div>
-<div id="ref-statsnz" class="csl-entry" role="listitem">
-Stats NZ. 2023a. <span>“Regional Council 2023 (Generalised).”</span>
-</div>
-<div id="ref-statsnza" class="csl-entry" role="listitem">
-———. 2023b. <span>“Territorial Authority 2023 (Generalised).”</span>
-</div>
-<div id="ref-uuemaa2020" class="csl-entry" role="listitem">
-Uuemaa, Evelyn, Sander Ahi, Bruno Montibeller, Merle Muru, and Alexander Kmoch. 2020. <span>“Vertical Accuracy of Freely Available Global Digital Elevation Models (ASTER, AW3D30, MERIT, TanDEM-x, SRTM, and NASADEM).”</span> <em>Remote Sensing</em> 12 (21). <a href="https://doi.org/10.3390/rs12213482">https://doi.org/10.3390/rs12213482</a>.
+<div id="ref-prietzel2019" class="csl-entry" role="listitem">
+Prietzel J, Wiesmeier M 2019. A concept to optimize the accuracy of soil surface area and SOC stock quantification in mountainous landscapes. Geoderma [Internet]. 356:113922. <a href="https://doi.org/10.1016/j.geoderma.2019.113922">https://doi.org/10.1016/j.geoderma.2019.113922</a>
 </div>
 </div>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -3567,13 +3000,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ss_00_intro.html" class="pagination-link" aria-label="Background">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></span>
+      <a href="./pr_01_surface.html" class="pagination-link" aria-label="Soil surface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Soil surface</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./ss_02_landscape.html" class="pagination-link" aria-label="Landscape">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Landscape</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./hr_00_intro.html" class="pagination-link" aria-label="Horizon description">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Horizon description</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

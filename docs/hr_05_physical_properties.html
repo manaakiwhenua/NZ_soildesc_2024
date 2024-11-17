@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.30">
+<meta name="generator" content="quarto-1.6.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Soil Description Handbook – 16&nbsp; Consistence</title>
+<title>18&nbsp; Consistence – Soil Description Handbook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -37,10 +56,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-98f67bc07761c90b1382d524a234aef8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -68,8 +87,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="neutral">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -78,13 +102,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hr_00_intro.html">Soil horizons</a></li><li class="breadcrumb-item"><a href="./hr_05_physical_properties.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Consistence</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hr_00_intro.html">Soil horizons</a></li><li class="breadcrumb-item"><a href="./hr_05_physical_properties.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Consistence</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -127,9 +151,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Setting and site</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Soil Setting</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -142,47 +166,53 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_01_location.html" class="sidebar-item-text sidebar-link">
+  <a href="./ss_02_location.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Location</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_02_landscape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Landscape</span></span></a>
+  <a href="./ss_03_landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Geomorphology</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_03_parent_material.html" class="sidebar-item-text sidebar-link">
+  <a href="./ss_04_parent_material.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Parent material</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_04_climate.html" class="sidebar-item-text sidebar-link">
+  <a href="./ss_05_climate.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Climate and Weather</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_05_biota.html" class="sidebar-item-text sidebar-link">
+  <a href="./ss_06_biota.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Biota</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_06_landuse_mgmt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Land use and management</span></span></a>
+  <a href="./ss_07_landuse_mgmt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Land cover, land use, and land management</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ss_08_soils.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Soils</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Soil profile</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Soil surface and profile</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -190,22 +220,28 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pr_00_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Profile</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The soil site</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pr_01_surface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Land surface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Soil surface</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pr_02_layers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Defining soil horizons</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Soil horizons</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -213,64 +249,52 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_00_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Horizons</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Horizon description</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hr_01_colour.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Horizon colour</span></span></a>
+  <a href="./hr_01_architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Horizon architecture</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hr_02_texture_stones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Soil texture and particle size distribution</span></span></a>
+  <a href="./hr_02_colour.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Horizon colour</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hr_03_structure_peds.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Structure</span></span></a>
+  <a href="./hr_03_texture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Soil texture</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_04_secondary_features.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Secondary features</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Secondary features</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_05_physical_properties.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Consistence</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Consistence</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_06_chemical_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field tests</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./hr_07_roots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Roots and plant materials</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./hr_08_voids.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Voids</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chemical properties</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Soil interpretations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -290,49 +314,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_02_horizon_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Horizon Properties</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_03_profile_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Profile properties</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Horizon properties</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_04_setting_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Setting interpretations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_05_nzsc_toplevel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">The New Zealand Soil Classification</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Soil Setting properties</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_06_nzsc_familysibling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">NZSC Family and Sibling</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_07_luc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">NZ Land Use Classification</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_08_wrb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">The World Reference Base for Soil Resources</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_09_suitability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Crop Suitability Assessments</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">NZSC Family and Sibling</span></span></a>
   </div>
 </li>
       </ul>
@@ -345,9 +339,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -372,14 +366,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ap_04_sampling_programs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Sampling programs</span></span></a>
+  <a href="./ap_04_glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ap_05_glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+  <a href="./changelog.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Changes in the new edition</span></span></a>
   </div>
 </li>
       </ul>
@@ -394,32 +388,35 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#cohesive-vs-non-cohesive" id="toc-cohesive-vs-non-cohesive" class="nav-link active" data-scroll-target="#cohesive-vs-non-cohesive"><span class="header-section-number">16.1</span> Cohesive vs non Cohesive</a></li>
-  <li><a href="#remoulding" id="toc-remoulding" class="nav-link" data-scroll-target="#remoulding"><span class="header-section-number">16.2</span> Remoulding</a></li>
-  <li><a href="#plasticity" id="toc-plasticity" class="nav-link" data-scroll-target="#plasticity"><span class="header-section-number">16.3</span> Plasticity</a></li>
-  <li><a href="#stickiness" id="toc-stickiness" class="nav-link" data-scroll-target="#stickiness"><span class="header-section-number">16.4</span> Stickiness</a></li>
-  <li><a href="#dilatency" id="toc-dilatency" class="nav-link" data-scroll-target="#dilatency"><span class="header-section-number">16.5</span> Dilatency</a></li>
-  <li><a href="#thixotropy" id="toc-thixotropy" class="nav-link" data-scroll-target="#thixotropy"><span class="header-section-number">16.6</span> Thixotropy</a></li>
-  <li><a href="#penetration-resistance" id="toc-penetration-resistance" class="nav-link" data-scroll-target="#penetration-resistance"><span class="header-section-number">16.7</span> Penetration resistance</a></li>
-  <li><a href="#particle-packing" id="toc-particle-packing" class="nav-link" data-scroll-target="#particle-packing"><span class="header-section-number">16.8</span> Particle Packing</a></li>
-  <li><a href="#unconfined-strength" id="toc-unconfined-strength" class="nav-link" data-scroll-target="#unconfined-strength"><span class="header-section-number">16.9</span> Unconfined strength</a>
+  <li><a href="#sec-dn-prep" id="toc-sec-dn-prep" class="nav-link active" data-scroll-target="#sec-dn-prep"><span class="header-section-number">18.1</span> Preparing for consistence assessment</a>
   <ul class="collapse">
-  <li><a href="#remoulded-strength" id="toc-remoulded-strength" class="nav-link" data-scroll-target="#remoulded-strength"><span class="header-section-number">16.9.1</span> Remoulded strength</a></li>
-  <li><a href="#strength-at-plastic-limit" id="toc-strength-at-plastic-limit" class="nav-link" data-scroll-target="#strength-at-plastic-limit"><span class="header-section-number">16.9.2</span> Strength at plastic limit</a></li>
-  <li><a href="#sensitivity" id="toc-sensitivity" class="nav-link" data-scroll-target="#sensitivity"><span class="header-section-number">16.9.3</span> Sensitivity</a></li>
+  <li><a href="#sec-cn-dryco" id="toc-sec-cn-dryco" class="nav-link" data-scroll-target="#sec-cn-dryco"><span class="header-section-number">18.1.1</span> Dry coherence</a></li>
   </ul></li>
-  <li><a href="#mode-of-failure" id="toc-mode-of-failure" class="nav-link" data-scroll-target="#mode-of-failure"><span class="header-section-number">16.10</span> Mode of failure</a></li>
-  <li><a href="#fluidity" id="toc-fluidity" class="nav-link" data-scroll-target="#fluidity"><span class="header-section-number">16.11</span> Fluidity</a></li>
-  <li><a href="#induration" id="toc-induration" class="nav-link" data-scroll-target="#induration"><span class="header-section-number">16.12</span> Induration</a></li>
+  <li><a href="#sec-cn-str" id="toc-sec-cn-str" class="nav-link" data-scroll-target="#sec-cn-str"><span class="header-section-number">18.2</span> Strength</a>
+  <ul class="collapse">
+  <li><a href="#sec-cn-stru" id="toc-sec-cn-stru" class="nav-link" data-scroll-target="#sec-cn-stru"><span class="header-section-number">18.2.1</span> Unconfined soil strength</a></li>
+  <li><a href="#sec-cn-stra" id="toc-sec-cn-stra" class="nav-link" data-scroll-target="#sec-cn-stra"><span class="header-section-number">18.2.2</span> Unconfined aggregate strength</a></li>
+  <li><a href="#sec-cn-strr" id="toc-sec-cn-strr" class="nav-link" data-scroll-target="#sec-cn-strr"><span class="header-section-number">18.2.3</span> Remoulded strength</a></li>
+  <li><a href="#sec-cn-strp" id="toc-sec-cn-strp" class="nav-link" data-scroll-target="#sec-cn-strp"><span class="header-section-number">18.2.4</span> Strength at plastic limit</a></li>
+  </ul></li>
+  <li><a href="#sec-cn-sens" id="toc-sec-cn-sens" class="nav-link" data-scroll-target="#sec-cn-sens"><span class="header-section-number">18.3</span> Sensitivity</a></li>
+  <li><a href="#sec-cn-pla" id="toc-sec-cn-pla" class="nav-link" data-scroll-target="#sec-cn-pla"><span class="header-section-number">18.4</span> Plasticity</a></li>
+  <li><a href="#sec-cn-sti" id="toc-sec-cn-sti" class="nav-link" data-scroll-target="#sec-cn-sti"><span class="header-section-number">18.5</span> Stickiness</a></li>
+  <li><a href="#dilatency" id="toc-dilatency" class="nav-link" data-scroll-target="#dilatency"><span class="header-section-number">18.6</span> Dilatency</a></li>
+  <li><a href="#penetration-resistance" id="toc-penetration-resistance" class="nav-link" data-scroll-target="#penetration-resistance"><span class="header-section-number">18.7</span> Penetration resistance</a></li>
+  <li><a href="#particle-packing" id="toc-particle-packing" class="nav-link" data-scroll-target="#particle-packing"><span class="header-section-number">18.8</span> Particle Packing</a></li>
+  <li><a href="#sec-cn-fail" id="toc-sec-cn-fail" class="nav-link" data-scroll-target="#sec-cn-fail"><span class="header-section-number">18.9</span> Mode of failure</a></li>
+  <li><a href="#sec-cn-flu" id="toc-sec-cn-flu" class="nav-link" data-scroll-target="#sec-cn-flu"><span class="header-section-number">18.10</span> Fluidity</a></li>
+  <li><a href="#sec-cn-ind" id="toc-sec-cn-ind" class="nav-link" data-scroll-target="#sec-cn-ind"><span class="header-section-number">18.11</span> Induration</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hr_00_intro.html">Soil horizons</a></li><li class="breadcrumb-item"><a href="./hr_05_physical_properties.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Consistence</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hr_00_intro.html">Soil horizons</a></li><li class="breadcrumb-item"><a href="./hr_05_physical_properties.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Consistence</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Consistence</span></h1>
+<h1 class="title"><span id="sec-cons" class="quarto-section-identifier"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Consistence</span></span></h1>
 </div>
 
 
@@ -431,7 +428,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 6, 2024</p>
+      <p class="date-modified">November 18, 2024</p>
     </div>
   </div>
     
@@ -442,138 +439,4868 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><span class="milne">Consistence is a general term for the field-assessed behaviour of soil materials in response to applied stress over a range of soil-water states from wet to dry. The consistence properties described are strength, failure, fluidity, penetration resistance, packing, sensitivity, induration, plasticity, stickiness, dilatancy, and dry coherence.</span></p>
+<p>Consistency tests should be performed down-profile, with at least one sample tested per horizon. Samples should be taken from the mid-point of each horizon. Additional samples in transition zones may also be of interest.</p>
+<div id="nte-consnzsc" class="callout callout-style-simple callout-note callout-titled" title="Consistence and the NZSC">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;18.1: Consistence and the NZSC
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For classifying using the NZSC, particular tests down to a certain depth may be required. At the order level:</p>
 <ul>
-<li>context and use</li>
-<li>note that some of these assessments can only be reliably conducted on undisturbed samples of soil, which usually rules out cored or augered samples
-<ul>
-<li>need alternatives for those?</li>
-</ul></li>
-<li>how to sample for these tests</li>
-<li>may need to complete assessments post-field</li>
-<li>expected accuracy vs lab tests (low)</li>
+<li><strong>Gley soils:</strong> must not have any moderately or very fluid (<a href="#sec-cn-flu" class="quarto-xref"><span>Section 18.10</span></a>) layers within 30 cm of the soil surface. Unconfined soil strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 18.2.1</span></a>) and cementation (<a href="#sec-cn-ind" class="quarto-xref"><span>Section 18.11</span></a>) tests may be required to confirm absence of an underlying fragipan.</li>
+<li><strong>Ultic soils:</strong> need an assessment of soil strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 18.2.1</span></a>) in the B horizon under moist conditions. May need assessment of failure mode (<a href="#sec-cn-fail" class="quarto-xref"><span>Section 18.9</span></a>) over a range of moisture conditions to rule out oxidic or cutanoxidic horizons. May need assessment of sensitivity (<a href="#sec-cn-sens" class="quarto-xref"><span>Section 18.3</span></a>) and stickiness (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 18.5</span></a>) to rule out allophanic soil materials.</li>
+<li><strong>Podzols:</strong> may need unconfined strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 18.2.1</span></a>) and failure mode (<a href="#sec-cn-fail" class="quarto-xref"><span>Section 18.9</span></a>) tests to help identify a Podzolic B horizon, as well as the presence of humus- and ortstein-pans.</li>
+<li><strong>Allophanic soils:</strong> may need assessment of sensitivity (<a href="#sec-cn-sens" class="quarto-xref"><span>Section 18.3</span></a>) and stickiness (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 18.5</span></a>) to help confirm allophanic soil materials.</li>
+<li><strong>Melanic soils:</strong> may require stickiness assessment (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 18.5</span></a>) in the B horizon.</li>
+<li><strong>Semiarid soils:</strong> may require cementation tests (<a href="#sec-cn-ind" class="quarto-xref"><span>Section 18.11</span></a>) to confirm fragipan absence.</li>
+<li><strong>Oxidic soils:</strong> May need assessment of ped strength (<a href="#sec-cn-stra" class="quarto-xref"><span>Section 18.2.2</span></a>), soil strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 18.2.1</span></a>), and failure mode (<a href="#sec-cn-fail" class="quarto-xref"><span>Section 18.9</span></a>) over a range of moisture conditions to confirm presence of an oxidic horizon. Stickiness (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 18.5</span></a>) and plasticity (<a href="#sec-cn-pla" class="quarto-xref"><span>Section 18.4</span></a>) may also be helpful.</li>
+<li><strong>Granular soils:</strong> May need assessment of ped strength (<a href="#sec-cn-stra" class="quarto-xref"><span>Section 18.2.2</span></a>), soil strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 18.2.1</span></a>), and failure mode (<a href="#sec-cn-fail" class="quarto-xref"><span>Section 18.9</span></a>) over a range of moisture conditions to confirm presence of a cutanoxidic horizon. Stickiness (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 18.5</span></a>) and plasticity (<a href="#sec-cn-pla" class="quarto-xref"><span>Section 18.4</span></a>) may also be helpful.</li>
+<li><strong>Pallic soils:</strong> may require cementation tests (<a href="#sec-cn-ind" class="quarto-xref"><span>Section 18.11</span></a>) to confirm fragipan presence. May require assessment of failure mode (<a href="#sec-cn-fail" class="quarto-xref"><span>Section 18.9</span></a>) to help confirm Brittle-B horizon presence. May require ped strength assessment in the B horizon.</li>
+<li><strong>Recent soils:</strong> must not have any moderately or very fluid (<a href="#sec-cn-flu" class="quarto-xref"><span>Section 18.10</span></a>) layers within 30 cm of the soil surface.</li>
 </ul>
-<section id="cohesive-vs-non-cohesive" class="level2" data-number="16.1">
-<h2 data-number="16.1" class="anchored" data-anchor-id="cohesive-vs-non-cohesive"><span class="header-section-number">16.1</span> Cohesive vs non Cohesive</h2>
+</div>
+</div>
+</div>
+<section id="sec-dn-prep" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="sec-dn-prep"><span class="header-section-number">18.1</span> Preparing for consistence assessment</h2>
+<p><span class="milne">The nature of the soil materials in each horizon determines what tests can and should be done. The first step is to determine if the sample is cohesive.</span></p>
 <ul>
-<li>test instructions, cross link to remoulding, dilatency and plasticity tests (these are moved up front as well)</li>
-<li>Note: that flow chart in fig 13 can literally just be a table</li>
-<li>talk about dry coherence test here rather than 10 pages later</li>
+<li><span class="milne"><strong>Cohesive soil materials</strong> may have plasticity and stickiness characteristics and have a strength which can be measured in unconfined compression. All listed properties, except particle packing, can be described for non-gravelly, cohesive soils.</span></li>
+<li><span class="milne"><strong>Non-cohesive soil materials</strong> have no shear resistance other than that developed by internal friction between grains. Non-cohesive soil materials, by definition, have no unconfined dry strength or plasticity, and the only property that can be meaningfully described is degree of packing or particle packing.</span></li>
 </ul>
-</section>
-<section id="remoulding" class="level2" data-number="16.2">
-<h2 data-number="16.2" class="anchored" data-anchor-id="remoulding"><span class="header-section-number">16.2</span> Remoulding</h2>
-<ul>
-<li>currently missing clear instructions</li>
-</ul>
-</section>
-<section id="plasticity" class="level2" data-number="16.3">
-<h2 data-number="16.3" class="anchored" data-anchor-id="plasticity"><span class="header-section-number">16.3</span> Plasticity</h2>
-<ul>
-<li>test instructions</li>
-<li>interpretation</li>
-</ul>
-</section>
-<section id="stickiness" class="level2" data-number="16.4">
-<h2 data-number="16.4" class="anchored" data-anchor-id="stickiness"><span class="header-section-number">16.4</span> Stickiness</h2>
-<ul>
-<li>(moving up because easy to do right after plasticity test)</li>
-<li>instructions</li>
-<li>interpretation</li>
-</ul>
-</section>
-<section id="dilatency" class="level2" data-number="16.5">
-<h2 data-number="16.5" class="anchored" data-anchor-id="dilatency"><span class="header-section-number">16.5</span> Dilatency</h2>
-<ul>
-<li>test instructions</li>
-<li>interpretation</li>
-</ul>
-</section>
-<section id="thixotropy" class="level2" data-number="16.6">
-<h2 data-number="16.6" class="anchored" data-anchor-id="thixotropy"><span class="header-section-number">16.6</span> Thixotropy</h2>
-<ul>
-<li>instructions</li>
-<li>interpretation</li>
-</ul>
-</section>
-<section id="penetration-resistance" class="level2" data-number="16.7">
-<h2 data-number="16.7" class="anchored" data-anchor-id="penetration-resistance"><span class="header-section-number">16.7</span> Penetration resistance</h2>
-<ul>
-<li>reconcile with unconfined strength</li>
-<li>moving up to before other tests as an undisturbed face is required</li>
-<li>what do we keep? Small penetrometer accuracy questionable (add refs), not commonly used at present - but Table 16 requires no gear</li>
-</ul>
-</section>
-<section id="particle-packing" class="level2" data-number="16.8">
-<h2 data-number="16.8" class="anchored" data-anchor-id="particle-packing"><span class="header-section-number">16.8</span> Particle Packing</h2>
-<ul>
-<li>non-cohesive soils</li>
-<li>do we keep all of this or just T19?</li>
-</ul>
-</section>
-<section id="unconfined-strength" class="level2" data-number="16.9">
-<h2 data-number="16.9" class="anchored" data-anchor-id="unconfined-strength"><span class="header-section-number">16.9</span> Unconfined strength</h2>
-<ul>
-<li>more clear distinction that two types of strength may be apparent (soil mass, individual peds)</li>
-<li>test instructions</li>
-<li>use of a pinch gauge for hand strength calibration (Drohan et al, 2020)</li>
-<li>interpretation
-<ul>
-<li>SMap specific information</li>
-</ul></li>
-<li>T13 (reconcile with WRB field guide - looks almost identical)</li>
-</ul>
-<section id="remoulded-strength" class="level3" data-number="16.9.1">
-<h3 data-number="16.9.1" class="anchored" data-anchor-id="remoulded-strength"><span class="header-section-number">16.9.1</span> Remoulded strength</h3>
-<ul>
-<li>instructions</li>
-</ul>
-</section>
-<section id="strength-at-plastic-limit" class="level3" data-number="16.9.2">
-<h3 data-number="16.9.2" class="anchored" data-anchor-id="strength-at-plastic-limit"><span class="header-section-number">16.9.2</span> Strength at plastic limit</h3>
-<ul>
-<li>do we keep this?</li>
-</ul>
-</section>
-<section id="sensitivity" class="level3" data-number="16.9.3">
-<h3 data-number="16.9.3" class="anchored" data-anchor-id="sensitivity"><span class="header-section-number">16.9.3</span> Sensitivity</h3>
-<ul>
-<li>ratio of natural to remoulded</li>
-<li>instructions</li>
-<li>when not to bother</li>
-<li>interpretation</li>
-</ul>
+<p><span class="milne">The range of properties which can be described in gravelly, cohesive soils varies with gravel content. In practice, this depends on the feasibility of obtaining samples for the required tests.</span></p>
+<p><span class="milne">The distinction between cohesive and non-cohesive is recognised by performing moulding, plasticity, and dilatancy tests in the following sequence (<a href="#fig-cn-cohes" class="quarto-xref">Figure&nbsp;<span>18.1</span></a>).</span> Where doubt still remains after these tests have been completed, the dry coherence test (<a href="#sec-cn-dryco" class="quarto-xref"><span>Section 18.1.1</span></a>) may be necessary.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-cn-cohes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cn-cohes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-cn-cohes">flowchart TD
+  q1["Can a sample cube be formed\n from remoulded material?"] --&gt;|yes| q2[Is the material plastic?]
+  q2 ----&gt;|yes| a1([Cohesive])
+  q1 --&gt;|no| q3[Is the material plastic?]
+  q3 --&gt;|yes| q4
+  q2 --&gt;|no| q4["Does the material have a\n fast positive reaction to\n the dilatency test?"]
+  q4 --&gt;|no| q5["Does the material have a\n distinctly negative reaction to\n the dilatency test?"]
+  q4 ---&gt;|yes| a2
+  q3 ----&gt;|no| a2([Non-cohesive])
+  q5 --&gt;|yes| a1
+  q5 --&gt;|no| a2
+
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cn-cohes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18.1: Determining sample cohesion
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="sec-cn-dryco" class="level3" data-number="18.1.1">
+<h3 data-number="18.1.1" class="anchored" data-anchor-id="sec-cn-dryco"><span class="header-section-number">18.1.1</span> Dry coherence</h3>
+<ol type="1">
+<li>Remould a 30 mm test sample into a cube, and air-dry.</li>
+<li>If the cube collapses under its own weight or after being lightly touched, treat the soil as non-cohesive.</li>
+</ol>
 </section>
 </section>
-<section id="mode-of-failure" class="level2" data-number="16.10">
-<h2 data-number="16.10" class="anchored" data-anchor-id="mode-of-failure"><span class="header-section-number">16.10</span> Mode of failure</h2>
+<section id="sec-cn-str" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="sec-cn-str"><span class="header-section-number">18.2</span> Strength</h2>
+<p>Strength is also known as ‘resistance to crushing’. This is assessed using hand or body-weight strength, so the user must calibrate themselves against the classes in <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>18.1</span></a>. <span class="citation" data-cites="drohan2020">Drohan et al. (<a href="references.html#ref-drohan2020" role="doc-biblioref">2020</a>)</span> discuss various options for calibration, including the use of pinch gauges or push-pull gauges to learn what different levels of force feel like.</p>
+<p>Each of the tests in this section are evaluated against <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>18.1</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-cn-str" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cn-str-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;18.1: Strength (resistance to crushing) classes
+</figcaption>
+<div aria-describedby="tbl-cn-str-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="rowsqbobkj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rowsqbobkj table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#rowsqbobkj thead, #rowsqbobkj tbody, #rowsqbobkj tfoot, #rowsqbobkj tr, #rowsqbobkj td, #rowsqbobkj th {
+  border-style: none;
+}
+
+#rowsqbobkj p {
+  margin: 0;
+  padding: 0;
+}
+
+#rowsqbobkj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#rowsqbobkj .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#rowsqbobkj .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#rowsqbobkj .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#rowsqbobkj .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rowsqbobkj .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rowsqbobkj .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rowsqbobkj .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#rowsqbobkj .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#rowsqbobkj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#rowsqbobkj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#rowsqbobkj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#rowsqbobkj .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#rowsqbobkj .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#rowsqbobkj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#rowsqbobkj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#rowsqbobkj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#rowsqbobkj .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#rowsqbobkj .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rowsqbobkj .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#rowsqbobkj .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#rowsqbobkj .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#rowsqbobkj .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rowsqbobkj .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#rowsqbobkj .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#rowsqbobkj .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rowsqbobkj .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rowsqbobkj .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#rowsqbobkj .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rowsqbobkj .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#rowsqbobkj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rowsqbobkj .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rowsqbobkj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rowsqbobkj .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rowsqbobkj .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rowsqbobkj .gt_left {
+  text-align: left;
+}
+
+#rowsqbobkj .gt_center {
+  text-align: center;
+}
+
+#rowsqbobkj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#rowsqbobkj .gt_font_normal {
+  font-weight: normal;
+}
+
+#rowsqbobkj .gt_font_bold {
+  font-weight: bold;
+}
+
+#rowsqbobkj .gt_font_italic {
+  font-style: italic;
+}
+
+#rowsqbobkj .gt_super {
+  font-size: 65%;
+}
+
+#rowsqbobkj .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#rowsqbobkj .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#rowsqbobkj .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#rowsqbobkj .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#rowsqbobkj .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#rowsqbobkj .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#rowsqbobkj .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#rowsqbobkj .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#rowsqbobkj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Failure_cond" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Failure condition</th>
+<th id="amt_force_n" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Force required (N)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">1</td>
+<td class="gt_row gt_left" headers="Name">Very Weak</td>
+<td class="gt_row gt_left" headers="Failure_cond">Very gentle force in hand</td>
+<td class="gt_row gt_left" headers="amt_force_n">&lt;&nbsp;8</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">2</td>
+<td class="gt_row gt_left" headers="Name">Weak</td>
+<td class="gt_row gt_left" headers="Failure_cond">Gentle force in hand</td>
+<td class="gt_row gt_left" headers="amt_force_n">8-20</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">3</td>
+<td class="gt_row gt_left" headers="Name">Slightly firm</td>
+<td class="gt_row gt_left" headers="Failure_cond">Moderate force in hand</td>
+<td class="gt_row gt_left" headers="amt_force_n">20-40</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">4</td>
+<td class="gt_row gt_left" headers="Name">Firm</td>
+<td class="gt_row gt_left" headers="Failure_cond">Strong/maximum force in hand</td>
+<td class="gt_row gt_left" headers="amt_force_n">40-75</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">5</td>
+<td class="gt_row gt_left" headers="Name">Very firm</td>
+<td class="gt_row gt_left" headers="Failure_cond">Gentle force underfoot</td>
+<td class="gt_row gt_left" headers="amt_force_n">75-150</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">6</td>
+<td class="gt_row gt_left" headers="Name">Hard</td>
+<td class="gt_row gt_left" headers="Failure_cond">Full body weight (~80&nbsp;kg) applied slowly</td>
+<td class="gt_row gt_left" headers="amt_force_n">150-800</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">7</td>
+<td class="gt_row gt_left" headers="Name">Very hard</td>
+<td class="gt_row gt_left" headers="Failure_cond">Withstands full body weight</td>
+<td class="gt_row gt_left" headers="amt_force_n">&gt;&nbsp;800</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<section id="sec-cn-stru" class="level3" data-number="18.2.1">
+<h3 data-number="18.2.1" class="anchored" data-anchor-id="sec-cn-stru"><span class="header-section-number">18.2.1</span> Unconfined soil strength</h3>
 <ul>
-<li>link more clearly to NZSC
-<ul>
-<li>cutanoxidic horizon - behaviour varies significantly with water content</li>
-<li>fragipan - requires brittle failure when moist</li>
-<li>organic material - deformable in field condition</li>
-<li>Oxidic - consistently friable across moisture states</li>
-</ul></li>
+<li>Test at observed field moisture condition.</li>
+<li>If a test cube cannot be formed, the result is <span class="ceg">1</span> ‘Very Weak’ (see <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>18.1</span></a>). This can happen when soil pedality is weak or absent, but also when pedality is strong and peds are small.</li>
+<li>This test cannot be reliably performed on auger-extracted samples.</li>
 </ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>Perform the test on an minimally disturbed 30&nbsp;mm cube.</li>
+<li>Hold the cube between the thumb and forefinger. Both digits must be straight and fully extended.</li>
+<li>Pinch down. If the cube can be crushed, rate the difficulty using categories <span class="ceg">1-4</span> in <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>18.1</span></a>.</li>
+<li>If the cube cannot be crushed by hand, attempt to crush it slowly underfoot, against a hard surface. Rate the difficulty using categories <span class="ceg">5-7</span> in <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>18.1</span></a>.</li>
+</ol>
 </section>
-<section id="fluidity" class="level2" data-number="16.11">
-<h2 data-number="16.11" class="anchored" data-anchor-id="fluidity"><span class="header-section-number">16.11</span> Fluidity</h2>
+<section id="sec-cn-stra" class="level3" data-number="18.2.2">
+<h3 data-number="18.2.2" class="anchored" data-anchor-id="sec-cn-stra"><span class="header-section-number">18.2.2</span> Unconfined aggregate strength</h3>
 <ul>
-<li>clearer statement that this test is for field-saturated soils only</li>
-<li>and that it effectively tests whether subaqueous deposition was the mode of emplacement</li>
-<li>instructions</li>
-<li>interpretation</li>
+<li>Test at observed field moisture condition.</li>
+<li>Test on whole peds where they are under 50&nbsp;mm in size. Larger peds should be shaved down to 30&nbsp;mm.</li>
+<li>This test cannot be reliably performed on auger-extracted samples.</li>
 </ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>Perform the test on an extracted ped.</li>
+<li>Hold the ped between the thumb and forefinger. Both digits must be straight and fully extended.</li>
+<li>Pinch down. If the ped can be crushed, rate the difficulty using categories <span class="ceg">1-4</span> in <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>18.1</span></a>.</li>
+<li>If the ped cannot be crushed by hand, attempt to crush it slowly underfoot, against a hard surface. Rate the difficulty using categories <span class="ceg">5-7</span> in <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>18.1</span></a>.</li>
+</ol>
 </section>
-<section id="induration" class="level2" data-number="16.12">
-<h2 data-number="16.12" class="anchored" data-anchor-id="induration"><span class="header-section-number">16.12</span> Induration</h2>
+<section id="sec-cn-strr" class="level3" data-number="18.2.3">
+<h3 data-number="18.2.3" class="anchored" data-anchor-id="sec-cn-strr"><span class="header-section-number">18.2.3</span> Remoulded strength</h3>
+<p>Some soils lose strength to a notable degree when remoulded, and their apparent clay content as estimated with hand texturing increases. This has implications for engineering.</p>
 <ul>
-<li>instructions</li>
-<li>interpretation</li>
-<li>NB not a field test</li>
+<li>Test at observed field moisture condition. <span class="todo">check</span></li>
+<li>Perform the test on an extracted 30&nbsp;mm cube or sample of equivalent volume.</li>
+<li>This test can be reliably performed on auger-extracted samples.</li>
 </ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>Perform the test on an extracted 30&nbsp;mm cube or sample of equivalent volume.</li>
+<li>Place the sample in a small plastic bag and seal with the air excluded (this maintains field moisture content while remoulding). Work the sample until its structure is completely broken down. This may take several minutes.</li>
+<li>Still in the bag, remould the soil into a cube and assess its strength against <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>18.1</span></a>.</li>
+<li>Use <a href="#tbl-cn-sens" class="quarto-xref">Table&nbsp;<span>18.2</span></a> to also record the ratio of unconfined to remoulded strength (‘sensitivity’, <a href="#sec-cn-sens" class="quarto-xref"><span>Section 18.3</span></a>).</li>
+</ol>
+</section>
+<section id="sec-cn-strp" class="level3" data-number="18.2.4">
+<h3 data-number="18.2.4" class="anchored" data-anchor-id="sec-cn-strp"><span class="header-section-number">18.2.4</span> Strength at plastic limit</h3>
+<p>Soil strength at the plastic limit has engineering implications. <span class="todo">expand pls</span></p>
+<ul>
+<li>Test at the soil’s plastic limit.</li>
+<li>Perform the test on an extracted 30&nbsp;mm cube or sample of equivalent volume.</li>
+<li>This test can be reliably performed on auger-extracted samples.</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>Work the sample until its structure is completely broken down. This may take several minutes. Keep adding small amounts of water so that the sample is almost, but not quite, saturated.</li>
+<li>Remould the soil into a cube and assess its strength against <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>18.1</span></a>.</li>
+</ol>
+</section>
+</section>
+<section id="sec-cn-sens" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="sec-cn-sens"><span class="header-section-number">18.3</span> Sensitivity</h2>
+<p>In soils with an unconfined strength class of <span class="ceg">4</span> firm or greater, sensitivity is reported as the ratio of unconfined soil strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 18.2.1</span></a>) to remoulded strength (<a href="#sec-cn-strr" class="quarto-xref"><span>Section 18.2.3</span></a>). For weaker soils, the ‘shear test’ is performed. The two methods are assigned equivalent classes in <a href="#tbl-cn-sens" class="quarto-xref">Table&nbsp;<span>18.2</span></a>.</p>
+<ul>
+<li>Test soil at a moist or wet state.</li>
+<li>Perform the test on a minimally disturbed 30&nbsp;mm sample cube.</li>
+<li>This test cannot be reliably performed on auger-extracted samples.</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>Hold the sample cube between extended thumb and forefinger as for <a href="#sec-cn-str" class="quarto-xref"><span>Section 18.2</span></a>.</li>
+<li>Pinch and press the sample to create a lateral, ‘shear’ force, moving the finger forward and down over the thumb.</li>
+<li>Assess the sample behaviour against <a href="#tbl-cn-sens" class="quarto-xref">Table&nbsp;<span>18.2</span></a>.</li>
+</ol>
+<p>Note that this test is not analogous to the shear vane test of <span class="citation" data-cites="newzealandgeotechnicalsociety2005">New Zealand Geotechnical Society (<a href="references.html#ref-newzealandgeotechnicalsociety2005" role="doc-biblioref">2005</a>)</span> and cannot be used as a substitute.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-cn-sens" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cn-sens-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;18.2: Sensitivity (strength loss on remoulding) classes
+</figcaption>
+<div aria-describedby="tbl-cn-sens-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="lbdsczrvtl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lbdsczrvtl table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lbdsczrvtl thead, #lbdsczrvtl tbody, #lbdsczrvtl tfoot, #lbdsczrvtl tr, #lbdsczrvtl td, #lbdsczrvtl th {
+  border-style: none;
+}
+
+#lbdsczrvtl p {
+  margin: 0;
+  padding: 0;
+}
+
+#lbdsczrvtl .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lbdsczrvtl .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#lbdsczrvtl .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lbdsczrvtl .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lbdsczrvtl .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lbdsczrvtl .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lbdsczrvtl .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lbdsczrvtl .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lbdsczrvtl .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lbdsczrvtl .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lbdsczrvtl .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lbdsczrvtl .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lbdsczrvtl .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#lbdsczrvtl .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#lbdsczrvtl .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lbdsczrvtl .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lbdsczrvtl .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lbdsczrvtl .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lbdsczrvtl .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lbdsczrvtl .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lbdsczrvtl .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lbdsczrvtl .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#lbdsczrvtl .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lbdsczrvtl .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lbdsczrvtl .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lbdsczrvtl .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lbdsczrvtl .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lbdsczrvtl .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lbdsczrvtl .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lbdsczrvtl .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lbdsczrvtl .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lbdsczrvtl .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lbdsczrvtl .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lbdsczrvtl .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lbdsczrvtl .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lbdsczrvtl .gt_left {
+  text-align: left;
+}
+
+#lbdsczrvtl .gt_center {
+  text-align: center;
+}
+
+#lbdsczrvtl .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lbdsczrvtl .gt_font_normal {
+  font-weight: normal;
+}
+
+#lbdsczrvtl .gt_font_bold {
+  font-weight: bold;
+}
+
+#lbdsczrvtl .gt_font_italic {
+  font-style: italic;
+}
+
+#lbdsczrvtl .gt_super {
+  font-size: 65%;
+}
+
+#lbdsczrvtl .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#lbdsczrvtl .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lbdsczrvtl .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lbdsczrvtl .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lbdsczrvtl .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lbdsczrvtl .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lbdsczrvtl .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#lbdsczrvtl .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#lbdsczrvtl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="rel_loss" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Relative strength loss on remoulding (classes)</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Shear test behaviour</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">1</td>
+<td class="gt_row gt_left" headers="Name">Non-sensitive</td>
+<td class="gt_row gt_left" headers="rel_loss">0-1</td>
+<td class="gt_row gt_left" headers="Description">the sample does not smear under shear force, and may soften only slightly</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">2</td>
+<td class="gt_row gt_left" headers="Name">Weakly sensitive</td>
+<td class="gt_row gt_left" headers="rel_loss">2</td>
+<td class="gt_row gt_left" headers="Description">the sample smears and skids under moderate shear force (20-40&nbsp;kPa)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">3</td>
+<td class="gt_row gt_left" headers="Name">Moderately sensitive</td>
+<td class="gt_row gt_left" headers="rel_loss">3</td>
+<td class="gt_row gt_left" headers="Description">the sample suddenly turns fluid under moderate shear force (20-40&nbsp;kPa) and the fingers skid. Some free water is evident on fingers after shearing</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">4</td>
+<td class="gt_row gt_left" headers="Name">Very sensitive</td>
+<td class="gt_row gt_left" headers="rel_loss">&gt;3</td>
+<td class="gt_row gt_left" headers="Description">the soil suddenly turns fluid and slippery under only gentle shear force (&lt;20&nbsp;kPa). Free water is easily seen on the fingers after shearing</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="sec-cn-pla" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="sec-cn-pla"><span class="header-section-number">18.4</span> Plasticity</h2>
+<p><span class="milne">Plasticity is the capacity of soil material to change shape continuously when stress is applied and to retain that shape after the removal of stress.</span></p>
+<ul>
+<li>Test soil at a wet state.</li>
+<li>Perform the test on 3-4 cm<sup>2</sup> of soil.</li>
+<li>This test can be reliably performed on auger-extracted samples.</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>Thoroughly remould the sample, keeping it in a wet state.</li>
+<li>Adjust the water content to slightly above the plastic limit. <span class="milne">In practice this water content is slightly above that at which a 4-mm diameter roll of sample crumbles but less than that when sample becomes sticky (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 18.5</span></a>), if stickiness is exhibited.</span></li>
+<li>Attempt to roll the sample out into a rod of 40 mm length. Assess the minimum achievable diameter of the rod and its behaviour using <a href="#tbl-cn-plas" class="quarto-xref">Table&nbsp;<span>18.3</span></a>.</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div id="tbl-cn-plas" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cn-plas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;18.3: Plasticity classes
+</figcaption>
+<div aria-describedby="tbl-cn-plas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="vxvxfuslkp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vxvxfuslkp table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#vxvxfuslkp thead, #vxvxfuslkp tbody, #vxvxfuslkp tfoot, #vxvxfuslkp tr, #vxvxfuslkp td, #vxvxfuslkp th {
+  border-style: none;
+}
+
+#vxvxfuslkp p {
+  margin: 0;
+  padding: 0;
+}
+
+#vxvxfuslkp .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#vxvxfuslkp .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#vxvxfuslkp .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vxvxfuslkp .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vxvxfuslkp .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vxvxfuslkp .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vxvxfuslkp .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vxvxfuslkp .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#vxvxfuslkp .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#vxvxfuslkp .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#vxvxfuslkp .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#vxvxfuslkp .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#vxvxfuslkp .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#vxvxfuslkp .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#vxvxfuslkp .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vxvxfuslkp .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#vxvxfuslkp .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#vxvxfuslkp .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#vxvxfuslkp .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vxvxfuslkp .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#vxvxfuslkp .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#vxvxfuslkp .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#vxvxfuslkp .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vxvxfuslkp .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#vxvxfuslkp .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#vxvxfuslkp .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vxvxfuslkp .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vxvxfuslkp .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#vxvxfuslkp .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vxvxfuslkp .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#vxvxfuslkp .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vxvxfuslkp .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vxvxfuslkp .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vxvxfuslkp .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vxvxfuslkp .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vxvxfuslkp .gt_left {
+  text-align: left;
+}
+
+#vxvxfuslkp .gt_center {
+  text-align: center;
+}
+
+#vxvxfuslkp .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#vxvxfuslkp .gt_font_normal {
+  font-weight: normal;
+}
+
+#vxvxfuslkp .gt_font_bold {
+  font-weight: bold;
+}
+
+#vxvxfuslkp .gt_font_italic {
+  font-style: italic;
+}
+
+#vxvxfuslkp .gt_super {
+  font-size: 65%;
+}
+
+#vxvxfuslkp .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#vxvxfuslkp .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#vxvxfuslkp .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#vxvxfuslkp .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#vxvxfuslkp .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#vxvxfuslkp .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#vxvxfuslkp .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#vxvxfuslkp .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#vxvxfuslkp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">1</td>
+<td class="gt_row gt_left" headers="Name">Non-plastic</td>
+<td class="gt_row gt_left" headers="Description">A roll 40 mm long and 6 mm thick that supports its own weight cannot be formed.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">2</td>
+<td class="gt_row gt_left" headers="Name">Slightly plastic</td>
+<td class="gt_row gt_left" headers="Description">A roll 40 mm long and 6 mm thick can be formed and will support its own weight, but a roll 4 mm thick will not support its own weight.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">3</td>
+<td class="gt_row gt_left" headers="Name">Moderately plastic</td>
+<td class="gt_row gt_left" headers="Description">A roll 40 mm long and 4 mm diameter can be formed, and will support its own weight, but a roll 2 mm thick will not support its own weight.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">4</td>
+<td class="gt_row gt_left" headers="Name">Very plastic</td>
+<td class="gt_row gt_left" headers="Description">A roll 40 mm long and 2 mm thick can be formed and will support its own weight.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="sec-cn-sti" class="level2" data-number="18.5">
+<h2 data-number="18.5" class="anchored" data-anchor-id="sec-cn-sti"><span class="header-section-number">18.5</span> Stickiness</h2>
+<p><span class="milne">Stickiness is the degree to which remoulded soil adheres to foreign objects.</span></p>
+<ul>
+<li>Test soil at a wet state.</li>
+<li>Perform the test on 3-4 cm<sup>2</sup> of soil.</li>
+<li>This test can be reliably performed on auger-extracted samples.</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>Thoroughly remould the sample, keeping it in a wet state.</li>
+<li><span class="milne">Press the remoulded material between thumb and forefinger, and note its adherence to the fingers.</span></li>
+<li><span class="milne">Adjust the water content by working the sample in the hand to remove water, or by adding water as necessary to achieve the maximum stickiness that the material will exhibit</span></li>
+<li>Assess maximum stickiness and record using <a href="#tbl-cn-stik" class="quarto-xref">Table&nbsp;<span>18.4</span></a>.</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div id="tbl-cn-stik" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cn-stik-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;18.4: Stickiness classes
+</figcaption>
+<div aria-describedby="tbl-cn-stik-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="bbvxstblhq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bbvxstblhq table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#bbvxstblhq thead, #bbvxstblhq tbody, #bbvxstblhq tfoot, #bbvxstblhq tr, #bbvxstblhq td, #bbvxstblhq th {
+  border-style: none;
+}
+
+#bbvxstblhq p {
+  margin: 0;
+  padding: 0;
+}
+
+#bbvxstblhq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#bbvxstblhq .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#bbvxstblhq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#bbvxstblhq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#bbvxstblhq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bbvxstblhq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bbvxstblhq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bbvxstblhq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#bbvxstblhq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#bbvxstblhq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#bbvxstblhq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#bbvxstblhq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#bbvxstblhq .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#bbvxstblhq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#bbvxstblhq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bbvxstblhq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#bbvxstblhq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#bbvxstblhq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#bbvxstblhq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bbvxstblhq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#bbvxstblhq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#bbvxstblhq .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#bbvxstblhq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bbvxstblhq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#bbvxstblhq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#bbvxstblhq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bbvxstblhq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bbvxstblhq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#bbvxstblhq .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bbvxstblhq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#bbvxstblhq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bbvxstblhq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bbvxstblhq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bbvxstblhq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bbvxstblhq .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bbvxstblhq .gt_left {
+  text-align: left;
+}
+
+#bbvxstblhq .gt_center {
+  text-align: center;
+}
+
+#bbvxstblhq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#bbvxstblhq .gt_font_normal {
+  font-weight: normal;
+}
+
+#bbvxstblhq .gt_font_bold {
+  font-weight: bold;
+}
+
+#bbvxstblhq .gt_font_italic {
+  font-style: italic;
+}
+
+#bbvxstblhq .gt_super {
+  font-size: 65%;
+}
+
+#bbvxstblhq .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#bbvxstblhq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#bbvxstblhq .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#bbvxstblhq .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#bbvxstblhq .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#bbvxstblhq .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#bbvxstblhq .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#bbvxstblhq .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#bbvxstblhq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">1</td>
+<td class="gt_row gt_left" headers="Name">Non-sticky</td>
+<td class="gt_row gt_left" headers="Description">After release of pressure, practically no soil material adheres to the thumb or forefinger</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">2</td>
+<td class="gt_row gt_left" headers="Name">Slightly sticky</td>
+<td class="gt_row gt_left" headers="Description">After release of pressure, soil material adheres perceptibly to both thumb and forefinger but, as the digits are separated, it tends to come off one or the other cleanly. The material is not stretched appreciably when the thumb and finger are separated</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">3</td>
+<td class="gt_row gt_left" headers="Name">Moderately sticky</td>
+<td class="gt_row gt_left" headers="Description">After release of pressure, soil material adheres to both thumb and forefinger and tends to stretch somewhat and pull apart rather than pulling free from either digit</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">4</td>
+<td class="gt_row gt_left" headers="Name">Very sticky</td>
+<td class="gt_row gt_left" headers="Description">After release of pressure, soil material adheres so strongly to both thumb and forefinger that it is decidedly stretched when they are separated, and finally pulls apart leaving part of the soil on thumb and part on the forefinger.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="dilatency" class="level2" data-number="18.6">
+<h2 data-number="18.6" class="anchored" data-anchor-id="dilatency"><span class="header-section-number">18.6</span> Dilatency</h2>
+<p><span class="milne">Dilatancy occurs due to volume change during shearing and is used as a criterion for the distinguishing non-cohesive from cohesive soil materials.</span></p>
+<ul>
+<li>Test soil at a moist to wet state.</li>
+<li>Perform the test on 3-4 cm<sup>2</sup> of soil.</li>
+<li>This test can be reliably performed on auger-extracted samples.</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>Adjust the soil to a moist to wet state.</li>
+<li>Roll into a ball ~30 mm diameter.</li>
+<li>Hold sample in upturned palm and slap the back of the hand containing the sample several times with the other hand.</li>
+</ol>
+<p><span class="milne">A dilatant reaction is shown by a shiny surface caused by water extrusion, and by a dull surface when the palm of the hand is folded to partly remould the sample, causing water to be drawn into the sample.</span> Record dilatent behaviour as a binary, <span class="ceg">true/false</span>.</p>
+</section>
+<section id="penetration-resistance" class="level2" data-number="18.7">
+<h2 data-number="18.7" class="anchored" data-anchor-id="penetration-resistance"><span class="header-section-number">18.7</span> Penetration resistance</h2>
+<p>Penetration resistance is the capacity of the soil, in its natural confined state, to resist penetration by rigid objects. This property is commonly related to strength by empirical means (<a href="#tbl-cn-penr" class="quarto-xref">Table&nbsp;<span>18.5</span></a>).</p>
+<ul>
+<li>This test requires a large pit or exposure</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>Expose a soil profile.</li>
+<li>Assess ease of penetrating a vertical face using <a href="#tbl-cn-penr" class="quarto-xref">Table&nbsp;<span>18.5</span></a>.</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div id="tbl-cn-penr" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cn-penr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;18.5: Penetration resistance classes
+</figcaption>
+<div aria-describedby="tbl-cn-penr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="zubanubrmt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zubanubrmt table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#zubanubrmt thead, #zubanubrmt tbody, #zubanubrmt tfoot, #zubanubrmt tr, #zubanubrmt td, #zubanubrmt th {
+  border-style: none;
+}
+
+#zubanubrmt p {
+  margin: 0;
+  padding: 0;
+}
+
+#zubanubrmt .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#zubanubrmt .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#zubanubrmt .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#zubanubrmt .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#zubanubrmt .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zubanubrmt .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zubanubrmt .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zubanubrmt .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#zubanubrmt .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#zubanubrmt .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#zubanubrmt .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#zubanubrmt .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#zubanubrmt .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#zubanubrmt .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#zubanubrmt .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#zubanubrmt .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#zubanubrmt .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#zubanubrmt .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#zubanubrmt .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zubanubrmt .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#zubanubrmt .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#zubanubrmt .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#zubanubrmt .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zubanubrmt .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#zubanubrmt .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#zubanubrmt .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zubanubrmt .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zubanubrmt .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#zubanubrmt .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zubanubrmt .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#zubanubrmt .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zubanubrmt .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zubanubrmt .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zubanubrmt .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zubanubrmt .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zubanubrmt .gt_left {
+  text-align: left;
+}
+
+#zubanubrmt .gt_center {
+  text-align: center;
+}
+
+#zubanubrmt .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#zubanubrmt .gt_font_normal {
+  font-weight: normal;
+}
+
+#zubanubrmt .gt_font_bold {
+  font-weight: bold;
+}
+
+#zubanubrmt .gt_font_italic {
+  font-style: italic;
+}
+
+#zubanubrmt .gt_super {
+  font-size: 65%;
+}
+
+#zubanubrmt .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#zubanubrmt .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#zubanubrmt .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#zubanubrmt .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#zubanubrmt .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#zubanubrmt .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#zubanubrmt .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#zubanubrmt .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#zubanubrmt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+<th id="kpa" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">kpa</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">1</td>
+<td class="gt_row gt_left" headers="Name">Extremely low</td>
+<td class="gt_row gt_left" headers="Description">Easily penetrated by fist</td>
+<td class="gt_row gt_left" headers="kpa">0-500</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">2</td>
+<td class="gt_row gt_left" headers="Name">Very low</td>
+<td class="gt_row gt_left" headers="Description">Easily penetrated by thumb</td>
+<td class="gt_row gt_left" headers="kpa">500 - 1000</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">3</td>
+<td class="gt_row gt_left" headers="Name">Low</td>
+<td class="gt_row gt_left" headers="Description">Readily indented by thumb but penetrated with considerable effort. Imprinted by finger with some effort.</td>
+<td class="gt_row gt_left" headers="kpa">1000 - 1500</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">4</td>
+<td class="gt_row gt_left" headers="Name">Moderate</td>
+<td class="gt_row gt_left" headers="Description">Readily indented by thumbail</td>
+<td class="gt_row gt_left" headers="kpa">1500-2200</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">5</td>
+<td class="gt_row gt_left" headers="Name">High</td>
+<td class="gt_row gt_left" headers="Description">Baraely imprinted by thumb or forefinger</td>
+<td class="gt_row gt_left" headers="kpa">2200 - 3000</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">6</td>
+<td class="gt_row gt_left" headers="Name">Very high</td>
+<td class="gt_row gt_left" headers="Description">Indented by thumbnail. No imprint by thumb or finger</td>
+<td class="gt_row gt_left" headers="kpa">3100 - 4000</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">7</td>
+<td class="gt_row gt_left" headers="Name">Extremely high</td>
+<td class="gt_row gt_left" headers="Description">Barely indented by thumbnail</td>
+<td class="gt_row gt_left" headers="kpa">&gt; 4000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="particle-packing" class="level2" data-number="18.8">
+<h2 data-number="18.8" class="anchored" data-anchor-id="particle-packing"><span class="header-section-number">18.8</span> Particle Packing</h2>
+<p>Particle packing assesses the stability of a gravelly soil.</p>
+<ul>
+<li>Test only on gravelly soils where strength cannot be assessed</li>
+<li>This test requires a large pit or exposure</li>
+<li>Do not test at wet or saturated field moisture conditions, as this is unsafe</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>Expose a gravelly soil profile.</li>
+<li>Assess ease of excavating and maintaining a vertical face using <a href="#tbl-cn-pack" class="quarto-xref">Table&nbsp;<span>18.6</span></a>.</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div id="tbl-cn-pack" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cn-pack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;18.6: Particle-packing classes for gravelly soils
+</figcaption>
+<div aria-describedby="tbl-cn-pack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="gspjgmczgw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gspjgmczgw table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#gspjgmczgw thead, #gspjgmczgw tbody, #gspjgmczgw tfoot, #gspjgmczgw tr, #gspjgmczgw td, #gspjgmczgw th {
+  border-style: none;
+}
+
+#gspjgmczgw p {
+  margin: 0;
+  padding: 0;
+}
+
+#gspjgmczgw .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#gspjgmczgw .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#gspjgmczgw .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#gspjgmczgw .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#gspjgmczgw .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gspjgmczgw .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gspjgmczgw .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gspjgmczgw .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#gspjgmczgw .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#gspjgmczgw .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#gspjgmczgw .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#gspjgmczgw .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#gspjgmczgw .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#gspjgmczgw .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#gspjgmczgw .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#gspjgmczgw .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#gspjgmczgw .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#gspjgmczgw .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#gspjgmczgw .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gspjgmczgw .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#gspjgmczgw .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#gspjgmczgw .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#gspjgmczgw .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gspjgmczgw .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#gspjgmczgw .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#gspjgmczgw .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gspjgmczgw .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gspjgmczgw .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#gspjgmczgw .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gspjgmczgw .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#gspjgmczgw .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gspjgmczgw .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gspjgmczgw .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gspjgmczgw .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gspjgmczgw .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gspjgmczgw .gt_left {
+  text-align: left;
+}
+
+#gspjgmczgw .gt_center {
+  text-align: center;
+}
+
+#gspjgmczgw .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#gspjgmczgw .gt_font_normal {
+  font-weight: normal;
+}
+
+#gspjgmczgw .gt_font_bold {
+  font-weight: bold;
+}
+
+#gspjgmczgw .gt_font_italic {
+  font-style: italic;
+}
+
+#gspjgmczgw .gt_super {
+  font-size: 65%;
+}
+
+#gspjgmczgw .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#gspjgmczgw .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#gspjgmczgw .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#gspjgmczgw .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#gspjgmczgw .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#gspjgmczgw .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#gspjgmczgw .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#gspjgmczgw .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#gspjgmczgw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">1</td>
+<td class="gt_row gt_left" headers="Name">Loose</td>
+<td class="gt_row gt_left" headers="Description">Easily dislodged by spade or pick; does not maintain a vertical face</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">2</td>
+<td class="gt_row gt_left" headers="Name">Compact</td>
+<td class="gt_row gt_left" headers="Description">Intermediate between loose and dense</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">3</td>
+<td class="gt_row gt_left" headers="Name">Dense</td>
+<td class="gt_row gt_left" headers="Description">Difficult to dislodge except with spade and by removing individual fragments; maintains a stable vertical face</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">4</td>
+<td class="gt_row gt_left" headers="Name">Very dense</td>
+<td class="gt_row gt_left" headers="Description">Very difficult to dislodge except by pick and removing individual fragments; maintains a stable vertical face</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="sec-cn-fail" class="level2" data-number="18.9">
+<h2 data-number="18.9" class="anchored" data-anchor-id="sec-cn-fail"><span class="header-section-number">18.9</span> Mode of failure</h2>
+<p><span class="milne">Failure is the manner in which unconfined soil yields to increasing stress.</span></p>
+<ul>
+<li>Test at observed field moisture condition.</li>
+<li>Perform the test on a minimally disturbed 30 mm cube or aggregate.</li>
+<li>If diagnosing Oxidic or Cutanoxidic soil material for the NZSC, repeat the test under dry to wet moisture conditions.</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>Perform the unconfined strength test according to <a href="#sec-cn-stru" class="quarto-xref"><span>Section 18.2.1</span></a>.</li>
+<li>At strengths of 4 or less, mode of failure can be observed. Assess and record per <a href="#tbl-cn-fail" class="quarto-xref">Table&nbsp;<span>18.7</span></a>.</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div id="tbl-cn-fail" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cn-fail-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;18.7: Failure mode classes
+</figcaption>
+<div aria-describedby="tbl-cn-fail-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="duajerznwv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#duajerznwv table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#duajerznwv thead, #duajerznwv tbody, #duajerznwv tfoot, #duajerznwv tr, #duajerznwv td, #duajerznwv th {
+  border-style: none;
+}
+
+#duajerznwv p {
+  margin: 0;
+  padding: 0;
+}
+
+#duajerznwv .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#duajerznwv .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#duajerznwv .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#duajerznwv .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#duajerznwv .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#duajerznwv .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#duajerznwv .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#duajerznwv .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#duajerznwv .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#duajerznwv .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#duajerznwv .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#duajerznwv .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#duajerznwv .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#duajerznwv .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#duajerznwv .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#duajerznwv .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#duajerznwv .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#duajerznwv .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#duajerznwv .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#duajerznwv .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#duajerznwv .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#duajerznwv .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#duajerznwv .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#duajerznwv .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#duajerznwv .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#duajerznwv .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#duajerznwv .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#duajerznwv .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#duajerznwv .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#duajerznwv .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#duajerznwv .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#duajerznwv .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#duajerznwv .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#duajerznwv .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#duajerznwv .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#duajerznwv .gt_left {
+  text-align: left;
+}
+
+#duajerznwv .gt_center {
+  text-align: center;
+}
+
+#duajerznwv .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#duajerznwv .gt_font_normal {
+  font-weight: normal;
+}
+
+#duajerznwv .gt_font_bold {
+  font-weight: bold;
+}
+
+#duajerznwv .gt_font_italic {
+  font-style: italic;
+}
+
+#duajerznwv .gt_super {
+  font-size: 65%;
+}
+
+#duajerznwv .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#duajerznwv .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#duajerznwv .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#duajerznwv .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#duajerznwv .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#duajerznwv .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#duajerznwv .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#duajerznwv .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#duajerznwv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">N</td>
+<td class="gt_row gt_left" headers="Name">Not determinable</td>
+<td class="gt_row gt_left" headers="Description">Soil is either too dry or too wet to reliably test</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">V</td>
+<td class="gt_row gt_left" headers="Name">Very friable</td>
+<td class="gt_row gt_left" headers="Description">Test specimen cannot be formed, or crumbles under very slight stress on crushing within the hand, into aggregates predominantly &lt;2&nbsp;mm in size. In most instances the test specimen is difficult to obtain.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">F</td>
+<td class="gt_row gt_left" headers="Name">Friable</td>
+<td class="gt_row gt_left" headers="Description">Test sample cannot be formed, or crumbles under very slight stress on crushing within the hand, into aggregates predominantly &gt;2&nbsp;mm in size, or crumbles under slight stress on crushing within the hand into aggregates predominantly &lt;2&nbsp;mm in size.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">B</td>
+<td class="gt_row gt_left" headers="Name">Brittle</td>
+<td class="gt_row gt_left" headers="Description">Under slowly increasing pressure between the extended thumb and forefinger, a test specimen retains its size and shape with few or no cracks until it fractures abruptly into aggregates predominantly &gt; 2 mm in size.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">S</td>
+<td class="gt_row gt_left" headers="Name">Semi-deformable</td>
+<td class="gt_row gt_left" headers="Description">Under increasing pressure between the extended thumb and forefinger the test specimen as a whole is perceptibly compressed in the direction along which pressure is exerted, but cracks develop and the specimen ruptures before it has been compressed to half its original thickness. Before rupture, parts crumble and fall away if the specimen is shaken while held between the thumb and forefinger.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">D</td>
+<td class="gt_row gt_left" headers="Name">Deformable</td>
+<td class="gt_row gt_left" headers="Description">Under slowly increasing pressure between the extended thumb and forefinger, the test specimen can be compressed to at least half its original thickness without the appearance of cracks and without rupture.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="sec-cn-flu" class="level2" data-number="18.10">
+<h2 data-number="18.10" class="anchored" data-anchor-id="sec-cn-flu"><span class="header-section-number">18.10</span> Fluidity</h2>
+<p>Fluidity tests whether saturated soils have an unconfined strength that is largely eliminated by saturation. Such materials were generally emplaced under water, have never been drained, have a fine texture that minimises gravity-based settling, and are not overlain by enough other sediment to have been compressed.</p>
+<ul>
+<li>Test soil at a saturated state.</li>
+<li>Only test soils that are saturated under field conditions.</li>
+<li>Perform the test on ~50 cm<sup>2</sup> of soil (a large handful).</li>
+<li>This test can be reliably performed on auger-extracted samples.</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>Extract the sample and squeeze firmly in the hand.</li>
+<li>Evaluate the sample behaviour using <a href="#tbl-cn-fluid" class="quarto-xref">Table&nbsp;<span>18.8</span></a>.</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div id="tbl-cn-fluid" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cn-fluid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;18.8: Fluidity classes
+</figcaption>
+<div aria-describedby="tbl-cn-fluid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="oouxxkbabx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#oouxxkbabx table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#oouxxkbabx thead, #oouxxkbabx tbody, #oouxxkbabx tfoot, #oouxxkbabx tr, #oouxxkbabx td, #oouxxkbabx th {
+  border-style: none;
+}
+
+#oouxxkbabx p {
+  margin: 0;
+  padding: 0;
+}
+
+#oouxxkbabx .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#oouxxkbabx .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#oouxxkbabx .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#oouxxkbabx .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#oouxxkbabx .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#oouxxkbabx .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#oouxxkbabx .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#oouxxkbabx .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#oouxxkbabx .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#oouxxkbabx .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#oouxxkbabx .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#oouxxkbabx .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#oouxxkbabx .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#oouxxkbabx .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#oouxxkbabx .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#oouxxkbabx .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#oouxxkbabx .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#oouxxkbabx .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#oouxxkbabx .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#oouxxkbabx .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#oouxxkbabx .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#oouxxkbabx .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#oouxxkbabx .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#oouxxkbabx .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#oouxxkbabx .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#oouxxkbabx .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#oouxxkbabx .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#oouxxkbabx .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#oouxxkbabx .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#oouxxkbabx .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#oouxxkbabx .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#oouxxkbabx .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#oouxxkbabx .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#oouxxkbabx .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#oouxxkbabx .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#oouxxkbabx .gt_left {
+  text-align: left;
+}
+
+#oouxxkbabx .gt_center {
+  text-align: center;
+}
+
+#oouxxkbabx .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#oouxxkbabx .gt_font_normal {
+  font-weight: normal;
+}
+
+#oouxxkbabx .gt_font_bold {
+  font-weight: bold;
+}
+
+#oouxxkbabx .gt_font_italic {
+  font-style: italic;
+}
+
+#oouxxkbabx .gt_super {
+  font-size: 65%;
+}
+
+#oouxxkbabx .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#oouxxkbabx .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#oouxxkbabx .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#oouxxkbabx .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#oouxxkbabx .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#oouxxkbabx .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#oouxxkbabx .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#oouxxkbabx .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#oouxxkbabx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">1</td>
+<td class="gt_row gt_left" headers="Name">Slightly fluid</td>
+<td class="gt_row gt_left" headers="Description">Some material tends to flow into the spaces between the fingers, but after full pressure is exerted most of the residue is left in the hand</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">2</td>
+<td class="gt_row gt_left" headers="Name">Moderately fluid</td>
+<td class="gt_row gt_left" headers="Description">Soil material flows easily between the fingers, but a small residue is left in the hand after full pressure is exerted</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">3</td>
+<td class="gt_row gt_left" headers="Name">Very fluid</td>
+<td class="gt_row gt_left" headers="Description">Soil material flows like a slightly viscous liquid between the fingers, and very little or no residue is left in the hand after full pressure is exerted</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="sec-cn-ind" class="level2" data-number="18.11">
+<h2 data-number="18.11" class="anchored" data-anchor-id="sec-cn-ind"><span class="header-section-number">18.11</span> Induration</h2>
+<p><span class="milne">Induration is the degree to which soil particles are held together by some combination of cementation and close packing.</span></p>
+<ul>
+<li>Perform the test on a minimally disturbed 30 mm cube or aggregate.</li>
+<li>This test may also be performed on individual nodules and other solids &lt; 30 mm.</li>
+<li>This test cannot be reliably performed on auger-extracted samples.</li>
+<li>This test requires a minimum one hour to complete so may be done immediately following fieldwork.</li>
+</ul>
+<p><em>Equipment</em></p>
+<ul>
+<li>Sponge (~50mm diameter, flat)</li>
+<li>Deionised water</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>Test the soil strength at field-moist condition according to <a href="#sec-cn-stru" class="quarto-xref"><span>Section 18.2.1</span></a>.</li>
+<li>Place the sample cube on a wet sponge until thoroughly moistened, then immerse the sample in DI water for 1 hour.</li>
+<li>Retest the soil strength of the wet sample according to <a href="#sec-cn-stru" class="quarto-xref"><span>Section 18.2.1</span></a>.</li>
+<li>Assess the behaviour of the sample using <a href="#tbl-cn-ind" class="quarto-xref">Table&nbsp;<span>18.9</span></a>.</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div id="tbl-cn-ind" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cn-ind-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;18.9: Induration classes
+</figcaption>
+<div aria-describedby="tbl-cn-ind-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="srtqbdrhlo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#srtqbdrhlo table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#srtqbdrhlo thead, #srtqbdrhlo tbody, #srtqbdrhlo tfoot, #srtqbdrhlo tr, #srtqbdrhlo td, #srtqbdrhlo th {
+  border-style: none;
+}
+
+#srtqbdrhlo p {
+  margin: 0;
+  padding: 0;
+}
+
+#srtqbdrhlo .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#srtqbdrhlo .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#srtqbdrhlo .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#srtqbdrhlo .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#srtqbdrhlo .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#srtqbdrhlo .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#srtqbdrhlo .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#srtqbdrhlo .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#srtqbdrhlo .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#srtqbdrhlo .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#srtqbdrhlo .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#srtqbdrhlo .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#srtqbdrhlo .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#srtqbdrhlo .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#srtqbdrhlo .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#srtqbdrhlo .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#srtqbdrhlo .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#srtqbdrhlo .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#srtqbdrhlo .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srtqbdrhlo .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#srtqbdrhlo .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#srtqbdrhlo .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#srtqbdrhlo .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srtqbdrhlo .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#srtqbdrhlo .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#srtqbdrhlo .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#srtqbdrhlo .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srtqbdrhlo .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#srtqbdrhlo .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#srtqbdrhlo .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#srtqbdrhlo .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#srtqbdrhlo .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#srtqbdrhlo .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srtqbdrhlo .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#srtqbdrhlo .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srtqbdrhlo .gt_left {
+  text-align: left;
+}
+
+#srtqbdrhlo .gt_center {
+  text-align: center;
+}
+
+#srtqbdrhlo .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#srtqbdrhlo .gt_font_normal {
+  font-weight: normal;
+}
+
+#srtqbdrhlo .gt_font_bold {
+  font-weight: bold;
+}
+
+#srtqbdrhlo .gt_font_italic {
+  font-style: italic;
+}
+
+#srtqbdrhlo .gt_super {
+  font-size: 65%;
+}
+
+#srtqbdrhlo .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#srtqbdrhlo .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#srtqbdrhlo .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#srtqbdrhlo .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#srtqbdrhlo .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#srtqbdrhlo .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#srtqbdrhlo .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#srtqbdrhlo .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#srtqbdrhlo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">1</td>
+<td class="gt_row gt_left" headers="Name">Non-indurated</td>
+<td class="gt_row gt_left" headers="Description">A wet test specimen slakes within one hour when placed in water</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">2</td>
+<td class="gt_row gt_left" headers="Name">Very weakly indurated</td>
+<td class="gt_row gt_left" headers="Description">A wet test specimen that has been immersed for one hour and has not slaked has strength class of 2-4</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">3</td>
+<td class="gt_row gt_left" headers="Name">Weakly indurated</td>
+<td class="gt_row gt_left" headers="Description">A wet test specimen that has been immersed for one hour has a stength class of 6</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">4</td>
+<td class="gt_row gt_left" headers="Name">Strongly indurated</td>
+<td class="gt_row gt_left" headers="Description">A wet test specimen that has been immersed for an hour has a strength class of 7</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">5</td>
+<td class="gt_row gt_left" headers="Name">Very strongly indurated</td>
+<td class="gt_row gt_left" headers="Description">A wet test specimen after immersion for an hour has a strength class of &gt;7 and does not break when struck by a sharp blow with a hammer.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-drohan2020" class="csl-entry" role="listitem">
+Drohan PJ, Thompson JA, Lindbo DL, Beaudette DE, Dadio SD 2020. Redefining the fragipan to improve field recognition and land use relevance. Soil Science Society of America Journal [Internet]. 84(4):1055–1066. <a href="https://doi.org/10.1002/saj2.20098">https://doi.org/10.1002/saj2.20098</a>
+</div>
+<div id="ref-newzealandgeotechnicalsociety2005" class="csl-entry" role="listitem">
+New Zealand Geotechnical Society 2005. Field description of soil and rock: Guideline for the field classification and description of soil and rock for engineering purposes. Burns D, Farquar G, Mills M, Williams A, editors. Wellington, New Zealand: New Zealand Geotechnical Society, Inc.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1000,12 +5727,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./hr_04_secondary_features.html" class="pagination-link" aria-label="Secondary features">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Secondary features</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Secondary features</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./hr_06_chemical_properties.html" class="pagination-link" aria-label="Field tests">
-        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field tests</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./hr_06_chemical_properties.html" class="pagination-link" aria-label="Chemical properties">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chemical properties</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

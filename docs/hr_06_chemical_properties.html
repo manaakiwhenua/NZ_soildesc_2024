@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.30">
+<meta name="generator" content="quarto-1.6.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Soil Description Handbook – 17&nbsp; Field tests</title>
+<title>19&nbsp; Chemical properties – Soil Description Handbook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,17 +49,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./hr_07_roots.html" rel="next">
+<link href="./in_00_intro.html" rel="next">
 <link href="./hr_05_physical_properties.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-98f67bc07761c90b1382d524a234aef8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,6 +89,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -78,13 +98,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hr_00_intro.html">Soil horizons</a></li><li class="breadcrumb-item"><a href="./hr_06_chemical_properties.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field tests</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hr_00_intro.html">Soil horizons</a></li><li class="breadcrumb-item"><a href="./hr_06_chemical_properties.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chemical properties</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -127,9 +147,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Setting and site</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Soil Setting</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -142,47 +162,53 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_01_location.html" class="sidebar-item-text sidebar-link">
+  <a href="./ss_02_location.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Location</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_02_landscape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Landscape</span></span></a>
+  <a href="./ss_03_landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Geomorphology</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_03_parent_material.html" class="sidebar-item-text sidebar-link">
+  <a href="./ss_04_parent_material.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Parent material</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_04_climate.html" class="sidebar-item-text sidebar-link">
+  <a href="./ss_05_climate.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Climate and Weather</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_05_biota.html" class="sidebar-item-text sidebar-link">
+  <a href="./ss_06_biota.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Biota</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_06_landuse_mgmt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Land use and management</span></span></a>
+  <a href="./ss_07_landuse_mgmt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Land cover, land use, and land management</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ss_08_soils.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Soils</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Soil profile</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Soil surface and profile</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -190,22 +216,28 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pr_00_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Profile</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The soil site</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pr_01_surface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Land surface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Soil surface</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pr_02_layers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Defining soil horizons</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Soil horizons</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -213,64 +245,52 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_00_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Horizons</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Horizon description</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hr_01_colour.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Horizon colour</span></span></a>
+  <a href="./hr_01_architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Horizon architecture</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hr_02_texture_stones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Soil texture and particle size distribution</span></span></a>
+  <a href="./hr_02_colour.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Horizon colour</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hr_03_structure_peds.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Structure</span></span></a>
+  <a href="./hr_03_texture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Soil texture</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_04_secondary_features.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Secondary features</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Secondary features</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_05_physical_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Consistence</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Consistence</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_06_chemical_properties.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field tests</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./hr_07_roots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Roots and plant materials</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./hr_08_voids.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Voids</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chemical properties</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Soil interpretations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -290,49 +310,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_02_horizon_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Horizon Properties</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_03_profile_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Profile properties</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Horizon properties</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_04_setting_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Setting interpretations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_05_nzsc_toplevel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">The New Zealand Soil Classification</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Soil Setting properties</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_06_nzsc_familysibling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">NZSC Family and Sibling</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_07_luc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">NZ Land Use Classification</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_08_wrb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">The World Reference Base for Soil Resources</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_09_suitability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Crop Suitability Assessments</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">NZSC Family and Sibling</span></span></a>
   </div>
 </li>
       </ul>
@@ -345,9 +335,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -372,14 +362,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ap_04_sampling_programs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Sampling programs</span></span></a>
+  <a href="./ap_04_glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ap_05_glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+  <a href="./changelog.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Changes in the new edition</span></span></a>
   </div>
 </li>
       </ul>
@@ -394,28 +384,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#chemical" id="toc-chemical" class="nav-link active" data-scroll-target="#chemical"><span class="header-section-number">17.1</span> Chemical</a>
+  <li><a href="#sec-ft" id="toc-sec-ft" class="nav-link active" data-scroll-target="#sec-ft"><span class="header-section-number">19.1</span> Field tests</a>
   <ul class="collapse">
-  <li><a href="#ph" id="toc-ph" class="nav-link" data-scroll-target="#ph"><span class="header-section-number">17.1.1</span> pH</a></li>
-  <li><a href="#ec" id="toc-ec" class="nav-link" data-scroll-target="#ec"><span class="header-section-number">17.1.2</span> EC</a></li>
-  <li><a href="#soluble-salts" id="toc-soluble-salts" class="nav-link" data-scroll-target="#soluble-salts"><span class="header-section-number">17.1.3</span> Soluble salts</a></li>
-  <li><a href="#carbonate" id="toc-carbonate" class="nav-link" data-scroll-target="#carbonate"><span class="header-section-number">17.1.4</span> Carbonate</a></li>
-  <li><a href="#manganese" id="toc-manganese" class="nav-link" data-scroll-target="#manganese"><span class="header-section-number">17.1.5</span> Manganese</a></li>
-  <li><a href="#iron-sulfide" id="toc-iron-sulfide" class="nav-link" data-scroll-target="#iron-sulfide"><span class="header-section-number">17.1.6</span> Iron Sulfide</a></li>
-  <li><a href="#allophane" id="toc-allophane" class="nav-link" data-scroll-target="#allophane"><span class="header-section-number">17.1.7</span> Allophane</a></li>
-  <li><a href="#redox" id="toc-redox" class="nav-link" data-scroll-target="#redox"><span class="header-section-number">17.1.8</span> Redox</a></li>
-  <li><a href="#water-repellence" id="toc-water-repellence" class="nav-link" data-scroll-target="#water-repellence"><span class="header-section-number">17.1.9</span> Water repellence</a></li>
+  <li><a href="#sec-ft-phf" id="toc-sec-ft-phf" class="nav-link" data-scroll-target="#sec-ft-phf"><span class="header-section-number">19.1.1</span> Colourimetric field pH (pH<sub>f</sub>)</a></li>
+  <li><a href="#sec-ft-phfw" id="toc-sec-ft-phfw" class="nav-link" data-scroll-target="#sec-ft-phfw"><span class="header-section-number">19.1.2</span> Field pH in water (pH<sub>fw</sub>)</a></li>
+  <li><a href="#sec-ft-phfox" id="toc-sec-ft-phfox" class="nav-link" data-scroll-target="#sec-ft-phfox"><span class="header-section-number">19.1.3</span> Field pH in hydrogen peroxide (pH<sub>fox</sub>)</a></li>
+  <li><a href="#sec-ft-ec" id="toc-sec-ft-ec" class="nav-link" data-scroll-target="#sec-ft-ec"><span class="header-section-number">19.1.4</span> Electrical conductivity (EC<sub>f</sub>)</a></li>
+  <li><a href="#sec-ft-ca" id="toc-sec-ft-ca" class="nav-link" data-scroll-target="#sec-ft-ca"><span class="header-section-number">19.1.5</span> Calcium carbonate (Ca<sub>f</sub>)</a></li>
+  <li><a href="#sec-ft-mn" id="toc-sec-ft-mn" class="nav-link" data-scroll-target="#sec-ft-mn"><span class="header-section-number">19.1.6</span> Manganese (Mn<sub>f</sub>)</a></li>
+  <li><a href="#sec-ft-naf" id="toc-sec-ft-naf" class="nav-link" data-scroll-target="#sec-ft-naf"><span class="header-section-number">19.1.7</span> Reactive aluminium (NaF<sub>f</sub>)</a></li>
+  <li><a href="#sec-ft-rdx" id="toc-sec-ft-rdx" class="nav-link" data-scroll-target="#sec-ft-rdx"><span class="header-section-number">19.1.8</span> Reducing conditions</a></li>
+  <li><a href="#sec-ft-wtrep" id="toc-sec-ft-wtrep" class="nav-link" data-scroll-target="#sec-ft-wtrep"><span class="header-section-number">19.1.9</span> Water repellence</a></li>
+  <li><a href="#sec-ft-slak" id="toc-sec-ft-slak" class="nav-link" data-scroll-target="#sec-ft-slak"><span class="header-section-number">19.1.10</span> Rapid slaking and dispersion</a></li>
   </ul></li>
-  <li><a href="#physical" id="toc-physical" class="nav-link" data-scroll-target="#physical"><span class="header-section-number">17.2</span> Physical</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hr_00_intro.html">Soil horizons</a></li><li class="breadcrumb-item"><a href="./hr_06_chemical_properties.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field tests</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hr_00_intro.html">Soil horizons</a></li><li class="breadcrumb-item"><a href="./hr_06_chemical_properties.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chemical properties</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field tests</span></h1>
+<h1 class="title"><span id="sec-chem" class="quarto-section-identifier"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chemical properties</span></span></h1>
 </div>
 
 
@@ -427,7 +417,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 29, 2024</p>
+      <p class="date-modified">November 16, 2024</p>
     </div>
   </div>
     
@@ -438,58 +428,3002 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><span class="todo">Preamble, lab stuff</span></p>
+<section id="sec-ft" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="sec-ft"><span class="header-section-number">19.1</span> Field tests</h2>
+<p>Field tests support confident soil profile descriptions in the field by providing immediate indications of key soil properties. As well as informing the description itself, the tests can help guide sampling decisions and later choice of laboratory analyses. In some cases, they can act as quality control measures (e.g.&nbsp;large inconsistencies in pH between field and laboratory may indicate unwanted sample oxidation in acid sulfate soils).</p>
+<p>Field tests do have limited precision and accuracy vs their laboratory equivalents, due to their simplicity and short observation times. Where field tests are not conclusive, laboratory testing may still be warranted.</p>
+<p>Field tests should be performed down-profile, with at least one sample tested per horizon. Samples should be taken from the mid-point of each horizon. Additional samples in transition zones may also be of interest. Properties within the upper part of the first B horizon can be diagnostic in soil classification.</p>
+<p>For classifying using the NZSC, particular tests down to a certain depth may be required. At the order level, these are:</p>
+<div id="nte-chemnzsc" class="callout callout-style-simple callout-note callout-titled" title="Field tests and the NZSC">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;19.1: Field tests and the NZSC
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ul>
-<li>and not-quite-field tests</li>
+<li><strong>Gley soils:</strong> Detectable ferrous ions (Fe<sup>2+</sup>) in the soil solution within the top 30&nbsp;cm, signifying a reduced/anoxic environment (<a href="#sec-ft-rdx" class="quarto-xref"><span>Section 19.1.8</span></a>). A slaking test may be required to confirm absence of an underlying duripan (<a href="#sec-ft-slak" class="quarto-xref"><span>Section 19.1.10</span></a>)</li>
+<li><strong>Ultic soils:</strong> pH below 5.5 anywhere between the base of the A horizon and 60&nbsp;cm depth (<a href="#sec-ft-phf" class="quarto-xref"><span>Section 19.1.1</span></a> or <a href="#sec-ft-phfw" class="quarto-xref"><span>Section 19.1.2</span></a>)</li>
+<li><strong>Allophanic soils:</strong> Strong pH response to sodium fluoride in at least 35&nbsp;cm of the top 60&nbsp;cm (<a href="#sec-ft-naf" class="quarto-xref"><span>Section 19.1.7</span></a>)</li>
+<li><strong>Melanic soils:</strong> Fine earth fraction reacts with 10%&nbsp;HCl, signifying carbonate presence (<a href="#sec-ft-ca" class="quarto-xref"><span>Section 19.1.5</span></a>)</li>
+<li><strong>Semiarid soils:</strong> pH of 7.5 or more within the top 90&nbsp;cm (150&nbsp;cm if sandy or skeletal) (<a href="#sec-ft-phf" class="quarto-xref"><span>Section 19.1.1</span></a> or <a href="#sec-ft-phfw" class="quarto-xref"><span>Section 19.1.2</span></a>)</li>
+<li><strong>Oxidic soils:</strong> No pH response to sodium fluoride within the diagnostic oxidic horizon(s) (<a href="#sec-ft-naf" class="quarto-xref"><span>Section 19.1.7</span></a>)</li>
+<li><strong>Pallic soils:</strong> Where a calcareous horizon is part of the profile, confirmation of its presence with 10% HCl (<a href="#sec-ft-ca" class="quarto-xref"><span>Section 19.1.5</span></a>)</li>
+<li><strong>Brown soils:</strong> at least moderate pH response to sodium fluoride in the uppermost subhorizon of the B horizon. (<a href="#sec-ft-naf" class="quarto-xref"><span>Section 19.1.7</span></a>)</li>
 </ul>
-<section id="chemical" class="level2" data-number="17.1">
-<h2 data-number="17.1" class="anchored" data-anchor-id="chemical"><span class="header-section-number">17.1</span> Chemical</h2>
-<section id="ph" class="level3" data-number="17.1.1">
-<h3 data-number="17.1.1" class="anchored" data-anchor-id="ph"><span class="header-section-number">17.1.1</span> pH</h3>
-</section>
-<section id="ec" class="level3" data-number="17.1.2">
-<h3 data-number="17.1.2" class="anchored" data-anchor-id="ec"><span class="header-section-number">17.1.2</span> EC</h3>
-</section>
-<section id="soluble-salts" class="level3" data-number="17.1.3">
-<h3 data-number="17.1.3" class="anchored" data-anchor-id="soluble-salts"><span class="header-section-number">17.1.3</span> Soluble salts</h3>
+<p>pH, carbonate, allophane and salinity tests are also common diagnostics at the group and subgroup level.</p>
+</div>
+</div>
+</div>
+<section id="sec-ft-phf" class="level3" data-number="19.1.1">
+<h3 data-number="19.1.1" class="anchored" data-anchor-id="sec-ft-phf"><span class="header-section-number">19.1.1</span> Colourimetric field pH (pH<sub>f</sub>)</h3>
+<p>This method, after <span class="citation" data-cites="raupach1959">Raupach and Tucker (<a href="references.html#ref-raupach1959" role="doc-biblioref">1959</a>)</span>, requires the use of a pre-made kit containing universal pH indicator, barium sulfate powder, and a calibrated colour card for interpreting results. These kits can be purchased at hardware or garden supply stores as well as specialist environmental field supply stores. The tests are simple but only precise to ±&nbsp;0.5 units, and accurate (vs laboratory-based testing) to around the same degree. They are usually valid over pH range 2-10.</p>
+<p><em>Equipment</em></p>
 <ul>
-<li>don’t lick them!</li>
-</ul>
-</section>
-<section id="carbonate" class="level3" data-number="17.1.4">
-<h3 data-number="17.1.4" class="anchored" data-anchor-id="carbonate"><span class="header-section-number">17.1.4</span> Carbonate</h3>
-</section>
-<section id="manganese" class="level3" data-number="17.1.5">
-<h3 data-number="17.1.5" class="anchored" data-anchor-id="manganese"><span class="header-section-number">17.1.5</span> Manganese</h3>
-</section>
-<section id="iron-sulfide" class="level3" data-number="17.1.6">
-<h3 data-number="17.1.6" class="anchored" data-anchor-id="iron-sulfide"><span class="header-section-number">17.1.6</span> Iron Sulfide</h3>
+<li>Field pH kit:
 <ul>
-<li>xref incubation test as well as rapid stuff</li>
+<li>universal indicator</li>
+<li>barium sulfate powder</li>
+<li>calibrated colour interpretation card</li>
+<li>small sample containers or plastic tray</li>
+<li>stirring stick</li>
+</ul></li>
 </ul>
-</section>
-<section id="allophane" class="level3" data-number="17.1.7">
-<h3 data-number="17.1.7" class="anchored" data-anchor-id="allophane"><span class="header-section-number">17.1.7</span> Allophane</h3>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>With clean hands or a small scoop, remove ~1-2&nbsp;cm<sup>2</sup> soil into a small container. Mix or crush the sample lightly to break open small peds.</li>
+<li>Sprinkle the sample surface with just enough barium sulfate powder to cover. This is used to make it easier to see the pH indicator colour.</li>
+<li>Add a couple of drops of pH indicator. Match the indicator colour to the card provided and record the pH of the closest match (e.g.&nbsp;<span class="ceg">40 cm - 5.5</span>). Do not interpolate between chips. Do not wait to read the pH - readings are unreliable after the sample has dried.</li>
+</ol>
+<p><span class="diags">pics here</span></p>
+<div class="callout callout-style-simple callout-note callout-titled" title="Sources of variation between pH~f~ and laboratory pH">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sources of variation between pH<sub>f</sub> and laboratory pH
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Some variability between colorimetric field and electronic laboratory pH is expected. Reasons for the variability may include:</p>
 <ul>
-<li>talk about reactive hydroxy-aluminium sites because its not <em>specifically</em> an allophane test</li>
+<li>The quality of the reagents in use, the kit’s age and how carefully it has been stored. The dye recipe needs to have been followed accurately so that the resulting colours match the calibration card. Impurities in the supplied barium sulfate powder can also cause issues. The calibration card itself needs to be printed with accurate colours, waterproofed, and not left to bleach in the sun.</li>
+<li>Operators need full colour vision to interpret the card correctly. While diagnosed colour blindness is relatively rare, many people have minor colour-recognition limitations without knowing it. Taking a colour vision test periodically is recommended.</li>
+<li>Samples taken for laboratory analysis may react during transport, in storage or during sample processing.</li>
 </ul>
+</div>
+</div>
+</div>
 </section>
-<section id="redox" class="level3" data-number="17.1.8">
-<h3 data-number="17.1.8" class="anchored" data-anchor-id="redox"><span class="header-section-number">17.1.8</span> Redox</h3>
+<section id="sec-ft-phfw" class="level3" data-number="19.1.2">
+<h3 data-number="19.1.2" class="anchored" data-anchor-id="sec-ft-phfw"><span class="header-section-number">19.1.2</span> Field pH in water (pH<sub>fw</sub>)</h3>
+<p>pH<sub>fw</sub> is measured with a field-ready electronic pH meter. Electronic meters are precise and can measure the full 0-14 pH range, but are sensitive to temperature fluctuations and must be regularly calibrated. Always refer to the device manual for specific maintenance requirements.</p>
+<p><em>Equipment</em></p>
 <ul>
-<li>include IRIS as well as rapid methods</li>
+<li>Field-ready electronic pH meter (ideally with a temperature sensor)</li>
+<li>Deionised (DI) water or demineralised water (DM)</li>
+<li>Small sample containers (e.g.&nbsp;50&nbsp;mL centrifuge tubes).</li>
+<li>Stirring sticks</li>
 </ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>With clean hands or a small scoop, remove ~1-2&nbsp;cm<sup>2</sup> soil into a small container. Mix with DI or DM water to a loose paste, ensuring that the mix is deep enough for the pH probe to be adequately covered.</li>
+<li>Insert the pH probe into the sample and wait for the reading to stabilise to 1 decimal place (No change for 10&nbsp;seconds). Do not stir the sample with the probe.</li>
+<li>Record the reading and the depth it was taken from (e.g.&nbsp;<span class="ceg">40&nbsp;cm - 5.2</span>).</li>
+<li>Thoroughly rinse the probe before testing the next sample.</li>
+</ol>
+<p><span class="diags">pics here</span></p>
+<div class="callout callout-style-simple callout-tip callout-titled" data-collpase="true" title="Sample handling">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sample handling
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure to sample with clean hands; tests can be easily contaminated by residues. In particular, sunscreens will cause a falsely high pH reading.</p>
+</div>
+</div>
 </section>
-<section id="water-repellence" class="level3" data-number="17.1.9">
-<h3 data-number="17.1.9" class="anchored" data-anchor-id="water-repellence"><span class="header-section-number">17.1.9</span> Water repellence</h3>
+<section id="sec-ft-phfox" class="level3" data-number="19.1.3">
+<h3 data-number="19.1.3" class="anchored" data-anchor-id="sec-ft-phfox"><span class="header-section-number">19.1.3</span> Field pH in hydrogen peroxide (pH<sub>fox</sub>)</h3>
+<p>Field pH in concentrated hydrogen peroxide (30%&nbsp;H<sub>2</sub>O<sub>2</sub>) is paired with field pH in water to diagnose the presence of FeS<sub>2</sub> (iron sulfide, or pyrite) and thus the presence of acid sulfate soil materials. A significant drop in pH<sub>fox</sub> vs pH<sub>fw</sub> is considered diagnostic; see the discussion in <span class="citation" data-cites="sullivan2018">Sullivan et al. (<a href="references.html#ref-sullivan2018" role="doc-biblioref">2018a</a>)</span>, section A1.4.4 for further details.</p>
+<p>The following method is reproduced from <span class="citation" data-cites="sullivan2018">Sullivan et al. (<a href="references.html#ref-sullivan2018" role="doc-biblioref">2018a</a>)</span>, section A1.4.3.</p>
+<p><em>Equipment</em></p>
 <ul>
-<li>brief discussion of seasonal behaviour</li>
+<li>Field-ready electronic pH meter (ideally with a temperature sensor)</li>
+<li>Concentrated hydrogen peroxide (30%&nbsp;H<sub>2</sub>O<sub>2</sub>)</li>
+<li>Deionised (DI) water or demineralised water (DM)</li>
+<li>Small sample containers (e.g.&nbsp;50&nbsp;mL centrifuge tubes) without lids.</li>
+<li>Stirring sticks</li>
 </ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>With clean hands or a small scoop, remove ~1-2&nbsp;cm<sup>2</sup> soil into each tube.</li>
+<li>Add enough H<sub>2</sub>O<sub>2</sub> to cover each sample, and stir briefly. <strong>Do not cap and shake the tubes</strong>.</li>
+<li>Allow up to 15 minutes for any reaction to occur, especially in cool weather. Placing the rack in the sun may help progress the reaction. Note that strong reactions can sometimes occur almost instantly - observe the samples from a short distance and don’t peer into the tubes.</li>
+<li>Where reactions occur, note their violence using the scale in <a href="#tbl-ft-foxrx" class="quarto-xref">Table&nbsp;<span>19.1</span></a>. If excessive, the reaction may be tamped down by adding a very small amount of DI water.</li>
+<li>Where reactions occur, wait for them to settle and add a little more H<sub>2</sub>O<sub>2</sub>. Repeat until the reaction no longer occurs.</li>
+<li>Once reactions have fully completed and the tubes have cooled, measure the pH of each sample with the electronic meter. Record to the nearest 0.1 units as for pH<sub>fw</sub>, and rinse the probe thoroughly between readings.</li>
+</ol>
+<div class="callout callout-style-simple callout-warning callout-titled" title="Safe handling and preparation of hydrogen peroxide">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Safe handling and preparation of hydrogen peroxide
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Concentrated hydrogen peroxide is highly corrosive. Wear safety glasses and gloves when handling, and in a field situation make sure that there is access to plenty of clean water for rinsing.</li>
+<li>Before bringing H<sub>2</sub>O<sub>2</sub> into the field, it must be buffered to pH&nbsp;4.5-5.5. While stirring, add a few drops of dilute NaOH and regularly check the pH with a calibrated electrode until the correct range is reached. Allow the H<sub>2</sub>O<sub>2</sub> to stand for 15 minutes and then recheck the pH.</li>
+<li>As H<sub>2</sub>O<sub>2</sub> degrades over time, only buffer small quantities at a time and refrigerate when not in use.</li>
+<li>In the field, H<sub>2</sub>O<sub>2</sub> containers should be kept out of direct sunlight and preferably in a small cooler, as excessive heat will cause the H<sub>2</sub>O<sub>2</sub> to break down, releasing oxygen. This can cause its container to rupture or spit when opened. Only take small containers into the field, and monitor them for signs of elevated internal pressure (e.g.&nbsp;bulging). Make sure all containers are clearly labelled.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell no-stripe" data-layout-align="center">
+<div id="tbl-ft-foxrx" class="cell no-stripe quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ft-foxrx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;19.1: Hydrogen peroxide reaction strength ratings
+</figcaption>
+<div aria-describedby="tbl-ft-foxrx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="frkizonuka" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#frkizonuka table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#frkizonuka thead, #frkizonuka tbody, #frkizonuka tfoot, #frkizonuka tr, #frkizonuka td, #frkizonuka th {
+  border-style: none;
+}
+
+#frkizonuka p {
+  margin: 0;
+  padding: 0;
+}
+
+#frkizonuka .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#frkizonuka .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#frkizonuka .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#frkizonuka .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#frkizonuka .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#frkizonuka .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#frkizonuka .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#frkizonuka .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#frkizonuka .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#frkizonuka .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#frkizonuka .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#frkizonuka .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#frkizonuka .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#frkizonuka .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#frkizonuka .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#frkizonuka .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#frkizonuka .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#frkizonuka .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#frkizonuka .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#frkizonuka .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#frkizonuka .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#frkizonuka .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#frkizonuka .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#frkizonuka .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#frkizonuka .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#frkizonuka .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#frkizonuka .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#frkizonuka .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#frkizonuka .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#frkizonuka .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#frkizonuka .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#frkizonuka .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#frkizonuka .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#frkizonuka .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#frkizonuka .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#frkizonuka .gt_left {
+  text-align: left;
+}
+
+#frkizonuka .gt_center {
+  text-align: center;
+}
+
+#frkizonuka .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#frkizonuka .gt_font_normal {
+  font-weight: normal;
+}
+
+#frkizonuka .gt_font_bold {
+  font-weight: bold;
+}
+
+#frkizonuka .gt_font_italic {
+  font-style: italic;
+}
+
+#frkizonuka .gt_super {
+  font-size: 65%;
+}
+
+#frkizonuka .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#frkizonuka .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#frkizonuka .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#frkizonuka .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#frkizonuka .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#frkizonuka .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#frkizonuka .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#frkizonuka .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#frkizonuka div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell no-stripe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">N</td>
+<td class="gt_row gt_left" headers="Name">No reaction</td>
+<td class="gt_row gt_left" headers="Description">No fizzing or bubbling after 15&nbsp;minutes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">L</td>
+<td class="gt_row gt_left" headers="Name">Slight reaction</td>
+<td class="gt_row gt_left" headers="Description">Sample fizzes or bubbles slightly but does not steam</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">M</td>
+<td class="gt_row gt_left" headers="Name">Moderate reaction</td>
+<td class="gt_row gt_left" headers="Description">Sample bubbles and steams slightly but does not completely boil. Unlikely to continue reacting if more peroxide is added</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">H</td>
+<td class="gt_row gt_left" headers="Name">High reaction</td>
+<td class="gt_row gt_left" headers="Description">Sample boils and steams but does not boil over. May continue to react when more peroxide is added</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">X</td>
+<td class="gt_row gt_left" headers="Name">Explosive reaction</td>
+<td class="gt_row gt_left" headers="Description">Sample rapidly boils over and puts off considerable steam; likely to continue to react when more peroxide is added</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled" title="Incubation methods for Acid Sulfate Soils">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Incubation methods for Acid Sulfate Soils
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Field-adjacent incubation methods are available as an alternative low-cost method of identifying acid sulfate soils. These involve minimal equipment and no hazardous chemicals, but can take up to three months to complete. See <span class="citation" data-cites="sullivan2018a">(<a href="references.html#ref-sullivan2018a" role="doc-biblioref">Sullivan et al. 2018b</a>)</span>, Appendix C for further information.</p>
+</div>
+</div>
+</div>
 </section>
+<section id="sec-ft-ec" class="level3" data-number="19.1.4">
+<h3 data-number="19.1.4" class="anchored" data-anchor-id="sec-ft-ec"><span class="header-section-number">19.1.4</span> Electrical conductivity (EC<sub>f</sub>)</h3>
+<p>The soil solution’s EC<sub>f</sub> estimates its soluble salt content, which can affect plant nutrition and water uptake. Salinity is a diagnostic criteria in the NZSC, used within the Gley, Semi-Arid, Recent and Raw orders. In New Zealand, a 1:5 ratio of soil to water is used in the laboratory, and so this must be matched in the field.</p>
+<p><em>Equipment</em></p>
+<ul>
+<li>Field-ready electrical conductivity meter (ideally with a temperature sensor)</li>
+<li>Deionised (DI) water or demineralised water (DM)</li>
+<li>Small sample containers (e.g.&nbsp;50&nbsp;mL centrifuge tubes) with lids.</li>
+<li>Stirring sticks</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>With clean hands or a small scoop, place soil in each tube up to the 5 mL mark. Top up with water to 30 mL.</li>
+<li>Cap and shake each sample vigorously for 30s, then allow the samples to settle for a few minutes.</li>
+<li>Use the EC meter to record the solution conductivity. Report to the nearest 0.1 dS/m.</li>
+<li>Rinse the probe thoroughly between measurements.</li>
+</ol>
+<p><span class="diags">diag here</span></p>
+<div class="callout callout-style-simple callout-note callout-titled" title="Conductivity units">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Conductivity units
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>EC ia most commonly reported in units of millisiemens/centimetre (mS/cm) or decisiemens per metre (dS/m), which are numerically equivalent. Other units less commonly used require specific conversion, e.g.&nbsp;electronic meters may report in µS/cm. 1&nbsp;mS/cm = 1000&nbsp;µS/cm.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="physical" class="level2" data-number="17.2">
-<h2 data-number="17.2" class="anchored" data-anchor-id="physical"><span class="header-section-number">17.2</span> Physical</h2>
+<section id="sec-ft-ca" class="level3" data-number="19.1.5">
+<h3 data-number="19.1.5" class="anchored" data-anchor-id="sec-ft-ca"><span class="header-section-number">19.1.5</span> Calcium carbonate (Ca<sub>f</sub>)</h3>
+<p>While large chunks of calcium carbonate (CaCO<sub>3</sub>) in the form of shells or rock are easy to spot, CaCO<sub>3</sub> in the fine earth is not, and there can also be some doubt about the composition of segregations. This test should be considered for use when working in limestone-containing country, where field pH &gt; 7, or when white or pale segregations are observed.</p>
+<p>Calcium carbonate reacts with acidic solutions in a neutralisation reaction, releasing water, carbon dioxide and heat as it becomes a salt. The reaction is rapid and causes a soil sample to ‘fizz’ visibly. 10% (or 1 <em>M</em>) HCl is used for this test as it is stable, cheap and relatively safe while still reacting vigorously.</p>
+<p><em>Equipment</em></p>
+<ul>
+<li>10% or 1M Hydrochloric acid, stored in a small dropper bottle</li>
+<li>small sample containers or plastic tray</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>With clean hands or a small scoop, remove ~1-2&nbsp;cm<sup>2</sup> soil into a small container. Lightly crush to break up peds and/or segregations.</li>
+<li>Using a dropper bottle, add a drop or two of HCl and observe closely.</li>
+<li>Record the vigour of the reaction using <a href="#tbl-ft-hcl" class="quarto-xref">Table&nbsp;<span>19.2</span></a>.</li>
+</ol>
+<p>HCl can also be applied directly to a soil exposure, but be careful not to include the tested patches in any soil samples.</p>
+<div class="callout callout-style-simple callout-warning callout-titled" title="Safe handling and preparation of HCl">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Safe handling and preparation of HCl
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>HCl is corrosive. Wear safety glasses and gloves when handling, and in a field situation make sure that there is access to plenty of clean water for rinsing.</li>
+<li>Don’t transport large quantities of HCl, even dilute. A 25-50&nbsp;mL bottle will normally last for weeks of fieldwork.</li>
+<li>Make sure HCl containers are clearly labelled. For dropper bottles with soft plastic or rubber lids, monitor for degradation.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell no-stripe" data-layout-align="center">
+<div id="tbl-ft-hcl" class="cell no-stripe quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ft-hcl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;19.2: Hydrochloric acid reaction ratings
+</figcaption>
+<div aria-describedby="tbl-ft-hcl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="lrmeclzoom" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lrmeclzoom table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lrmeclzoom thead, #lrmeclzoom tbody, #lrmeclzoom tfoot, #lrmeclzoom tr, #lrmeclzoom td, #lrmeclzoom th {
+  border-style: none;
+}
+
+#lrmeclzoom p {
+  margin: 0;
+  padding: 0;
+}
+
+#lrmeclzoom .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lrmeclzoom .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#lrmeclzoom .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lrmeclzoom .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lrmeclzoom .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lrmeclzoom .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lrmeclzoom .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lrmeclzoom .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lrmeclzoom .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lrmeclzoom .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lrmeclzoom .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lrmeclzoom .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lrmeclzoom .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#lrmeclzoom .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#lrmeclzoom .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lrmeclzoom .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lrmeclzoom .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lrmeclzoom .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lrmeclzoom .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lrmeclzoom .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lrmeclzoom .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lrmeclzoom .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#lrmeclzoom .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lrmeclzoom .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lrmeclzoom .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lrmeclzoom .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lrmeclzoom .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lrmeclzoom .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lrmeclzoom .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lrmeclzoom .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lrmeclzoom .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lrmeclzoom .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lrmeclzoom .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lrmeclzoom .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lrmeclzoom .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lrmeclzoom .gt_left {
+  text-align: left;
+}
+
+#lrmeclzoom .gt_center {
+  text-align: center;
+}
+
+#lrmeclzoom .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lrmeclzoom .gt_font_normal {
+  font-weight: normal;
+}
+
+#lrmeclzoom .gt_font_bold {
+  font-weight: bold;
+}
+
+#lrmeclzoom .gt_font_italic {
+  font-style: italic;
+}
+
+#lrmeclzoom .gt_super {
+  font-size: 65%;
+}
+
+#lrmeclzoom .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#lrmeclzoom .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lrmeclzoom .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lrmeclzoom .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lrmeclzoom .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lrmeclzoom .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lrmeclzoom .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#lrmeclzoom .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#lrmeclzoom div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell no-stripe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">N</td>
+<td class="gt_row gt_left" headers="Name">No reaction</td>
+<td class="gt_row gt_left" headers="Description">No audible or visible fizzing</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">L</td>
+<td class="gt_row gt_left" headers="Name">Slight reaction</td>
+<td class="gt_row gt_left" headers="Description">Fizzing faintly audible and barely visible</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">M</td>
+<td class="gt_row gt_left" headers="Name">Moderate reaction</td>
+<td class="gt_row gt_left" headers="Description">Fizzing audible and clearly visible, small bubbles ≤&nbsp;3&nbsp;mm diameter</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">H</td>
+<td class="gt_row gt_left" headers="Name">High reaction</td>
+<td class="gt_row gt_left" headers="Description">Fizzing easily audible and visible, bubbles up to 7&nbsp;mm diameter</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled" title="Measuring CaCO~3~">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Measuring CaCO<sub>3</sub>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>While <span class="citation" data-cites="milne1995">Milne et al. (<a href="references.html#ref-milne1995" role="doc-biblioref">1995</a>)</span> and some other publications <span class="citation" data-cites="rayment2011 kalra1991">(<a href="references.html#ref-kalra1991" role="doc-biblioref">Kalra and Maynard 1991</a>; <a href="references.html#ref-rayment2011" role="doc-biblioref">Rayment and Lyons 2011</a>)</span> have attempted to use the degree of fizzing to estimate CaCO<sub>3</sub>&nbsp;% content, the estimates and descriptions of fizzing vary and are not considered highly reliable. If a numeric estimate of CaCO<sub>3</sub>&nbsp;% is required, it should be measured under laboratory conditions.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-ft-mn" class="level3" data-number="19.1.6">
+<h3 data-number="19.1.6" class="anchored" data-anchor-id="sec-ft-mn"><span class="header-section-number">19.1.6</span> Manganese (Mn<sub>f</sub>)</h3>
+<p>Manganese segregations in soil are dark and often very small, so may be missed or mistaken for other minerals. Manganese oxides react to H<sub>2</sub>O<sub>2</sub> in a similar fashion to iron sulfide (see <a href="#sec-ft-phfox" class="quarto-xref"><span>Section 19.1.3</span></a>). This test uses a safer dilute H<sub>2</sub>O<sub>2</sub> solution. This test should be considered for use where dark flecks are observed in the soil profile, particularly under imperfect to poor drainage conditions.</p>
+<p><em>Equipment</em></p>
+<ul>
+<li>Dilute (3-6%) H<sub>2</sub>O<sub>2</sub> solution, stored in a small dropper bottle</li>
+<li>Small sample containers or plastic tray</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>With clean hands or a small scoop, remove ~1-2&nbsp;cm<sup>2</sup> soil into a small container. Lightly crush to break up peds and/or segregations.</li>
+<li>Using a dropper bottle, add a drop or two of dilute H<sub>2</sub>O<sub>2</sub> and observe closely for fizzing.</li>
+<li>Record the presence or absence of a reaction (e.g.&nbsp;<span class="ceg">40 cm - ✔</span>).</li>
+</ol>
+<p>Dilute H<sub>2</sub>O<sub>2</sub> can also be applied directly to a soil exposure, but be careful not to include the tested patches in any soil samples. Note that H<sub>2</sub>O<sub>2</sub> will also react with organic material, so this test is not definitive in highly organic samples. Using concentrated H<sub>2</sub>O<sub>2</sub> will increase the likelihood of misinterpretation as it will attack organic material more vigorously.</p>
+</section>
+<section id="sec-ft-naf" class="level3" data-number="19.1.7">
+<h3 data-number="19.1.7" class="anchored" data-anchor-id="sec-ft-naf"><span class="header-section-number">19.1.7</span> Reactive aluminium (NaF<sub>f</sub>)</h3>
+<p>This test indicates the presence of reactive hydroxy-aluminium sites on soil minerals. In New Zealand, these sites are most often associated with the presence of the minerals allophane and imogolite. Reactive hydroxy-aluminium sites can also be found on ferrihydrite and aluminium-humus complexes, especially in podzolic B horizons. <span class="milne">The principle of the method is that fluoride ions at about pH 7 react with hydroxy-aluminium to release hydroxyl ions, causing a rise in pH. The test conditions have been chosen so that the released OH<sup>-</sup> from soils containing reactive hydroxy-aluminium turn phenolphthalein indicator reagent red (pH &gt; 9) whilst most other soils remain at lower pH values so that the indicator remains colourless.</span></p>
+<p><em>Equipment</em></p>
+<ul>
+<li>Saturated aqueous NaF solution (1 M NaF, maintained in the presence of an excess of undissolved NaF)</li>
+<li>Filter paper (Whatman No.&nbsp;42 or similar) treated with phenolphthalein indicator (0.5% dissolved in 50% ethanol) and subsequently dried.</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>With clean hands or a small scoop, place ~0.5&nbsp;cm<sup>2</sup> soil on a piece of pre-treated filter paper. Lightly crush to break up peds and put the soil in firm contact with the paper.</li>
+<li>Using a dropper bottle, add a drop or two of 1 M NaF (enough to wet the sample but not flood it) and wait up to 2 minutes.</li>
+<li>Record the reaction intensity using <a href="#tbl-ft-naf" class="quarto-xref">Table&nbsp;<span>19.3</span></a> (e.g.&nbsp;<span class="ceg">40 cm - M</span>).</li>
+</ol>
+<p><span class="diags">pics here</span></p>
+<div class="callout callout-style-simple callout-warning callout-titled" title="Safe handling and preparation of NaF">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Safe handling and preparation of NaF
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>NaF is toxic. Wear safety glasses and gloves when handling, and in a field situation make sure that there is access to plenty of clean water for rinsing.</li>
+<li>Make sure NaF containers are clearly labelled.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell no-stripe" data-layout-align="center">
+<div id="tbl-ft-naf" class="cell no-stripe quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ft-naf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;19.3: Sodium fluoride reaction ratings
+</figcaption>
+<div aria-describedby="tbl-ft-naf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="gakcousnle" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gakcousnle table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#gakcousnle thead, #gakcousnle tbody, #gakcousnle tfoot, #gakcousnle tr, #gakcousnle td, #gakcousnle th {
+  border-style: none;
+}
+
+#gakcousnle p {
+  margin: 0;
+  padding: 0;
+}
+
+#gakcousnle .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#gakcousnle .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#gakcousnle .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#gakcousnle .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#gakcousnle .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gakcousnle .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gakcousnle .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gakcousnle .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#gakcousnle .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#gakcousnle .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#gakcousnle .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#gakcousnle .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#gakcousnle .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#gakcousnle .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#gakcousnle .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#gakcousnle .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#gakcousnle .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#gakcousnle .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#gakcousnle .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gakcousnle .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#gakcousnle .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#gakcousnle .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#gakcousnle .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gakcousnle .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#gakcousnle .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#gakcousnle .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gakcousnle .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gakcousnle .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#gakcousnle .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gakcousnle .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#gakcousnle .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gakcousnle .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gakcousnle .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gakcousnle .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gakcousnle .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gakcousnle .gt_left {
+  text-align: left;
+}
+
+#gakcousnle .gt_center {
+  text-align: center;
+}
+
+#gakcousnle .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#gakcousnle .gt_font_normal {
+  font-weight: normal;
+}
+
+#gakcousnle .gt_font_bold {
+  font-weight: bold;
+}
+
+#gakcousnle .gt_font_italic {
+  font-style: italic;
+}
+
+#gakcousnle .gt_super {
+  font-size: 65%;
+}
+
+#gakcousnle .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#gakcousnle .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#gakcousnle .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#gakcousnle .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#gakcousnle .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#gakcousnle .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#gakcousnle .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#gakcousnle .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#gakcousnle div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell no-stripe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+<th id="fa_icon" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Colour</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">N</td>
+<td class="gt_row gt_left" headers="Name">No reaction</td>
+<td class="gt_row gt_left" headers="Description">No colour change</td>
+<td class="gt_row gt_left" headers="fa_icon"><span style="white-space:nowrap;">
+<svg aria-label="Circle" role="img" viewbox="0 0 512 512" style="height:1.5em;width:1.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#FFFFFF;overflow:visible;fill-opacity:0.9;position:relative;">
+<title>
+Circle
+</title>
+<path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"></path>
+</svg>
+</span></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">L</td>
+<td class="gt_row gt_left" headers="Name">Slight reaction</td>
+<td class="gt_row gt_left" headers="Description">Paper turns faint pink within two minutes</td>
+<td class="gt_row gt_left" headers="fa_icon"><span style="white-space:nowrap;">
+<svg aria-label="Circle" role="img" viewbox="0 0 512 512" style="height:1.5em;width:1.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#FFBADE;overflow:visible;fill-opacity:0.9;position:relative;">
+<title>
+Circle
+</title>
+<path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"></path>
+</svg>
+</span></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">M</td>
+<td class="gt_row gt_left" headers="Name">Moderate reaction</td>
+<td class="gt_row gt_left" headers="Description">Paper turns moderate pink, usually within 30 seconds</td>
+<td class="gt_row gt_left" headers="fa_icon"><span style="white-space:nowrap;">
+<svg aria-label="Circle" role="img" viewbox="0 0 512 512" style="height:1.5em;width:1.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#CF3A69;overflow:visible;fill-opacity:0.9;position:relative;">
+<title>
+Circle
+</title>
+<path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"></path>
+</svg>
+</span></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">H</td>
+<td class="gt_row gt_left" headers="Name">Strong reaction</td>
+<td class="gt_row gt_left" headers="Description">Paper turns dark pink, usually instantly</td>
+<td class="gt_row gt_left" headers="fa_icon"><span style="white-space:nowrap;">
+<svg aria-label="Circle" role="img" viewbox="0 0 512 512" style="height:1.5em;width:1.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#A11844;overflow:visible;fill-opacity:0.9;position:relative;">
+<title>
+Circle
+</title>
+<path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"></path>
+</svg>
+</span></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important callout-titled" title="Use caution interpreting the NaF~f~ test">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Use caution interpreting the NaF<sub>f</sub> test
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>The presence of alkaline conditions and/or free calcium carbonate will cause a strong false positive for this test, as the NaF will precipitate to CaF<sub>2</sub> and yield Na<sub>2</sub>CO<sub>3</sub>. When in doubt, pre-screening with 10% HCl or a field pH test is recommended to avoid confusion.</li>
+<li>The presence of organic matter can interfere with the test by buffering the pH change.</li>
+<li>Soils containing free aluminium (Al<sup>2+</sup>) may also react.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled" title="NaF~f~ test interpretation">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+NaF<sub>f</sub> test interpretation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Scales used to interpret the NaF<sub>f</sub> test have been inconsistently presented over the decades since its original publication, with a tendency to get more complicated over time. The scale presented in <a href="#tbl-ft-naf" class="quarto-xref">Table&nbsp;<span>19.3</span></a> is a return towards the simpler schemas seen in early reporting. No reliable connection between allophane content and reaction intensity can be made using available data.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-ft-rdx" class="level3" data-number="19.1.8">
+<h3 data-number="19.1.8" class="anchored" data-anchor-id="sec-ft-rdx"><span class="header-section-number">19.1.8</span> Reducing conditions</h3>
+<p>Reducing conditions can be suggested by low-chroma soil colours, redox mottling and other indicators of poor drainage. More confident diagnoses can be made by including field testing for reduced iron (Fe<sup>2+</sup>) as an indicator of persistently reducing conditions. Rapid testing for Fe<sup>2+</sup> can be accomplished using ⍺-⍺-dipyridyl dye, which turns pinkish red in the presence of Fe<sup>2+</sup>. Test strips are also commercially available and may prove easier to use in the field <span class="citation" data-cites="berkowitz2017">(<a href="references.html#ref-berkowitz2017" role="doc-biblioref">Berkowitz et al. 2017</a>)</span>. Note that these tests should only be conducted on wet soils; soils that are in a moist to dry condition will not be experiencing reducing conditions.</p>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>With clean hands or a small scoop, remove ~1-2&nbsp;cm<sup>2</sup> soil into a small container or a surface with a white background.</li>
+<li>Depending on method:
+<ol type="a">
+<li>If using indicator strips, press the strip against the sample surface for a few seconds, then remove and check for colour change.</li>
+<li>If using ⍺-⍺-dipridyl dye, apply a few drops to the sample and watch for a colour change.</li>
+</ol></li>
+<li>Record the presence or absence of a reaction (e.g.&nbsp;<span class="ceg">40 cm - ✔</span>).</li>
+</ol>
+<p>In both cases work quickly, as if reduced, the sample will oxidise rapidly on excavation.</p>
+<div class="callout callout-style-simple callout-warning callout-titled" title="Safe handling of ⍺-⍺-dipridyl solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Safe handling of ⍺-⍺-dipridyl solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Some manuals have suggested the use of a spray bottle to apply ⍺-⍺-dipyridyl to an exposure or extracted sample. This is not recommended due to the chemical’s toxicity.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled" title="Other methods of assessing reduction">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Other methods of assessing reduction
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Current best practice for research-grade monitoring of redox potential in soils involves the use of IRIS indicator devices <span class="citation" data-cites="sapkota2022">(<a href="references.html#ref-sapkota2022" role="doc-biblioref">Sapkota et al. 2022</a>)</span>, sometimes in concert with electronic sensors. IRIS devices require specialist construction, installation for several weeks and careful post-processing.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-ft-wtrep" class="level3" data-number="19.1.9">
+<h3 data-number="19.1.9" class="anchored" data-anchor-id="sec-ft-wtrep"><span class="header-section-number">19.1.9</span> Water repellence</h3>
+<p>Water repellence in soils results from hydrophobic organic compounds (e.g.&nbsp;plant leaf waxes) accumulating under a specific range of soil moisture conditions <span class="citation" data-cites="dekker2009">(<a href="references.html#ref-dekker2009" role="doc-biblioref">Dekker et al. 2009</a>)</span>. Repellency is thus locally and seasonally variable, and usually confined to surface layers. Water repellence is most commonly assessed under field conditions using distilled water.</p>
+<p><em>Equipment</em></p>
+<ul>
+<li>Deionised or demineralised water, stored in a small dropper bottle</li>
+<li>Small sample containers or plastic tray</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>With clean hands or a small scoop, remove ~1-2&nbsp;cm<sup>2</sup> soil into a small container. Leave the sample intact.</li>
+<li>Use a dropper to place a single drop of distilled water onto the soil surface. Measure how long it takes for the drop to be absorbed.</li>
+<li>If the drop takes longer than 5 seconds to disappear, record a positive result (e.g.&nbsp;<span class="ceg">40 cm - ✔</span>).</li>
+</ol>
+</section>
+<section id="sec-ft-slak" class="level3" data-number="19.1.10">
+<h3 data-number="19.1.10" class="anchored" data-anchor-id="sec-ft-slak"><span class="header-section-number">19.1.10</span> Rapid slaking and dispersion</h3>
+<p>Soil aggregates can slake, or disintegrate, when wet up from a dry state, as trapped air rushes out of pore spaces. Over a longer time period, clay swelling may also contribute to aggregate breakdown by slaking. Aggregate resistance to slaking behaviour is modified by organic matter content and clay mineral type. Dispersive behaviour also causes aggregate breakdown in water but is driven by relative dominance of Na<sup>+</sup> ions (and to some extent Mn<sup>2+</sup> and K<sup>+</sup>) on clay reactive sites.</p>
+<p>Field testing can reveal soils that are prone to rapid slaking and dispersion. However, soils that are only slightly prone to these behaviours may not be detected in the short assessment time described below. The test also requires dry soil samples, which can be hard to come by under NZ field conditions. Running the test over a 2 hour period on air-dried peds after fieldwork will often be more useful. The laboratory equivalent assessment runs over a minimum of 20 hours <span class="citation" data-cites="standardsaustralia emerson2002">(<a href="references.html#ref-emerson2002" role="doc-biblioref">Emerson 2002</a>; <a href="references.html#ref-standardsaustralia" role="doc-biblioref">Standards Australia</a>)</span>.</p>
+<p><em>Equipment</em></p>
+<ul>
+<li>Deionised or demineralised water</li>
+<li>Shallow dish, 3-5&nbsp;cm deep and 15-30&nbsp;cm in diameter</li>
+</ul>
+<p><em>Procedure</em></p>
+<ol type="1">
+<li>Set out a testing dish in a sheltered location and fill with at least 2-3&nbsp;cm of deionised water (enough to completely cover added peds). Allow to settle.</li>
+<li>Carefully add one or two dry peds from each massive or pedal soil horizon, working clockwise around the dish. Minimise disturbing the water.</li>
+<li>Observe the samples after waiting 10 minutes. Rate their slaking behaviour using <a href="#tbl-ft-slak" class="quarto-xref">Table&nbsp;<span>19.4</span></a>. Rate their dispersive behaviour using <a href="#tbl-ft-disp" class="quarto-xref">Table&nbsp;<span>19.5</span></a>.</li>
+</ol>
+<div class="cell no-stripe" data-layout-align="center">
+<div id="tbl-ft-slak" class="cell no-stripe quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ft-slak-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;19.4: Slaking behaviour ratings
+</figcaption>
+<div aria-describedby="tbl-ft-slak-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="ltlxinibee" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ltlxinibee table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ltlxinibee thead, #ltlxinibee tbody, #ltlxinibee tfoot, #ltlxinibee tr, #ltlxinibee td, #ltlxinibee th {
+  border-style: none;
+}
+
+#ltlxinibee p {
+  margin: 0;
+  padding: 0;
+}
+
+#ltlxinibee .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ltlxinibee .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ltlxinibee .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ltlxinibee .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ltlxinibee .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ltlxinibee .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ltlxinibee .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ltlxinibee .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ltlxinibee .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ltlxinibee .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ltlxinibee .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ltlxinibee .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ltlxinibee .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ltlxinibee .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ltlxinibee .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ltlxinibee .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ltlxinibee .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ltlxinibee .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ltlxinibee .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ltlxinibee .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ltlxinibee .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ltlxinibee .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ltlxinibee .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ltlxinibee .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ltlxinibee .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ltlxinibee .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ltlxinibee .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ltlxinibee .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ltlxinibee .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ltlxinibee .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ltlxinibee .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ltlxinibee .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ltlxinibee .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ltlxinibee .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ltlxinibee .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ltlxinibee .gt_left {
+  text-align: left;
+}
+
+#ltlxinibee .gt_center {
+  text-align: center;
+}
+
+#ltlxinibee .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ltlxinibee .gt_font_normal {
+  font-weight: normal;
+}
+
+#ltlxinibee .gt_font_bold {
+  font-weight: bold;
+}
+
+#ltlxinibee .gt_font_italic {
+  font-style: italic;
+}
+
+#ltlxinibee .gt_super {
+  font-size: 65%;
+}
+
+#ltlxinibee .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ltlxinibee .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ltlxinibee .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ltlxinibee .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ltlxinibee .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ltlxinibee .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ltlxinibee .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#ltlxinibee .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ltlxinibee div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell no-stripe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">N</td>
+<td class="gt_row gt_left" headers="Name">No slaking</td>
+<td class="gt_row gt_left" headers="Description">Peds remain intact. Some bubbles may develop on their surfaces</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">P</td>
+<td class="gt_row gt_left" headers="Name">Partial slaking</td>
+<td class="gt_row gt_left" headers="Description">Peds have broken open or partially collapsed, mostly into smaller peds</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">C</td>
+<td class="gt_row gt_left" headers="Name">Complete slaking</td>
+<td class="gt_row gt_left" headers="Description">Peds have collapsed into a pile of separated grains, little to no ped structure remains visible</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell no-stripe" data-layout-align="center">
+<div id="tbl-ft-disp" class="cell no-stripe quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ft-disp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;19.5: Dispersion behaviour ratings
+</figcaption>
+<div aria-describedby="tbl-ft-disp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="fksrudjpcc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fksrudjpcc table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#fksrudjpcc thead, #fksrudjpcc tbody, #fksrudjpcc tfoot, #fksrudjpcc tr, #fksrudjpcc td, #fksrudjpcc th {
+  border-style: none;
+}
+
+#fksrudjpcc p {
+  margin: 0;
+  padding: 0;
+}
+
+#fksrudjpcc .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#fksrudjpcc .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#fksrudjpcc .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#fksrudjpcc .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#fksrudjpcc .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fksrudjpcc .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fksrudjpcc .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fksrudjpcc .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#fksrudjpcc .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#fksrudjpcc .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#fksrudjpcc .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#fksrudjpcc .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#fksrudjpcc .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#fksrudjpcc .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#fksrudjpcc .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#fksrudjpcc .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#fksrudjpcc .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#fksrudjpcc .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#fksrudjpcc .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fksrudjpcc .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#fksrudjpcc .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#fksrudjpcc .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#fksrudjpcc .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fksrudjpcc .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#fksrudjpcc .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#fksrudjpcc .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fksrudjpcc .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fksrudjpcc .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#fksrudjpcc .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fksrudjpcc .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#fksrudjpcc .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fksrudjpcc .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fksrudjpcc .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fksrudjpcc .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fksrudjpcc .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fksrudjpcc .gt_left {
+  text-align: left;
+}
+
+#fksrudjpcc .gt_center {
+  text-align: center;
+}
+
+#fksrudjpcc .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#fksrudjpcc .gt_font_normal {
+  font-weight: normal;
+}
+
+#fksrudjpcc .gt_font_bold {
+  font-weight: bold;
+}
+
+#fksrudjpcc .gt_font_italic {
+  font-style: italic;
+}
+
+#fksrudjpcc .gt_super {
+  font-size: 65%;
+}
+
+#fksrudjpcc .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#fksrudjpcc .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#fksrudjpcc .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#fksrudjpcc .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#fksrudjpcc .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#fksrudjpcc .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#fksrudjpcc .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#fksrudjpcc .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#fksrudjpcc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell no-stripe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">N</td>
+<td class="gt_row gt_left" headers="Name">No dispersal</td>
+<td class="gt_row gt_left" headers="Description">Peds remain intact and water remains clear</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">S</td>
+<td class="gt_row gt_left" headers="Name">Slight dispersion</td>
+<td class="gt_row gt_left" headers="Description">Peds remain largely intact but a faint milky halo of suspended clay particles can be seen around them</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">M</td>
+<td class="gt_row gt_left" headers="Name">Moderate dispersion</td>
+<td class="gt_row gt_left" headers="Description">Peds partly collapse and a milky halo is visible around the sample</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">C</td>
+<td class="gt_row gt_left" headers="Name">Complete dispersion</td>
+<td class="gt_row gt_left" headers="Description">Peds have collapsed into a pile of separate grains, and are surrounded by an extensive and dense halo.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-berkowitz2017" class="csl-entry" role="listitem">
+Berkowitz JF, VanZomeren CM, Currie SJ, Vasilas L 2017. Application of α,α’<span>-</span>dipyridyl dye for hydric soil identification. Soil Science Society of America Journal [Internet]. 81(3):654–658. <a href="https://doi.org/10.2136/sssaj2016.12.0431">https://doi.org/10.2136/sssaj2016.12.0431</a>
+</div>
+<div id="ref-dekker2009" class="csl-entry" role="listitem">
+Dekker LW, Ritsema CJ, Oostindie K, Moore D, Wesseling JG 2009. Methods for determining soil water repellency on field<span>-</span>moist samples. Water Resources Research [Internet]. 45(4):2008WR007070. <a href="https://doi.org/10.1029/2008WR007070">https://doi.org/10.1029/2008WR007070</a>
+</div>
+<div id="ref-emerson2002" class="csl-entry" role="listitem">
+Emerson WW 2002. Emerson dispersion test. [Internet]. In: Cresswell HP, McKenzie NJ, Coughlan KJ, editors. Collingwood, Victoria: CSIRO Publishing; p. 190–199. <a href="http://www.publish.csiro.au/book/3147/">http://www.publish.csiro.au/book/3147/</a>
+</div>
+<div id="ref-kalra1991" class="csl-entry" role="listitem">
+Kalra YP, Maynard DG 1991. Methods manual for forest soil and plant analysis. [Internet]. Edmonton, Alberta, Canada. <a href="https://ostrnrcan-dostrncan.canada.ca/handle/1845/235139">https://ostrnrcan-dostrncan.canada.ca/handle/1845/235139</a>
+</div>
+<div id="ref-milne1995" class="csl-entry" role="listitem">
+Milne JDG, Clayden B, Singleton PL, Wilson AD 1995. Soil description handbook. [Internet]. Revised. Lincoln, Canterbury, New Zealand: Manaaki Whenua Press. <a href="https://doi.org/10.7931/DL1JG6">https://doi.org/10.7931/DL1JG6</a>
+</div>
+<div id="ref-raupach1959" class="csl-entry" role="listitem">
+Raupach M, Tucker BM 1959. The field determination of soil reaction. Journal of the Australian Institute of Agricultural Science. 25(2):129–133.
+</div>
+<div id="ref-rayment2011" class="csl-entry" role="listitem">
+Rayment GE, Lyons DJ 2011. Soil chemical methods : australasia. [Internet]. Collingwood, Victoria: CSIRO Publishing. <a href="http://www.publish.csiro.au/book/6418">http://www.publish.csiro.au/book/6418</a>
+</div>
+<div id="ref-sapkota2022" class="csl-entry" role="listitem">
+Sapkota Y, Duball C, Vaughan K, Rabenhorst MC, Berkowitz JF 2022. Indicator of reduction in soil (IRIS) devices: A review. Science of The Total Environment [Internet]. 852:158419. <a href="https://doi.org/10.1016/j.scitotenv.2022.158419">https://doi.org/10.1016/j.scitotenv.2022.158419</a>
+</div>
+<div id="ref-standardsaustralia" class="csl-entry" role="listitem">
+Standards Australia Methods of testing soils for engineering purposes - soil classification tests - dispersion - determination of emerson class number of a soil.
+</div>
+<div id="ref-sullivan2018" class="csl-entry" role="listitem">
+Sullivan L, Ward N, Toppler N, Lancaster G 2018a. National acid sulfate soils guidance: National acid sulfate soils sampling and identification methods manual. National acid sulfate soils guidance [Internet]. Canberra, ACT, Australia. <a href="https://www.waterquality.gov.au/sites/default/files/documents/sampling-identification-methods.pdf">https://www.waterquality.gov.au/sites/default/files/documents/sampling-identification-methods.pdf</a>
+</div>
+<div id="ref-sullivan2018a" class="csl-entry" role="listitem">
+Sullivan L, Ward N, Toppler N, Lancaster G 2018b. National acid sulfate soils guidance: National acid sulfate soils identification and laboratory methods manual. National acid sulfate soils guidance [Internet]. Canberra, ACT, Australia. <a href="https://www.waterquality.gov.au/sites/default/files/documents/identification-laboratory-methods.pdf">https://www.waterquality.gov.au/sites/default/files/documents/identification-laboratory-methods.pdf</a>
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -916,12 +3850,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./hr_05_physical_properties.html" class="pagination-link" aria-label="Consistence">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Consistence</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Consistence</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./hr_07_roots.html" class="pagination-link" aria-label="Roots and plant materials">
-        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Roots and plant materials</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./in_00_intro.html" class="pagination-link" aria-label="Interpretations">
+        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Interpretations</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

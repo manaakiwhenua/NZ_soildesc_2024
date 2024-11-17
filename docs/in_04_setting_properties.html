@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.30">
+<meta name="generator" content="quarto-1.6.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Soil Description Handbook – 24&nbsp; Setting properties</title>
+<title>23&nbsp; Soil Setting properties – Soil Description Handbook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,17 +49,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./in_05_nzsc_toplevel.html" rel="next">
-<link href="./in_03_profile_properties.html" rel="prev">
+<link href="./in_06_nzsc_familysibling.html" rel="next">
+<link href="./in_02_horizon_properties.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-98f67bc07761c90b1382d524a234aef8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,7 +88,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -78,13 +127,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./in_00_intro.html">Soil interpretations</a></li><li class="breadcrumb-item"><a href="./in_04_setting_properties.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Setting properties</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./in_00_intro.html">Soil interpretations</a></li><li class="breadcrumb-item"><a href="./in_04_setting_properties.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Soil Setting properties</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -127,9 +176,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Setting and site</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Soil Setting</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -142,47 +191,53 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_01_location.html" class="sidebar-item-text sidebar-link">
+  <a href="./ss_02_location.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Location</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_02_landscape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Landscape</span></span></a>
+  <a href="./ss_03_landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Geomorphology</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_03_parent_material.html" class="sidebar-item-text sidebar-link">
+  <a href="./ss_04_parent_material.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Parent material</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_04_climate.html" class="sidebar-item-text sidebar-link">
+  <a href="./ss_05_climate.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Climate and Weather</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_05_biota.html" class="sidebar-item-text sidebar-link">
+  <a href="./ss_06_biota.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Biota</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ss_06_landuse_mgmt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Land use and management</span></span></a>
+  <a href="./ss_07_landuse_mgmt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Land cover, land use, and land management</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ss_08_soils.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Soils</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Soil profile</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Soil surface and profile</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -190,22 +245,28 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pr_00_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Profile</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The soil site</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pr_01_surface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Land surface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Soil surface</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pr_02_layers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Defining soil horizons</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Soil horizons</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -213,64 +274,52 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_00_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Horizons</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Horizon description</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hr_01_colour.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Horizon colour</span></span></a>
+  <a href="./hr_01_architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Horizon architecture</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hr_02_texture_stones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Soil texture and particle size distribution</span></span></a>
+  <a href="./hr_02_colour.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Horizon colour</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hr_03_structure_peds.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Structure</span></span></a>
+  <a href="./hr_03_texture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Soil texture</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_04_secondary_features.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Secondary features</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Secondary features</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_05_physical_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Consistence</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Consistence</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_06_chemical_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field tests</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./hr_07_roots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Roots and plant materials</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./hr_08_voids.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Voids</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chemical properties</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Soil interpretations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -295,44 +344,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./in_03_profile_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Profile properties</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./in_04_setting_properties.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Setting properties</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_05_nzsc_toplevel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">The New Zealand Soil Classification</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Soil Setting properties</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_06_nzsc_familysibling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">NZSC Family and Sibling</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_07_luc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">NZ Land Use Classification</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_08_wrb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">The World Reference Base for Soil Resources</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_09_suitability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Crop Suitability Assessments</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">NZSC Family and Sibling</span></span></a>
   </div>
 </li>
       </ul>
@@ -345,9 +364,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -372,14 +391,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ap_04_sampling_programs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Sampling programs</span></span></a>
+  <a href="./ap_04_glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ap_05_glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+  <a href="./changelog.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Changes in the new edition</span></span></a>
   </div>
 </li>
       </ul>
@@ -394,13 +413,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#site-and-setting-properties" id="toc-site-and-setting-properties" class="nav-link active" data-scroll-target="#site-and-setting-properties"><span class="header-section-number">25</span> Site and setting properties</a>
+  <li><a href="#sec-in-setting" id="toc-sec-in-setting" class="nav-link active" data-scroll-target="#sec-in-setting"><span class="header-section-number">24</span> Soil setting properties</a>
   <ul class="collapse">
-  <li><a href="#sec-slopeclass" id="toc-sec-slopeclass" class="nav-link" data-scroll-target="#sec-slopeclass"><span class="header-section-number">25.1</span> Slope classification</a></li>
-  <li><a href="#aspect-classification" id="toc-aspect-classification" class="nav-link" data-scroll-target="#aspect-classification"><span class="header-section-number">25.2</span> Aspect classification</a></li>
-  <li><a href="#climate-classification" id="toc-climate-classification" class="nav-link" data-scroll-target="#climate-classification"><span class="header-section-number">25.3</span> Climate classification</a>
+  <li><a href="#sec-slopeclass" id="toc-sec-slopeclass" class="nav-link" data-scroll-target="#sec-slopeclass"><span class="header-section-number">24.1</span> Slope classification</a>
   <ul class="collapse">
-  <li><a href="#critical-limits" id="toc-critical-limits" class="nav-link" data-scroll-target="#critical-limits"><span class="header-section-number">25.3.1</span> Critical limits</a></li>
+  <li><a href="#sec-slopeclass-luc" id="toc-sec-slopeclass-luc" class="nav-link" data-scroll-target="#sec-slopeclass-luc"><span class="header-section-number">24.1.1</span> LUC Slope</a></li>
+  </ul></li>
+  <li><a href="#sec-slopeclass-log" id="toc-sec-slopeclass-log" class="nav-link" data-scroll-target="#sec-slopeclass-log"><span class="header-section-number">24.2</span> Natural Log classifications</a></li>
+  <li><a href="#sec-slopeclass-clm" id="toc-sec-slopeclass-clm" class="nav-link" data-scroll-target="#sec-slopeclass-clm"><span class="header-section-number">24.3</span> Critical-limit classifications</a></li>
+  <li><a href="#sec-slopeclass-dat" id="toc-sec-slopeclass-dat" class="nav-link" data-scroll-target="#sec-slopeclass-dat"><span class="header-section-number">24.4</span> Data-driven classifications</a></li>
+  <li><a href="#sec-aspectclass" id="toc-sec-aspectclass" class="nav-link" data-scroll-target="#sec-aspectclass"><span class="header-section-number">24.5</span> Aspect classification</a></li>
+  <li><a href="#sec-reliefclass" id="toc-sec-reliefclass" class="nav-link" data-scroll-target="#sec-reliefclass"><span class="header-section-number">24.6</span> Relief classification</a></li>
+  <li><a href="#climate-classification" id="toc-climate-classification" class="nav-link" data-scroll-target="#climate-classification"><span class="header-section-number">24.7</span> Climate classification</a>
+  <ul class="collapse">
+  <li><a href="#critical-limits" id="toc-critical-limits" class="nav-link" data-scroll-target="#critical-limits"><span class="header-section-number">24.7.1</span> Critical limits</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -409,9 +435,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./in_00_intro.html">Soil interpretations</a></li><li class="breadcrumb-item"><a href="./in_04_setting_properties.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Setting properties</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./in_00_intro.html">Soil interpretations</a></li><li class="breadcrumb-item"><a href="./in_04_setting_properties.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Soil Setting properties</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Setting properties</span></h1>
+<h1 class="title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Soil Setting properties</span></h1>
 </div>
 
 
@@ -423,7 +449,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">June 30, 2024</p>
+      <p class="date-modified">November 18, 2024</p>
     </div>
   </div>
     
@@ -434,32 +460,1662 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="site-and-setting-properties" class="level1" data-number="25">
-<h1 data-number="25"><span class="header-section-number">25</span> Site and setting properties</h1>
-<section id="sec-slopeclass" class="level2" data-number="25.1">
-<h2 data-number="25.1" class="anchored" data-anchor-id="sec-slopeclass"><span class="header-section-number">25.1</span> Slope classification</h2>
-<ul>
-<li>talk through LUC and other systems</li>
-</ul>
+<section id="sec-in-setting" class="level1" data-number="24">
+<h1 data-number="24"><span class="header-section-number">24</span> Soil setting properties</h1>
+<p>Many of the parameters described in Soil Setting are inherently categorical. Classifying the numeric measurements as well can be useful for efficient communication. However, in the absence of inherent groupings in these data, class boundaries need to be chosen carefully.</p>
+<section id="sec-slopeclass" class="level2" data-number="24.1">
+<h2 data-number="24.1" class="anchored" data-anchor-id="sec-slopeclass"><span class="header-section-number">24.1</span> Slope classification</h2>
+<section id="sec-slopeclass-luc" class="level3" data-number="24.1.1">
+<h3 data-number="24.1.1" class="anchored" data-anchor-id="sec-slopeclass-luc"><span class="header-section-number">24.1.1</span> LUC Slope</h3>
+<p>The most commonly-used slope classification in New Zealand is the one associated with the Land Use Capability (LUC) framework. These classes were formulated primarily to support pastoral agriculture, and the class boundaries focus on slope as an activity limiter, rather than an inherent landscape property. This means that the classification can potentially underperform in landscapes where natural slopes are close to the class boundaries. This is acknowledged in the LUC Handbook <span class="citation" data-cites="lynn2009">(<a href="references.html#ref-lynn2009" role="doc-biblioref">Lynn et al. 2009</a>)</span> by the inclusion of various options for modifying slope class.</p>
+<p>The class boundaries are reproduced from Table&nbsp;26 of the LUC Handbook in <a href="#tbl-in-slpluc" class="quarto-xref">Table&nbsp;<span>24.1</span></a>. Some generalised groupings are also included - these are discussed in Appendix&nbsp;1 of the LUC Handbook but are not explicitly defined.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-in-slpluc" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-in-slpluc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;24.1: LUC Slope Classes
+</figcaption>
+<div aria-describedby="tbl-in-slpluc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="eeslfvijac" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eeslfvijac table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#eeslfvijac thead, #eeslfvijac tbody, #eeslfvijac tfoot, #eeslfvijac tr, #eeslfvijac td, #eeslfvijac th {
+  border-style: none;
+}
+
+#eeslfvijac p {
+  margin: 0;
+  padding: 0;
+}
+
+#eeslfvijac .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#eeslfvijac .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#eeslfvijac .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#eeslfvijac .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#eeslfvijac .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#eeslfvijac .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eeslfvijac .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#eeslfvijac .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#eeslfvijac .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#eeslfvijac .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#eeslfvijac .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#eeslfvijac .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#eeslfvijac .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#eeslfvijac .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#eeslfvijac .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#eeslfvijac .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#eeslfvijac .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#eeslfvijac .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#eeslfvijac .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eeslfvijac .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#eeslfvijac .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#eeslfvijac .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#eeslfvijac .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eeslfvijac .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#eeslfvijac .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#eeslfvijac .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eeslfvijac .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eeslfvijac .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#eeslfvijac .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eeslfvijac .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#eeslfvijac .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eeslfvijac .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#eeslfvijac .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eeslfvijac .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#eeslfvijac .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eeslfvijac .gt_left {
+  text-align: left;
+}
+
+#eeslfvijac .gt_center {
+  text-align: center;
+}
+
+#eeslfvijac .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#eeslfvijac .gt_font_normal {
+  font-weight: normal;
+}
+
+#eeslfvijac .gt_font_bold {
+  font-weight: bold;
+}
+
+#eeslfvijac .gt_font_italic {
+  font-style: italic;
+}
+
+#eeslfvijac .gt_super {
+  font-size: 65%;
+}
+
+#eeslfvijac .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#eeslfvijac .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#eeslfvijac .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#eeslfvijac .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#eeslfvijac .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#eeslfvijac .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#eeslfvijac .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#eeslfvijac .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#eeslfvijac div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Limits" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Slope angle (degrees)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row odd">
+<td colspan="2" id="Wheelable" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Wheelable</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Wheelable  Code" style="color: #FF0000; font-weight: bold">A</td>
+<td class="gt_row gt_left" headers="Wheelable  Limits">0 - 3</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Wheelable  Code" style="color: #FF0000; font-weight: bold">B</td>
+<td class="gt_row gt_left" headers="Wheelable  Limits">4 - 7</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Wheelable  Code" style="color: #FF0000; font-weight: bold">C</td>
+<td class="gt_row gt_left" headers="Wheelable  Limits">8 - 15</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="2" id="Hilly" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Hilly</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Hilly  Code" style="color: #FF0000; font-weight: bold">D</td>
+<td class="gt_row gt_left" headers="Hilly  Limits">16 - 20</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Hilly  Code" style="color: #FF0000; font-weight: bold">E</td>
+<td class="gt_row gt_left" headers="Hilly  Limits">21 - 25</td>
+</tr>
+<tr class="gt_group_heading_row even">
+<td colspan="2" id="Steep" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Steep</td>
+</tr>
+<tr class="gt_row_group_first odd">
+<td class="gt_row gt_left" headers="Steep  Code" style="color: #FF0000; font-weight: bold">F</td>
+<td class="gt_row gt_left" headers="Steep  Limits">26 - 35</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Steep  Code" style="color: #FF0000; font-weight: bold">G</td>
+<td class="gt_row gt_left" headers="Steep  Limits">&gt;35</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Note that the Handbook does not provide fully closed limits for slope classes. For consistency, class A should be considered to be 0&nbsp;-&nbsp;≤4, B as &gt;4&nbsp;-&nbsp;≤8, etc.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="aspect-classification" class="level2" data-number="25.2">
-<h2 data-number="25.2" class="anchored" data-anchor-id="aspect-classification"><span class="header-section-number">25.2</span> Aspect classification</h2>
+</section>
+<section id="sec-slopeclass-log" class="level2" data-number="24.2">
+<h2 data-number="24.2" class="anchored" data-anchor-id="sec-slopeclass-log"><span class="header-section-number">24.2</span> Natural Log classifications</h2>
+<p>Work by Speight <span class="citation" data-cites="speight1971">(<a href="references.html#ref-speight1971" role="doc-biblioref">Speight 1971</a>)</span> promotes the use of slope classes with natural-log derived limits on the basis that they come closest to a universal set of ‘characteristic slopes’. The limits proposed are shown in <a href="#tbl-in-slpaus" class="quarto-xref">Table&nbsp;<span>24.2</span></a>. These classes are commonly used in Australian soil survey, and focus more on splitting up low-slope areas of the landscape. As such, these may be more useful for interpreting low-relief landscapes than the LUC classes.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-in-slpaus" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-in-slpaus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;24.2: Natural-log Slope Classes
+</figcaption>
+<div aria-describedby="tbl-in-slpaus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="viwkpdslgw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#viwkpdslgw table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#viwkpdslgw thead, #viwkpdslgw tbody, #viwkpdslgw tfoot, #viwkpdslgw tr, #viwkpdslgw td, #viwkpdslgw th {
+  border-style: none;
+}
+
+#viwkpdslgw p {
+  margin: 0;
+  padding: 0;
+}
+
+#viwkpdslgw .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#viwkpdslgw .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#viwkpdslgw .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#viwkpdslgw .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#viwkpdslgw .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#viwkpdslgw .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#viwkpdslgw .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#viwkpdslgw .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#viwkpdslgw .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#viwkpdslgw .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#viwkpdslgw .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#viwkpdslgw .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#viwkpdslgw .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#viwkpdslgw .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#viwkpdslgw .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#viwkpdslgw .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#viwkpdslgw .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#viwkpdslgw .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#viwkpdslgw .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#viwkpdslgw .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#viwkpdslgw .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#viwkpdslgw .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#viwkpdslgw .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#viwkpdslgw .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#viwkpdslgw .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#viwkpdslgw .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#viwkpdslgw .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#viwkpdslgw .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#viwkpdslgw .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#viwkpdslgw .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#viwkpdslgw .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#viwkpdslgw .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#viwkpdslgw .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#viwkpdslgw .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#viwkpdslgw .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#viwkpdslgw .gt_left {
+  text-align: left;
+}
+
+#viwkpdslgw .gt_center {
+  text-align: center;
+}
+
+#viwkpdslgw .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#viwkpdslgw .gt_font_normal {
+  font-weight: normal;
+}
+
+#viwkpdslgw .gt_font_bold {
+  font-weight: bold;
+}
+
+#viwkpdslgw .gt_font_italic {
+  font-style: italic;
+}
+
+#viwkpdslgw .gt_super {
+  font-size: 65%;
+}
+
+#viwkpdslgw .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#viwkpdslgw .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#viwkpdslgw .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#viwkpdslgw .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#viwkpdslgw .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#viwkpdslgw .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#viwkpdslgw .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#viwkpdslgw .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#viwkpdslgw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 20%">
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Limits_p" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Slope angle (percent)</th>
+<th id="Limits_d" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Slope angle (degrees)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">LE</td>
+<td class="gt_row gt_left" headers="Name">Level</td>
+<td class="gt_row gt_left" headers="Limits_p">0 - ≤ 1</td>
+<td class="gt_row gt_left" headers="Limits_d">0 - ≤ 0.57</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">VG</td>
+<td class="gt_row gt_left" headers="Name">Very Gentle</td>
+<td class="gt_row gt_left" headers="Limits_p">&gt;1 - ≤ 3</td>
+<td class="gt_row gt_left" headers="Limits_d">&gt;0.57 - ≤ 1.72</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">GE</td>
+<td class="gt_row gt_left" headers="Name">Gentle</td>
+<td class="gt_row gt_left" headers="Limits_p">&gt;3 - ≤ 10</td>
+<td class="gt_row gt_left" headers="Limits_d">&gt;1.72 - ≤ 5.71</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">MO</td>
+<td class="gt_row gt_left" headers="Name">Moderate</td>
+<td class="gt_row gt_left" headers="Limits_p">&gt;10 - ≤ 32</td>
+<td class="gt_row gt_left" headers="Limits_d">&gt;5.71 - ≤ 17.7</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">ST</td>
+<td class="gt_row gt_left" headers="Name">Steep</td>
+<td class="gt_row gt_left" headers="Limits_p">&gt;32 - ≤ 56</td>
+<td class="gt_row gt_left" headers="Limits_d">&gt;18 - ≤ 29.25</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">VS</td>
+<td class="gt_row gt_left" headers="Name">Very Steep</td>
+<td class="gt_row gt_left" headers="Limits_p">&gt;56 - ≤ 100</td>
+<td class="gt_row gt_left" headers="Limits_d">&gt;29.25 - ≤ 45</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">PR</td>
+<td class="gt_row gt_left" headers="Name">Precipitous</td>
+<td class="gt_row gt_left" headers="Limits_p">&gt;100 - ≤ 300</td>
+<td class="gt_row gt_left" headers="Limits_d">&gt;45 - ≤ 71.6</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">CL</td>
+<td class="gt_row gt_left" headers="Name">Cliffed</td>
+<td class="gt_row gt_left" headers="Limits_p">&gt;300</td>
+<td class="gt_row gt_left" headers="Limits_d">&gt;71.6</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>The Australian Soil and Land Survey Field Handbook <span class="citation" data-cites="nationalcommitteeonsoilandterrain2023">(<a href="references.html#ref-nationalcommitteeonsoilandterrain2023" role="doc-biblioref">Soil and Terrain 2023</a>)</span> notes that in certain circumstances it may be useful to split the classes <span class="ceg">VG</span>, <span class="ceg">GE</span> and <span class="ceg">MO</span>, at 1.8% (1.0°), 5.6% (3.2°), and 18% (10.2°) respectively. The document does not, however, elucidate those circumstances.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-slopeclass-clm" class="level2" data-number="24.3">
+<h2 data-number="24.3" class="anchored" data-anchor-id="sec-slopeclass-clm"><span class="header-section-number">24.3</span> Critical-limit classifications</h2>
+<p>Landslide-related etc, TBD</p>
+</section>
+<section id="sec-slopeclass-dat" class="level2" data-number="24.4">
+<h2 data-number="24.4" class="anchored" data-anchor-id="sec-slopeclass-dat"><span class="header-section-number">24.4</span> Data-driven classifications</h2>
+<p>Where high-precision DEMs are available and the areal limits of landscapes are identified, data-driven slope classification is possible. This cannot be done universally; since the classification is an expression of local geomorphology the area of interest must first be carefully delineated before proceeding. Classes defined in this way may be very useful in accurately defining landforms, but hard to convert to practical use.</p>
+</section>
+<section id="sec-aspectclass" class="level2" data-number="24.5">
+<h2 data-number="24.5" class="anchored" data-anchor-id="sec-aspectclass"><span class="header-section-number">24.5</span> Aspect classification</h2>
+<p>The broadest aspect classification available divides the landscape into flat/sunny/shady (@tbl-aspcl-ssh). In New Zealand, ‘sunny’ is roughly ‘north-facing’,</p>
 <ul>
 <li>talk through cardinal compass direction and more tailored options</li>
 </ul>
 </section>
-<section id="climate-classification" class="level2" data-number="25.3">
-<h2 data-number="25.3" class="anchored" data-anchor-id="climate-classification"><span class="header-section-number">25.3</span> Climate classification</h2>
+<section id="sec-reliefclass" class="level2" data-number="24.6">
+<h2 data-number="24.6" class="anchored" data-anchor-id="sec-reliefclass"><span class="header-section-number">24.6</span> Relief classification</h2>
+<p>The following classification system is used globally, and developed over many years <span class="citation" data-cites="hammond1954 löffler1977 brabyn1998 speight2009">(see e.g., <a href="references.html#ref-hammond1954" role="doc-biblioref">Hammond 1954</a>; <a href="references.html#ref-löffler1977" role="doc-biblioref">Löffler 1977</a>; <a href="references.html#ref-brabyn1998" role="doc-biblioref">Brabyn 1998</a>; <a href="references.html#ref-speight2009" role="doc-biblioref">Speight 2009</a>)</span>.</p>
+<p>Relief classifications are scale-dependant; these are calculated by convention over a 600&nbsp;m diameter window. The classification can be adjusted to a smaller or larger window size using the formula <span class="math inline">\(range_{new} = range_{old} × (window_{new} / window_{old})\)</span>, where all inputs are in meters.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-in-relief" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-in-relief-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;24.3: Relief classification
+</figcaption>
+<div aria-describedby="tbl-in-relief-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="upguotwiwx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#upguotwiwx table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#upguotwiwx thead, #upguotwiwx tbody, #upguotwiwx tfoot, #upguotwiwx tr, #upguotwiwx td, #upguotwiwx th {
+  border-style: none;
+}
+
+#upguotwiwx p {
+  margin: 0;
+  padding: 0;
+}
+
+#upguotwiwx .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#upguotwiwx .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#upguotwiwx .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#upguotwiwx .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#upguotwiwx .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#upguotwiwx .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#upguotwiwx .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#upguotwiwx .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#upguotwiwx .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#upguotwiwx .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#upguotwiwx .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#upguotwiwx .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#upguotwiwx .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#upguotwiwx .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#upguotwiwx .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#upguotwiwx .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#upguotwiwx .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#upguotwiwx .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#upguotwiwx .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#upguotwiwx .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#upguotwiwx .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#upguotwiwx .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#upguotwiwx .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#upguotwiwx .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#upguotwiwx .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#upguotwiwx .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#upguotwiwx .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#upguotwiwx .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#upguotwiwx .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#upguotwiwx .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#upguotwiwx .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#upguotwiwx .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#upguotwiwx .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#upguotwiwx .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#upguotwiwx .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#upguotwiwx .gt_left {
+  text-align: left;
+}
+
+#upguotwiwx .gt_center {
+  text-align: center;
+}
+
+#upguotwiwx .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#upguotwiwx .gt_font_normal {
+  font-weight: normal;
+}
+
+#upguotwiwx .gt_font_bold {
+  font-weight: bold;
+}
+
+#upguotwiwx .gt_font_italic {
+  font-style: italic;
+}
+
+#upguotwiwx .gt_super {
+  font-size: 65%;
+}
+
+#upguotwiwx .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#upguotwiwx .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#upguotwiwx .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#upguotwiwx .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#upguotwiwx .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#upguotwiwx .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#upguotwiwx .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#upguotwiwx .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#upguotwiwx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Rng_m" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Range (m)</th>
+<th id="avg_m" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Average (m)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">P</td>
+<td class="gt_row gt_left" headers="Name">Extremely low</td>
+<td class="gt_row gt_left" headers="Rng_m">≤ 9</td>
+<td class="gt_row gt_left" headers="avg_m">~5</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">R</td>
+<td class="gt_row gt_left" headers="Name">Very Low</td>
+<td class="gt_row gt_left" headers="Rng_m">&gt; 9 - ≤ 30</td>
+<td class="gt_row gt_left" headers="avg_m">~15</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">L</td>
+<td class="gt_row gt_left" headers="Name">Low</td>
+<td class="gt_row gt_left" headers="Rng_m">&gt; 30 - ≤ 90</td>
+<td class="gt_row gt_left" headers="avg_m">~60</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">M</td>
+<td class="gt_row gt_left" headers="Name">Moderate</td>
+<td class="gt_row gt_left" headers="Rng_m">&gt; 90 - ≤ 150</td>
+<td class="gt_row gt_left" headers="avg_m">~120</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">H</td>
+<td class="gt_row gt_left" headers="Name">High</td>
+<td class="gt_row gt_left" headers="Rng_m">&gt; 150 - ≤ 300</td>
+<td class="gt_row gt_left" headers="avg_m">~200</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="color: #FF0000; font-weight: bold">V</td>
+<td class="gt_row gt_left" headers="Name">Very High</td>
+<td class="gt_row gt_left" headers="Rng_m">&gt; 300</td>
+<td class="gt_row gt_left" headers="avg_m">~500</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="climate-classification" class="level2" data-number="24.7">
+<h2 data-number="24.7" class="anchored" data-anchor-id="climate-classification"><span class="header-section-number">24.7</span> Climate classification</h2>
 <ul>
 <li>???</li>
 </ul>
-<section id="critical-limits" class="level3" data-number="25.3.1">
-<h3 data-number="25.3.1" class="anchored" data-anchor-id="critical-limits"><span class="header-section-number">25.3.1</span> Critical limits</h3>
+<section id="critical-limits" class="level3" data-number="24.7.1">
+<h3 data-number="24.7.1" class="anchored" data-anchor-id="critical-limits"><span class="header-section-number">24.7.1</span> Critical limits</h3>
 <ul>
 <li>e.g.&nbsp;rainfall and brown v pallic</li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-brabyn1998" class="csl-entry" role="listitem">
+Brabyn L 1998. 10th colloquium of the spatial information research centre. [Internet]. In: University of Otago, Dunedin, New Zealand: University of Otago; p. 35–48. <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.527.9657&amp;rep=rep1&amp;type=pdf">https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.527.9657&amp;rep=rep1&amp;type=pdf</a>
+</div>
+<div id="ref-hammond1954" class="csl-entry" role="listitem">
+Hammond EH 1954. Small-scale continental landform maps. Annals of the Association of American Geographers [Internet]. 44(1):33–42. <a href="https://doi.org/10.1080/00045605409352120">https://doi.org/10.1080/00045605409352120</a>
+</div>
+<div id="ref-löffler1977" class="csl-entry" role="listitem">
+Löffler E 1977. Geomorphology of papua new guinea. Canberra, ACT, Australia: Australian National University Press.
+</div>
+<div id="ref-lynn2009" class="csl-entry" role="listitem">
+Lynn IH, Manderson AK, Page MJ, Harmsworth GR, Eyles GO, Douglas GB, Mackay AD, Newsome PJF 2009. Land use capability survey handbook - a new zealand handbook for the classification of land. [Internet]. 3rd ed. Hamilton [N.Z.] Lincoln [N.Z.] Lower Hutt [N.Z.]: AgResearch Ltd, Hamilton; Landcare Research New Zealand Ltd, Lincoln; Institute of Geological; Nuclear Sciences Ltd, Lower Hutt. <a href="https://doi.org/10.7931/DL1MG6">https://doi.org/10.7931/DL1MG6</a>
+</div>
+<div id="ref-nationalcommitteeonsoilandterrain2023" class="csl-entry" role="listitem">
+Soil NC on, Terrain 2023. Changes to the australian soil and land survey field handbook in the draft 4th edition.
+</div>
+<div id="ref-speight1971" class="csl-entry" role="listitem">
+Speight JG 1971. Log-normality of slope distributions. Zeitschrift für Geomorphologie [Internet]. 15(3):290–311. <a href="https://doi.org/10.1127/zfg/15/1971/290">https://doi.org/10.1127/zfg/15/1971/290</a>
+</div>
+<div id="ref-speight2009" class="csl-entry" role="listitem">
+Speight JG 2009. Landform. In: Soil NC on, Terrain, editors. 3rd ed. Melbourne: CSIRO Publishing; p. 15–72.
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -887,13 +2543,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./in_03_profile_properties.html" class="pagination-link" aria-label="Profile properties">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Profile properties</span></span>
+      <a href="./in_02_horizon_properties.html" class="pagination-link" aria-label="Horizon properties">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Horizon properties</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./in_05_nzsc_toplevel.html" class="pagination-link" aria-label="The New Zealand Soil Classification">
-        <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">The New Zealand Soil Classification</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./in_06_nzsc_familysibling.html" class="pagination-link" aria-label="NZSC Family and Sibling">
+        <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">NZSC Family and Sibling</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
