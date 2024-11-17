@@ -12,7 +12,9 @@ library(gt)
 library(gtExtras)
 ```
 
-## Size classes for solid soil components
+## Size classes {#sec-in-size}
+
+### Size classes for solid soil components {#sec-in-solsz}
 
 The following size classification may be applied to size data gathered for peds and other solid soil components.
 
@@ -48,6 +50,109 @@ tbl_in_size <- gt(dat_in_size) |>
 tbl_in_size
 
 ```
+
+### Size classes for rock fragments
+
+The following classification may be applied to directly measured size data for rock fragments, or used when assessing rock fragment composition in detail (@sec-rockfrag). 
+
+```{r}
+#| label: tbl-in-rockfrsz
+#| tbl-cap: "Rock fragment size classes"
+#| classes : no-stripe
+
+dat_in_rockfrsz <-
+  tribble(~Code, ~Name, ~Description,
+         1, 'Fine gravel',    '2 - 6',
+         2, 'Medium gravel',  '6 - 20',
+         3, 'Coarse gravel',  '20 - 60',
+         4, 'Cobbles',        '60 - 200',
+         5, 'Stones',         '200 - 600',
+         6, 'Boulders',       '600 - 2000', 
+         7, 'Large boulders', '>2000') 
+
+tbl_in_rockfrsz <- gt(dat_in_rockfrsz) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_label(Description = 'Size range (mm)') |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_in_rockfrsz
+```
+
+## Abundance classes {#sec-in-abund}
+
+### Abundance classes for roots {#sec-in-abrts}
+
+```{r}
+#| label: tbl-hr-rtab
+#| tbl-cap: "Plant root abundance classes"
+#| classes : no-stripe
+
+dat_hr_rtab <-
+  tribble(~Code,      ~Name,  ~Description,
+              0,     'None',          '0%',
+              1,      'Few',   '> 0 - 5%',
+              2,   'Common',  '> 5 - 25%',
+              3,     'Many',  '> 25 - 50%',
+              4, 'Abundant',       '> 50%')
+
+tbl_hr_rtab <- gt(dat_hr_rtab) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_rtab
+
+```
+
+### Abundance classes for other soil components {#sec-in-abgen}
+
+```{r}
+#| label: tbl-hr-abgen
+#| tbl-cap: "General abundance classes"
+#| classes : no-stripe
+
+dat_hr_abgen <-
+  tribble(~Code,      ~Name,  ~Description,
+              0,     'None',          '0%',
+              1, 'Very Few',    '> 0 - 2%',
+              2,      'Few',    '> 2 - 10',
+              3,   'Common',  '> 10 - 35%',
+              4,     'Many',  '> 35 - 50%',
+              5, 'Abundant',  '> 50 - 75%',
+              6,  'Dominant',      '> 75%' )
+
+tbl_hr_abgen <- gt(dat_hr_abgen) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_abgen
+```
+
+### Estimating abundance classes {#sec-in-abundpics}
+
+The following images can help accurately estimate percentage abundance of soil features by area.
+
+[images go here]{.diags}
 
 ## Horizon drainage {#sec-in-hdrng}
 
@@ -177,7 +282,7 @@ Tephric codes cannot be used in combination with [O\*]{.ceg}, [J]{.ceg} or [Q]{.
 
 #### Stone content
 
-Use the volumetric stone content assessments made in @sec-hr-stone to classify stone content of functional horizons.
+Use the volumetric stone content assessments made in @sec-rockfrag to classify stone content of functional horizons.
 
 ```{r}
 #| label: tbl-in-fhst
@@ -216,9 +321,9 @@ tbl_in_fhst
 
 dat_in_fhtx <-
   tribble(~Code, ~Name, ~Description,
-         'A', 'Sandy',          'Sand and Loamy Sand [texture classes](hr_03_texture_stones.qmd#sec-hr-tex)',
-         'L', 'Loamy or Silty', 'Loamy and Silty [texture classes](hr_03_texture_stones.qmd#sec-hr-tex)',
-         'Y', 'Clayey',         'Clayey [texture classes](hr_03_texture_stones.qmd#sec-hr-tex)', 
+         'A', 'Sandy',          'Sand and Loamy Sand [texture classes](hr_03_texture.qmd#sec-hr-tex)',
+         'L', 'Loamy or Silty', 'Loamy and Silty [texture classes](hr_03_texture.qmd#sec-hr-tex)',
+         'Y', 'Clayey',         'Clayey [texture classes](hr_03_texture.qmd#sec-hr-tex)', 
          'O', 'Organic',        'Organic soil materials',
          'J', 'Fluid',          'Moderately or very fluid',
          'Q', 'Pan',            'Indurated pan',
@@ -254,7 +359,7 @@ tbl_in_fhtx
 
 dat_in_fhtxx <-
   tribble(~Code, ~Name, ~Description,
-         'a', 'Dune sand', 'Clean, [medium to coarse sand](hr_03_texture_stones.qmd#tbl-hr-sandquals)',
+         'a', 'Dune sand', 'Clean, [medium to coarse sand](hr_03_texture.qmd#tbl-hr-sandquals)',
          'x', 'Fragmental', '\\> 85% rock fragments with minimal interstitial material',
          'h', 'Humified', 'Non-fibrous peats - conventional horizons **Om**, **Oh**', 
          'r', 'Fibrous',  'Fibrous peats and thick litter layers - conventional horizons **Of**, **H**, **F**')
