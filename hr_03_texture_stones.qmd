@@ -15,8 +15,6 @@ loadfonts(quiet = TRUE)
 
 # Soil texture and particle size distribution
 
-
-
 ## Fine fraction {#sec-tex-fine}
 
 ### Field textures and laboratory measurements
@@ -113,7 +111,7 @@ tbl_hr_textri <- nztt_labels |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(cat_texture_code ~pct(20), cat_texture_name ~ pct(20)) |>
+  cols_width(cat_texture_code ~pct(10), cat_texture_name ~ pct(20)) |>
   cols_label(cat_texture_name = 'Name', cat_texture_code = 'Code',
              txt_clay_range = 'Clay range',
              txt_silt_range = 'Silt range',
@@ -149,7 +147,7 @@ tbl_hr_sandquals <- gt(dat_hr_sandquals) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_hr_sandquals
 
@@ -180,7 +178,7 @@ tbl_hr_orgmquals <- gt(dat_hr_orgmquals) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_hr_orgmquals
 
@@ -206,7 +204,7 @@ tbl_hr_orgmdec <- gt(dat_hr_orgmdec) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_hr_orgmdec
 ```
@@ -243,7 +241,7 @@ tbl_hr_rockfrsz <- gt(dat_hr_rockfrsz) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_hr_rockfrsz
 ```
@@ -272,7 +270,7 @@ tbl_hr_rockfrshp <- gt(dat_hr_rockfrshp) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_hr_rockfrshp
 ```
@@ -307,13 +305,13 @@ tbl_hr_nonrock <- gt(dat_hr_nonrock) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_hr_nonrock
 
 ```
 
-### Artefacts
+### Artefacts {#sec-hr-artef}
 
 Artefacts can both function like rock fragments and signify strong human influence on the soil profile. 
 
@@ -347,7 +345,7 @@ tbl_hr_artefs <- gt(dat_hr_artefs) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_hr_artefs
 
