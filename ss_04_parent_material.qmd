@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Parent material
+# Parent material {#sec-pm}
 
 ```{r}
 library(dplyr)
@@ -15,7 +15,7 @@ library(gtExtras)
 
 Parent material can be explored in terms of geological units, lithology (rock type), and mineralogy.
 
-## Geology
+## Geology {#sec-pm-geol}
 
 Geological mapping, particularly surface and near-surface stratigraphy, is an essential resource for understanding the landscape. However, the scale and focus of the available products don't always align with soil observation needs. Some caution is needed when interpreting geological maps in a soils context. Keep the following in mind:
 
@@ -24,27 +24,27 @@ Geological mapping, particularly surface and near-surface stratigraphy, is an es
 
 Geology mapping in New Zealand can be accessed through resources provided by [GNS Science - Te Pū Ao](https://www.gns.cri.nz/). This includes QMap, a unified 1:250,000 scale geological map of the country, and a large set of legacy geology maps produced at scales as detailed as 1:25,000.
 
-## Lithology
+## Lithology {#sec-pm-lith}
 
 The specific lithology, or rock type, of the parent material offers a more specific and soil-relevant categorisation than geology mapping generally supplies. The following options are in common use in New Zealand.
 
-### NZLRI Rock Type
+### NZLRI Rock Type {#sec-pm-lri}
 
 An identification and coding system for New Zealand rock types is available in [@lynn1991]. This system is tuned for land resource assessment, particularly assessment of erosivity, and is used in the NZ Land Resource Inventory and Land Use Classification methodology [@lynn2009]. The system is mentioned here as an option where consistency with LUC mapping is desired.
 
 [repeat codes, or just xref??]{.todo}
 
-### NZSC Parent Material {#sec-ss-pmat}
+### NZSC Rock Class {#sec-ss-pmat}
 
 Level 4 of the NZSC, the soil Family [@webb2011], uses a shorter list of lithology codes along with a separate 'origin' code, whereas the NZLRI rock type conflates the two concepts. The lithology codes are available in @tbl-ss-pm, and the origin codes in @tbl-ss-pmo.
 
-## Other lithology classifications
+### Other lithology classifications {#sec-pm-litho}
 
-### Geological vocabularies
+#### Geological vocabularies {#sec-pm-vocabs}
 
-Several research-grade vocabularies for describing geology have been developed in recent years, including @geoscienceaustralia2016 and @mccormick2023. Both offer a detailed set of rock and mineral definitions in a hierarchical relationship structure, but both are currently missing one or more terms essential to the New Zealand context. Additionally, the hierarchies don't always align cleanly with those used in New Zealand geology.
+Several research-grade vocabularies for describing geology have been developed in recent years, including @geoscienceaustralia2016 and @mccormick2023. Both offer a detailed set of rock and mineral definitions in a hierarchical relationship structure, but both are currently missing one or more terms essential to the New Zealand context. Additionally, the hierarchies don't always align cleanly with those used in New Zealand geology. The vocabularies are expected to develop over time and may be recommended in future editions.
 
-### Silica-content classification
+#### Silica-content classification {#sec-pm-lithsi}
 
 Soil parent material classifications have largely focused on major geological origin (igneous, metamorphic, sedimentary), grain size, and some obvious compositional classes. [@gray2016] contend that the major differentiator for soil formation should first be silica (SiO~2~) content and propose an alternate lithology classification per @tbl-ss-sio2lith below. This is optional to record as it has not been extensively tested.
 
@@ -85,5 +85,61 @@ tbl_ss_sio2lith
 
 This system can be applied to the New Zealand context relatively easily, although class [10]{.ceg} may be very rare. Iron sands would map to one of classes [6]{.ceg} to [8]{.ceg}, depending on deposit purity.
 
--   Folk 1970, blair and mcpherson 1999
--   juilleret subsolum stuff
+## Mineralogy
+
+The mineralogy classes of the US Soil Taxonomy [@soilsurveystaff2022] may be estimated if known, but these will require laboratory confirmation and the ability to classify the profile against US Soil Taxonomy at least to Great Group level.
+
+The New Zealand soil classification [@hewitt2010] uses an older version of the Soil Taxonomy mineral classes, adapted to New Zealand conditions and extensively tested [@childs1990]. The classes are mentioned in relation to soil orders but are not used the key or the diagnostic materials. Optionally, the dominant class may be recorded on a per-horizon basis using the key in @tbl-ss-nzscmin. Estimates may be made using knowledge of soil parent materials and local soil-forming processes, but should be confirmed in the laboratory.
+
+```{r}
+#| label: tbl-ss-nzscmin
+#| tbl-cap: "New Zealand soil mineralogy classification (reproduced from @childs1990, Table 1)"
+
+dat_ss_nzscmin <-
+  tribble(
+    ~Code, ~Name, ~ Description, ~size,
+    'Gy', 'Gypsic', '\\>15% by weight of gypsum', '< 20 mm',
+    'Ca', 'Carbonatic', '\\>30% by weight carbonates (as CaCO~3~)',  '< 20 mm',
+    'Sf', 'Superferritic', '\\> 28% citrate-dithionite extractable Fe (≥ 40% as Fe~2~O~3~)', '< 2 mm',
+    'Fe', 'Ferritic', '\\> 7.0% citrate-dithionite extractable Fe (≥ 10% as Fe~2~O~3~)',  '< 2 mm',
+    'Al', 'Aluminitic', '\\> 40% by weight aluminium hydroxides and oxyhydroxides',  '< 2 mm',
+    'Si', 'Siliceous', '\\> 90% by weight silica (SiO~2~) minerals (quartz, chalcedony, or opal) and other durable minerals that are resistant to weathering, provided that the silica minerals are > 60% by weight',  '< 2 mm',
+    'Am', 'Amorphous', '\\> 5% by weight of minerals with short-range order (principally allophane, imogolite, and ferrihydrite',  '< 2 mm',
+    'Mi', 'Micaceous', '\\> 40% by weight of mica minerals',  '< 2 mm',
+    'Cl', 'Chloritic', '\\> 40% by weight of chlorite',  '< 2 mm',
+    'Sp', 'Serpentinitic', '\\> 40% by weight of serpentine minerals (antigorite, chrysotile, fibrolite, and talc)',  '< 2 mm',
+    'Sm', 'Smectitic', 'More smectites than any other mineral group or single mineral (if mineral group not applicable, e.g. crandallite, chlorite)', '< 0.002 mm',
+    'Vm', 'Vermiculitic', 'More vermiculites than any other mineral group or single mineral', '< 0.002 mm',
+    'Il', 'Illitic', 'More illites than any other mineral group or single mineral', '< 0.002 mm',
+    'Ka', 'Kandic', '\\> 50% by weight Kaolin-group minerals (kaolinite, halloysite, dickite, and nacrite) *and* < 10% by weight smectites', '< 0.002 mm',
+    'Cm', 'Clay-mineralic', 'Other soils with > 10% clay. The dominant mineral or mineral group in the clay fraction is named (e.g. clay-mineralic (crandallite))', '< 0.002 mm',
+    'Gl', 'Glassy', '\\> 40% by weight volcanic glass', '< 2 mm',
+    'Wh', 'Whole-soil-mineralic', '\\> 40% by weight of any mineral or mineral group, other than silica minerals or feldspars', '< 2 mm',
+    'Ot', 'Other soils', '', 'Not applicable')
+        
+tbl_ss_nzscmin <- gt(dat_ss_nzscmin) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  tab_row_group(label = 'All soils', rows = 1:10, 
+                id ='all') |>
+  tab_row_group(label = 'Other soils with ≥ 10% clay', rows = 11:15,
+                id = 'clay') |>
+  tab_row_group(label = 'Other soils with < 10% clay', rows = 16:18,
+                id = 'not') |>
+  row_group_order(groups = c('all', 'clay', 'not')) |>
+  tab_style(style = list(cell_text(weight = 'bold')),
+            locations = cells_row_groups()) |>
+  fmt_markdown(columns = 3) |>
+  cols_label(size = 'Determinant size fraction') |>
+  tab_footnote(footnote = 'In New Zealand the following are regarded as "durable minerals": beryl, corundum, ilmenite, magnetite, tourmaline group, zircon.',
+               locations = cells_body(columns = 3, rows = 6)) |>
+  cols_width(Code ~pct(10), Name ~pct(20), Description ~pct(50))
+
+tbl_ss_nzscmin
+```
