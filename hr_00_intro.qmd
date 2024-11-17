@@ -19,13 +19,14 @@ Each soil horizon comprises the following major components:
 - Mineral fraction
     - fine earth (mineral particles < 2mm)
     - rock fragments (mineral particles > 2mm)
+    - concentrations (precipitates of any size)
 - Biological fraction
    - Fine organic matter
    - Coarse organic matter (timber, plant roots)
 - Liquid fraction (moisture content)
 - Voids
 
-These fractions can be communicated as percentage by volume, adding to 100%. The fine-earth fraction also has its own compositional data based on finer divisions of the <2 mm fraction (see @sec-tex-fine). Volumetric water content is best determined in the laboratory, and so is not described further in this section.
+These fractions can be communicated as percentage by volume, adding to 100%. The fine-earth fraction also has its own compositional data based on finer divisions of the <2 mm fraction (see @sec-tex). Volumetric water content is best determined in the laboratory, and so is not described further in this section.
 
 [complicated exploding pie chart or similar goes here]{.diags}
 
@@ -71,7 +72,7 @@ tbl_hr_antype <- gt(dat_hr_antype) |>
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(20), Name ~pct(20))
 
-dat_hr_antype
+tbl_hr_antype
 ```
 
 Parent material origin is also summarised across the top 100 cm of the soil profile as part of defining the [NZSC Soil Family](in_06_nzsc_familysibling.qmd#sec-fam-pmo). 

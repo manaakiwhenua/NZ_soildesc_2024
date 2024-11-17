@@ -120,11 +120,11 @@ tbl_hr_rtab
 ### Abundance classes for other soil components {#sec-in-abgen}
 
 ```{r}
-#| label: tbl-hr-abgen
+#| label: tbl-in-abgen
 #| tbl-cap: "General abundance classes"
 #| classes : no-stripe
 
-dat_hr_abgen <-
+dat_in_abgen <-
   tribble(~Code,      ~Name,  ~Description,
               0,     'None',          '0%',
               1, 'Very Few',    '> 0 - 2%',
@@ -134,7 +134,7 @@ dat_hr_abgen <-
               5, 'Abundant',  '> 50 - 75%',
               6,  'Dominant',      '> 75%' )
 
-tbl_hr_abgen <- gt(dat_hr_abgen) |>
+tbl_in_abgen <- gt(dat_in_abgen) |>
   tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
@@ -145,7 +145,7 @@ tbl_hr_abgen <- gt(dat_hr_abgen) |>
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
-tbl_hr_abgen
+tbl_in_abgen
 ```
 
 ### Estimating abundance classes {#sec-in-abundpics}
