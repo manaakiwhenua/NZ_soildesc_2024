@@ -5,7 +5,9 @@ editor_options:
   chunk_output_type: console
 ---
 
-# NZSC Family {#sec-in-nzscfam}
+Levels 4 and 5 of the NZSC, the Family and Sibling, provide useful summaries of key whole-profile parameters. 
+
+## NZSC Family {#sec-in-nzscfam}
 
 ```{r}
 library(dplyr)
@@ -14,11 +16,9 @@ library(gt)
 library(gtExtras)
 ```
 
-Intro/context statement goes here None of this necessarily needs to be done in the field but it is a good skill to have for rapid assessment. Specifics of how to use particular profile-level interpretations to classify to sibling level.
 
-Intro, why the Family is useful, reference to webb and lilburne, things of that nature
 
-## Soil Profile Material {#sec-fam-pm}
+### Soil Profile Material {#sec-fam-pm}
 
 The soil profile material concept is a brief summary of the overall character of the profile, in particular its mineral and stone content and major erosional/depositional origin. Some information on the likely range of bulk density values is implicit.
 
@@ -62,7 +62,7 @@ tbl_in_pmat
 
 Profile material class places restrictions on other parts of the family and sibling definition. These are discussed as they arise below.
 
-## Rock class {#sec-fam-rcl}
+### Rock class {#sec-fam-rcl}
 
 ```{r}
 #| label: tbl-ss-pm
@@ -111,7 +111,7 @@ tbl_ss_pm
 'Soft' rocks in this context can at most be broken readily with a light hammer blow, and can be scraped and peeled by a pocket knife. 'Hard' rocks can at best be scratched with a knife but not scraped or peeled, and require a firm hammer blow to crack [@lynn1991, p. 11].
 :::
 
-### Rock class of stone and bedrock {#sec-fam-rclr}
+#### Rock class of stone and bedrock {#sec-fam-rclr}
 
 Rock class of in-profile stone and of bedrock (where encountered) uses the lithology codes in @tbl-ss-pm, with specific restrictions around how they are applied to the whole profile. These are:
 
@@ -123,9 +123,7 @@ Rock class of in-profile stone and of bedrock (where encountered) uses the litho
 -   Where two lithologies are close to co-dominant in a stony profile, two codes separated by '[+]{.ceg}' can be used e.g. [An+Rh]{.ceg}.
 -   More complicated combinations are not allowed, e.g. no [An+Rh/Gw]{.ceg}.
 
-[might need an ok/not ok table here, although what would actually be better is separating profile and bedrock rock class entirely]{.todo}
-
-### Rock class of fines {#sec-fam-rclf}
+#### Rock class of fines {#sec-fam-rclf}
 
 The same rock class codes in @tbl-ss-pm can be applied to report the dominant lithology of the fine earth (\< 2 mm) fraction of the full profile. Again, some restrictions apply:
 
@@ -134,7 +132,7 @@ The same rock class codes in @tbl-ss-pm can be applied to report the dominant li
 -   Where two lithologies are close to co-dominant, two codes separated by '[+]{.ceg}' can be used e.g. [An+Rh]{.ceg}.
 -   More complicated combinations are not allowed, e.g. no [An+Rh/Sm+Ss/Gw]{.ceg}.
 
-## Family texture class {#sec-fam-tex}
+### Family texture class {#sec-fam-tex}
 
 The family texture class describes the dominant character of the top 60 cm, or to the profile material class-defining rock or gravel layer contact if that is shallower. Use the codes in @tbl-in-famtex. Note that 18% organic carbon corresponds to approximately 30% organic matter.
 
@@ -160,13 +158,14 @@ tbl_in_famtex <- gt(dat_in_famtex) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
+  fmt_missing(missing_text = '-') |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_in_famtex
 
 ```
 
-## Permeability class {#sec-fam-perm}
+### Permeability class {#sec-fam-perm}
 
 This class estimates the permeability of the top 100 cm in units of mm/hr. Use the codes in @tbl-in-famperm and follow the rules in @fig-in-famperm to assign permeability class.
 
@@ -202,6 +201,7 @@ Follow the flowchart to assign family permeability class:
 %%| label: fig-in-famperm
 %%| fig-cap: "NZSC Family permeability flowchart"
 
+%%{ init: { 'flowchart': { 'curve': 'stepAfter' } } }%%
 graph TD
   A[Identify the uppermost horizon with the slowest permeability,<br />or rock above 100 cm. This is Horizon X.]-->B[Does Horizon X have > 30 cm of<br /> contrasting permeability above?]
   B-->|Yes|C(Use m/s, r/s, r/m)
@@ -217,7 +217,7 @@ Some additional rules apply for particular soil profile material classes:
 -   Soils with profile material class [Ml]{.ceg} or [Mp]{.ceg} and any soil with an [M]{.ceg} root barrier must use [m/s]{.ceg} or [r/s]{.ceg}.
     -   Exception: [Ml]{.ceg} with [F]{.ceg} barrier can't be [\*/s]{.ceg}.
 
-## Parent material origin {#sec-fam-pmo}
+### Parent material origin {#sec-fam-pmo}
 
 Parent material origin (PMO) is the final defining factor of the soil Family. It describes how soil parent materials have arrived at the point of observation. Allowable codes are listed in @tbl-ss-pmo.
 
@@ -260,18 +260,18 @@ tbl_ss_pmo <- gt(dat_ss_pmo) |>
 tbl_ss_pmo
 ```
 
-# NZSC Sibling {#sec-in-sib}
+## NZSC Sibling {#sec-in-sib}
 
-These codes help define level 5 of the NZSC.
+These codes help define level 5 of the NZSC, the soil sibling.
 
-## Soil Depth {#sec-in-sibdepth}
+### Soil Depth {#sec-in-sibdepth}
 
 Soil depth from a sibling perspective is the depth to where digging becomes difficult, e.g.
 
 -   A horizon with ≥ 35% stones by volume (V or X functional horizons, @sec-in-fh)
 -   A soft- or hard-rock surface (M rooting barrier)
 -   A shattered-lithic contact (F rooting barrier)
--   A pan (Q functional horizons)
+-   A pan (Q functional horizons, @sec-)
 -   Firm strength with massive or coarse structure (\*Cf functional horizons)
 
 Use the codes in @tbl-in-sibdepth to assign a depth class to a profile.
@@ -303,7 +303,7 @@ tbl_in_sibdepth
 
 ```
 
-## Topsoil stoniness
+### Topsoil stoniness
 
 Topsoil stoniness assesses the amount of rock fragments (as % by volume) in the top 20 cm of the soil profile, including those resting on the soil surface.
 
@@ -367,7 +367,7 @@ tbl_in_sibstone <- gt(dat_in_sibstone) |>
 tbl_in_sibstone
 ```
 
-## Sibling texture classes
+### Sibling texture classes
 
 These classes are assessed over the top 100 cm, or to rock or gravel layer contact if those are shallower. Note that this is deeper than the family-level texture control section. The following rules apply:
 
@@ -420,7 +420,7 @@ tbl_in_sibtexture <- gt(dat_in_sibtexture) |>
 tbl_in_sibtexture
 ```
 
-## Drainage {#sec-in-pdrng}
+### Drainage {#sec-in-pdrng}
 
 Profile drainage is determined from horizon depths and per-horizon drainage ratings completed according to @sec-in-hdrng.
 
@@ -457,7 +457,7 @@ tbl_in_pdrng
 
 Workers classifying drainage for NZSC Sibling construction have no need to subdivide within those profile ratings. For other types of work e.g. agricultural suitability assessment, it may be useful to recognise subgroups – e.g. for a deep-rooted, wetness-intolerant crop, there’s a difference between a profile that is at its *worst* imperfectly drained in the top 1 m, vs one that is dominantly imperfectly drained but has poor drainage below 60 cm.
 
-### Helper information for profile drainage {#sec-in-pdrng-xtra}
+#### Helper information for profile drainage {#sec-in-pdrng-xtra}
 
 @tbl-in-drngl describes some potential additional signifiers of profile drainage condition that might be considered. These may be useful when estimating drainage in a new landscape that has not yet been examined in detail.
 
@@ -492,7 +492,7 @@ tbl_in_drngl
 
 ```
 
-### Natural vs Artificial drainage {#sec-in-pdrng-alt}
+#### Natural vs Artificial drainage {#sec-in-pdrng-alt}
 
 Profile drainage is often modified by human activity. Many of these modifications require ongoing maintenance. Use the codes in @tbl-in-natdrng to signify the degree of drainage modification.
 

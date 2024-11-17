@@ -245,8 +245,6 @@ tbl_in_fhts
 
 The topsoil code can be prefixed to any horizon - it is not restricted to the first functional horizon in the profile. This enables buried topsoils or multi-horizon topsoils to be adequately described.
 
-[Note slight change to roots requirement, see @tbl-hr-rtab - may need further adjustment]{.majch}
-
 #### Tephric character {#sec-in-fh-vc}
 
 ```{r}
@@ -278,9 +276,7 @@ tbl_in_fhvc
 
 Tephric codes cannot be used in combination with [O\*]{.ceg}, [J]{.ceg} or [Q]{.ceg} functional horizon textures (see below).
 
-[TODO add cross links to nzsc diagnostics above]{.todo}
-
-#### Stone content
+#### Stone content {#sec-in-fh-stone}
 
 Use the volumetric stone content assessments made in @sec-rockfrag to classify stone content of functional horizons.
 
@@ -348,9 +344,7 @@ tbl_in_fhtx
 -   Texture [Q]{.ceg} is used where a pan is observed and is not used in concert with any other codes.
 -   Texture [P]{.ceg} is used where a placic horizon is observed and is not used in concert with any other codes.
 
-[TODO get some crosslinks going/review definitions above]{.todo}
-
-#### Texture suffixes
+#### Texture suffixes {#sec-in-fh-tx2}
 
 ```{r}
 #| label: tbl-in-fhtxx
@@ -414,9 +408,7 @@ tbl_in_fhtxx
 -   Structure codes ([C]{.ceg}, [F]{.ceg}) can only be used with [L]{.ceg} or [Y]{.ceg} texture codes, and only where consistence is not [w]{.ceg}.
 -   Structures [E]{.ceg} and [K]{.ceg} can only be used with texture [L]{.ceg}.
 
-[TODO are we keeping Earthy? is there really no lower limit on platy ped size? is it still 40 mm like in Webb or 20mm like in SMap Manual? check aligned with wherever structure ends up and also add crosslinks]{.todo}
-
-#### Consistence
+#### Consistence {#sec-in-fh-cons}
 
 ```{r}
 #| label: tbl-in-fhcon
@@ -451,9 +443,7 @@ tbl_in_fhcon
 -   Consistence [ws]{.ceg} can only be used with texture [Y]{.ceg}.
 -   Consistence [w]{.ceg}, [ws]{.ceg}, [s]{.ceg}, and [f]{.ceg} can only be used with non-stony or stony ([S]{.ceg}) codes. [V]{.ceg} and [X]{.ceg} codes use consistence [l]{.ceg}, [c]{.ceg}, or [d]{.ceg} instead.
 
-[TODO are we keeping ws??]{.todo}
-
-#### Permeability
+#### Permeability {#sec-fh-perm}
 
 The permeability class represents saturated hydraulic conductivity (*K*~sat~) measured as the rate of water infiltrating into a soil horizon when water is ponded at 10 mm deep at the top of the horizon. Assign one of the classes in @tbl-in-hznperm to each horizon. Note that ['xs']{.ceg} represents effective impermeability. The classes have been slightly simplified from those in Griffiths [-@griffiths1991] and Griffiths et al [-@griffiths1999].
 
@@ -489,7 +479,7 @@ tbl_in_hznperm
 
 ```
 
-### Functional horizon names
+### Functional horizon names {#sec-fh-name}
 
 Valid combinations of the above components are listed below, along with associated permeability classes.
 
