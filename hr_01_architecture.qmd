@@ -11,13 +11,13 @@ library(gt)
 library(gtExtras)
 ```
 
-# Soil architecture {#sec-hr-arch}
+# Horizon architecture {#sec-hr-arch}
 
-Soil architecture comprises presence and arrangement of fine earth, stones, roots, and other materials. The presence and connectivity of voids is also described.
+Soil horizon architecture comprises presence and arrangement of fine earth, stones, roots, and other materials. The presence and connectivity of voids is also described.
 
-## Structure {#sec-hr-stru}
+## Fine-earth structure {#sec-hr-stru}
 
-Structure refers to the physical arrangement of the fine-earth fraction. Structure is determined by mineralogy, chemistry, the action of soil biota and land use history.
+Structure refers to the physical arrangement of the fine-earth fraction (\< 2 mm). Structure is determined by mineralogy, chemistry, the action of soil biota and land use history.
 
 -   To assess the structure in an [E]{.ceg} or [P2]{.ceg} type profile (@tbl-pr-gear), insert a spade horizontally near the base of the horizon and push down on the handle, levering out a section of soil. Drop the spade blade with the soil, approximately 0.3 m onto a hard surface, e.g., the blade of another spade. Remove major roots that bind the mass together and again note the attributes of the newly produced solids. Note that this procedure will not necessarily disaggregate very moist or wet soils.
 -   For smaller exposures ([P1]{.ceg}, [C1]{.ceg}, [C2]{.ceg}), remove a handful of soil from the extracted horizon and carefully disaggregate the soil mass to segregate all peds. Do not destroy peds to create fragments, or disaggregate existing apedal material. Note the attributes of the solids as instructed below. For smaller exposures, also use a spade to extract surface material so that at least the topmost horizon can be assessed in detail.
@@ -121,13 +121,13 @@ Some soil terms that don't seem to fit into the above schema are still in common
 Both structures are more correctly described as spheroidal with a characteristic size range of 1 ± 0.5 mm for crumb and 15 ± 10 mm for nut. Their use as a shorthand description is convenient, but the terms should not be used in databases because they conflate size and shape in a way that the modern schemas seek to avoid.
 :::
 
-+------------+-----------+------------------------------------------------------------+-------------+
-| Code       | Name      | Description                                                | Orientation |
-+============+===========+============================================================+=============+
-| [CL]{.ceg} | Clod      | An artificially induced soil aggregate ≥ 100 mm in length  | Any         |
-+------------+-----------+------------------------------------------------------------+-------------+
-| [FM]{.ceg} | Fragment  | An artificially induced soil aggregate \< 100 mm in length | Any         |
-+------------+-----------+------------------------------------------------------------+-------------+
++------------+----------+------------------------------------------------------------+-------------+
+| Code       | Name     | Description                                                | Orientation |
++============+==========+============================================================+=============+
+| [CL]{.ceg} | Clod     | An artificially induced soil aggregate ≥ 100 mm in length  | Any         |
++------------+----------+------------------------------------------------------------+-------------+
+| [FM]{.ceg} | Fragment | An artificially induced soil aggregate \< 100 mm in length | Any         |
++------------+----------+------------------------------------------------------------+-------------+
 
 : : Artificially induced pedality shapes and identifying characteristics {#tbl-hr-clodshp cols-width=\[10,20,50,20\]}
 
@@ -143,32 +143,30 @@ Peds are commonly nested, with large structures breaking down to smaller ones th
 
 For example, [S PR 80 ±  10]{.ceg} parting to [M BL 20 ±  2]{.ceg}.
 
-# Roots and plant materials {#sec-rtpl}
+## Rock fragments {#sec-rockfrag}
 
-## Roots {#sec-root}
+Rock fragments in soil horizons (\> 2 mm) provide information about soil development, particularly mode of emplacement in depositional soils. They also restrict the soil's water holding capacity, and when large and common enough can restrict land use and management practices.
 
-Plant roots affect water infiltration and help define the functional horizon topsoil (see @sec-in-fh-ts). Their position in the soil profile can also provide information about ped development, particle packing, and the presence of pans. Note that this section does not apply to peats.
+For rapid assessment, estimate total rock fragment abundance as an integer percentage, recording [0%]{.ceg} when confirming absence.
 
-### Root abundance {#sec-root-abund}
+For routine assessment, estimate abundance of small, medium and large stones separately (@tbl-hr-rockfrsz). Optionally, append dominant lithology class of each size fraction using @tbl-ss-pm and shape using @tbl-hr-rockfrshp.
 
-Measure abundance by estimating the volumetric abundance of live roots in the visible soil horizon. For roots \< 2 mm it may be more practical to sample a cube \~100 mm on a side. When augering for rapid assessment, also use a spade to sample the topsoil.
+Example: [60% M (Hs R), 5% L (Hs R)]{.ceg} for a fluvial deposit dominated by waterworn greywacke cobbles with a few boulders.
 
-Provide separate estimates for roots \< 2 mm, 2 - 10 mm and \> 10 mm. Record as whole percentages, confirming [0%]{.ceg} where no roots are observable in a given size range. The data may be classified using @tbl-hr-rtab.
+For detailed assessment, estimate abundance, lithology, and shape for each of the 'gravel' classes in @tbl-in-size.
 
 ```{r}
-#| label: tbl-hr-rtab
-#| tbl-cap: "Plant root abundance classes"
+#| label: tbl-hr-rockfrsz
+#| tbl-cap: "Coarse fragment size classes for routine assessment"
 #| classes : no-stripe
 
-dat_hr_rtab <-
-  tribble(~Code,      ~Name,  ~Description,
-              0,     'None',          '0%',
-              1,      'Few',   '> 0 - 25%',
-              2,   'Common',  '> 25 - 50%',
-              3,     'Many',  '> 50 - 75%',
-              4, 'Abundant',       '> 75%')
+dat_hr_rockfrsz <-
+  tribble(~Code, ~Name, ~Description,
+         'S', 'Small',   '2 - 60',
+         'M', 'Medium', '60 - 200',
+         'L', 'Large', '> 200',) 
 
-tbl_hr_rtab <- gt(dat_hr_rtab) |>
+tbl_hr_rockfrsz <- gt(dat_hr_rockfrsz) |>
   tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
@@ -179,11 +177,152 @@ tbl_hr_rtab <- gt(dat_hr_rtab) |>
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
-tbl_hr_rtab
+tbl_hr_rockfrsz
+```
+
+```{r}
+#| label: tbl-hr-rockfrshp
+#| tbl-cap: "Coarse fragment shape classes"
+#| classes : no-stripe
+
+dat_hr_rockfrshp <-
+  tribble(~Code, ~Name, ~Description,
+         'R', 'Rounded',   'Rock fragments considerably smoothed by transport processes',
+         'A', 'Angular', 'Rock fragments with little smoothing by transport processes',
+         'M', 'Mixed', 'Both rounded and angular fragments mixed together',) 
+
+tbl_hr_rockfrshp <- gt(dat_hr_rockfrshp) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_rockfrshp
+```
+
+### Other coarse soil components
+
+#### Natural {#sec-hr-nonrock}
+
+Biologically-derived coarse materials can alter the soil's water holding capacity and other parameters just as rock fragments can, although in general they can themselves hold more water. They will also break down faster.
+
+Where present in significant amounts, record natural non-rock fragments as a percentage abundance of the following:
+
+```{r}
+#| label: tbl-hr-nonrock
+#| tbl-cap: "Non-rock fragment types"
+#| classes : no-stripe
+
+dat_hr_nonrock <-
+  tribble(~Code, ~Name, ~Description,
+         'S', 'Shell',    'Seashells or chitinous material',
+         'B', 'Bone',     'Skeletal fragments',
+         'T', 'Timber',   'Dead wood from trees and shrubs, coarse roots',
+         'C', 'Charcoal', 'Burnt organic materials',
+         'G', 'Gum',      'Kauri gum')
+
+tbl_hr_nonrock <- gt(dat_hr_nonrock) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_nonrock
 
 ```
 
-[practice change: Counting individual roots is impractical at both small and large size ranges. Switching to estimates of volumetric percentage. This brings roots into alignment with abundance assessment of other soil components (textures, stone, artefacts, voids), allowing total soil compositional data to be calculated.]{.majch}
+#### Artefacts {#sec-hr-artef}
+
+Artefacts can both function like rock fragments and signify strong human influence on the soil profile. 
+
+Where present in significant amounts, record artefact fragments as a percentage abundance of the categories in @tbl-hr-artefacts. Where further details are required, describe the materials present in free-text notes.
+
+```{r}
+#| label: tbl-hr-artefacts
+#| tbl-cap: "Artefact types"
+#| classes : no-stripe
+
+dat_hr_artefs <-
+  tribble(~Code, ~Name, ~Description,
+         'As', 'Asphalt',  'Ashpalt and other bitumen-containing materials',
+         'Br', 'Brick',    'Fired clay building materials, usually unglazed',
+         'Cr', 'Ceramic',  'Fired clay objects, usually glazed',
+         'Ce', 'Concrete', 'Concrete materials',
+         'Gl', 'Glass',    'Fragments from windows, containers, etc',
+         'Tn', 'Textiles - natural', 'Fabrics and carpets made from e.g. wool',
+         'Tx', 'Textiles - artificial', 'Fabrics derived from or dominated by plastics',
+         'Mt', 'Metals', 'Refined ore products',
+         'Ms', 'Mine Spoil', 'Materials leftover from ore processing activities',
+         'Ws', 'Wastes', 'Other domestic or commercial rubbish')
+         # still working on this - could split into wastes vs e.g. items of arch. interest)
+
+tbl_hr_artefs <- gt(dat_hr_artefs) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_artefs
+
+```
+
+## Roots {#sec-root}
+
+Plant roots affect water infiltration and help define the functional horizon topsoil (see @sec-in-fh-ts). Their position in the soil profile can also provide information about ped development, particle packing, and the presence of pans. Note that this section does not apply to peats.
+
+### Root abundance {#sec-root-abund}
+
+Measure abundance by estimating the volumetric abundance of live roots in the visible soil horizon. For roots \< 2 mm it may be more practical to sample a cube \~100 mm on a side. When augering for rapid assessment, also use a spade to sample the topsoil.
+
+For rapid assessment, estimate the volume of the whole root mass as integer %, confirming 0 if no roots are observed.
+
+For example: [25%]{.ceg} for a healthy pasture topsoil.
+
+For detailed assessment, provide separate estimates for roots \< 2 mm, 2 - 10 mm and \> 10 mm. Record as whole percentages, confirming [0%]{.ceg} where no roots are observable in a given size range. The data may be classified using @tbl-hr-rtab.
+
+```{r}
+#| label: tbl-hr-rsz
+#| tbl-cap: "Plant root size classes for detailed assessment"
+#| classes : no-stripe
+
+dat_hr_rsz <-
+  tribble(~Code,        ~Name,  ~Description,
+            'F',     'Fine', '< 2',
+            'M',    'Medium', '2 - 10',
+            'C', 'Coarse', '> 10')
+
+tbl_hr_rsz <- gt(dat_hr_rsz) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_label(Description = 'Size range (mm)') |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_rsz
+
+```
+
+For example: [F 5%, M 0%, C 2%]{.ceg} for a subsoil in a forested area.
 
 ### Root position {#sec-root-pos}
 
@@ -216,41 +355,32 @@ tbl_hr_rpos
 
 ```
 
-## Other parameters {#sec-root-other}
+### Other parameters {#sec-root-other}
 
 Notes about particular plant species contributing to the root mass and spatial organisation beyond the positional classes above (e.g. presence of mats) may prove useful in certain contexts. No coding system is provided for these.
 
-## Timber and fibre {#sec-root-burt}
+## Voids {#sec-void}
 
-Where non-peat plant remains are encountered in significant volume (e.g. buried by volcanic or landslide activity), record as per @sec-hr-nonrock.
+Horizon voids exclude surface cracks, which are noted in @sec-pr-crack and fine pores, which are described below. Filled voids are described in [secondary biological features]{.todo}
 
-# Voids {#sec-void}
+For rapid assessment, simply report the percentage of the horizon volume occupied by void space.
 
--   NB surface cracks already covered
-
-## Pores {#sec-void-pore}
-
--   abundance
--   macro v micro sizes
--   inferred origin
--   direct and indirect observation for connectivity
-
-## Other voids {#sec-void-other}
-
--   non-infilled space between coarse gravels (assessed via packing)
--   spaces between dry peds (where shrink-swell is significant)
+For detailed assessment, identify void types using @tbl-hr-voidtype and estimate the percentage of each type seen. Additionally, classify their connectivity using @tbl-hr-voidcon. Note that void connectivity may vary with soil water status.
 
 ```{r}
-#| label: tbl-hr-cracktype
-#| tbl-cap: "Crack persistence (WRB 2022)"
+#| label: tbl-hr-voidtype
+#| tbl-cap: "Type of soil void"
 
-dat_hr_cracktype <-
+dat_hr_voidtype <-
   tribble(~Code, ~Name, ~Description,
-          'NO', 'No cracks', NA, 
-          'RT', 'Reversible cracks', 'Cracks that open and close with changing soil moisture',
-          'IT', 'Irreversible cracks', 'Cracks that persist year-round')
+          'BP', 'Bedding plane', 'A parting or discontinuity due to stratification during deposition of sedimentary particles.', 
+          'CH', 'Channel', 'Tubular void of biological origin that is less than 20 mm in diameter (e.g. insect burrow)',
+          'TU', 'Tunnel',  'Tubular void of biological origin that is 20 mm or more in diameter (e.g. rabbit burrow) ',
+          'FS', 'Fissure', 'Planar void with a width much smaller than length and depth. Fissures represent the release of strain caused by drying and usually bound individual structural units and form repetitively.',
+          'IT', 'Interstitial', 'Irregular voids occupying space between aggregates that do not fit together',
+          )
 
-tbl_hr_cracktype <- gt(dat_hr_cracktype) |>
+tbl_hr_voidtype <- gt(dat_hr_voidtype) |>
    tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
@@ -259,24 +389,23 @@ tbl_hr_cracktype <- gt(dat_hr_cracktype) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
 
-tbl_hr_cracktype
+tbl_hr_voidtype
 ```
 
 ```{r}
-#| label: tbl-hr-crackdepth
-#| tbl-cap: "Crack depth (WRB 2022)"
+#| label: tbl-hr-voidcon
+#| tbl-cap: "Connectivity of soil voids"
 
-dat_hr_crackdepth <-
+dat_hr_voidcon <-
   tribble(~Code, ~Name, ~Description,
-          'AC', 'All', 'All cracks continue into the underlying layer', 
-          'HC', 'Most', 'At least half, but not all of the cracks continue into the underlying layer',
-          'SC', 'Some', 'At least one, but less than half of the cracks continue into the underlying layer',
-          'NC', 'None', 'Cracks do not continue into the underlying layer')
+          'I', 'isolated', 'Voids are not connected to each other, and may only reach up to the soil surface',
+          'P', 'Partly connected', 'Voids are sometimes connected to each other within the horizon, or continue into neighbouring horizons',
+          'C', 'Continuous',  'Void spaces are well connected and form a continuous network')
 
-tbl_hr_crackdepth <- gt(dat_hr_crackdepth) |>
+tbl_hr_voidcon <- gt(dat_hr_voidcon) |>
    tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
@@ -285,7 +414,20 @@ tbl_hr_crackdepth <- gt(dat_hr_crackdepth) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20))
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
 
-tbl_hr_crackdepth
+tbl_hr_voidcon
 ```
+
+Example: [10% IT C]{.ceg} for the void space in a strongly pedal, polyhedral topsoil.
+
+## Pores {#sec-pore}
+
+Pores are voids \< 2 mm in diameter. Macropores are \>= 0.075 mm, and micropores are \< 0.075 mm. This division is based on the size of pores that will conduct water at a potential of -0.4 kPa.
+
+For rapid assessment, estimate total percentage volume of Pores. This will rarely exceed 5%.
+
+For detailed assessment, estimate the percentage volume of macropores and micropores separately. This will require the use of a magnifier.
+
+[size example diagram here]{.ceg}
