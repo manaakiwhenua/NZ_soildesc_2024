@@ -1,4 +1,4 @@
-# Land surface
+# Soil surface {#sec-pr-surface}
 
 ```{r}
 library(dplyr)
@@ -7,13 +7,98 @@ library(gt)
 library(gtExtras)
 ```
 
-The land surface at a site is assessed at the Landform scale.
+The surface at a site is described primarily in terms of its slope, aspect, and surface cover. If present, surface water and microtopography should also be recorded. Ongoing or recent erosion and deposition events may be briefly noted or described in more detail.
 
-## Surface cover
+## Slope {#sec-pr-slope}
 
-Surface cover helps visualise the Landform and provides some information on infiltration behaviour. 
+Slope is the inclination of the land surface relative to the horizontal plane. Slope steepness affects many soil processes, notably erosion, water run-off and infiltration behaviour.
 
-Record the following generalised surface cover components as a percentage composition of the area surrounding a point observation, or the area within a sampling plot.
+Direct measurements of slope should be taken over a minimum distance of 20 meters. Stand 10 m upslope from the point of observation and measure downhill. Record in units of degrees, with a maximum precision of 0.1 (e.g. [6°]{.ceg}). Record [ND]{.ceg} if slope cannot be reliably determined. Record [NR]{.ceg} if no measurement was taken.
+
+Precision needs will vary with slope and survey purpose; whole number degrees are fine on any slope over about 5 degrees, but finer gradations can be useful for flatter locations. Slope classes may be applied to the recorded data; some options are presented in @sec-slopeclass.
+
+Record the equipment used to measure slope using @tbl-pr-slpmth.
+
+```{r}
+#| label: tbl-pr-slpmth
+#| tbl-cap: "Slope measurement methods"
+
+dat_pr_slpmth <-
+  tribble(~Code, ~Name, ~Description,
+          'E', 'Estimate', 'Estimated by eye',
+          'C', 'Clinometer', 'Handheld clinometer',
+          'T', 'Tripod', 'Survey-grade equipment mounted on a tripod',
+          'D', 'DEM', 'Calculated from a DEM with suitable resolution and vertical accuracy')
+
+tbl_pr_slpmth <- gt(dat_pr_slpmth) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20))
+
+tbl_pr_slpmth
+```
+
+::: {#nte-flatwhat .callout-note collapse="true" title="Defining 'flat' in soil survey"}
+Truly flat land is extremely rare over distances of more than a few meters. The cutoff slope value for flatness is not always provided in soil description standards (e.g. @schoeneberger2012) and is not consistent when it is, e.g.
+
+-   0.58° (\~1%) for level ground in @nationalcommitteeonsoilandterrain2023, p. 19
+-   2.86° (5%) in @hurst2022, p. 14
+
+The slope measurement method in use can restrict the recordable limit of flat land. For instance, a hand-held clinometer may be difficult to use consistently and accurately at slopes of less than 3°, while survey-grade equipment (e.g. a tripod-mounted laser level) will have a higher accuracy. Slope calculated from a DEM also has inherent limitations. For example, a DEM with a cell size of 20 m and a vertical resolution of 0.5 m cannot discriminate slope increments of less than \~1.43° ($tan^{-1}(0.5/20)$).
+:::
+
+::: {#nte-slpdem .callout-note collapse="true" title="Extracting slope from DEMs"}
+Slope data for a site can be extracted from a DEM, provided some conditions are met:
+
+-   Cell size should be less than 10 m; larger cells systematically underestimate local slope
+-   DEM source should ideally be of type [D]{.ceg} for acceptable accuracy (see @sec-loc-abs-elev)
+-   Extract the median slope within a 20 m radius, not the single value directly under the recorded point
+-   Review and, if necessary, adjust slopes extracted from sites described on exposures. These may be overestimates (e.g. where a track cuts into a slope, the values upslope behind the site would better represent the landform). Similarly, sites close to landform or landscape boundaries may also need review.
+:::
+
+## Aspect {#sec-pr-aspect}
+
+Aspect is the direction a slope faces. Slope aspect helps determine exposure to sun, rain and prevailing winds, and so influences the biome growing in a particular soil. In some environments it also helps determine how much new material is received by deposition.
+
+Aspect should be measured at the same time and over the same transect as slope. Record aspect in whole degrees clockwise from North, using the range \[0-359°\] (360° == 0°). Use [ND]{.ceg} for flat ground. Use [NR]{.ceg} if no measurement was taken. Aspect classes may be applied to the recorded data; some options are presented in @sec-aspectclass.
+
+Record the equipment used to measure aspect using @tbl-pr-aspmth.
+
+```{r}
+#| label: tbl-pr-aspmth
+#| tbl-cap: "Aspect measurement methods"
+
+dat_pr_aspmth <-
+  tribble(~Code, ~Name, ~Description,
+          'E', 'Estimate', 'Estimated by eye',
+          'C', 'Compass', 'Handheld magnetic compass',
+          'D', 'DEM', 'Calculated from a DEM with suitable resolution and vertical accuracy')
+
+tbl_pr_aspmth <- gt(dat_pr_aspmth) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20))
+
+tbl_pr_aspmth
+```
+
+## Surface cover {#sec-pr-surfcov}
+
+Surface cover helps visualise the site and its landform, and provides some information on infiltration behaviour. Soil cover (specifically, 'The number of days in a year that the soil (agricultural land) is covered with vegetation') is a key agricultural performance indicator [@oecd2001].
+
+Estimate and record the following generalised surface cover components as a percentage composition of the area surrounding a point observation, or the area within a sampling plot. Consider the land cover from the surface to a height of 1.35m, for consistency with @hurst2022.
 
 ```{r}
 #| label: tbl-pr-surfcov
@@ -22,13 +107,13 @@ Record the following generalised surface cover components as a percentage compos
 dat_pr_surfcov <-
   tribble(~Code, ~Name, ~Description,
           'BE', 'Earth', 'Bare sediment or soil, < 2 mm', 
-          'BR', 'Fragments', 'Bare rock fragments, shells, or bones, > 2 mm',
-          'BO', 'Rock', 'Bare rock outcrop',
+          'BR', 'Fragments', ' Small rock fragments, shells, or bones, 2 - 60 mm', # LCDB
+          'BO', 'Rock', 'Bare rock outcrop or rock fragments >60 mm',
           'WT', 'Water', 'Open water, ice or snow',
           'PT', 'Peat', 'Plant material decomposing under persistently saturated conditions',
           'LH', 'Litter', 'Plant material decomposing under intermittently wet to dry conditions',
-          'GR', 'Small plants', 'Grass, herbs, moss, sedges, annual crops',
-          'TR', 'Large plants', 'Shrubs, trees (stems and roots), perennial crops',
+          'GR', 'Small plants', 'Grasses, ferns, herbs, moss, sedges, annual crops',
+          'TR', 'Large plants', 'Shrubs, trees and treeferns, (stems and roots), perennial crops',
           'SL', 'Sealed', 'Building, concrete, asphalt and similar')
 
 tbl_pr_surfcov <- gt(dat_pr_surfcov) |>
@@ -40,14 +125,14 @@ tbl_pr_surfcov <- gt(dat_pr_surfcov) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20))
+  cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_pr_surfcov
 ```
 
-[GRAPHIC: Turn the above into a 3x3 grid with labels underneath conceptual diagrams]{.diag}
+[GRAPHIC: Turn the above into a 3x3 grid with labels underneath conceptual diagrams]{.diags}
 
-These parameters should be recorded only to nearest 5-10%. It will be unusual to encounter more than three components at any one site.
+These parameters should be recorded only to the nearest 5%. It will be unusual to encounter more than three components at any one site.
 
 ```{r}
 
@@ -57,9 +142,9 @@ These parameters should be recorded only to nearest 5-10%. It will be unusual to
 
 ```
 
-## Surface water
+## Surface water {#sec-pr-surfw}
 
-Information about surface water presence can contribute to drainage assessments. 
+Information about surface water presence can contribute to drainage assessments.
 
 Where water is present above the landform surface, as well as noting its areal dominance above, note the type and degree of persistence using the codes in @tbl-pr-swater and @tbl-pr-swaterp below.
 
@@ -84,7 +169,7 @@ tbl_pr_swater <- gt(dat_pr_swater) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
 
 tbl_pr_swater
@@ -109,7 +194,7 @@ tbl_pr_swaterp <- gt(dat_pr_swaterp) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
 
 tbl_pr_swaterp
@@ -117,7 +202,7 @@ tbl_pr_swaterp
 
 e.g. [R T 20%]{.ceg} for a paddock experiencing limited surface ponding from a recent cyclone at the time of observation.
 
-## Surface cracking
+## Surface cracking {#sec-pr-crack}
 
 Soil surface cracking can occur for a number of reasons:
 
@@ -148,7 +233,7 @@ tbl_pr_cracktype <- gt(dat_pr_cracktype) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
 
 tbl_pr_cracktype
@@ -173,24 +258,23 @@ tbl_pr_crackshape <- gt(dat_pr_crackshape) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
 
 tbl_pr_crackshape
 ```
 
 ::: callout-note
-Recent weather data is useful for interpreting surface crack information. See @sec-ss-recentrain.
+Recent weather data is useful for interpreting surface crack information. See @sec-weath-rrain.
 :::
 
-
-## Microrelief
+## Microrelief {#sec-pr-micror}
 
 Microrelief occurs within a landform, so its components are smaller than the landform itself - usually too small to be sensed remotely. Its presence helps signify particular soil types and influences many small-scale soil processes such as local water infiltration, accumulation of surface litter, and topsoil development.
 
-### Natural Microrelief
+### Natural Microrelief {#sec-pr-microrn}
 
-Natural microrelief emerges from slope processes, biotic activity and climate effects. 
+Natural microrelief emerges from slope processes, biotic activity and climate effects.
 
 Record the dominant microrelief type using the codes in @tbl-pr-micreltype. For detailed descriptions, record the average height and spacing of repeating microrelief elements in cm.
 
@@ -204,7 +288,8 @@ dat_pr_micreltype <-
           'G', 'Gilgai', 'Induced by shrink-swell clay activity',
           'S', 'Swamp',  'Hummocky landforms common in wetland areas, derived by biotic activity',
           'K', 'Karst',  'Induced by subsurface collapse in limestone-dominated landscapes',
-          'A', 'Animal', 'Terracettes, trampling or pugging induced by larger animals (cows, pigs, ungulates)',
+          'A', 'Animal', 'Trampling or pugging induced by larger animals standing on low-slope ground (cows, pigs, ungulates)',
+          'T', 'Terracettes', 'Small terraces on moderate to steep slopes, generally induced by larger animals navigating the terrain',
           'F', 'Frost',  'Induced by freeze-thaw activity')
 
 tbl_pr_micreltype <- gt(dat_pr_micreltype) |>
@@ -216,15 +301,15 @@ tbl_pr_micreltype <- gt(dat_pr_micreltype) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
 
 tbl_pr_micreltype
 ```
 
-### Anthropogenic microrelief
+### Anthropogenic microrelief {#sec-pr-microra}
 
-Small-scale human alterations to the soil surface are common in agricultural areas (current and former). Microrelief can be removed or created by these activities. 
+Small-scale human alterations to the soil surface are common in agricultural areas (current and former). Microrelief can be removed or created by these activities.
 
 Record the dominant anthropogenic microrelief type using the codes in @tbl-pr-amicreltype. For detailed descriptions of induced microrelief, record the average height and spacing of repeating elements in cm.
 
@@ -251,12 +336,235 @@ tbl_pr_micreltype <- gt(dat_pr_micreltype) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
 
 tbl_pr_micreltype
 ```
 
-## Erosion and Deposition {.todo}
+## Erosion {#sec-pr-erosion}
 
-ref Milne p. 23-5
+Where signs of erosion exist at a site, its presence can simply be noted using the site disturbance code [SL]{.ceg} (see @sec-pr-dist). 
+
+If a more detailed assessment is desired, note the type(s) per @tbl-pr-erosion. If erosion is present, note also severity and activity using @tbl-pr-erosev and @tbl-pr-eroact. Only record erosion directly affecting the site.
+
+For example, [RI S PR]{.ceg} for rills observed on a tilled paddock after a storm, or [NO - -]{.ceg} for an unaffected site.
+
+```{r}
+#| label: tbl-pr-erosion
+#| tbl-cap: "Types of erosion"
+
+dat_pr_erosion <-
+  tribble(~Code, ~Name, ~Description,
+          # water
+          'SH', 'Sheet', 'Thin layers of surface material are gradually removed more or less evenly from an extensive area of sloping land',
+          'RI', 'Rill', 'Formation of predominantly steep-sided erosion channel(s) ≤0.5 m deep.',    
+          'GU', 'Gully', 'Formation of predominantly steep-sided erosion channel >0.5 m deep, not capable of being safely crossed by a wheeled tractor or obliterated by ploughing or deep cultivation',
+          'TN', 'Tunnel', 'Erosion by percolating water in a layer of subsoil, resulting in caving and the formation of narrow tunnels through which soluble or spheroidal soil material is removed.',
+          'CH', 'Channel', 'Erosion by water flowing in stream and river channels, including stream bank erosion',
+          
+          # gravity
+          'FA', 'Fall', 'A very rapid downward movement of a mass of rock or earth that travels mostly through the air by free fall, leaping, bounding or rolling, with little or no interaction between one moving unit and another, e.g., rock-fall, debris fall.',
+          'TO', 'Topple', 'Large blocks of earth material falling forward off very steep to precipitous slope',
+          'SL', 'Slide', 'Lateral displacement of earth materials moving as a block along a deep-seated slip face',
+          'SP', 'Spread', 'rapid displacement of wet, plastic materials that liquefy, often bringing along intact blocks or beds',
+          'FW', 'Flow', 'slow to rapid movement of earth materials that behave as a viscous fluid',
+          
+          #wind
+          'WI', 'Wind', 'Detachment, transport, and deposition of loose materials by wind action, especially in dust storms and in arid or semi-arid regions or where a protective mat of vegetation has been removed. Erosion forms are characteristically ovate in plan, and concave in contour and profile.',
+          
+          # other codes
+          'UK', 'Unknown', 'Mode of erosion cannot be clearly determined',
+          'NR', 'Not recorded', 'Mode of erosion not recorded',
+          'NO', 'No erosion', 'No evidence of erosion'
+          )
+          
+tbl_pr_erosion <- gt(dat_pr_erosion) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
+  fmt_markdown(columns = 3) |>
+  tab_row_group(label = 'Water-driven', rows = 1:5, id = 'w') |>
+  tab_row_group(label = 'Gravity-driven', rows = 6:10, id = 'g') |>
+  tab_row_group(label = 'Wind-driven', rows = 11, id = 'i') |>
+  
+  tab_style(style = list(cell_text(weight = 'bold')),
+            locations = cells_row_groups()) |>
+  row_group_order(c('w', 'g')) |>
+  sub_missing(missing_text = '')
+
+tbl_pr_erosion
+
+```
+
+```{r}
+#| label: tbl-pr-erosev
+#| tbl-cap: "Erosion severity (reproduced from @iussworkinggroupwrb2022)"
+
+dat_pr_erosev <-
+  tribble(~Code, ~Name, ~Description,
+          'S', 'Slight', 'Some evidence of damage to surface layers, original ecological functions largely intact', 
+          'M', 'Moderate', 'Clear evidence of removal of surface layers, original ecological functions partly destroyed',
+          'V', 'Severe', 'Surface layers completely removed and subsurface layers exposed, original ecological functions largely destroyed',
+          'E', 'Extreme', 'Substantial removal of deeper subsurface layers, original ecological functions fully destroyed')
+
+tbl_pr_erosev <- gt(dat_pr_erosev) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_pr_erosev
+```
+
+```{r}
+#| label: tbl-pr-eroact
+#| tbl-cap: "Erosion activity (adapted from @iussworkinggroupwrb2022)"
+
+dat_pr_erosev <-
+  tribble(~Code, ~Name, ~Description,
+          'PR', 'Active', 'Active at present', 
+          'RE', 'Recent', 'Active within the past 100 years',
+          'HI', 'Historical', 'Active in historical times (>100 years ago)',
+          'UK', 'Unknown', 'Activity history cannot be reliably determined')
+
+tbl_pr_erosev <- gt(dat_pr_erosev) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_pr_erosev
+```
+
+## Deposition {#sec-pr-deposition}
+
+Where signs of deposition exist at a site, its presence can simply be noted using the site disturbance code [SD]{.ceg} (see @sec-pr-dist). 
+
+If a more detailed assessment is desired, note the type(s) per @tbl-pr-deposition. If deposition is present, note also severity and activity using @tbl-pr-depsev and @tbl-pr-depact. Only record deposition directly affecting the site.
+
+For example, [FL M FR]{.ceg} for a recent flood that has dropped sediment on a low terrace and partly smothered grass, or [NO - -]{.ceg} for an unaffected site. Optionally, the dominant size class of the material can be reported using the codes in [XLINK]{.todo}
+
+```{r}
+#| label: tbl-pr-deposition
+#| tbl-cap: "Types of deposition (partly adapted from @nationalcommitteeonsoilandterrain2023)"
+
+dat_pr_deposition <-
+  tribble(~Code, ~Name, ~Description,
+          # water
+          'FL', 'Flood', 'Deposition driven by indunation events along streams',
+          'SS', 'Surge', 'Deposition driven by storm surge',
+          'TI', 'Till',  'Glacial deposition',
+          
+          # gravity
+          'FA', 'Fall', 'Rapid, freefall collapse of earth material on precipitous slopes',
+          'TO', 'Topple', 'Large blocks of earth material falling forward off very steep to precipitous slope',
+          'SL', 'Slide', 'Lateral displacement of earth materials moving as a block along a deep-seated slip face',
+          'SP', 'Spread', 'rapid displacement of wet, plastic materials that liquefy, often bringing along intact blocks or beds',
+          'FW', 'Flow', 'slow to rapid movement of earth materials that behave as a viscous fluid',
+          
+          # wind
+          'VR', 'Volcanic eruption', 'Airfall deposition from pyroclastic eruptions',
+          'SA', 'Sand movement', 'Wind-driven deposition of sand from beaches, banks, or remobilised dunes',
+          'SI', 'Silt movement', 'Wind-driven deposition of silt and finer material from banks or bare earth',
+          
+          # other codes
+          'UK', 'Unknown', 'Mode of deposition cannot be clearly determined',
+          'NR', 'Not recorded', 'Mode of deposition not recorded',
+          'NO', 'No deposition', 'No evidence of deposition'
+          )
+          
+tbl_pr_deposition <- gt(dat_pr_deposition) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
+  fmt_markdown(columns = 3) |>
+  tab_row_group(label = 'Water-driven', rows = 1:3, id = 'w') |>
+  tab_row_group(label = 'Gravity-driven', rows = 4:8, id = 'g') |>
+  tab_row_group(label = 'Wind-driven', rows = 9:11, id = 'i') |>
+  tab_style(style = list(cell_text(weight = 'bold')),
+            locations = cells_row_groups()) |>
+  row_group_order(c('w', 'g', 'i')) |>
+  sub_missing(missing_text = '')
+
+tbl_pr_deposition
+
+```
+
+```{r}
+#| label: tbl-pr-depsev
+#| tbl-cap: "Deposition severity"
+
+dat_pr_depsev <-
+  tribble(~Code, ~Name, ~Description,
+          'S', 'Slight', 'Patchy or thin cover over previous surface layers, original ecological functions largely intact', 
+          'M', 'Moderate', 'Cover mostly complete but < 10cm thick, original ecological functions partly destroyed',
+          'V', 'Severe', 'Cover complete and > 10cm thick, original ecological functions largely destroyed',
+          'E', 'Extreme', 'Cover complete and permanent, original ecological functions fully destroyed')
+
+tbl_pr_depsev <- gt(dat_pr_depsev) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_pr_depsev
+```
+
+```{r}
+#| label: tbl-pr-depact
+#| tbl-cap: "Deposition activity"
+
+dat_pr_depact <-
+  tribble(~Code, ~Name, ~Description,
+          'FR', 'Fresh', 'Active within the past year', 
+          'RE', 'Recent', 'Active within the past 10 years',
+          'HI', 'Historical', 'Active within the past 100 years',
+          'UK', 'Unknown', 'Activity history cannot be reliably determined')
+
+tbl_pr_depact <- gt(dat_pr_depact) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_pr_depact
+```
+
+More detailed assessments of erosion and deposition are possible using the characterisation principles in @turner1996 but are considered beyond the scope of a soil profile description.
