@@ -304,41 +304,87 @@ tbl_cn_stik
 
 [A dilatant reaction is shown by a shiny surface caused by water extrusion, and by a dull surface when the palm of the hand is folded to partly remould the sample, causing water to be drawn into the sample.]{.milne} Record dilatent behaviour as a binary, [true/false]{.ceg}. 
 
-## Thixotropy
+## Penetration resistance
 
-Thixotropic materials liquefy when shaken, and solidify when compressed.
+Penetration resistance is the capacity of the soil, in its natural confined state, to resist penetration by rigid objects. This property is commonly related to strength by empirical means (@tbl-cn-penr).
 
--   Test soil at a moist to wet state.
--   Perform the test on 3-4 cm^2^ of soil.
--   This test can be reliably performed on auger-extracted samples.
+- This test requires a large pit or exposure
 
 *Procedure*
 
-1. Adjust the soil to a wet state.
-2. Roll into a ball ~30 mm diameter.
-3. Hold sample in upturned palm and rapidly shake the hand back and forth.
+1. Expose a soil profile.
+2. Assess ease of penetrating a vertical face using @tbl-cn-penr.
 
-Thixotropic materials will collapse from a ball into a pancake shape when vibrated, but w 
+```{r}
+#| label: tbl-cn-penr
+#| tbl-cap: "Penetration resistance classes"
 
-## Penetration resistance
+dat_cn_penr <-
+  tribble(~Code, ~Name, ~Description, ~kpa,
+          1, 'Extremely low', 'Easily penetrated by fist', '0-500',
+          2, 'Very low', 'Easily penetrated by thumb', '500 - 1000',
+          3, 'Low', 'Readily indented by thumb but penetrated with considerable effort. Imprinted by finger with some effort.', '1000 - 1500',
+          4, 'Moderate', 'Readily indented by thumbail', '1500-2200',
+          5, 'High', 'Baraely imprinted by thumb or forefinger', '2200 - 3000',
+          6, 'Very high', 'Indented by thumbnail. No imprint by thumb or finger', '3100 - 4000',
+          7, 'Extremely high', 'Barely indented by thumbnail', '> 4000')
 
--   reconcile with unconfined strength
--   moving up to before other tests as an undisturbed face is required
--   what do we keep? Small penetrometer accuracy questionable (add refs), not commonly used at present - but Table 16 requires no gear
+tbl_cn_penr <- gt(dat_cn_penr) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  tab_style(style = list(cell_text(align = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20), kpa ~pct(20))
+
+tbl_cn_penr
+```
 
 ## Particle Packing
 
--   non-cohesive soils
+Particle packing assesses the stability of a gravelly soil.
 
--   do we keep all of this or just T19?
+- Test only on gravelly soils where strength cannot be assessed
+- This test requires a large pit or exposure
+- Do not test at wet or saturated field moisture conditions, as this is unsafe
 
--   ratio of natural to remoulded
+*Procedure*
 
--   instructions
+1. Expose a gravelly soil profile.
+2. Assess ease of excavating and maintaining a vertical face using @tbl-cn-pack.
 
--   when not to bother
+```{r}
+#| label: tbl-cn-pack
+#| tbl-cap: "Particle-packing classes for gravelly soils"
 
--   interpretation
+dat_cn_fail <-
+  tribble(~Code, ~Name, ~Description,
+          1, 'Loose', 'Easily dislodged by spade or pick; does not maintain a vertical face',
+          2, 'Compact', 'Intermediate between loose and dense',
+          3, 'Dense', 'Difficult to dislodge except with spade and by removing individual fragments; maintains a stable vertical face', 
+          4, 'Very dense', 'Very difficult to dislodge except by pick and removing individual fragments; maintains a stable vertical face')
+
+tbl_cn_fail <- gt(dat_cn_fail) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  tab_style(style = list(cell_text(align = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20))
+
+tbl_cn_fail
+```
+
 
 ## Mode of failure {#sec-cn-fail}
 
@@ -350,7 +396,8 @@ Thixotropic materials will collapse from a ball into a pancake shape when vibrat
 
 *Procedure*
 
-1.  
+1.  Perform the unconfined strength test according to @sec-cn-stru.
+2.  At strengths of 4 or less, mode of failure can be observed. Assess and record per @tbl-cn-fail.
 
 ```{r}
 #| label: tbl-cn-fail
@@ -381,18 +428,45 @@ tbl_cn_fail <- gt(dat_cn_fail) |>
 tbl_cn_fail
 ```
 
--   link more clearly to NZSC
-    -   cutanoxidic horizon - behaviour varies significantly with water content
-    -   fragipan - requires brittle failure when moist
-    -   organic material - deformable in field condition
-    -   Oxidic - consistently friable across moisture states
-
 ## Fluidity {#sec-cn-flu}
 
--   clearer statement that this test is for field-saturated soils only
--   and that it effectively tests whether subaqueous deposition was the mode of emplacement
--   instructions
--   interpretation
+Fluidity tests whether saturated soils have an unconfined strength that is largely eliminated by saturation. Such materials were generally emplaced under water, have never been drained, have a fine texture that minimises gravity-based settling, and are not overlain by enough other sediment to have been compressed.
+
+-   Test soil at a saturated state.
+-   Only test soils that are saturated under field conditions.
+-   Perform the test on ~50 cm^2^ of soil (a large handful).
+-   This test can be reliably performed on auger-extracted samples.
+
+*Procedure*
+
+1. Extract the sample and squeeze firmly in the hand.
+2. Evaluate the sample behaviour using @tbl-cn-fluid.
+
+```{r}
+#| label: tbl-cn-fluid
+#| tbl-cap: "Fluidity classes"
+
+dat_cn_fluid <-
+  tribble(~Code, ~Name, ~Description,
+          1, 'Slightly fluid', 'Some material tends to flow into the spaces between the fingers, but after full pressure is exerted most of the residue is left in the hand',
+          2, 'Moderately fluid', 'Soil material flows easily between the fingers, but a small residue is left in the hand after full pressure is exerted',
+          3, 'Very fluid', 'Soil material flows like a slightly viscous liquid between the fingers, and very little or no residue is left in the hand after full pressure is exerted')
+
+tbl_cn_fluid <- gt(dat_cn_fluid) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  tab_style(style = list(cell_text(align = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20))
+
+tbl_cn_fluid
+```
 
 ## Induration {#sec-cn-ind}
 
