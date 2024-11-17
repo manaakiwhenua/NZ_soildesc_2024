@@ -1,4 +1,4 @@
-# Location {#sec-ss-loc}
+# Location {#sec-loc}
 
 ```{r}
 library(dplyr)
@@ -9,9 +9,9 @@ library(gtExtras)
 
 A soil description is essentially useless without a confident location. Confidence is supported by clear communication about equipment, datum and coordinate reference system, measurement units, and expected error.
 
-## Absolute location {#sec-ss-loc-abs}
+## Absolute location {#sec-loc-abs}
 
-### Recording location {#sec-ss-loc-rec}
+### Recording location {#sec-loc-rec}
 
 Record X and Y location coordinates as eastings and northings using New Zealand Transverse Mercator (EPSG:2193). For Z coordinates (elevation), use the New Zealand Vertical Datum 2016 (EPSG:1169).
 
@@ -32,7 +32,7 @@ Location sensors default to the global longitude-latitude based WGS84 datum (EPS
 Alternate geocoding systems involving e.g. text-based encoding or nested hashes should not be used during fieldwork. These systems are often proprietary, sometimes prone to ambiguity or edge-case errors, and at their core often wrap around WGS84 anyway. They may still be useful during data analysis.
 :::
 
-### Expected Error {#sec-ss-loc-err}
+### Expected Error {#sec-loc-err}
 
 Expected horizontal error can be automatically reported by equipment, or estimated. When estimating, record in meters with a maximum precision of 0.01 (1 cm) e.g. [± 5.1 m]{.ceg}. Record expected vertical elevation error separately in the same units, as it will differ.
 
@@ -82,7 +82,7 @@ Where the [A]{.ceg} code is used, the time and location of the most recent altim
 Where DEMs (Digital Elevation Models) are used, they should be as contemporary as possible; New Zealand’s rate of landscape evolution is relatively high and these data sources will become less reliable with age. DEMs more than 20 years old should be accompanied by a vertical error estimate adjusted upwards for age.
 :::
 
-### Equipment {#sec-ss-loc-eq}
+### Equipment {#sec-loc-eq}
 
 Use a GNSS (Global Navigation Satellite System) with an expected horizontal accuracy of ± 3 m or better. Some applications may require centimetre accuracy. Record sensor type against the schema in @tbl-ss-locsrc.
 
@@ -127,11 +127,11 @@ Most consumer electronic devices capable of reporting location will be of [LM]{.
 Estimating location manually using e.g. topographic maps and orienteering methods remains an option, but should usually be considered a last resort.
 :::
 
-## Relative location {#sec-ss-loc-rel}
+## Relative location {#sec-loc-rel}
 
 Absolute locations are enhanced by information about what is nearby. This context is useful for checking that a site's coordinates are correct and for revisiting a site in future.
 
-### Relative elevation {#sec-ss-loc-relel}
+### Relative elevation {#sec-loc-relel}
 
 Elevation above the nearest down-slope drainage (open/flowing water, swampy ground, or a closed depression) is useful for landscape interpretations. The data can also be used to group profile descriptions, for instance when identifying sets of related terraces along river systems. The drainage feature to record against must be identified by tracing a path down-slope from the observation point, and may be far from the point of observation. As such, it will normally be more efficient to estimate this parameter after fieldwork using elevation and imagery data.
 
@@ -141,7 +141,7 @@ Record relative elevation in meters, with a precision of no more than 0.01 (1 c
 With a sufficiently detailed DEM and stream network data, a Relative Elevation Model (REM) can be constructed to estimate this parameter. The result will need to be ground-truthed.
 :::
 
-### Triangulating off local features {#sec-ss-loc-reltri}
+### Triangulating off local features {#sec-loc-reltri}
 
 Absolute location data can be backed up by measuring to nearby permanent or long-term features. This is particularly useful for relocating long-term monitoring plots. For this to work well, features should be within \~50 m of the target location and sufficiently sturdy to last until at least the next expected visit. Examples include fencelines, buildings, roads, and rock outcrops.
 
@@ -149,11 +149,11 @@ For single-point sites, measure distance and direction using a tape and compass.
 
 [add a diagram here]{style="background-color:lightgreen"}
 
-### Long-form descriptions {#sec-ss-loc-reldesc}
+### Long-form descriptions {#sec-loc-reldesc}
 
 For observation points that will be revisited, record practical information about how to return. This may include landholder contact details and records of previous interactions, notes about track conditions, locked gates, and potential hazards like water crossings. Spatial data recording the track from the nearest public road to the target location is particularly valuable.
 
-### Administrative location {#sec-ss-loc-admin}
+### Administrative location {#sec-loc-admin}
 
 Tagging sites with their administrative region(s) can help with discoverability (searching and filtering) in databases, and simplify information security and privacy arrangements. This does not need to be done in the field, provided accurate locations are recorded.
 

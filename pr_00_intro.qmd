@@ -1,6 +1,6 @@
 ---
 output: html_document
-title: "The soil profile"
+title: "The soil site"
 editor_options: 
   chunk_output_type: console
 ---
@@ -12,13 +12,15 @@ library(gt)
 library(gtExtras)
 ```
 
+# The soil site {#sec-pr-site}
+
 Soil profiles are described at sites. The 'site' concept is necessarily somewhat flexible to account for the range of sampling purposes and methods. Generally speaking, it is considered to include the immediate profile surrounds, up to a radius of \~10 m. As such, it will generally nest within a landform unless the site selection method was prescriptive and landform-blind.
 
 Larger plots and long transects that definitely cover multiple landforms, or even landscapes, should be considered as being built from multiple related sites.
 
-The soil profile description starts with an observation of the site's surface and works down. The chief task is delineating soil layers, or horizons, and describing their morphological character. Prior to that, some additional reference data should be recorded:
+The soil profile description starts with an observation of the site's surface and works down. The chief tasks are assessing the surface, delineating soil layers, or horizons, and describing their morphological character. Prior to that, some additional reference data should be recorded:
 
-## Exposure type
+## Exposure type {#sec-pr-exptype}
 
 The method by which the soil was exposed for observation affects which parameters can be recorded, or at least recorded reliably.
 
@@ -54,15 +56,15 @@ tbl_pr_gear
 -   Gouge-style augers used in soft marine sediments may be included in [C2]{.ceg} even though they commonly narrow to \< 50 mm at their maximum depth.
 -   [C1]{.ceg} style samplers are common in paddock-scale monitoring and research, where they are used for rapid surface measurement. These are not generally suitable for mapping as they cannot sample below the topsoil.
 
-## Depth of observation
+## Depth of observation {#sec-pr-doa}
 
-Record the maximum depth of observation from the soil surface in whole centimetres (e.g. '[100 cm]{.ceg}').
+Record the maximum depth of observation from the soil surface in whole centimetres (e.g. '[100 cm]{.ceg}'). This does not necessarily need to be recorded in the field as it can be determined from the lower depth of the last horizon in the profile description.
 
 A full profile description ideally extends to bedrock, but this may not always be accessible with the equipment and time available. The target depth of observation for most applications in New Zealand is 100 cm. Classification systems like the NZSC and LUC rely on ruling out certain soil features within that depth range, as well as positively identifying others.
 
 See [Appendix X](ap_01_equipment.qmd) for information on appropriate excavation equipment.
 
-## Stopping early
+## Stopping early {#sec-pr-rsa}
 
 When the target depth cannot be achieved, note the reason for stopping early using the codes in @tbl-ss-stoppage.
 
@@ -108,7 +110,7 @@ dat_ss_eventp <-
   tribble(~Code, ~Name,
           'MC', 'Mechanical disturbance (e.g. tillage, deep ripping, subsoiling)',
           'AN', 'Animal disturbance (e.g. pugging, rooting, tunnelling, excretion)',
-          'CL', 'Mechanical vegetation clearance (e.g. clearfelling)',
+          'CL', 'Complete vegetation clearance (e.g. clearfelling)',
           'CO', 'Selective vegetation clearance (e.g. tree removal or weed clearance)', 
           'WI', 'Wind-induced treefall',
           'SL', 'Erosion event - material lost from site',

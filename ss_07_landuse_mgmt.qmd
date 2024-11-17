@@ -11,13 +11,13 @@ library(gt)
 library(gtExtras)
 ```
 
-# Land cover, land use, and land management
+# Land cover, land use, and land management {#sec-lu}
 
 Land cover is the physical cover over the earth's surface, both natural and human made. Land use is the purpose(s) for which the land is used and provides context for why a particular land cover is present. Land management describes specific activities affecting land cover, driven by land use.
 
 Land cover, use and management information is captured as part of soil survey when it is relevant to interpreting the landscape, landform, and soil profile description, and especially where it is likely to have affected the soil classification. Land use data is particularly important for long-term monitoring sites, where uses may change significantly between sampling events.
 
-## Land cover
+## Land cover {#sec-lcov}
 
 Land cover in New Zealand is monitored using the Land Cover Database (LCDB, @landcareresearchnewzealandltd2020). The database is used to publish a semi-automated map of land cover, derived from satellite imagery, with a minimum unit size of 1 hectare. The LCDB categories can also be applied on-ground. The categories are listed below, excluding some where it would be physically impossible to observe the soil. The full set of category definitions are available in @manaakiwhenualandcareresearch2018.  
 
@@ -79,7 +79,7 @@ tbl_ss_lcdb <- gt(dat_ss_lcdb) |>
 tbl_ss_lcdb
 ```
 
-## Land Use
+## Land Use {#sec-luse}
 
 New Zealand currently lacks an official land use classification framework, but a proposal has been developed [@law2024] and can be implemented during soil survey work. As show in @fig-ss-nzluc, the classification has three nested levels with increasing specificity. The system also allows for recording further information as 'attributes' of the land use (e.g tenure or management practices). This classification can be applied independent of scale, so advice on how and when to apply it to Landscapes, Landforms, and Profiles follows.
 
@@ -87,22 +87,17 @@ Land use classification does not have to be done in the field provided adequate 
 
 ![Overview of the New Zealand Land Use Management classification system (reproduced from @law2024, p. 44)](data/nzluc_snip.png){#fig-ss-nzluc fig-alt='A diagram of the NZ Land Use CLassification' width=95% .lightbox}
 
-### Landscape scale
+### Land use at Landscape scale
 
-The Landscape will most likely contain multiple land uses. Optionally, record the primary land use and up to two ancillary land uses, but only to the second level of the classification. Uses recorded must be considered to occupy at least 20% of the landscape under examination.
+The Landscape will most likely contain multiple land uses. Record the primary land use and up to two ancillary land uses, but only to the second level of the classification. Uses recorded must be considered to occupy at least 20% of the landscape under examination.
 
-This parameter is optional as it may only be useful when writing high-level reports on soil survey programmes.
+This parameter is optional as it may only be useful when writing high-level reporting or metadata.
 
-### Landform scale
+### Land use at Landform scale
 
 The Landform is a more local concept. As such it is less likely to contain multiple land uses, and these should be recorded at the third level of the classification. Record the primary land use and up to two ancillary land uses. These do not have to be contained within the land uses recorded at Landscape level, as they may be locally distinct. The uses recorded should occupy at least 20% of the landform under consideration.
 
 Where more than one use occurs within a Landform, the primary use is the one considered to have had the most impact on the soil profile being described. Attribute each Landform-scale land use with the degree to which it is considered to have impacted the soil profile, using @tbl-ss-luimp.
-
-Example for a site on a mixed sheep and beef farm in hill country: 
-
-- Landscape: Series of steep valleys with some forestry blocks and new waterway exclusion fencing - [2.2]{.ceg} ([2.1]{.ceg}, [1.4]{.ceg})
-- Landform: Moderate slope with pasture cover - [2.2.3 M]{.ceg} 
 
 ```{r}
 #| label: tbl-ss-luimp
@@ -132,7 +127,12 @@ tbl_ss_luimp
 
 ```
 
-## Land Management
+Example for a site on a mixed sheep and beef farm in hill country: 
+
+- Landscape: Series of steep valleys with some forestry blocks and new waterway exclusion fencing - [2.2]{.ceg} ([2.1]{.ceg}, [1.4]{.ceg})
+- Landform: Moderate slope with pasture cover - [2.2.3 M]{.ceg} 
+
+## Land Management {#sec-lman}
 
 A fully developed vocabulary for land management does not currently exist. Given the multidimensional and constantly evolving nature of land management practice, it will generally be easier to record such information as free text and, if necessary, use text-mining techniques to extract patterns. Key soil-relevant aspects to record may include the following:
 
@@ -140,7 +140,9 @@ A fully developed vocabulary for land management does not currently exist. Given
 - Harvest frequency (for forestry)
 - Crop rotation sequence
 - Stocking rates
+- Grazing systems
 - Weed control practices
 - Soil amendment practices
+- Irrigation schedule
 - Periodic drainage or flooding
-- Permanent drainage
+- Permanent drainage alterations

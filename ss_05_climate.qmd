@@ -12,15 +12,11 @@ library(gt)
 library(gtExtras)
 ```
 
-## Climate
+## Climate {#sec-clim}
 
-[-   note: most of this is better off not measured in-field
--   note: limitations of available climate data, use local records where possible
--   note: use classifications where numerical data can't be reliably obtained
--   talk about getting data from LENZ vs more local sources
--   calculation from terrain for insolation]{.todo}
+Climate parameters affect soil development directly (e.g. freeze-thaw cycles) and indirectly (e.g. by their influence on vegetation community composition and structure. 
 
-### Global-Regional
+### Global {#sec-clim-global}
 
 The Köppen-Geiger climate classification [@köppen1936] is the most well-known and accepted global system, and has been periodically updated (e.g. [@kottek2006; @beck2018; @beck2023]). Current maps and projections under various climate change scenarios are available from <https://www.gloh2o.org/koppen/>.
 
@@ -57,17 +53,19 @@ tbl_ss_koppenz <- gt(dat_ss_koppenz) |>
 tbl_ss_koppenz
 ```
 
-[map goes here]{.diag}
+[map goes here]{.diags}
 
 Since most work programs will take place within one zone, regional climate rarely needs to be noted in the field.
 
 Where a study area appears to deviate from a regional map, the extent and nature of the deviation should be discussed in project reporting.
 
-### Local
+### Regional {#sec-clim-region}
 
 Various classifications specific to New Zealand have been produced [@robertson1956; @garr1991; @sturman1999].
 
-NIWA have more recently published a useful summary classification at https://niwa.co.nz/climate-and-weather/overview-new-zealands-climate, although it is not accompanied by spatial data. The classification is briefly reproduced in @tbl-ss-climnz below.
+NIWA have more recently published a useful [regional summary classification](https://niwa.co.nz/climate-and-weather/overview-new-zealands-climate), although it is not accompanied by spatial data. The classification is briefly reproduced in @tbl-ss-climnz below. As with the global classifications, these don't need to be recorded in the field.
+
+More detailed discussions of each region's climate are published in NIWA's [Regional Climatologies](https://niwa.co.nz/climate-and-weather/regional-climatologies).
 
 ```{r}
 #| label: tbl-ss-climnz
@@ -102,35 +100,43 @@ tbl_ss_climnz <- gt(dat_ss_climnz) |>
 tbl_ss_climnz
 ```
 
-#### Rainfall regime
+## Specific measurements {#sec-clim-meas}
 
--   total annual
+Some climate parameters are more directly related to soils than others, mainly through their influence on vegetation community and evapotranspiration. Spatial estimates of these parameters are available via the NZ Environmental Data Stack [@mccarthy2021], available from the [MWLR Datastore](https://datastore.landcareresearch.co.nz/gl/dataset/nzenvds). Estimates can also be constructed from local records, where these are available. 
+
+#### Rainfall regime {#sec-clim-rfall}
+
+-   total annual rainfall: Some soils are unlikely to form outside a particular total annual rainfall range, e.g. Allophanic soils are uncommon where total annual rainfall is less than 1000 mm [@hewitt2010].
 -   rainfall seasonality (mean/sd off monthly totals)
 -   summer/winter ratio (Dec+Jan+Feb)/(June+Jul+Aug)
+-   Rainfall:evapotranspiration ratio: 
+-   Soil moisture deficit
 
-#### Temperature regime
+#### Temperature regime {#sec-clim-temp}
 
--   mean annual, etc
+-   Mean annual temperature: The mean temperature recorded year-round. 
+-   Mean summer temperature: The mean temperature recorded over the warmest quarter of the year. In New Zealand, this is usually December-January-February. Mean summer temperature was a key parameter used by @singers2014 to classify NZ terrestrial ecosystems.
 -   frostiness
 
-#### Insolation regime
+#### Insolation regime {#sec-clim-insol}
 
--   day length average and variability
+-   day length average
+-   day length variability
 
-#### Prevailing winds
+#### Prevailing winds {#sec-clim-wind}
 
 -   direction, strength by season
 -   rationale: aspect effects
 
-## Paleoclimate
+## Paleoclimate {#sec-clim-pal}
 
 Soil formation, as a long-term phenomenon, has in many cases a stronger connection to past climates than the present one. Understanding of New Zealand paleoclimates is relatively well-developed, partly due to the intensive study of volcanic and seismic activity on the North Island [@williams2015]. ...
 
-## Weather
+## Weather {#sec-weath}
 
-Contemporary weather conditions have not necessarily had a strong influence on soil formation, except perhaps in young and/or rapidly developing soils. These parameters are more relevant for agricultural suitability assessment and for interpreting soil descriptions.
+Contemporary weather conditions have not necessarily had a strong influence on soil formation, except perhaps in young and/or rapidly developing soils. These parameters are more relevant for agricultural suitability assessment and for interpreting soil profile descriptions.
 
-### Current Weather
+### Current Weather {#sec-weath-now}
 
 Record the weather at the time of observation using the codes in @tbl-ss-weatherc, plus temperature in degrees Celsius. These are not always essential, but can affect colour recording and some field tests.
 
@@ -158,12 +164,12 @@ tbl_ss_weatherc <- gt(dat_ss_weatherc) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20))
+  cols_width(Code ~pct(10))
 
 tbl_ss_weatherc
 ```
 
-### Recent rainfall {#sec-ss-recentrain}
+### Recent rainfall {#sec-weath-rrain}
 
 Record recent rainfall using the codes in @tbl-ss-weatherp.
 
@@ -190,7 +196,7 @@ tbl_ss_weatherp <- gt(dat_ss_weatherp) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20))
+  cols_width(Code ~pct(10))
 
 tbl_ss_weatherp
 ```
