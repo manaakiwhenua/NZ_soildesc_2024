@@ -12,129 +12,28 @@ library(gt)
 library(gtExtras)
 ```
 
-# Functional horizons {#sec-in-fh}
+## Size classes for solid soil components
 
-Functional horizons provide a shorthand for groups of soil morphology properties that have been linked to soil physical behaviour. Functional horizons help define level 5 of the New Zealand Soil Classification, the soil sibling (see @sec-in-sib).
-
-## Code Components {#sec-in-fh-cc}
-
-Each functional horizon is built from a set of components - topsoil status, tephric character, generalised stone and texture content, degree of structural development and consistence.
-
-### Topsoil {#sec-in-fh-ts}
+The following size classification may be applied to size data gathered for peds and other solid soil components.
 
 ```{r}
-#| label: tbl-in-fhts
-#| tbl-cap: "Functional horizon - topsoils"
-#| classes : no-stripe
+#| label: tbl-in-size
+#| tbl-cap: "Size classification for soil materials"
 
-dat_in_fhts <-
+dat_in_size <-
   tribble(~Code, ~Name, ~Description,
-         't', 'Topsoil', 'Surface functional horizon(s) - conventional **A**, **AB** or **O** designation. **L/F/H** horizons are ignored. Must have more than 25% roots by volume.',
-         'leave blank', 'Subsoil', 'Non-topsoil functional horizons. Conventional designation generally **B**, **E**, or **C**.')
+          1, 'Microfine', '< 1',
+          2, 'Extremely fine', '1 - 2',
+          3, 'Very fine', '2 - 6',
+          4, 'Fine', '6 - 10',
+          5, 'Medium', '10 - 20',
+          6, 'Coarse', '20 - 60',
+          7, 'Very Coarse', '60 - 100',
+          8, 'Extremely coarse', '100 - 200',
+          9, 'Gross', '> 200'
+  )
 
-tbl_in_fhts <- gt(dat_in_fhts) |>
-  tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1, rows = 1)) |>
-  tab_style(style = list(cell_text(style = 'italic')),
-            locations = cells_body(columns = 1, rows = 2)) |>
-  fmt_markdown(columns = 3) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
-  
-tbl_in_fhts
-```
-
-The topsoil code can be prefixed to any horizon - it is not restricted to the first functional horizon in the profile. This enables buried topsoils or multi-horizon topsoils to be adequately described.
-
-[Note slight change to roots requirement, see @tbl-hr-rtab - may need further adjustment]{.majch}
-
-### Tephric character {#sec-in-fh-vc}
-
-```{r}
-#| label: tbl-in-fhvc
-#| tbl-cap: "Functional horizon - tephric materials"
-#| classes : no-stripe
-
-dat_in_fhvc <-
-  tribble(~Code, ~Name, ~Description,
-         'z', 'Acidic tephric', 'Acidic tephra (rhyolite-sourced, or similar) that qualifies as allophanic or vitric soil material',
-         'b', 'Basic tephric', 'Basic or intermediate tephra (basalt or andesite-sourced, or similar) that qualifies as allophanic or vitric soil material',
-         'leave blank', 'Non-tephric', 'non-volcanic materials, or volcanic materials that do not qualify as allophanic or vitric soil material')
-
-tbl_in_fhvc <- gt(dat_in_fhvc) |>
-  tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1, rows = 1:2)) |>
-  tab_style(style = list(cell_text(style = 'italic')),
-            locations = cells_body(columns = 1, rows = 3)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
-  
-tbl_in_fhvc
-```
-
-Tephric codes cannot be used in combination with [O\*]{.ceg}, [J]{.ceg} or [Q]{.ceg} functional horizon textures (see below).
-
-[TODO add cross links to nzsc diagnostics above]{.todo}
-
-### Stone content
-
-Use the volumetric stone content assessments made in @sec-hr-stone to classify stone content of functional horizons.
-
-```{r}
-#| label: tbl-in-fhst
-#| tbl-cap: "Functional horizon - stone content"
-#| classes : no-stripe
-
-dat_in_fhst <-
-  tribble(~Code, ~Name, ~Description,
-         'S', 'Stony', '> 5% - 35%',
-         'V', 'Very stony', '> 35% - 70%',
-         'X', 'Extremely stony', '> 70%', 
-         'leave blank','Non-stony', '≤ 5%')
-
-tbl_in_fhst <- gt(dat_in_fhst) |>
-  tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1, rows = 1:3)) |>
-    tab_style(style = list(cell_text(style = 'italic')),
-            locations = cells_body(columns = 1, rows = 4)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
-  
-tbl_in_fhst
-```
-
-### Texture {#sec-in-fh-tx}
-
-```{r}
-#| label: tbl-in-fhtx
-#| tbl-cap: "Functional horizon - texture class"
-#| classes : no-stripe
-
-dat_in_fhtx <-
-  tribble(~Code, ~Name, ~Description,
-         'A', 'Sandy',          'Sand and Loamy Sand [texture classes](hr_03_texture_stones.qmd#sec-hr-tex)',
-         'L', 'Loamy or Silty', 'Loamy and Silty [texture classes](hr_03_texture_stones.qmd#sec-hr-tex)',
-         'Y', 'Clayey',         'Clayey [texture classes](hr_03_texture_stones.qmd#sec-hr-tex)', 
-         'O', 'Organic',        'Organic soil materials',
-         'J', 'Fluid',          'Moderately or very fluid',
-         'Q', 'Pan',            'Indurated pan')
-
-tbl_in_fhtx <- gt(dat_in_fhtx) |>
+tbl_in_size <- gt(dat_in_size) |>
   tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
@@ -143,219 +42,12 @@ tbl_in_fhtx <- gt(dat_in_fhtx) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  fmt_markdown(columns = 3) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
+  cols_label(Description = 'Size range (mm)') |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
   
-tbl_in_fhtx
-```
-
--   Texture [J]{.ceg} is used where fluid behaviour is observed (generally in saturated loose fine sediments below the permanent water table) and is not used in concert with any other codes.
--   Texture [Q]{.ceg} is used where a pan is observed and is not used in concert with any other codes.
-
-[TODO get some crosslinks going/review definitions above]{.todo}
-
-### Texture suffixes
-
-```{r}
-#| label: tbl-in-fhtxx
-#| tbl-cap: "Functional horizon - texture class modifiers"
-#| classes : no-stripe
-
-dat_in_fhtxx <-
-  tribble(~Code, ~Name, ~Description,
-         'a', 'Dune sand', 'Clean, [medium to coarse sand](hr_03_texture_stones.qmd#tbl-hr-sandquals)',
-         'x', 'Fragmental', '\\> 85% rock fragments with minimal interstitial material',
-         'h', 'Humified', 'Non-fibrous peats - conventional horizons **Om**, **Oh**', 
-         'r', 'Fibrous',  'Fibrous peats and thick litter layers - conventional horizons **Of**, **H**, **F**')
-
-tbl_in_fhtxx <- gt(dat_in_fhtxx) |>
-  tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  fmt_markdown(columns = 3) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
-  
-tbl_in_fhtxx
-```
-
--   Texture suffix [a]{.ceg} can only be used with Sandy textures (e.g. [Aa]{.ceg})
--   Texture suffix [x]{.ceg} can only be used where extremely stony (e.g. [Xx]{.ceg})
--   Texture suffixes [r]{.ceg} and [h]{.ceg} can only be used with Organic texture (e.g. [Oh]{.ceg})
-
-### Structure {#sec-in-fh-str}
-
-```{r}
-#| label: tbl-in-fhstr
-#| tbl-cap: "Functional horizon - structure classes"
-#| classes : no-stripe
-
-dat_in_fhtxx <-
-  tribble(~Code, ~Name, ~Description,
-         'C', 'Coarse', 'At least 50% peds of size > 40 mm, *or* apedal massive structure',
-         'F', 'Fine', 'At least 50% peds of size < 40 mm, including horizons where coarse structure breaks to finer nested peds',
-         'E', 'Earthy', 'Weak soil strength with very weak ped strength', 
-         'K', 'Platy',  'At least 50% peds of any size, with a platy shape')
-
-tbl_in_fhtxx <- gt(dat_in_fhtxx) |>
-  tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
-  
-tbl_in_fhtxx
-```
-
--   Structure codes ([C]{.ceg}, [F]{.ceg}) can only be used with [L]{.ceg} or [Y]{.ceg} texture codes, and only where consistence is not [w]{.ceg}.
--   Structures [E]{.ceg} and [K]{.ceg} can only be used with texture [L]{.ceg}.
-
-[TODO are we keeping Earthy? is there really no lower limit on platy ped size? is it still 40 mm like in Webb or 20mm like in SMap Manual? check aligned with wherever structure ends up and also add crosslinks]{.todo}
-
-### Consistence
-
-```{r}
-#| label: tbl-in-fhcon
-#| tbl-cap: "Functional horizon - consistence classes"
-#| classes : no-stripe
-
-dat_in_fhcon <-
-  tribble(~Code, ~Name, ~Description,
-         'w', 'weak', 'Fails under gentle force (strength class 1--2)',
-         'ws', 'weak + slightly firm', 'Contains a mix of weak and slightly firm peds',
-         's', 'slightly firm', 'Fails under moderate force (strength class 3)', 
-         'f', 'firm',  'Fails under strong force (strength class 4+)',
-         'l', 'loose', 'Easily dislodged by spade or pick; does not maintain a vertical face, > 35% stone and/or sandy',
-         'c', 'compact', 'Intermediate between loose and dense, > 35% stone',
-         'd', 'dense', 'Difficult to dislodge except with spade and by removing individual fragments; maintains a stable vertical face, > 35% stone' )
-
-tbl_in_fhcon <- gt(dat_in_fhcon) |>
-  tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  fmt_markdown(columns = 3) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
-  
-tbl_in_fhcon
-```
-
--   Consistence [ws]{.ceg} can only be used with texture [Y]{.ceg}.
--   Consistence [w]{.ceg}, [ws]{.ceg}, [s]{.ceg}, and [f]{.ceg} can only be used with non-stony or stony ([S]{.ceg}) codes. [V]{.ceg} and [X]{.ceg} codes use consistence [l]{.ceg}, [c]{.ceg}, or [d]{.ceg} instead.
-
-[TODO are we keeping ws??]{.todo}
-
-### Permeability
-
-The permeability class represents saturated hydraulic conductivity (*K*~sat~) measured as the rate of water infiltrating into a soil horizon when water is ponded at 10 mm deep at the top of the horizon. Assign one of the classes in @tbl-in-hznperm to each horizon. Note that ['xs']{.ceg} represents effective impermeability. The classes have been slightly simplified from those in Griffiths [-@griffiths1991] and Griffiths et al [-@griffiths1999].
-
-Permeability is very difficult to assess in the field, but considerable work has been done to associate particular ranges of values with the components of the functional horizon. As such, each functional horizon has a default permeability class and usually one or more additional allowable classes. Use the functional horizon name to narrow down the appropriate choice of permeability rating, per @tbl-in-fh below.
-
-```{r}
-#| label: tbl-in-hznperm
-#| tbl-cap: "Horizon-level permeability classes"
-
-# consider adding common horizon types?
-
-dat_in_hznperm <-
-  tribble(~Code, ~Name, ~Description,
-          'xs', 'Extremely slow', '< 0.1 mm/h',
-          's', 'Slow', '0.1 - 4 mm/h',
-          'ms', 'Moderately slow', '4 - 18 mm/h',
-          'm', 'Moderate', '18 - 72 mm/h',
-          'r', 'Rapid', '> 72 mm/h')
-
-tbl_in_hznperm <- gt(dat_in_hznperm) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(30))
-
-
-tbl_in_hznperm
+tbl_in_size
 
 ```
-
-## Functional horizon names
-
-Valid combinations of the above components are listed below, along with associated permeability classes.
-
--   The [t]{.ceg} prefix can be added to any of these.
--   The [z]{.ceg} *or* [b]{.ceg} prefix can be added to any of these, except for [Oh]{.ceg}, [Or]{.ceg}, [J]{.ceg}, and [Q]{.ceg}.
--   A good reason is needed to deviate from the default permeability (e.g. an [Lw]{.ceg} with [r]{.ceg} permeability would need a low clay content).
-
-| Code      | Name                                   | Allowed permeabilities | Topsoil allowed permeabilities |
-|-----------------|----------------------|-----------------|-----------------|
-| **J**     | Fluid                                  | **xs**                 | **xs**                         |
-| **Or**    | Fibric organic                         | r **m**                | **r** m                        |
-| **Oh**    | Humic organic                          | **m** ms s             | **m** ms                       |
-| **OhA**   | Sandy humic organic                    | m **ms**               | **m** ms                       |
-| **OhL**   | Loamy humic organic                    | **ms** s               | m **ms**                       |
-| **OhY**   | Clayey humic organic                   | **s**                  | m **ms** s                     |
-| **Q**     | Indurated pan (massive, hard)          | **xs**                 | **xs**                         |
-| **Xx**    | Extremely stony fragmental             | **r**                  | **r**                          |
-| **XA**    | Extremely stony sandy                  | **r**                  | **r**                          |
-| **XL**    | Extremely stony loamy                  | r **m**                | **r** m                        |
-| **XY**    | Extremely stony clayey                 | **s**                  | m **ms** s                     |
-| **VAl**   | Very stony sandy loose                 | **r**                  | **r**                          |
-| **VAc**   | Very stony sandy compact               | **m** ms               | r **m**                        |
-| **VAd**   | Very stony sandy dense                 | **s**                  | ms **s**                       |
-| **SAl**   | Stony sandy loose                      | **r**                  | **r**                          |
-| **SAw**   | Stony sandy weak                       | **r**                  | **r**                          |
-| **SAs**   | Stony sandy slightly firm              | **m** r                | **r**                          |
-| **SAf**   | Stony sandy firm                       | m **ms** s             | **m** ms                       |
-| **Aa**    | Sandy loose (dune sand)                | **r**                  | **r**                          |
-| **Al**    | Sandy loose                            | **r**                  | **r**                          |
-| **Aw**    | Sandy weak                             | **r**                  | **r**                          |
-| **As**    | Sandy slightly firm                    | **m** r                | **r**                          |
-| **Af**    | Sandy firm                             | m **ms**               | **m** ms                       |
-| **VLl**   | Very stony loamy loose                 | r **m**                | **r** m                        |
-| **VLc**   | Very stony loamy compact               | m **ms** s             | **m** ms                       |
-| **VLd**   | Very stony loamy dense                 | **s** xs               | **s**                          |
-| **SLw**   | Stony loamy weak                       | **m** r                | m **r**                        |
-| **SLFs**  | Stony loamy fine, slightly firm        | **m** ms               | **m** ms                       |
-| **SLFf**  | Stony loamy fine, firm                 | **ms** s               | **m** ms                       |
-| **SLCs**  | Stony loamy coarse, slightly firm      | m **ms** s             | m **ms**                       |
-| **SLCf**  | Stony loamy coarse, firm               | **s** xs               | **ms** s                       |
-| **LEw**   | Loamy earthy weak                      | r **m**                | **r** m                        |
-| **Lw**    | Loamy week                             | r **m**                | **r** m                        |
-| **LFs**   | Loamy fine slightly firm               | m **ms**               | **m** ms                       |
-| **LFf**   | Loamy fine firm                        | **ms** s               | **m** ms                       |
-| **LCs**   | Loamy coarse slightly firm             | m **ms** s             | m **ms**                       |
-| **LCf**   | Loamy coarse firm                      | **s** xs               | **ms** s                       |
-| **LK**    | Loamy platy (\> weak)                  | **s**                  | ms **s**                       |
-| **VYl**   | Very stony clayey loose                | r **m** ms             | **r** m                        |
-| **VYc**   | Very stony clayey compact              | ms **s**               | m **ms**                       |
-| **VYd**   | Very stony clayey dense                | **s** xs               | **s**                          |
-| **SYw**   | Stony clayey fine weak                 | r **m**                | **r** m                        |
-| **SYFs**  | Stony clayey fine slightly firm        | m **ms**               | r **m** ms                     |
-| **SYFws** | Stony clayey fine weak + slightly firm | r m **ms**             | r **m** ms                     |
-| **SYFf**  | Stony clayey fine firm                 | **ms** s               | **m** ms                       |
-| **SYC**   | Stony clayey coarse                    | **s**                  | **ms** s                       |
-| **Yw**    | Clayey weak                            | r **m**                | **r** m                        |
-| **YFs**   | Clayey fine slightly firm              | m **ms**               | r **m** ms                     |
-| **YFws**  | Clayey fine weak + slightly firm       | r m **ms**             | r **m** ms                     |
-| **YFf**   | Clayey fine firm                       | **ms** s               | **m** ms                       |
-| **YC**    | Clayey coarse firm                     | **s**                  | m **ms** s                     |
-
-: Functional horizon names and allowed permeability classes. Default permeabilities are bolded {#tbl-in-fh}
 
 ## Horizon drainage {#sec-in-hdrng}
 
@@ -408,3 +100,351 @@ The reasoning behind this rule of thumb is that the lack of topsoil development 
 ::: callout-note
 Soils that are persistently wet may also become anoxic. This is more common in low-permeability soils, where slow percolation allows enough time for oxygen to be consumed entirely. <!--- add more --->
 :::
+
+## Functional horizons {#sec-in-fh}
+
+Functional horizons provide a shorthand for groups of soil morphology properties that have been linked to soil physical behaviour. Functional horizons help define level 5 of the New Zealand Soil Classification, the soil sibling (see @sec-in-sib).
+
+### Code Components {#sec-in-fh-cc}
+
+Each functional horizon is built from a set of components - topsoil status, tephric character, generalised stone and texture content, degree of structural development and consistence.
+
+#### Topsoil {#sec-in-fh-ts}
+
+```{r}
+#| label: tbl-in-fhts
+#| tbl-cap: "Functional horizon - topsoils"
+#| classes : no-stripe
+
+dat_in_fhts <-
+  tribble(~Code, ~Name, ~Description,
+         't', 'Topsoil', 'Surface functional horizon(s) - conventional **A**, **AB** or **O** designation. **L/F/H** horizons are ignored. Must have more than 25% roots by volume.',
+         'leave blank', 'Subsoil', 'Non-topsoil functional horizons. Conventional designation generally **B**, **E**, or **C**.')
+
+tbl_in_fhts <- gt(dat_in_fhts) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1, rows = 1)) |>
+  tab_style(style = list(cell_text(style = 'italic')),
+            locations = cells_body(columns = 1, rows = 2)) |>
+  fmt_markdown(columns = 3) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_in_fhts
+```
+
+The topsoil code can be prefixed to any horizon - it is not restricted to the first functional horizon in the profile. This enables buried topsoils or multi-horizon topsoils to be adequately described.
+
+[Note slight change to roots requirement, see @tbl-hr-rtab - may need further adjustment]{.majch}
+
+#### Tephric character {#sec-in-fh-vc}
+
+```{r}
+#| label: tbl-in-fhvc
+#| tbl-cap: "Functional horizon - tephric materials"
+#| classes : no-stripe
+
+dat_in_fhvc <-
+  tribble(~Code, ~Name, ~Description,
+         'z', 'Acidic tephric', 'Acidic tephra (rhyolite-sourced, or similar) that qualifies as allophanic or vitric soil material',
+         'b', 'Basic tephric', 'Basic or intermediate tephra (basalt or andesite-sourced, or similar) that qualifies as allophanic or vitric soil material',
+         'leave blank', 'Non-tephric', 'non-volcanic materials, or volcanic materials that do not qualify as allophanic or vitric soil material')
+
+tbl_in_fhvc <- gt(dat_in_fhvc) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1, rows = 1:2)) |>
+  tab_style(style = list(cell_text(style = 'italic')),
+            locations = cells_body(columns = 1, rows = 3)) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
+  
+tbl_in_fhvc
+```
+
+Tephric codes cannot be used in combination with [O\*]{.ceg}, [J]{.ceg} or [Q]{.ceg} functional horizon textures (see below).
+
+[TODO add cross links to nzsc diagnostics above]{.todo}
+
+#### Stone content
+
+Use the volumetric stone content assessments made in @sec-hr-stone to classify stone content of functional horizons.
+
+```{r}
+#| label: tbl-in-fhst
+#| tbl-cap: "Functional horizon - stone content"
+#| classes : no-stripe
+
+dat_in_fhst <-
+  tribble(~Code, ~Name, ~Description,
+         'S', 'Stony', '> 5% - 35%',
+         'V', 'Very stony', '> 35% - 70%',
+         'X', 'Extremely stony', '> 70%', 
+         'leave blank','Non-stony', '≤ 5%')
+
+tbl_in_fhst <- gt(dat_in_fhst) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1, rows = 1:3)) |>
+    tab_style(style = list(cell_text(style = 'italic')),
+            locations = cells_body(columns = 1, rows = 4)) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
+  
+tbl_in_fhst
+```
+
+#### Texture {#sec-in-fh-tx}
+
+```{r}
+#| label: tbl-in-fhtx
+#| tbl-cap: "Functional horizon - texture class"
+#| classes : no-stripe
+
+dat_in_fhtx <-
+  tribble(~Code, ~Name, ~Description,
+         'A', 'Sandy',          'Sand and Loamy Sand [texture classes](hr_03_texture_stones.qmd#sec-hr-tex)',
+         'L', 'Loamy or Silty', 'Loamy and Silty [texture classes](hr_03_texture_stones.qmd#sec-hr-tex)',
+         'Y', 'Clayey',         'Clayey [texture classes](hr_03_texture_stones.qmd#sec-hr-tex)', 
+         'O', 'Organic',        'Organic soil materials',
+         'J', 'Fluid',          'Moderately or very fluid',
+         'Q', 'Pan',            'Indurated pan',
+         'P', 'Placic',         'Placic horizon')
+
+tbl_in_fhtx <- gt(dat_in_fhtx) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  fmt_markdown(columns = 3) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
+  
+tbl_in_fhtx
+```
+
+-   Texture [J]{.ceg} is used where fluid behaviour is observed (generally in saturated loose fine sediments below the permanent water table) and is not used in concert with any other codes.
+-   Texture [Q]{.ceg} is used where a pan is observed and is not used in concert with any other codes.
+-   Texture [P]{.ceg} is used where a placic horizon is observed and is not used in concert with any other codes.
+
+[TODO get some crosslinks going/review definitions above]{.todo}
+
+#### Texture suffixes
+
+```{r}
+#| label: tbl-in-fhtxx
+#| tbl-cap: "Functional horizon - texture class modifiers"
+#| classes : no-stripe
+
+dat_in_fhtxx <-
+  tribble(~Code, ~Name, ~Description,
+         'a', 'Dune sand', 'Clean, [medium to coarse sand](hr_03_texture_stones.qmd#tbl-hr-sandquals)',
+         'x', 'Fragmental', '\\> 85% rock fragments with minimal interstitial material',
+         'h', 'Humified', 'Non-fibrous peats - conventional horizons **Om**, **Oh**', 
+         'r', 'Fibrous',  'Fibrous peats and thick litter layers - conventional horizons **Of**, **H**, **F**')
+
+tbl_in_fhtxx <- gt(dat_in_fhtxx) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  fmt_markdown(columns = 3) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
+  
+tbl_in_fhtxx
+```
+
+-   Texture suffix [a]{.ceg} can only be used with Sandy textures (e.g. [Aa]{.ceg})
+-   Texture suffix [x]{.ceg} can only be used where extremely stony (e.g. [Xx]{.ceg})
+-   Texture suffixes [r]{.ceg} and [h]{.ceg} can only be used with Organic texture (e.g. [Oh]{.ceg})
+
+#### Structure {#sec-in-fh-str}
+
+```{r}
+#| label: tbl-in-fhstr
+#| tbl-cap: "Functional horizon - structure classes"
+#| classes : no-stripe
+
+dat_in_fhtxx <-
+  tribble(~Code, ~Name, ~Description,
+         'C', 'Coarse', 'At least 50% peds of size > 40 mm, *or* apedal massive structure',
+         'F', 'Fine', 'At least 50% peds of size < 40 mm, including horizons where coarse structure breaks to finer nested peds',
+         'E', 'Earthy', 'Weak soil strength with very weak ped strength', 
+         'K', 'Platy',  'At least 50% peds of any size, with a platy shape')
+
+tbl_in_fhtxx <- gt(dat_in_fhtxx) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
+  
+tbl_in_fhtxx
+```
+
+-   Structure codes ([C]{.ceg}, [F]{.ceg}) can only be used with [L]{.ceg} or [Y]{.ceg} texture codes, and only where consistence is not [w]{.ceg}.
+-   Structures [E]{.ceg} and [K]{.ceg} can only be used with texture [L]{.ceg}.
+
+[TODO are we keeping Earthy? is there really no lower limit on platy ped size? is it still 40 mm like in Webb or 20mm like in SMap Manual? check aligned with wherever structure ends up and also add crosslinks]{.todo}
+
+#### Consistence
+
+```{r}
+#| label: tbl-in-fhcon
+#| tbl-cap: "Functional horizon - consistence classes"
+#| classes : no-stripe
+
+dat_in_fhcon <-
+  tribble(~Code, ~Name, ~Description,
+         'w', 'weak', 'Fails under gentle force (strength class 1--2)',
+         'ws', 'weak + slightly firm', 'Contains a mix of weak and slightly firm peds',
+         's', 'slightly firm', 'Fails under moderate force (strength class 3)', 
+         'f', 'firm',  'Fails under strong force (strength class 4+)',
+         'l', 'loose', 'Easily dislodged by spade or pick; does not maintain a vertical face, > 35% stone and/or sandy',
+         'c', 'compact', 'Intermediate between loose and dense, > 35% stone',
+         'd', 'dense', 'Difficult to dislodge except with spade and by removing individual fragments; maintains a stable vertical face, > 35% stone' )
+
+tbl_in_fhcon <- gt(dat_in_fhcon) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  fmt_markdown(columns = 3) |>
+  cols_width(Code ~pct(20), Name ~ pct(20))
+  
+tbl_in_fhcon
+```
+
+-   Consistence [ws]{.ceg} can only be used with texture [Y]{.ceg}.
+-   Consistence [w]{.ceg}, [ws]{.ceg}, [s]{.ceg}, and [f]{.ceg} can only be used with non-stony or stony ([S]{.ceg}) codes. [V]{.ceg} and [X]{.ceg} codes use consistence [l]{.ceg}, [c]{.ceg}, or [d]{.ceg} instead.
+
+[TODO are we keeping ws??]{.todo}
+
+#### Permeability
+
+The permeability class represents saturated hydraulic conductivity (*K*~sat~) measured as the rate of water infiltrating into a soil horizon when water is ponded at 10 mm deep at the top of the horizon. Assign one of the classes in @tbl-in-hznperm to each horizon. Note that ['xs']{.ceg} represents effective impermeability. The classes have been slightly simplified from those in Griffiths [-@griffiths1991] and Griffiths et al [-@griffiths1999].
+
+Permeability is very difficult to assess in the field, but considerable work has been done to associate particular ranges of values with the components of the functional horizon. As such, each functional horizon has a default permeability class and usually one or more additional allowable classes. Use the functional horizon name to narrow down the appropriate choice of permeability rating, per @tbl-in-fh below.
+
+```{r}
+#| label: tbl-in-hznperm
+#| tbl-cap: "Horizon-level permeability classes"
+
+# consider adding common horizon types?
+
+dat_in_hznperm <-
+  tribble(~Code, ~Name, ~Description,
+          'xs', 'Extremely slow', '< 0.1 mm/h',
+          's', 'Slow', '0.1 - 4 mm/h',
+          'ms', 'Moderately slow', '4 - 18 mm/h',
+          'm', 'Moderate', '18 - 72 mm/h',
+          'r', 'Rapid', '> 72 mm/h')
+
+tbl_in_hznperm <- gt(dat_in_hznperm) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(20), Name ~pct(30))
+
+
+tbl_in_hznperm
+
+```
+
+### Functional horizon names
+
+Valid combinations of the above components are listed below, along with associated permeability classes.
+
+-   The [t]{.ceg} prefix can be added to any of these.
+-   The [z]{.ceg} *or* [b]{.ceg} prefix can be added to any of these, except for [Oh]{.ceg}, [Or]{.ceg}, [J]{.ceg}, and [Q]{.ceg}.
+-   A good reason is needed to deviate from the default permeability (e.g. an [Lw]{.ceg} with [r]{.ceg} permeability would need a low clay content).
+
+| Code | Name | Allowed permeabilities | Topsoil allowed permeabilities |
+|:-----------------|:-------------------|:-----------------|:-----------------|
+| [J]{.ceg} | Fluid | **xs** | **xs** |
+| [Or]{.ceg} | Fibric organic | r **m** | **r** m |
+| [Oh]{.ceg} | Humic organic | **m** ms s | **m** ms |
+| [OhA]{.ceg} | Sandy humic organic | m **ms** | **m** ms |
+| [OhL]{.ceg} | Loamy humic organic | **ms** s | m **ms** |
+| [OhY]{.ceg} | Clayey humic organic | **s** | m **ms** s |
+| [Q]{.ceg} | Indurated pan (massive, hard) | **xs** | **xs** |
+| [P]{.ceg} | Placic horizon (non-indurated pan) | ms, **s** | **s** |
+| [Xx]{.ceg} | Extremely stony fragmental | **r** | **r** |
+| [XA]{.ceg} | Extremely stony sandy | **r** | **r** |
+| [XL]{.ceg} | Extremely stony loamy | r **m** | **r** m |
+| [XY]{.ceg} | Extremely stony clayey | **s** | m **ms** s |
+| [VAl]{.ceg} | Very stony sandy loose | **r** | **r** |
+| [VAc]{.ceg} | Very stony sandy compact | **m** ms | r **m** |
+| [VAd]{.ceg} | Very stony sandy dense | **s** | ms **s** |
+| [SAl]{.ceg} | Stony sandy loose | **r** | **r** |
+| [SAw]{.ceg} | Stony sandy weak | **r** | **r** |
+| [SAs]{.ceg} | Stony sandy slightly firm | **m** r | **r** |
+| [SAf]{.ceg} | Stony sandy firm | m **ms** s | **m** ms |
+| [Aa]{.ceg} | Sandy loose (dune sand) | **r** | **r** |
+| [Al]{.ceg} | Sandy loose | **r** | **r** |
+| [Aw]{.ceg} | Sandy weak | **r** | **r** |
+| [As]{.ceg} | Sandy slightly firm | **m** r | **r** |
+| [Af]{.ceg} | Sandy firm | m **ms** | **m** ms |
+| [VLl]{.ceg} | Very stony loamy loose | r **m** | **r** m |
+| [VLc]{.ceg} | Very stony loamy compact | m **ms** s | **m** ms |
+| [VLd]{.ceg} | Very stony loamy dense | **s** xs | **s** |
+| [SLw]{.ceg} | Stony loamy weak | **m** r | m **r** |
+| [SLFs]{.ceg} | Stony loamy fine, slightly firm | **m** ms | **m** ms |
+| [SLFf]{.ceg} | Stony loamy fine, firm | **ms** s | **m** ms |
+| [SLCs]{.ceg} | Stony loamy coarse, slightly firm | m **ms** s | m **ms** |
+| [SLCf]{.ceg} | Stony loamy coarse, firm | **s** xs | **ms** s |
+| [LEw]{.ceg} | Loamy earthy weak | r **m** | **r** m |
+| [Lw]{.ceg} | Loamy week | r **m** | **r** m |
+| [LFs]{.ceg} | Loamy fine slightly firm | m **ms** | **m** ms |
+| [LFf]{.ceg} | Loamy fine firm | **ms** s | **m** ms |
+| [LCs]{.ceg} | Loamy coarse slightly firm | m **ms** s | m **ms** |
+| [LCf]{.ceg} | Loamy coarse firm | **s** xs | **ms** s |
+| [LK]{.ceg} | Loamy platy (\> weak) | **s** | ms **s** |
+| [VYl]{.ceg} | Very stony clayey loose | r **m** ms | **r** m |
+| [VYc]{.ceg} | Very stony clayey compact | ms **s** | m **ms** |
+| [VYd]{.ceg} | Very stony clayey dense | **s** xs | **s** |
+| [SYw]{.ceg} | Stony clayey fine weak | r **m** | **r** m |
+| [SYFs]{.ceg} | Stony clayey fine slightly firm | m **ms** | r **m** ms |
+| [SYFws]{.ceg} | Stony clayey fine weak + slightly firm | r m **ms** | r **m** ms |
+| [SYFf]{.ceg} | Stony clayey fine firm | **ms** s | **m** ms |
+| [SYC]{.ceg} | Stony clayey coarse | **s** | **ms** s |
+| [Yw]{.ceg} | Clayey weak | r **m** | **r** m |
+| [YFs]{.ceg} | Clayey fine slightly firm | m **ms** | r **m** ms |
+| [YFws]{.ceg} | Clayey fine weak + slightly firm | r m **ms** | r **m** ms |
+| [YFf]{.ceg} | Clayey fine firm | **ms** s | **m** ms |
+| [YC]{.ceg} | Clayey coarse firm | **s** | m **ms** s |
+
+: Functional horizon names and allowed permeability classes. Default permeabilities are bolded {#tbl-in-fh}
