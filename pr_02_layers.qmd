@@ -17,13 +17,13 @@ A soil horizon is a distinct layer within a soil profile. [Horizons are distingu
 
 [Not all important soil properties change from one horizon to the next or at the same rate with depth. In some instances confident interpretation of the suitability of a soil for a particular end use may depend on the rate of change of a single property at a horizon boundary. For this reason the basis for separating the horizon may need to be explicitly stated, not just the traditional generalised estimate of the amount of overall change.]{.milne}
 
-## The soil surface
+## The soil surface {#sec-pr-ssurf}
 
 The soil surface has a slightly more restrictive definition than the land surface. The soil surface begins below the layer of fresh leaf litter or small living plants, but above organic soil materials such as peat. The mineral soil surface is further restricted, being the top of the first horizon dominated by mineral soil material. Horizon depths are defined only with reference to the soil surface overall - scrape back litter or grasses and measure from there.
 
 [draw this]{.diags}
 
-## Recording depths
+## Recording depths {#sec-pr-depths}
 
 When examining single small cores or auger points on, (see @tbl-pr-gear, type [A]{.ceg}, [C1]{.ceg} and perhaps [C2]{.ceg}), record the observable upper and lower depth of each horizon from the soil surface in whole centimetres.
 
@@ -55,11 +55,11 @@ ggplot(slp_dat) +
 ```
 :::
 
-## Thickness
+## Thickness {#sec-pr-thick}
 
 Where depths are correctly measured, thickness should be calculated after fieldwork.
 
-## Boundary shape
+## Boundary shape {#sec-pr-bdyshp}
 
 Horizon boundary shape can only be observed on wider exposures (see @tbl-pr-gear, type [E]{.ceg}, [P1]{.ceg}, [P2]{.ceg}). Record against the following schema:
 
@@ -73,7 +73,7 @@ dat_hr_bshp <-
           'W', 'Wavy', 'the boundary surface has broad, shallow, relatively regular pockets and none deeper than they are wide',
           'I', 'Irregular', 'the boundary surface has pockets which are deeper than they are wide but not recurved',
           'C', 'Convolute', 'the boundary surface has pockets which are deeper than they are wide and, in parts, recurved',
-          'O', 'Occluded', 'the boundary is discontinuous, usually due to external disturbance')
+          'D', 'Discontinuous', 'the boundary is discontinuous, usually due to external disturbance')
 
 tbl_hr_bshp <- gt(dat_hr_bshp) |>
    tab_options(
@@ -84,14 +84,12 @@ tbl_hr_bshp <- gt(dat_hr_bshp) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20))
+  cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_hr_bshp
 ```
 
-[change point - abandoning occluded as a modifier to the other codes, giving it its own code instead.]{.majch}
-
-## Boundary distinctness {#sec-hr-bdydist}
+## Boundary distinctness {#sec-pr-bdydist}
 
 Horizon boundaries comprise state changes over short distances. These can be reported as a direct measurement in the same way as horizon upper and lower depths, by reporting the range either side of the boundary. Report in 0.1 centimetre increments (e.g. "0.5 cm").
 
@@ -106,7 +104,8 @@ dat_hr_bdst <-
           'S', 'Sharp', '< 0.5 cm', 
           'A', 'Abrupt', '0.5 - 2.0 cm',
           'D', 'Distinct', '2.0 - 5.0 cm',
-          'G', 'Gradual', '5.0 - 15.0 cm')
+          'G', 'Gradual', '5.0 - 10.0 cm',
+          'D', 'Diffuse', '10 - 30.0 cm')
 
 tbl_hr_bdst <- gt(dat_hr_bdst) |>
    tab_options(
@@ -122,13 +121,7 @@ tbl_hr_bdst <- gt(dat_hr_bdst) |>
 tbl_hr_bdst
 ```
 
-Where a transition is thicker than 15 cm, it should be defined as a new horizon. Use transitional horizon names as needed \[CROSSLINK\].
-
-[change points - using WRB cutoff for gradual/diffuse (15 not 10 cm), dropping diffuse as an option]{.majch}
-
-::: callout-note
-when to make a new horizon instead of reporting a transition
-:::
+Where a diffuse transition is thicker than 30 cm, it should be defined as a new horizon. Use transitional horizon names as needed [CROSSLINK]{.todo}.
 
 [put a diagram unifying the previous three concepts here]{.diags}
 

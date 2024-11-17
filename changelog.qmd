@@ -9,7 +9,7 @@ format:
 ## Major
 
 -   The structure of the book has been updated and how has four major sections: Setting and Site, Profile, Horizons, and Interpretations.
--   Inherently numeric properties are now recorded as numbers; either single measurements, median-plus-range, or low-high range as appropriate. Options for classifying numeric parameters for ease of communication are presented in the Interpretations section.\
+-   Inherently numeric properties are now recorded as numbers; either single measurements, median-plus-range, or low-high range as appropriate. Options for classifying numeric parameters for ease of communication are presented in the Soil Interpretations section.\
     **Rationale:** Numeric data recorded as ranges in the field has limited re-use potential (in that it can't be combined with the same data recorded against other classifications or as numbers) and the ranges have an inherently limited resolution. Many numeric soils parameters have no inherent natural breaks, but patterns in their distribution can emerge in specific landscapes or over certain scales of examination. Recording such data to classes reduces the odds of ever revealing those patterns clearly.
 
 ### Soil Setting (formerly 'Site Data')
@@ -36,27 +36,25 @@ This section has been loosely structured around the major soil forming factors.
     -   Evidence of drainage works affecting the site is now recorded as part of profile drainage assessment (@sec-in-pdrng-alt).
     -   Evidence of localised human alteration to the land surface is now recorded as anthropogenic microrelief (@sec-pr-microra).
     -   Most remaining codes are now recorded as 'recent site disturbances' (@sec-pr-dist).
--   **MOVE** Chapter 'Reference data' into this section
-    -   **ADD** location coordinates as required metadata (@sec-ss-ref-loc, and crosslink to more detailed discussion of requirements in chapter 'Location')
-    -   **ADD** Site purpose @sec-ss-ref-why
-    -   **ADD** Site selection method @sec-ss-ref-sampstrat
-    -   **REMOVE** a requirement for survey title. This is replaced by advocating for a profile identifier that includes a project-level grouping code, and some more generic advice about identifiers.
-    -   **REMOVE** requirement for soil series name and classification. These are interpretations, not metadata.
 -   **MOVE** Erosion and deposition from Soil Setting to Soil Profile.
 
-### Soil profile
+### Soil surface and profile
 
--   **REMOVE** reference to 'fresh' or 'aged' samples [@milne1995, p. 35]; soil descriptions should only be carried out on fresh soil materials.
-
-#### The soil profile
+#### The soil site
 
 -   **UPDATE** the definition of a 'soil site' to better interact with the landscape/landform geomorphology description system, and account for the variety of soil sampling methods in use (point, plot, transect, etc). The diameter of the surface examined around most sites is reduced from \~100 m to \~20 m; larger areas should be assessed as Landforms.
+-   **MOVE** Chapter 'Reference data' into this section
+    -   **ADD** location coordinates as required metadata (@sec-ref-loc, and crosslink to more detailed discussion of requirements in chapter 'Location')
+    -   **ADD** Site purpose @sec-ref-why
+    -   **ADD** Site selection method @sec-ref-sampstrat
+    -   **REMOVE** a requirement for survey title. This is replaced by advocating for a profile identifier that includes a project-level grouping code, and some more generic advice about identifiers.
+    -   **REMOVE** requirement for soil series name and classification. These are interpretations, not metadata.
 -   **ADD** a non-optional code-set for exposure type (@sec-pr-exptype), documenting the method by which the soil was exposed for assessment (pit, auger etc).
 -   **ADD** a requirement to record the maximum depth of observation (or calculate it from horizon depth data)
 -   **ADD** a code list for recording the reason a soil profile did not reach 100 cm
 -   **ADD** a code list for recording recent site disturbances that have the capacity to impact the soil profile description.
 
-#### Surface
+#### Soil surface
 
 -   **ADD** site-specific slope and aspect recording instructions. These are not optional, unlike slope and aspect at the broader landform and landscape levels. (@sec-pr-slope, @sec-pr-aspect)
 -   **ADD** an assessment of surface cover types, recorded as a compositional set (types observed must add to 100%). @sec-pr-surfcov. This includes surface stone and outcrop.
@@ -68,9 +66,15 @@ This section has been loosely structured around the major soil forming factors.
 #### Defining soil horizons
 
 -   **ADD** a clear statement about the differences between the land surface, the soil surface, and the soil mineral surface
--   **ADD** separate instructions for recording horizon depths, based on whether a large section of profile is visible and on whether detailed assessment is desired.
+-   **ADD** separate instructions for recording horizon depths, based on whether a large section of profile is visible and on whether detailed assessment is desired. @sec–pr-bdydist
+-   **ADD** guidance on accurately recording horizon boundaries on steep slopes @imp-stp
+-   **CHANGE** Boundary shape by making 'occluded' its own option rather than a modifier placed on the other four categories. It is also renamed to 'discontinuous'. This improves international compability @sec-pr-bdyshp
+-   **ADD** a clear statement about when to switch from recording a diffuse transition to defining a new horizon. 30 cm is the proposed cutoff. @sec-pr-bdydist
+-   
 
-### Horizon description
+### Soil horizons
+
+#### Soil horizon description
 
 -   **UPDATE** pedality grade to describe a clear gradient of progressively stronger ped development (Single-grain –\> Massive –\> Weak –\> Moderate –\> Strong). Separate non-ped structures e.g. casts, clods.
 -   **ADD** ped shape 'angular blocky'. Consistent with international standards; useful for the extremely squared-off peds that can be observed in, e.g., Pumice soils.
@@ -81,3 +85,7 @@ This section has been loosely structured around the major soil forming factors.
 -   Chemical field tests have been rewritten with clear, step by step instructions and are accompanied by equipment lists and improved safety warnings
 
 ### Minor
+
+### Soil surface and profile
+
+-   **REMOVE** reference to 'fresh' or 'aged' samples [@milne1995, p. 35]; soil descriptions should only be carried out on fresh soil materials.
