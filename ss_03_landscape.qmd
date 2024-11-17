@@ -111,8 +111,8 @@ Few controlled vocabularies for landscapes exist. The schema given below is prov
 dat_hr_lsnames <-
   tribble(~Code, ~Name, ~Description, ~Synonyms,
           # natural
-          'Mt', 'Mountains', 'Steep to very steep, high relief (>300 m), fixed and well connected stream channels, often deep', 'Alps, Volcanoes',
-          'Hi', 'Hills', 'Gentle to very steep, moderately high to high relief (90-300 m), fixed and well connected stream channels, shallow to deep', 'hillscapes, hill country',
+          'Mt', 'Mountains', 'Steep to very steep, high relief (>300 m), fixed and well connected stream channels, often deep', 'Alps, Volcanoes, Mountain country',
+          'Hi', 'Hills', 'Gentle to very steep, moderately high to high relief (90-300 m), fixed and well connected stream channels, shallow to deep', 'hillscapes, hill country, hilly land',
           'Up', 'Uplands', 'Gentle to very steep, low relief (30-90 m) but relatively high elevation, fixed and well connected stream channels, shallow valleys and plateaus, located among hills and mountains', 'Piedmont',
           'Ll', 'Lowlands', 'Gentle to very steep, low relief (30-90 m) and elevation, fixed and well connected stream channels, shallow to deep', 'Downlands',
           'Te', 'Terraces', 'Former floodplains, often uplifted and sometimes covered by loess. Flat to gently undulating upper surfaces bounded by distinctive drop-offs on their downhill end, often backing on to lowlands, hills or mountains at their uphill end.', 'Marine bench',
@@ -156,28 +156,32 @@ Few controlled vocabularies for landforms exist. The schema given below is provi
 dat_hr_lfnames <-
   tribble(~Code, ~Name, ~Synonyms,
           # natural
+          'Ba', 'Bar', 'channel bar, meander bar',
           'Bc', 'Beach', '',
+          'Bo', 'Bog', 'peat bog, swamp',
+          'Ca', 'Caldera', '',
           'Cl', 'Cliff', '', 
           'Cn', 'Cone',  '', 
-          'Cr', 'Crest', '',
+          'Cr', 'Crest', 'Apex',
           'Dl', 'Delta', 'River mouth',
           'Du', 'Dune',  '',
           'Cr', 'Crest', '',
           'Fl', 'Flat', 'Tidal flat, intertidal flat, supratidal flat, infill',
           'Fn', 'Fan',   '',
-          'Go', 'Gorge', '', 
+          'Go', 'Gorge', 'Ravine', 
           'Lv', 'Levee', '',
+          'Mo', 'Mound', 'Lahar mound, knoll, hillock',
           'Mr', 'Moraine', '',
           'Ri', 'Ridge', '',
-          'Pl', 'Plain', 'Alluvial plain, Backplain, Sandplain',
+          'Pl', 'Plain', 'Alluvial plain, backplain, sand plain, outwash plain',
           'Pt', 'Plateau', 'Tableland',
           'Sa', 'Saddle',   '', 
           'Sc', 'Scree', '',
           'Sh', 'Shoulder', '',
           'Sp', 'Spur',     '',
           'Sw', 'Swale', 'Interdune',
-          'Sl', 'Slope', 'Backslope, Midslope, Toeslope, Footslope', 
-          'Tt', 'Terrace tread', '',
+          'Sl', 'Slope', 'Backslope, midslope, toeslope, footslope, dip slope, flank, headslope, talus slope', 
+          'Tt', 'Terrace tread', 'Bench',
           'Tr', 'Terrace riser','', 
           'Vl', 'Valley', '',
           # human:
@@ -310,7 +314,7 @@ tbl_hr_slopeenc
 
 ```
 
-This combination of properties gives rise to more complex shapes. For example, an open hollow could be described as an enclosed maximal slope ([L-A-SL]{.ceg}). A shoulder would be an exposed waxing slope ([E-X-SL]{.ceg}). Adding further information about slope and aspect can define a complete element. For instance, for a gently sloping, northeast facing fan - [5 40 SL N E]{.ceg}.
+This combination of properties gives rise to more complex shapes. For example, an open hollow could be described as an enclosed maximal slope ([SL A L]{.ceg}). A shoulder would be an exposed waxing slope ([SL X E]{.ceg}). Adding further information about slope and aspect can define a complete element. For instance, for a gently sloping, northeast facing fan - [5 40 SL N E]{.ceg}.
 
 [TODO add graphics]{.diags}
 
@@ -320,7 +324,7 @@ The following terrain parameters may be useful in particular contexts.
 
 ### Slope length {#sec-gmph-slplgt}
 
-Slope length is used in assessments of erosion vulnerability. Length is measured from the point at which a slope becomes steep enough to lose soil to erosion processes (see @sec-erosion), to where it levels out enough to receive soils (or to a drainage channel). This is usually impractical to measure in the field, but can be determined computationally given an appropriately detailed DEM.
+Slope length is used in assessments of erosion vulnerability. Length is measured from the point at which a slope becomes steep enough to lose soil to erosion processes (see @sec-pr-erosion), to where it levels out enough to receive soils (or to a drainage channel). This is usually impractical to measure in the field, but can be determined computationally given an appropriately detailed DEM. Alternatively, the slope length can be manually traced in GIS. 
 
 ### Mesoscale topographic index {#sec-gmph-mti}
 
