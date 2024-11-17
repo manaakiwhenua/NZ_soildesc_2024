@@ -1,0 +1,83 @@
+---
+title: "Changes in the new edition"
+editor: visual
+format:
+  html: 
+    number-sections: false
+---
+
+## Major
+
+-   The structure of the book has been updated and how has four major sections: Setting and Site, Profile, Horizons, and Interpretations.
+-   Inherently numeric properties are now recorded as numbers; either single measurements, median-plus-range, or low-high range as appropriate. Options for classifying numeric parameters for ease of communication are presented in the Interpretations section.\
+    **Rationale:** Numeric data recorded as ranges in the field has limited re-use potential (in that it can't be combined with the same data recorded against other classifications or as numbers) and the ranges have an inherently limited resolution. Many numeric soils parameters have no inherent natural breaks, but patterns in their distribution can emerge in specific landscapes or over certain scales of examination. Recording such data to classes reduces the odds of ever revealing those patterns clearly.
+
+### Soil Setting (formerly 'Site Data')
+
+This section has been loosely structured around the major soil forming factors.
+
+-   **ADD** Chapter [Parent material](ss_04_parent_material.qmd#sec-pm), discussing ways to record geological and lithological information. General commentary on the use of geological maps is included but there is no requirement to record geological map code or similar, due to scale and purpose differences. Two options for lithology recording are presented (NZLRI rock type, NZSC Family Rock Class). The mineralogy classes used in the NZSC are also included as an optional parameter.\
+    Some commentary on available research-grade rock type vocabularies is also included. Longer term, the description manual should consider adopting one of these, but they need further development.
+-   **ADD** Chapter [Soils](ss_08_soils.qmd#sec-soil), describing additional sources of New Zealand soils knowledge.
+-   **UPDATE** 'Location of profile position' to [Location](ss_02_location.qmd#sec-loc) and describe modern methods of recording site location, including elevation.
+-   **UPDATE** 'Annual precipitation' to [Climate and Weather](ss_05_climate.qmd#sec-clim), build out a broader discussion of recommended climate and weather parameters, and available data sources.
+-   **UPDATE** 'Geomorphic position' to [Geomorphology](ss_03_landscape.qmd#sec-gmph), with a more structured method of geomorphology description.
+    -   The 'P', 'S', 'E' scales of examination previously described on p. 12 of @milne1995 are loosely retained as Landscape, Landform and Site, but the details of their expression differ.
+    -   Slope and aspect are retained as optional measurements. How they are recorded varies with scale of examination.
+    -   Slope length and width are no longer required to be measured in-field, as this is generally impractical and slope width has no inherent relevance to soil character. Options for computation from Digital Elevation Models (DEMs) or measurement in GIS are mentioned.
+    -   'Wave length and amplitude' is replaced by the simpler term 'relief' and is only recorded at Landscape scale. The definition is the same. A relief classification is added in @sec-reliefclass.
+    -   Assessment of rock outcrop and boulder cover at the site is moved to @sec-pr-surfcov.
+    -   Geomorphic word descriptors (p.15-22) have been regrouped into the Landscape/Landform structure the highly local ones been moved to 'natural microrelief', @sec-pr-microrn.
+    -   The user is referred to @nationalcommitteeonsoilandterrain2023a, p. 26-29 for detailed description of drainage channels, if needed. This is optional.
+-   **UPDATE** 'Vegetation' to [Biota](ss_06_biota.qmd#sec-biota) to allow discussion of when and how to describe other soil-influencing organisms.
+    -   **REMOVE** the vegetation description standard (p. 25-31) and replace with cross-references to appropriate existing standards. The RECCE method is now recommended for high-detail work, and the LUC Vegetation classes for rapid assessment.\
+        **Rationale** The measurement standards given don't align with how vegetation is currently recorded by NZ botanists. The structural classes in Table 2 are not in common use and have the additional problem of grouping all forests into one category, which has very limited discriminatory power. Soils in NZ are known to be heavily influenced by specific types of past and present forest cover, making the scheme suboptimal.
+-   **UPDATE** 'Land use and land-management practices' to [Land cover, land use, and land management](ss_07_landuse_mgmt.qmd#sec-lu). The section now suggests using the proposed NZ Land Use Classification for land use and the existing Land Cover Database for land cover. Land management codes have been replaced with a discussion of potential land management practices that may be recorded (no codes are provided). The land management practice codes previously listed on p. 33-34 have been migrated to the following code lists:
+    -   Evidence of drainage works affecting the site is now recorded as part of profile drainage assessment (@sec-in-pdrng-alt).
+    -   Evidence of localised human alteration to the land surface is now recorded as anthropogenic microrelief (@sec-pr-microra).
+    -   Most remaining codes are now recorded as 'recent site disturbances' (@sec-pr-dist).
+-   **MOVE** Chapter 'Reference data' into this section
+    -   **ADD** location coordinates as required metadata (@sec-ss-ref-loc, and crosslink to more detailed discussion of requirements in chapter 'Location')
+    -   **ADD** Site purpose @sec-ss-ref-why
+    -   **ADD** Site selection method @sec-ss-ref-sampstrat
+    -   **REMOVE** a requirement for survey title. This is replaced by advocating for a profile identifier that includes a project-level grouping code, and some more generic advice about identifiers.
+    -   **REMOVE** requirement for soil series name and classification. These are interpretations, not metadata.
+-   **MOVE** Erosion and deposition from Soil Setting to Soil Profile.
+
+### Soil profile
+
+-   **REMOVE** reference to 'fresh' or 'aged' samples [@milne1995, p. 35]; soil descriptions should only be carried out on fresh soil materials.
+
+#### The soil profile
+
+-   **UPDATE** the definition of a 'soil site' to better interact with the landscape/landform geomorphology description system, and account for the variety of soil sampling methods in use (point, plot, transect, etc). The diameter of the surface examined around most sites is reduced from \~100 m to \~20 m; larger areas should be assessed as Landforms.
+-   **ADD** a non-optional code-set for exposure type (@sec-pr-exptype), documenting the method by which the soil was exposed for assessment (pit, auger etc).
+-   **ADD** a requirement to record the maximum depth of observation (or calculate it from horizon depth data)
+-   **ADD** a code list for recording the reason a soil profile did not reach 100 cm
+-   **ADD** a code list for recording recent site disturbances that have the capacity to impact the soil profile description.
+
+#### Surface
+
+-   **ADD** site-specific slope and aspect recording instructions. These are not optional, unlike slope and aspect at the broader landform and landscape levels. (@sec-pr-slope, @sec-pr-aspect)
+-   **ADD** an assessment of surface cover types, recorded as a compositional set (types observed must add to 100%). @sec-pr-surfcov. This includes surface stone and outcrop.
+-   **UPDATE** Separate Erosion/Deposition into two sets of three-part descriptive codes to allow easier recording of distinct events affecting the surface (@sec-pr-erosion, @sec–pr-deposition). Rapid noting of erosion and deposition can be made using site disturbance codes; these are optional extras that allow a little more detail to be communicated.
+    -   **UPDATE** gravity-driven erosion codes for international compatibility
+    -   **ADD** subtypes of wind deposition for volcanic ash, sand and silt
+    -   **ADD** subtypes of water deposition for flood, storm surge and glacial action
+
+#### Defining soil horizons
+
+-   **ADD** a clear statement about the differences between the land surface, the soil surface, and the soil mineral surface
+-   **ADD** separate instructions for recording horizon depths, based on whether a large section of profile is visible and on whether detailed assessment is desired.
+
+### Horizon description
+
+-   **UPDATE** pedality grade to describe a clear gradient of progressively stronger ped development (Single-grain –\> Massive –\> Weak –\> Moderate –\> Strong). Separate non-ped structures e.g. casts, clods.
+-   **ADD** ped shape 'angular blocky'. Consistent with international standards; useful for the extremely squared-off peds that can be observed in, e.g., Pumice soils.
+-   **REMOVE** ped shape 'tabular'. Exists in no other system, appears to be a synonym for platy.
+-   **REMOVE** ped shape 'cylindrical'. Exists in no other system
+-   
+-   Consistence tests have been re-written with clear, step by step instructions. The evaluation criteria are unchanged.
+-   Chemical field tests have been rewritten with clear, step by step instructions and are accompanied by equipment lists and improved safety warnings
+
+### Minor
