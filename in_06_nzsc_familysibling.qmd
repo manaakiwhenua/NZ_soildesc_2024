@@ -5,7 +5,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-Levels 4 and 5 of the NZSC, the Family and Sibling, provide useful summaries of key whole-profile parameters. 
+Levels 4 and 5 of the NZSC, the Family and Sibling, provide useful summaries of key whole-profile parameters.
 
 ## NZSC Family {#sec-in-nzscfam}
 
@@ -15,8 +15,6 @@ library(tibble)
 library(gt)
 library(gtExtras)
 ```
-
-
 
 ### Soil Profile Material {#sec-fam-pm}
 
@@ -269,8 +267,8 @@ These codes help define level 5 of the NZSC, the soil sibling.
 Soil depth from a sibling perspective is the depth to where digging becomes difficult, e.g.
 
 -   A horizon with ≥ 35% stones by volume (V or X functional horizons, @sec-in-fh)
--   A soft- or hard-rock surface (M rooting barrier)
--   A shattered-lithic contact (F rooting barrier)
+-   A soft- or hard-rock surface (M rooting barrier, @sec-profbar)
+-   A shattered-lithic contact (F rooting barrier, @sec-profbar)
 -   A pan (Q functional horizons, @sec-in-fh-tx)
 -   Firm strength with massive or coarse structure (\*Cf functional horizons, @sec-fh-name)
 
@@ -486,3 +484,64 @@ tbl_in_natdrng <- gt(dat_in_natdrng) |>
 tbl_in_natdrng
 
 ```
+
+## Rooting barriers {#sec-rootbar}
+
+Rooting barriers may be identified in some soils, potentially determining their Family and Sibling codes. Use [N]{.ceg} to confirm no barrier.
+
+### Horizon barriers {#sec-horbar}
+
++------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
+| Code       | Name                   | Description                                                                                                        |
++:===========+:=======================+:===================================================================================================================+
+| [C]{.ceg}  | Chemical               | Chemical toxicity affecting pasture growth, that is not readily alleviated through management. Not salinity.       |
++------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
+| [D]{.ceg}  | Densely packed gravels | -   Has very dense particle packing (**4)**                                                                        |
+|            |                        | -   Requires a **V\*d** FH                                                                                         |
+|            |                        | -   Requires **s** in [family permeability](#sec-fam-perm)                                                         |
++------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
+| [G]{.ceg}  | Extremely gravelly     | -   Has at least 70% gravels by volume and a sandy matrix, or is a very stony horizon with a clean sand matrix     |
+|            |                        | -   Requires ≥ 85% sand and FH with **VAl**, **XA**, or **Xx**                                                     |
++------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
+| [L]{.ceg}  | Extremely dense        | -   Penetration resistance of \>3000 kpa, or packing density of \> 1.85 mg/m^3^                                    |
+|            |                        | -   Requires FH with **d**, **YC**, **VLc**, **VAc** , or **z**                                                    |
+|            |                        | -   Requires **s** in [family permeability](#sec-fam-perm)                                                         |
++------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
+| [P]{.ceg}  | Pan - continuous       | -   Meets the diagnostic criteria for any NZSC pan                                                                 |
+|            |                        | -   Requires FH with: **Q**, **YC**, **VAc**, **VAd**, **LCf**, **VLc**, **VLd**                                   |
+|            |                        | -   Requires NZSC to mention pan status (cemented, placic, ironstone, duric, ortstein subgroups)                   |
+|            |                        | -   Requires **s** in [family permeability](#sec-fam-perm)                                                         |
++------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
+| [Pd]{.ceg} | Pan - discontinuous    | -   Meets the diagnostic criteria for any NZSC pan, but is discontinuous within 100 cm                             |
+|            |                        | -   Requires FH with: **Q**, **YC**, **VAc**, **VAd**, **LCf**, **VLc**, **VLd**                                   |
+|            |                        | -   Requires NZSC to highlight pan status (e.g. cemented, placic, ironstone, duric, ortstein groups and subgroups) |
+|            |                        | -   Requires **s** in [family permeability](#sec-fam-perm)                                                         |
++------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
+| [S]{.ceg}  | Clean sand             | -   Requires ≥ 85% sand and FH with **Aa** or **Al** -- can be **S** but not **V** or **X**                        |
++------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+: Horizon-specific root barriers [@lilburne2021] {#tbl-fhb-one cols=width=\[10,20,70\]}
+
+::: {.callout-note collapse="true" appearance="minimal" title="Notes"}
+These barriers must be connected to a soil horizon, signified with a number, e.g. P(3) for a pan in Horizon 3.
+:::
+
+### Other barriers {#sec-profbar}
+
++----------+----------------+--------------------------------------------------------------------------------+
+| Code     | Name           | Description                                                                    |
++==========+================+================================================================================+
+| **A**    | Anoxic         | Air-filled porosity \< 5%                                                      |
++----------+----------------+--------------------------------------------------------------------------------+
+| **F**    | Fractured rock | -   [Lithic contact]{.underline} present within top 100 cm                     |
+|          |                | -   Fractures are ≥ 30 cm apart                                                |
++----------+----------------+--------------------------------------------------------------------------------+
+| **M**    | Massive Rock   | -   [Lithic]{.underline} or [paralithic contact]{.underline} within top 100 cm |
+|          |                | -   If fractures are present, they are \> 30 cm apart                          |
++----------+----------------+--------------------------------------------------------------------------------+
+
+: Whole-profile root barriers [@lilburne2021] {#tbl-fhb-two cols=width=\[10,20,70\]}
+
+::: {.callout-note collapse="true" appearance="minimal" title="Notes"}
+Many water tables are not anoxic and many plant species' roots are able to live under oxygenated water at least for short periods. Anoxic water tables generally occur in loamy or clayey horizons, are tightly packed, or have significant organic matter (\> 1% carbon).
+:::
