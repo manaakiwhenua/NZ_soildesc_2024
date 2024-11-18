@@ -385,20 +385,26 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./ap_sampling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Observing and sampling soils</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./ap_03_database_design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Database design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Data model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ap_04_glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./changelog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Changes in the new edition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Changes in the new edition</span></span></a>
   </div>
 </li>
       </ul>
@@ -420,14 +426,9 @@ window.Quarto = {
   <li><a href="#sec-slopeclass-luc" id="toc-sec-slopeclass-luc" class="nav-link" data-scroll-target="#sec-slopeclass-luc"><span class="header-section-number">24.1.1</span> LUC Slope</a></li>
   </ul></li>
   <li><a href="#sec-slopeclass-log" id="toc-sec-slopeclass-log" class="nav-link" data-scroll-target="#sec-slopeclass-log"><span class="header-section-number">24.2</span> Natural Log classifications</a></li>
-  <li><a href="#sec-slopeclass-clm" id="toc-sec-slopeclass-clm" class="nav-link" data-scroll-target="#sec-slopeclass-clm"><span class="header-section-number">24.3</span> Critical-limit classifications</a></li>
-  <li><a href="#sec-slopeclass-dat" id="toc-sec-slopeclass-dat" class="nav-link" data-scroll-target="#sec-slopeclass-dat"><span class="header-section-number">24.4</span> Data-driven classifications</a></li>
-  <li><a href="#sec-aspectclass" id="toc-sec-aspectclass" class="nav-link" data-scroll-target="#sec-aspectclass"><span class="header-section-number">24.5</span> Aspect classification</a></li>
-  <li><a href="#sec-reliefclass" id="toc-sec-reliefclass" class="nav-link" data-scroll-target="#sec-reliefclass"><span class="header-section-number">24.6</span> Relief classification</a></li>
-  <li><a href="#climate-classification" id="toc-climate-classification" class="nav-link" data-scroll-target="#climate-classification"><span class="header-section-number">24.7</span> Climate classification</a>
-  <ul class="collapse">
-  <li><a href="#critical-limits" id="toc-critical-limits" class="nav-link" data-scroll-target="#critical-limits"><span class="header-section-number">24.7.1</span> Critical limits</a></li>
-  </ul></li>
+  <li><a href="#sec-slopeclass-dat" id="toc-sec-slopeclass-dat" class="nav-link" data-scroll-target="#sec-slopeclass-dat"><span class="header-section-number">24.3</span> Data-driven classifications</a></li>
+  <li><a href="#sec-aspectclass" id="toc-sec-aspectclass" class="nav-link" data-scroll-target="#sec-aspectclass"><span class="header-section-number">24.4</span> Aspect classification</a></li>
+  <li><a href="#sec-reliefclass" id="toc-sec-reliefclass" class="nav-link" data-scroll-target="#sec-reliefclass"><span class="header-section-number">24.5</span> Relief classification</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -477,23 +478,23 @@ Table&nbsp;24.1: LUC Slope Classes
 </figcaption>
 <div aria-describedby="tbl-in-slpluc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="eeslfvijac" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#eeslfvijac table {
+<div id="klmmzgwmzk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#klmmzgwmzk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#eeslfvijac thead, #eeslfvijac tbody, #eeslfvijac tfoot, #eeslfvijac tr, #eeslfvijac td, #eeslfvijac th {
+#klmmzgwmzk thead, #klmmzgwmzk tbody, #klmmzgwmzk tfoot, #klmmzgwmzk tr, #klmmzgwmzk td, #klmmzgwmzk th {
   border-style: none;
 }
 
-#eeslfvijac p {
+#klmmzgwmzk p {
   margin: 0;
   padding: 0;
 }
 
-#eeslfvijac .gt_table {
+#klmmzgwmzk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -519,12 +520,12 @@ Table&nbsp;24.1: LUC Slope Classes
   border-left-color: #D3D3D3;
 }
 
-#eeslfvijac .gt_caption {
+#klmmzgwmzk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#eeslfvijac .gt_title {
+#klmmzgwmzk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -536,7 +537,7 @@ Table&nbsp;24.1: LUC Slope Classes
   border-bottom-width: 0;
 }
 
-#eeslfvijac .gt_subtitle {
+#klmmzgwmzk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -548,7 +549,7 @@ Table&nbsp;24.1: LUC Slope Classes
   border-top-width: 0;
 }
 
-#eeslfvijac .gt_heading {
+#klmmzgwmzk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -560,13 +561,13 @@ Table&nbsp;24.1: LUC Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#eeslfvijac .gt_bottom_border {
+#klmmzgwmzk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#eeslfvijac .gt_col_headings {
+#klmmzgwmzk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -581,7 +582,7 @@ Table&nbsp;24.1: LUC Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#eeslfvijac .gt_col_heading {
+#klmmzgwmzk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -601,7 +602,7 @@ Table&nbsp;24.1: LUC Slope Classes
   overflow-x: hidden;
 }
 
-#eeslfvijac .gt_column_spanner_outer {
+#klmmzgwmzk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -613,15 +614,15 @@ Table&nbsp;24.1: LUC Slope Classes
   padding-right: 4px;
 }
 
-#eeslfvijac .gt_column_spanner_outer:first-child {
+#klmmzgwmzk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#eeslfvijac .gt_column_spanner_outer:last-child {
+#klmmzgwmzk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#eeslfvijac .gt_column_spanner {
+#klmmzgwmzk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -633,11 +634,11 @@ Table&nbsp;24.1: LUC Slope Classes
   width: 100%;
 }
 
-#eeslfvijac .gt_spanner_row {
+#klmmzgwmzk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#eeslfvijac .gt_group_heading {
+#klmmzgwmzk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -663,7 +664,7 @@ Table&nbsp;24.1: LUC Slope Classes
   text-align: left;
 }
 
-#eeslfvijac .gt_empty_group_heading {
+#klmmzgwmzk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -678,15 +679,15 @@ Table&nbsp;24.1: LUC Slope Classes
   vertical-align: middle;
 }
 
-#eeslfvijac .gt_from_md > :first-child {
+#klmmzgwmzk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#eeslfvijac .gt_from_md > :last-child {
+#klmmzgwmzk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#eeslfvijac .gt_row {
+#klmmzgwmzk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -705,7 +706,7 @@ Table&nbsp;24.1: LUC Slope Classes
   overflow-x: hidden;
 }
 
-#eeslfvijac .gt_stub {
+#klmmzgwmzk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -718,7 +719,7 @@ Table&nbsp;24.1: LUC Slope Classes
   padding-right: 5px;
 }
 
-#eeslfvijac .gt_stub_row_group {
+#klmmzgwmzk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -732,15 +733,15 @@ Table&nbsp;24.1: LUC Slope Classes
   vertical-align: top;
 }
 
-#eeslfvijac .gt_row_group_first td {
+#klmmzgwmzk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#eeslfvijac .gt_row_group_first th {
+#klmmzgwmzk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#eeslfvijac .gt_summary_row {
+#klmmzgwmzk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -750,16 +751,16 @@ Table&nbsp;24.1: LUC Slope Classes
   padding-right: 5px;
 }
 
-#eeslfvijac .gt_first_summary_row {
+#klmmzgwmzk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#eeslfvijac .gt_first_summary_row.thick {
+#klmmzgwmzk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#eeslfvijac .gt_last_summary_row {
+#klmmzgwmzk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -769,7 +770,7 @@ Table&nbsp;24.1: LUC Slope Classes
   border-bottom-color: #D3D3D3;
 }
 
-#eeslfvijac .gt_grand_summary_row {
+#klmmzgwmzk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -779,7 +780,7 @@ Table&nbsp;24.1: LUC Slope Classes
   padding-right: 5px;
 }
 
-#eeslfvijac .gt_first_grand_summary_row {
+#klmmzgwmzk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -789,7 +790,7 @@ Table&nbsp;24.1: LUC Slope Classes
   border-top-color: #D3D3D3;
 }
 
-#eeslfvijac .gt_last_grand_summary_row_top {
+#klmmzgwmzk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -799,11 +800,11 @@ Table&nbsp;24.1: LUC Slope Classes
   border-bottom-color: #D3D3D3;
 }
 
-#eeslfvijac .gt_striped {
+#klmmzgwmzk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#eeslfvijac .gt_table_body {
+#klmmzgwmzk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -812,7 +813,7 @@ Table&nbsp;24.1: LUC Slope Classes
   border-bottom-color: #D3D3D3;
 }
 
-#eeslfvijac .gt_footnotes {
+#klmmzgwmzk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -826,7 +827,7 @@ Table&nbsp;24.1: LUC Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#eeslfvijac .gt_footnote {
+#klmmzgwmzk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -835,7 +836,7 @@ Table&nbsp;24.1: LUC Slope Classes
   padding-right: 5px;
 }
 
-#eeslfvijac .gt_sourcenotes {
+#klmmzgwmzk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -849,7 +850,7 @@ Table&nbsp;24.1: LUC Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#eeslfvijac .gt_sourcenote {
+#klmmzgwmzk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -857,72 +858,72 @@ Table&nbsp;24.1: LUC Slope Classes
   padding-right: 5px;
 }
 
-#eeslfvijac .gt_left {
+#klmmzgwmzk .gt_left {
   text-align: left;
 }
 
-#eeslfvijac .gt_center {
+#klmmzgwmzk .gt_center {
   text-align: center;
 }
 
-#eeslfvijac .gt_right {
+#klmmzgwmzk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#eeslfvijac .gt_font_normal {
+#klmmzgwmzk .gt_font_normal {
   font-weight: normal;
 }
 
-#eeslfvijac .gt_font_bold {
+#klmmzgwmzk .gt_font_bold {
   font-weight: bold;
 }
 
-#eeslfvijac .gt_font_italic {
+#klmmzgwmzk .gt_font_italic {
   font-style: italic;
 }
 
-#eeslfvijac .gt_super {
+#klmmzgwmzk .gt_super {
   font-size: 65%;
 }
 
-#eeslfvijac .gt_footnote_marks {
+#klmmzgwmzk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#eeslfvijac .gt_asterisk {
+#klmmzgwmzk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#eeslfvijac .gt_indent_1 {
+#klmmzgwmzk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#eeslfvijac .gt_indent_2 {
+#klmmzgwmzk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#eeslfvijac .gt_indent_3 {
+#klmmzgwmzk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#eeslfvijac .gt_indent_4 {
+#klmmzgwmzk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#eeslfvijac .gt_indent_5 {
+#klmmzgwmzk .gt_indent_5 {
   text-indent: 25px;
 }
 
-#eeslfvijac .katex-display {
+#klmmzgwmzk .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#eeslfvijac div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#klmmzgwmzk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1008,23 +1009,23 @@ Table&nbsp;24.2: Natural-log Slope Classes
 </figcaption>
 <div aria-describedby="tbl-in-slpaus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="viwkpdslgw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#viwkpdslgw table {
+<div id="zelksrmydn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zelksrmydn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#viwkpdslgw thead, #viwkpdslgw tbody, #viwkpdslgw tfoot, #viwkpdslgw tr, #viwkpdslgw td, #viwkpdslgw th {
+#zelksrmydn thead, #zelksrmydn tbody, #zelksrmydn tfoot, #zelksrmydn tr, #zelksrmydn td, #zelksrmydn th {
   border-style: none;
 }
 
-#viwkpdslgw p {
+#zelksrmydn p {
   margin: 0;
   padding: 0;
 }
 
-#viwkpdslgw .gt_table {
+#zelksrmydn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1050,12 +1051,12 @@ Table&nbsp;24.2: Natural-log Slope Classes
   border-left-color: #D3D3D3;
 }
 
-#viwkpdslgw .gt_caption {
+#zelksrmydn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#viwkpdslgw .gt_title {
+#zelksrmydn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1067,7 +1068,7 @@ Table&nbsp;24.2: Natural-log Slope Classes
   border-bottom-width: 0;
 }
 
-#viwkpdslgw .gt_subtitle {
+#zelksrmydn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1079,7 +1080,7 @@ Table&nbsp;24.2: Natural-log Slope Classes
   border-top-width: 0;
 }
 
-#viwkpdslgw .gt_heading {
+#zelksrmydn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1091,13 +1092,13 @@ Table&nbsp;24.2: Natural-log Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#viwkpdslgw .gt_bottom_border {
+#zelksrmydn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#viwkpdslgw .gt_col_headings {
+#zelksrmydn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1112,7 +1113,7 @@ Table&nbsp;24.2: Natural-log Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#viwkpdslgw .gt_col_heading {
+#zelksrmydn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1132,7 +1133,7 @@ Table&nbsp;24.2: Natural-log Slope Classes
   overflow-x: hidden;
 }
 
-#viwkpdslgw .gt_column_spanner_outer {
+#zelksrmydn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1144,15 +1145,15 @@ Table&nbsp;24.2: Natural-log Slope Classes
   padding-right: 4px;
 }
 
-#viwkpdslgw .gt_column_spanner_outer:first-child {
+#zelksrmydn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#viwkpdslgw .gt_column_spanner_outer:last-child {
+#zelksrmydn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#viwkpdslgw .gt_column_spanner {
+#zelksrmydn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1164,11 +1165,11 @@ Table&nbsp;24.2: Natural-log Slope Classes
   width: 100%;
 }
 
-#viwkpdslgw .gt_spanner_row {
+#zelksrmydn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#viwkpdslgw .gt_group_heading {
+#zelksrmydn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1194,7 +1195,7 @@ Table&nbsp;24.2: Natural-log Slope Classes
   text-align: left;
 }
 
-#viwkpdslgw .gt_empty_group_heading {
+#zelksrmydn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1209,15 +1210,15 @@ Table&nbsp;24.2: Natural-log Slope Classes
   vertical-align: middle;
 }
 
-#viwkpdslgw .gt_from_md > :first-child {
+#zelksrmydn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#viwkpdslgw .gt_from_md > :last-child {
+#zelksrmydn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#viwkpdslgw .gt_row {
+#zelksrmydn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1236,7 +1237,7 @@ Table&nbsp;24.2: Natural-log Slope Classes
   overflow-x: hidden;
 }
 
-#viwkpdslgw .gt_stub {
+#zelksrmydn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1249,7 +1250,7 @@ Table&nbsp;24.2: Natural-log Slope Classes
   padding-right: 5px;
 }
 
-#viwkpdslgw .gt_stub_row_group {
+#zelksrmydn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1263,15 +1264,15 @@ Table&nbsp;24.2: Natural-log Slope Classes
   vertical-align: top;
 }
 
-#viwkpdslgw .gt_row_group_first td {
+#zelksrmydn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#viwkpdslgw .gt_row_group_first th {
+#zelksrmydn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#viwkpdslgw .gt_summary_row {
+#zelksrmydn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1281,16 +1282,16 @@ Table&nbsp;24.2: Natural-log Slope Classes
   padding-right: 5px;
 }
 
-#viwkpdslgw .gt_first_summary_row {
+#zelksrmydn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#viwkpdslgw .gt_first_summary_row.thick {
+#zelksrmydn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#viwkpdslgw .gt_last_summary_row {
+#zelksrmydn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1300,7 +1301,7 @@ Table&nbsp;24.2: Natural-log Slope Classes
   border-bottom-color: #D3D3D3;
 }
 
-#viwkpdslgw .gt_grand_summary_row {
+#zelksrmydn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1310,7 +1311,7 @@ Table&nbsp;24.2: Natural-log Slope Classes
   padding-right: 5px;
 }
 
-#viwkpdslgw .gt_first_grand_summary_row {
+#zelksrmydn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1320,7 +1321,7 @@ Table&nbsp;24.2: Natural-log Slope Classes
   border-top-color: #D3D3D3;
 }
 
-#viwkpdslgw .gt_last_grand_summary_row_top {
+#zelksrmydn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1330,11 +1331,11 @@ Table&nbsp;24.2: Natural-log Slope Classes
   border-bottom-color: #D3D3D3;
 }
 
-#viwkpdslgw .gt_striped {
+#zelksrmydn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#viwkpdslgw .gt_table_body {
+#zelksrmydn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1343,7 +1344,7 @@ Table&nbsp;24.2: Natural-log Slope Classes
   border-bottom-color: #D3D3D3;
 }
 
-#viwkpdslgw .gt_footnotes {
+#zelksrmydn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1357,7 +1358,7 @@ Table&nbsp;24.2: Natural-log Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#viwkpdslgw .gt_footnote {
+#zelksrmydn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1366,7 +1367,7 @@ Table&nbsp;24.2: Natural-log Slope Classes
   padding-right: 5px;
 }
 
-#viwkpdslgw .gt_sourcenotes {
+#zelksrmydn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1380,7 +1381,7 @@ Table&nbsp;24.2: Natural-log Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#viwkpdslgw .gt_sourcenote {
+#zelksrmydn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1388,72 +1389,72 @@ Table&nbsp;24.2: Natural-log Slope Classes
   padding-right: 5px;
 }
 
-#viwkpdslgw .gt_left {
+#zelksrmydn .gt_left {
   text-align: left;
 }
 
-#viwkpdslgw .gt_center {
+#zelksrmydn .gt_center {
   text-align: center;
 }
 
-#viwkpdslgw .gt_right {
+#zelksrmydn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#viwkpdslgw .gt_font_normal {
+#zelksrmydn .gt_font_normal {
   font-weight: normal;
 }
 
-#viwkpdslgw .gt_font_bold {
+#zelksrmydn .gt_font_bold {
   font-weight: bold;
 }
 
-#viwkpdslgw .gt_font_italic {
+#zelksrmydn .gt_font_italic {
   font-style: italic;
 }
 
-#viwkpdslgw .gt_super {
+#zelksrmydn .gt_super {
   font-size: 65%;
 }
 
-#viwkpdslgw .gt_footnote_marks {
+#zelksrmydn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#viwkpdslgw .gt_asterisk {
+#zelksrmydn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#viwkpdslgw .gt_indent_1 {
+#zelksrmydn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#viwkpdslgw .gt_indent_2 {
+#zelksrmydn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#viwkpdslgw .gt_indent_3 {
+#zelksrmydn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#viwkpdslgw .gt_indent_4 {
+#zelksrmydn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#viwkpdslgw .gt_indent_5 {
+#zelksrmydn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#viwkpdslgw .katex-display {
+#zelksrmydn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#viwkpdslgw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zelksrmydn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1542,23 +1543,18 @@ Table&nbsp;24.2: Natural-log Slope Classes
 </div>
 </div>
 </section>
-<section id="sec-slopeclass-clm" class="level2" data-number="24.3">
-<h2 data-number="24.3" class="anchored" data-anchor-id="sec-slopeclass-clm"><span class="header-section-number">24.3</span> Critical-limit classifications</h2>
-<p>Landslide-related etc, TBD</p>
-</section>
-<section id="sec-slopeclass-dat" class="level2" data-number="24.4">
-<h2 data-number="24.4" class="anchored" data-anchor-id="sec-slopeclass-dat"><span class="header-section-number">24.4</span> Data-driven classifications</h2>
+<section id="sec-slopeclass-dat" class="level2" data-number="24.3">
+<h2 data-number="24.3" class="anchored" data-anchor-id="sec-slopeclass-dat"><span class="header-section-number">24.3</span> Data-driven classifications</h2>
 <p>Where high-precision DEMs are available and the areal limits of landscapes are identified, data-driven slope classification is possible. This cannot be done universally; since the classification is an expression of local geomorphology the area of interest must first be carefully delineated before proceeding. Classes defined in this way may be very useful in accurately defining landforms, but hard to convert to practical use.</p>
 </section>
-<section id="sec-aspectclass" class="level2" data-number="24.5">
-<h2 data-number="24.5" class="anchored" data-anchor-id="sec-aspectclass"><span class="header-section-number">24.5</span> Aspect classification</h2>
-<p>The broadest aspect classification available divides the landscape into flat/sunny/shady (@tbl-aspcl-ssh). In New Zealand, ‘sunny’ is roughly ‘north-facing’,</p>
-<ul>
-<li>talk through cardinal compass direction and more tailored options</li>
-</ul>
+<section id="sec-aspectclass" class="level2" data-number="24.4">
+<h2 data-number="24.4" class="anchored" data-anchor-id="sec-aspectclass"><span class="header-section-number">24.4</span> Aspect classification</h2>
+<p>The broadest aspect classification available divides the landscape into flat/sunny/shady (@tbl-aspcl-ssh). In New Zealand, ‘sunny’ is roughly ‘north-facing’.</p>
+<p>For more detail, aspect data can be classified by cardinal compass direction, in 4, 8, or 16 divisions as needed (N, NEE, ENE, etc).</p>
+<p><span class="diags">compass rose image goes here, similar to <a href="https://obrl-soil.github.io/wrbsoil2022/annex-01-field-guide.html#sec-a1-823-as">the WRB’s one</a></span></p>
 </section>
-<section id="sec-reliefclass" class="level2" data-number="24.6">
-<h2 data-number="24.6" class="anchored" data-anchor-id="sec-reliefclass"><span class="header-section-number">24.6</span> Relief classification</h2>
+<section id="sec-reliefclass" class="level2" data-number="24.5">
+<h2 data-number="24.5" class="anchored" data-anchor-id="sec-reliefclass"><span class="header-section-number">24.5</span> Relief classification</h2>
 <p>The following classification system is used globally, and developed over many years <span class="citation" data-cites="hammond1954 löffler1977 brabyn1998 speight2009">(see e.g., <a href="references.html#ref-hammond1954" role="doc-biblioref">Hammond 1954</a>; <a href="references.html#ref-löffler1977" role="doc-biblioref">Löffler 1977</a>; <a href="references.html#ref-brabyn1998" role="doc-biblioref">Brabyn 1998</a>; <a href="references.html#ref-speight2009" role="doc-biblioref">Speight 2009</a>)</span>.</p>
 <p>Relief classifications are scale-dependant; these are calculated by convention over a 600&nbsp;m diameter window. The classification can be adjusted to a smaller or larger window size using the formula <span class="math inline">\(range_{new} = range_{old} × (window_{new} / window_{old})\)</span>, where all inputs are in meters.</p>
 <div class="cell" data-layout-align="center">
@@ -1569,23 +1565,23 @@ Table&nbsp;24.3: Relief classification
 </figcaption>
 <div aria-describedby="tbl-in-relief-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="upguotwiwx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#upguotwiwx table {
+<div id="ixsikadmod" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ixsikadmod table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#upguotwiwx thead, #upguotwiwx tbody, #upguotwiwx tfoot, #upguotwiwx tr, #upguotwiwx td, #upguotwiwx th {
+#ixsikadmod thead, #ixsikadmod tbody, #ixsikadmod tfoot, #ixsikadmod tr, #ixsikadmod td, #ixsikadmod th {
   border-style: none;
 }
 
-#upguotwiwx p {
+#ixsikadmod p {
   margin: 0;
   padding: 0;
 }
 
-#upguotwiwx .gt_table {
+#ixsikadmod .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1611,12 +1607,12 @@ Table&nbsp;24.3: Relief classification
   border-left-color: #D3D3D3;
 }
 
-#upguotwiwx .gt_caption {
+#ixsikadmod .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#upguotwiwx .gt_title {
+#ixsikadmod .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1628,7 +1624,7 @@ Table&nbsp;24.3: Relief classification
   border-bottom-width: 0;
 }
 
-#upguotwiwx .gt_subtitle {
+#ixsikadmod .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1640,7 +1636,7 @@ Table&nbsp;24.3: Relief classification
   border-top-width: 0;
 }
 
-#upguotwiwx .gt_heading {
+#ixsikadmod .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1652,13 +1648,13 @@ Table&nbsp;24.3: Relief classification
   border-right-color: #D3D3D3;
 }
 
-#upguotwiwx .gt_bottom_border {
+#ixsikadmod .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#upguotwiwx .gt_col_headings {
+#ixsikadmod .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1673,7 +1669,7 @@ Table&nbsp;24.3: Relief classification
   border-right-color: #D3D3D3;
 }
 
-#upguotwiwx .gt_col_heading {
+#ixsikadmod .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1693,7 +1689,7 @@ Table&nbsp;24.3: Relief classification
   overflow-x: hidden;
 }
 
-#upguotwiwx .gt_column_spanner_outer {
+#ixsikadmod .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1705,15 +1701,15 @@ Table&nbsp;24.3: Relief classification
   padding-right: 4px;
 }
 
-#upguotwiwx .gt_column_spanner_outer:first-child {
+#ixsikadmod .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#upguotwiwx .gt_column_spanner_outer:last-child {
+#ixsikadmod .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#upguotwiwx .gt_column_spanner {
+#ixsikadmod .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1725,11 +1721,11 @@ Table&nbsp;24.3: Relief classification
   width: 100%;
 }
 
-#upguotwiwx .gt_spanner_row {
+#ixsikadmod .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#upguotwiwx .gt_group_heading {
+#ixsikadmod .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1755,7 +1751,7 @@ Table&nbsp;24.3: Relief classification
   text-align: left;
 }
 
-#upguotwiwx .gt_empty_group_heading {
+#ixsikadmod .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1770,15 +1766,15 @@ Table&nbsp;24.3: Relief classification
   vertical-align: middle;
 }
 
-#upguotwiwx .gt_from_md > :first-child {
+#ixsikadmod .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#upguotwiwx .gt_from_md > :last-child {
+#ixsikadmod .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#upguotwiwx .gt_row {
+#ixsikadmod .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1797,7 +1793,7 @@ Table&nbsp;24.3: Relief classification
   overflow-x: hidden;
 }
 
-#upguotwiwx .gt_stub {
+#ixsikadmod .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1810,7 +1806,7 @@ Table&nbsp;24.3: Relief classification
   padding-right: 5px;
 }
 
-#upguotwiwx .gt_stub_row_group {
+#ixsikadmod .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1824,15 +1820,15 @@ Table&nbsp;24.3: Relief classification
   vertical-align: top;
 }
 
-#upguotwiwx .gt_row_group_first td {
+#ixsikadmod .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#upguotwiwx .gt_row_group_first th {
+#ixsikadmod .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#upguotwiwx .gt_summary_row {
+#ixsikadmod .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1842,16 +1838,16 @@ Table&nbsp;24.3: Relief classification
   padding-right: 5px;
 }
 
-#upguotwiwx .gt_first_summary_row {
+#ixsikadmod .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#upguotwiwx .gt_first_summary_row.thick {
+#ixsikadmod .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#upguotwiwx .gt_last_summary_row {
+#ixsikadmod .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1861,7 +1857,7 @@ Table&nbsp;24.3: Relief classification
   border-bottom-color: #D3D3D3;
 }
 
-#upguotwiwx .gt_grand_summary_row {
+#ixsikadmod .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1871,7 +1867,7 @@ Table&nbsp;24.3: Relief classification
   padding-right: 5px;
 }
 
-#upguotwiwx .gt_first_grand_summary_row {
+#ixsikadmod .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1881,7 +1877,7 @@ Table&nbsp;24.3: Relief classification
   border-top-color: #D3D3D3;
 }
 
-#upguotwiwx .gt_last_grand_summary_row_top {
+#ixsikadmod .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1891,11 +1887,11 @@ Table&nbsp;24.3: Relief classification
   border-bottom-color: #D3D3D3;
 }
 
-#upguotwiwx .gt_striped {
+#ixsikadmod .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#upguotwiwx .gt_table_body {
+#ixsikadmod .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1904,7 +1900,7 @@ Table&nbsp;24.3: Relief classification
   border-bottom-color: #D3D3D3;
 }
 
-#upguotwiwx .gt_footnotes {
+#ixsikadmod .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1918,7 +1914,7 @@ Table&nbsp;24.3: Relief classification
   border-right-color: #D3D3D3;
 }
 
-#upguotwiwx .gt_footnote {
+#ixsikadmod .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1927,7 +1923,7 @@ Table&nbsp;24.3: Relief classification
   padding-right: 5px;
 }
 
-#upguotwiwx .gt_sourcenotes {
+#ixsikadmod .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1941,7 +1937,7 @@ Table&nbsp;24.3: Relief classification
   border-right-color: #D3D3D3;
 }
 
-#upguotwiwx .gt_sourcenote {
+#ixsikadmod .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1949,72 +1945,72 @@ Table&nbsp;24.3: Relief classification
   padding-right: 5px;
 }
 
-#upguotwiwx .gt_left {
+#ixsikadmod .gt_left {
   text-align: left;
 }
 
-#upguotwiwx .gt_center {
+#ixsikadmod .gt_center {
   text-align: center;
 }
 
-#upguotwiwx .gt_right {
+#ixsikadmod .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#upguotwiwx .gt_font_normal {
+#ixsikadmod .gt_font_normal {
   font-weight: normal;
 }
 
-#upguotwiwx .gt_font_bold {
+#ixsikadmod .gt_font_bold {
   font-weight: bold;
 }
 
-#upguotwiwx .gt_font_italic {
+#ixsikadmod .gt_font_italic {
   font-style: italic;
 }
 
-#upguotwiwx .gt_super {
+#ixsikadmod .gt_super {
   font-size: 65%;
 }
 
-#upguotwiwx .gt_footnote_marks {
+#ixsikadmod .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#upguotwiwx .gt_asterisk {
+#ixsikadmod .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#upguotwiwx .gt_indent_1 {
+#ixsikadmod .gt_indent_1 {
   text-indent: 5px;
 }
 
-#upguotwiwx .gt_indent_2 {
+#ixsikadmod .gt_indent_2 {
   text-indent: 10px;
 }
 
-#upguotwiwx .gt_indent_3 {
+#ixsikadmod .gt_indent_3 {
   text-indent: 15px;
 }
 
-#upguotwiwx .gt_indent_4 {
+#ixsikadmod .gt_indent_4 {
   text-indent: 20px;
 }
 
-#upguotwiwx .gt_indent_5 {
+#ixsikadmod .gt_indent_5 {
   text-indent: 25px;
 }
 
-#upguotwiwx .katex-display {
+#ixsikadmod .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#upguotwiwx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ixsikadmod div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2080,17 +2076,6 @@ Table&nbsp;24.3: Relief classification
 </figure>
 </div>
 </div>
-</section>
-<section id="climate-classification" class="level2" data-number="24.7">
-<h2 data-number="24.7" class="anchored" data-anchor-id="climate-classification"><span class="header-section-number">24.7</span> Climate classification</h2>
-<ul>
-<li>???</li>
-</ul>
-<section id="critical-limits" class="level3" data-number="24.7.1">
-<h3 data-number="24.7.1" class="anchored" data-anchor-id="critical-limits"><span class="header-section-number">24.7.1</span> Critical limits</h3>
-<ul>
-<li>e.g.&nbsp;rainfall and brown v pallic</li>
-</ul>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -2116,7 +2101,6 @@ Speight JG 1971. Log-normality of slope distributions. Zeitschrift für Geomorph
 Speight JG 2009. Landform. In: Soil NC on, Terrain, editors. 3rd ed. Melbourne: CSIRO Publishing; p. 15–72.
 </div>
 </div>
-</section>
 </section>
 </section>
 

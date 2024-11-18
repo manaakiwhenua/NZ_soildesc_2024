@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix C — Database design – Soil Description Handbook</title>
+<title>Appendix D — Data model – Soil Description Handbook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./ap_04_glossary.html" rel="next">
-<link href="./ap_02_field_recording.html" rel="prev">
+<link href="./ap_sampling.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -86,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ap_01_equipment.html">Appendices</a></li><li class="breadcrumb-item"><a href="./ap_03_database_design.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Database design</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ap_01_equipment.html">Appendices</a></li><li class="breadcrumb-item"><a href="./ap_03_database_design.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Data model</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -341,20 +341,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./ap_sampling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Observing and sampling soils</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./ap_03_database_design.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Database design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Data model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ap_04_glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./changelog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Changes in the new edition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Changes in the new edition</span></span></a>
   </div>
 </li>
       </ul>
@@ -369,20 +375,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#setting-and-site-data" id="toc-setting-and-site-data" class="nav-link active" data-scroll-target="#setting-and-site-data"><span class="header-section-number">C.1</span> Setting and site data</a>
-  <ul class="collapse">
-  <li><a href="#profile-data" id="toc-profile-data" class="nav-link" data-scroll-target="#profile-data"><span class="header-section-number">C.1.1</span> Profile data</a></li>
-  <li><a href="#horizon-data" id="toc-horizon-data" class="nav-link" data-scroll-target="#horizon-data"><span class="header-section-number">C.1.2</span> Horizon data</a></li>
-  </ul></li>
+  <li><a href="#sec-erd-setting" id="toc-sec-erd-setting" class="nav-link active" data-scroll-target="#sec-erd-setting"><span class="header-section-number">D.1</span> Soil Setting</a></li>
+  <li><a href="#sec-erd-surface" id="toc-sec-erd-surface" class="nav-link" data-scroll-target="#sec-erd-surface"><span class="header-section-number">D.2</span> Soil Surface</a></li>
+  <li><a href="#sec-erd-profile" id="toc-sec-erd-profile" class="nav-link" data-scroll-target="#sec-erd-profile"><span class="header-section-number">D.3</span> Profile data</a></li>
+  <li><a href="#sec-erd-horizon" id="toc-sec-erd-horizon" class="nav-link" data-scroll-target="#sec-erd-horizon"><span class="header-section-number">D.4</span> Horizon data</a></li>
+  <li><a href="#sec-erd-samples" id="toc-sec-erd-samples" class="nav-link" data-scroll-target="#sec-erd-samples"><span class="header-section-number">D.5</span> Sample data</a></li>
+  <li><a href="#sec-erd-interp" id="toc-sec-erd-interp" class="nav-link" data-scroll-target="#sec-erd-interp"><span class="header-section-number">D.6</span> Interpretation data</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ap_01_equipment.html">Appendices</a></li><li class="breadcrumb-item"><a href="./ap_03_database_design.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Database design</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ap_01_equipment.html">Appendices</a></li><li class="breadcrumb-item"><a href="./ap_03_database_design.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Data model</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Appendix C — Database design</h1>
+<h1 class="title"><span id="sec-erds" class="quarto-section-identifier">Appendix D — Data model</span></h1>
 </div>
 
 
@@ -394,7 +401,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">October 31, 2024</p>
+      <p class="date-modified">November 18, 2024</p>
     </div>
   </div>
     
@@ -406,8 +413,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>The following diagrams demonstrate one way in which the data model defined in this manual can be structured. The diagrams only deal with the data themselves - security, user management, change tracking and other helper functionalities are left out for clarity. The model is optimised to highlight the relationships between the various data points and contains some structures that support the controlled vocabulary lists, but is not optimised for performance.</p>
-<section id="setting-and-site-data" class="level2" data-number="C.1">
-<h2 data-number="C.1" class="anchored" data-anchor-id="setting-and-site-data"><span class="header-section-number">C.1</span> Setting and site data</h2>
+<section id="sec-erd-setting" class="level2" data-number="D.1">
+<h2 data-number="D.1" class="anchored" data-anchor-id="sec-erd-setting"><span class="header-section-number">D.1</span> Soil Setting</h2>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -545,14 +552,23 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<section id="profile-data" class="level3" data-number="C.1.1">
-<h3 data-number="C.1.1" class="anchored" data-anchor-id="profile-data"><span class="header-section-number">C.1.1</span> Profile data</h3>
 </section>
-<section id="horizon-data" class="level3" data-number="C.1.2">
-<h3 data-number="C.1.2" class="anchored" data-anchor-id="horizon-data"><span class="header-section-number">C.1.2</span> Horizon data</h3>
+<section id="sec-erd-surface" class="level2" data-number="D.2">
+<h2 data-number="D.2" class="anchored" data-anchor-id="sec-erd-surface"><span class="header-section-number">D.2</span> Soil Surface</h2>
+</section>
+<section id="sec-erd-profile" class="level2" data-number="D.3">
+<h2 data-number="D.3" class="anchored" data-anchor-id="sec-erd-profile"><span class="header-section-number">D.3</span> Profile data</h2>
+</section>
+<section id="sec-erd-horizon" class="level2" data-number="D.4">
+<h2 data-number="D.4" class="anchored" data-anchor-id="sec-erd-horizon"><span class="header-section-number">D.4</span> Horizon data</h2>
+</section>
+<section id="sec-erd-samples" class="level2" data-number="D.5">
+<h2 data-number="D.5" class="anchored" data-anchor-id="sec-erd-samples"><span class="header-section-number">D.5</span> Sample data</h2>
+</section>
+<section id="sec-erd-interp" class="level2" data-number="D.6">
+<h2 data-number="D.6" class="anchored" data-anchor-id="sec-erd-interp"><span class="header-section-number">D.6</span> Interpretation data</h2>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -978,13 +994,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ap_02_field_recording.html" class="pagination-link" aria-label="Recording data in the field">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Recording data in the field</span></span>
+      <a href="./ap_sampling.html" class="pagination-link" aria-label="Observing and sampling soils">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Observing and sampling soils</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./ap_04_glossary.html" class="pagination-link" aria-label="Glossary">
-        <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Glossary</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Glossary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

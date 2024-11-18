@@ -356,20 +356,26 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./ap_sampling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Observing and sampling soils</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./ap_03_database_design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Database design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Data model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ap_04_glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./changelog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Changes in the new edition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Changes in the new edition</span></span></a>
   </div>
 </li>
       </ul>
@@ -389,7 +395,13 @@ div.csl-indent {
   <li><a href="#sec-clim-global" id="toc-sec-clim-global" class="nav-link" data-scroll-target="#sec-clim-global"><span class="header-section-number">6.1.1</span> Global</a></li>
   <li><a href="#sec-clim-region" id="toc-sec-clim-region" class="nav-link" data-scroll-target="#sec-clim-region"><span class="header-section-number">6.1.2</span> Regional</a></li>
   </ul></li>
-  <li><a href="#sec-clim-meas" id="toc-sec-clim-meas" class="nav-link" data-scroll-target="#sec-clim-meas"><span class="header-section-number">6.2</span> Specific measurements</a></li>
+  <li><a href="#sec-clim-meas" id="toc-sec-clim-meas" class="nav-link" data-scroll-target="#sec-clim-meas"><span class="header-section-number">6.2</span> Specific measurements</a>
+  <ul class="collapse">
+  <li><a href="#sec-clim-rfall" id="toc-sec-clim-rfall" class="nav-link" data-scroll-target="#sec-clim-rfall"><span class="header-section-number">6.2.1</span> Rainfall</a></li>
+  <li><a href="#sec-clim-temp" id="toc-sec-clim-temp" class="nav-link" data-scroll-target="#sec-clim-temp"><span class="header-section-number">6.2.2</span> Temperature</a></li>
+  <li><a href="#sec-clim-insol" id="toc-sec-clim-insol" class="nav-link" data-scroll-target="#sec-clim-insol"><span class="header-section-number">6.2.3</span> Insolation</a></li>
+  <li><a href="#sec-clim-wind" id="toc-sec-clim-wind" class="nav-link" data-scroll-target="#sec-clim-wind"><span class="header-section-number">6.2.4</span> Prevailing winds</a></li>
+  </ul></li>
   <li><a href="#sec-clim-pal" id="toc-sec-clim-pal" class="nav-link" data-scroll-target="#sec-clim-pal"><span class="header-section-number">6.3</span> Paleoclimate</a></li>
   <li><a href="#sec-weath" id="toc-sec-weath" class="nav-link" data-scroll-target="#sec-weath"><span class="header-section-number">6.4</span> Weather</a>
   <ul class="collapse">
@@ -416,7 +428,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 16, 2024</p>
+      <p class="date-modified">November 18, 2024</p>
     </div>
   </div>
     
@@ -442,23 +454,23 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
 </figcaption>
 <div aria-describedby="tbl-ss-koppenz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="gigljxqofx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gigljxqofx table {
+<div id="nqgbjvttwp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nqgbjvttwp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gigljxqofx thead, #gigljxqofx tbody, #gigljxqofx tfoot, #gigljxqofx tr, #gigljxqofx td, #gigljxqofx th {
+#nqgbjvttwp thead, #nqgbjvttwp tbody, #nqgbjvttwp tfoot, #nqgbjvttwp tr, #nqgbjvttwp td, #nqgbjvttwp th {
   border-style: none;
 }
 
-#gigljxqofx p {
+#nqgbjvttwp p {
   margin: 0;
   padding: 0;
 }
 
-#gigljxqofx .gt_table {
+#nqgbjvttwp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -484,12 +496,12 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   border-left-color: #D3D3D3;
 }
 
-#gigljxqofx .gt_caption {
+#nqgbjvttwp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gigljxqofx .gt_title {
+#nqgbjvttwp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -501,7 +513,7 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   border-bottom-width: 0;
 }
 
-#gigljxqofx .gt_subtitle {
+#nqgbjvttwp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -513,7 +525,7 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   border-top-width: 0;
 }
 
-#gigljxqofx .gt_heading {
+#nqgbjvttwp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -525,13 +537,13 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   border-right-color: #D3D3D3;
 }
 
-#gigljxqofx .gt_bottom_border {
+#nqgbjvttwp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gigljxqofx .gt_col_headings {
+#nqgbjvttwp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -546,7 +558,7 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   border-right-color: #D3D3D3;
 }
 
-#gigljxqofx .gt_col_heading {
+#nqgbjvttwp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -566,7 +578,7 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   overflow-x: hidden;
 }
 
-#gigljxqofx .gt_column_spanner_outer {
+#nqgbjvttwp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -578,15 +590,15 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   padding-right: 4px;
 }
 
-#gigljxqofx .gt_column_spanner_outer:first-child {
+#nqgbjvttwp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gigljxqofx .gt_column_spanner_outer:last-child {
+#nqgbjvttwp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gigljxqofx .gt_column_spanner {
+#nqgbjvttwp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -598,11 +610,11 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   width: 100%;
 }
 
-#gigljxqofx .gt_spanner_row {
+#nqgbjvttwp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gigljxqofx .gt_group_heading {
+#nqgbjvttwp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -628,7 +640,7 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   text-align: left;
 }
 
-#gigljxqofx .gt_empty_group_heading {
+#nqgbjvttwp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -643,15 +655,15 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   vertical-align: middle;
 }
 
-#gigljxqofx .gt_from_md > :first-child {
+#nqgbjvttwp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gigljxqofx .gt_from_md > :last-child {
+#nqgbjvttwp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gigljxqofx .gt_row {
+#nqgbjvttwp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -670,7 +682,7 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   overflow-x: hidden;
 }
 
-#gigljxqofx .gt_stub {
+#nqgbjvttwp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -683,7 +695,7 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   padding-right: 5px;
 }
 
-#gigljxqofx .gt_stub_row_group {
+#nqgbjvttwp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -697,15 +709,15 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   vertical-align: top;
 }
 
-#gigljxqofx .gt_row_group_first td {
+#nqgbjvttwp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gigljxqofx .gt_row_group_first th {
+#nqgbjvttwp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gigljxqofx .gt_summary_row {
+#nqgbjvttwp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -715,16 +727,16 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   padding-right: 5px;
 }
 
-#gigljxqofx .gt_first_summary_row {
+#nqgbjvttwp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gigljxqofx .gt_first_summary_row.thick {
+#nqgbjvttwp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gigljxqofx .gt_last_summary_row {
+#nqgbjvttwp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -734,7 +746,7 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   border-bottom-color: #D3D3D3;
 }
 
-#gigljxqofx .gt_grand_summary_row {
+#nqgbjvttwp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -744,7 +756,7 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   padding-right: 5px;
 }
 
-#gigljxqofx .gt_first_grand_summary_row {
+#nqgbjvttwp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -754,7 +766,7 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   border-top-color: #D3D3D3;
 }
 
-#gigljxqofx .gt_last_grand_summary_row_top {
+#nqgbjvttwp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -764,11 +776,11 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   border-bottom-color: #D3D3D3;
 }
 
-#gigljxqofx .gt_striped {
+#nqgbjvttwp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gigljxqofx .gt_table_body {
+#nqgbjvttwp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -777,7 +789,7 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   border-bottom-color: #D3D3D3;
 }
 
-#gigljxqofx .gt_footnotes {
+#nqgbjvttwp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -791,7 +803,7 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   border-right-color: #D3D3D3;
 }
 
-#gigljxqofx .gt_footnote {
+#nqgbjvttwp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -800,7 +812,7 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   padding-right: 5px;
 }
 
-#gigljxqofx .gt_sourcenotes {
+#nqgbjvttwp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -814,7 +826,7 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   border-right-color: #D3D3D3;
 }
 
-#gigljxqofx .gt_sourcenote {
+#nqgbjvttwp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -822,72 +834,72 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
   padding-right: 5px;
 }
 
-#gigljxqofx .gt_left {
+#nqgbjvttwp .gt_left {
   text-align: left;
 }
 
-#gigljxqofx .gt_center {
+#nqgbjvttwp .gt_center {
   text-align: center;
 }
 
-#gigljxqofx .gt_right {
+#nqgbjvttwp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gigljxqofx .gt_font_normal {
+#nqgbjvttwp .gt_font_normal {
   font-weight: normal;
 }
 
-#gigljxqofx .gt_font_bold {
+#nqgbjvttwp .gt_font_bold {
   font-weight: bold;
 }
 
-#gigljxqofx .gt_font_italic {
+#nqgbjvttwp .gt_font_italic {
   font-style: italic;
 }
 
-#gigljxqofx .gt_super {
+#nqgbjvttwp .gt_super {
   font-size: 65%;
 }
 
-#gigljxqofx .gt_footnote_marks {
+#nqgbjvttwp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gigljxqofx .gt_asterisk {
+#nqgbjvttwp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gigljxqofx .gt_indent_1 {
+#nqgbjvttwp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gigljxqofx .gt_indent_2 {
+#nqgbjvttwp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gigljxqofx .gt_indent_3 {
+#nqgbjvttwp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gigljxqofx .gt_indent_4 {
+#nqgbjvttwp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gigljxqofx .gt_indent_5 {
+#nqgbjvttwp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gigljxqofx .katex-display {
+#nqgbjvttwp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gigljxqofx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nqgbjvttwp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -971,7 +983,7 @@ Table&nbsp;6.1: Köppen climate regions of New Zealand and its neighbours
 </section>
 <section id="sec-clim-region" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="sec-clim-region"><span class="header-section-number">6.1.2</span> Regional</h3>
-<p>Various classifications specific to New Zealand have been produced <span class="citation" data-cites="robertson1956 garr1991 sturman1999">(<a href="references.html#ref-robertson1956" role="doc-biblioref">Robertson 1956</a>; <a href="references.html#ref-garr1991" role="doc-biblioref">Garr and Fitzharris 1991</a>; <a href="references.html#ref-sturman1999" role="doc-biblioref">Sturman et al. 1999</a>)</span>.</p>
+<p>Various cliamte classifications specific to New Zealand have been produced <span class="citation" data-cites="robertson1956 garr1991 sturman1999">(<a href="references.html#ref-robertson1956" role="doc-biblioref">Robertson 1956</a>; <a href="references.html#ref-garr1991" role="doc-biblioref">Garr and Fitzharris 1991</a>; <a href="references.html#ref-sturman1999" role="doc-biblioref">Sturman et al. 1999</a>)</span>.</p>
 <p>NIWA have more recently published a useful <a href="https://niwa.co.nz/climate-and-weather/overview-new-zealands-climate">regional summary classification</a>, although it is not accompanied by spatial data. The classification is briefly reproduced in <a href="#tbl-ss-climnz" class="quarto-xref">Table&nbsp;<span>6.2</span></a> below. As with the global classifications, these don’t need to be recorded in the field.</p>
 <p>More detailed discussions of each region’s climate are published in NIWA’s <a href="https://niwa.co.nz/climate-and-weather/regional-climatologies">Regional Climatologies</a>.</p>
 <div class="cell" data-layout-align="center">
@@ -982,23 +994,23 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
 </figcaption>
 <div aria-describedby="tbl-ss-climnz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="grfnyfbxhp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#grfnyfbxhp table {
+<div id="fxycqbigsg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fxycqbigsg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#grfnyfbxhp thead, #grfnyfbxhp tbody, #grfnyfbxhp tfoot, #grfnyfbxhp tr, #grfnyfbxhp td, #grfnyfbxhp th {
+#fxycqbigsg thead, #fxycqbigsg tbody, #fxycqbigsg tfoot, #fxycqbigsg tr, #fxycqbigsg td, #fxycqbigsg th {
   border-style: none;
 }
 
-#grfnyfbxhp p {
+#fxycqbigsg p {
   margin: 0;
   padding: 0;
 }
 
-#grfnyfbxhp .gt_table {
+#fxycqbigsg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1024,12 +1036,12 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   border-left-color: #D3D3D3;
 }
 
-#grfnyfbxhp .gt_caption {
+#fxycqbigsg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#grfnyfbxhp .gt_title {
+#fxycqbigsg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1041,7 +1053,7 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   border-bottom-width: 0;
 }
 
-#grfnyfbxhp .gt_subtitle {
+#fxycqbigsg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1053,7 +1065,7 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   border-top-width: 0;
 }
 
-#grfnyfbxhp .gt_heading {
+#fxycqbigsg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1065,13 +1077,13 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   border-right-color: #D3D3D3;
 }
 
-#grfnyfbxhp .gt_bottom_border {
+#fxycqbigsg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#grfnyfbxhp .gt_col_headings {
+#fxycqbigsg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1086,7 +1098,7 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   border-right-color: #D3D3D3;
 }
 
-#grfnyfbxhp .gt_col_heading {
+#fxycqbigsg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1106,7 +1118,7 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   overflow-x: hidden;
 }
 
-#grfnyfbxhp .gt_column_spanner_outer {
+#fxycqbigsg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1118,15 +1130,15 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   padding-right: 4px;
 }
 
-#grfnyfbxhp .gt_column_spanner_outer:first-child {
+#fxycqbigsg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#grfnyfbxhp .gt_column_spanner_outer:last-child {
+#fxycqbigsg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#grfnyfbxhp .gt_column_spanner {
+#fxycqbigsg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1138,11 +1150,11 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   width: 100%;
 }
 
-#grfnyfbxhp .gt_spanner_row {
+#fxycqbigsg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#grfnyfbxhp .gt_group_heading {
+#fxycqbigsg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1168,7 +1180,7 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   text-align: left;
 }
 
-#grfnyfbxhp .gt_empty_group_heading {
+#fxycqbigsg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1183,15 +1195,15 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   vertical-align: middle;
 }
 
-#grfnyfbxhp .gt_from_md > :first-child {
+#fxycqbigsg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#grfnyfbxhp .gt_from_md > :last-child {
+#fxycqbigsg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#grfnyfbxhp .gt_row {
+#fxycqbigsg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1210,7 +1222,7 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   overflow-x: hidden;
 }
 
-#grfnyfbxhp .gt_stub {
+#fxycqbigsg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1223,7 +1235,7 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   padding-right: 5px;
 }
 
-#grfnyfbxhp .gt_stub_row_group {
+#fxycqbigsg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1237,15 +1249,15 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   vertical-align: top;
 }
 
-#grfnyfbxhp .gt_row_group_first td {
+#fxycqbigsg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#grfnyfbxhp .gt_row_group_first th {
+#fxycqbigsg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#grfnyfbxhp .gt_summary_row {
+#fxycqbigsg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1255,16 +1267,16 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   padding-right: 5px;
 }
 
-#grfnyfbxhp .gt_first_summary_row {
+#fxycqbigsg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#grfnyfbxhp .gt_first_summary_row.thick {
+#fxycqbigsg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#grfnyfbxhp .gt_last_summary_row {
+#fxycqbigsg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1274,7 +1286,7 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   border-bottom-color: #D3D3D3;
 }
 
-#grfnyfbxhp .gt_grand_summary_row {
+#fxycqbigsg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1284,7 +1296,7 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   padding-right: 5px;
 }
 
-#grfnyfbxhp .gt_first_grand_summary_row {
+#fxycqbigsg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1294,7 +1306,7 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   border-top-color: #D3D3D3;
 }
 
-#grfnyfbxhp .gt_last_grand_summary_row_top {
+#fxycqbigsg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1304,11 +1316,11 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   border-bottom-color: #D3D3D3;
 }
 
-#grfnyfbxhp .gt_striped {
+#fxycqbigsg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#grfnyfbxhp .gt_table_body {
+#fxycqbigsg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1317,7 +1329,7 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   border-bottom-color: #D3D3D3;
 }
 
-#grfnyfbxhp .gt_footnotes {
+#fxycqbigsg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1331,7 +1343,7 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   border-right-color: #D3D3D3;
 }
 
-#grfnyfbxhp .gt_footnote {
+#fxycqbigsg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1340,7 +1352,7 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   padding-right: 5px;
 }
 
-#grfnyfbxhp .gt_sourcenotes {
+#fxycqbigsg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1354,7 +1366,7 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   border-right-color: #D3D3D3;
 }
 
-#grfnyfbxhp .gt_sourcenote {
+#fxycqbigsg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1362,72 +1374,72 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
   padding-right: 5px;
 }
 
-#grfnyfbxhp .gt_left {
+#fxycqbigsg .gt_left {
   text-align: left;
 }
 
-#grfnyfbxhp .gt_center {
+#fxycqbigsg .gt_center {
   text-align: center;
 }
 
-#grfnyfbxhp .gt_right {
+#fxycqbigsg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#grfnyfbxhp .gt_font_normal {
+#fxycqbigsg .gt_font_normal {
   font-weight: normal;
 }
 
-#grfnyfbxhp .gt_font_bold {
+#fxycqbigsg .gt_font_bold {
   font-weight: bold;
 }
 
-#grfnyfbxhp .gt_font_italic {
+#fxycqbigsg .gt_font_italic {
   font-style: italic;
 }
 
-#grfnyfbxhp .gt_super {
+#fxycqbigsg .gt_super {
   font-size: 65%;
 }
 
-#grfnyfbxhp .gt_footnote_marks {
+#fxycqbigsg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#grfnyfbxhp .gt_asterisk {
+#fxycqbigsg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#grfnyfbxhp .gt_indent_1 {
+#fxycqbigsg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#grfnyfbxhp .gt_indent_2 {
+#fxycqbigsg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#grfnyfbxhp .gt_indent_3 {
+#fxycqbigsg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#grfnyfbxhp .gt_indent_4 {
+#fxycqbigsg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#grfnyfbxhp .gt_indent_5 {
+#fxycqbigsg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#grfnyfbxhp .katex-display {
+#fxycqbigsg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#grfnyfbxhp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fxycqbigsg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1520,8 +1532,8 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
 <section id="sec-clim-meas" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="sec-clim-meas"><span class="header-section-number">6.2</span> Specific measurements</h2>
 <p>Some climate parameters are more directly related to soils than others, mainly through their influence on vegetation community and evapotranspiration. Spatial estimates of these parameters are available via the NZ Environmental Data Stack <span class="citation" data-cites="mccarthy2021">(<a href="references.html#ref-mccarthy2021" role="doc-biblioref">McCarthy et al. 2021</a>)</span>, available from the <a href="https://datastore.landcareresearch.co.nz/gl/dataset/nzenvds">MWLR Datastore</a>. Estimates can also be constructed from local records, where these are available.</p>
-<section id="sec-clim-rfall" class="level4" data-number="6.2.0.1">
-<h4 data-number="6.2.0.1" class="anchored" data-anchor-id="sec-clim-rfall"><span class="header-section-number">6.2.0.1</span> Rainfall regime</h4>
+<section id="sec-clim-rfall" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="sec-clim-rfall"><span class="header-section-number">6.2.1</span> Rainfall</h3>
 <ul>
 <li>total annual rainfall: Some soils are unlikely to form outside a particular total annual rainfall range, e.g.&nbsp;Allophanic soils are uncommon where total annual rainfall is less than 1000 mm <span class="citation" data-cites="hewitt2010">(<a href="references.html#ref-hewitt2010" role="doc-biblioref">Hewitt 2010</a>)</span>.</li>
 <li>rainfall seasonality (mean/sd off monthly totals)</li>
@@ -1530,23 +1542,23 @@ Table&nbsp;6.2: NIWA climate regions of New Zealand
 <li>Soil moisture deficit</li>
 </ul>
 </section>
-<section id="sec-clim-temp" class="level4" data-number="6.2.0.2">
-<h4 data-number="6.2.0.2" class="anchored" data-anchor-id="sec-clim-temp"><span class="header-section-number">6.2.0.2</span> Temperature regime</h4>
+<section id="sec-clim-temp" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="sec-clim-temp"><span class="header-section-number">6.2.2</span> Temperature</h3>
 <ul>
 <li>Mean annual temperature: The mean temperature recorded year-round.</li>
 <li>Mean summer temperature: The mean temperature recorded over the warmest quarter of the year. In New Zealand, this is usually December-January-February. Mean summer temperature was a key parameter used by <span class="citation" data-cites="singers2014">Singers and Rogers (<a href="references.html#ref-singers2014" role="doc-biblioref">2014</a>)</span> to classify NZ terrestrial ecosystems.</li>
 <li>frostiness</li>
 </ul>
 </section>
-<section id="sec-clim-insol" class="level4" data-number="6.2.0.3">
-<h4 data-number="6.2.0.3" class="anchored" data-anchor-id="sec-clim-insol"><span class="header-section-number">6.2.0.3</span> Insolation regime</h4>
+<section id="sec-clim-insol" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="sec-clim-insol"><span class="header-section-number">6.2.3</span> Insolation</h3>
 <ul>
 <li>day length average</li>
 <li>day length variability</li>
 </ul>
 </section>
-<section id="sec-clim-wind" class="level4" data-number="6.2.0.4">
-<h4 data-number="6.2.0.4" class="anchored" data-anchor-id="sec-clim-wind"><span class="header-section-number">6.2.0.4</span> Prevailing winds</h4>
+<section id="sec-clim-wind" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="sec-clim-wind"><span class="header-section-number">6.2.4</span> Prevailing winds</h3>
 <ul>
 <li>direction, strength by season</li>
 <li>rationale: aspect effects</li>
@@ -1572,23 +1584,23 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
 </figcaption>
 <div aria-describedby="tbl-ss-weatherc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="mgxeayjcrc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mgxeayjcrc table {
+<div id="ohnceouxmd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ohnceouxmd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mgxeayjcrc thead, #mgxeayjcrc tbody, #mgxeayjcrc tfoot, #mgxeayjcrc tr, #mgxeayjcrc td, #mgxeayjcrc th {
+#ohnceouxmd thead, #ohnceouxmd tbody, #ohnceouxmd tfoot, #ohnceouxmd tr, #ohnceouxmd td, #ohnceouxmd th {
   border-style: none;
 }
 
-#mgxeayjcrc p {
+#ohnceouxmd p {
   margin: 0;
   padding: 0;
 }
 
-#mgxeayjcrc .gt_table {
+#ohnceouxmd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1614,12 +1626,12 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   border-left-color: #D3D3D3;
 }
 
-#mgxeayjcrc .gt_caption {
+#ohnceouxmd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mgxeayjcrc .gt_title {
+#ohnceouxmd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1631,7 +1643,7 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   border-bottom-width: 0;
 }
 
-#mgxeayjcrc .gt_subtitle {
+#ohnceouxmd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1643,7 +1655,7 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   border-top-width: 0;
 }
 
-#mgxeayjcrc .gt_heading {
+#ohnceouxmd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1655,13 +1667,13 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   border-right-color: #D3D3D3;
 }
 
-#mgxeayjcrc .gt_bottom_border {
+#ohnceouxmd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mgxeayjcrc .gt_col_headings {
+#ohnceouxmd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1676,7 +1688,7 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   border-right-color: #D3D3D3;
 }
 
-#mgxeayjcrc .gt_col_heading {
+#ohnceouxmd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1696,7 +1708,7 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   overflow-x: hidden;
 }
 
-#mgxeayjcrc .gt_column_spanner_outer {
+#ohnceouxmd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1708,15 +1720,15 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   padding-right: 4px;
 }
 
-#mgxeayjcrc .gt_column_spanner_outer:first-child {
+#ohnceouxmd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mgxeayjcrc .gt_column_spanner_outer:last-child {
+#ohnceouxmd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mgxeayjcrc .gt_column_spanner {
+#ohnceouxmd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1728,11 +1740,11 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   width: 100%;
 }
 
-#mgxeayjcrc .gt_spanner_row {
+#ohnceouxmd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mgxeayjcrc .gt_group_heading {
+#ohnceouxmd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1758,7 +1770,7 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   text-align: left;
 }
 
-#mgxeayjcrc .gt_empty_group_heading {
+#ohnceouxmd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1773,15 +1785,15 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   vertical-align: middle;
 }
 
-#mgxeayjcrc .gt_from_md > :first-child {
+#ohnceouxmd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mgxeayjcrc .gt_from_md > :last-child {
+#ohnceouxmd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mgxeayjcrc .gt_row {
+#ohnceouxmd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1800,7 +1812,7 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   overflow-x: hidden;
 }
 
-#mgxeayjcrc .gt_stub {
+#ohnceouxmd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1813,7 +1825,7 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   padding-right: 5px;
 }
 
-#mgxeayjcrc .gt_stub_row_group {
+#ohnceouxmd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1827,15 +1839,15 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   vertical-align: top;
 }
 
-#mgxeayjcrc .gt_row_group_first td {
+#ohnceouxmd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mgxeayjcrc .gt_row_group_first th {
+#ohnceouxmd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mgxeayjcrc .gt_summary_row {
+#ohnceouxmd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1845,16 +1857,16 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   padding-right: 5px;
 }
 
-#mgxeayjcrc .gt_first_summary_row {
+#ohnceouxmd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mgxeayjcrc .gt_first_summary_row.thick {
+#ohnceouxmd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mgxeayjcrc .gt_last_summary_row {
+#ohnceouxmd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1864,7 +1876,7 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   border-bottom-color: #D3D3D3;
 }
 
-#mgxeayjcrc .gt_grand_summary_row {
+#ohnceouxmd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1874,7 +1886,7 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   padding-right: 5px;
 }
 
-#mgxeayjcrc .gt_first_grand_summary_row {
+#ohnceouxmd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1884,7 +1896,7 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   border-top-color: #D3D3D3;
 }
 
-#mgxeayjcrc .gt_last_grand_summary_row_top {
+#ohnceouxmd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1894,11 +1906,11 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   border-bottom-color: #D3D3D3;
 }
 
-#mgxeayjcrc .gt_striped {
+#ohnceouxmd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mgxeayjcrc .gt_table_body {
+#ohnceouxmd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1907,7 +1919,7 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   border-bottom-color: #D3D3D3;
 }
 
-#mgxeayjcrc .gt_footnotes {
+#ohnceouxmd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1921,7 +1933,7 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   border-right-color: #D3D3D3;
 }
 
-#mgxeayjcrc .gt_footnote {
+#ohnceouxmd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1930,7 +1942,7 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   padding-right: 5px;
 }
 
-#mgxeayjcrc .gt_sourcenotes {
+#ohnceouxmd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1944,7 +1956,7 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   border-right-color: #D3D3D3;
 }
 
-#mgxeayjcrc .gt_sourcenote {
+#ohnceouxmd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1952,72 +1964,72 @@ Table&nbsp;6.3: Current weather conditions, Schoeneberger et al. <span class="ci
   padding-right: 5px;
 }
 
-#mgxeayjcrc .gt_left {
+#ohnceouxmd .gt_left {
   text-align: left;
 }
 
-#mgxeayjcrc .gt_center {
+#ohnceouxmd .gt_center {
   text-align: center;
 }
 
-#mgxeayjcrc .gt_right {
+#ohnceouxmd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mgxeayjcrc .gt_font_normal {
+#ohnceouxmd .gt_font_normal {
   font-weight: normal;
 }
 
-#mgxeayjcrc .gt_font_bold {
+#ohnceouxmd .gt_font_bold {
   font-weight: bold;
 }
 
-#mgxeayjcrc .gt_font_italic {
+#ohnceouxmd .gt_font_italic {
   font-style: italic;
 }
 
-#mgxeayjcrc .gt_super {
+#ohnceouxmd .gt_super {
   font-size: 65%;
 }
 
-#mgxeayjcrc .gt_footnote_marks {
+#ohnceouxmd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mgxeayjcrc .gt_asterisk {
+#ohnceouxmd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mgxeayjcrc .gt_indent_1 {
+#ohnceouxmd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mgxeayjcrc .gt_indent_2 {
+#ohnceouxmd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mgxeayjcrc .gt_indent_3 {
+#ohnceouxmd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mgxeayjcrc .gt_indent_4 {
+#ohnceouxmd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mgxeayjcrc .gt_indent_5 {
+#ohnceouxmd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mgxeayjcrc .katex-display {
+#ohnceouxmd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mgxeayjcrc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ohnceouxmd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2079,23 +2091,23 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
 </figcaption>
 <div aria-describedby="tbl-ss-weatherp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="kofncuqabd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kofncuqabd table {
+<div id="hobuybrjif" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hobuybrjif table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kofncuqabd thead, #kofncuqabd tbody, #kofncuqabd tfoot, #kofncuqabd tr, #kofncuqabd td, #kofncuqabd th {
+#hobuybrjif thead, #hobuybrjif tbody, #hobuybrjif tfoot, #hobuybrjif tr, #hobuybrjif td, #hobuybrjif th {
   border-style: none;
 }
 
-#kofncuqabd p {
+#hobuybrjif p {
   margin: 0;
   padding: 0;
 }
 
-#kofncuqabd .gt_table {
+#hobuybrjif .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2121,12 +2133,12 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   border-left-color: #D3D3D3;
 }
 
-#kofncuqabd .gt_caption {
+#hobuybrjif .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kofncuqabd .gt_title {
+#hobuybrjif .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2138,7 +2150,7 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   border-bottom-width: 0;
 }
 
-#kofncuqabd .gt_subtitle {
+#hobuybrjif .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2150,7 +2162,7 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   border-top-width: 0;
 }
 
-#kofncuqabd .gt_heading {
+#hobuybrjif .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2162,13 +2174,13 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   border-right-color: #D3D3D3;
 }
 
-#kofncuqabd .gt_bottom_border {
+#hobuybrjif .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kofncuqabd .gt_col_headings {
+#hobuybrjif .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2183,7 +2195,7 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   border-right-color: #D3D3D3;
 }
 
-#kofncuqabd .gt_col_heading {
+#hobuybrjif .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2203,7 +2215,7 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   overflow-x: hidden;
 }
 
-#kofncuqabd .gt_column_spanner_outer {
+#hobuybrjif .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2215,15 +2227,15 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   padding-right: 4px;
 }
 
-#kofncuqabd .gt_column_spanner_outer:first-child {
+#hobuybrjif .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kofncuqabd .gt_column_spanner_outer:last-child {
+#hobuybrjif .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kofncuqabd .gt_column_spanner {
+#hobuybrjif .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2235,11 +2247,11 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   width: 100%;
 }
 
-#kofncuqabd .gt_spanner_row {
+#hobuybrjif .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kofncuqabd .gt_group_heading {
+#hobuybrjif .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2265,7 +2277,7 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   text-align: left;
 }
 
-#kofncuqabd .gt_empty_group_heading {
+#hobuybrjif .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2280,15 +2292,15 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   vertical-align: middle;
 }
 
-#kofncuqabd .gt_from_md > :first-child {
+#hobuybrjif .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kofncuqabd .gt_from_md > :last-child {
+#hobuybrjif .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kofncuqabd .gt_row {
+#hobuybrjif .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2307,7 +2319,7 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   overflow-x: hidden;
 }
 
-#kofncuqabd .gt_stub {
+#hobuybrjif .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2320,7 +2332,7 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   padding-right: 5px;
 }
 
-#kofncuqabd .gt_stub_row_group {
+#hobuybrjif .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2334,15 +2346,15 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   vertical-align: top;
 }
 
-#kofncuqabd .gt_row_group_first td {
+#hobuybrjif .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kofncuqabd .gt_row_group_first th {
+#hobuybrjif .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kofncuqabd .gt_summary_row {
+#hobuybrjif .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2352,16 +2364,16 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   padding-right: 5px;
 }
 
-#kofncuqabd .gt_first_summary_row {
+#hobuybrjif .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kofncuqabd .gt_first_summary_row.thick {
+#hobuybrjif .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kofncuqabd .gt_last_summary_row {
+#hobuybrjif .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2371,7 +2383,7 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   border-bottom-color: #D3D3D3;
 }
 
-#kofncuqabd .gt_grand_summary_row {
+#hobuybrjif .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2381,7 +2393,7 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   padding-right: 5px;
 }
 
-#kofncuqabd .gt_first_grand_summary_row {
+#hobuybrjif .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2391,7 +2403,7 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   border-top-color: #D3D3D3;
 }
 
-#kofncuqabd .gt_last_grand_summary_row_top {
+#hobuybrjif .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2401,11 +2413,11 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   border-bottom-color: #D3D3D3;
 }
 
-#kofncuqabd .gt_striped {
+#hobuybrjif .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kofncuqabd .gt_table_body {
+#hobuybrjif .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2414,7 +2426,7 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   border-bottom-color: #D3D3D3;
 }
 
-#kofncuqabd .gt_footnotes {
+#hobuybrjif .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2428,7 +2440,7 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   border-right-color: #D3D3D3;
 }
 
-#kofncuqabd .gt_footnote {
+#hobuybrjif .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2437,7 +2449,7 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   padding-right: 5px;
 }
 
-#kofncuqabd .gt_sourcenotes {
+#hobuybrjif .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2451,7 +2463,7 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   border-right-color: #D3D3D3;
 }
 
-#kofncuqabd .gt_sourcenote {
+#hobuybrjif .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2459,72 +2471,72 @@ Table&nbsp;6.4: Recent rainfall, adapted from FAO <span class="citation" data-ci
   padding-right: 5px;
 }
 
-#kofncuqabd .gt_left {
+#hobuybrjif .gt_left {
   text-align: left;
 }
 
-#kofncuqabd .gt_center {
+#hobuybrjif .gt_center {
   text-align: center;
 }
 
-#kofncuqabd .gt_right {
+#hobuybrjif .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kofncuqabd .gt_font_normal {
+#hobuybrjif .gt_font_normal {
   font-weight: normal;
 }
 
-#kofncuqabd .gt_font_bold {
+#hobuybrjif .gt_font_bold {
   font-weight: bold;
 }
 
-#kofncuqabd .gt_font_italic {
+#hobuybrjif .gt_font_italic {
   font-style: italic;
 }
 
-#kofncuqabd .gt_super {
+#hobuybrjif .gt_super {
   font-size: 65%;
 }
 
-#kofncuqabd .gt_footnote_marks {
+#hobuybrjif .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kofncuqabd .gt_asterisk {
+#hobuybrjif .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kofncuqabd .gt_indent_1 {
+#hobuybrjif .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kofncuqabd .gt_indent_2 {
+#hobuybrjif .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kofncuqabd .gt_indent_3 {
+#hobuybrjif .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kofncuqabd .gt_indent_4 {
+#hobuybrjif .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kofncuqabd .gt_indent_5 {
+#hobuybrjif .gt_indent_5 {
   text-indent: 25px;
 }
 
-#kofncuqabd .katex-display {
+#hobuybrjif .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#kofncuqabd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hobuybrjif div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
