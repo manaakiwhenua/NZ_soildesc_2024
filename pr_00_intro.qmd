@@ -44,10 +44,9 @@ These are discussed in turn below.
 Assign each profile description a job or project identifier followed by a sequential number, e.g. '[ABC_001]{.ceg}'.
 
 ::: {#nte-uuid .callout-note collapse="true" appearance="minimal" title="Unique identifiers"}
-
 There are many ways to build profile identifiers. The recommendation above is a compromise between robustness and simplicity that can at least guarantee unique identifiers within an active working group, e.g. a small business.
 
-Well-designed databases use truly unique identifiers for every piece of data they hold. Under contemporary best practice, these are usually 'UUIDs', 128-bit hexadecimal codes (see [RFC 9562]{.todo}). While technically robust, these are difficult to work with day-to-day, and most workers will find themselves preferring to interact with simpler identifiers. In a soil profile database, these should be implemented as UUID aliases. End users should primarily interact with the aliases, and the UUIDs should remain hidden.
+Well-designed databases use truly unique identifiers for every piece of data they hold. Under contemporary best practice, these are usually 'UUIDs', 128-bit hexadecimal codes (see @davis2024). While technically robust, these are difficult to work with day-to-day, and most workers will find themselves preferring to interact with simpler identifiers. In a soil profile database, these should be implemented as UUID aliases. End users should primarily interact with the aliases, and the UUIDs should remain hidden.
 :::
 
 ::: {#nte-teamsites .callout-note collapse="true" appearance="minimal" title="Working in teams"}
@@ -69,10 +68,8 @@ Each profile description must have a single responsible author. Record their nam
 
 Use a short unique identifier for each officer, for example [SMITJ]{.ceg} for John Smith. These may be linked to a more complex user management system.
 
-::: {#cau-priv .callout-caution collapse="true" appearance="minimal" title="Data privacy"} 
-
+::: {#cau-priv .callout-caution collapse="true" appearance="minimal" title="Data privacy"}
 New Zealand data privacy laws are strict. Personally identifying information must be stored securely and not distributed without a good reason. Personal details such as names may not be publishable without explicit consent. Data storage solutions must respect these requirements.
-
 :::
 
 ### Location {#sec-ref-loc}
@@ -119,7 +116,6 @@ tbl_ss_reason
 ```
 
 ::: {#nte-ss-reason .callout-note collapse="true" appearance="minimal" title="About these categories"}
-
 [D]{.ceg} sites are often carried out as part of planning for a resource consent. The soil they describe may be removed or sealed after observation, limiting data re-use potential. [M]{.ceg} monitoring sites imply repeated, regular re-sampling activity and perhaps an expectation of minimal major disturbance between visits.
 
 [V]{.ceg} validation sites may be low-detail, as they are intended to confirm or deny a prediction. [T]{.ceg} reference sites (T for ‘type’) may be expected to have high morphological detail and a lot of accompanying analytical data, as they represent ‘ideal’ profiles for particular soil classes.
@@ -161,7 +157,6 @@ tbl_ss_sampstrat
 ```
 
 ::: {#nte-ss-sampstrat .callout-note collapse="true" appearance="minimal" title="About these categories"}
-
 The difference between data-driven [D]{.ceg} and model-based [M]{.ceg} centres around replicability. Data-driven sites are nominated using a loose set of rules or principles (e.g. “visit the major landforms on this farm but don’t go too far off the tracks”) and may be subject to minor changes once the worker is on-ground. Model-based site choices formalise this process with reference to specific input datasets, and the worker is committed to sample at the exact point chosen. Model-based methods may include ‘backup points’ for where an intended location cannot be physically accessed, but these are also pre-determined. Importantly, model-based choices can be regenerated from the same inputs.
 
 Arbitrary [A]{.ceg} points are not pre-determined at all; rather, they are chosen after the worker is on site, in response to direct observation of on-ground conditions. These are often practical and time-efficient but are also likely to over-sample the more easily accessible and/or interesting parts of the landscape, to the detriment of overall representativeness.
@@ -213,7 +208,7 @@ Record the maximum depth of observation from the soil surface in whole centimetr
 
 A full profile description ideally extends to bedrock, but this may not always be accessible with the equipment and time available. The target depth of observation for most applications in New Zealand is 100 cm. Classification systems like the NZSC and LUC rely on ruling out certain soil features within that depth range, as well as positively identifying others.
 
-See [Appendix X](ap_01_equipment.qmd) for information on appropriate excavation equipment.
+See @sec-digging for information on appropriate excavation equipment.
 
 ### Stopping early {#sec-pr-rsa}
 

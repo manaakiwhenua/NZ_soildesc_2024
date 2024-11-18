@@ -1,8 +1,8 @@
-# Database design
+# Data model {#sec-erds}
 
 The following diagrams demonstrate one way in which the data model defined in this manual can be structured. The diagrams only deal with the data themselves - security, user management, change tracking and other helper functionalities are left out for clarity. The model is optimised to highlight the relationships between the various data points and contains some structures that support the controlled vocabulary lists, but is not optimised for performance.
 
-## Setting and site data
+## Soil Setting {#sec-erd-setting}
 
 ```{mermaid}
 %%| fig-cap: "Overview - main tables only"
@@ -30,8 +30,6 @@ erDiagram
   
 
 ```
-
-
 
 ```{mermaid}
 %%| fig-cap: "Details"
@@ -125,13 +123,15 @@ erDiagram
 
 ```
 
-### Profile data
+## Soil Surface {#sec-erd-surface}
 
+## Profile data {#sec-erd-profile}
 
+## Horizon data {#sec-erd-horizon}
 
+## Sample data {#sec-erd-samples}
 
-
-### Horizon data
+## Interpretation data {#sec-erd-interp}
 
 
 

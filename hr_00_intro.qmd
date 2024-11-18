@@ -14,39 +14,47 @@ loadfonts(quiet = TRUE)
 
 ## Composition
 
-Each soil horizon comprises the following major components: 
+Each soil horizon comprises the following major components:
 
-- Mineral fraction
-    - fine earth (mineral particles < 2mm)
-    - rock fragments (mineral particles > 2mm)
-    - concentrations (precipitates of any size)
-- Biological fraction
-   - Fine organic matter
-   - Coarse organic matter (timber, plant roots)
-- Liquid fraction (moisture content)
-- Voids
+-   Mineral fraction
+    -   fine earth (mineral particles \< 2mm)
+    -   rock fragments (mineral particles \> 2mm)
+    -   concentrations (precipitates of any size)
+-   Biological fraction
+    -   Fine organic matter
+    -   Coarse organic matter (timber, plant roots)
+-   Liquid fraction (moisture content)
+-   Voids
 
-These fractions can be communicated as percentage by volume, adding to 100%. The fine-earth fraction also has its own compositional data based on finer divisions of the <2 mm fraction (see @sec-tex). Volumetric water content is best determined in the laboratory, and so is not described further in this section.
+These fractions can be communicated as percentage by volume, adding to 100%. The fine-earth fraction also has its own compositional data based on finer divisions of the \<2 mm fraction (see @sec-tex). Volumetric water content is best determined in the laboratory, and so is not described further in this section.
 
 [complicated exploding pie chart or similar goes here]{.diags}
 
-## Architecture
+## Architecture {#sec-arch}
 
-The architecture of the physical components - how they are spatially arranged - is described in terms of the fine earth structure (#sec-structure), as well as volumetric percentages of other soil components. For more detailed assessments, options for describing these components in more detail are presented.
+The architecture of the physical components - how they are spatially arranged - is described in terms of the fine earth structure (@sec-hr-stru), as well as volumetric percentages of other soil components. For more detailed assessments, options for describing these components in more detail are presented. Assessment of the fine earth fraction is covered in
 
-## Physical properties 
+## Colour and Texture {#sec-coltex}
 
-Composition and architecture give rise to particular soil physical behaviours. These can be assessed in the field using the tests in @sec-cons. 
+Soil colour and colour patterns are described in @sec-hr-col. The behaviour of the fine-earth fraction is assessed in @sec-hr-tex.
 
-## Chemical properties
+## Pedogenic features
+
+Secondary features that result from pedogenic processes are described in @sec-secondary.
+
+## Physical properties {#sec-phys}
+
+Composition and architecture give rise to particular soil physical behaviours. These can be assessed in the field using the tests in @sec-cons.
+
+## Chemical properties {#sec-chem}
 
 Soil chemistry can be partially assessed in the field using the tests in @sec-chem.
 
-## Origins
+## Origins {#sec-orig}
 
 ### Parent material origin
 
-Parent material origin, or mode of emplacement, describes how soil parent materials have arrived at the point of observation. Multiple modes may have operated in different parts of the soil profile. 
+Parent material origin, or mode of emplacement, describes how soil parent materials have arrived at the point of observation. Multiple modes may have operated in different parts of the soil profile.
 
 Record one parent material origin code per soil horizon, using the codes in @tbl-ss-pmo. At the horizon level, the [An]{.ceg} Anthropic class can be subdivided by origin using the codes in @tbl-hr-antype (e.g. [Ann]{.ceg} for a fill pad in a residential housing development).
 
@@ -75,10 +83,4 @@ tbl_hr_antype <- gt(dat_hr_antype) |>
 tbl_hr_antype
 ```
 
-Parent material origin is also summarised across the top 100 cm of the soil profile as part of defining the [NZSC Soil Family](in_06_nzsc_familysibling.qmd#sec-fam-pmo). 
-
-
-
-
-
-
+Parent material origin is also summarised across the top 100 cm of the soil profile as part of defining the NZSC Soil Family (@sec-fam-pmo).
