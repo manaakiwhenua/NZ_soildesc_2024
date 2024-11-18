@@ -457,41 +457,6 @@ tbl_in_pdrng
 
 Workers classifying drainage for NZSC Sibling construction have no need to subdivide within those profile ratings. For other types of work e.g. agricultural suitability assessment, it may be useful to recognise subgroups – e.g. for a deep-rooted, wetness-intolerant crop, there’s a difference between a profile that is at its *worst* imperfectly drained in the top 1 m, vs one that is dominantly imperfectly drained but has poor drainage below 60 cm.
 
-#### Helper information for profile drainage {#sec-in-pdrng-xtra}
-
-@tbl-in-drngl describes some potential additional signifiers of profile drainage condition that might be considered. These may be useful when estimating drainage in a new landscape that has not yet been examined in detail.
-
-```{r}
-#| label: tbl-in-drngl
-#| tbl-cap: "Profile drainage signifiers"
-#| classes : no-stripe
-#| column: page
-
-dat_in_drngl <-
-  tribble(~Code, ~Name, ~relel, ~Landform, ~Slope, ~Veg, ~Other, 
-         'VP', 'Very poor', 'Very low (0-1m)', 'Waning/minimal/enclosed flats and depressions', 'Level to very gentle', 'Exclusively wetland plants', 'Persistent surface water ponding or seeps nearby',
-         'PO', 'Poor', 'Low (0-10m)', 'Waning/minimal slopes and flats', 'Low-slope or level ground', 'Wetland plants', 'Seasonal ponding or seeps nearby',
-         'IP', 'Imperfect', 'Variable', 'Slopes, hollows, flats', 'Gentle to moderately steep', 'Any', 'More common below high dropoffs',
-         'MW', 'Moderately Well', 'Variable', 'Most landforms', 'Gentle to moderately steep', 'Any' ,'',
-         'WE', 'Well', 'Moderate to high (>10 m)', 'crests, ridges and spurs', 'Gentle to very steep' , 'Any, dry-tolerant may outcompete', '')
-
-tbl_in_drngl <- gt(dat_in_drngl) |>
-  tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  cols_label(relel ~ 'Elevation above local drainage',
-             Veg ~ 'Vegetation') |>
-  cols_width(Code ~pct(10), Name ~ pct(20))
-  
-tbl_in_drngl
-
-```
-
 #### Natural vs Artificial drainage {#sec-in-pdrng-alt}
 
 Profile drainage is often modified by human activity. Many of these modifications require ongoing maintenance. Use the codes in @tbl-in-natdrng to signify the degree of drainage modification.
