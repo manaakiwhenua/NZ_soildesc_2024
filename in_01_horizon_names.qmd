@@ -299,6 +299,16 @@ tbl_hr_hortwor <- gt(dat_hr_hortwor) |>
 tbl_hr_hortwor
 ```
 
+#### Transitional Horizons {#sec-hor-tran}
+
+Apart from the BC and CR described above, Two main kinds of transitional horizons are distinguished by specific conventions.
+
+1. Transitional horizons having properties of two master horizons as in gradational horizons in vertical sequence, e.g. **Ap**, **AB**, **Bw**. In other cases a horizon can be designated as transitional even if one of the master horizons to which it is apparently transitional is not present. For example, an **AB** horizon can be recognised where the underlying layer is bedrock (**R**), and a **BC** horizon can be recognised even if no underlying **C** horizon is identified.\ 
+Lower case suffixes are used following the two capital letters where the property denoted by the suffix applies to the whole horizon, e.g., **ABg**, **BCt**, **BCx**.
+2. Transitional horizons in which discrete parts have recognisable properties of two kinds of master horizon, e.g., where pieces of **A** horizon are incorporated in a **B** horizon or where horizons interfinger. In this case the horizon is designated by two capital letters separated by a solidus, e.g. **B/C**. Appropriate suffixes should be used where the components of the material are clearly identifiable, e.g. **Ap/Bw**.
+
+For simplicity the capital letters for all transitional horizons are used in the order A, E, B, C irrespective of which properties dominate. For example, all horizons transitional between A and B horizons are designated AB or A/B, with suffixes as appropriate.
+
 ### Redox suffixes {#sec-hor-redox}
 
 The following suffixes can be added to most [E]{.ceg}, [B]{.ceg}, or [C]{.ceg} horizons to signify the degree to which they have been affected by water saturation and reducing conditions, e.g. [Bg]{.ceg}. Some exceptions exist:
@@ -404,11 +414,24 @@ tbl_hr_horother <- gt(dat_hr_horother) |>
 tbl_hr_horother
 ```
 
-### Prefixes
+### Lithological discontnuities
 
--   [b]{.ceg} may be used to signify the presence of a paleosol, where pedologically altered materials have been buried.
--   Numbers [1-*N*]{.ceg} may be used to signify lithological discontinuities, where the parent material changes significantly between layers e.g. [2C]{.ceg}
--   Number and b prefixes may be combined to describe multiple instances of buried soils and discontinuities, although this is somewhat rare in the top 100 cm.
+Numbers [1-*N*]{.ceg} may be used to signify lithological discontinuities, where the parent material changes significantly between layers e.g. [2C]{.ceg}. Such discontinuities are identified by a significant difference between adjacent horizons, in the particle-size distribution of fractions coarser than 2 µm or in mineralogy, that cannot be attributed to pedogenic processes and/or by significant differences in age.
+
+The main purpose of recognising lithological differences is to draw attention to inherited layering that can significantly influence physical properties, particularly
+permeability. Horizons comprising the uppermost parent material layer are not specifically designated, the prefix 1 being understood. Those comprising succeeding
+layers are numbered 2, 3, etc. consecutively with depth. When the material below horizon 2 is similar to the material above horizon 2, it is still given the label 3. Where two or more consecutive horizons have formed in the same kind of material, the same prefix number is applied to all the horizons in the material, eg. **Ap**, **Ew**, **Bt1**, **2Bt2**, **2Bt3**, **2BC**.
+
+### Numbering identical horizons
+
+If a horizon needs be subdivided, append a number onto the end of the name. The horizon names must otherwise be identical, e.g. **Bt1**, **Bt2**, **Btg1**, **Btg2** is correct, but **Bt1**, **Bt2**, **Btg3**, **Btg4** is not. This convention can, however, cross lithological discontinuities, e.g. **Bw1**, **Bw2**, **2Bw3**, **2Bw4**.
+
+### Buried horizons
+
+Pedogenic horizons that have been buried by deposition of additional material and little modified subsequently are called buried horizons and denoted by the prefix 'b'. A buried horizon is obviously not in the same deposit as overlying horizons. Some buried horizons, however, are formed in material that is lithologically similar to the
+overlying deposit. The symbol is not used in Organic Soils or to separate an organic layer from a mineral layer.
+
+The notation for a buried **Ah** horizon in material similar to the overlying deposit is **bAh**, and that for a buried **Ah** horizon in dissimilar material is **2bAh**.The horizons of a sequence of buried soils are given consecutive numbers for each soil following the prefix b, independently of the numbers for litholgical discontinuities that are placed before the b.
 
 ## Functional horizons {#sec-in-fh}
 
