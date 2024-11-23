@@ -45,7 +45,7 @@ tbl_in_size <- gt(dat_in_size) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
   cols_label(Description = 'Size range (mm)') |>
-  cols_width(Code ~pct(10), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(30))
   
 tbl_in_size
 

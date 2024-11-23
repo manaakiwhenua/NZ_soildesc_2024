@@ -19,9 +19,9 @@ Land cover, use and management information is captured as part of soil survey wh
 
 ## Land cover {#sec-lcov}
 
-Land cover in New Zealand is monitored using the Land Cover Database (LCDB, @landcareresearchnewzealandltd2020). The database is used to publish a semi-automated map of land cover, derived from satellite imagery, with a minimum unit size of 1 hectare. The LCDB categories can also be applied on-ground. The categories are listed below, excluding some where it would be physically impossible to observe the soil. The full set of category definitions are available in @manaakiwhenualandcareresearch2018.  
+Land cover in New Zealand is monitored using the Land Cover Database (LCDB, @landcareresearchnewzealandltd2020). The database is used to publish a semi-automated map of land cover, derived from satellite imagery, with a minimum unit size of 1 hectare. The LCDB categories can also be applied on-ground. The categories are listed below, excluding some where it would be physically impossible to observe the soil. The first six are currently mapped to over 80% of New Zealand's land area and so are the most likely to encounter. The full set of category definitions are available in @manaakiwhenualandcareresearch2018.  
 
-Record the dominant land cover at the landform scale.
+Record the dominant land cover of the landform (@sec-gmph-lfm).
 
 ```{r}
 #| label: tbl-ss-lcdb
@@ -81,7 +81,7 @@ tbl_ss_lcdb
 
 ## Land Use {#sec-luse}
 
-New Zealand currently lacks an official land use classification framework, but a proposal has been developed [@law2024] and can be implemented during soil survey work. As show in @fig-ss-nzluc, the classification has three nested levels with increasing specificity. The system also allows for recording further information as 'attributes' of the land use (e.g tenure or management practices). This classification can be applied independent of scale, so advice on how and when to apply it to Landscapes, Landforms, and Profiles follows.
+New Zealand currently lacks an official land use classification framework, but a proposal has been developed [@law2024] and can be implemented during soil survey work. As shown in @fig-ss-nzluc, the classification has three nested levels with increasing specificity. The system also allows for recording further information as 'attributes' of the land use (e.g tenure or management practices). This classification can be applied independent of scale, so advice on how and when to apply it to Landscapes, Landforms, and Profiles follows.
 
 Land use classification does not have to be done in the field provided adequate supporting information (notes and photographs) are available for later use. Given that the classification is expected to evolve over time, the observation date can be used to infer the edition in use.
 
@@ -110,7 +110,7 @@ dat_ss_luimp <-
   tribble(~Code, ~Name, ~Description, 
          'N', 'None', 'The land use has not significantly impacted the soil profile', 
          'M', 'Indirect', 'The land use has impacted flows of energy/matter into/out of the profile but not physically disturbed it (e.g. by fertiliser application or drainage alteration)',
-         'E', 'Direct', 'The land use has caused physical disturbance to the soil profile (e.g. from tillage or excavation')
+         'E', 'Direct', 'The land use has caused physical disturbance to the soil profile (e.g. from tillage or excavation)')
 
 tbl_ss_luimp <- gt(dat_ss_luimp) |>
   tab_options(
@@ -146,3 +146,5 @@ A fully developed vocabulary for land management does not currently exist. Given
 - Irrigation schedule
 - Periodic drainage or flooding
 - Permanent drainage alterations
+
+In the long term, some of these parameters may become formalised as land use attributes (@sec-luse).

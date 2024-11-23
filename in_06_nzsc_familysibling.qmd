@@ -201,11 +201,11 @@ Follow the flowchart to assign family permeability class:
 
 %%{ init: { 'flowchart': { 'curve': 'stepAfter' } } }%%
 graph TD
-  A[Identify the uppermost horizon with the slowest permeability,<br />or rock above 100 cm. This is Horizon X.]-->B[Does Horizon X have > 30 cm of<br /> contrasting permeability above?]
-  B-->|Yes|C(Use m/s, r/s, r/m)
-  B--> |No|D["Does the profile have a horizon ≥ 20 cm thick"<br /> below Horizon X with a different permeability class?]
-  D-->|Yes|E(Use s/m, s/r or m/r)
-  D-->|No|F(Use s, m, or r)
+  A[Identify the uppermost horizon with the slowest permeability, or rock above 100 cm. This is Horizon X.]-->B[Does Horizon X have > 30 cm of contrasting permeability above?]
+  B--->|Yes|C("Use **m/s**, **r/s**, **r/m**")
+  B--> |No|D["Does the profile have a horizon ≥ 20 cm thick below Horizon X with a different permeability class?"]
+  D-->|Yes|E("Use **s/m**, **s/r** or **m/r**")
+  D-->|No|F("Use **s**, **m**, or **r**")
   
 ```
 
@@ -528,17 +528,17 @@ These barriers must be connected to a soil horizon, signified with a number, e.g
 
 ### Other barriers {#sec-profbar}
 
-+----------+----------------+--------------------------------------------------------------------------------+
-| Code     | Name           | Description                                                                    |
-+==========+================+================================================================================+
-| **A**    | Anoxic         | Air-filled porosity \< 5%                                                      |
-+----------+----------------+--------------------------------------------------------------------------------+
-| **F**    | Fractured rock | -   [Lithic contact]{.underline} present within top 100 cm                     |
-|          |                | -   Fractures are ≥ 30 cm apart                                                |
-+----------+----------------+--------------------------------------------------------------------------------+
-| **M**    | Massive Rock   | -   [Lithic]{.underline} or [paralithic contact]{.underline} within top 100 cm |
-|          |                | -   If fractures are present, they are \> 30 cm apart                          |
-+----------+----------------+--------------------------------------------------------------------------------+
++-----------+----------------+--------------------------------------------------------------------------------+
+| Code      | Name           | Description                                                                    |
++:==========+:===============+:===============================================================================+
+| [A]{.ceg} | Anoxic         | Air-filled porosity \< 5%                                                      |
++-----------+----------------+--------------------------------------------------------------------------------+
+| [F]{.ceg} | Fractured rock | -   [Lithic contact]{.underline} present within top 100 cm                     |
+|           |                | -   Fractures are ≥ 30 cm apart                                                |
++-----------+----------------+--------------------------------------------------------------------------------+
+| [M]{.ceg} | Massive Rock   | -   [Lithic]{.underline} or [paralithic contact]{.underline} within top 100 cm |
+|           |                | -   If fractures are present, they are \> 30 cm apart                          |
++-----------+----------------+--------------------------------------------------------------------------------+
 
 : Whole-profile root barriers [@lilburne2021] {#tbl-fhb-two cols=width=\[10,20,70\]}
 

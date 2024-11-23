@@ -123,7 +123,7 @@ Both structures are more correctly described as spheroidal with a characteristic
 
 +------------+----------+------------------------------------------------------------+-------------+
 | Code       | Name     | Description                                                | Orientation |
-+============+==========+============================================================+=============+
++:===========+:=========+:===========================================================+:============+
 | [CL]{.ceg} | Clod     | An artificially induced soil aggregate ≥ 100 mm in length  | Any         |
 +------------+----------+------------------------------------------------------------+-------------+
 | [FM]{.ceg} | Fragment | An artificially induced soil aggregate \< 100 mm in length | Any         |
@@ -175,6 +175,7 @@ tbl_hr_rockfrsz <- gt(dat_hr_rockfrsz) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
+  cols_label(Description = 'Size range (mm)') |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_hr_rockfrsz
@@ -243,7 +244,7 @@ tbl_hr_nonrock
 
 #### Artefacts {#sec-hr-artef}
 
-Artefacts can both function like rock fragments and signify strong human influence on the soil profile. 
+Artefacts can both function like rock fragments and signify strong human influence on the soil profile.
 
 Where present in significant amounts, record artefact fragments as a percentage abundance of the categories in @tbl-hr-artefacts. Where further details are required, describe the materials present in free-text notes.
 
@@ -254,7 +255,7 @@ Where present in significant amounts, record artefact fragments as a percentage 
 
 dat_hr_artefs <-
   tribble(~Code, ~Name, ~Description,
-         'As', 'Asphalt',  'Ashpalt and other bitumen-containing materials',
+         'As', 'Asphalt',  'Asphalt and other bitumen-containing materials',
          'Br', 'Brick',    'Fired clay building materials, usually unglazed',
          'Cr', 'Ceramic',  'Fired clay objects, usually glazed',
          'Ce', 'Concrete', 'Concrete materials',

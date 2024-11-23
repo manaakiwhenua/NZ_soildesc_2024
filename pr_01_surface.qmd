@@ -15,7 +15,7 @@ Slope is the inclination of the land surface relative to the horizontal plane. S
 
 Direct measurements of slope should be taken over a minimum distance of 20 meters. Stand 10 m upslope from the point of observation and measure downhill. Record in units of degrees, with a maximum precision of 0.1 (e.g. [6°]{.ceg}). Record [ND]{.ceg} if slope cannot be reliably determined. Record [NR]{.ceg} if no measurement was taken.
 
-Precision needs will vary with slope and survey purpose; whole number degrees are fine on any slope over about 5 degrees, but finer gradations can be useful for flatter locations. Slope classes may be applied to the recorded data; some options are presented in @sec-slopeclass.
+Precision needs will vary with slope and survey purpose; whole number degrees are sufficient on any slope over about 5 degrees, but finer gradations can be useful for flatter locations. Slope classes may be applied to the recorded data; some options are presented in @sec-slopeclass.
 
 Record the equipment used to measure slope using @tbl-pr-slpmth.
 
@@ -66,7 +66,7 @@ Slope data for a site can be extracted from a DEM, provided some conditions are 
 
 Aspect is the direction a slope faces. Slope aspect helps determine exposure to sun, rain and prevailing winds, and so influences the biome growing in a particular soil. In some environments it also helps determine how much new material is received by deposition.
 
-Aspect should be measured at the same time and over the same transect as slope. Record aspect in whole degrees clockwise from North, using the range \[0-359°\] (360° == 0°). Use [ND]{.ceg} for flat ground. Use [NR]{.ceg} if no measurement was taken. Aspect classes may be applied to the recorded data; some options are presented in @sec-aspectclass.
+Aspect should be measured at the same time and over the same transect as slope. Record aspect in whole degrees clockwise from North, using the range \[0-359°\] (360° = 0°). Use [ND]{.ceg} for flat ground. Use [NR]{.ceg} if no measurement was taken. Aspect classes may be applied to the recorded data; some options are presented in @sec-aspectclass.
 
 Record the equipment used to measure aspect using @tbl-pr-aspmth.
 
@@ -98,7 +98,7 @@ tbl_pr_aspmth
 
 Surface cover helps visualise the site and its landform, and provides some information on infiltration behaviour. Soil cover (specifically, 'The number of days in a year that the soil (agricultural land) is covered with vegetation') is a key agricultural performance indicator [@oecd2001].
 
-Estimate and record the following generalised surface cover components as a percentage composition of the area surrounding a point observation, or the area within a sampling plot. Consider the land cover from the surface to a height of 1.35m, for consistency with @hurst2022.
+Estimate and record the following generalised surface cover components as a percentage composition of the site (@sec-pr-site). Consider the land cover from the surface to a height of 1.35 m, for consistency with @hurst2022.
 
 ```{r}
 #| label: tbl-pr-surfcov
@@ -132,7 +132,7 @@ tbl_pr_surfcov
 
 [GRAPHIC: Turn the above into a 3x3 grid with labels underneath conceptual diagrams]{.diags}
 
-These parameters should be recorded only to the nearest 5%. It will be unusual to encounter more than three components at any one site.
+It will be unusual to encounter more than three components at any one site.
 
 ```{r}
 
@@ -200,19 +200,19 @@ tbl_pr_swaterp <- gt(dat_pr_swaterp) |>
 tbl_pr_swaterp
 ```
 
-e.g. [R T 20%]{.ceg} for a paddock experiencing limited surface ponding from a recent cyclone at the time of observation.
+e.g. [R T 20%]{.ceg} for a paddock experiencing limited surface ponding from a recent cyclone at the time of observation.
 
 ## Surface cracking {#sec-pr-crack}
 
 Soil surface cracking can occur for a number of reasons:
 
 -   Soil parent material includes shrink-swell clays.
--   Sediment originally deposited underwater (e.g. during a flood) cracks on drying out.
--   Cracks can be induced by mass movement or earthquakes.
+-   Sediment was originally deposited underwater (e.g. during a flood) and cracks on drying out.
+-   Mass movement or earthquake has caused surface heave.
 
 Within the landform, record surface crack presence/persistence using the codes in @tbl-pr-cracktype. If present, record spatial arrangement using the codes in @tbl-pr-crackshape. For detailed descriptions, report median width and spacing between cracks in cm.
 
-e.g. [RT P 0.5 cm, 15 cm]{.ceg} for surface cracking patterns common to Vertic Melanic soils.
+e.g. [RT P 0.5 cm, 15 cm]{.ceg} for surface cracking patterns common to Vertic Melanic soils.
 
 ```{r}
 #| label: tbl-pr-cracktype
@@ -320,7 +320,7 @@ Record the dominant anthropogenic microrelief type using the codes in @tbl-pr-am
 dat_pr_micreltype <-
   tribble(~Code, ~Name, ~Description,
           'N', 'None',        'Landform surface is not significantly altered by humans', 
-          'S', 'Smoothed',    'Landform surface has been smoothed, rock-picked, infilled or levelled, beyond normal tillage effects',
+          'S', 'Smoothed',    'Landform surface has been smoothed, contoured, rock-picked, infilled or levelled, beyond normal tillage effects',
           'R', 'Raised Beds', 'Elevated areas have been created and maintained for specific crops, e.g. raised rows or puke for kūmara',
           'T', 'Terraces and tracks', 'Hillsides have been cut/filled into terraces, or tracks cut in across the slope',
           'D', 'Drained',     'Open drainage ditches have been installed'
@@ -344,7 +344,7 @@ tbl_pr_micreltype
 
 ## Erosion {#sec-pr-erosion}
 
-Where signs of erosion exist at a site, its presence can simply be noted using the site disturbance code [SL]{.ceg} (see @sec-pr-dist). 
+Where signs of erosion exist at a site, its presence can simply be noted using the site disturbance code [SL]{.ceg} (see @sec-pr-dist).
 
 If a more detailed assessment is desired, note the type(s) per @tbl-pr-erosion. If erosion is present, note also severity and activity using @tbl-pr-erosev and @tbl-pr-eroact. Only record erosion directly affecting the site.
 
@@ -457,7 +457,7 @@ tbl_pr_erosev
 
 ## Deposition {#sec-pr-deposition}
 
-Where signs of deposition exist at a site, its presence can simply be noted using the site disturbance code [SD]{.ceg} (see @sec-pr-dist). 
+Where signs of deposition exist at a site, its presence can simply be noted using the site disturbance code [SD]{.ceg} (see @sec-pr-dist).
 
 If a more detailed assessment is desired, note the type(s) per @tbl-pr-deposition. If deposition is present, note also severity and activity using @tbl-pr-depsev and @tbl-pr-depact. Only record deposition directly affecting the site.
 

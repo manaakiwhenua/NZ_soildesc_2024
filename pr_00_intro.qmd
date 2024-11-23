@@ -14,20 +14,13 @@ library(gtExtras)
 
 ## Defining the site {#sec-pr-site}
 
-Soil profiles are described at sites. The 'site' concept is necessarily somewhat flexible to account for the range of sampling purposes and methods. Generally speaking, it is considered to include the immediate profile surrounds, up to a radius of \~10 m. As such, it will generally nest within a landform unless the site selection method was prescriptive and landform-blind.
+Soil profiles are described at sites. The 'site' concept is necessarily somewhat flexible to account for the range of sampling purposes and methods. Generally speaking, it is considered to include the immediate profile surrounds, up to a radius of \~10 m. As such, it will generally nest within a landform unless the site selection method was prescriptive and landform-blind.
 
 Larger plots and long transects that definitely cover multiple landforms, or even landscapes, should be considered as being built from multiple related sites.
 
 The soil profile description starts with an observation of the site's surface and works down. The chief tasks are assessing the surface, delineating soil layers, or horizons, and describing their morphological character. Prior to that, some additional reference data should be recorded:
 
 ## Reference data {#sec-ref}
-
-```{r}
-library(dplyr)
-library(tibble)
-library(gt)
-library(gtExtras)
-```
 
 Reference data is metadata that clearly identifies a soil profile description. This enables linking the description to other profiles, samples, analytical results and photographs. Reference data includes:
 
