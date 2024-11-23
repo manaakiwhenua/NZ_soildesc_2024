@@ -29,13 +29,13 @@ The class boundaries are reproduced from Table 26 of the LUC Handbook in @tbl-i
 
 dat_in_slpluc <-
   tribble(~Code,   ~Limits, ~Group, 
-            'A',   '0 - 3', 'Wheelable',
-            'B',   '4 - 7', 'Wheelable',
-            'C',  '8 - 15', 'Wheelable',
-            'D', '16 - 20', 'Hilly',
-            'E', '21 - 25', 'Hilly',
-            'F', '26 - 35', 'Steep',
-            'G',     '>35', 'Steep')
+            'A',   '0 - 3', 'Wheelable',
+            'B',   '4 - 7', 'Wheelable',
+            'C',  '8 - 15', 'Wheelable',
+            'D', '16 - 20', 'Hilly',
+            'E', '21 - 25', 'Hilly',
+            'F', '26 - 35', 'Steep',
+            'G',    '> 35', 'Steep')
 
 tbl_in_slpluc <- gt(dat_in_slpluc, groupname_col = 'Group', 
                     row_group_as_column = FALSE) |>
@@ -48,7 +48,7 @@ tbl_in_slpluc <- gt(dat_in_slpluc, groupname_col = 'Group',
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Limits ~pct(30)) |>
+  cols_width(Code ~pct(10), Limits ~pct(30)) |>
   cols_label(Limits = 'Slope angle (degrees)')
 
 tbl_in_slpluc
@@ -58,7 +58,7 @@ tbl_in_slpluc
 Note that the Handbook does not provide fully closed limits for slope classes. For consistency, class A should be considered to be 0 - ≤4, B as \>4 - ≤8, etc.
 :::
 
-## Natural Log classifications {#sec-slopeclass-log}
+### Natural Log classifications {#sec-slopeclass-log}
 
 Work by Speight [@speight1971] promotes the use of slope classes with natural-log derived limits on the basis that they come closest to a universal set of 'characteristic slopes'. The limits proposed are shown in @tbl-in-slpaus. These classes are commonly used in Australian soil survey, and focus more on splitting up low-slope areas of the landscape. As such, these may be more useful for interpreting low-relief landscapes than the LUC classes.
 
@@ -67,15 +67,15 @@ Work by Speight [@speight1971] promotes the use of slope classes with natural-lo
 #| tbl-cap: "Natural-log Slope Classes"
 
 dat_in_slpaus <-
-  tribble(~Code,         ~Name,     ~Limits_p,        ~Limits_d, 
-           'LE',       'Level',      '0 - ≤ 1',     '0 - ≤ 0.57',
-           'VG', 'Very Gentle',     '>1 - ≤ 3', '>0.57 - ≤ 1.72',
-           'GE',      'Gentle',    '>3 - ≤ 10', '>1.72 - ≤ 5.71', 
-           'MO',    'Moderate',   '>10 - ≤ 32', '>5.71 - ≤ 17.7',
-           'ST',       'Steep',   '>32 - ≤ 56',  '>18 - ≤ 29.25',
-           'VS',  'Very Steep',  '>56 - ≤ 100',  '>29.25 - ≤ 45',
-           'PR', 'Precipitous', '>100 - ≤ 300',   '>45 - ≤ 71.6',
-           'CL',     'Cliffed',         '>300',          '>71.6')
+  tribble(~Code,         ~Name,      ~Limits_p,           ~Limits_d, 
+           'LE',       'Level',       '0 - ≤ 1',       '0 - ≤ 0.57',
+           'VG', 'Very Gentle',     '> 1 - ≤ 3',  '> 0.57 - ≤ 1.72',
+           'GE',      'Gentle',    '> 3 - ≤ 10',  '> 1.72 - ≤ 5.71', 
+           'MO',    'Moderate',   '> 10 - ≤ 32',  '> 5.71 - ≤ 17.7',
+           'ST',       'Steep',   '> 32 - ≤ 56', '> 17.7 - ≤ 29.25',
+           'VS',  'Very Steep',  '> 56 - ≤ 100',   '> 29.25 - ≤ 45',
+           'PR', 'Precipitous', '> 100 - ≤ 300',    '> 45 - ≤ 71.6',
+           'CL',     'Cliffed',         '> 300',           '> 71.6')
 
 tbl_in_slpaus <- gt(dat_in_slpaus) |>
    tab_options(
@@ -86,7 +86,7 @@ tbl_in_slpaus <- gt(dat_in_slpaus) |>
   ) |>
   tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20)) |>
+  cols_width(Code ~pct(10)) |>
   cols_label(Limits_p = 'Slope angle (percent)',
              Limits_d = 'Slope angle (degrees)')
 
@@ -97,9 +97,47 @@ tbl_in_slpaus
 The Australian Soil and Land Survey Field Handbook [@nationalcommitteeonsoilandterrain2023] notes that in certain circumstances it may be useful to split the classes [VG]{.ceg}, [GE]{.ceg} and [MO]{.ceg}, at 1.8% (1.0°), 5.6% (3.2°), and 18% (10.2°) respectively. The document does not, however, elucidate those circumstances.
 :::
 
-## Data-driven classifications {#sec-slopeclass-dat}
+### UN-FAO Classification
 
-Where high-precision DEMs are available and the areal limits of landscapes are identified, data-driven slope classification is possible. This cannot be done universally; since the classification is an expression of local geomorphology the area of interest must first be carefully delineated before proceeding. Classes defined in this way may be very useful in accurately defining landforms, but hard to convert to practical use.
+The following classification was offered by the UN-FAO *Guidelines for Soil Description* [CITE]. The classes are highly discriminatory on low slopes, but lump most steeper slopes into only two categories. As such they may be of most use in irrigation planning.
+
+```{r}
+#| label: tbl-in-slpfao
+#| tbl-cap: "FAO Slope Classes [CITE]"
+
+dat_in_slpfao <-
+  tribble(~Code,                 ~Name,       ~Limits_p,         ~Limits_d, 
+           '01',                'Flat',     '0 - ≤ 0.2',      '0 - ≤ 0.11',
+           '02',               'Level', '> 0.2 - ≤ 0.5', '> 0.11 - ≤ 0.29',
+           '03',        'Nearly level', '> 0.5 - ≤ 1.0', '> 0.29 - ≤ 0.57', 
+           '04', 'Very gently sloping', '> 1.0 - ≤ 2.0', '> 0.57 - ≤ 1.15',
+           '05',      'Gently sloping',     '> 2 - ≤ 5', '> 1.15 - ≤ 2.86',
+           '06',             'Sloping',    '> 5 - ≤ 10', '> 2.86 - ≤ 5.71',
+           '07',    'Strongly sloping',   '> 10 - ≤ 15', '> 5.71 - ≤ 8.53',
+           '08',    'Moderately steep',   '> 15 - ≤ 30', '> 8.53 - ≤ 16.7',
+           '09',               'Steep',   '> 30 - ≤ 60', '> 16.7 - ≤ 31.0',
+           '10',          'Very steep',          '> 60',         '> 31.0')
+
+tbl_in_slpfao <- gt(dat_in_slpfao) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_align(align = 'left') |>
+  cols_width(Code ~pct(10)) |>
+  cols_label(Limits_p = 'Slope angle (percent)',
+             Limits_d = 'Slope angle (degrees)')
+
+tbl_in_slpfao
+```
+
+### Data-driven classifications {#sec-slopeclass-dat}
+
+Where high-precision DEMs are available and the areal limits of landscapes are identified, data-driven slope classification is possible. This cannot be done universally; since the classification is an expression of local geomorphology, the area of interest must first be carefully delineated before proceeding. Classes defined in this way may be very useful in accurately defining landforms, but hard to convert to practical use.
 
 ## Aspect classification {#sec-aspectclass}
 
