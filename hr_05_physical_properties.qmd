@@ -94,9 +94,9 @@ tbl_cn_str <- gt(dat_cn_str) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  tab_style(style = list(cell_text(align = 'center')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_label(Failure_cond = 'Failure condition',
              amt_force_n = 'Force required (N)') |>
@@ -193,9 +193,9 @@ tbl_cn_sens <- gt(dat_cn_sens) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  tab_style(style = list(cell_text(align = 'center')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_label(rel_loss = 'Relative strength loss on remoulding (classes)',
              Description = 'Shear test behaviour') |>
@@ -237,9 +237,9 @@ tbl_cn_plas <- gt(dat_cn_plas) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  tab_style(style = list(cell_text(align = 'center')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
@@ -279,9 +279,9 @@ tbl_cn_stik <- gt(dat_cn_stik) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  tab_style(style = list(cell_text(align = 'center')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
@@ -336,9 +336,9 @@ tbl_cn_penr <- gt(dat_cn_penr) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  tab_style(style = list(cell_text(align = 'center')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20), kpa ~pct(20))
 
@@ -376,9 +376,9 @@ tbl_cn_fail <- gt(dat_cn_fail) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  tab_style(style = list(cell_text(align = 'center')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
@@ -419,9 +419,9 @@ tbl_cn_fail <- gt(dat_cn_fail) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  tab_style(style = list(cell_text(align = 'center')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
@@ -459,9 +459,9 @@ tbl_cn_fluid <- gt(dat_cn_fluid) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  tab_style(style = list(cell_text(align = 'center')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
@@ -508,9 +508,9 @@ tbl_cn_ind <- gt(dat_cn_ind) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  tab_style(style = list(cell_text(align = 'center')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 

@@ -42,7 +42,9 @@ tbl_in_size <- gt(dat_in_size) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_label(Description = 'Size range (mm)') |>
   cols_width(Code ~pct(10), Name ~ pct(30))
@@ -76,7 +78,9 @@ tbl_in_rockfrsz <- gt(dat_in_rockfrsz) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_label(Description = 'Size range (mm)') |>
   cols_width(Code ~pct(10), Name ~ pct(20))
@@ -113,7 +117,9 @@ tbl_hr_rtab <- gt(dat_hr_rtab) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
@@ -144,7 +150,9 @@ tbl_in_abgen <- gt(dat_in_abgen) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
@@ -182,7 +190,9 @@ tbl_in_hdrng <- gt(dat_in_hdrng) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   tab_style(style = list(cell_text(weight = 'bold')),
             locations = cells_body(columns = 2)) |>

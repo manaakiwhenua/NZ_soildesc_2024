@@ -50,9 +50,11 @@ tbl_in_pmat <- gt(dat_in_pmat) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20))
+  cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_in_pmat
 
@@ -97,9 +99,11 @@ tbl_ss_pm <- gt(dat_ss_pm) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20))
+  cols_width(Code ~pct(10))
 
 tbl_ss_pm
 
@@ -153,7 +157,9 @@ tbl_in_famtex <- gt(dat_in_famtex) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   fmt_missing(missing_text = '-') |>
   cols_width(Code ~pct(10), Name ~ pct(20))
@@ -183,9 +189,11 @@ tbl_in_sibdepth <- gt(dat_in_sibdepth) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(40))
+  cols_width(Code ~pct(10), Name ~ pct(40))
   
 tbl_in_sibdepth
 
@@ -249,9 +257,11 @@ tbl_ss_pmo <- gt(dat_ss_pmo) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20))
+  cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_ss_pmo
 ```
@@ -290,9 +300,11 @@ tbl_in_sibdepth <- gt(dat_in_sibdepth) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(40))
+  cols_width(Code ~pct(10), Name ~ pct(40))
   
 tbl_in_sibdepth
 
@@ -353,9 +365,11 @@ tbl_in_sibstone <- gt(dat_in_sibstone) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(40))
+  cols_width(Code ~pct(10), Name ~ pct(40))
   
 tbl_in_sibstone
 ```
@@ -400,7 +414,9 @@ tbl_in_sibtexture <- gt(dat_in_sibtexture) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_label(Org ~ 'Organic Carbon %',
              Silt ~ 'Silt %',
@@ -439,7 +455,9 @@ tbl_in_pdrng <- gt(dat_in_pdrng) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(weight = 'bold', color = 'red')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   fmt_markdown(columns = 3)
 
@@ -470,9 +488,11 @@ tbl_in_natdrng <- gt(dat_in_natdrng) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_in_natdrng
 
@@ -486,7 +506,7 @@ Rooting barriers may be identified in some soils, potentially determining their 
 
 +------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
 | Code       | Name                   | Description                                                                                                        |
-+:===========+:=======================+:===================================================================================================================+
++:==========:+:=======================+:===================================================================================================================+
 | [C]{.ceg}  | Chemical               | Chemical toxicity affecting pasture growth, that is not readily alleviated through management. Not salinity.       |
 +------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
 | [D]{.ceg}  | Densely packed gravels | -   Has very dense particle packing (**4)**                                                                        |
@@ -523,7 +543,7 @@ These barriers must be connected to a soil horizon, signified with a number, e.g
 
 +-----------+----------------+--------------------------------------------------------------------------------+
 | Code      | Name           | Description                                                                    |
-+:==========+:===============+:===============================================================================+
++:=========:+:===============+:===============================================================================+
 | [A]{.ceg} | Anoxic         | Air-filled porosity \< 5%                                                      |
 +-----------+----------------+--------------------------------------------------------------------------------+
 | [F]{.ceg} | Fractured rock | -   [Lithic contact]{.underline} present within top 100 cm                     |

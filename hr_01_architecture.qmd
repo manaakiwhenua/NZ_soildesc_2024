@@ -49,7 +49,9 @@ tbl_hr_pedality <- gt(dat_hr_pedality) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
@@ -63,7 +65,7 @@ Where natural peds can be identified (pedality types [W]{.ceg}, [M]{.ceg}, [S]{.
 
 +------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | Code       | Name           | Description                                                                                                                            | Orientation                 |
-+:===========+:===============+:=======================================================================================================================================+=============================+
++:==========:+:===============+:=======================================================================================================================================+=============================+
 | [AB]{.ceg} | Angular blocky | -   Bounded by relatively flat smooth, roughly equal faces                                                                             | None                        |
 |            |                | -   number of faces variable                                                                                                           |                             |
 |            |                | -   most vertices angular                                                                                                              |                             |
@@ -122,7 +124,7 @@ Both structures are more correctly described as spheroidal with a characteristic
 
 +------------+----------+------------------------------------------------------------+-------------+
 | Code       | Name     | Description                                                | Orientation |
-+:===========+:=========+:===========================================================+:============+
++:==========:+:=========+:===========================================================+:============+
 | [CL]{.ceg} | Clod     | An artificially induced soil aggregate ≥ 100 mm in length  | Any         |
 +------------+----------+------------------------------------------------------------+-------------+
 | [FM]{.ceg} | Fragment | An artificially induced soil aggregate \< 100 mm in length | Any         |
@@ -171,7 +173,9 @@ tbl_hr_rockfrsz <- gt(dat_hr_rockfrsz) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_label(Description = 'Size range (mm)') |>
   cols_width(Code ~pct(10), Name ~ pct(20))
@@ -196,7 +200,9 @@ tbl_hr_rockfrshp <- gt(dat_hr_rockfrshp) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
@@ -230,7 +236,9 @@ tbl_hr_nonrock <- gt(dat_hr_nonrock) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
@@ -269,7 +277,9 @@ tbl_hr_artefs <- gt(dat_hr_artefs) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
@@ -308,7 +318,9 @@ tbl_hr_rsz <- gt(dat_hr_rsz) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_label(Description = 'Size range (mm)') |>
   cols_width(Code ~pct(10), Name ~ pct(20))
@@ -341,7 +353,9 @@ tbl_hr_rpos <- gt(dat_hr_rpos) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
@@ -381,7 +395,9 @@ tbl_hr_voidtype <- gt(dat_hr_voidtype) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
@@ -406,7 +422,9 @@ tbl_hr_voidcon <- gt(dat_hr_voidcon) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')

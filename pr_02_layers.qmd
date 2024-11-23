@@ -82,7 +82,9 @@ tbl_hr_bshp <- gt(dat_hr_bshp) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
@@ -114,9 +116,11 @@ tbl_hr_bdst <- gt(dat_hr_bdst) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20))
+  cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_hr_bdst
 ```
@@ -148,7 +152,9 @@ tbl_hr_bdst <- gt(dat_hr_bdst) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   tab_style(style = list(cell_text(align='center', style='italic')),
             locations = cells_body(columns = 3:6, rows = 5)) |>
@@ -190,9 +196,11 @@ tbl_hr_frw <- gt(dat_hr_frw) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20))
+  cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_hr_frw
 ```

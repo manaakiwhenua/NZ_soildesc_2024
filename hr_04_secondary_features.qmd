@@ -16,7 +16,7 @@ Secondary soil features develop as a result of pedogenesis. Many create barriers
 
 ## Concentrations {#sec-hr-conc}
 
-[These are bodies of pedogenic origin enriched in a particular constituent that are not associated with a particular surface within the soil. They may contrast sharply with the surrounding material in strength, composition or internal organisation, or differences with the surrounding material may be slight.]{.milne} 
+[These are bodies of pedogenic origin enriched in a particular constituent that are not associated with a particular surface within the soil. They may contrast sharply with the surrounding material in strength, composition or internal organisation, or differences with the surrounding material may be slight.]{.milne}
 
 For rapid assessment, record concentration form and abundance percentage using @tbl-hr-concform.
 
@@ -42,7 +42,9 @@ tbl_hr_concform <- gt(dat_hr_concform) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
@@ -75,7 +77,9 @@ tbl_hr_conctype <- gt(dat_hr_conctype) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   fmt_markdown(columns = 3) |>
   cols_width(Code ~pct(10), Name ~pct(20))
@@ -91,7 +95,7 @@ For rapid assessment note the presence of coating type(s) using @tbl-hr-coattype
 
 For detailed assessment, optionally also note their abundance as percentage of soil available surfaces covered.
 
-e.g. [OG P 80%]{.ceg} for well-developed 
+e.g. [OG P 80%]{.ceg} for well-developed
 
 ```{r}
 #| label: tbl-hr-coattype
@@ -114,7 +118,9 @@ tbl_hr_coattype <- gt(dat_hr_coattype) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   fmt_markdown(columns = 3) |>
   cols_width(Code ~pct(10), Name ~pct(20))
@@ -142,7 +148,7 @@ dat_hr_pantype <-
           'F', 'Iron pan', 'interlocking nodules of Fe(/Mn) precipiates (bog iron), often at a texture contrast boundary', '',
           'K', 'Calcareous pan', 'pans created by the precipitation of calcium carbonate (CaCO~3~)', '\\*km (B or BC horizons)',
           'O', 'Ortstein pan', 'Pan cemented by iron and organic matter. Common in Podzols', 'Bsm',
-          'P', 'Placic', 'a very thin (< 10 mm), dark, iron-dominated pan with sharp boundaries', 'Bfm',
+          'P', 'Placic', 'a very thin (< 10 mm), dark, iron-dominated pan with sharp boundaries', 'Bfm',
           'Q', 'Silica pan', 'pans created by the precipitation of silica (SiO~2~)', '\\*qm (not A horizons)',
           'X', 'Fragipan', 'an earthy, high density, erosion-resistant layer common to Pallic soils', '\\*x (B or BC horizons)',
           'UK', 'Unknown', 'Pan origin cannot be clearly determined', ''
@@ -155,9 +161,11 @@ tbl_hr_pantype <- gt(dat_hr_pantype) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  fmt_markdown(columns = c(3,4)) |>
+  fmt_markdown(columns = c(3, 4)) |>
   cols_width(Code ~pct(10), Name ~pct(20), Horizon ~pct(20))
 
 tbl_hr_pantype
@@ -180,7 +188,9 @@ tbl_hr_pancont <- gt(dat_hr_pancont) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
@@ -206,7 +216,9 @@ tbl_hr_panstr <- gt(dat_hr_panstr) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
@@ -237,7 +249,9 @@ tbl_hr_pftype <- gt(dat_hr_pftype) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
@@ -260,8 +274,8 @@ Example: [T 30%]{.ceg} for infilled earthworm burrows creating an A/Bw horizon.
 
 dat_hr_biotype <-
   tribble(~Code, ~Name, ~Description,
-          'T', 'Tunnel', 'Infilled earthworm or insect burrow, < 20 mm in diameter',
-          'B', 'Burrow', 'Infilled former macrofauna burrow, >20 mm in diameter',
+          'T', 'Tunnel', 'Infilled earthworm or insect burrow, < 20 mm in diameter',
+          'B', 'Burrow', 'Infilled former macrofauna burrow, > 20 mm in diameter',
           'C', 'Casts',  'Earthworm wastes forming balls of fine soil material')
 
 tbl_hr_biotype <- gt(dat_hr_biotype) |>
@@ -271,7 +285,9 @@ tbl_hr_biotype <- gt(dat_hr_biotype) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 

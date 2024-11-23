@@ -83,9 +83,11 @@ tbl_hr_colorshort <- gt(dat_hr_colorshort) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_hr_colorshort
 
@@ -127,9 +129,11 @@ tbl_hr_pattype <- gt(dat_hr_pattype) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_hr_pattype
 ```
@@ -159,9 +163,11 @@ tbl_hr_patshp <- gt(dat_hr_patshp) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_hr_patshp
 ```
@@ -176,7 +182,7 @@ If both matrix and pattern colours are recorded using the Munsell system, the fo
 
 +-----------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Code      | Name      | Description                                                                                                                                                                                                                |
-+:==========+:==========+:===========================================================================================================================================================================================================================+
++:=========:+:==========+:===========================================================================================================================================================================================================================+
 | [F]{.ceg} | Faint     | Indistinct colour variation evident only on close examination. The secondary colour is typically of the same hue as the primary colour and will generally differ by no more than one unit of chroma or two units of value. |
 +-----------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | [D]{.ceg} | Distinct  | Although not striking, the colour variation is readily seen. The secondary and primary colours usually:                                                                                                                    |
@@ -212,9 +218,11 @@ tbl_hr_patdist <- gt(dat_hr_patdist) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_hr_patdist
 ```

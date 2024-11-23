@@ -76,9 +76,11 @@ tbl_hr_antype <- gt(dat_hr_antype) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20), Name ~pct(20))
+  cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_hr_antype
 ```

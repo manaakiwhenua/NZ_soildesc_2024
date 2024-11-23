@@ -37,7 +37,9 @@ tbl_pr_slpmth <- gt(dat_pr_slpmth) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
@@ -87,7 +89,9 @@ tbl_pr_aspmth <- gt(dat_pr_aspmth) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
@@ -123,7 +127,9 @@ tbl_pr_surfcov <- gt(dat_pr_surfcov) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
@@ -167,7 +173,9 @@ tbl_pr_swater <- gt(dat_pr_swater) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
@@ -192,7 +200,9 @@ tbl_pr_swaterp <- gt(dat_pr_swaterp) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
@@ -231,7 +241,9 @@ tbl_pr_cracktype <- gt(dat_pr_cracktype) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
@@ -256,7 +268,9 @@ tbl_pr_crackshape <- gt(dat_pr_crackshape) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
@@ -299,7 +313,9 @@ tbl_pr_micreltype <- gt(dat_pr_micreltype) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
@@ -334,7 +350,9 @@ tbl_pr_micreltype <- gt(dat_pr_micreltype) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
@@ -386,14 +404,15 @@ tbl_pr_erosion <- gt(dat_pr_erosion) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20)) |>
   fmt_markdown(columns = 3) |>
   tab_row_group(label = 'Water-driven', rows = 1:5, id = 'w') |>
   tab_row_group(label = 'Gravity-driven', rows = 6:10, id = 'g') |>
   tab_row_group(label = 'Wind-driven', rows = 11, id = 'i') |>
-  
   tab_style(style = list(cell_text(weight = 'bold')),
             locations = cells_row_groups()) |>
   row_group_order(c('w', 'g')) |>
@@ -421,7 +440,9 @@ tbl_pr_erosev <- gt(dat_pr_erosev) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
@@ -447,7 +468,9 @@ tbl_pr_erosev <- gt(dat_pr_erosev) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
@@ -499,7 +522,9 @@ tbl_pr_deposition <- gt(dat_pr_deposition) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20)) |>
   fmt_markdown(columns = 3) |>
@@ -533,7 +558,9 @@ tbl_pr_depsev <- gt(dat_pr_depsev) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')
@@ -559,7 +586,9 @@ tbl_pr_depact <- gt(dat_pr_depact) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~pct(20)) |>
   sub_missing(missing_text = '')

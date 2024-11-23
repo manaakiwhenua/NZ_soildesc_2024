@@ -136,7 +136,9 @@ tbl_ft_foxrx <- gt(dat_ft_foxrx) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
@@ -213,7 +215,9 @@ tbl_ft_hcl <- gt(dat_ft_hcl) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
@@ -284,9 +288,13 @@ tbl_ft_naf <- gt(dat_ft_naf) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  fmt_icon(columns = fa_icon, fill_color = from_column("Colour"), height = '1.5em',
+  fmt_icon(columns    = fa_icon, 
+           fill_color = from_column("Colour"), 
+           height     = '1.5em',
            fill_alpha = 0.9) |>
   cols_hide(Colour) |>
   cols_label(fa_icon = 'Colour') |>
@@ -376,7 +384,9 @@ tbl_ft_slak <- gt(dat_ft_slak) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
@@ -401,7 +411,9 @@ tbl_ft_disp <- gt(dat_ft_disp) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   

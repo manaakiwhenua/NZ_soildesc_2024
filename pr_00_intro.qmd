@@ -101,9 +101,11 @@ tbl_ss_reason <- gt(dat_ss_reason) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20))
+  cols_width(Code ~pct(10))
 
 tbl_ss_reason
 ```
@@ -142,9 +144,11 @@ tbl_ss_sampstrat <- gt(dat_ss_sampstrat) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20))
+  cols_width(Code ~pct(10))
 
 tbl_ss_sampstrat
 ```
@@ -183,9 +187,11 @@ tbl_pr_gear <- gt(dat_pr_gear) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20))
+  cols_width(Code ~pct(10))
 
 tbl_pr_gear
 ```
@@ -226,9 +232,11 @@ tbl_ss_stoppage <- gt(dat_ss_stoppage) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20))
+  cols_width(Code ~pct(10))
 
 tbl_ss_stoppage
 ```
@@ -269,9 +277,11 @@ tbl_ss_eventp <- gt(dat_ss_eventp) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color = 'red', weight = 'bold')),
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(20))
+  cols_width(Code ~pct(10))
 
 tbl_ss_eventp
 ```
