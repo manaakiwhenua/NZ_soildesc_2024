@@ -137,7 +137,6 @@ The family texture class describes the dominant character of the top 60 cm, or t
 ```{r}
 #| label: tbl-in-famtex
 #| tbl-cap: "Family texture classes"
-#| classes : no-stripe
 
 dat_in_famtex <-
   tribble(~Code, ~Name, ~Orgc, ~Silt, ~Clay, 
@@ -170,7 +169,6 @@ This class estimates the permeability of the top 100 cm in units of mm/hr. Use t
 ```{r}
 #| label: tbl-in-famperm
 #| tbl-cap: "Family permeability classes"
-#| classes : no-stripe
 
 dat_in_sibdepth <-
   tribble(~Code, ~Name, ~Description, 
@@ -277,7 +275,6 @@ Use the codes in @tbl-in-sibdepth to assign a depth class to a profile.
 ```{r}
 #| label: tbl-in-sibdepth
 #| tbl-cap: "Sibling depth classes"
-#| classes : no-stripe
 
 dat_in_sibdepth <-
   tribble(~Code, ~Name, ~Description, 
@@ -309,7 +306,6 @@ A weighted average calculation is required if the top 20 cm contains more than o
 
 ```{r}
 #| label: tbl-in-sibdcalc
-#| classes : no-stripe
 
 dat_in_sibdcalc <-
   tribble(~hthick, ~relthick, ~prop, ~stonepc, ~wavgstone,
@@ -342,7 +338,6 @@ Use the codes in @tbl-in-sibstone to assign stoniness.
 ```{r}
 #| label: tbl-in-sibstone
 #| tbl-cap: "Sibling topsoil stoniness classes"
-#| classes : no-stripe
 
 dat_in_sibstone <-
   tribble(~Code, ~Name, ~Description, 
@@ -385,7 +380,6 @@ Use the codes in @tbl-in-sibtexture to assign sibling level texture class(es).
 ```{r}
 #| label: tbl-in-sibtexture
 #| tbl-cap: "Sibling texture classes"
-#| classes : no-stripe
 
 dat_in_sibtexture <-
   tribble(~Code, ~Name, ~Org, ~Silt, ~Clay, ~Stone, 
@@ -462,7 +456,6 @@ Profile drainage is often modified by human activity. Many of these modification
 ```{r}
 #| label: tbl-in-natdrng
 #| tbl-cap: "Profile drainage modification level"
-#| classes : no-stripe
 
 dat_in_natdrng <-
   tribble(~Code, ~Name, ~Description, 
@@ -520,7 +513,7 @@ Rooting barriers may be identified in some soils, potentially determining their 
 | [S]{.ceg}  | Clean sand             | -   Requires ≥ 85% sand and FH with **Aa** or **Al** -- can be **S** but not **V** or **X**                        |
 +------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
 
-: Horizon-specific root barriers [@lilburne2021] {#tbl-fhb-one cols=width=\[10,20,70\]}
+: Horizon-specific root barriers [@lilburne2021] {#tbl-fhb-one .striped cols=width=\[10,20,70\]}
 
 ::: {.callout-note collapse="true" appearance="minimal" title="Notes"}
 These barriers must be connected to a soil horizon, signified with a number, e.g. P(3) for a pan in Horizon 3.
@@ -540,7 +533,7 @@ These barriers must be connected to a soil horizon, signified with a number, e.g
 |           |                | -   If fractures are present, they are \> 30 cm apart                          |
 +-----------+----------------+--------------------------------------------------------------------------------+
 
-: Whole-profile root barriers [@lilburne2021] {#tbl-fhb-two cols=width=\[10,20,70\]}
+: Whole-profile root barriers [@lilburne2021] {#tbl-fhb-two .striped cols=width=\[10,20,70\]}
 
 ::: {.callout-note collapse="true" appearance="minimal" title="Notes"}
 Many water tables are not anoxic and many plant species' roots are able to live under oxygenated water at least for short periods. Anoxic water tables generally occur in loamy or clayey horizons, are tightly packed, or have significant organic matter (\> 1% carbon).

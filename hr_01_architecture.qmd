@@ -32,7 +32,6 @@ Pedality refers to the degree of structural development evident within the horiz
 ```{r}
 #| label: tbl-hr-pedality
 #| tbl-cap: "Degree of pedality"
-#| classes : no-stripe
 
 dat_hr_pedality <-
   tribble(~Code, ~Name,  ~Description,
@@ -108,7 +107,7 @@ Where natural peds can be identified (pedality types [W]{.ceg}, [M]{.ceg}, [S]{.
 |            |                | -   much accommodation to the faces of surrounding aggregates                                                                          |                             |
 +------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 
-: Natural ped shapes and identifying characteristics (adapted from @milne1995, @iussworkinggroupwrb2022, and @nationalcommitteeonsoilandterrain2009) {#tbl-hr-pedshp cols-width=\[10,20,50,20\]}
+: Natural ped shapes and identifying characteristics (adapted from @milne1995, @iussworkinggroupwrb2022, and @nationalcommitteeonsoilandterrain2009) {#tbl-hr-pedshp .striped cols-width=\[10,20,50,20\]}
 
 [add diagrams]{.diags}
 
@@ -129,7 +128,7 @@ Both structures are more correctly described as spheroidal with a characteristic
 | [FM]{.ceg} | Fragment | An artificially induced soil aggregate \< 100 mm in length | Any         |
 +------------+----------+------------------------------------------------------------+-------------+
 
-: : Artificially induced pedality shapes and identifying characteristics {#tbl-hr-clodshp cols-width=\[10,20,50,20\]}
+: : Artificially induced pedality shapes and identifying characteristics {#tbl-hr-clodshp .striped cols-width=\[10,20,50,20\]}
 
 ### Ped size {#sec-hr-stru-size}
 
@@ -158,7 +157,6 @@ For detailed assessment, estimate abundance, lithology, and shape for each of th
 ```{r}
 #| label: tbl-hr-rockfrsz
 #| tbl-cap: "Coarse fragment size classes for routine assessment"
-#| classes : no-stripe
 
 dat_hr_rockfrsz <-
   tribble(~Code, ~Name, ~Description,
@@ -184,7 +182,6 @@ tbl_hr_rockfrsz
 ```{r}
 #| label: tbl-hr-rockfrshp
 #| tbl-cap: "Coarse fragment shape classes"
-#| classes : no-stripe
 
 dat_hr_rockfrshp <-
   tribble(~Code, ~Name, ~Description,
@@ -217,7 +214,6 @@ Where present in significant amounts, record natural non-rock fragments as a per
 ```{r}
 #| label: tbl-hr-nonrock
 #| tbl-cap: "Non-rock fragment types"
-#| classes : no-stripe
 
 dat_hr_nonrock <-
   tribble(~Code, ~Name, ~Description,
@@ -251,7 +247,6 @@ Where present in significant amounts, record artefact fragments as a percentage 
 ```{r}
 #| label: tbl-hr-artefacts
 #| tbl-cap: "Artefact types"
-#| classes : no-stripe
 
 dat_hr_artefs <-
   tribble(~Code, ~Name, ~Description,
@@ -299,7 +294,6 @@ For detailed assessment, provide separate estimates for roots \< 2 mm, 2 - 1
 ```{r}
 #| label: tbl-hr-rsz
 #| tbl-cap: "Plant root size classes for detailed assessment"
-#| classes : no-stripe
 
 dat_hr_rsz <-
   tribble(~Code,        ~Name,  ~Description,
@@ -332,7 +326,6 @@ Where abundance is \> 0%, record how roots are distributed within the horizon u
 ```{r}
 #| label: tbl-hr-rpos
 #| tbl-cap: "Plant root position codes"
-#| classes : no-stripe
 
 dat_hr_rpos <-
   tribble(~Code,        ~Name,  ~Description,

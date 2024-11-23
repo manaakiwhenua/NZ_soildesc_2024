@@ -30,7 +30,7 @@ dat_hr_horprime <-
 
 It is identified by having all of the following: 
 
-1.  A moist colour value of 4 or more, or a dry colour value of 5 or more, with or without silty or sandy coatings [skeletans, @brewer1964], observable in a dry specimen.
+1.  A moist colour value of 4 or more, or a dry colour value of 5 or more, with or without silty or sandy coatings (skeletans, @brewer1964), observable in a dry specimen.
 2.  Higher colour value or lower chroma and less well developed pedality than an underlying B horizon.
 3.  Less organic matter and higher colour value than an overlying H, O or A horizon.
           
@@ -65,7 +65,7 @@ tbl_hr_horprime <- gt(dat_hr_horprime) |>
             locations = cells_body(columns = 1)) |>
   tab_style(style = "vertical-align:top",
             locations = cells_body(columns = c(1, 2))) |>
-  fmt_markdown(columns = 3, rows = 6:8) |>
+  fmt_markdown(columns = 3) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_hr_horprime
@@ -176,7 +176,7 @@ dat_hr_hortwob <-
           'Bfm', 'Placic' , "Sharply defined, cemented, pan-like B horizon usually less then 10 mm thick but the same designation is given to horizons up to 25 mm thick. It is black to reddish brown or dark red in colour, and a black upper part can often be distinguished from a reddish brown lower part. It lies roughly parallel to the soil surface but is commonly wavy or convolute. A Bfm horizon usually occurs as a single pan but in places it can be bifurcated. It forms a barrier to most roots and restricts water movement.
 
 The Bfm horizon is equivalent to the concept of the placic horizon (Soil Survey Staff 1975) except that New Zealand ironpans are enriched in iron and organic matter without significant accumulations of manganese [@clayden1990].",
-          'Bw', 'Weathered', "1.  a moist chroma of 4 or more but less than 6, *and* 
+          'Bw', 'Weathered', "1.  a moist chroma of 4 or more but less than 6, *and*
 2. <  2% redox segregations.",
 'Bh', 'Humose', 'Dark-coloured B horizon of podzolised soils enriched in organic matter, associated with aluminium, or iron and aluminium, as a result of illuviation.
 
@@ -446,7 +446,6 @@ Each functional horizon is built from a set of components - topsoil status, teph
 ```{r}
 #| label: tbl-in-fhts
 #| tbl-cap: "Functional horizon - topsoils"
-#| classes : no-stripe
 
 dat_in_fhts <-
   tribble(~Code, ~Name, ~Description,
@@ -477,7 +476,6 @@ The topsoil code can be prefixed to any horizon - it is not restricted to the fi
 ```{r}
 #| label: tbl-in-fhvc
 #| tbl-cap: "Functional horizon - tephric materials"
-#| classes : no-stripe
 
 dat_in_fhvc <-
   tribble(~Code, ~Name, ~Description,
@@ -510,7 +508,6 @@ Use the volumetric stone content assessments made in @sec-rockfrag to classify s
 ```{r}
 #| label: tbl-in-fhst
 #| tbl-cap: "Functional horizon - stone content"
-#| classes : no-stripe
 
 dat_in_fhst <-
   tribble(~Code, ~Name, ~Description,
@@ -540,7 +537,6 @@ tbl_in_fhst
 ```{r}
 #| label: tbl-in-fhtx
 #| tbl-cap: "Functional horizon - texture class"
-#| classes : no-stripe
 
 dat_in_fhtx <-
   tribble(~Code, ~Name, ~Description,
@@ -576,7 +572,6 @@ tbl_in_fhtx
 ```{r}
 #| label: tbl-in-fhtxx
 #| tbl-cap: "Functional horizon - texture class modifiers"
-#| classes : no-stripe
 
 dat_in_fhtxx <-
   tribble(~Code, ~Name, ~Description,
@@ -609,7 +604,6 @@ tbl_in_fhtxx
 ```{r}
 #| label: tbl-in-fhstr
 #| tbl-cap: "Functional horizon - structure classes"
-#| classes : no-stripe
 
 dat_in_fhtxx <-
   tribble(~Code, ~Name, ~Description,
@@ -640,7 +634,6 @@ tbl_in_fhtxx
 ```{r}
 #| label: tbl-in-fhcon
 #| tbl-cap: "Functional horizon - consistence classes"
-#| classes : no-stripe
 
 dat_in_fhcon <-
   tribble(~Code, ~Name, ~Description,
@@ -769,4 +762,4 @@ Valid combinations of the above components are listed below, along with associat
 | [YFf]{.ceg} | Clayey fine firm | **ms** s | **m** ms |
 | [YC]{.ceg} | Clayey coarse firm | **s** | m **ms** s |
 
-: Functional horizon names and allowed permeability classes. Default permeabilities are bolded {#tbl-in-fh}
+: Functional horizon names and allowed permeability classes. Default permeabilities are bolded {#tbl-in-fh .striped .hover}

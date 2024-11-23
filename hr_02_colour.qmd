@@ -64,7 +64,6 @@ In some circumstances (e.g. rapid assessment of redox mottles), a series of sing
 ```{r}
 #| label: tbl-hr-colorshort
 #| tbl-cap: "Short codes for major soil colours, adapted from [@nationalcommitteeonsoilandterrain2009, pp. 161]. NB: The Munsell colour ranges given are a general guide only, do not interpret them strictly."
-#| classes : no-stripe
 
 dat_hr_colorshort <-
   tribble(~Code, ~Name, ~Description,
@@ -113,7 +112,6 @@ Soil colour patterns are most commonly driven by redox processes affecting iron 
 ```{r}
 #| label: tbl-hr-pattype
 #| tbl-cap: "Types of soil colour pattern"
-#| classes : no-stripe
 
 dat_hr_pattype <-
   tribble(~Code, ~Name, ~Description,
@@ -147,7 +145,6 @@ For example, [M 7.5YR58 25%]{.ceg} for a bright orange redox mottle.
 ```{r}
 #| label: tbl-hr-patshp
 #| tbl-cap: "Types of soil colour pattern shape"
-#| classes : no-stripe
 
 dat_hr_patshp <-
   tribble(~Code, ~Name, ~Description,
@@ -194,14 +191,13 @@ If both matrix and pattern colours are recorded using the Munsell system, the fo
 |           |           | 3.  At least one unit of chroma or two units of value if there is a difference of one full hue (2.5 Munsell units).                                                                                                        |
 +-----------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-: Types of soil colour pattern contrast {#tbl-hr-patcont cols_width=\[10,20,70\]}
+: Types of soil colour pattern contrast {#tbl-hr-patcont .striped cols_width=\[10,20,70\]}
 
 ### Pattern boundary distinctness
 
 ```{r}
 #| label: tbl-hr-patdist
 #| tbl-cap: "Types of soil colour pattern distinctness"
-#| classes : no-stripe
 
 dat_hr_patdist <-
   tribble(~Code, ~Name, ~Description,

@@ -49,13 +49,13 @@ For classifying using the NZSC, particular tests down to a certain depth may be 
 
 flowchart TD
   q1["Can a sample cube be formed\n from remoulded material?"] -->|yes| q2[Is the material plastic?]
-  q2 ---->|yes| a1([Cohesive])
+  q2 ---->|yes| a1(["**Cohesive**"])
   q1 -->|no| q3[Is the material plastic?]
   q3 -->|yes| q4
   q2 -->|no| q4["Does the material have a\n fast positive reaction to\n the dilatency test?"]
   q4 -->|no| q5["Does the material have a\n distinctly negative reaction to\n the dilatency test?"]
   q4 --->|yes| a2
-  q3 ---->|no| a2([Non-cohesive])
+  q3 ---->|no| a2(["**Non-cohesive**"])
   q5 -->|yes| a1
   q5 -->|no| a2
 
