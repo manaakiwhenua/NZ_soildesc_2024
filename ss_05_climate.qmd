@@ -14,7 +14,7 @@ library(gtExtras)
 
 ## Climate {#sec-clim}
 
-Climate parameters affect soil development directly (e.g. freeze-thaw cycles) and indirectly (e.g. by their influence on vegetation community composition and structure. 
+Climate parameters affect soil development directly (e.g. freeze-thaw cycles) and indirectly (e.g. by their influence on vegetation community composition and structure.
 
 ### Global {#sec-clim-global}
 
@@ -102,31 +102,30 @@ tbl_ss_climnz
 
 ## Specific measurements {#sec-clim-meas}
 
-Some climate parameters are more directly related to soils than others, mainly through their influence on vegetation community and evapotranspiration. Spatial estimates of these parameters are available via the NZ Environmental Data Stack [@mccarthy2021], available from the [MWLR Datastore](https://datastore.landcareresearch.co.nz/gl/dataset/nzenvds). Estimates can also be constructed from local records, where these are available. 
+Some climate parameters are more directly related to soils than others, mainly through their influence on vegetation community and evapotranspiration. Spatial estimates of these parameters have been published in the NZ Environmental Data Stack [@mccarthy2021], available from the [MWLR Datastore](https://datastore.landcareresearch.co.nz/gl/dataset/nzenvds). Estimates can also be constructed from local records, where these are available.
 
 ### Rainfall {#sec-clim-rfall}
 
+Soil moisture availability strongly influences chemical weathering in soils [@dixon2016], and in many parts of the landscape the main source of soil moisture is rainfall.
+
 -   Total annual rainfall: Some soils are unlikely to form outside a particular total annual rainfall range, e.g. Allophanic soils are uncommon where total annual rainfall is less than 1000 mm [@hewitt2010].
 -   Rainfall seasonality: Calculated as the mean of monthly rainfall totals, divided by their standard deviation. More pronounced seasonality implies stronger soil wetting and drying cycles, which in turn influences weathering processes.
--   An alternate measurement of seasonality involves calculating the ration of rainfall in the warmest versus the coolest three months. In New Zealand this is usually $(Dec + Jan + Feb)/(June + Jul + Aug)$.
--   Rainfall:evapotranspiration ratio: 
--   Soil moisture deficit
+-   An alternate measurement of seasonality involves calculating the ratio of rainfall in the warmest versus the coolest three months. In New Zealand this is usually (Dec + Jan + Feb)/(June + Jul + Aug).
 
 ### Temperature {#sec-clim-temp}
 
--   Mean annual temperature: The mean temperature recorded year-round. 
+-   Mean annual temperature: The mean temperature recorded year-round.
 -   Mean summer temperature: The mean temperature recorded over the warmest quarter of the year. In New Zealand, this is usually December-January-February. Mean summer temperature was a key parameter used by @singers2014 to classify NZ terrestrial ecosystems.
--   frostiness
+-   Growing Degree Days (GDD): GDD measures the total number of °C above a set minimum temperature (usually 5, 10, or 16°C). Average daily temperature (max - min/2) is used in the calculation, and where temperature is below the set minimum, 0 is recorded. Plant species have specific GDD requirements that help determine their distribution.
+-   Frost Days (FD): Frost days are days where the temperature drops below 0 °C, measured 1.2 m above the land surface.
 
 ### Insolation {#sec-clim-insol}
 
--   day length average
--   day length variability
+The amount of solar energy received by a site, modified by terrain and cloud cover, can strongly affect plant growth and soil weathering rates.
 
 ### Prevailing winds {#sec-clim-wind}
 
--   direction, strength by season
--   rationale: aspect effects
+The prevailing wind direction, its usual strength and seasonality all affect evapotranspiration rates and even the physical development of growing plants.
 
 ## Weather {#sec-weath}
 
