@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.33">
+<meta name="generator" content="quarto-1.6.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -56,10 +56,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-98f67bc07761c90b1382d524a234aef8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-273e46d7b3848a679358d7b360117b95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -316,7 +316,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_04_setting_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Soil Setting properties</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Soil setting properties</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -418,7 +418,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 18, 2024</p>
+      <p class="date-modified">November 23, 2024</p>
     </div>
   </div>
     
@@ -432,11 +432,12 @@ div.csl-indent {
 <p>Soil biota both affects and is affected by soil type. For example, Kauri trees create acidic conditions around their root zone, leading to the development of podzolic features.</p>
 <section id="sec-veg" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="sec-veg"><span class="header-section-number">7.1</span> Vegetation</h2>
-<p>Recording vegetation during soil survey can reveal reveal relationships between soil and vegetation community composition and structure.</p>
+<p>Recording vegetation during soil survey can reveal relationships between soil and vegetation community composition and structure.</p>
 <p>Two main options are available in New Zealand for recording vegetation data in a soils context.</p>
 <ul>
 <li>A detailed assessment of vegetation at a soil site can be made using the RECCE standard <span class="citation" data-cites="hurst2022">(<a href="references.html#ref-hurst2022" role="doc-biblioref">Hurst et al. 2022</a>)</span>. This is the method used by the <a href="https://nvs.landcareresearch.co.nz/">NZ National Vegetation Survey</a>, and it allows creation of a complete record of vegetation structure and species assemblage. Some elements of the RECCE standard have been adopted elsewhere in this manual, where relevant to describing the landscape and land surface (<a href="ss_03_landscape.html#sec-gmph-other" class="quarto-xref"><span>Section 4.4</span></a>, <a href="pr_01_surface.html#sec-pr-surfcov" class="quarto-xref"><span>Section 11.3</span></a>). Note that considerable botanical experience is needed to apply the full RECCE standard correctly.</li>
 <li>If the soil description is being completed in the context of an LUC assessment, use the NZLRI Vegetation Descriptions available in Appendix 3 of the LUC Survey Handbook <span class="citation" data-cites="lynn2009">(<a href="references.html#ref-lynn2009" role="doc-biblioref">Lynn et al. 2009</a>)</span>. This system describes a set of 49 vegetation communities commonly found in New Zealand, grouped into five broad structural categories (grasses, crops, scrub, forest, and herbaceous). Ability to identify key local species will be required to apply the system correctly. The system can also be used for rapid vegetation assessment during other soil mapping activities.</li>
+<li>For rapid assessment, use the LCDB land cover codes (<a href="ss_07_landuse_mgmt.html#sec-lcov" class="quarto-xref"><span>Section 8.1</span></a>) that relate to vegetation.</li>
 </ul>
 <p>Simpler systems that attempt to break vegetation communities into key structural classes are available, including the ‘Atkinson system’ recommended in the previous version of this manual. These are easy to apply but may not adequately discriminate between vegetation communities in a way that is soils-relevant.</p>
 </section>
@@ -554,8 +555,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -666,7 +665,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
