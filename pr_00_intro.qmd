@@ -247,7 +247,7 @@ Site disturbances have the potential to influence the soil as well as its cover.
 
 Only record recent events directly affecting the site. 'Recent' is a relatively flexible concept which highlights the reasons some parameters observed might be locally unusual. Some of these events recur regularly (e.g. tillage) so only need to be noted if very recent (e.g. previous week).
 
-If the time since the event is known with certainty, also record as number of days since the event e.g. [CL 35]{.ceg} for recent tree clearing.
+If the time since the event is known with low certainty, record the general timescale involved using @tbl-ss-eventt. If the time since the event is known with high certainty, record days since the event (e.g. [FL 10]{.ceg} for a well-documented recent flood).
 
 ```{r}
 #| label: tbl-ss-eventp
@@ -284,4 +284,33 @@ tbl_ss_eventp <- gt(dat_ss_eventp) |>
   cols_width(Code ~pct(10))
 
 tbl_ss_eventp
+```
+
+
+```{r}
+#| label: tbl-ss-eventt
+#| tbl-cap: "Generalised time since recent site-affecting events"
+
+dat_ss_eventt <-
+  tribble(~Code, ~Name,
+            'D', 'Within the past day',
+            'W', 'Within the past week',
+            'M', 'Within the past month',
+            'S', 'Within the past 6 months',
+            'Y', 'Within the past year')
+
+tbl_ss_eventt <- gt(dat_ss_eventt) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10))
+
+tbl_ss_eventt
 ```

@@ -2,6 +2,80 @@
 
 The following diagrams demonstrate one way in which the data model defined in this manual can be structured. The diagrams only deal with the data themselves - security, user management, change tracking and other helper functionalities are left out for clarity. The model is optimised to highlight the relationships between the various data points and contains some structures that support the controlled vocabulary lists, but is not optimised for performance.
 
+## Rapid assessment
+
+```{mermaid}
+
+erDiagram
+  site ||--|{ disturbances
+
+  site {
+    id          id_site                 "10.2.1"
+    usr         usr_author              "10.2.2"
+    geo         loc_site                "10.2.3"
+    dt          dt_site                 "10.2.4"
+    txt         catu_site_purpose       "10.2.5"
+    txt         catu_site_selection     "10.2.6"
+    txt         catu_site_exposure      "10.2.7"
+    num[0-1000] amt_site_depth_max_cm   "10.2.8"
+    txt         catu_early_stop         "10.2.9"
+   
+  }
+  
+  disturbances {
+    id          id_site
+    id          id_disturbance
+    txt         catu_disturbance
+    txt         catu_disturbance_age
+    amt[0-Inf]  amt_disturbance_age_days
+}
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Soil Setting {#sec-erd-setting}
 
 ```{mermaid}
@@ -9,7 +83,7 @@ The following diagrams demonstrate one way in which the data model defined in th
 
 erDiagram
   site ||--|| location : "has one"
-  location ||--o{ siteEvents : "may have some"
+  location ||--o{ site_events : "may have some"
   site ||--|| landscape : "has one"
   landscape ||--|{ landform : "has at least one"
   
@@ -128,6 +202,140 @@ erDiagram
 ## Profile data {#sec-erd-profile}
 
 ## Horizon data {#sec-erd-horizon}
+
+```{mermaid}
+%%| fig-cap: "Overview - main tables only"
+
+
+erDiagram
+  horizon ||--|{ pedality description : "has at least one"
+  horizon ||--|{ rock fragments description : "has at least one"
+  horizon ||--|{ non-rock fragments description : "has at least one"
+  horizon ||--|{ artefacts description : "has at least one"
+  horizon ||--|{ roots description : "has at least one"
+  horizon ||--|{ voids description : "has at least one"
+  horizon ||--|{ pores description : "has at least one"
+  horizon ||--|{ matrix colour : "has at least one"
+  horizon ||--o{ colour patterns : "may have one or more"
+
+
+
+
+
+
+```
+
+```{mermaid}
+%%| fig-cap: "Details"
+
+horizon ||--o{ horizon_peds
+horizon ||--o{ fragments_rock
+horizon ||--o{ fragments_other
+horizon ||--o{ fragments_artef
+
+
+
+
+erDiagram
+  horizon {
+    id site_identifier 
+    id horizon_identifier 
+    %% bounds %%
+    num[0-Inf]    horizon_depth_upper_cm
+    num[0-Inf]    horizon_depth_lower_cm
+    catu          horizon_bdy_shp                "Section 12.4"
+    cato          horizon_bdy_dist               "Section 12.5"
+    cato          horizon_moisture               "Section 12.6"
+    %% arch %%
+    catu          horizon_parent_material_origin "Table 24.5"
+    catu          horizon_anthropic_mod          "Table 13.1"
+    number[0-100] frag_rock_amt_total_p          "Section 14.2"
+    number[0-100] roots_amt_total_p              "Section 14.3.1"
+    number[0-100] roots_pos                      "Section 14.3.2"
+    number[0-100] voids_total_p                  "Section 14.4"
+    number[0-100] pores_total_p                  "Section 14.5"
+    
+    
+  }
+
+
+  horizonPeds {
+    id   horizon_identifier 
+    id   ped_identifier
+    cato ped_pedality   "Table 14.1"
+    catu pedShp        "Table 14.2, Table 14.3"
+    num[0-1000] pedSizeMedMm
+    num[0-500]  pedSizeLowerMm
+    num[0-500]  pedSizeUpperMm
+  }
+
+  fragments_rock {
+    id horizonIdentifier 
+    number[0-100] fragRockAmtSmlP
+    number[0-100] fragRockAmtMedP
+    number[0-100] fragRockAmtLgeP
+    catu          fragRockLithSml
+    catu          fragRockLithMed
+    catu          fragRockLithLge
+    catu          fragRockShpSml
+    catu          fragRockShpMed
+    catu          fragRockShpLge
+  }
+  
+  fragments_other {
+    id            horizonIdentifier 
+    id            fragOtherIdentifier
+    catu          fragOtherType "Section 14.2.1.1"
+    number[0-100] fragOtherAmtP "Section 14.2.1.1"
+  }
+  
+  fragOtherTypes {
+    id fragOtherTypeIdentifier
+    catu fragOtherTypeCode "Table 14.6"
+    text fragOtherTypeName "Table 14.6"
+    text fragOtherTypeDesc "Table 14.6"
+  }
+  
+  fragments_artefacts {
+    id            horizonIdentifier 
+    id            fragOtherIdentifier
+    catu          fragArtefType "Section 14.2.1.2"
+    number[0-100] fragArtefAmtP "Section 14.2.1.2"
+  }
+
+  fragArtefTypes {
+    id fragArtefTypeIdentifier
+    catu fragArtefTypeCode "Table 14.7"
+    text fragArtefTypeName "Table 14.7"
+    text fragArtefTypeDesc "Table 14.7"
+  }
+
+ roots {
+   id horizonIdentifier 
+   number[0-100] rootsAmtSmlP
+   number[0-100] rootsAmtMedP
+   number[0-100] rootsAmtLgeP
+   catu          rootsPos
+  }
+
+  rootsPosTypes {
+    id rootsPosTypeIdentifier
+    catu rootsPosCode "Table 14.7"
+    text rootsPosName "Table 14.7"
+    text rootsPosDesc "Table 14.7"
+  }
+  
+  voids {
+    id horizonIdentifier 
+    id voidIdentifier
+    catu voidType       "Table 14.10"
+    num[0-100] voidAmtP 
+    catu voidConn       "Table 14.11"
+    }
+    
+    
+
+```
 
 ## Sample data {#sec-erd-samples}
 

@@ -375,12 +375,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-erd-setting" id="toc-sec-erd-setting" class="nav-link active" data-scroll-target="#sec-erd-setting"><span class="header-section-number">D.1</span> Soil Setting</a></li>
-  <li><a href="#sec-erd-surface" id="toc-sec-erd-surface" class="nav-link" data-scroll-target="#sec-erd-surface"><span class="header-section-number">D.2</span> Soil Surface</a></li>
-  <li><a href="#sec-erd-profile" id="toc-sec-erd-profile" class="nav-link" data-scroll-target="#sec-erd-profile"><span class="header-section-number">D.3</span> Profile data</a></li>
-  <li><a href="#sec-erd-horizon" id="toc-sec-erd-horizon" class="nav-link" data-scroll-target="#sec-erd-horizon"><span class="header-section-number">D.4</span> Horizon data</a></li>
-  <li><a href="#sec-erd-samples" id="toc-sec-erd-samples" class="nav-link" data-scroll-target="#sec-erd-samples"><span class="header-section-number">D.5</span> Sample data</a></li>
-  <li><a href="#sec-erd-interp" id="toc-sec-erd-interp" class="nav-link" data-scroll-target="#sec-erd-interp"><span class="header-section-number">D.6</span> Interpretation data</a></li>
+  <li><a href="#rapid-assessment" id="toc-rapid-assessment" class="nav-link active" data-scroll-target="#rapid-assessment"><span class="header-section-number">D.1</span> Rapid assessment</a></li>
+  <li><a href="#sec-erd-setting" id="toc-sec-erd-setting" class="nav-link" data-scroll-target="#sec-erd-setting"><span class="header-section-number">D.2</span> Soil Setting</a></li>
+  <li><a href="#sec-erd-surface" id="toc-sec-erd-surface" class="nav-link" data-scroll-target="#sec-erd-surface"><span class="header-section-number">D.3</span> Soil Surface</a></li>
+  <li><a href="#sec-erd-profile" id="toc-sec-erd-profile" class="nav-link" data-scroll-target="#sec-erd-profile"><span class="header-section-number">D.4</span> Profile data</a></li>
+  <li><a href="#sec-erd-horizon" id="toc-sec-erd-horizon" class="nav-link" data-scroll-target="#sec-erd-horizon"><span class="header-section-number">D.5</span> Horizon data</a></li>
+  <li><a href="#sec-erd-samples" id="toc-sec-erd-samples" class="nav-link" data-scroll-target="#sec-erd-samples"><span class="header-section-number">D.6</span> Sample data</a></li>
+  <li><a href="#sec-erd-interp" id="toc-sec-erd-interp" class="nav-link" data-scroll-target="#sec-erd-interp"><span class="header-section-number">D.7</span> Interpretation data</a></li>
   </ul>
 </nav>
     </div>
@@ -401,7 +402,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 18, 2024</p>
+      <p class="date-modified">November 24, 2024</p>
     </div>
   </div>
     
@@ -413,8 +414,47 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>The following diagrams demonstrate one way in which the data model defined in this manual can be structured. The diagrams only deal with the data themselves - security, user management, change tracking and other helper functionalities are left out for clarity. The model is optimised to highlight the relationships between the various data points and contains some structures that support the controlled vocabulary lists, but is not optimised for performance.</p>
-<section id="sec-erd-setting" class="level2" data-number="D.1">
-<h2 data-number="D.1" class="anchored" data-anchor-id="sec-erd-setting"><span class="header-section-number">D.1</span> Soil Setting</h2>
+<section id="rapid-assessment" class="level2" data-number="D.1">
+<h2 data-number="D.1" class="anchored" data-anchor-id="rapid-assessment"><span class="header-section-number">D.1</span> Rapid assessment</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">erDiagram
+  site ||--|{ disturbances
+
+  site {
+    id          id_site                 "10.2.1"
+    usr         usr_author              "10.2.2"
+    geo         loc_site                "10.2.3"
+    dt          dt_site                 "10.2.4"
+    txt         catu_site_purpose       "10.2.5"
+    txt         catu_site_selection     "10.2.6"
+    txt         catu_site_exposure      "10.2.7"
+    num[0-1000] amt_site_depth_max_cm   "10.2.8"
+    txt         catu_early_stop         "10.2.9"
+   
+  }
+  
+  disturbances {
+    id          id_site
+    id          id_disturbance
+    txt         catu_disturbance
+    txt         catu_disturbance_age
+    amt[0-Inf]  amt_disturbance_age_days
+}
+
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-erd-setting" class="level2" data-number="D.2">
+<h2 data-number="D.2" class="anchored" data-anchor-id="sec-erd-setting"><span class="header-section-number">D.2</span> Soil Setting</h2>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -422,7 +462,7 @@ ul.task-list li input[type="checkbox"] {
 <div>
 <pre class="mermaid mermaid-js">erDiagram
   site ||--|| location : "has one"
-  location ||--o{ siteEvents : "may have some"
+  location ||--o{ site_events : "may have some"
   site ||--|| landscape : "has one"
   landscape ||--|{ landform : "has at least one"
   
@@ -553,20 +593,165 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="sec-erd-surface" class="level2" data-number="D.2">
-<h2 data-number="D.2" class="anchored" data-anchor-id="sec-erd-surface"><span class="header-section-number">D.2</span> Soil Surface</h2>
+<section id="sec-erd-surface" class="level2" data-number="D.3">
+<h2 data-number="D.3" class="anchored" data-anchor-id="sec-erd-surface"><span class="header-section-number">D.3</span> Soil Surface</h2>
 </section>
-<section id="sec-erd-profile" class="level2" data-number="D.3">
-<h2 data-number="D.3" class="anchored" data-anchor-id="sec-erd-profile"><span class="header-section-number">D.3</span> Profile data</h2>
+<section id="sec-erd-profile" class="level2" data-number="D.4">
+<h2 data-number="D.4" class="anchored" data-anchor-id="sec-erd-profile"><span class="header-section-number">D.4</span> Profile data</h2>
 </section>
-<section id="sec-erd-horizon" class="level2" data-number="D.4">
-<h2 data-number="D.4" class="anchored" data-anchor-id="sec-erd-horizon"><span class="header-section-number">D.4</span> Horizon data</h2>
+<section id="sec-erd-horizon" class="level2" data-number="D.5">
+<h2 data-number="D.5" class="anchored" data-anchor-id="sec-erd-horizon"><span class="header-section-number">D.5</span> Horizon data</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">erDiagram
+  horizon ||--|{ pedality description : "has at least one"
+  horizon ||--|{ rock fragments description : "has at least one"
+  horizon ||--|{ non-rock fragments description : "has at least one"
+  horizon ||--|{ artefacts description : "has at least one"
+  horizon ||--|{ roots description : "has at least one"
+  horizon ||--|{ voids description : "has at least one"
+  horizon ||--|{ pores description : "has at least one"
+  horizon ||--|{ matrix colour : "has at least one"
+  horizon ||--o{ colour patterns : "may have one or more"
+
+
+
+
+
+
+</pre>
+</div>
+<p></p><figcaption> Overview - main tables only</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">horizon ||--o{ horizon_peds
+horizon ||--o{ fragments_rock
+horizon ||--o{ fragments_other
+horizon ||--o{ fragments_artef
+
+
+
+
+erDiagram
+  horizon {
+    id site_identifier 
+    id horizon_identifier 
+    %% bounds %%
+    num[0-Inf]    horizon_depth_upper_cm
+    num[0-Inf]    horizon_depth_lower_cm
+    catu          horizon_bdy_shp                "Section 12.4"
+    cato          horizon_bdy_dist               "Section 12.5"
+    cato          horizon_moisture               "Section 12.6"
+    %% arch %%
+    catu          horizon_parent_material_origin "Table 24.5"
+    catu          horizon_anthropic_mod          "Table 13.1"
+    number[0-100] frag_rock_amt_total_p          "Section 14.2"
+    number[0-100] roots_amt_total_p              "Section 14.3.1"
+    number[0-100] roots_pos                      "Section 14.3.2"
+    number[0-100] voids_total_p                  "Section 14.4"
+    number[0-100] pores_total_p                  "Section 14.5"
+    
+    
+  }
+
+
+  horizonPeds {
+    id   horizon_identifier 
+    id   ped_identifier
+    cato ped_pedality   "Table 14.1"
+    catu pedShp        "Table 14.2, Table 14.3"
+    num[0-1000] pedSizeMedMm
+    num[0-500]  pedSizeLowerMm
+    num[0-500]  pedSizeUpperMm
+  }
+
+  fragments_rock {
+    id horizonIdentifier 
+    number[0-100] fragRockAmtSmlP
+    number[0-100] fragRockAmtMedP
+    number[0-100] fragRockAmtLgeP
+    catu          fragRockLithSml
+    catu          fragRockLithMed
+    catu          fragRockLithLge
+    catu          fragRockShpSml
+    catu          fragRockShpMed
+    catu          fragRockShpLge
+  }
+  
+  fragments_other {
+    id            horizonIdentifier 
+    id            fragOtherIdentifier
+    catu          fragOtherType "Section 14.2.1.1"
+    number[0-100] fragOtherAmtP "Section 14.2.1.1"
+  }
+  
+  fragOtherTypes {
+    id fragOtherTypeIdentifier
+    catu fragOtherTypeCode "Table 14.6"
+    text fragOtherTypeName "Table 14.6"
+    text fragOtherTypeDesc "Table 14.6"
+  }
+  
+  fragments_artefacts {
+    id            horizonIdentifier 
+    id            fragOtherIdentifier
+    catu          fragArtefType "Section 14.2.1.2"
+    number[0-100] fragArtefAmtP "Section 14.2.1.2"
+  }
+
+  fragArtefTypes {
+    id fragArtefTypeIdentifier
+    catu fragArtefTypeCode "Table 14.7"
+    text fragArtefTypeName "Table 14.7"
+    text fragArtefTypeDesc "Table 14.7"
+  }
+
+ roots {
+   id horizonIdentifier 
+   number[0-100] rootsAmtSmlP
+   number[0-100] rootsAmtMedP
+   number[0-100] rootsAmtLgeP
+   catu          rootsPos
+  }
+
+  rootsPosTypes {
+    id rootsPosTypeIdentifier
+    catu rootsPosCode "Table 14.7"
+    text rootsPosName "Table 14.7"
+    text rootsPosDesc "Table 14.7"
+  }
+  
+  voids {
+    id horizonIdentifier 
+    id voidIdentifier
+    catu voidType       "Table 14.10"
+    num[0-100] voidAmtP 
+    catu voidConn       "Table 14.11"
+    }
+    
+    
+
+</pre>
+</div>
+<p></p><figcaption> Details</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
 </section>
-<section id="sec-erd-samples" class="level2" data-number="D.5">
-<h2 data-number="D.5" class="anchored" data-anchor-id="sec-erd-samples"><span class="header-section-number">D.5</span> Sample data</h2>
+<section id="sec-erd-samples" class="level2" data-number="D.6">
+<h2 data-number="D.6" class="anchored" data-anchor-id="sec-erd-samples"><span class="header-section-number">D.6</span> Sample data</h2>
 </section>
-<section id="sec-erd-interp" class="level2" data-number="D.6">
-<h2 data-number="D.6" class="anchored" data-anchor-id="sec-erd-interp"><span class="header-section-number">D.6</span> Interpretation data</h2>
+<section id="sec-erd-interp" class="level2" data-number="D.7">
+<h2 data-number="D.7" class="anchored" data-anchor-id="sec-erd-interp"><span class="header-section-number">D.7</span> Interpretation data</h2>
 
 
 </section>
