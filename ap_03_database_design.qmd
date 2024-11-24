@@ -1,79 +1,45 @@
 # Data model {#sec-erds}
 
-The following diagrams demonstrate one way in which the data model defined in this manual can be structured. The diagrams only deal with the data themselves - security, user management, change tracking and other helper functionalities are left out for clarity. The model is optimised to highlight the relationships between the various data points and contains some structures that support the controlled vocabulary lists, but is not optimised for performance.
-
-## Rapid assessment
-
-```{mermaid}
-
-erDiagram
-  site ||--|{ disturbances
-
-  site {
-    id          id_site                 "10.2.1"
-    usr         usr_author              "10.2.2"
-    geo         loc_site                "10.2.3"
-    dt          dt_site                 "10.2.4"
-    txt         catu_site_purpose       "10.2.5"
-    txt         catu_site_selection     "10.2.6"
-    txt         catu_site_exposure      "10.2.7"
-    num[0-1000] amt_site_depth_max_cm   "10.2.8"
-    txt         catu_early_stop         "10.2.9"
-   
-  }
-  
-  disturbances {
-    id          id_site
-    id          id_disturbance
-    txt         catu_disturbance
-    txt         catu_disturbance_age
-    amt[0-Inf]  amt_disturbance_age_days
-}
-
-
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+library(gtExtras)
 ```
 
+The following diagrams demonstrate one way in which the data model defined in this manual can be structured. The diagrams only deal with the data themselves - security, user management, change tracking and other helper functionalities are left out for clarity. The model is optimised to highlight the relationships between the various data points and contains some structures that support the controlled vocabulary lists, but is not optimised for performance.
 
+## Helper tables
 
+### Measurement type
 
+Some numeric parameters require a separate specification for types of missing data (e.g. aspect at the site, @sec-pr-aspect). These codes are built in to most categorical code lists in this standard (where it makes sense to include them). For numeric data, a companion text column is required. It is generally expected that it will be populated in a semi-automated manner - for each parameter, it should default to [NR]{.ceg}, and be automatically updated to [NM]{.ceg} if a value is supplied. Users may also update to [ND]{.ceg} as needed.
 
+```{r}
+#| label: tbl-missing
+#| tbl-cap: "Data record type"
 
+dat_ss_eventt <-
+  tribble(~Code, ~Name,
+            'NM', 'Parameter was recorded normally',
+            'ND', 'Parameter could not be reliably determined or does not apply',
+            'NR', 'Parameter was not recorded')
 
+tbl_ss_eventt <- gt(dat_ss_eventt) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+tbl_ss_eventt
+```
 
 
 ## Soil Setting {#sec-erd-setting}
@@ -105,6 +71,7 @@ erDiagram
 
 ```
 
+
 ```{mermaid}
 %%| fig-cap: "Details"
 
@@ -126,12 +93,7 @@ erDiagram
   catu siteSelMethodCode "Section 3.6"
   }
   
-  sitePurposes {
-  id sitePurposeIdentifier
-  catu sitePurposeCode "Table 3.1"
-  text sitePurposeName "Table 3.1"
-  text sitePurposeDesc "Table 3.1"
-  }
+  
   
   siteSelMethods {
   id siteSelMethodIdentifier
@@ -197,150 +159,448 @@ erDiagram
 
 ```
 
-## Soil Surface {#sec-erd-surface}
-
 ## Profile data {#sec-erd-profile}
-
-## Horizon data {#sec-erd-horizon}
 
 ```{mermaid}
 %%| fig-cap: "Overview - main tables only"
 
+erDiagram
+  site ||--o{ disturbances : "may have some"
+
+```
+
+
+```{mermaid}
+%%| fig-cap: "Profile overview - including support tables"
 
 erDiagram
-  horizon ||--|{ pedality description : "has at least one"
-  horizon ||--|{ rock fragments description : "has at least one"
-  horizon ||--|{ non-rock fragments description : "has at least one"
-  horizon ||--|{ artefacts description : "has at least one"
-  horizon ||--|{ roots description : "has at least one"
-  horizon ||--|{ voids description : "has at least one"
-  horizon ||--|{ pores description : "has at least one"
-  horizon ||--|{ matrix colour : "has at least one"
-  horizon ||--o{ colour patterns : "may have one or more"
-
-
-
-
-
+  site ||--|{ disturbances : "has one or more"
+  disturbances }|--|{ disturbance_types : "code comes from"
+  disturbances }|--|{ disturbance_ages : "code comes from"
+  site }|--|{ site_purposes : "code comes from"
+  site }|--|{ site_selection_methods : "code comes from"
+  site }|--|{ site_exposure_types : "code comes from"
+  site }|--|{ site_early_stop_types : "code comes from"
+  
 
 ```
 
 ```{mermaid}
-%%| fig-cap: "Details"
-
-horizon ||--o{ horizon_peds
-horizon ||--o{ fragments_rock
-horizon ||--o{ fragments_other
-horizon ||--o{ fragments_artef
-
-
-
+%%| fig-cap: "Profile - Details"
 
 erDiagram
+  site ||--|{ disturbances : "has one or more"
+  disturbances }|--|{ disturbance_types : "code comes from"
+  disturbances }|--|{ disturbance_ages : "code comes from"
+  site }|--|{ site_purposes : "code comes from"
+  site }|--|{ site_selection_methods : "code comes from"
+  site }|--|{ site_exposure_types : "code comes from"
+  site }|--|{ site_early_stop_types : "code comes from"
+
+  site {
+    id          id_site                  "10.2.1"
+    usr         usr_author               "10.2.2"
+    geo         loc_site                 "10.2.3"
+    dt          dt_site                  "10.2.4"
+    cat         catu_site_purpose        "10.2.5"
+    cat         catu_site_selection      "10.2.6"
+    cat         catu_site_exposure       "10.2.7"
+    num[0-1000] amt_site_depth_max_cm    "10.2.8"
+    txt         catu_early_stop          "10.2.9"
+  }
+  
+  site_purposes {
+    id          id_site_purpose
+    cat         catu_site_purpose        "Table 10.1"
+    txt         txt_site_purpose         "Table 10.1"
+  }
+  
+  site_selection_methods {
+    id          id_site_selection
+    cat         catu_site_selection      "Table 10.2"
+    txt         txt_site_selection       "Table 10.2"
+  }
+  
+  site_exposure_types {
+    id          id_site_exposure
+    cat         catu_site_exposure       "Table 10.3"
+    txt         txt_site_exposure_name   "Table 10.3"
+  }
+  
+  site_early_stop_types {
+    id          id_site_stop
+    cat         catu_site_stop           "Table 10.4"
+    txt         txt_site_stop            "Table 10.4"
+}
+  
+  disturbances {
+    id          id_site
+    id          id_disturbance
+    txt         catu_disturbance         "Table 10.5"
+    txt         catu_disturbance_age     "Table 10.6"
+    num[0-Inf]  amt_disturbance_age_days "10.3"
+  }
+
+  disturbance_types {
+    id          id_disturbance
+    cat         catu_disturbance         "Table 10.5"
+    txt         txt_disturbance_name     "Table 10.5"
+    txt         txt_disturbance_desc     "Table 10.5"
+  }
+  
+  disturbance_ages {
+    id          id_disturbance_age
+    cat         catu_disturbance_age     "Table 10.5"
+    txt         txt_disturbance_age_name "Table 10.5"
+    txt         txt_disturbance_age_desc "Table 10.5"
+  }
+  
+```
+
+
+## Soil Surface {#sec-erd-surface}
+
+```{mermaid}
+%%| fig-cap: "Surface - main tables only"
+
+erDiagram
+  site ||--|{ surface_cover : "has"
+  site ||--o{ erosion : "may have"
+  site ||--o{ deposition : "may have"
+
+```
+
+```{mermaid}
+%%| fig-cap: "Surface - including support tables"
+
+erDiagram
+  site }|--|{ slope_methods : "code comes from"
+  site }|--|{ measurement_types : "code comes from"
+  site }|--|{ aspect_methods : "code comes from"
+  site ||--|{ surface_cover : "has"
+  surface_cover }|--|{ surface_cover_types : "code comes from"
+  site }|--|{ surface_water_types : "code comes from"
+  site }|--|{ surface_water_persts : "code comes from"
+  site }|--|{ surface_crack_types : "code comes from"
+  site }|--|{ surface_crack_shapes : "code comes from"
+  site ||--o{ site_erosion : "may have"
+  site }|--|{ site_microrelief_nat : "code comes from"
+  site }|--|{ site_microrelief_ant : "code comes from"
+  site_erosion }|--|{ erosion_types : "code comes from"
+  site_erosion }|--|{ erosion_severity : "code comes from"
+  site_erosion }|--|{ erosion_activity : "code comes from"
+  site ||--o{ site_deposition : "may have"
+  site_deposition }|--|{ deposition_types : "code comes from"
+  site_deposition }|--|{ deposition_severity : "code comes from"
+  site_deposition }|--|{ deposition_activity : "code comes from"
+  
+
+```
+
+```{mermaid}
+%%| fig-cap: "Surface - Details"
+
+erDiagram
+  site }|--|{ slope_methods : "code comes from"
+  site }|--|{ measurement_types : "code comes from"
+  site }|--|{ aspect_methods : "code comes from"
+  site ||--|{ surface_cover : "has at least one"
+  surface_cover }|--|{ surface_cover_types : "code comes from"
+  site }|--|{ surface_water_types : "code comes from"
+  site }|--|{ surface_water_persts : "code comes from"
+  site }|--|{ surface_crack_types : "code comes from"
+  site }|--|{ surface_crack_shapes : "code comes from"
+  site ||--o{ site_erosion : "may have some"
+  site }|--|{ site_microrelief_nat : "code comes from"
+  site }|--|{ site_microrelief_ant : "code comes from"
+  site_erosion }|--|{ erosion_types : "code comes from"
+  site_erosion }|--|{ erosion_severity : "code comes from"
+  site_erosion }|--|{ erosion_activity : "code comes from"
+  site ||--o{ site_deposition : "may have some"
+  site_deposition }|--|{ deposition_types : "code comes from"
+  site_deposition }|--|{ deposition_severity : "code comes from"
+  site_deposition }|--|{ deposition_activity : "code comes from"
+
+  site {
+    id          id_site                  "10.2.1"
+    num[0-90]   amt_slope_d              "11.1"
+    cat         catu_slope_rec           "Table D.1.1"
+    cat         catu_slope_method        "Table 11.1"
+    num[0-359]  amt_aspect_d             "11.2"
+    cat         catu_aspect_rec          "Table D.1.1"
+    cat         catu_aspect_method       "Table 11.2"
+    cat         catu_surface_water       "11.4"
+    cat         cato_surface_water_perst "11.4"
+    cat         catu_surface_cracks      "11.5"
+    cat         catu_surface_crack_shp   "11.5"
+    cat         catu_microrelief_nat     "11.6.1"
+    cat         catu_microrelief_ant     "11.6.2"
+  }
+  
+  slope_methods {
+    id          id_slope_method
+    cat         catu_slope_method        "Table 11.1"
+    txt         txt_slope_method_name    "Table 11.1"
+    txt         txt_slope_method_desc    "Table 11.1"
+  }
+  
+  aspect_methods {
+    id          id_aspect_method
+    cat         catu_aspect_method        "Table 11.2"
+    txt         txt_aspect_method_name    "Table 11.2"
+    txt         txt_aspect_method_desc    "Table 11.2"
+  }
+  
+  measurement_types {
+    id          id_mtype
+    cat         catu_mtype
+    txt         txt_mtype_name           "Table D1"
+    txt         txt_mtype_desc           "Table D1"
+  }
+
+  surface_cover {
+    id          id_site
+    cat         catu_surface_cover       "11.3"
+    num[0-100]  amt_surface_cover        "11.3"
+  }
+  
+  surface_cover_types {
+    id          id_surfcov
+    cat         catu_surface_cover       "Table 11.3"
+    txt         txt_surface_cover_name   "Table 11.3"
+    txt         txt_surface_cover_desc   "Table 11.3"
+  }
+  
+  surface_water_types {
+    id          id_surface_water
+    cat         catu_surface_water      "Table 11.4"
+    txt         txt_surface_water_name  "Table 11.4"
+    txt         txt_surface_water_desc  "Table 11.4"
+  }
+
+  surface_water_persts {
+    id          id_surface_water_perst
+    cat         catu_surface_water_perst       "Table 11.5"
+    txt         txt_surface_water_perst_name   "Table 11.5"
+    txt         txt_surface_water_perst_desc   "Table 11.5"
+  }
+
+  surface_crack_types {
+    id          id_surface_crack
+    cat         catu_surface_crack             "Table 11.6"
+    txt         txt_surface_crack_name         "Table 11.6"
+    txt         txt_surface_crack_desc         "Table 11.6"
+  }
+  
+  surface_crack_shapes {
+    id          id_surface_crack_shp
+    cat         catu_surface_crack_shp         "Table 11.7"
+    txt         txt_surface_crack_shp_name     "Table 11.7"
+    txt         txt_surface_crack_shp_desc     "Table 11.7"
+  }
+  
+  site_microrelief_nat {
+    id          id_microrelief_nat
+    cat         catu_microrelief_nat         "Table 11.8"
+    txt         txt_microrelief_nat_name     "Table 11.8"
+    txt         txt_microrelief_nat_desc     "Table 11.8"
+  }
+  
+  site_microrelief_ant {
+    id          id_microrelief_ant
+    cat         catu_microrelief_ant         "Table 11.9"
+    txt         txt_microrelief_ant_name     "Table 11.9"
+    txt         txt_microrelief_ant_desc     "Table 11.9"
+  }
+  
+  site_erosion {
+    id          id_site
+    id          id_erosion                   
+    cat         catu_erosion                  
+    cat         cato_erosion_severity
+    cat         cato_erosion_activity
+  }
+  
+  erosion_types {
+    id          id_erosion
+    cat         catu_erosion                   "Table 11.10"
+    txt         txt_erosion_name               "Table 11.10"
+    txt         txt_erosion_desc               "Table 11.10"
+  }
+  
+  erosion_severity {
+    id          id_erosion_severity
+    cat         catu_erosion_severity          "Table 11.11"
+    txt         txt_erosion_severity_name      "Table 11.11"
+    txt         txt_erosion_severity_desc      "Table 11.11"
+  }  
+  
+  erosion_activity {
+    id          id_erosion_activity
+    cat         catu_erosion_activity          "Table 11.12"
+    txt         txt_erosion_activity_name      "Table 11.12"
+    txt         txt_erosion_activity_desc      "Table 11.12"
+  }  
+  
+ site_deposition {
+    id          id_site
+    id          id_deposition               
+    cat         catu_deposition                   
+    cat         cato_deposition_severity
+    cat         cato_deposition_activity
+  }
+  
+  deposition_types {
+    id          id_deposition
+    cat         catu_deposition                   "Table 11.13"
+    txt         txt_deposition_name               "Table 11.13"
+    txt         txt_deposition_desc               "Table 11.13"
+  }  
+  
+  deposition_severity {
+    id          id_deposition_severity
+    cat         catu_deposition_severity          "Table 11.14"
+    txt         txt_deposition_severity_name      "Table 11.14"
+    txt         txt_deposition_severity_desc      "Table 11.14"
+  }  
+  
+  deposition_activity {
+    id          id_deposition_activity
+    cat         catu_deposition_activity          "Table 11.15"
+    txt         txt_deposition_activity_name      "Table 11.15"
+    txt         txt_deposition_activity_desc      "Table 11.15"
+  }  
+```
+
+## Horizon overview data {#sec-erd-horizon}
+
+```{mermaid}
+%%| fig-cap: "Horizon - main tables only"
+
+erDiagram
+  site ||--|{ horizon : "has at least one"
+
+```
+
+```{mermaid}
+%%| fig-cap: "Horizon - including support tables"
+
+erDiagram
+  site ||--|{ horizon : "has at least one"
+  site }|--|{ boundary_shapes : "code comes from"
+  site }|--|{ boundary_widths : "code comes from"
+  site }|--|{ soil_moistures : "code comes from"
+  site }|--|{ water_depths : "code comes from"
+
+```
+
+```{mermaid}
+%%| fig-cap: "Horizon - Details"
+
+erDiagram
+  site ||--|{ horizon : "has at least one"
+  site }|--|{ boundary_shapes : "code comes from"
+  site }|--|{ boundary_widths : "code comes from"
+  site }|--|{ soil_moistures : "code comes from"
+  site }|--|{ water_depths : "code comes from"
+  
   horizon {
-    id site_identifier 
-    id horizon_identifier 
-    %% bounds %%
-    num[0-Inf]    horizon_depth_upper_cm
-    num[0-Inf]    horizon_depth_lower_cm
-    catu          horizon_bdy_shp                "Section 12.4"
-    cato          horizon_bdy_dist               "Section 12.5"
-    cato          horizon_moisture               "Section 12.6"
-    %% arch %%
-    catu          horizon_parent_material_origin "Table 24.5"
-    catu          horizon_anthropic_mod          "Table 13.1"
-    number[0-100] frag_rock_amt_total_p          "Section 14.2"
-    number[0-100] roots_amt_total_p              "Section 14.3.1"
-    number[0-100] roots_pos                      "Section 14.3.2"
-    number[0-100] voids_total_p                  "Section 14.4"
-    number[0-100] pores_total_p                  "Section 14.5"
-    
-    
-  }
-
-
-  horizonPeds {
-    id   horizon_identifier 
-    id   ped_identifier
-    cato ped_pedality   "Table 14.1"
-    catu pedShp        "Table 14.2, Table 14.3"
-    num[0-1000] pedSizeMedMm
-    num[0-500]  pedSizeLowerMm
-    num[0-500]  pedSizeUpperMm
-  }
-
-  fragments_rock {
-    id horizonIdentifier 
-    number[0-100] fragRockAmtSmlP
-    number[0-100] fragRockAmtMedP
-    number[0-100] fragRockAmtLgeP
-    catu          fragRockLithSml
-    catu          fragRockLithMed
-    catu          fragRockLithLge
-    catu          fragRockShpSml
-    catu          fragRockShpMed
-    catu          fragRockShpLge
+  id         id_site
+  id         id_horizon
+  amt[0-Inf] amt_upper_depth_cm      "12.2"
+  amt[0-Inf] amt_upper_depth_med_cm  "12.2"
+  amt[0-Inf] amt_upper_depth_min_cm  "12.2"
+  amt[0-Inf] amt_upper_depth_max_cm  "12.2"
+  amt[0-Inf] amt_upper_depth_cm      "12.2"
+  amt[0-Inf] amt_lower_depth_med_cm  "12.2"
+  amt[0-Inf] amt_upper_depth_min_cm  "12.2"
+  amt[0-Inf] amt_upper_depth_max_cm  "12.2"
+  cat        catu_boundary_shape     "12.4"
+  amt[0-Inf] amt_boundary_cm         "12.5"
+  cat        catu_boundary_width     "12.5" 
+  cat        cato_soil_moisture      "12.6"
+  amt[0-Inf] amt_depth_water         "12.7"
+  cat        catu_depth_water        "12.7"
   }
   
-  fragments_other {
-    id            horizonIdentifier 
-    id            fragOtherIdentifier
-    catu          fragOtherType "Section 14.2.1.1"
-    number[0-100] fragOtherAmtP "Section 14.2.1.1"
+  boundary_shapes {
+    id          id_boundary_shape
+    cat         catu_boundary_shape          "Table 12.1"
+    txt         txt_boundary_shape_name      "Table 12.1"
+    txt         txt_boundary_shape_desc      "Table 12.1"
+  }
+ 
+  boundary_widths {
+    id          id_boundary_width
+    cat         catu_boundary_width          "Table 12.2"
+    txt         txt_boundary_width_name      "Table 12.2"
+    txt         txt_boundary_width_desc      "Table 12.2"
+  } 
+  
+  soil_moistures {
+    id          id_soil_moisture
+    cat         catu_soil_moisture          "Table 12.3"
+    txt         txt_soil_moisture_name      "Table 12.3"
   }
   
-  fragOtherTypes {
-    id fragOtherTypeIdentifier
-    catu fragOtherTypeCode "Table 14.6"
-    text fragOtherTypeName "Table 14.6"
-    text fragOtherTypeDesc "Table 14.6"
+  water_depths {
+    id          id_water_depths
+    cat         catu_water_depths           "Table 12.4"
+    txt         txt_water_depths_name       "Table 12.4"
+    txt         txt_water_depths_desc       "Table 12.4"  
+  }
+```
+
+## Horizon morphology data {#sec-erd-horizon}
+
+```{mermaid}
+%%| fig-cap: "Horizon morphology - main tables only"
+
+erDiagram
+  horizon ||--|{  : "has a"
+
+```
+
+
+```{mermaid}
+%%| fig-cap: "Horizon morphology - including support tables"
+
+erDiagram
+  horizon ||--|{ horizon : "has at least one"
+
+```
+
+```{mermaid}
+%%| fig-cap: "Horizon morphology - Details"
+
+erDiagram
+  horizon }|--|{ parent_material_origin : "code comes from"
+  horizon }|--|{ parent_material_origin_mod : "code comes from"
+
+
+  horizon {
+  id         id_site
+  id         id_horizon
+  cat        catu_parent_material_origin    "13.7.1"
+  cat        catu_anthropic_origin_modifier "13.7.1"
+ 
+  
+ parent_material_origin {
+    id          id_pmo
+    cat         catu_pmo           "Table 24.5"
+    txt         txt_pmo_name       "Table 24.5"
+    txt         txt_pmo_desc       "Table 24.5"  
   }
   
-  fragments_artefacts {
-    id            horizonIdentifier 
-    id            fragOtherIdentifier
-    catu          fragArtefType "Section 14.2.1.2"
-    number[0-100] fragArtefAmtP "Section 14.2.1.2"
+   parent_material_origin_mod {
+    id          id_pmo_mod
+    cat         catu_pmo_mod           "Table 13.1"
+    txt         txt_pmo_mod_name       "Table 13.1"
+    txt         txt_pmo_mod_desc       "Table 13.1"  
   }
-
-  fragArtefTypes {
-    id fragArtefTypeIdentifier
-    catu fragArtefTypeCode "Table 14.7"
-    text fragArtefTypeName "Table 14.7"
-    text fragArtefTypeDesc "Table 14.7"
-  }
-
- roots {
-   id horizonIdentifier 
-   number[0-100] rootsAmtSmlP
-   number[0-100] rootsAmtMedP
-   number[0-100] rootsAmtLgeP
-   catu          rootsPos
-  }
-
-  rootsPosTypes {
-    id rootsPosTypeIdentifier
-    catu rootsPosCode "Table 14.7"
-    text rootsPosName "Table 14.7"
-    text rootsPosDesc "Table 14.7"
-  }
-  
-  voids {
-    id horizonIdentifier 
-    id voidIdentifier
-    catu voidType       "Table 14.10"
-    num[0-100] voidAmtP 
-    catu voidConn       "Table 14.11"
-    }
-    
-    
-
 ```
 
 ## Sample data {#sec-erd-samples}
 
 ## Interpretation data {#sec-erd-interp}
-
-
-
 

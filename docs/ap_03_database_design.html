@@ -375,10 +375,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#rapid-assessment" id="toc-rapid-assessment" class="nav-link active" data-scroll-target="#rapid-assessment"><span class="header-section-number">D.1</span> Rapid assessment</a></li>
+  <li><a href="#helper-tables" id="toc-helper-tables" class="nav-link active" data-scroll-target="#helper-tables"><span class="header-section-number">D.1</span> Helper tables</a>
+  <ul class="collapse">
+  <li><a href="#measurement-type" id="toc-measurement-type" class="nav-link" data-scroll-target="#measurement-type"><span class="header-section-number">D.1.1</span> Measurement type</a></li>
+  </ul></li>
   <li><a href="#sec-erd-setting" id="toc-sec-erd-setting" class="nav-link" data-scroll-target="#sec-erd-setting"><span class="header-section-number">D.2</span> Soil Setting</a></li>
-  <li><a href="#sec-erd-surface" id="toc-sec-erd-surface" class="nav-link" data-scroll-target="#sec-erd-surface"><span class="header-section-number">D.3</span> Soil Surface</a></li>
-  <li><a href="#sec-erd-profile" id="toc-sec-erd-profile" class="nav-link" data-scroll-target="#sec-erd-profile"><span class="header-section-number">D.4</span> Profile data</a></li>
+  <li><a href="#sec-erd-profile" id="toc-sec-erd-profile" class="nav-link" data-scroll-target="#sec-erd-profile"><span class="header-section-number">D.3</span> Profile data</a></li>
+  <li><a href="#sec-erd-surface" id="toc-sec-erd-surface" class="nav-link" data-scroll-target="#sec-erd-surface"><span class="header-section-number">D.4</span> Soil Surface</a></li>
   <li><a href="#sec-erd-horizon" id="toc-sec-erd-horizon" class="nav-link" data-scroll-target="#sec-erd-horizon"><span class="header-section-number">D.5</span> Horizon data</a></li>
   <li><a href="#sec-erd-samples" id="toc-sec-erd-samples" class="nav-link" data-scroll-target="#sec-erd-samples"><span class="header-section-number">D.6</span> Sample data</a></li>
   <li><a href="#sec-erd-interp" id="toc-sec-erd-interp" class="nav-link" data-scroll-target="#sec-erd-interp"><span class="header-section-number">D.7</span> Interpretation data</a></li>
@@ -414,44 +417,503 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>The following diagrams demonstrate one way in which the data model defined in this manual can be structured. The diagrams only deal with the data themselves - security, user management, change tracking and other helper functionalities are left out for clarity. The model is optimised to highlight the relationships between the various data points and contains some structures that support the controlled vocabulary lists, but is not optimised for performance.</p>
-<section id="rapid-assessment" class="level2" data-number="D.1">
-<h2 data-number="D.1" class="anchored" data-anchor-id="rapid-assessment"><span class="header-section-number">D.1</span> Rapid assessment</h2>
-<div class="cell" data-layout-align="default">
+<section id="helper-tables" class="level2" data-number="D.1">
+<h2 data-number="D.1" class="anchored" data-anchor-id="helper-tables"><span class="header-section-number">D.1</span> Helper tables</h2>
+<section id="measurement-type" class="level3" data-number="D.1.1">
+<h3 data-number="D.1.1" class="anchored" data-anchor-id="measurement-type"><span class="header-section-number">D.1.1</span> Measurement type</h3>
+<p>Some numeric parameters require a separate specification for types of missing data (e.g.&nbsp;aspect at the site, <a href="pr_01_surface.html#sec-pr-aspect" class="quarto-xref"><span>Section 11.2</span></a>). These codes are built in to most categorical code lists in this standard (where it makes sense to include them). For numeric data, a companion text column is required. It is generally expected that it will be populated in a semi-automated manner - for each parameter, it should default to <span class="ceg">NR</span>, and be automatically updated to <span class="ceg">NM</span> if a value is supplied. Users may also update to <span class="ceg">ND</span> as needed.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-missing" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;D.1: Data record type
+</figcaption>
+<div aria-describedby="tbl-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">erDiagram
-  site ||--|{ disturbances
-
-  site {
-    id          id_site                 "10.2.1"
-    usr         usr_author              "10.2.2"
-    geo         loc_site                "10.2.3"
-    dt          dt_site                 "10.2.4"
-    txt         catu_site_purpose       "10.2.5"
-    txt         catu_site_selection     "10.2.6"
-    txt         catu_site_exposure      "10.2.7"
-    num[0-1000] amt_site_depth_max_cm   "10.2.8"
-    txt         catu_early_stop         "10.2.9"
-   
-  }
-  
-  disturbances {
-    id          id_site
-    id          id_disturbance
-    txt         catu_disturbance
-    txt         catu_disturbance_age
-    amt[0-Inf]  amt_disturbance_age_days
+<div id="zadtiyorgq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zadtiyorgq table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+#zadtiyorgq thead, #zadtiyorgq tbody, #zadtiyorgq tfoot, #zadtiyorgq tr, #zadtiyorgq td, #zadtiyorgq th {
+  border-style: none;
+}
 
-</pre>
+#zadtiyorgq p {
+  margin: 0;
+  padding: 0;
+}
+
+#zadtiyorgq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#zadtiyorgq .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#zadtiyorgq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#zadtiyorgq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#zadtiyorgq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zadtiyorgq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zadtiyorgq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zadtiyorgq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#zadtiyorgq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#zadtiyorgq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#zadtiyorgq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#zadtiyorgq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#zadtiyorgq .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#zadtiyorgq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#zadtiyorgq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#zadtiyorgq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#zadtiyorgq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#zadtiyorgq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#zadtiyorgq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zadtiyorgq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#zadtiyorgq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#zadtiyorgq .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#zadtiyorgq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zadtiyorgq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#zadtiyorgq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#zadtiyorgq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zadtiyorgq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zadtiyorgq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#zadtiyorgq .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zadtiyorgq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#zadtiyorgq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zadtiyorgq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zadtiyorgq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zadtiyorgq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zadtiyorgq .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zadtiyorgq .gt_left {
+  text-align: left;
+}
+
+#zadtiyorgq .gt_center {
+  text-align: center;
+}
+
+#zadtiyorgq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#zadtiyorgq .gt_font_normal {
+  font-weight: normal;
+}
+
+#zadtiyorgq .gt_font_bold {
+  font-weight: bold;
+}
+
+#zadtiyorgq .gt_font_italic {
+  font-style: italic;
+}
+
+#zadtiyorgq .gt_super {
+  font-size: 65%;
+}
+
+#zadtiyorgq .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#zadtiyorgq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#zadtiyorgq .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#zadtiyorgq .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#zadtiyorgq .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#zadtiyorgq .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#zadtiyorgq .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#zadtiyorgq .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#zadtiyorgq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">NM</td>
+<td class="gt_row gt_left" headers="Name">Parameter was recorded normally</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">ND</td>
+<td class="gt_row gt_left" headers="Name">Parameter could not be reliably determined or does not apply</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">NR</td>
+<td class="gt_row gt_left" headers="Name">Parameter was not recorded</td>
+</tr>
+</tbody>
+</table>
+
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
+</figure>
 </div>
+</div>
+</section>
 </section>
 <section id="sec-erd-setting" class="level2" data-number="D.2">
 <h2 data-number="D.2" class="anchored" data-anchor-id="sec-erd-setting"><span class="header-section-number">D.2</span> Soil Setting</h2>
@@ -517,12 +979,7 @@ ul.task-list li input[type="checkbox"] {
   catu siteSelMethodCode "Section 3.6"
   }
   
-  sitePurposes {
-  id sitePurposeIdentifier
-  catu sitePurposeCode "Table 3.1"
-  text sitePurposeName "Table 3.1"
-  text sitePurposeDesc "Table 3.1"
-  }
+  
   
   siteSelMethods {
   id siteSelMethodIdentifier
@@ -584,8 +1041,6 @@ ul.task-list li input[type="checkbox"] {
   number[0-Inf] lformSlopeRangeHi "Section 5.1.2"
   }
 
-
-
 </pre>
 </div>
 <p></p><figcaption> Details</figcaption> </figure><p></p>
@@ -593,34 +1048,15 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="sec-erd-surface" class="level2" data-number="D.3">
-<h2 data-number="D.3" class="anchored" data-anchor-id="sec-erd-surface"><span class="header-section-number">D.3</span> Soil Surface</h2>
-</section>
-<section id="sec-erd-profile" class="level2" data-number="D.4">
-<h2 data-number="D.4" class="anchored" data-anchor-id="sec-erd-profile"><span class="header-section-number">D.4</span> Profile data</h2>
-</section>
-<section id="sec-erd-horizon" class="level2" data-number="D.5">
-<h2 data-number="D.5" class="anchored" data-anchor-id="sec-erd-horizon"><span class="header-section-number">D.5</span> Horizon data</h2>
+<section id="sec-erd-profile" class="level2" data-number="D.3">
+<h2 data-number="D.3" class="anchored" data-anchor-id="sec-erd-profile"><span class="header-section-number">D.3</span> Profile data</h2>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">erDiagram
-  horizon ||--|{ pedality description : "has at least one"
-  horizon ||--|{ rock fragments description : "has at least one"
-  horizon ||--|{ non-rock fragments description : "has at least one"
-  horizon ||--|{ artefacts description : "has at least one"
-  horizon ||--|{ roots description : "has at least one"
-  horizon ||--|{ voids description : "has at least one"
-  horizon ||--|{ pores description : "has at least one"
-  horizon ||--|{ matrix colour : "has at least one"
-  horizon ||--o{ colour patterns : "may have one or more"
-
-
-
-
-
+  site ||--o{ disturbances : "may have some"
 
 </pre>
 </div>
@@ -633,116 +1069,428 @@ ul.task-list li input[type="checkbox"] {
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js">horizon ||--o{ horizon_peds
-horizon ||--o{ fragments_rock
-horizon ||--o{ fragments_other
-horizon ||--o{ fragments_artef
-
-
-
-
-erDiagram
-  horizon {
-    id site_identifier 
-    id horizon_identifier 
-    %% bounds %%
-    num[0-Inf]    horizon_depth_upper_cm
-    num[0-Inf]    horizon_depth_lower_cm
-    catu          horizon_bdy_shp                "Section 12.4"
-    cato          horizon_bdy_dist               "Section 12.5"
-    cato          horizon_moisture               "Section 12.6"
-    %% arch %%
-    catu          horizon_parent_material_origin "Table 24.5"
-    catu          horizon_anthropic_mod          "Table 13.1"
-    number[0-100] frag_rock_amt_total_p          "Section 14.2"
-    number[0-100] roots_amt_total_p              "Section 14.3.1"
-    number[0-100] roots_pos                      "Section 14.3.2"
-    number[0-100] voids_total_p                  "Section 14.4"
-    number[0-100] pores_total_p                  "Section 14.5"
-    
-    
-  }
-
-
-  horizonPeds {
-    id   horizon_identifier 
-    id   ped_identifier
-    cato ped_pedality   "Table 14.1"
-    catu pedShp        "Table 14.2, Table 14.3"
-    num[0-1000] pedSizeMedMm
-    num[0-500]  pedSizeLowerMm
-    num[0-500]  pedSizeUpperMm
-  }
-
-  fragments_rock {
-    id horizonIdentifier 
-    number[0-100] fragRockAmtSmlP
-    number[0-100] fragRockAmtMedP
-    number[0-100] fragRockAmtLgeP
-    catu          fragRockLithSml
-    catu          fragRockLithMed
-    catu          fragRockLithLge
-    catu          fragRockShpSml
-    catu          fragRockShpMed
-    catu          fragRockShpLge
-  }
+<pre class="mermaid mermaid-js">erDiagram
+  site ||--|{ disturbances : "has one or more"
+  disturbances }|--|{ disturbance_types : "code comes from"
+  disturbances }|--|{ disturbance_ages : "code comes from"
+  site }|--|{ site_purposes : "code comes from"
+  site }|--|{ site_selection_methods : "code comes from"
+  site }|--|{ site_exposure_types : "code comes from"
+  site }|--|{ site_early_stop_types : "code comes from"
   
-  fragments_other {
-    id            horizonIdentifier 
-    id            fragOtherIdentifier
-    catu          fragOtherType "Section 14.2.1.1"
-    number[0-100] fragOtherAmtP "Section 14.2.1.1"
-  }
-  
-  fragOtherTypes {
-    id fragOtherTypeIdentifier
-    catu fragOtherTypeCode "Table 14.6"
-    text fragOtherTypeName "Table 14.6"
-    text fragOtherTypeDesc "Table 14.6"
-  }
-  
-  fragments_artefacts {
-    id            horizonIdentifier 
-    id            fragOtherIdentifier
-    catu          fragArtefType "Section 14.2.1.2"
-    number[0-100] fragArtefAmtP "Section 14.2.1.2"
-  }
-
-  fragArtefTypes {
-    id fragArtefTypeIdentifier
-    catu fragArtefTypeCode "Table 14.7"
-    text fragArtefTypeName "Table 14.7"
-    text fragArtefTypeDesc "Table 14.7"
-  }
-
- roots {
-   id horizonIdentifier 
-   number[0-100] rootsAmtSmlP
-   number[0-100] rootsAmtMedP
-   number[0-100] rootsAmtLgeP
-   catu          rootsPos
-  }
-
-  rootsPosTypes {
-    id rootsPosTypeIdentifier
-    catu rootsPosCode "Table 14.7"
-    text rootsPosName "Table 14.7"
-    text rootsPosDesc "Table 14.7"
-  }
-  
-  voids {
-    id horizonIdentifier 
-    id voidIdentifier
-    catu voidType       "Table 14.10"
-    num[0-100] voidAmtP 
-    catu voidConn       "Table 14.11"
-    }
-    
-    
 
 </pre>
 </div>
-<p></p><figcaption> Details</figcaption> </figure><p></p>
+<p></p><figcaption> Profile overview - including support tables</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">erDiagram
+  site ||--|{ disturbances : "has one or more"
+  disturbances }|--|{ disturbance_types : "code comes from"
+  disturbances }|--|{ disturbance_ages : "code comes from"
+  site }|--|{ site_purposes : "code comes from"
+  site }|--|{ site_selection_methods : "code comes from"
+  site }|--|{ site_exposure_types : "code comes from"
+  site }|--|{ site_early_stop_types : "code comes from"
+
+  site {
+    id          id_site                  "10.2.1"
+    usr         usr_author               "10.2.2"
+    geo         loc_site                 "10.2.3"
+    dt          dt_site                  "10.2.4"
+    cat         catu_site_purpose        "10.2.5"
+    cat         catu_site_selection      "10.2.6"
+    cat         catu_site_exposure       "10.2.7"
+    num[0-1000] amt_site_depth_max_cm    "10.2.8"
+    txt         catu_early_stop          "10.2.9"
+  }
+  
+  site_purposes {
+    id          id_site_purpose
+    cat         catu_site_purpose        "Table 10.1"
+    txt         txt_site_purpose         "Table 10.1"
+  }
+  
+  site_selection_methods {
+    id          id_site_selection
+    cat         catu_site_selection      "Table 10.2"
+    txt         txt_site_selection       "Table 10.2"
+  }
+  
+  site_exposure_types {
+    id          id_site_exposure
+    cat         catu_site_exposure       "Table 10.3"
+    txt         txt_site_exposure_name   "Table 10.3"
+  }
+  
+  site_early_stop_types {
+    id          id_site_stop
+    cat         catu_site_stop           "Table 10.4"
+    txt         txt_site_stop            "Table 10.4"
+}
+  
+  disturbances {
+    id          id_site
+    id          id_disturbance
+    txt         catu_disturbance         "Table 10.5"
+    txt         catu_disturbance_age     "Table 10.6"
+    num[0-Inf]  amt_disturbance_age_days "10.3"
+  }
+
+  disturbance_types {
+    id          id_disturbance
+    cat         catu_disturbance         "Table 10.5"
+    txt         txt_disturbance_name     "Table 10.5"
+    txt         txt_disturbance_desc     "Table 10.5"
+  }
+  
+  disturbance_ages {
+    id          id_disturbance_age
+    cat         catu_disturbance_age     "Table 10.5"
+    txt         txt_disturbance_age_name "Table 10.5"
+    txt         txt_disturbance_age_desc "Table 10.5"
+  }
+  
+</pre>
+</div>
+<p></p><figcaption> Profile - Details</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-erd-surface" class="level2" data-number="D.4">
+<h2 data-number="D.4" class="anchored" data-anchor-id="sec-erd-surface"><span class="header-section-number">D.4</span> Soil Surface</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">erDiagram
+  site ||--|{ surface_cover : "has"
+  site ||--o{ erosion : "may have"
+  site ||--o{ deposition : "may have"
+
+</pre>
+</div>
+<p></p><figcaption> Surface - main tables only</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">erDiagram
+  site }|--|{ slope_methods : "code comes from"
+  site }|--|{ measurement_types : "code comes from"
+  site }|--|{ aspect_methods : "code comes from"
+  site ||--|{ surface_cover : "has"
+  surface_cover }|--|{ surface_cover_types : "code comes from"
+  site }|--|{ surface_water_types : "code comes from"
+  site }|--|{ surface_water_persts : "code comes from"
+  site }|--|{ surface_crack_types : "code comes from"
+  site }|--|{ surface_crack_shapes : "code comes from"
+  site ||--o{ site_erosion : "may have"
+  site }|--|{ site_microrelief_nat : "code comes from"
+  site }|--|{ site_microrelief_ant : "code comes from"
+  site_erosion }|--|{ erosion_types : "code comes from"
+  site_erosion }|--|{ erosion_severity : "code comes from"
+  site_erosion }|--|{ erosion_activity : "code comes from"
+  site ||--o{ site_deposition : "may have"
+  site_deposition }|--|{ deposition_types : "code comes from"
+  site_deposition }|--|{ deposition_severity : "code comes from"
+  site_deposition }|--|{ deposition_activity : "code comes from"
+  
+
+</pre>
+</div>
+<p></p><figcaption> Surface - including support tables</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">erDiagram
+  site }|--|{ slope_methods : "code comes from"
+  site }|--|{ measurement_types : "code comes from"
+  site }|--|{ aspect_methods : "code comes from"
+  site ||--|{ surface_cover : "has at least one"
+  surface_cover }|--|{ surface_cover_types : "code comes from"
+  site }|--|{ surface_water_types : "code comes from"
+  site }|--|{ surface_water_persts : "code comes from"
+  site }|--|{ surface_crack_types : "code comes from"
+  site }|--|{ surface_crack_shapes : "code comes from"
+  site ||--o{ site_erosion : "may have some"
+  site }|--|{ site_microrelief_nat : "code comes from"
+  site }|--|{ site_microrelief_ant : "code comes from"
+  site_erosion }|--|{ erosion_types : "code comes from"
+  site_erosion }|--|{ erosion_severity : "code comes from"
+  site_erosion }|--|{ erosion_activity : "code comes from"
+  site ||--o{ site_deposition : "may have some"
+  site_deposition }|--|{ deposition_types : "code comes from"
+  site_deposition }|--|{ deposition_severity : "code comes from"
+  site_deposition }|--|{ deposition_activity : "code comes from"
+
+  site {
+    id          id_site                  "10.2.1"
+    num[0-90]   amt_slope_d              "11.1"
+    cat         catu_slope_rec           "Table D.1.1"
+    cat         catu_slope_method        "Table 11.1"
+    num[0-359]  amt_aspect_d             "11.2"
+    cat         catu_aspect_rec          "Table D.1.1"
+    cat         catu_aspect_method       "Table 11.2"
+    cat         catu_surface_water       "11.4"
+    cat         cato_surface_water_perst "11.4"
+    cat         catu_surface_cracks      "11.5"
+    cat         catu_surface_crack_shp   "11.5"
+    cat         catu_microrelief_nat     "11.6.1"
+    cat         catu_microrelief_ant     "11.6.2"
+  }
+  
+  slope_methods {
+    id          id_slope_method
+    cat         catu_slope_method        "Table 11.1"
+    txt         txt_slope_method_name    "Table 11.1"
+    txt         txt_slope_method_desc    "Table 11.1"
+  }
+  
+  aspect_methods {
+    id          id_aspect_method
+    cat         catu_aspect_method        "Table 11.2"
+    txt         txt_aspect_method_name    "Table 11.2"
+    txt         txt_aspect_method_desc    "Table 11.2"
+  }
+  
+  measurement_types {
+    id          id_mtype
+    cat         catu_mtype
+    txt         txt_mtype_name           "Table D1"
+    txt         txt_mtype_desc           "Table D1"
+  }
+
+  surface_cover {
+    id          id_site
+    cat         catu_surface_cover       "11.3"
+    num[0-100]  amt_surface_cover        "11.3"
+  }
+  
+  surface_cover_types {
+    id          id_surfcov
+    cat         catu_surface_cover       "Table 11.3"
+    txt         txt_surface_cover_name   "Table 11.3"
+    txt         txt_surface_cover_desc   "Table 11.3"
+  }
+  
+  surface_water_types {
+    id          id_surface_water
+    cat         catu_surface_water      "Table 11.4"
+    txt         txt_surface_water_name  "Table 11.4"
+    txt         txt_surface_water_desc  "Table 11.4"
+  }
+
+  surface_water_persts {
+    id          id_surface_water_perst
+    cat         catu_surface_water_perst       "Table 11.5"
+    txt         txt_surface_water_perst_name   "Table 11.5"
+    txt         txt_surface_water_perst_desc   "Table 11.5"
+  }
+
+  surface_crack_types {
+    id          id_surface_crack
+    cat         catu_surface_crack             "Table 11.6"
+    txt         txt_surface_crack_name         "Table 11.6"
+    txt         txt_surface_crack_desc         "Table 11.6"
+  }
+  
+  surface_crack_shapes {
+    id          id_surface_crack_shp
+    cat         catu_surface_crack_shp         "Table 11.7"
+    txt         txt_surface_crack_shp_name     "Table 11.7"
+    txt         txt_surface_crack_shp_desc     "Table 11.7"
+  }
+  
+  site_microrelief_nat {
+    id          id_microrelief_nat
+    cat         catu_microrelief_nat         "Table 11.8"
+    txt         txt_microrelief_nat_name     "Table 11.8"
+    txt         txt_microrelief_nat_desc     "Table 11.8"
+  }
+  
+  site_microrelief_ant {
+    id          id_microrelief_ant
+    cat         catu_microrelief_ant         "Table 11.9"
+    txt         txt_microrelief_ant_name     "Table 11.9"
+    txt         txt_microrelief_ant_desc     "Table 11.9"
+  }
+  
+  site_erosion {
+    id          id_site
+    id          id_erosion                   
+    cat         catu_erosion                  
+    cat         cato_erosion_severity
+    cat         cato_erosion_activity
+  }
+  
+  erosion_types {
+    id          id_erosion
+    cat         catu_erosion                   "Table 11.10"
+    txt         txt_erosion_name               "Table 11.10"
+    txt         txt_erosion_desc               "Table 11.10"
+  }
+  
+  erosion_severity {
+    id          id_erosion_severity
+    cat         catu_erosion_severity          "Table 11.11"
+    txt         txt_erosion_severity_name      "Table 11.11"
+    txt         txt_erosion_severity_desc      "Table 11.11"
+  }  
+  
+  erosion_activity {
+    id          id_erosion_activity
+    cat         catu_erosion_activity          "Table 11.12"
+    txt         txt_erosion_activity_name      "Table 11.12"
+    txt         txt_erosion_activity_desc      "Table 11.12"
+  }  
+  
+ site_deposition {
+    id          id_site
+    id          id_deposition               
+    cat         catu_deposition                   
+    cat         cato_deposition_severity
+    cat         cato_deposition_activity
+  }
+  
+  deposition_types {
+    id          id_deposition
+    cat         catu_deposition                   "Table 11.13"
+    txt         txt_deposition_name               "Table 11.13"
+    txt         txt_deposition_desc               "Table 11.13"
+  }  
+  
+  deposition_severity {
+    id          id_deposition_severity
+    cat         catu_deposition_severity          "Table 11.14"
+    txt         txt_deposition_severity_name      "Table 11.14"
+    txt         txt_deposition_severity_desc      "Table 11.14"
+  }  
+  
+  deposition_activity {
+    id          id_deposition_activity
+    cat         catu_deposition_activity          "Table 11.15"
+    txt         txt_deposition_activity_name      "Table 11.15"
+    txt         txt_deposition_activity_desc      "Table 11.15"
+  }  
+</pre>
+</div>
+<p></p><figcaption> Surface - Details</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-erd-horizon" class="level2" data-number="D.5">
+<h2 data-number="D.5" class="anchored" data-anchor-id="sec-erd-horizon"><span class="header-section-number">D.5</span> Horizon data</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">erDiagram
+  site ||--|{ horizon : "has at least one"
+
+</pre>
+</div>
+<p></p><figcaption> Horizon - main tables only</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">erDiagram
+  site ||--|{ horizon : "has at least one"
+  site }|--|{ boundary_shapes : "code comes from"
+  site }|--|{ boundary_widths : "code comes from"
+  site }|--|{ soil_moistures : "code comes from"
+  site }|--|{ water_depths : "code comes from"
+
+</pre>
+</div>
+<p></p><figcaption> Horizon - including support tables</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">erDiagram
+  site ||--|{ horizon : "has at least one"
+  site }|--|{ boundary_shapes : "code comes from"
+  site }|--|{ boundary_widths : "code comes from"
+  site }|--|{ soil_moistures : "code comes from"
+  site }|--|{ water_depths : "code comes from"
+  
+  horizon {
+  id         id_site
+  id         id_horizon
+  amt[0-Inf] amt_upper_depth_cm      "12.2"
+  amt[0-Inf] amt_upper_depth_med_cm  "12.2"
+  amt[0-Inf] amt_upper_depth_min_cm  "12.2"
+  amt[0-Inf] amt_upper_depth_max_cm  "12.2"
+  amt[0-Inf] amt_upper_depth_cm      "12.2"
+  amt[0-Inf] amt_lower_depth_med_cm  "12.2"
+  amt[0-Inf] amt_upper_depth_min_cm  "12.2"
+  amt[0-Inf] amt_upper_depth_max_cm  "12.2"
+  cat        catu_boundary_shape     "12.4"
+  amt[0-Inf] amt_boundary_cm         "12.5"
+  cat        catu_boundary_width     "12.5" 
+  cat        cato_soil_moisture      "12.6"
+  amt[0-Inf] amt_depth_water         "12.7"
+  cat        catu_depth_water        "12.7"
+  }
+  
+  boundary_shapes {
+    id          id_boundary_shape
+    cat         catu_boundary_shape          "Table 12.1"
+    txt         txt_boundary_shape_name      "Table 12.1"
+    txt         txt_boundary_shape_desc      "Table 12.1"
+  }
+ 
+  boundary_widths {
+    id          id_boundary_width
+    cat         catu_boundary_width          "Table 12.2"
+    txt         txt_boundary_width_name      "Table 12.2"
+    txt         txt_boundary_width_desc      "Table 12.2"
+  } 
+  
+  soil_moistures {
+    id          id_soil_moisture
+    cat         catu_soil_moisture          "Table 12.3"
+    txt         txt_soil_moisture_name      "Table 12.3"
+  }
+  
+  water_depths {
+    id          id_water_depths
+    cat         catu_water_depths           "Table 12.4"
+    txt         txt_water_depths_name       "Table 12.4"
+    txt         txt_water_depths_desc       "Table 12.4"  
+}
+</pre>
+</div>
+<p></p><figcaption> Horizon - Details</figcaption> </figure><p></p>
 </div>
 </div>
 </div>

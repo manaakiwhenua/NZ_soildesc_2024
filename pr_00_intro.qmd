@@ -172,13 +172,13 @@ The method by which the soil was exposed for observation affects which parameter
 #| tbl-cap: "Method of profile exposure"
 
 dat_pr_gear <-
-  tribble(~Code, ~Name,
-          'P1', 'Quick pit – up to 0.5 m wide and generally no deeper than 1m',
-          'P2', 'Full pit > 1 m wide, exposing the complete profile to regolith or bedrock',
-          'E', 'Exposure – road cutting or similar, chipped back and cleaned',
-          'C1', 'Relatively undisturbed soil core, < 50 mm diameter',
-          'C2', 'Relatively undisturbed soil core, ≥ 50 mm diameter',
-          'A', 'Auger sample (hand or mechanical, including e.g. post hole diggers)')
+  tribble(~Code, ~Name, ~Description,
+          'P1', 'Quick pit', 'Pit up to 0.5 m wide and generally no deeper than 1m',
+          'P2', 'Full pit', 'Pit or trench > 1 m wide, exposing the complete profile to regolith or bedrock',
+          'E', 'Exposure', 'Road cutting or similar, chipped back and cleaned',
+          'C1', 'Small Core', 'Relatively undisturbed soil core, < 50 mm diameter',
+          'C2', 'Large Core', 'Relatively undisturbed soil core, ≥ 50 mm diameter',
+          'A', 'Auger', 'Hand or mechanical auger, including e.g. post hole diggers')
 
 tbl_pr_gear <- gt(dat_pr_gear) |>
    tab_options(
@@ -191,7 +191,7 @@ tbl_pr_gear <- gt(dat_pr_gear) |>
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10))
+  cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_pr_gear
 ```
