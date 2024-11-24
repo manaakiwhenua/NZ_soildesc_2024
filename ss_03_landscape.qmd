@@ -20,7 +20,7 @@ Geomorphology limits the range of soils than can occur at specific locations on 
 Landscape Provinces identify major geomorphic zones in New Zealand, expressive of large-scale lithological associations, tectonic regime, and climate. @tbl-ss-lftp lists their names and @fig-ss-lftp shows their general distribution.
 
 |   | Northern Provinces |   | Southern Provinces |
-|:--:|:---|:--:|:---|
+|:----------------:|:-----------------|:----------------:|:-----------------|
 | [NN]{.ceg} | Northland | [SI]{.ceg} | South Island axial mountains |
 | [NL]{.ceg} | Northern Lowlands | [SR]{.ceg} | Front Ranges and inland basins |
 | [NW]{.ceg} | North-western sedimentary hills | [SO]{.ceg} | Otago basin and range |
@@ -88,12 +88,12 @@ Relief is usually best determined from a DEM, but can be estimated in the field.
 
 #### Characteristic slope {#sec-gmph-lscslp}
 
-The characteristic slope is the most common range of slopes within a regional landscape. These are often controlled by local geology. This measure is often communicated as the modal value of local slope classes, but is best recorded as a median value in degrees, plus or minus an appropriate range (e.g. 1 standard deviation to capture 68% of slopes in a landscape).
+The characteristic slope is the most common range of slopes within a regional landscape. These are often controlled by local geology.
 
 Characteristic slope is usually best determined from zonal analysis of a DEM-derived slope dataset, but can be estimated in the field. Estimate in the field as a median and range, in whole degrees, e.g. [25° (20-28)]{.ceg}. Slope classes may be applied to the recorded data; some options are presented in @sec-slopeclass.
 
 ::: {.callout-note appearance="simple" collapse="true" title="Multiple characteristic slopes"}
-Some landscapes may have two or more distinct characteristic slopes, e.g. the fronts and tops of alluvial terrace elements. In this case the median will describe the dominant surface (usually the tops) while the range will capture the steeper areas. Recording multiple characteristic slopes at landscape scale is not considered useful, as adequate context is provided by naming the landscape and its component landforms.
+Some landscapes may have two or more distinct characteristic slopes, e.g. the fronts and tops of alluvial terrace elements. In this case the median will describe the dominant surface while the range will capture the steeper areas. Recording multiple characteristic slopes at landscape scale is not considered useful, as adequate context is provided by naming the landscape and its component landforms.
 :::
 
 #### Stream channels {#sec-gmph-lscchn}
@@ -115,8 +115,8 @@ dat_hr_lsnames <-
           'Hi', 'Hills', 'Gentle to very steep, moderately high to high relief (90-300 m), fixed and well connected stream channels, shallow to deep', 'Hillscapes, hill country, hilly land',
           'Up', 'Uplands', 'Gentle to very steep, low relief (30-90 m) but relatively high elevation, fixed and well connected stream channels, shallow valleys and plateaus, located among hills and mountains', 'Piedmont',
           'Ll', 'Lowlands', 'Gentle to very steep, low relief (30-90 m) and elevation, fixed and well connected stream channels, shallow to deep', 'Downlands',
-          'Te', 'Terraces', 'Former floodplains, often uplifted and sometimes covered by loess. Flat to gently undulating upper surfaces bounded by distinctive drop-offs on their downhill end, often backing on to lowlands, hills or mountains at their uphill end.', 'Marine bench',
-          'Al', 'Alluvial plains', 'Level to very gentle surfaces created by fluvial deposition. May or may not still be in the active flood zone. Stream channels actively migrating', 'Floodplains',
+          'Te', 'Terraces', 'Former plains, uplifted and sometimes covered by loess. Flat to gently undulating upper surfaces bounded by distinctive drop-offs on their downhill end, often backing on to lowlands, hills or mountains at their uphill end.', 'Marine benches',
+          'Pl', 'Plains', 'Level to very gentle surfaces created by fluvial and/or airfall tephra deposition.', 'Floodplains, ringplains',
           'Sc', 'Sand country', 'Extensive dune and sandplain areas. Low relief and elevation, gentle to steep slopes, and active stream channels, often with interrupted connectivity', 'Dunefields',
           'Cs', 'Coasts', 'On- and near-shore features created by the interaction of the ocean with the land, including beaches, deltas, lagoons and estuaries', 'Coastlines'
           )
@@ -149,47 +149,51 @@ A landform is a component of the landscape, and again can have a variable extent
 
 ### Naming Landforms {#sec-gmph-lfmnm}
 
-Few controlled vocabularies for landforms exist. The schema given below is provisional and based on terms seen in common use in New Zealand environmental datasets.
+Few controlled vocabularies for landforms exist. The schema given below is provisional and based on terms seen in common use in New Zealand environmental datasets and related publications.
 
 ```{r}
 #| label: tbl-hr-lfnames
-#| tbl-cap: "Common Soil-bearing Landforms"
+#| tbl-cap: "Common soil-bearing landforms of New Zealand (adapted from @milne1995, @johnson2004, @tielidze2021, and @nationalcommitteeonsoilandterrain2023a)"
 
 dat_hr_lfnames <-
-  tribble(~Code, ~Name, ~Synonyms,
+  tribble(~Code, ~Name, ~Description, ~Synonyms,
           # natural
-          'Ba', 'Bar', 'channel bar, meander bar',
-          'Bc', 'Beach', '',
-          'Bo', 'Bog', 'peat bog, swamp',
-          'Ca', 'Caldera', '',
-          'Cl', 'Cliff', '', 
-          'Cn', 'Cone',  '', 
-          'Cr', 'Crest', 'Apex',
-          'Dl', 'Delta', 'River mouth',
-          'Du', 'Dune',  '',
-          'Fl', 'Flat', 'Tidal flat, intertidal flat, supratidal flat, infill',
-          'Fn', 'Fan',   '',
-          'Go', 'Gorge', 'Ravine', 
-          'Lv', 'Levee', '',
-          'Mo', 'Mound', 'Lahar mound, knoll, hillock',
-          'Mr', 'Moraine', '',
-          'Ri', 'Ridge', '',
-          'Pl', 'Plain', 'Alluvial plain, backplain, sand plain, outwash plain',
-          'Pt', 'Plateau', 'Tableland',
-          'Sa', 'Saddle',   '', 
-          'Sc', 'Scree', '',
-          'Sh', 'Shoulder', '',
-          'Sp', 'Spur',     '',
-          'Sw', 'Swale', 'Interdune',
-          'Sl', 'Slope', 'Backslope, midslope, toeslope, footslope, dip slope, flank, headslope, talus slope', 
-          'Tt', 'Terrace tread', 'Bench',
-          'Tr', 'Terrace riser','', 
-          'Vl', 'Valley', '',
+          'Ba', 'Bar', 'A ridge-like accumulation of sand, gravel, or other alluvial material formed in the channels, along the banks, or at the mouth of a stream where a decrease in velocity induces deposition', 'sandbar, channel bar, meander bar',
+          'Bc', 'Beach', 'Low-slope, shorefront accumulation of unconsolidated sediment (usually sand to cobble sized)', '',
+          'Bo', 'Bog', 'Rainfall-fed, peat-accumulating freshwater wetland with low pH and nutrient availability and restricted water flow', 'peat bog, domed bog',
+          'Ca', 'Caldera', 'Large hollow in the top of a volcano', 'volcanic crater',
+          'Cl', 'Cliff', 'Steep to vertical slope with more than 10 m local relief', '', 
+          'Cn', 'Cone',  'Moderate to steep, usually isolated hill built up by volcanic activity', '', 
+          'Cr', 'Crest', 'A locally high area, from which the surface slopes downwards in opposite directions', 'Apex, Summit',
+          'Dl', 'Delta', 'A fan-shaped accumulation of alluvial sediment, usually with several water channels, at a river or stream mouth.', 'River mouth',
+          'Du', 'Dune', 'Accumulation of windblown sand into an elongated ridge or crescent shape', '',
+          'Ew', 'Ephemeral wetland', 'Wetland subject to pronounced seasonal drying. Non-peaty, with neutral pH and moderate nutrient status. Usually in a closed depression', '',
+          'Fl', 'Flat', 'Level area created by deposition', 'Tidal flat, intertidal flat, supratidal flat, infill',
+          'Fn', 'Fan', 'Gently sloping, flat to convex depositional slope, often at the foot of a steeper area and built up by a stream or by colluvial action', '',
+          'Fe', 'Fen', 'Rainfall and groundwater-fed peaty freshwater wetland with low to moderate pH and nutrient availability, and slightly fluctuating water table', '',
+          'Go', 'Gorge', 'A valley 10 m or more deep with over three-quarters of its sides sloping at more than 25°, and half or more of its sides formed by cliffs, and less than 5 times as wide as it is deep over half or more of its length, and everywhere less than 10 times as wide as it is deep', 'Ravine', 
+          'Lv', 'Levee', 'An embankment of flood alluvium built up alongside a river and typically with lower-lying land behind', '',
+          'Ma', 'Marsh', 'Wetlands with large periodic water table fluctuations, relatively high pH and nutrient content, and mainly mineral substrate', '',
+          'Mh', 'Hummocky moraine', 'Low, roughly undulating deposits of glacial till', '',
+          'Mo', 'Mound', 'A small hill with moderate to steep sides, often somewhat isolated', 'Lahar mound, knoll, hillock',
+          'Mr', 'Moraine ridge', 'Low ridges comprising glacial till', '', 
+          'Pk', 'Pakihi and gumland', 'Wetland in highly leached soils with low pH and nutrient availability. Sometimes periodically dry and usually without peat', '',
+          'Pl', 'Plain', 'Level to gently undulating area built up by alluvial, aeolian, or volcanic deposition', 'Alluvial plain, backplain, sand plain, outwash plain',
+          'Pt', 'Plateau', 'Any comparatively flat extensive and elevated area, often dissected and with a steep dropoff on at least one side', 'Tableland',
+          'Ri', 'Riser', 'The vertical or steeply sloping surface of one of a series of natural, step-like landforms, as those of a glacial stairway or of successive stream terraces', '',
+          'Rt', 'Tread', 'The flat or gently sloping broadly planar surface of one of a series of natural step-like landforms, as those of a glacial stairway or of successive stream terraces', 'Bench',
+          'Sa', 'Saddle', 'A low point (dip) along a ridge or the lowest point between two adjacent elevated areas. In one axis along the ridge or between the elevated areas the land slopes up in both directions and in the other axis, typically at right angles to the first, the land slopes down in both directions', '', 
+          'Se', 'Seepage', 'Sloped area carrying a slow but steady flow of groundwater', 'Flushes',
+          'Sm', 'Swamp', 'Rainfall and groundwater-fed, somewhat peaty freshwater wetland with high pH and nutrient availability, and seasonally fluctuating water table', 'Backswamp',
+          'Sw', 'Swale', 'A low-lying depression between adjacent ridges', 'Interdune, dune slack',
+          'Sl', 'Slope', 'Very gentle to very steep inclined surfaces', 'Backslope, midslope, toeslope, footslope, dip slope, flank, headslope, talus slope', 
+          'St', 'Saltmarsh', 'Wetlands with saline water supply, usually in tidally influenced areas', 'Estuary, mudflat',
+          'Vl', 'Valley-bottom', 'Open depression between parallel facing slopes', '',
           # human:
-          'Cs', 'Cut-surface', '',
-          'Cf', 'Cut-face', '',
-          'Em', 'Embankment', '',
-          'Fi', 'Fill-top', ''
+          'Cs', 'Cut-surface', 'Flat excavated by human activity', '',
+          'Cf', 'Cut-face', 'Slope excavated by human activity', '',
+          'Em', 'Embankment', 'Ridge or slope built up by human activity', '',
+          'Fi', 'Fill-top', 'Flat built up by human activity', ''
           )
 
 tbl_hr_lfnames <- gt(dat_hr_lfnames) |>
@@ -203,8 +207,13 @@ tbl_hr_lfnames <- gt(dat_hr_lfnames) |>
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
+  tab_row_group(label = 'Natural', rows = 1:30, id = 'n') |>
+  tab_row_group(label = 'Human-induced', rows = 31:35, id = 'a') |>
+  row_group_order(groups = c('n', 'a')) |>
+  tab_style(style = list(cell_text(weight = 'bold')),
+            locations = cells_row_groups()) |>
   cols_label(Synonyms = 'Synonyms and subtypes') |>
-  cols_width(Code ~pct(10))
+  cols_width(Code ~pct(10), Name ~pct(20), Synonyms ~pct(20))
 
 tbl_hr_lfnames
 
@@ -212,15 +221,17 @@ tbl_hr_lfnames
 
 ### Describing landforms {#sec-gmph-lfmdsc}
 
-Where available landforms are unsatisfactory or a more detailed parameterisation of the landform is desired, the landform can optionally be described in terms of its slope, aspect and element.
+Where available landforms are unsatisfactory or a more detailed parameterisation of the landform is desired, the landform can optionally be described in terms of its slope, orientation and element.
 
 #### Slope {#sec-gmph-lfmslp}
 
 Record the characteristic slope of the major part of the landform as median and range in whole degrees, e.g. [5° (4-6)]{.ceg} for a low-angle fan. Slope classes may be applied to the recorded data; some options are presented in @sec-slopeclass.
 
-#### Aspect
+#### Orientation
 
-Record the characteristic aspect of the major part of the landform as median and range in whole degrees, e.g. [315 (300-330)]{.ceg} for a roughly northwest direction. Aspect classes may be applied to the recorded data; some options are presented in @sec-aspectclass.
+For simpler sloping landforms, record orientation as the characteristic aspect of the major part of the landform. Record median and range in whole degrees, e.g. [315 (300-330)]{.ceg} for a roughly northwest direction. For complex landforms with a range of aspects, record the orientation of the landform's longest axis, looking downslope (e.g. the direction in which a valley bottom is descending). Some landforms may not have an identifiable orientation (e.g. cones, saddles), in which case record [NA]{.ceg}.
+
+Aspect classes may be applied to the recorded data; some options are presented in @sec-aspectclass.
 
 #### Landform element {#sec-gmph-lfmelem}
 
