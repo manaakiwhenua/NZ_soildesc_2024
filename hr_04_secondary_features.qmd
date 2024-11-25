@@ -95,7 +95,7 @@ For rapid assessment note the presence of coating type(s) using @tbl-hr-coattype
 
 For detailed assessment, optionally also note their abundance as percentage of soil available surfaces covered.
 
-e.g. [OG P 80%]{.ceg} for well-developed
+e.g. [OG 80%]{.ceg} for well-developed organic coats covering most ped surfaces.
 
 ```{r}
 #| label: tbl-hr-coattype
@@ -142,16 +142,16 @@ Pans can be described in detail in terms of type, thickness, continuity, structu
 
 dat_hr_pantype <-
   tribble(~Code, ~Name, ~Description, ~Horizon,
-          'C', 'Cultivation pan', 'Pan comprising compressed soil, induced by cultivation (e.g. use of heavy farm machinery)', '',
+          'C', 'Cultivation pan', 'Pan comprising compressed soil, induced by cultivation (e.g. use of heavy farm machinery)', NA,
           'D', 'Densipan', 'Silty layers with a very high bulk density and extremly slow permeability', '\\*d (E horizons only)',
-          'H', 'Humus-pan', 'pan cemented by aluminium and organic matter. Common in Podzols; sometimes known as \'coffee rock\'', 'Bhm',
-          'F', 'Iron pan', 'interlocking nodules of Fe(/Mn) precipiates (bog iron), often at a texture contrast boundary', '',
-          'K', 'Calcareous pan', 'pans created by the precipitation of calcium carbonate (CaCO~3~)', '\\*km (B or BC horizons)',
+          'H', 'Humus-pan', 'Cemented by aluminium and organic matter. Common in Podzols; sometimes known as \'coffee rock\'', 'Bhm',
+          'F', 'Iron pan', 'Interlocking nodules of Fe(/Mn) precipitates (bog iron), often at a texture contrast boundary', NA,
+          'K', 'Calcareous pan', 'Created by the precipitation of calcium carbonate (CaCO~3~)', '\\*km (B or BC horizons)',
           'O', 'Ortstein pan', 'Pan cemented by iron and organic matter. Common in Podzols', 'Bsm',
-          'P', 'Placic', 'a very thin (< 10 mm), dark, iron-dominated pan with sharp boundaries', 'Bfm',
-          'Q', 'Silica pan', 'pans created by the precipitation of silica (SiO~2~)', '\\*qm (not A horizons)',
-          'X', 'Fragipan', 'an earthy, high density, erosion-resistant layer common to Pallic soils', '\\*x (B or BC horizons)',
-          'UK', 'Unknown', 'Pan origin cannot be clearly determined', ''
+          'P', 'Placic', 'A very thin (< 10 mm), dark, iron-dominated pan with sharp boundaries', 'Bfm',
+          'Q', 'Silica pan', 'Created by the precipitation of silica (SiO~2~)', '\\*qm (not A horizons)',
+          'X', 'Fragipan', 'An earthy, high density, erosion-resistant layer common to Pallic soils', '\\*x (B or BC horizons)',
+          'UK', 'Unknown', 'Pan origin cannot be clearly determined', NA
           )
 
 tbl_hr_pantype <- gt(dat_hr_pantype) |>
@@ -166,6 +166,7 @@ tbl_hr_pantype <- gt(dat_hr_pantype) |>
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
   fmt_markdown(columns = c(3, 4)) |>
+  sub_missing(columns = 4, missing_text = '') |>
   cols_width(Code ~pct(10), Name ~pct(20), Horizon ~pct(20))
 
 tbl_hr_pantype
