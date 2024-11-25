@@ -27,7 +27,7 @@ Sieving or direct measurement of solids may help estimate size. Weighing, or fil
 
 ### Pedality {#sec-hr-stru-pedality}
 
-Pedality refers to the degree of structural development evident within the horizon, independent of size or shape. Record pedality once per horizon using @tbl-hr-pedality.
+Pedality refers to the degree of structural development evident within the horizon, independent of size or shape. For rapid assessment, record pedality once per horizon using @tbl-hr-pedality. For routine or detailed assessment, record pedality for each nested ped observed (if more than one is seen; see @sec-hr-stru-nest).
 
 ```{r}
 #| label: tbl-hr-pedality
@@ -122,13 +122,10 @@ Some soil terms that don't seem to fit into the above schema are still in common
 Both structures are more correctly described as spheroidal with a characteristic size range of 1 ± 0.5 mm for crumb and 15 ± 10 mm for nut. Their use as a shorthand description is convenient, but the terms should not be used in databases because they conflate size and shape in a way that the modern schemas seek to avoid.
 :::
 
-+------------+----------+------------------------------------------------------------+-------------+
-| Code       | Name     | Description                                                | Orientation |
-+:==========:+:=========+:===========================================================+:============+
-| [CL]{.ceg} | Clod     | An artificially induced soil aggregate ≥ 100 mm in length  | Any         |
-+------------+----------+------------------------------------------------------------+-------------+
-| [FM]{.ceg} | Fragment | An artificially induced soil aggregate \< 100 mm in length | Any         |
-+------------+----------+------------------------------------------------------------+-------------+
+| Code | Name | Description | Orientation |
+|:--:|:---|:---|:---|
+| [CL]{.ceg} | Clod | An artificially induced soil aggregate ≥ 100 mm in length | Any |
+| [FM]{.ceg} | Fragment | An artificially induced soil aggregate \< 100 mm in length | Any |
 
 : : Artificially induced pedality shapes and identifying characteristics {#tbl-hr-clodshp .striped cols-width=\[10,20,50,20\]}
 
@@ -142,15 +139,19 @@ For rapid assessment, the dominant ped size may be recorded simply as [C]{.ceg} 
 
 Peds are commonly nested, with large structures breaking down to smaller ones that may also be a different shape. For highly detailed descriptions, multiple sets of nesting peds may be described in terms of their development, shape and size.
 
-For example, [S PR 80 ±  10]{.ceg} parting to [M BL 20 ±  2]{.ceg}.
+For example, [S PR 80 ±  10]{.ceg} parting to [M BL 20 ± 2]{.ceg}.
 
-## Rock fragments {#sec-rockfrag}
+## Fragments {#sec-frag}
 
-Rock fragments in soil horizons (\> 2 mm) provide information about soil development, particularly mode of emplacement in depositional soils. They also restrict the soil's water holding capacity, and when large and common enough can restrict land use and management practices.
+Fragments in soil horizons (\> 2 mm) provide information about soil development, particularly mode of emplacement in depositional soils. They also restrict the soil's water holding capacity, and when large and common enough can restrict land use and management practices.
 
-For rapid assessment, estimate total rock fragment abundance as an integer percentage, recording [0%]{.ceg} when confirming absence.
+For very rapid assessment, estimate total fragment abundance (rocks and non-rock materials as well as any artefacts) as an integer percentage, recording [0%]{.ceg} when confirming absence.
 
-For routine assessment, estimate abundance of small, medium and large stones separately (@tbl-hr-rockfrsz). Optionally, append dominant lithology class of each size fraction using @tbl-ss-pm and shape using @tbl-hr-rockfrshp.
+### Rock fragments {#sec-rockfrag}
+
+Rock fragments are soil mineral particles \> 2 mm. For rapid assessment, estimate total rock fragment abundance as an integer percentage, recording [0%]{.ceg} when confirming absence.
+
+For routine assessment, estimate abundance of small, medium and large rock fragments separately (@tbl-hr-rockfrsz). Optionally, append dominant lithology class of each size fraction using @tbl-ss-pm and shape using @tbl-hr-rockfrshp.
 
 Example: [60% M (Hs R), 5% L (Hs R)]{.ceg} for a fluvial deposit dominated by waterworn greywacke cobbles with a few boulders.
 
@@ -158,7 +159,7 @@ For detailed assessment, estimate abundance, lithology, and shape for each of th
 
 ```{r}
 #| label: tbl-hr-rockfrsz
-#| tbl-cap: "Coarse fragment size classes for routine assessment"
+#| tbl-cap: "Fragment size classes for routine assessment"
 
 dat_hr_rockfrsz <-
   tribble(~Code, ~Name, ~Description,
@@ -209,13 +210,11 @@ tbl_hr_rockfrshp <- gt(dat_hr_rockfrshp) |>
 tbl_hr_rockfrshp
 ```
 
-### Other coarse soil components
-
-#### Natural {#sec-hr-nonrock}
+### Natural fragments {#sec-hr-nonrock}
 
 Biologically-derived coarse materials can alter the soil's water holding capacity and other parameters just as rock fragments can, although in general they can themselves hold more water. They will also break down faster.
 
-Where present in significant amounts, record natural non-rock fragments as a percentage abundance of the following:
+Where present in significant amounts, for rapid assessment record total percentage of natural non-rock fragments. For routine assessment record percentage abundance by type for small, medium and large sizes (@tbl-hr-rockfrsz) using @tbl-hr-nonrock.
 
 ```{r}
 #| label: tbl-hr-nonrock
@@ -246,11 +245,13 @@ tbl_hr_nonrock
 
 ```
 
-#### Artefacts {#sec-hr-artef}
+### Artefacts {#sec-hr-artef}
 
 Artefacts can both function like rock fragments and signify strong human influence on the soil profile.
 
-Where present in significant amounts, record artefact fragments as a percentage abundance of the categories in @tbl-hr-artefacts. Where further details are required, describe the materials present in free-text notes.
+Where present in significant amounts, for rapid assessment record total percentage of artefacts. For routine assessment record percentage abundance by type for small, medium and large sizes (@tbl-hr-rockfrsz) using @tbl-hr-artefacts.
+
+Where further details are required, describe the materials present in free-text notes.
 
 ```{r}
 #| label: tbl-hr-artefacts
@@ -432,13 +433,13 @@ tbl_hr_voidcon <- gt(dat_hr_voidcon) |>
 tbl_hr_voidcon
 ```
 
-Example: [10% IT C]{.ceg} for the void space in a strongly pedal, polyhedral topsoil.
+Example: [10% IT C]{.ceg} for the void space in a strongly pedal, polyhedral topsoil.
 
 ## Pores {#sec-pore}
 
-Pores are voids \< 2 mm in diameter. Macropores are \>= 0.075 mm, and micropores are \< 0.075 mm. This division is based on the size of pores that will conduct water at a potential of -0.4 kPa.
+Pores are voids \< 2 mm in diameter. Macropores are ≥ 0.075 mm, and micropores are \< 0.075 mm. This division is based on the size of pores that will conduct water at a potential of -0.4 kPa.
 
-For rapid assessment, estimate total percentage volume of Pores. This will rarely exceed 5%.
+For rapid assessment, estimate total percentage volume of pores. This will rarely exceed 5%.
 
 For detailed assessment, estimate the percentage volume of macropores and micropores separately. This will require the use of a magnifier.
 
