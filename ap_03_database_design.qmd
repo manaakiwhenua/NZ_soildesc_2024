@@ -47,11 +47,13 @@ tbl_ss_eventt
 ```{mermaid}
 %%| fig-cap: "Overview - main tables only"
 
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
-  site ||--|| location : "has one"
-  location ||--o{ site_events : "may have some"
-  site ||--|| landscape : "has one"
-  landscape ||--|{ landform : "has at least one"
+  Site ||--|| Location : "has one"
+  Site ||--|| Landform : "is in one"
+  Site ||--o{ "Recent events" : "may have some"
+  Site ||--|| "Landscape" : "is in one"
+  Landscape ||--|{ "Landform" : "contains at least one"
   
 
 ```
@@ -59,103 +61,171 @@ erDiagram
 ```{mermaid}
 %%| fig-cap: "Overview - including support tables"
 
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   site ||--|| location : "has one"
-  location ||--o{ siteEvents : "may have some"
-  sitePurposes }|--|{ site : "code comes from"
-  siteSelMethods }|--|{ site : "code comes from"
-  siteEventTypes  }|--|{ siteEvents : "code comes from"
-  site ||--|| landscape : "has one"
-  landscape ||--|{ landform : "has at least one"
-  
+  location }|--|{ elevation_measurement_methods : "code comes from"
+  location }|--|{ gnss_types : "code comes from"
+  site ||--|| landscape : "has one associated"
+  landscape }|--|{ provinces : "code comes from"
+  landscape }|--|{ landscapes : "code comes from"
+  landscape ||--|{ landform : "contains at least one"
+  landform }|--|{ landform_types : "code comes from"
+  landform }|--|{ measurement_types : "code comes from"
+  landform }|--|{ landform_elements : "code comes from"
+  landform }|--|{ landform_element_vmods : "code comes from"
+  landform }|--|{ landform_element_hmods : "code comes from"
 
 ```
-
 
 ```{mermaid}
 %%| fig-cap: "Details"
 
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   site ||--|| location : "has one"
-  location ||--o{ siteEvents : "may have some"
-  sitePurposes }|--|{ site : "code comes from"
-  siteSelMethods }|--|{ site : "code comes from"
-  siteEventTypes  }|--|{ siteEvents : "code comes from"
-  site ||--|| landscape : "has one"
-  landscape ||--|{ landform : "has at least one"
-  lscapeTypes }|--|{ landscape : "code comes from"
+  location }|--|{ elevation_measurement_methods : "code comes from"
+  location }|--|{ gnss_types : "code comes from"
+  site ||--|| landscape : "has one associated"
+  landscape }|--|{ provinces : "code comes from"
+  landscape }|--|{ landscapes : "code comes from"
+  landscape ||--|{ landform : "contains at least one"
+  landform }|--|{ landform_types : "code comes from"
+  landform }|--|{ measurement_types : "code comes from"
+  landform }|--|{ landform_elements : "code comes from"
+  landform }|--|{ landform_element_vmods : "code comes from"
+  landform }|--|{ landform_element_hmods : "code comes from"
   
   site {
-  id siteIdentifier "Section 3.1"
-  text author "Section 3.2"
-  date visitDate "Section 3.4"
-  catu sitePurposeCode "Section 3.5"
-  catu siteSelMethodCode "Section 3.6"
-  }
-  
-  
-  
-  siteSelMethods {
-  id siteSelMethodIdentifier
-  catu siteSelMethodCode "Table 3.2"
-  text siteSelMethodName "Table 3.2"
-  text siteSelMethodDesc "Table 3.2" 
+    id           id_site                   "Section 10.2.1"
+    txt          usr_author                "Section 10.2.2"
+    dat          dt_site_visit             "Section 10.2.4"
+    cat          catu_site_purpose         "Section 10.2.5"
+    cat          catu_site_selection       "Section 10.2.6"
   }
   
   location {
-  id siteIdentifier "Section 3.1"
-  geo locationXY "Sections 3.3, 4.1.1"
-  number elevationAbsZ "Section 4.1.1"
-  number errorXY "Section 4.1.2"
-  number errorZ "Section 4.1.2"
-  catu elevMethod "Section 4.1.3"
-  catu GNSSType "Section 4.1.4"
-  number elevationRelZ "Section 4.2.1"
-  text triangulationNotes "Section 4.2.2"
-  text locationDesc "Section 4.2.3"
-  catu adminRC "Section 4.2.4 - Optional"
-  catu adminDC "Section 4.2.4 - Optional"
+    id           id_site                   
+    geo          point_location            "Section 3.1.1"
+    num[-5-3724] amt_elevation_abs_m       "Section 3.1.1"
+    num[0-Inf]   amt_error_location_m      "Section 3.1.2"
+    num[0-Inf]   amt_error_elevation_m     "Section 3.1.2"
+    cat          catu_elevation_method     "Section 3.1.3"
+    cat          catu_gnss                 "Section 3.1.4"
+    num[-5-3724] amt_elevation_rel_m       "Section 3.2.1"
+    txt          txt_notes_triangulation   "Section 3.2.2"
+    txt          txt_location_desc         "Section 3.2.3"
+    %% not defining code tables for these just now %%
+    cat          catu_admin_rc             "Section 3.2.4"
+    cat          catu_admin_dc             "Section 3.2.4"
   }
   
-  siteEvents {
-  id siteIdentifier "Section 3.1"
-  id eventIdentifier 
-  catu siteEventCode "Section 4.2.5"
-  integer[0-Inf] daysSinceEvent "Section 4.2.5"
-}
-
- siteEventTypes {
-  id siteEventIdentifier
-  catu siteEventCode "Table 4.3"
-  text siteEventName "Table 4.3"
-  text siteEventDesc "Table 4.3"
+  elevation_measurement_methods {
+    id           id_elevation_meas
+    cat          catu_elevation_meas       "Table 3.1"
+    txt          txt_elevation_meas_name   "Table 3.1"
+    txt          txt_elevation_meas_desc   "Table 3.1"
   }
+
+  gnss_types {
+    id           id_gnss
+    cat          catu_gnss_meas            "Table 3.2"
+    txt          txt_gnss_meas_name        "Table 3.2"
+    txt          txt_gnss_meas_desc        "Table 3.2"
+  }  
   
   landscape {
-  id siteIdentifier "Section 3.1"
-  catu lscapeTypeCode "Section 5.1.4"
-  number[0-Inf] lscapeReliefMedian "Section 5.1.1"
-  number[0-90]  lscapeSlopeMedian "Section 5.1.2"
-  number[0-Inf] lscapeSlopeRangeLo "Section 5.1.2"
-  number[0-Inf] lscapeSlopeRangeHi "Section 5.1.2"
+    id id_site
+    id id_landscape
+    cat          catu_province             "Section 4.1"
+    cat          catu_landscape            "Section 4.2.1.4"
+    %% landscape relief %%
+    num[0-Inf]   amt_lscape_relief_med_m   "Section 4.2.1.1"
+    %% landscape slope %%
+    num[0-90]    amt_lscape_slope_med_d    "Section 4.2.1.2"
+    num[0-Inf]   amt_lscape_slope_min_d    "Section 4.2.1.2"
+    num[0-Inf]   amt_lscape_slope_max_d    "Section 4.2.1.2"
+    %% not implementing stream channel stuff here %%
   }
 
-  lscapeTypes {
-  id lscapeTypeIdentifier
-  catu lscapeTypeCode "Table TBA"
-  text lscapeTypeName "Table TBA"
+  provinces {
+    id           id_province
+    cat          catu_province             "Table 4.1"
+    txt          txt_province_name         "Table 4.1"
+    txt          txt_province_desc         "Note 4.1"
   }
   
-  landform {
-  id siteIdentifier "Section 3.1"
-  catu lformTypeCode "Section 5.1.4"
-  number[0-Inf] lformReliefMedian "Section 5.1.1"
-  number[0-90]  lformSlopeMedian "Section 5.1.2"
-  number[0-Inf] lformSlopeRangeLo "Section 5.1.2"
-  number[0-Inf] lformSlopeRangeHi "Section 5.1.2"
+  landscapes {
+    id           id_landscape
+    cat          catu_landscape            "Table 4.2"
+    txt          txt_landscape_name        "Table 4.2"
+    txt          txt_landscape_desc        "Table 4.2"
   }
 
+  landform {
+    id           id_site
+    id           id_landscape
+    id           id_landform
+    cat          catu_landform              "Section 4.3.1"
+    amt[0-100]   amt_landform_p             "Section 4.1.2.5"
+    %% can only be true for one landform per site/landscape: %%
+    bool         ind_landform_contains_site  
+    %% (other way is separate tables for site-landform and    %%
+    %% landscape-landforms)                                   %%
+    
+    %% detailed optional stuff: %%
+    num[0-Inf]   amt_landform_relief_m      "Section 4.3.2.1"
+    num[0-90]    amt_landform_slope_med_d   "Section 4.3.2.2"
+    num[0-Inf]   amt_landform_slope_min_d   "Section 4.3.2.2"
+    num[0-Inf]   amt_landform_slope_max_d   "Section 4.3.2.2"
+    num[0-359]   val_landform_aspect_med_d  "Section 4.3.2.3"
+    num[0-359]   val_landform_aspect_min_d  "Section 4.3.2.3"
+    num[0-359]   val_landform_aspect_max_d  "Section 4.3.2.3"
+    cat          catu_landform_aspect_rec   "Table D.1.1"
+    cat          cat_landform_element       "Section 4.3.2.4"
+    cat          cat_landform_element_vmod  "Section 4.3.2.4"
+    cat          cat_landform_element_hmod  "Section 4.3.2.4"
+    %% extremely optional %%
+    num[0-Inf]   amt_slope_length_m         "Section 4.4.1"
+    num[-90-90]  amt_mesoscale_topo_index   "Section 4.4.2"
+    num[-90-90]  amt_terrain_shape_index    "Section 4.4.3"
+    
+  }
+  
+  landform_types {
+    id           id_landform
+    cat          catu_landform              "Table 4.3"
+    txt          txt_landform_name          "Table 4.3"
+    txt          txt_landform_desc          "Table 4.3"
+  }
 
+  measurement_types {
+    id          id_mtype
+    cat         catu_mtype
+    txt         txt_mtype_name              "Table D.1.1"
+    txt         txt_mtype_desc              "Table D.1.1"
+  }
+  
+  landform_elements {
+    id          id_landform_element
+    cat         catu_landform_element       "Table 4.4"
+    txt         txt_landform_element_name   "Table 4.4"
+    txt         txt_landform_element_desc   "Table 4.4"
+  }
+  
+  landform_element_vmods {
+    id          id_landform_element_vmod
+    cat         catu_landform_element_vmod       "Table 4.5"
+    txt         txt_landform_element_vmod_name   "Table 4.5"
+    txt         txt_landform_element_vmod_desc   "Table 4.5"
+  } 
+
+  landform_element_hmods {
+    id          id_landform_element_hmod
+    cat         catu_landform_element_hmod       "Table 4.6"
+    txt         txt_landform_element_hmod_name   "Table 4.6"
+    txt         txt_landform_element_hmod_desc   "Table 4.6"
+  } 
 
 ```
 
@@ -164,8 +234,10 @@ erDiagram
 ```{mermaid}
 %%| fig-cap: "Overview - main tables only"
 
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   site ||--o{ disturbances : "may have some"
+  
 
 ```
 
@@ -173,6 +245,7 @@ erDiagram
 ```{mermaid}
 %%| fig-cap: "Profile overview - including support tables"
 
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   site ||--|{ disturbances : "has one or more"
   disturbances }|--|{ disturbance_types : "code comes from"
@@ -188,6 +261,7 @@ erDiagram
 ```{mermaid}
 %%| fig-cap: "Profile - Details"
 
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   site ||--|{ disturbances : "has one or more"
   disturbances }|--|{ disturbance_types : "code comes from"
@@ -200,13 +274,19 @@ erDiagram
   site {
     id          id_site                  "10.2.1"
     usr         usr_author               "10.2.2"
-    geo         loc_site                 "10.2.3"
     dt          dt_site                  "10.2.4"
     cat         catu_site_purpose        "10.2.5"
     cat         catu_site_selection      "10.2.6"
     cat         catu_site_exposure       "10.2.7"
     num[0-1000] amt_site_depth_max_cm    "10.2.8"
     txt         catu_early_stop          "10.2.9"
+    %% weather at visit %%
+    cat         catu_weather             "Section 6.3.1"
+    num[-50-50] val_temperature_c        "Section 6.3.1"
+    cat         cato_recent_rain         "Section 6.3.2"
+    %% veg %%
+    cat        cat_vegetation_luc        "Section 7.1"
+    
   }
   
   site_purposes {
@@ -250,9 +330,9 @@ erDiagram
   
   disturbance_ages {
     id          id_disturbance_age
-    cat         catu_disturbance_age     "Table 10.5"
-    txt         txt_disturbance_age_name "Table 10.5"
-    txt         txt_disturbance_age_desc "Table 10.5"
+    cat         catu_disturbance_age     "Table 10.6"
+    txt         txt_disturbance_age_name "Table 10.6"
+    txt         txt_disturbance_age_desc "Table 10.6"
   }
   
 ```
@@ -273,6 +353,7 @@ erDiagram
 ```{mermaid}
 %%| fig-cap: "Surface - including support tables"
 
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   site }|--|{ slope_methods : "code comes from"
   site }|--|{ measurement_types : "code comes from"
@@ -293,6 +374,7 @@ erDiagram
   site_deposition }|--|{ deposition_types : "code comes from"
   site_deposition }|--|{ deposition_severity : "code comes from"
   site_deposition }|--|{ deposition_activity : "code comes from"
+  site }|--|{ water_depths : "code comes from"
   
 
 ```
@@ -300,6 +382,7 @@ erDiagram
 ```{mermaid}
 %%| fig-cap: "Surface - Details"
 
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   site }|--|{ slope_methods : "code comes from"
   site }|--|{ measurement_types : "code comes from"
@@ -320,21 +403,24 @@ erDiagram
   site_deposition }|--|{ deposition_types : "code comes from"
   site_deposition }|--|{ deposition_severity : "code comes from"
   site_deposition }|--|{ deposition_activity : "code comes from"
+  site }|--|{ water_depths : "code comes from"
 
   site {
-    id          id_site                  "10.2.1"
-    num[0-90]   amt_slope_d              "11.1"
+    id          id_site                  "Section 10.2.1"
+    num[0-90]   amt_slope_d              "Section 11.1"
     cat         catu_slope_rec           "Table D.1.1"
     cat         catu_slope_method        "Table 11.1"
-    num[0-359]  amt_aspect_d             "11.2"
+    num[0-359]  amt_aspect_d             "Section 11.2"
     cat         catu_aspect_rec          "Table D.1.1"
     cat         catu_aspect_method       "Table 11.2"
-    cat         catu_surface_water       "11.4"
-    cat         cato_surface_water_perst "11.4"
-    cat         catu_surface_cracks      "11.5"
-    cat         catu_surface_crack_shp   "11.5"
-    cat         catu_microrelief_nat     "11.6.1"
-    cat         catu_microrelief_ant     "11.6.2"
+    cat         catu_surface_water       "Section 11.4"
+    cat         cato_surface_water_perst "Section 11.4"
+    cat         catu_surface_cracks      "Section 11.5"
+    cat         catu_surface_crack_shp   "Section 11.5"
+    cat         catu_microrelief_nat     "Section 11.6.1"
+    cat         catu_microrelief_ant     "Section 11.6.2"
+    amt[0-Inf] amt_depth_water           "Section 12.7"
+    cat        catu_depth_water          "Section 12.7"
   }
   
   slope_methods {
@@ -354,8 +440,8 @@ erDiagram
   measurement_types {
     id          id_mtype
     cat         catu_mtype
-    txt         txt_mtype_name           "Table D1"
-    txt         txt_mtype_desc           "Table D1"
+    txt         txt_mtype_name           "Table D.1.1"
+    txt         txt_mtype_desc           "Table D.1.1"
   }
 
   surface_cover {
@@ -470,39 +556,48 @@ erDiagram
     txt         txt_deposition_activity_name      "Table 11.15"
     txt         txt_deposition_activity_desc      "Table 11.15"
   }  
+  
+  water_depths {
+    id          id_water_depths
+    cat         catu_water_depths           "Table 12.4"
+    txt         txt_water_depths_name       "Table 12.4"
+    txt         txt_water_depths_desc       "Table 12.4"  
+  }
+  
 ```
 
-## Horizon overview data {#sec-erd-horizon}
+## Horizon overview data {#sec-erd-horizono}
 
 ```{mermaid}
 %%| fig-cap: "Horizon - main tables only"
 
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
-  site ||--|{ horizon : "has at least one"
+  Site ||--|{ Horizon : "has at least one"
 
 ```
 
 ```{mermaid}
 %%| fig-cap: "Horizon - including support tables"
 
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   site ||--|{ horizon : "has at least one"
-  site }|--|{ boundary_shapes : "code comes from"
-  site }|--|{ boundary_widths : "code comes from"
-  site }|--|{ soil_moistures : "code comes from"
-  site }|--|{ water_depths : "code comes from"
+  horizon }|--|{ boundary_shapes : "code comes from"
+  horizon }|--|{ boundary_widths : "code comes from"
+  horizon }|--|{ soil_moistures : "code comes from"
 
 ```
 
 ```{mermaid}
 %%| fig-cap: "Horizon - Details"
 
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   site ||--|{ horizon : "has at least one"
-  site }|--|{ boundary_shapes : "code comes from"
-  site }|--|{ boundary_widths : "code comes from"
-  site }|--|{ soil_moistures : "code comes from"
-  site }|--|{ water_depths : "code comes from"
+  horizon }|--|{ boundary_shapes : "code comes from"
+  horizon }|--|{ boundary_widths : "code comes from"
+  horizon }|--|{ soil_moistures : "code comes from"
   
   horizon {
   id         id_site
@@ -519,8 +614,6 @@ erDiagram
   amt[0-Inf] amt_boundary_cm         "12.5"
   cat        catu_boundary_width     "12.5" 
   cat        cato_soil_moisture      "12.6"
-  amt[0-Inf] amt_depth_water         "12.7"
-  cat        catu_depth_water        "12.7"
   }
   
   boundary_shapes {
@@ -543,62 +636,400 @@ erDiagram
     txt         txt_soil_moisture_name      "Table 12.3"
   }
   
-  water_depths {
-    id          id_water_depths
-    cat         catu_water_depths           "Table 12.4"
-    txt         txt_water_depths_name       "Table 12.4"
-    txt         txt_water_depths_desc       "Table 12.4"  
-  }
 ```
 
-## Horizon morphology data {#sec-erd-horizon}
+## Horizon architecture {#sec-erd-horizona}
 
 ```{mermaid}
-%%| fig-cap: "Horizon morphology - main tables only"
+%%| fig-cap: "Horizon architecture - simple model"
 
-erDiagram
-  horizon ||--|{  : "has a"
-
-```
-
-
-```{mermaid}
-%%| fig-cap: "Horizon morphology - including support tables"
-
-erDiagram
-  horizon ||--|{ horizon : "has at least one"
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram 
+  Horizon ||--|{ "Peds" : "may contain"
+  Horizon ||--|{ "Rock Fragments" : "may contain"
+  Horizon ||--|{ "Other Fragments" : "may contain"
+  Horizon ||--|{ "Artefacts" : "may contain"
+  Horizon ||--|{ "Roots" : "may contain"
+  Horizon ||--|{ "Voids" : "may contain"
+  Horizon ||--|{ "Pores" : "may contain"
 
 ```
 
 ```{mermaid}
-%%| fig-cap: "Horizon morphology - Details"
+%%| fig-cap: "Horizon architecture - table arrangement"
 
-erDiagram
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram 
+  horizon ||--|{ horizon_peds : "may have"
   horizon }|--|{ parent_material_origin : "code comes from"
   horizon }|--|{ parent_material_origin_mod : "code comes from"
+  horizon }|--|{ pedality_grades : "code comes from"
+  horizon }|--|{ ped_sizes_rapid : "code comes from"
+  horizon_peds }|--|{ pedality_grades : "code comes from"
+  horizon_peds }|--|{ ped_shapes : "code comes from"
+  horizon ||--|{ horizon_rock_fragments : "may have"
+  horizon_rock_fragments }|--|{ fragment_sizes_simple : "code comes from"
+  horizon_rock_fragments }|--|{ rock_fragment_shapes : "code comes from"
+  horizon_rock_fragments }|--|{ nzsc_lithologies : "code comes from"
+  horizon ||--|{ horizon_other_fragments : "may have"
+  horizon_other_fragments }|--|{ fragment_sizes_simple : "code comes from"
+  horizon_other_fragments }|--|{ other_fragment_types : "code comes from"
+  horizon ||--|{ horizon_artefacts : "may have"
+  horizon_artefacts }|--|{ fragment_sizes_simple : "code comes from"
+  horizon_artefacts }|--|{ artefact_types: "code comes from"
+  horizon ||--|{ horizon_roots : "may have"
+  horizon }|--|{ root_positions: "code comes from"
+  horizon_roots }|--|{ root_positions : "code comes from"
+  horizon_roots }|--|{ root_sizes_simple : "code comes from"
+  horizon ||--|{ horizon_voids : "may have"
+  horizon_voids }|--|{ void_types : "code comes from"
+  horizon_voids }|--|{ void_conns : "code comes from"
 
+```
 
-  horizon {
-  id         id_site
-  id         id_horizon
-  cat        catu_parent_material_origin    "13.7.1"
-  cat        catu_anthropic_origin_modifier "13.7.1"
- 
+```{mermaid}
+%%| fig-cap: "Horizon architecture - Details"
+
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  horizon ||--|{ horizon_peds : "may have"
+  horizon }|--|{ parent_material_origin : "code comes from"
+  horizon }|--|{ parent_material_origin_mod : "code comes from"
+  horizon }|--|{ pedality_grades : "code comes from"
+  horizon }|--|{ ped_sizes_rapid : "code comes from"
+  horizon_peds }|--|{ pedality_grades : "code comes from"
+  horizon_peds }|--|{ ped_shapes : "code comes from"
+  horizon ||--|{ horizon_rock_fragments : "may have"
+  horizon_rock_fragments }|--|{ fragment_sizes_simple : "code comes from"
+  horizon_rock_fragments }|--|{ rock_fragment_shapes : "code comes from"
+  horizon_rock_fragments }|--|{ nzsc_lithologies : "code comes from"
+  horizon ||--|{ horizon_other_fragments : "may have"
+  horizon_other_fragments }|--|{ fragment_sizes_simple : "code comes from"
+  horizon_other_fragments }|--|{ other_fragment_types : "code comes from"
+  horizon ||--|{ horizon_artefacts : "may have"
+  horizon_artefacts }|--|{ fragment_sizes_simple : "code comes from"
+  horizon_artefacts }|--|{ artefact_types: "code comes from"
+  horizon ||--|{ horizon_roots : "may have"
+  horizon }|--|{ root_positions: "code comes from"
+  horizon_roots }|--|{ root_positions: "code comes from"
+  horizon_roots }|--|{ root_sizes_simple: "code comes from"
+  horizon ||--|{ horizon_voids : "may have"
+  horizon_voids }|--|{ void_types : "code comes from"
+  horizon_voids }|--|{ void_conns : "code comes from"
   
- parent_material_origin {
+  horizon {
+    id         id_site
+    id         id_horizon
+    %% pmo %%
+    cat        catu_parent_material_origin    "13.7.1"
+    cat        catu_anthropic_origin_modifier "13.7.1"
+    %% pedality rapid (detailed in subtable) %%
+    cat        cato_pedality_grade            "14.1.1 (rapid)"
+    cat        cato_ped_shape                 "14.1.2/3 (rapid)"
+    cat        cato_ped_size                  "14.1.3 (rapid)"
+    %% all frags super rapid (record this OR the next three) %%
+    num[0-100] amt_total_frags_p               "14.2 (v. rapid)"
+    %% rock frags rapid (detailed in subtable) %%
+    num[0-100] amt_rockfrags_p                "14.2 (rapid)"
+    %% notrock frags rapid %%
+    num[0-100] amt_otherfrags_p               "14.2.1.1 (rapid)"
+    %% notrock frags rapid %%
+    num[0-100] amt_artefacts_p                "14.2.1.2 (rapid)"
+    %% roots rapid %%
+    num[0-100] amt_total_roots_p               "14.3.1 (rapid)"
+    cat        catu_total_roots_pos            "14.3.2 (rapid)"
+    %% void rapid %%
+    num[0-100] amt_total_voids_p               "14.4 (rapid)"
+    %% pores rapid %%
+    num[0-10]  amt_total_pores_p               "14.5 (rapid)"
+    %% pores detailed (could also spin out to subtable) %%
+    num[0-10]  amt_macropores_p                "14.5"
+    num[0-10]  amt_micropores_p                "14.5"
+                  
+  }
+ 
+  parent_material_origin {
     id          id_pmo
-    cat         catu_pmo           "Table 24.5"
-    txt         txt_pmo_name       "Table 24.5"
-    txt         txt_pmo_desc       "Table 24.5"  
+    cat         catu_pmo                "Table 24.5"
+    txt         txt_pmo_name            "Table 24.5"
+    txt         txt_pmo_desc            "Table 24.5"  
   }
   
-   parent_material_origin_mod {
+  parent_material_origin_mod {
     id          id_pmo_mod
-    cat         catu_pmo_mod           "Table 13.1"
-    txt         txt_pmo_mod_name       "Table 13.1"
-    txt         txt_pmo_mod_desc       "Table 13.1"  
+    cat         catu_pmo_mod            "Table 13.1"
+    txt         txt_pmo_mod_name        "Table 13.1"
+    txt         txt_pmo_mod_desc        "Table 13.1"  
+  }
+
+  pedality_grades {
+    id          id_pedality_grade      
+    cat         catu_pedality_grade         "Table 14.1"
+    txt         txt_pedality_grade_name     "Table 14.1"
+    txt         txt_pedality_grade_desc     "Table 14.1"
+  }
+
+  ped_sizes_rapid {
+    id          id_ped_size_rapid       "14.1.3"
+    cat         catu_ped_size_rapid     "C, F"
+    txt         txt_ped_size_rapid_name "Coarse, Fine"
+    txt         txt_ped_size_rapid_desc "> 40 mm, <= 40 mm"
+  }
+  
+  horizon_peds {
+    id id_site
+    id id_horizon
+    id id_ped
+    cat        cato_pedality_grade            "14.1.1"
+    cat        cato_ped_shape                 "14.1.2/3"
+    amt[0-Inf] amt_ped_size_med_mm            "14.1.3" 
+    amt[0-Inf] amt_ped_size_min_mm            "14.1.3" 
+    amt[0-Inf] amt_ped_size_max_mm            "14.1.3"
+  }
+  
+
+  ped_shapes {
+    id          id_ped_shape     
+    cat         catu_ped_shape           "Table 14.2/3"
+    txt         txt_ped_shape_name       "Table 14.2/3"
+    txt         txt_ped_shape_desc       "Table 14.2/3"
+  }
+  
+  horizon_rock_fragments {
+    id         id_site
+    id         id_horizon
+    id         id_rock_fragment
+    cat        cato_rock_fragment_size        "Table 14.4"
+    cat        catu_rock_fragment_shape       "Table 14.5"
+    num[0-100] num_rock_fragment_p         
+    cat        catu_rock_fragment_lithology   "Table 22.1"
+  }
+  
+  fragment_sizes_simple {
+    id          id_rockfrag_size     
+    cat         catu_rockfrag_size            "Table 14.4"
+    txt         txt_rockfrag_size_name        "Table 14.4"
+    txt         txt_rockfrag_size_desc        "Table 14.4"
+  }
+  
+  rock_fragment_shapes {
+    id          id_rockfrag_shape     
+    cat         catu_rockfrag_shape           "Table 14.5"
+    txt         txt_rockfrag_shape_name       "Table 14.5"
+    txt         txt_rockfrag_shape_desc       "Table 14.5"
+  }
+  
+  nzsc_lithologies {
+    id          id_nzsc_lithology     
+    cat         catu_nzsc_lithology           "Table 24.2"
+    txt         txt_nzsc_lithology_name       "Table 24.2"
+  }
+  
+  %% %%
+  horizon_other_fragments {
+    id         id_site
+    id         id_horizon
+    id         id_other_fragment
+    cat        cato_other_fragment_size       "Table 14.4"
+    cat        cato_other_fragment            "Table 14.6"
+    num[0-100] num_rock_fragment_p         
+  }  
+  
+  other_fragment_types {
+    id          id_other_fragment
+    cat         cato_other_fragment           "Table 14.6"
+    txt         txt_other_fragment_name       "Table 14.6"
+    txt         txt_other_fragment_desc       "Table 14.6"
+  }
+
+  %% %%
+  horizon_artefacts {
+    id         id_site
+    id         id_horizon
+    id         id_artefact
+    cat        cato_artefact_size           "Table 14.4"
+    cat        cato_artefact                "Table 14.7"
+    num[0-100] num_artefact_p         
+  } 
+  
+  artefact_types {
+    id          id_artefact
+    cat         catu_artefact                "Table 14.7"
+    txt         txt_artefact_type_name       "Table 14.7"
+    txt         txt_artefact_type_desc       "Table 14.7"
+  }
+  
+  %% %%
+  horizon_roots {
+    id         id_site
+    id         id_horizon
+    id         id_root
+    cat        cato_root_size             "Table 14.8"
+    cat        cato_root_pos              "Table 14.9"
+    num[0-100] num_root_p         
+  } 
+
+  root_sizes_simple {
+    id          id_root_size     
+    cat         catu_root_size            "Table 14.8"
+    txt         txt_root_size_name        "Table 14.8"
+    txt         txt_root_size_desc        "Table 14.8"
+  }
+  
+  root_positions {
+    id          id_root_pos     
+    cat         catu_root_pos            "Table 14.9"
+    txt         txt_root_pos_name        "Table 14.9"
+    txt         txt_root_pos_desc        "Table 14.9"
+  }
+
+  %% %%
+  horizon_voids {
+    id         id_site
+    id         id_horizon
+    id         id_void
+    cat        catu_void                  "Table 14.10"
+    cat        catu_void_conn             "Table 14.11"
+    num[0-100] num_void_p         
+  } 
+  
+  void_types {
+    id          id_void  
+    cat         catu_void                 "Table 14.10"
+    txt         txt_void_name             "Table 14.10"
+    txt         txt_void_desc             "Table 14.10"
+  }  
+
+  void_conns {
+    id          id_void_conn  
+    cat         catu_void_conn            "Table 14.10"
+    txt         txt_void_conn_name        "Table 14.10"
+    txt         txt_void_conn_desc        "Table 14.10"
+  }  
+  
+```
+
+## Horizon colour {#sec-erd-colour}
+
+```{mermaid}
+
+%%| fig-cap: "Horizon colour - simple model"
+
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram 
+  Horizon ||--|{ "Matrix colour" : "has one or more"
+  Horizon ||--o{ "Colour patterns" : "may have"
+
+```
+
+```{mermaid}
+%%| fig-cap: "Horizon colour - table arrangement"
+
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  horizon ||--|{ horizon_matrix_colours : "has one or more"
+  horizon ||--|{ horizon_colour_patterns : "has one or more"
+  horizon_matrix_colours }|--|{ munsell_colours : "code comes from"
+  horizon_colour_patterns }|--|{ munsell_colours : "code comes from"
+  horizon_colour_patterns }|--|{ short_colours : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_types : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_shapes : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_contrasts : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_edges : "code comes from"
+```
+
+```{mermaid}
+%%| fig-cap: "Horizon colour - Details"
+
+%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  horizon ||--|{ horizon_matrix_colours : "has one or more"
+  horizon ||--|{ horizon_colour_patterns : "has one or more"
+  horizon_matrix_colours }|--|{ munsell_colours : "code comes from"
+  horizon_colour_patterns }|--|{ munsell_colours : "code comes from"
+  horizon_colour_patterns }|--|{ short_colours : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_types : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_shapes : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_contrasts : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_edges : "code comes from"
+  
+  horizon_matrix_colours {
+    id          id_site
+    id          id_horizon
+    id          id_colour_matrix           "Section 15.2"
+    %% can also split into hue value chroma %%
+    cat         catu_matrix_munsell        "Section 15.2"
+    %% no simple colours on the matrix!! %%
+    cat         catu_colour_moisture       "Section 15.2"
+  }
+  
+  horizon_colour_patterns {
+    id          id_site
+    id          id_horizon
+    id          id_colour_pattern
+    %% either %%
+    cat         catu_pattern_munsell    "Section 15.2"
+    %% or, %%
+    catu        catu_pattern_short_colour   "Section 15.1.1"
+    cat         catu_pattern_type           "Section 15.3.1"
+    amt[0-100]  amt_pattern_p               "Section 15.3.2"
+    cat         catu_pattern_shape          "Section 15.3.3"
+    amt[0-Inf]  amt_pattern_size_mm         "Section 15.3.4"
+    cat         cato_pattern_contrast       "Section 15.3.5"
+    cat         cato_pattern_edge           "Section 15.3.6"
+   }
+ 
+  munsell_colours {
+    id          id_munsell
+    cat         catu_munsell              "Table 15.2"
+    %% optional but handy: %%
+    txt         txt_colour_hex
+  }  
+   
+  short_colours {
+    id          id_colour
+    cat         catu_colour               "Table 15.2"
+    txt         txt_colour_name           "Table 15.2"
+    txt         txt_colour_desc           "Table 15.2"
+  } 
+
+  pattern_types {
+    id          id_pattern
+    cat         catu_pattern              "Table 15.3"
+    txt         txt_pattern_name          "Table 15.3"
+    txt         txt_pattern_desc          "Table 15.3"
+  } 
+
+  pattern_shapes {
+    id          id_pattern_shape
+    cat         catu_pattern_shape        "Table 15.4"
+    txt         txt_pattern_shape_name    "Table 15.4"
+    txt         txt_pattern_shape_desc    "Table 15.4"
+  }
+
+  pattern_contrasts {
+    id          id_pattern_contrast
+    cat         catu_pattern_contrast     "Table 15.5"
+    txt         txt_pattern_contrast_name "Table 15.5"
+    txt         txt_pattern_contrast_desc "Table 15.5"
+  }
+  
+  pattern_edges {
+    id          id_pattern_edge
+    cat         catu_pattern_edge         "Table 15.6"
+    txt         txt_pattern_edge_name     "Table 15.6"
+    txt         txt_pattern_edge_desc     "Table 15.6"
   }
 ```
+
+
+
+
+
+
+
+
+
 
 ## Sample data {#sec-erd-samples}
 
