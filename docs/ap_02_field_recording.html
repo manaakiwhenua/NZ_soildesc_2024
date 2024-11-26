@@ -41,6 +41,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-273e46d7b3848a679358d7b360117b95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -371,9 +374,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#form-design" id="toc-form-design" class="nav-link active" data-scroll-target="#form-design"><span class="header-section-number">B.1</span> Form design</a></li>
+  <li><a href="#data-entry-forms" id="toc-data-entry-forms" class="nav-link active" data-scroll-target="#data-entry-forms"><span class="header-section-number">B.1</span> Data entry forms</a></li>
   <li><a href="#app-based-data-entry" id="toc-app-based-data-entry" class="nav-link" data-scroll-target="#app-based-data-entry"><span class="header-section-number">B.2</span> App-based data entry</a></li>
-  <li><a href="#taking-and-managing-photographs" id="toc-taking-and-managing-photographs" class="nav-link" data-scroll-target="#taking-and-managing-photographs"><span class="header-section-number">B.3</span> Taking and Managing photographs</a></li>
+  <li><a href="#taking-and-managing-photographs" id="toc-taking-and-managing-photographs" class="nav-link" data-scroll-target="#taking-and-managing-photographs"><span class="header-section-number">B.3</span> Taking and managing photographs</a>
+  <ul class="collapse">
+  <li><a href="#equipment" id="toc-equipment" class="nav-link" data-scroll-target="#equipment"><span class="header-section-number">B.3.1</span> Equipment</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -394,7 +400,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 12, 2024</p>
+      <p class="date-modified">November 26, 2024</p>
     </div>
   </div>
     
@@ -405,31 +411,41 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Recording field data in a structured format is important because…</p>
-<section id="form-design" class="level2" data-number="B.1">
-<h2 data-number="B.1" class="anchored" data-anchor-id="form-design"><span class="header-section-number">B.1</span> Form design</h2>
-<p>Using a structured data entry form reduces the chance of forgetting to record particular data points, vs freehand notes. The consistent layout also makes it easier to review data for completeness and correctness, and compare sites.</p>
-<p>Data entry forms should be laid out so that the process of filling them out roughly follows the process of field soil description itself.</p>
-<p>[example form here]</p>
-<p>Forms can be deployed on paper, but they are vulnerable to wind and rain. Note-taking software on touchscreen tablets (e.g.&nbsp;Microsoft OneNote) can be a more robust alternative.</p>
+<p>Recording field data in a regularised format helps ensure that consistently high standards are kept. Well-structured and complete soil profile descriptions are key supports for subsequent analytical work, including mapping tasks and analysis of laboratory data.</p>
+<section id="data-entry-forms" class="level2" data-number="B.1">
+<h2 data-number="B.1" class="anchored" data-anchor-id="data-entry-forms"><span class="header-section-number">B.1</span> Data entry forms</h2>
+<p>Using a data entry form reduces the chance of forgetting to record particular data points, vs freehand notes. The consistent layout also makes it easier to review data for completeness and correctness, and compare sites.</p>
+<p>Data entry forms should be laid out so that the process of filling them out roughly follows the process of field soil description itself. Each section should contain enough room for the parameter being recorded. A high-detail hard-copy field sheet should still fit on a single A4 page, despite the large number of potential parameters.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="data/simple_sheet_filled.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A minimal demonstration field sheet, suitable for rapid recording of low-detail descriptions. Two of these will fit on a single A4 page."><img src="data/simple_sheet_filled.png" class="img-fluid figure-img" style="width:70.0%" alt="A demonstration minimalist field sheet, filled out with some data from an NSD site completed in the 1970s."></a></p>
+<figcaption>A minimal demonstration field sheet, suitable for rapid recording of low-detail descriptions. Two of these will fit on a single A4 page.</figcaption>
+</figure>
+</div>
+<p>Forms can be deployed on paper, but they are vulnerable to wind and rain. Note-taking software on touchscreen tablets (e.g.&nbsp;Microsoft OneNote) can offer a robust alternative.</p>
 </section>
 <section id="app-based-data-entry" class="level2" data-number="B.2">
 <h2 data-number="B.2" class="anchored" data-anchor-id="app-based-data-entry"><span class="header-section-number">B.2</span> App-based data entry</h2>
-<p>Using a purpose-built app for data entry can reduce the double handling inherent to writing notes by hand, increasing efficiency in the field. Apps do come with design, deployment and maintenance overheads that need to be taken into account. At the time of writing there is no consumer-grade app available for recording NZ soils field data, but the ESRI and QGIS spatial software ecosystems have field data entry frameworks that can be adapted for soils fieldwork.</p>
+<p>Using a purpose-built app for data entry can reduce the double handling inherent to recording hard-copy data, freeing up office time. Apps do come with design, deployment and maintenance overheads that need to be taken into account, as well as a significant learning curve for paper-adapted users. Graphical user interfaces, despite their huge potential, can at the time of writing be surprisingly restrictive about layout and input options, and generally will take up more virtual ‘page space’ than a hard-copy sheet.</p>
+<p>At the time of writing there is no consumer-grade app dedicated to recording New Zealand soils field data, but the ESRI and QGIS spatial software ecosystems have field data entry frameworks that can be adapted for soils fieldwork.</p>
 </section>
 <section id="taking-and-managing-photographs" class="level2" data-number="B.3">
-<h2 data-number="B.3" class="anchored" data-anchor-id="taking-and-managing-photographs"><span class="header-section-number">B.3</span> Taking and Managing photographs</h2>
+<h2 data-number="B.3" class="anchored" data-anchor-id="taking-and-managing-photographs"><span class="header-section-number">B.3</span> Taking and managing photographs</h2>
 <p>Site photographs provide a valuable record of the profile itself and the nature of the landscape in which it occurs. Photographs taken should include:</p>
 <ul>
 <li>1-3 landscape shots placing the site in context. Stand well back and where possible, slightly uphill.</li>
 <li>1 clear photo of the ground condition around the profile, including a measuring tape or stick for scale</li>
 <li>1 clear photo of the extracted profile or exposure with a measuring tape for scale. Ideally take this before describing the profile so it can be viewed in a minimally disturbed state</li>
-<li>3-4 closeup photos of the profile, capturing 30-40cm ranges. These should slightly overlap.</li>
+<li>3-4 closeup photos of the profile, capturing 30-40&nbsp;cm ranges. These should slightly overlap.</li>
 </ul>
 <p>Photographs should be organised on a per profile basis as soon as possible after fieldwork. The quickest method is simply to place them in a folder named after the site ID. Renaming the files can be useful for longer-term storage, but the process can be time-consuming.</p>
 <p>Any further photos of e.g.&nbsp;concretions or other distinctive features are optional.</p>
+<section id="equipment" class="level3" data-number="B.3.1">
+<h3 data-number="B.3.1" class="anchored" data-anchor-id="equipment"><span class="header-section-number">B.3.1</span> Equipment</h3>
+<p>Most users will default to their smartphone camera. This is usually safe, but some newer models default to enhancing photos in ways that are optimised for recreational use rather than scientific data recording. Users should make an effort to understand how their devices are processing photographs and disable any features that may alter the images too heavily.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -863,6 +879,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

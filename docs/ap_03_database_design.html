@@ -375,16 +375,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#helper-tables" id="toc-helper-tables" class="nav-link active" data-scroll-target="#helper-tables"><span class="header-section-number">D.1</span> Helper tables</a>
-  <ul class="collapse">
-  <li><a href="#measurement-type" id="toc-measurement-type" class="nav-link" data-scroll-target="#measurement-type"><span class="header-section-number">D.1.1</span> Measurement type</a></li>
-  </ul></li>
+  <li><a href="#conceptual-model" id="toc-conceptual-model" class="nav-link active" data-scroll-target="#conceptual-model"><span class="header-section-number">D.1</span> Conceptual model</a></li>
   <li><a href="#sec-erd-setting" id="toc-sec-erd-setting" class="nav-link" data-scroll-target="#sec-erd-setting"><span class="header-section-number">D.2</span> Soil Setting</a></li>
-  <li><a href="#sec-erd-profile" id="toc-sec-erd-profile" class="nav-link" data-scroll-target="#sec-erd-profile"><span class="header-section-number">D.3</span> Profile data</a></li>
-  <li><a href="#sec-erd-surface" id="toc-sec-erd-surface" class="nav-link" data-scroll-target="#sec-erd-surface"><span class="header-section-number">D.4</span> Soil Surface</a></li>
-  <li><a href="#sec-erd-horizon" id="toc-sec-erd-horizon" class="nav-link" data-scroll-target="#sec-erd-horizon"><span class="header-section-number">D.5</span> Horizon data</a></li>
-  <li><a href="#sec-erd-samples" id="toc-sec-erd-samples" class="nav-link" data-scroll-target="#sec-erd-samples"><span class="header-section-number">D.6</span> Sample data</a></li>
-  <li><a href="#sec-erd-interp" id="toc-sec-erd-interp" class="nav-link" data-scroll-target="#sec-erd-interp"><span class="header-section-number">D.7</span> Interpretation data</a></li>
+  <li><a href="#sec-erd-siteover" id="toc-sec-erd-siteover" class="nav-link" data-scroll-target="#sec-erd-siteover"><span class="header-section-number">D.3</span> Site overview</a></li>
+  <li><a href="#sec-erd-surface" id="toc-sec-erd-surface" class="nav-link" data-scroll-target="#sec-erd-surface"><span class="header-section-number">D.4</span> Surface</a></li>
+  <li><a href="#sec-erd-horizono" id="toc-sec-erd-horizono" class="nav-link" data-scroll-target="#sec-erd-horizono"><span class="header-section-number">D.5</span> Horizon overview</a></li>
+  <li><a href="#sec-erd-horizona" id="toc-sec-erd-horizona" class="nav-link" data-scroll-target="#sec-erd-horizona"><span class="header-section-number">D.6</span> Horizon architecture</a></li>
+  <li><a href="#sec-erd-colour" id="toc-sec-erd-colour" class="nav-link" data-scroll-target="#sec-erd-colour"><span class="header-section-number">D.7</span> Horizon colour</a></li>
+  <li><a href="#sec-erd-texture" id="toc-sec-erd-texture" class="nav-link" data-scroll-target="#sec-erd-texture"><span class="header-section-number">D.8</span> Horizon texture</a></li>
+  <li><a href="#sec-erd-secf" id="toc-sec-erd-secf" class="nav-link" data-scroll-target="#sec-erd-secf"><span class="header-section-number">D.9</span> Horizon secondary features</a></li>
+  <li><a href="#sec-erc-cons" id="toc-sec-erc-cons" class="nav-link" data-scroll-target="#sec-erc-cons"><span class="header-section-number">D.10</span> Horizon consistence Tests</a></li>
+  <li><a href="#sec-erd-fts" id="toc-sec-erd-fts" class="nav-link" data-scroll-target="#sec-erd-fts"><span class="header-section-number">D.11</span> Field tests</a></li>
+  <li><a href="#sec-erd-interp" id="toc-sec-erd-interp" class="nav-link" data-scroll-target="#sec-erd-interp"><span class="header-section-number">D.12</span> Interpretation data</a>
+  <ul class="collapse">
+  <li><a href="#sec-erd-nzsc" id="toc-sec-erd-nzsc" class="nav-link" data-scroll-target="#sec-erd-nzsc"><span class="header-section-number">D.12.1</span> NZSC</a></li>
+  <li><a href="#sec-erd-names" id="toc-sec-erd-names" class="nav-link" data-scroll-target="#sec-erd-names"><span class="header-section-number">D.12.2</span> Horizon names</a></li>
+  </ul></li>
+  <li><a href="#helper-tables" id="toc-helper-tables" class="nav-link" data-scroll-target="#helper-tables"><span class="header-section-number">D.13</span> Helper tables</a>
+  <ul class="collapse">
+  <li><a href="#measurement-type" id="toc-measurement-type" class="nav-link" data-scroll-target="#measurement-type"><span class="header-section-number">D.13.1</span> Measurement type</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -405,7 +415,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 24, 2024</p>
+      <p class="date-modified">November 26, 2024</p>
     </div>
   </div>
     
@@ -416,11 +426,1894 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The following diagrams demonstrate one way in which the data model defined in this manual can be structured. The diagrams only deal with the data themselves - security, user management, change tracking and other helper functionalities are left out for clarity. The model is optimised to highlight the relationships between the various data points and contains some structures that support the controlled vocabulary lists, but is not optimised for performance.</p>
-<section id="helper-tables" class="level2" data-number="D.1">
-<h2 data-number="D.1" class="anchored" data-anchor-id="helper-tables"><span class="header-section-number">D.1</span> Helper tables</h2>
-<section id="measurement-type" class="level3" data-number="D.1.1">
-<h3 data-number="D.1.1" class="anchored" data-anchor-id="measurement-type"><span class="header-section-number">D.1.1</span> Measurement type</h3>
+<p>The following diagrams demonstrate one way in which the the contents of this manual can be structured in a database. The diagrams only deal with the data themselves - security, user management, change tracking and other helper functionalities are left out for clarity. Data tables for samples and laboratory results are also not included. The model is optimised to highlight the relationships between the various data points and contains some structures that support the controlled vocabulary lists, but is not optimised for performance.</p>
+<section id="conceptual-model" class="level2" data-number="D.1">
+<h2 data-number="D.1" class="anchored" data-anchor-id="conceptual-model"><span class="header-section-number">D.1</span> Conceptual model</h2>
+<p>This overview shows the relationships between each part of the standard.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  Site ||--|| Location : "has one"
+  Site ||--|| Landform : "is in one"
+  Site ||--|| Landscape : "is in one"
+  Landscape ||--|{ Landform : "comprises at least one"
+  Site ||--o{ "Recent events" : "may have some"
+  Site ||--|| "Site surface" : "has one"
+  "Site surface" ||--|{ "Surface cover" : "has"
+  "Site surface" ||--o{ Erosion : "may have some"
+  "Site surface" ||--o{ Deposition : "may have some"
+  Site ||--|{ Horizon : "has at least one"
+  Horizon ||--o{ "Peds" : "may contain"
+  Horizon ||--o{ "Rock Fragments" : "may contain"
+  Horizon ||--o{ "Other Fragments" : "may contain"
+  Horizon ||--o{ "Artefacts" : "may contain"
+  Horizon ||--o{ "Roots" : "may contain"
+  Horizon ||--o{ "Voids" : "may contain"
+  Horizon ||--o{ "Pores" : "may contain"
+  Horizon ||--|{ "Matrix colour" : "has one or more"
+  Horizon ||--o{ "Colour patterns" : "may have"
+  Horizon ||--|| "Texture" : "has a"
+  Horizon ||--|| "Particle size distribution (estimate)" : "has a"
+  Horizon ||--o{ "Concentrations" : "may have some"
+  Horizon ||--o{ "Coatings" : "may have some"
+  Horizon ||--o{ "Pan" : "may be a"
+  Horizon ||--o{ "Stress Features" : "may have some"
+  Horizon ||--o{ "Biological features" : "may have some"
+  Horizon ||--o{ "Consistence tests" : "may have some"
+  Site ||--o{ "Field tests" : "may have some"
+  Site ||--|{ "NZ Soil Classification" : "has an"
+  Horizon ||--|| "Horizon Names" : "have"
+  Horizon ||--|| "Functional Horizon Names" : "have"
+
+</pre>
+</div>
+<p></p><figcaption> Overview - conceptual relationships</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-erd-setting" class="level2" data-number="D.2">
+<h2 data-number="D.2" class="anchored" data-anchor-id="sec-erd-setting"><span class="header-section-number">D.2</span> Soil Setting</h2>
+<p>The setting tables store site location (<a href="ss_02_location.html" class="quarto-xref"><span>Chapter 3</span></a>), landscape and landform (<a href="ss_03_landscape.html" class="quarto-xref"><span>Chapter 4</span></a>), land cover (<a href="ss_07_landuse_mgmt.html#sec-lcov" class="quarto-xref"><span>Section 8.1</span></a>), and land use (<a href="ss_07_landuse_mgmt.html#sec-luse" class="quarto-xref"><span>Section 8.2</span></a>).</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  site ||--|| location : "has one"
+  location }|--|{ elevation_measurement_methods : "code comes from"
+  location }|--|{ gnss_types : "code comes from"
+  site ||--|| landscape : "has one associated"
+  landscape }|--|{ provinces : "code comes from"
+  landscape }|--|{ landscapes : "code comes from"
+  landscape ||--|{ landform : "contains at least one"
+  landscape ||--o{ lscape_landuse : "may have some"
+  lscape_landuse }|--|{ landuse_primary : "code comes from"
+  lscape_landuse }|--|{ landuse_secondary : "code comes from"
+  landform }|--|{ landform_types : "code comes from"
+  landform }|--|{ measurement_types : "code comes from"
+  landform }|--|{ landform_elements : "code comes from"
+  landform }|--|{ landform_element_vmods : "code comes from"
+  landform }|--|{ landform_element_hmods : "code comes from"
+  landform ||--o{ lform_landuse : "may have some"
+  landform }|--|{ land_cover_types : "code comes from"
+  lform_landuse }|--|{ landuse_primary : "code comes from"
+  lform_landuse }|--|{ landuse_secondary : "code comes from"
+  lform_landuse }|--|{ landuse_tertiary : "code comes from"
+  lform_landuse }|--|{ landuse_impact : "code comes from"
+
+</pre>
+</div>
+<p></p><figcaption> Setting - Overview</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  site ||--|| location : "has one"
+  location }|--|{ elevation_measurement_methods : "code comes from"
+  location }|--|{ gnss_types : "code comes from"
+  site ||--|| landscape : "has one associated"
+  landscape }|--|{ provinces : "code comes from"
+  landscape }|--|{ landscapes : "code comes from"
+  landscape ||--|{ landform : "contains at least one"
+  landscape ||--o{ lscape_landuse : "may have some"
+  lscape_landuse }|--|{ landuse_primary : "code comes from"
+  lscape_landuse }|--|{ landuse_secondary : "code comes from"
+  landform }|--|{ landform_types : "code comes from"
+  landform }|--|{ measurement_types : "code comes from"
+  landform }|--|{ landform_elements : "code comes from"
+  landform }|--|{ landform_element_vmods : "code comes from"
+  landform }|--|{ landform_element_hmods : "code comes from"
+  landform ||--o{ lform_landuse : "may have some"
+  landform }|--|{ land_cover_types : "code comes from"
+  lform_landuse }|--|{ landuse_primary : "code comes from"
+  lform_landuse }|--|{ landuse_secondary : "code comes from"
+  lform_landuse }|--|{ landuse_tertiary : "code comes from"
+  lform_landuse }|--|{ landuse_impact : "code comes from"
+  
+  location {
+    id           id_site PK                  
+    geo          point_location           "Section 3.1.1"
+    num[-5-3724] amt_elevation_abs_m      "Section 3.1.1"
+    num[0-Inf]   amt_error_location_m     "Section 3.1.2"
+    num[0-Inf]   amt_error_elevation_m    "Section 3.1.2"
+    cat          catu_elevation_method FK "Section 3.1.3"
+    cat          catu_gnss FK             "Section 3.1.4"
+    num[-5-3724] amt_elevation_rel_m      "Section 3.2.1"
+    txt          txt_notes_triangulation  "Section 3.2.2"
+    txt          txt_location_desc        "Section 3.2.3"
+    %% not defining code tables for these just now %%
+    cat          catu_admin_rc            "Section 3.2.4"
+    cat          catu_admin_dc            "Section 3.2.4"
+  }
+  
+  elevation_measurement_methods {
+    id           id_elevation_method PK
+    cat          catu_elevation_method FK  "Table 3.1"
+    txt          txt_elevation_method_name "Table 3.1"
+    txt          txt_elevation_method_desc "Table 3.1"
+  }
+
+  gnss_types {
+    id           id_gnss PK
+    cat          catu_gnss FK              "Table 3.2"
+    txt          txt_gnss_name             "Table 3.2"
+    txt          txt_gnss_desc             "Table 3.2"
+  }  
+  
+  landscape {
+    id id_site PK
+    id id_landscape PK
+    cat          catu_province FK          "Section 4.1"
+    cat          catu_landscape FK         "Section 4.2.1.4"
+    %% landscape relief %%
+    num[0-Inf]   amt_lscape_relief_med_m   "Section 4.2.1.1"
+    %% landscape slope %%
+    num[0-90]    amt_lscape_slope_med_d    "Section 4.2.1.2"
+    num[0-Inf]   amt_lscape_slope_min_d    "Section 4.2.1.2"
+    num[0-Inf]   amt_lscape_slope_max_d    "Section 4.2.1.2"
+    %% not implementing stream channel stuff here %%
+  }
+
+  provinces {
+    id           id_province PK
+    cat          catu_province FK          "Table 4.1"
+    txt          txt_province_name         "Table 4.1"
+    txt          txt_province_desc         "Note 4.1"
+  }
+  
+  landscapes {
+    id           id_landscape PK
+    cat          catu_landscape FK         "Table 4.2"
+    txt          txt_landscape_name        "Table 4.2"
+    txt          txt_landscape_desc        "Table 4.2"
+  }
+  
+  lscape_landuse {
+    id           id_site PK
+    id           id_landscape PK
+    id           id_lscape_landuse PK
+    cat          catu_lscape_landuse_primary FK    "Section 8.2.1"
+    cat          catu_lscape_landuse_secondary FK  "Section 8.2.1"
+    num[0-100]   amt_landuse_area_p                "Section 8.2.1"
+  }
+
+  landuse_primary {
+    id           id_landuse_primary PK
+    cat          catu_landuse_primary FK         "Fig. 8.1"
+    txt          txt_landuse_primary_name        "Fig. 8.1"
+    txt          txt_landuse_primary_desc        "Fig. 8.1"
+  }
+
+  landuse_secondary {
+    id           id_landuse_primary PK
+    cat          catu_landuse_primary FK         "Fig. 8.1"
+    txt          txt_landuse_primary_name        "Fig. 8.1"
+    txt          txt_landuse_primary_desc        "Fig. 8.1"
+  }
+
+  landform {
+    id           id_site PK
+    id           id_landscape PK
+    id           id_landform PK
+    cat          catu_landform FK                "Section 4.3.1"
+    num[0-100]   amt_landform_p                  "Section 4.1.2.5"
+    %% can only be true for one landform per site/landscape: %%
+    bool         ind_landform_contains_site  
+    %% (other way is separate tables for site-landform and    %%
+    %% landscape-landforms)                                   %%
+    cat          catu_land_cover FK              "Section 8.1"
+    %% detailed optional stuff: %%
+    num[0-Inf]   amt_landform_relief_m           "Section 4.3.2.1"
+    num[0-90]    amt_landform_slope_med_d        "Section 4.3.2.2"
+    num[0-Inf]   amt_landform_slope_min_d        "Section 4.3.2.2"
+    num[0-Inf]   amt_landform_slope_max_d        "Section 4.3.2.2"
+    num[0-359]   val_landform_aspect_med_d       "Section 4.3.2.3"
+    num[0-359]   val_landform_aspect_min_d       "Section 4.3.2.3"
+    num[0-359]   val_landform_aspect_max_d       "Section 4.3.2.3"
+    cat          catu_landform_aspect_rec FK     "Section D.13.1"
+    cat          catu_landform_element FK        "Section 4.3.2.4"
+    cat          catu_landform_element_vmod FK   "Section 4.3.2.4"
+    cat          catu_landform_element_hmod FK   "Section 4.3.2.4"
+    %% extremely optional %%
+    num[0-Inf]   amt_slope_length_m         "Section 4.4.1"
+    num[-90-90]  amt_mesoscale_topo_index   "Section 4.4.2"
+    num[-90-90]  amt_terrain_shape_index    "Section 4.4.3"
+    
+  }
+  
+  landform_types {
+    id           id_landform PK
+    cat          catu_landform FK           "Table 4.3"
+    txt          txt_landform_name          "Table 4.3"
+    txt          txt_landform_desc          "Table 4.3"
+  }
+  
+  land_cover_types {
+    id           id_land_cover PK
+    cat          catu_land_cover FK         "Table 8.1"
+    txt          txt_land_cover_name        "Table 8.1"
+    txt          txt_land_cover_desc        "Table 8.1"
+  }
+
+  measurement_types {
+    id          id_mtype PK
+    cat         catu_mtype FK
+    txt         txt_mtype_name              "Table D.1.1"
+    txt         txt_mtype_desc              "Table D.1.1"
+  }
+  
+  landform_elements {
+    id          id_landform_element PK
+    cat         catu_landform_element FK    "Table 4.4"
+    txt         txt_landform_element_name   "Table 4.4"
+    txt         txt_landform_element_desc   "Table 4.4"
+  }
+  
+  landform_element_vmods {
+    id          id_landform_element_vmod PK
+    cat         catu_landform_element_vmod FK    "Table 4.5"
+    txt         txt_landform_element_vmod_name   "Table 4.5"
+    txt         txt_landform_element_vmod_desc   "Table 4.5"
+  } 
+
+  landform_element_hmods {
+    id          id_landform_element_hmod PK
+    cat         catu_landform_element_hmod FK    "Table 4.6"
+    txt         txt_landform_element_hmod_name   "Table 4.6"
+    txt         txt_landform_element_hmod_desc   "Table 4.6"
+  } 
+
+  lform_landuse {
+    id           id_site PK
+    id           id_landform PK
+    id           id_lform_landuse PK
+    cat          catu_lform_landuse_primary FK    "Section 8.2.2"
+    cat          catu_lform_landuse_secondary FK  "Section 8.2.2"
+    cat          catu_lform_landuse_tertiary FK   "Section 8.2.2"
+    amt[0-100]   amt_landuse_area_p               "Section 8.2.2"
+    cat          cato_landuse_impact              "Section 8.2.2"
+  }
+
+  landuse_tertiary {
+    id           id_landuse_tertiary PK
+    cat          catu_landuse_tertiary FK         "Fig. 8.1"
+    txt          txt_landuse_tertiary_name        "Fig. 8.1"
+    txt          txt_landuse_tertiary_desc        "Fig. 8.1"
+  }
+
+  landuse_impact {
+    id           id_landuse_impact PK
+    cat          catu_landuse_impact FK         "Table 8.2"
+    txt          txt_landuse_impact_name        "Table 8.2"
+    txt          txt_landuse_impact_desc        "Table 8.2"
+  }
+
+</pre>
+</div>
+<p></p><figcaption> Setting - Details</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-erd-siteover" class="level2" data-number="D.3">
+<h2 data-number="D.3" class="anchored" data-anchor-id="sec-erd-siteover"><span class="header-section-number">D.3</span> Site overview</h2>
+<p>The site table stores reference data (<a href="pr_00_intro.html#sec-ref" class="quarto-xref"><span>Section 10.2</span></a>), except for location.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  site ||--|{ disturbances : "has one or more"
+  disturbances }|--|{ disturbance_types : "code comes from"
+  disturbances }|--|{ disturbance_ages : "code comes from"
+  site }|--|{ site_purposes : "code comes from"
+  site }|--|{ site_selection_methods : "code comes from"
+  site }|--|{ site_exposure_types : "code comes from"
+  site }|--|{ site_early_stop_types : "code comes from"
+  
+
+</pre>
+</div>
+<p></p><figcaption> Site - Overview</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  site ||--|{ disturbances : "has one or more"
+  disturbances }|--|{ disturbance_types : "code comes from"
+  disturbances }|--|{ disturbance_ages : "code comes from"
+  site }|--|{ site_purposes : "code comes from"
+  site }|--|{ site_selection_methods : "code comes from"
+  site }|--|{ site_exposure_types : "code comes from"
+  site }|--|{ site_early_stop_types : "code comes from"
+
+  site {
+    id          id_site PK               "Section 10.2.1"
+    usr         usr_author               "Section 10.2.2"
+    dt          dt_site                  "Section 10.2.4"
+    cat         catu_site_purpose FK     "Section 10.2.5"
+    cat         catu_site_selection FK   "Section 10.2.6"
+    cat         catu_site_exposure FK    "Section 10.2.7"
+    num[0-1000] amt_site_depth_max_cm    "Section 10.2.8"
+    txt         catu_early_stop FK       "Section 10.2.9"
+    %% weather at visit %%
+    cat         catu_weather FK          "Section 6.3.1"
+    num[-50-50] val_temperature_c        "Section 6.3.1"
+    cat         cato_recent_rain FK      "Section 6.3.2"
+    %% veg %%
+    cat        cat_vegetation_luc FK     "Section 7.1"
+    
+  }
+  
+  site_purposes {
+    id          id_site_purpose PK
+    cat         catu_site_purpose FK     "Table 10.1"
+    txt         txt_site_purpose         "Table 10.1"
+  }
+  
+  site_selection_methods {
+    id          id_site_selection PK
+    cat         catu_site_selection FK   "Table 10.2"
+    txt         txt_site_selection       "Table 10.2"
+  }
+  
+  site_exposure_types {
+    id          id_site_exposure PK
+    cat         catu_site_exposure FK    "Table 10.3"
+    txt         txt_site_exposure_name   "Table 10.3"
+  }
+  
+  site_early_stop_types {
+    id          id_site_stop PK
+    cat         catu_site_stop FK        "Table 10.4"
+    txt         txt_site_stop            "Table 10.4"
+}
+  
+  disturbances {
+    id          id_site PK
+    id          id_disturbance PK
+    txt         catu_disturbance FK      "Section 10.3"
+    txt         catu_disturbance_age FK  "Section 10.3"
+    num[0-Inf]  amt_disturbance_age_days "Section 10.3"
+  }
+
+  disturbance_types {
+    id          id_disturbance PK
+    cat         catu_disturbance FK      "Table 10.5"
+    txt         txt_disturbance_name     "Table 10.5"
+    txt         txt_disturbance_desc     "Table 10.5"
+  }
+  
+  disturbance_ages {
+    id          id_disturbance_age PK
+    cat         catu_disturbance_age FK  "Table 10.6"
+    txt         txt_disturbance_age_name "Table 10.6"
+    txt         txt_disturbance_age_desc "Table 10.6"
+  }
+  
+</pre>
+</div>
+<p></p><figcaption> Site - Details</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-erd-surface" class="level2" data-number="D.4">
+<h2 data-number="D.4" class="anchored" data-anchor-id="sec-erd-surface"><span class="header-section-number">D.4</span> Surface</h2>
+<p>The surface table stores slope, aspect, surface cover, surface water, surface cracking, microrelief, erosion and deposition data (<a href="pr_01_surface.html" class="quarto-xref"><span>Chapter 11</span></a>). It can also store LUC vegetation code (<a href="ss_06_biota.html#sec-veg" class="quarto-xref"><span>Section 7.1</span></a>). This table can optionally extend the site table (<a href="#sec-erd-siteover" class="quarto-xref"><span>Section D.3</span></a>) as it has a 1:1 relationship.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  site_surface }|--|{ slope_methods : "code comes from"
+  site_surface }|--|{ measurement_types : "code comes from"
+  site_surface }|--|{ aspect_methods : "code comes from"
+  site_surface ||--|{ surface_cover : "has"
+  surface_cover }|--|{ surface_cover_types : "code comes from"
+  site_surface }|--|{ surface_water_types : "code comes from"
+  site_surface }|--|{ surface_water_persts : "code comes from"
+  site_surface }|--|{ surface_crack_types : "code comes from"
+  site_surface }|--|{ surface_crack_shapes : "code comes from"
+  site_surface ||--o{ site_erosion : "may have"
+  site_surface }|--|{ site_microrelief_nat : "code comes from"
+  site_surface }|--|{ site_microrelief_ant : "code comes from"
+  site_erosion }|--|{ erosion_types : "code comes from"
+  site_erosion }|--|{ erosion_severity : "code comes from"
+  site_erosion }|--|{ erosion_activity : "code comes from"
+  site_surface ||--o{ site_deposition : "may have"
+  site_deposition }|--|{ deposition_types : "code comes from"
+  site_deposition }|--|{ deposition_severity : "code comes from"
+  site_deposition }|--|{ deposition_activity : "code comes from"
+  site_surface }|--|{ water_depths : "code comes from"
+  site_surface }|--|{ luc_vegetation_codes : "code comes from"
+
+</pre>
+</div>
+<p></p><figcaption> Surface - Overview</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  site_surface }|--|{ slope_methods : "code comes from"
+  site_surface }|--|{ measurement_types : "code comes from"
+  site_surface }|--|{ aspect_methods : "code comes from"
+  site_surface ||--|{ surface_cover : "has"
+  surface_cover }|--|{ surface_cover_types : "code comes from"
+  site_surface }|--|{ surface_water_types : "code comes from"
+  site_surface }|--|{ surface_water_persts : "code comes from"
+  site_surface }|--|{ surface_crack_types : "code comes from"
+  site_surface }|--|{ surface_crack_shapes : "code comes from"
+  site_surface ||--o{ site_erosion : "may have"
+  site_surface }|--|{ site_microrelief_nat : "code comes from"
+  site_surface }|--|{ site_microrelief_ant : "code comes from"
+  site_erosion }|--|{ erosion_types : "code comes from"
+  site_erosion }|--|{ erosion_severity : "code comes from"
+  site_erosion }|--|{ erosion_activity : "code comes from"
+  site_surface ||--o{ site_deposition : "may have"
+  site_deposition }|--|{ deposition_types : "code comes from"
+  site_deposition }|--|{ deposition_severity : "code comes from"
+  site_deposition }|--|{ deposition_activity : "code comes from"
+  site_surface }|--|{ water_depths : "code comes from"
+  site_surface }|--|{ luc_vegetation_codes : "code comes from"
+
+  site_surface {
+    id          id_site PK                       "Section 10.2.1"
+    num[0-90]   amt_slope_d                      "Section 11.1"
+    cat         catu_slope_rec FK                "Section D.13.1"
+    cat         catu_slope_method FK             "Section 11.1"
+    num[0-359]  amt_aspect_d                     "Section 11.2"
+    cat         catu_aspect_rec FK               "Section D.13.1"
+    cat         catu_aspect_method FK            "Section 11.2"
+    cat         catu_surface_water FK            "Section 11.4"
+    cat         cato_surface_water_perst FK      "Section 11.4"
+    cat         catu_surface_cracks FK           "Section 11.5"
+    cat         catu_surface_crack_shp FK        "Section 11.5"
+    cat         catu_microrelief_nat FK          "Section 11.6.1"
+    %% optional details %%
+    num[0-Inf]  amt_microrelief_nat_width_cm    "Section 11.6.1"
+    num[0-Inf]  amt_microrelief_nat_height_cm   "Section 11.6.1"
+    cat         catu_microrelief_ant FK         "Section 11.6.2"
+    %% optional details %%
+    num[0-Inf]  amt_microrelief_ant_width_cm    "Section 11.6.1"
+    num[0-Inf]  amt_microrelief_ant_height_cm   "Section 11.6.1"
+    num[0-Inf]  amt_depth_water                 "Section 12.7"
+    cat         catu_depth_water FK             "Section 12.7"
+    %% vegetation could also be stored at landscape and/or landform %%
+    cat         catu_vegetation_luc FK          "Section 7.1"
+  }
+  
+  slope_methods {
+    id          id_slope_method PK
+    cat         catu_slope_method FK     "Table 11.1"
+    txt         txt_slope_method_name    "Table 11.1"
+    txt         txt_slope_method_desc    "Table 11.1"
+  }
+  
+  aspect_methods {
+    id          id_aspect_method PK
+    cat         catu_aspect_method FK     "Table 11.2"
+    txt         txt_aspect_method_name    "Table 11.2"
+    txt         txt_aspect_method_desc    "Table 11.2"
+  }
+  
+  measurement_types {
+    id          id_mtype PK
+    cat         catu_mtype FK
+    txt         txt_mtype_name           "Table D.1"
+    txt         txt_mtype_desc           "Table D.1"
+  }
+
+  surface_cover {
+    id          id_site PK
+    cat         catu_surface_cover FK    "Section 11.3"
+    num[0-100]  amt_surface_cover        "Section 11.3"
+  }
+  
+  surface_cover_types {
+    id          id_surfcov PK
+    cat         catu_surface_cover FK    "Table 11.3"
+    txt         txt_surface_cover_name   "Table 11.3"
+    txt         txt_surface_cover_desc   "Table 11.3"
+  }
+  
+  surface_water_types {
+    id          id_surface_water PK
+    cat         catu_surface_water FK   "Table 11.4"
+    txt         txt_surface_water_name  "Table 11.4"
+    txt         txt_surface_water_desc  "Table 11.4"
+  }
+
+  surface_water_persts {
+    id          id_surface_water_perst PK
+    cat         catu_surface_water_perst FK    "Table 11.5"
+    txt         txt_surface_water_perst_name   "Table 11.5"
+    txt         txt_surface_water_perst_desc   "Table 11.5"
+  }
+
+  surface_crack_types {
+    id          id_surface_crack
+    cat         catu_surface_crack             "Table 11.6"
+    txt         txt_surface_crack_name         "Table 11.6"
+    txt         txt_surface_crack_desc         "Table 11.6"
+  }
+  
+  surface_crack_shapes {
+    id          id_surface_crack_shp PK
+    cat         catu_surface_crack_shp FK      "Table 11.7"
+    txt         txt_surface_crack_shp_name     "Table 11.7"
+    txt         txt_surface_crack_shp_desc     "Table 11.7"
+  }
+  
+  site_microrelief_nat {
+    id          id_microrelief_nat PK
+    cat         catu_microrelief_nat FK      "Table 11.8"
+    txt         txt_microrelief_nat_name     "Table 11.8"
+    txt         txt_microrelief_nat_desc     "Table 11.8"
+  }
+  
+  site_microrelief_ant {
+    id          id_microrelief_ant PK
+    cat         catu_microrelief_ant FK      "Table 11.9"
+    txt         txt_microrelief_ant_name     "Table 11.9"
+    txt         txt_microrelief_ant_desc     "Table 11.9"
+  }
+  
+  site_erosion {
+    id          id_site PK
+    id          id_erosion PK                   
+    cat         catu_erosion FK              "Section 11.7"            
+    cat         cato_erosion_severity FK     "Section 11.7"
+    cat         cato_erosion_activity FK     "Section 11.7"
+  }
+  
+  erosion_types {
+    id          id_erosion PK
+    cat         catu_erosion FK              "Table 11.10"
+    txt         txt_erosion_name             "Table 11.10"
+    txt         txt_erosion_desc             "Table 11.10"
+  }
+  
+  erosion_severity {
+    id          id_erosion_severity PK
+    cat         catu_erosion_severity FK     "Table 11.11"
+    txt         txt_erosion_severity_name    "Table 11.11"
+    txt         txt_erosion_severity_desc    "Table 11.11"
+  }  
+  
+  erosion_activity {
+    id          id_erosion_activity PK
+    cat         catu_erosion_activity FK     "Table 11.12"
+    txt         txt_erosion_activity_name    "Table 11.12"
+    txt         txt_erosion_activity_desc    "Table 11.12"
+  }  
+  
+ site_deposition {
+    id          id_site PK
+    id          id_deposition PK
+    cat         catu_deposition FK             "Section 11.8"    
+    cat         cato_deposition_severity FK    "Section 11.8"
+    cat         cato_deposition_activity FK    "Section 11.8"
+  }
+  
+  deposition_types {
+    id          id_deposition PK
+    cat         catu_deposition FK                "Table 11.13"
+    txt         txt_deposition_name               "Table 11.13"
+    txt         txt_deposition_desc               "Table 11.13"
+  }  
+  
+  deposition_severity {
+    id          id_deposition_severity PK
+    cat         catu_deposition_severity FK       "Table 11.14"
+    txt         txt_deposition_severity_name      "Table 11.14"
+    txt         txt_deposition_severity_desc      "Table 11.14"
+  }  
+  
+  deposition_activity {
+    id          id_deposition_activity PK
+    cat         catu_deposition_activity FK       "Table 11.15"
+    txt         txt_deposition_activity_name      "Table 11.15"
+    txt         txt_deposition_activity_desc      "Table 11.15"
+  }  
+  
+  water_depths {
+    id          id_water_depths PK
+    cat         catu_water_depths FK        "Table 12.4"
+    txt         txt_water_depths_name       "Table 12.4"
+    txt         txt_water_depths_desc       "Table 12.4"  
+  }
+ 
+  luc_vegetation_codes {
+    id          id_vegetation_luc PK
+    cat         catu_vegetation_luc FK        "Section 7.1"
+    txt         txt_vegetation_luc_name       "Section 7.1"
+    txt         txt_vegetation_luc_desc       "Section 7.1"  
+  } 
+</pre>
+</div>
+<p></p><figcaption> Surface - Details</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-erd-horizono" class="level2" data-number="D.5">
+<h2 data-number="D.5" class="anchored" data-anchor-id="sec-erd-horizono"><span class="header-section-number">D.5</span> Horizon overview</h2>
+<p>The horizon overview table stores boundary definitions and soil moisture status at the time of examination.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  horizon }|--|{ boundary_shapes : "code comes from"
+  horizon }|--|{ boundary_widths : "code comes from"
+  horizon }|--|{ soil_moistures : "code comes from"
+
+</pre>
+</div>
+<p></p><figcaption> Horizon - including support tables</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  horizon }|--|{ boundary_shapes : "code comes from"
+  horizon }|--|{ boundary_widths : "code comes from"
+  horizon }|--|{ soil_moistures : "code comes from"
+  
+  horizon {
+  id         id_site PK
+  id         id_horizon PK
+  num[0-Inf] amt_upper_depth_cm      "Section 12.2"
+  num[0-Inf] amt_upper_depth_med_cm  "Section 12.2"
+  num[0-Inf] amt_upper_depth_min_cm  "Section 12.2"
+  num[0-Inf] amt_upper_depth_max_cm  "Section 12.2"
+  num[0-Inf] amt_upper_depth_cm      "Section 12.2"
+  num[0-Inf] amt_lower_depth_med_cm  "Section 12.2"
+  num[0-Inf] amt_upper_depth_min_cm  "Section 12.2"
+  num[0-Inf] amt_upper_depth_max_cm  "Section 12.2"
+  cat        catu_boundary_shape FK  "Section 12.4"
+  num[0-Inf] amt_boundary_cm         "Section 12.5"
+  cat        catu_boundary_width FK  "Section 12.5" 
+  cat        cato_soil_moisture FK   "Section 12.6"
+  }
+  
+  boundary_shapes {
+    id          id_boundary_shape PK
+    cat         catu_boundary_shape FK       "Table 12.1"
+    txt         txt_boundary_shape_name      "Table 12.1"
+    txt         txt_boundary_shape_desc      "Table 12.1"
+  }
+ 
+  boundary_widths {
+    id          id_boundary_width PK
+    cat         catu_boundary_width FK       "Table 12.2"
+    txt         txt_boundary_width_name      "Table 12.2"
+    txt         txt_boundary_width_desc      "Table 12.2"
+  } 
+  
+  soil_moistures {
+    id          id_soil_moisture PK
+    cat         catu_soil_moisture FK       "Table 12.3"
+    txt         txt_soil_moisture_name      "Table 12.3"
+  }
+  
+</pre>
+</div>
+<p></p><figcaption> Horizon - Details</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-erd-horizona" class="level2" data-number="D.6">
+<h2 data-number="D.6" class="anchored" data-anchor-id="sec-erd-horizona"><span class="header-section-number">D.6</span> Horizon architecture</h2>
+<p>The horizon architecture table stores parent material origin, as well as data about pedality, fragments, roots, voids and pores. This table can optionally extend the horizon overview table (<a href="#sec-erd-horizono" class="quarto-xref"><span>Section D.5</span></a>) as it has a 1:1 relationship.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram 
+  horizon_arch ||--|{ horizon_peds : "may have"
+  horizon_arch }|--|{ nzsc_parent_material_origin : "code comes from"
+  horizon_arch }|--|{ parent_material_origin_mod : "code comes from"
+  horizon_arch }|--|{ pedality_grades : "code comes from"
+  horizon_arch }|--|{ ped_sizes_rapid : "code comes from"
+  horizon_peds }|--|{ pedality_grades : "code comes from"
+  horizon_peds }|--|{ ped_shapes : "code comes from"
+  horizon_arch ||--|{ horizon_rock_fragments : "may have"
+  horizon_rock_fragments }|--|{ fragment_sizes_simple : "code comes from"
+  horizon_rock_fragments }|--|{ rock_fragment_shapes : "code comes from"
+  horizon_rock_fragments }|--|{ nzsc_lithologies : "code comes from"
+  horizon_arch ||--|{ horizon_other_fragments : "may have"
+  horizon_other_fragments }|--|{ fragment_sizes_simple : "code comes from"
+  horizon_other_fragments }|--|{ other_fragment_types : "code comes from"
+  horizon_arch ||--|{ horizon_artefacts : "may have"
+  horizon_artefacts }|--|{ fragment_sizes_simple : "code comes from"
+  horizon_artefacts }|--|{ artefact_types: "code comes from"
+  horizon_arch ||--|{ horizon_roots : "may have"
+  horizon_arch }|--|{ root_positions: "code comes from"
+  horizon_roots }|--|{ root_positions: "code comes from"
+  horizon_roots }|--|{ root_sizes_simple: "code comes from"
+  horizon_arch ||--|{ horizon_voids : "may have"
+  horizon_voids }|--|{ void_types : "code comes from"
+  horizon_voids }|--|{ void_conns : "code comes from"
+
+</pre>
+</div>
+<p></p><figcaption> Horizon architecture - table arrangement</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  horizon_arch ||--|{ horizon_peds : "may have"
+  horizon_arch }|--|{ nzsc_parent_material_origin : "code comes from"
+  horizon_arch }|--|{ parent_material_origin_mod : "code comes from"
+  horizon_arch }|--|{ pedality_grades : "code comes from"
+  horizon_arch }|--|{ ped_sizes_rapid : "code comes from"
+  horizon_peds }|--|{ pedality_grades : "code comes from"
+  horizon_peds }|--|{ ped_shapes : "code comes from"
+  horizon_arch ||--|{ horizon_rock_fragments : "may have"
+  horizon_rock_fragments }|--|{ fragment_sizes_simple : "code comes from"
+  horizon_rock_fragments }|--|{ rock_fragment_shapes : "code comes from"
+  horizon_rock_fragments }|--|{ nzsc_lithologies : "code comes from"
+  horizon_arch ||--|{ horizon_other_fragments : "may have"
+  horizon_other_fragments }|--|{ fragment_sizes_simple : "code comes from"
+  horizon_other_fragments }|--|{ other_fragment_types : "code comes from"
+  horizon_arch ||--|{ horizon_artefacts : "may have"
+  horizon_artefacts }|--|{ fragment_sizes_simple : "code comes from"
+  horizon_artefacts }|--|{ artefact_types: "code comes from"
+  horizon_arch ||--|{ horizon_roots : "may have"
+  horizon_arch }|--|{ root_positions: "code comes from"
+  horizon_roots }|--|{ root_positions: "code comes from"
+  horizon_roots }|--|{ root_sizes_simple: "code comes from"
+  horizon_arch ||--|{ horizon_voids : "may have"
+  horizon_voids }|--|{ void_types : "code comes from"
+  horizon_voids }|--|{ void_conns : "code comes from"
+  
+  horizon_arch {
+    id         id_site PK
+    id         id_horizon PK
+    %% pmo %%
+    cat        catu_parent_material_origin FK    "Section 13.7.1"
+    cat        catu_anthropic_origin_modifier FK "Section 13.7.1"
+    %% pedality rapid (detailed in subtable) %%
+    cat        cato_pedality_grade FK           "Section 14.1.1"
+    cat        cato_ped_shape FK                "Section 14.1.2-3"
+    cat        cato_ped_size FK                 "Section 14.1.3"
+    %% all frags super rapid (record this OR the next three) %%
+    num[0-100] amt_total_frags_p                "Section 4.2"
+    %% rock frags rapid (detailed in subtable) %%
+    num[0-100] amt_rockfrags_p                  "Section 14.2"
+    %% notrock frags rapid %%
+    num[0-100] amt_otherfrags_p                 "Section 14.2.1.1"
+    %% notrock frags rapid %%
+    num[0-100] amt_artefacts_p                  "Section 14.2.1.2"
+    %% roots rapid %%
+    num[0-100] amt_total_roots_p                "Section 14.3.1"
+    cat        catu_total_roots_pos FK          "Section 14.3.2"
+    %% void rapid %%
+    num[0-100] amt_total_voids_p                "Section 14.4"
+    %% pores rapid %%
+    num[0-10]  amt_total_pores_p                "Section 14.5"
+    %% pores detailed (could also spin out to subtable) %%
+    num[0-10]  amt_macropores_p                 "Section 14.5"
+    num[0-10]  amt_micropores_p                 "Section 14.5"
+                  
+  }
+ 
+  nzsc_parent_material_origin {
+    id          id_pmo PK
+    cat         catu_pmo FK             "Table 24.5"
+    txt         txt_pmo_name            "Table 24.5"
+    txt         txt_pmo_desc            "Table 24.5"  
+  }
+  
+  parent_material_origin_mod {
+    id          id_pmo_mod PK
+    cat         catu_pmo_mod FK         "Table 13.1"
+    txt         txt_pmo_mod_name        "Table 13.1"
+    txt         txt_pmo_mod_desc        "Table 13.1"  
+  }
+
+  pedality_grades {
+    id          id_pedality_grade PK      
+    cat         catu_pedality_grade FK    "Table 14.1"
+    txt         txt_pedality_grade_name   "Table 14.1"
+    txt         txt_pedality_grade_desc   "Table 14.1"
+  }
+
+  ped_sizes_rapid {
+    id          id_ped_size_rapid PK      "Section 14.1.3"
+    cat         catu_ped_size_rapid FK    "C, F"
+    txt         txt_ped_size_rapid_name   "Coarse, Fine"
+    txt         txt_ped_size_rapid_desc   "&gt; 40 mm, &lt;= 40 mm"
+  }
+  
+  horizon_peds {
+    id id_site PK
+    id id_horizon PK
+    id id_ped PK
+    cat        cato_pedality_grade FK     "Section 14.1.1"
+    cat        cato_ped_shape FK          "Section 14.1.2-3"
+    num[0-Inf] amt_ped_size_med_mm        "Section 14.1.3" 
+    num[0-Inf] amt_ped_size_min_mm        "Section 14.1.3" 
+    num[0-Inf] amt_ped_size_max_mm        "Section 14.1.3"
+  }
+  
+
+  ped_shapes {
+    id          id_ped_shape PK     
+    cat         catu_ped_shape FK        "Table 14.2/3"
+    txt         txt_ped_shape_name       "Table 14.2/3"
+    txt         txt_ped_shape_desc       "Table 14.2/3"
+  }
+  
+  horizon_rock_fragments {
+    id         id_site PK
+    id         id_horizon PK
+    id         id_rock_fragment PK
+    cat        cato_rock_fragment_size FK       "Section 14.2.1"
+    cat        catu_rock_fragment_shape FK      "Section 14.2.1"
+    num[0-100] num_rock_fragment_p         
+    cat        catu_rock_fragment_lithology FK  "Section 24.1.2"
+  }
+  
+  fragment_sizes_simple {
+    id          id_rockfrag_size PK    
+    cat         catu_rockfrag_size FK         "Table 14.4"
+    txt         txt_rockfrag_size_name        "Table 14.4"
+    txt         txt_rockfrag_size_desc        "Table 14.4"
+  }
+  
+  rock_fragment_shapes {
+    id          id_rockfrag_shape PK    
+    cat         catu_rockfrag_shape FK        "Table 14.5"
+    txt         txt_rockfrag_shape_name       "Table 14.5"
+    txt         txt_rockfrag_shape_desc       "Table 14.5"
+  }
+  
+  nzsc_lithologies {
+    id          id_nzsc_lithology PK     
+    cat         catu_nzsc_lithology FK        "Table 24.2"
+    txt         txt_nzsc_lithology_name       "Table 24.2"
+  }
+  
+  %% %%
+  horizon_other_fragments {
+    id         id_site PK
+    id         id_horizon PK
+    id         id_other_fragment PK
+    cat        cato_other_fragment_size FK      "Table 14.4"
+    cat        cato_other_fragment FK           "Table 14.6"
+    num[0-100] num_rock_fragment_p              "Section 14.2.1"
+  }  
+  
+  other_fragment_types {
+    id          id_other_fragment PK
+    cat         cato_other_fragment FK        "Table 14.6"
+    txt         txt_other_fragment_name       "Table 14.6"
+    txt         txt_other_fragment_desc       "Table 14.6"
+  }
+
+  %% %%
+  horizon_artefacts {
+    id         id_site PK
+    id         id_horizon PK
+    id         id_artefact PK
+    cat        cato_artefact_size FK           "Table 14.4"
+    cat        cato_artefact FK                "Table 14.7"
+    num[0-100] num_artefact_p                  "Section 14.2.2"
+  } 
+  
+  artefact_types {
+    id          id_artefact PK
+    cat         catu_artefact FK             "Table 14.7"
+    txt         txt_artefact_type_name       "Table 14.7"
+    txt         txt_artefact_type_desc       "Table 14.7"
+  }
+  
+  %% %%
+  horizon_roots {
+    id         id_site PK
+    id         id_horizon PK
+    id         id_root PK
+    cat        cato_root_size FK           "Table 14.8"
+    cat        cato_root_pos FK            "Table 14.9"
+    num[0-100] num_root_p                  "Section 14.3.1"
+  } 
+
+  root_sizes_simple {
+    id          id_root_size PK     
+    cat         catu_root_size FK         "Table 14.8"
+    txt         txt_root_size_name        "Table 14.8"
+    txt         txt_root_size_desc        "Table 14.8"
+  }
+  
+  root_positions {
+    id          id_root_pos PK     
+    cat         catu_root_pos FK         "Table 14.9"
+    txt         txt_root_pos_name        "Table 14.9"
+    txt         txt_root_pos_desc        "Table 14.9"
+  }
+
+  %% %%
+  horizon_voids {
+    id         id_site PK
+    id         id_horizon PK
+    id         id_void PK
+    cat        catu_void FK                 "Table 14.10"
+    cat        catu_void_conn FK            "Table 14.11"
+    num[0-100] num_void_p                   "Section 14.4"
+  } 
+  
+  void_types {
+    id          id_void PK 
+    cat         catu_void FK              "Table 14.10"
+    txt         txt_void_name             "Table 14.10"
+    txt         txt_void_desc             "Table 14.10"
+  }  
+
+  void_conns {
+    id          id_void_conn PK 
+    cat         catu_void_conn FK         "Table 14.10"
+    txt         txt_void_conn_name        "Table 14.10"
+    txt         txt_void_conn_desc        "Table 14.10"
+  }  
+  
+</pre>
+</div>
+<p></p><figcaption> Horizon architecture - Details</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-erd-colour" class="level2" data-number="D.7">
+<h2 data-number="D.7" class="anchored" data-anchor-id="sec-erd-colour"><span class="header-section-number">D.7</span> Horizon colour</h2>
+<p>These tables store matrix colours (<a href="hr_02_colour.html#sec-col-matrix" class="quarto-xref"><span>Section 15.2</span></a>) and colour patterns (<a href="hr_02_colour.html#sec-col-patt" class="quarto-xref"><span>Section 15.3</span></a>).</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  horizon ||--|{ horizon_matrix_colours : "has one or more"
+  horizon ||--|{ horizon_colour_patterns : "has one or more"
+  horizon_matrix_colours }|--|{ munsell_colours : "code comes from"
+  horizon_colour_patterns }|--|{ munsell_colours : "code comes from"
+  horizon_colour_patterns }|--|{ short_colours : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_types : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_shapes : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_contrasts : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_edges : "code comes from"
+</pre>
+</div>
+<p></p><figcaption> Horizon colour - table arrangement</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  horizon ||--|{ horizon_matrix_colours : "has one or more"
+  horizon ||--|{ horizon_colour_patterns : "has one or more"
+  horizon_matrix_colours }|--|{ munsell_colours : "code comes from"
+  horizon_colour_patterns }|--|{ munsell_colours : "code comes from"
+  horizon_colour_patterns }|--|{ short_colours : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_types : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_shapes : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_contrasts : "code comes from"
+  horizon_colour_patterns }|--|{ pattern_edges : "code comes from"
+  
+  horizon_matrix_colours {
+    id          id_site PK
+    id          id_horizon PK
+    id          id_colour_matrix PK        "Section 15.2"
+    %% can also split into hue/value/chroma with subtables %%
+    cat         cato_matrix_munsell        "Section 15.2"
+    %% no simple colours on the matrix!! %%
+    cat         catu_colour_moisture       "Section 15.2"
+  }
+  
+  horizon_colour_patterns {
+    id          id_site PK
+    id          id_horizon PK
+    id          id_colour_pattern PK
+    %% either %%
+    cat         cato_pattern_munsell FK        "Section 15.2"
+    %% or, %%
+    cat         catu_pattern_short_colour FK   "Section 15.1.1"
+    cat         catu_pattern_type FK           "Section 15.3.1"
+    num[0-100]  amt_pattern_p                  "Section 15.3.2"
+    cat         catu_pattern_shape  FK         "Section 15.3.3"
+    num[0-Inf]  amt_pattern_size_mm            "Section 15.3.4"
+    cat         cato_pattern_contrast FK       "Section 15.3.5"
+    cat         cato_pattern_edge FK           "Section 15.3.6"
+   }
+ 
+  munsell_colours {
+    id          id_munsell PK
+    cat         cato_munsell              "See charts for allowable values"
+    %% optional but handy: %%
+    txt         txt_colour_hex
+  }  
+   
+  short_colours {
+    id          id_colour PK
+    cat         catu_colour FK            "Table 15.2"
+    txt         txt_colour_name           "Table 15.2"
+    txt         txt_colour_desc           "Table 15.2"
+  } 
+
+  pattern_types {
+    id          id_pattern PK
+    cat         catu_pattern FK           "Table 15.3"
+    txt         txt_pattern_name          "Table 15.3"
+    txt         txt_pattern_desc          "Table 15.3"
+  } 
+
+  pattern_shapes {
+    id          id_pattern_shape PK
+    cat         catu_pattern_shape FK     "Table 15.4"
+    txt         txt_pattern_shape_name    "Table 15.4"
+    txt         txt_pattern_shape_desc    "Table 15.4"
+  }
+
+  pattern_contrasts {
+    id          id_pattern_contrast PK
+    cat         catu_pattern_contrast FK  "Table 15.5"
+    txt         txt_pattern_contrast_name "Table 15.5"
+    txt         txt_pattern_contrast_desc "Table 15.5"
+  }
+  
+  pattern_edges {
+    id          id_pattern_edge PK
+    cat         catu_pattern_edge FK      "Table 15.6"
+    txt         txt_pattern_edge_name     "Table 15.6"
+    txt         txt_pattern_edge_desc     "Table 15.6"
+  }
+</pre>
+</div>
+<p></p><figcaption> Horizon colour - Details</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-erd-texture" class="level2" data-number="D.8">
+<h2 data-number="D.8" class="anchored" data-anchor-id="sec-erd-texture"><span class="header-section-number">D.8</span> Horizon texture</h2>
+<p>The horizon texture table stores texture category as well as field estimates of sand and clay. This table can optionally extend the horizon overview table (<a href="#sec-erd-horizono" class="quarto-xref"><span>Section D.5</span></a>) as it has a 1:1 relationship.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  horizon_texture }|--|{ simple_textures : "code comes from"
+  horizon_texture }|--|{ textures : "code comes from"
+  horizon_texture }|--|{ sand_sizes : "code comes from"
+  horizon_texture }|--|{ organic_levels : "code comes from"
+  horizon_texture }|--|{ organic_decomps : "code comes from" 
+
+</pre>
+</div>
+<p></p><figcaption> Horizon texture - table arrangement</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  horizon_texture }|--|{ simple_textures : "code comes from"
+  horizon_texture }|--|{ textures : "code comes from"
+  horizon_texture }|--|{ sand_sizes : "code comes from"
+  horizon_texture }|--|{ organic_levels : "code comes from"
+  horizon_texture }|--|{ organic_decomps : "code comes from"
+  
+  horizon_texture {
+    id          id_site PK
+    id          id_horizon PK
+    cat         catu_texture_simple FK    "Section 16.1.1"
+    cat         catu_texture FK           "Section 16.1"
+    cat         catu_sand_size_mod FK     "Section 16.2.1"
+    cat         catu_organics FK          "Section 16.2.2"
+    cat         catu_organics_decomp FK   "Section 16.2.2"
+    num[0-100]  amt_sand_est_med_p        "Section 16.3"
+    num[0-100]  amt_sand_est_min_p        "Section 16.3"
+    num[0-100]  amt_sand_est_max_p        "Section 16.3"
+    num[0-100]  amt_clay_est_med_p        "Section 16.3"
+    num[0-100]  amt_clay_est_min_p        "Section 16.3"
+    num[0-100]  amt_clay_est_max_p        "Section 16.3"
+  }
+   
+  simple_textures {
+    id          id_simple_texture PK
+    cat         catu_simple_texture FK    "Table 16.3"
+    txt         txt_simple_texture_name   "Table 16.3"
+    txt         txt_simple_texture_desc   "Table 16.3"
+  } 
+
+  textures {
+    id          id_texture PK
+    cat         catu_texture FK           "Table 16.2"
+    txt         txt_texture_name          "Table 16.2"
+    txt         txt_texture_desc          "Table 16.2"
+  } 
+
+  sand_sizes {
+    id          id_sand_size PK
+    cat         catu_sand_size FK         "Table 16.4"
+    txt         txt_sand_size_name        "Table 16.4"
+    txt         txt_sand_size_desc        "Table 16.4"
+  }
+
+  organic_levels {
+    id          id_organic PK
+    cat         catu_organic FK           "Table 16.5"
+    txt         txt_organic_name          "Table 16.5"
+    txt         txt_organic_desc          "Table 16.5"
+  }
+  
+  organic_decomps {
+    id          id_organic_decomp PK
+    cat         catu_organic_decomp FK    "Table 16.6"
+    txt         txt_organic_decomp_name   "Table 16.6"
+    txt         txt_organic_decomp_desc   "Table 16.6"
+  }
+</pre>
+</div>
+<p></p><figcaption> Horizon colour - Details</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-erd-secf" class="level2" data-number="D.9">
+<h2 data-number="D.9" class="anchored" data-anchor-id="sec-erd-secf"><span class="header-section-number">D.9</span> Horizon secondary features</h2>
+<p>The secondary features tables stores essential information in a parent table and more detailed optional descriptions in child tables. The parent table can optionally extend the horizon overview table (<a href="#sec-erd-horizono" class="quarto-xref"><span>Section D.5</span></a>) as it has a 1:1 relationship.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  horizon_secondary_features ||--o{ "horizon_concentrations" : "may have some"
+  horizon_secondary_features ||--o{ "horizon_coatings" : "may have some"
+  horizon_secondary_features ||--o{ "horizon_bio_features" : "may have some"
+  horizon_secondary_features }|--|{ concentration_forms : "code comes from"
+  horizon_secondary_features }|--|{ concentration_forms : "code comes from"
+  horizon_secondary_features }|--|{ concentration_types : "code comes from"
+  horizon_secondary_features }|--|{ pan_types : "code comes from"
+  horizon_secondary_features }|--|{ pan_continuities : "code comes from"
+  horizon_secondary_features }|--|{ pan_structures : "code comes from"
+  horizon_secondary_features }|--|{ stress_types : "code comes from"
+  horizon_concentrations }|--|{ concentration_forms : "code comes from"
+  horizon_concentrations }|--|{ concentration_types : "code comes from"
+  horizon_coatings }|--|{ coating_types : "code comes from"
+  horizon_bio_features }|--|{ bio_feature_types : "code comes from"
+
+</pre>
+</div>
+<p></p><figcaption> Horizon secondary features - table arrangement</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  horizon_secondary_features ||--o{ "horizon_concentrations" : "may have some"
+  horizon_secondary_features ||--o{ "horizon_coatings" : "may have some"
+  horizon_secondary_features ||--o{ "horizon_bio_features" : "may have some"
+  horizon_secondary_features }|--|{ concentration_forms : "code comes from"
+  horizon_secondary_features }|--|{ concentration_forms : "code comes from"
+  horizon_secondary_features }|--|{ concentration_types : "code comes from"
+  horizon_secondary_features }|--|{ pan_types : "code comes from"
+  horizon_secondary_features }|--|{ pan_continuities : "code comes from"
+  horizon_secondary_features }|--|{ pan_structures : "code comes from"
+  horizon_secondary_features }|--|{ stress_types : "code comes from"
+  horizon_concentrations }|--|{ concentration_forms : "code comes from"
+  horizon_concentrations }|--|{ concentration_types : "code comes from"
+  horizon_coatings }|--|{ coating_types : "code comes from"
+  horizon_bio_features }|--|{ bio_feature_types : "code comes from"
+  
+  horizon_secondary_features {
+    id          id_site PK
+    id          id_horizon PK
+    %% concentrations_rapid %%  
+    cat         catu_concentration_form FK       "Section 17.1"
+    num[0-100]  amt_concentration_p              "Section 17.1"
+    %% coatings rapid still has to go in a subtable, see below %%
+    %% rapid pans (you can only have one) %%
+    cat         catu_pan_type FK                 "Section 17.3"
+    %% add this stuff for details %%
+    cat         cato_pan_continuity  FK          "Section 17.3"
+    cat         catu_pan_structure FK            "Section 17.3"
+    %% stress features (NB you get one or the other because Physics) %%
+    cat         catu_stress_type FK              "Section 17.4"
+    num[0-100]  amt_stress_p                     "Section 17.4"
+    
+  }
+   
+  horizon_concentrations {
+    id          id_site PK
+    id          id_horizon PK
+    id          id_concentration PK
+    cat         catu_concentration_form FK       "Table 17.1"
+    cat         catu_concentration_type FK       "Table 17.2"
+    num[0-Inf]  amt_concentration_size_med_mm    "Section 17.1"
+    num[0-Inf]  amt_concentration_size_min_mm    "Section 17.1"
+    num[0-Inf]  amt_concentration_size_max_mm    "Section 17.1"
+    num[0-Inf]  amt_concentration_med_p          "Section 17.1"
+    num[0-Inf]  amt_concentration_min_p          "Section 17.1"
+    num[0-Inf]  amt_concentration_max_p          "Section 17.1"
+
+  } 
+
+  concentration_forms {
+    id          id_conc_form PK
+    cat         catu_conc_form FK         "Table 17.1"
+    txt         txt_conc_form_name        "Table 17.1"
+    txt         txt_conc_form_desc        "Table 17.1"
+  }
+
+  concentration_types {
+    id          id_conc PK
+    cat         catu_conc FK         "Table 17.2"
+    txt         txt_conc_form_name   "Table 17.2"
+    txt         txt_conc_form_desc   "Table 17.2"
+  }
+
+  pan_types {
+    id          id_pan PK
+    cat         catu_pan FK         "Table 17.4"
+    txt         txt_pan_form_name   "Table 17.4"
+    txt         txt_pan_form_desc   "Table 17.4"
+  }
+
+  pan_continuities {
+    id          id_pan_cont PK
+    cat         catu_pan_cont FK    "Table 17.5"
+    txt         txt_pan_cont_name   "Table 17.5"
+    txt         txt_pan_cont_desc   "Table 17.5"
+  }
+
+  pan_structures {
+    id          id_pan_structure PK
+    cat         catu_pan_structure FK  "Table 17.6"
+    txt         txt_pan_structure_name "Table 17.6"
+    txt         txt_pan_structure_desc "Table 17.6"
+  }
+  
+  stress_types {
+    id          id_stress PK
+    cat         catu_stress FK           "Table 17.7"
+    txt         txt_stress_name          "Table 17.7"
+    txt         txt_stress_desc          "Table 17.7"
+  }
+
+  horizon_coatings {
+    id          id_site PK
+    id          id_horizon PK
+    id          id_coating PK
+    cat         catu_coating FK           "Section 17.2"
+    num[0-100]  amt_coating_p             "Section 17.2"
+  } 
+
+  coating_types {
+    id          id_coating PK
+    cat         catu_coating FK         "Table 17.3"
+    txt         txt_coating_name        "Table 17.3"
+    txt         txt_coating_desc        "Table 17.3"
+  }
+
+  horizon_bio_features {
+    id          id_site PK
+    id          id_horizon PK
+    id          id_bio_feature PK
+    cat         catu_bio_feature FK           "Section 17.5"
+    num[0-100]  amt_bio_feature_p             "Section 17.5"
+  }
+
+  bio_feature_types {
+    id          id_bio_feature PK
+    cat         catu_bio_feature FK         "Table 17.8"
+    txt         txt_bio_feature_name        "Table 17.8"
+    txt         txt_bio_feature_desc        "Table 17.8"
+  }
+
+</pre>
+</div>
+<p></p><figcaption> Horizon secondary features - Details</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-erc-cons" class="level2" data-number="D.10">
+<h2 data-number="D.10" class="anchored" data-anchor-id="sec-erc-cons"><span class="header-section-number">D.10</span> Horizon consistence Tests</h2>
+<p>The consistence tests table can optionally extend the horizon overview table (<a href="#sec-erd-horizono" class="quarto-xref"><span>Section D.5</span></a>) as it has a 1:1 relationship.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  consistence_tests }|--|{ strengths : "code comes from"
+  consistence_tests }|--|{ sensitivities : "code comes from"
+  consistence_tests }|--|{ plasticities : "code comes from"
+  consistence_tests }|--|{ stickinesses : "code comes from"
+  consistence_tests }|--|{ penrests : "code comes from"
+  consistence_tests }|--|{ packings : "code comes from"
+  consistence_tests }|--|{ failures : "code comes from"
+  consistence_tests }|--|{ fluidities : "code comes from"
+  consistence_tests }|--|{ indurations : "code comes from"
+
+</pre>
+</div>
+<p></p><figcaption> Horizon consistence tests - table arrangement</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  consistence_tests }|--|{ strengths : "code comes from"
+  consistence_tests }|--|{ sensitivities : "code comes from"
+  consistence_tests }|--|{ plasticities : "code comes from"
+  consistence_tests }|--|{ stickinesses : "code comes from"
+  consistence_tests }|--|{ penrests : "code comes from"
+  consistence_tests }|--|{ packings : "code comes from"
+  consistence_tests }|--|{ failures : "code comes from"
+  consistence_tests }|--|{ fluidities : "code comes from"
+  consistence_tests }|--|{ indurations : "code comes from"
+  
+  consistence_tests {
+    id          id_site PK
+    id          id_horizon PK
+    bool        ind_cohesive "Section 18.1.1"
+    cat         cato_strength_unconfined FK "Section 18.2.1"
+    cat         cato_strength_ped FK "Section 18.2.2"
+    cat         cato_strength_remoulded FK "Section 18.2.3"
+    cat         cato_strength_plastic FK "Section 18.2.4"
+    cat         cato_sensitivity FK "Section 18.3"
+    cat         cato_plasticity FK "Section 18.4"
+    cat         cato_stickiness FK "Section 18.5"
+    bool        ind_dilatent "Section 18.6"
+    cat         cato_penetration_rest FK "Section 18.7"
+    cat         cato_packing FK "Section 18.8"
+    cat         catu_failure FK "Section 18.9"
+    cat         cato_fluidity FK "Section 18.10"
+    cat         catu_induration FK "Section 18.11"
+  }
+
+  strengths {
+    id          id_strength PK
+    cat         catu_strength FK         "Table 18.1"
+    txt         txt_strength_name        "Table 18.1"
+    txt         txt_strength_desc        "Table 18.1"
+  }
+
+  sensitivities {
+    id          id_sensitivity PK
+    cat         catu_sensitivity FK         "Table 18.2"
+    txt         txt_sensitivity_name        "Table 18.2"
+    txt         txt_sensitivity_desc        "Table 18.2"
+  }
+
+  plasticities {
+    id          id_plasticity PK
+    cat         catu_plasticity FK         "Table 18.3"
+    txt         txt_plasticity_name        "Table 18.3"
+    txt         txt_plasticity_desc        "Table 18.3"
+  }
+
+  stickinesses {
+    id          id_stickiness PK
+    cat         catu_stickiness FK         "Table 18.4"
+    txt         txt_stickiness_name        "Table 18.4"
+    txt         txt_stickiness_desc        "Table 18.4"
+  }
+
+  penrests {
+    id          id_penrest PK
+    cat         catu_penrest FK         "Table 18.5"
+    txt         txt_penrest_name        "Table 18.5"
+    txt         txt_penrest_desc        "Table 18.5"
+  }
+
+  packings {
+    id          id_packing PK
+    cat         catu_packing FK         "Table 18.6"
+    txt         txt_packing_name        "Table 18.6"
+    txt         txt_packing_desc        "Table 18.6"
+  }
+
+  failures {
+    id          id_failure PK
+    cat         catu_failure FK         "Table 18.7"
+    txt         txt_failure_name        "Table 18.7"
+    txt         txt_failure_desc        "Table 18.7"
+  }
+  
+  fluidities {
+    id          id_fluidity PK
+    cat         catu_fluidity FK         "Table 18.8"
+    txt         txt_fluidity_name        "Table 18.8"
+    txt         txt_fluidity_desc        "Table 18.8"
+  }  
+
+  indurations {
+    id          id_induration PK
+    cat         catu_induration FK         "Table 18.9"
+    txt         txt_induration_name        "Table 18.9"
+    txt         txt_induration_desc        "Table 18.9"
+  }    
+  
+</pre>
+</div>
+<p></p><figcaption> Horizon secondary features - Details</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-erd-fts" class="level2" data-number="D.11">
+<h2 data-number="D.11" class="anchored" data-anchor-id="sec-erd-fts"><span class="header-section-number">D.11</span> Field tests</h2>
+<p>Field tests are conducted from samples taken at set depths so in this example are connected to sites rather than horizons. It is also possible to nest them within horizons.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  field_tests }|--|{ pH_raupachs : "code comes from"
+  field_tests }|--|{ h2o2_rxns : "code comes from"
+  field_tests }|--|{ hcl_rxns : "code comes from"
+  field_tests }|--|{ naf_rxns : "code comes from"
+  field_tests }|--|{ slaking_rxns : "code comes from"
+  field_tests }|--|{ dispersion_rxns : "code comes from"
+
+</pre>
+</div>
+<p></p><figcaption> Horizon field tests - table arrangement</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  field_tests }|--|{ pH_raupachs : "code comes from"
+  field_tests }|--|{ h2o2_rxns : "code comes from"
+  field_tests }|--|{ hcl_rxns : "code comes from"
+  field_tests }|--|{ naf_rxns : "code comes from"
+  field_tests }|--|{ slaking_rxns : "code comes from"
+  field_tests }|--|{ dispersion_rxns : "code comes from"
+  
+  field_tests {
+    id          id_site PK
+    num[0-Inf]  amt_test_depth_cm
+    cat         cato_pH_raupach FK "Section 19.1.1"
+    num[0-14]   val_pH_water "Section 19.1.2"
+    num[0-14]   val_pH_h2o2 "Section 19.1.3"
+    cat         cato_h2o2_rxn FK "Section 19.1.3"
+    num[0-Inf]  amt_ec_dSm "Section 19.1.4"
+    cat         cato_hcl_rxn FK "Section 19.1.5"
+    bool        ind_mn_rxn "Section 19.1.6"
+    cat         cato_naf_rxn FK "Section 19.1.7"
+    bool        ind_22bip_rxn "Section 19.1.8"
+    bool        ind_water_repellent "Section 19.1.9"
+    cat         cato_slaking FK "Section 19.1.10"
+    cat         cato_dispersion FK "Section 19.1.10"
+  }
+
+  pH_raupachs {
+    id          id_raupach PK
+    cat         catu_raupach FK          "2.0, 2.5 etc"
+  }
+
+  h2o2_rxns {
+    id          id_h2o2_rxn PK
+    cat         catu_h2o2_rxn FK         "Table 19.1"
+    txt         txt_h2o2_rxn_name        "Table 19.1"
+    txt         txt_h2o2_rxn_desc        "Table 19.1"
+  }
+
+  hcl_rxns {
+    id          id_hcl_rxn PK
+    cat         catu_hcl_rxn FK         "Table 19.2"
+    txt         txt_hcl_rxn_name        "Table 19.2"
+    txt         txt_hcl_rxn_desc        "Table 19.2"
+  }
+
+  naf_rxns {
+    id          id_naf_rxn PK
+    cat         catu_naf_rxn FK         "Table 19.3"
+    txt         txt_naf_rxn_name        "Table 19.3"
+    txt         txt_naf_rxn_desc        "Table 19.3"
+  }
+
+  slaking_rxns {
+    id          id_slaking_rxn PK
+    cat         catu_slaking_rxn FK         "Table 19.4"
+    txt         txt_slaking_rxn_name        "Table 19.4"
+    txt         txt_slaking_rxn_desc        "Table 19.4"
+  }
+  
+  dispersion_rxns {
+    id          id_dispersion_rxn PK
+    cat         catu_dispersion_rxn FK         "Table 19.5"
+    txt         txt_dispersion_rxn_name        "Table 19.5"
+    txt         txt_dispersion_rxn_desc        "Table 19.5"
+  }
+  
+</pre>
+</div>
+<p></p><figcaption> Horizon field tests - Details</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-erd-interp" class="level2" data-number="D.12">
+<h2 data-number="D.12" class="anchored" data-anchor-id="sec-erd-interp"><span class="header-section-number">D.12</span> Interpretation data</h2>
+<section id="sec-erd-nzsc" class="level3" data-number="D.12.1">
+<h3 data-number="D.12.1" class="anchored" data-anchor-id="sec-erd-nzsc"><span class="header-section-number">D.12.1</span> NZSC</h3>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  nzsc }|--|{ nzsc_orders : "code comes from"
+  nzsc }|--|{ nzsc_groups : "code comes from"
+  nzsc }|--|{ nzsc_subgroups : "code comes from"
+  nzsc }|--|{ nzsc_fam_profile_materials : "code comes from"
+  nzsc }|--|{ nzsc_lithologies : "code comes from"
+  nzsc }|--|{ nzsc_fam_textures : "code comes from"
+  nzsc }|--|{ nzsc_fam_permeabilities : "code comes from"
+  nzsc }|--|{ nzsc_fam_pm_origins : "code comes from"
+  nzsc }|--|{ nzsc_sib_depths : "code comes from"
+  nzsc }|--|{ nzsc_sib_tsstones : "code comes from"
+  nzsc }|--|{ nzsc_sib_textures : "code comes from"
+  nzsc }|--|{ nzsc_sib_drainages : "code comes from"
+  nzsc }|--|{ nzsc_sib_drainage_mods : "code comes from"
+  nzsc }|--|{ rooting_barriers : "code comes from"
+
+</pre>
+</div>
+<p></p><figcaption> Horizon field tests - table arrangement</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  nzsc }|--|{ nzsc_orders : "code comes from"
+  nzsc }|--|{ nzsc_groups : "code comes from"
+  nzsc }|--|{ nzsc_subgroups : "code comes from"
+  nzsc }|--|{ nzsc_fam_profile_materials : "code comes from"
+  nzsc }|--|{ nzsc_lithologies : "code comes from"
+  nzsc }|--|{ nzsc_fam_textures : "code comes from"
+  nzsc }|--|{ nzsc_fam_permeabilities : "code comes from"
+  nzsc }|--|{ nzsc_pm_origins : "code comes from"
+  nzsc }|--|{ nzsc_sib_depths : "code comes from"
+  nzsc }|--|{ nzsc_sib_tsstones : "code comes from"
+  nzsc }|--|{ nzsc_sib_textures : "code comes from"
+  nzsc }|--|{ nzsc_sib_drainages : "code comes from"
+  nzsc }|--|{ drainage_mods : "code comes from"
+  nzsc }|--|{ rooting_barriers : "code comes from"
+  
+  nzsc {
+    id          id_site PK
+    cat         catu_nzsc_order FK                "Hewitt et al, 2024"
+    cat         catu_nzsc_group FK                "Hewitt et al, 2024"
+    cat         catu_nzsc_subgroup FK             "Hewitt et al, 2024"
+    cat         catu_nzsc_fam_profile_material FK "Section 24.1.1"
+    cat         catu_nzsc_fam_stones_rock FK      "Section 24.1.2"
+    cat         catu_nzsc_fam_fines_rock FK       "Section 24.1.2"
+    cat         catu_nzsc_fam_texture FK          "Section 24.1.3"
+    cat         catu_nzsc_fam_permeability FK     "Section 24.1.4"
+    cat         catu_nzsc_fam_pm_origin FK        "Section 24.1.5"
+    cat         catu_nzsc_sib_depth FK            "Section 24.2.1"
+    cat         catu_nzsc_sib_tsstone FK          "Section 24.2.2"
+    cat         catu_nzsc_sib_texture FK          "Section 24.2.3"
+    cat         catu_nzsc_sib_drainage FK         "Section 24.2.4"
+    cat         catu_nzsc_sib_drainage_mod FK     "Section 24.2.4.1"
+    cat         catu_rooting_barrier FK           "Section 24.3"
+    int[0-Inf]  val_rooting_barrier_horizon       "Section 24.3.1"
+  }
+
+  nzsc_orders {
+    id          id_nzsc_order PK    "Hewitt et al, 2024"
+    cat         catu_nzsc_order FK  "Hewitt et al, 2024"
+    txt         txt_nzsc_order_name "Hewitt et al, 2024"
+    }
+
+  nzsc_groups {
+    id          id_nzsc_group PK    "Hewitt et al, 2024"
+    cat         catu_nzsc_group FK  "Hewitt et al, 2024"
+    txt         txt_nzsc_group_name "Hewitt et al, 2024"
+    }
+
+  nzsc_subgroups {
+    id          id_nzsc_subgroup PK    "Hewitt et al, 2024"
+    cat         catu_nzsc_subgroup FK  "Hewitt et al, 2024"
+    txt         txt_nzsc_subgroup_name "Hewitt et al, 2024"
+    }
+
+  nzsc_fam_profile_materials {
+    id          id_nzsc_fam_pm PK
+    cat         catu_nzsc_fam_pm FK          "Table 24.1"
+    txt         txt_nzsc_fam_pm_name         "Table 24.1"
+    txt         txt_nzsc_fam_pm_desc         "Table 24.1"
+    }
+
+  nzsc_lithologies {
+    id          id_nzsc_lithology PK    
+    cat         catu_nzsc_lithology FK        "Table 24.2"
+    txt         txt_nzsc_lithology_name       "Table 24.2"
+  }
+  
+  nzsc_fam_textures {
+    id          id_nzsc_fam_texture PK    
+    cat         catu_nzsc_fam_texture FK        "Table 24.3"
+    txt         txt_nzsc_fam_texture_name       "Table 24.3"
+  }
+
+  nzsc_fam_permeabilities {
+    id          id_nzsc_fam_perm PK     
+    cat         catu_nzsc_fam_perm FK        "Table 24.4"
+    txt         txt_nzsc_fam_perm_name       "Table 24.4"
+    txt         txt_nzsc_fam_perm_desc       "Table 24.4"
+  }  
+  
+  nzsc_pm_origins {
+    id          id_nzsc_pm_origin PK    
+    cat         catu_nzsc_pm_origin FK        "Table 24.5"
+    txt         txt_nzsc_pm_origin_name       "Table 24.5"
+    txt         txt_nzsc_pm_origin_desc       "Table 24.5"
+
+}
+
+  nzsc_sib_depths {
+    id          id_nzsc_sib_depth PK    
+    cat         catu_nzsc_sib_perm FK        "Table 24.6"
+    txt         txt_nzsc_sib_perm_name       "Table 24.6"
+    txt         txt_nzsc_sib_perm_desc       "Table 24.6"
+  }
+
+  nzsc_sib_tsstones {
+    id          id_nzsc_sib_tsstone PK    
+    cat         catu_nzsc_sib_tsstone FK        "Table 24.7"
+    txt         txt_nzsc_sib_tsstone_name       "Table 24.7"
+    txt         txt_nzsc_sib_tsstone_desc       "Table 24.7"
+  }
+
+  nzsc_sib_textures {
+    id          id_nzsc_sib_texture PK    
+    cat         catu_nzsc_sib_texture FK        "Table 24.8"
+    txt         txt_nzsc_sib_texture_name       "Table 24.8"
+  }
+  
+  nzsc_sib_drainages {
+    id          id_nzsc_sib_drainage PK    
+    cat         catu_nzsc_sib_drainage FK       "Table 24.9"
+    txt         txt_nzsc_sib_drainage_name      "Table 24.9"
+    txt         txt_nzsc_sib_drainage_desc      "Table 24.9"
+  }
+
+  drainage_mods {
+    id          id_drainage_mod PK 
+    cat         catu_drainage_mod FK       "Table 24.10"
+    txt         txt_drainage_mod_name      "Table 24.10"
+    txt         txt_drainage_mod_desc      "Table 24.10"
+  }
+  
+  rooting_barriers {
+    id          id_rooting_barrier  PK  
+    cat         catu_rooting_barrier  FK      "Table 24.11/12"
+    txt         txt_rooting_barrier_name      "Table 24.11/12"
+    txt         txt_rooting_barrier_desc      "Table 24.11/12"
+  }
+</pre>
+</div>
+<p></p><figcaption> Horizon field tests - Details</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-erd-names" class="level3" data-number="D.12.2">
+<h3 data-number="D.12.2" class="anchored" data-anchor-id="sec-erd-names"><span class="header-section-number">D.12.2</span> Horizon names</h3>
+<p>The horizon names tables stores conventional and functional names. This table can optionally extend the horizon overview table as it has a 1:1 relationship (<a href="#sec-erd-horizono" class="quarto-xref"><span>Section D.5</span></a>).</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  horizon_names }|--|{ horizon_names_primary : "code comes from"
+  horizon_names }|--|{ horizon_names_conventional : "code comes from"
+
+</pre>
+</div>
+<p></p><figcaption> Horizon Names - table arrangement</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
+erDiagram
+  horizon_names }|--|{ horizon_names_primary : "code comes from"
+  horizon_names }|--|{ horizon_names_conventional : "code comes from"
+  horizon_names }|--|{ horizon_names_functional : "code comes from"
+  horizon_names }|--|{ functional_horizon_permeabilities : "code comes from"
+  
+  horizon_names {
+    id          id_site PK
+    id          id_horizon PK
+    %% for very rapid assessment %%
+    cat         catu_horizon_primary FK   "Section 21.1.1"
+    %% for full naming protocol %%
+    cat         catu_horizon_name FK      "Sections 21.1.1-4"
+    int[2-Inf]  val_lith_discont          "Section 21.1.5"
+    int[2-Inf]  val_duplicate             "Section 21.1.6"
+    bool        ind_buried                "Section 21.1.7"
+    %% FH
+    cat         catu_functional_name FK   "Section 21.2"
+    cat         cato_functional_perm FK   "Section 21.2.1.8"
+    bool        ind_topsoil               "Table 21.1"
+    bool        ind_tephra_acid           "Table 21.2"
+    bool        ind_tephra_basic          "Table 21.2"
+  }
+
+  horizon_names_primary {
+    id          id_horizon_primary PK     
+    cat         catu_horizon_primary FK        "Table 21.1"
+    txt         txt_horizon_primary_name       "Table 21.1"
+    txt         txt_horizon_primary_desc       "Table 21.1"
+  }
+
+  horizon_names_conventional {
+    id          id_horizon_name_conv PK    
+    cat         catu_horizon_name_conv FK        "Tables 21.2-9"
+    txt         txt_horizon_name_conv_name       "Tables 21.2-9"
+    txt         txt_horizon_name_conv_desc       "Tables 21.2-9"
+  }
+
+  horizon_names_functional {
+    id          id_horizon_name_func PK   
+    cat         catu_horizon_name_func FK        "Table 21.18"
+    txt         txt_horizon_name_func_desc       "Table 21.18"
+  }
+
+  functional_horizon_permeabilities {
+    id          id_horizon_perm PK  
+    cat         cato_functional_perm FK        "Table 21.17"
+    txt         txt_functional_perm_name       "Table 21.17"
+    txt         txt_horizon_name_func_desc     "Table 21.17"
+  }
+
+</pre>
+</div>
+<p></p><figcaption> Horizon names - Details</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div id="nte-hzn" class="callout callout-style-simple callout-note no-icon callout-titled" title="Storing conventional horizon names">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;D.1: Storing conventional horizon names
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Conventional horizon names in the New Zealand system are difficult to store in a structured manner due to the large number of ways the various components can be combined (<a href="in_01_horizon_names.html#sec-hzn-conv" class="quarto-xref"><span>Section 21.1</span></a>). The above implementation, where the full list of ‘legal’ names (e.g.&nbsp;Ap, App, Apg, A/Bw ABw, etc) are anticipated and stored, is the simplest approach. It offers a compromise between ease of data entry and ease of querying, leaning more towards the former.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="helper-tables" class="level2" data-number="D.13">
+<h2 data-number="D.13" class="anchored" data-anchor-id="helper-tables"><span class="header-section-number">D.13</span> Helper tables</h2>
+<section id="measurement-type" class="level3" data-number="D.13.1">
+<h3 data-number="D.13.1" class="anchored" data-anchor-id="measurement-type"><span class="header-section-number">D.13.1</span> Measurement type</h3>
 <p>Some numeric parameters require a separate specification for types of missing data (e.g.&nbsp;aspect at the site, <a href="pr_01_surface.html#sec-pr-aspect" class="quarto-xref"><span>Section 11.2</span></a>). These codes are built in to most categorical code lists in this standard (where it makes sense to include them). For numeric data, a companion text column is required. It is generally expected that it will be populated in a semi-automated manner - for each parameter, it should default to <span class="ceg">NR</span>, and be automatically updated to <span class="ceg">NM</span> if a value is supplied. Users may also update to <span class="ceg">ND</span> as needed.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-missing" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
@@ -430,23 +2323,23 @@ Table&nbsp;D.1: Data record type
 </figcaption>
 <div aria-describedby="tbl-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="zadtiyorgq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zadtiyorgq table {
+<div id="ehngxwgtzz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ehngxwgtzz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zadtiyorgq thead, #zadtiyorgq tbody, #zadtiyorgq tfoot, #zadtiyorgq tr, #zadtiyorgq td, #zadtiyorgq th {
+#ehngxwgtzz thead, #ehngxwgtzz tbody, #ehngxwgtzz tfoot, #ehngxwgtzz tr, #ehngxwgtzz td, #ehngxwgtzz th {
   border-style: none;
 }
 
-#zadtiyorgq p {
+#ehngxwgtzz p {
   margin: 0;
   padding: 0;
 }
 
-#zadtiyorgq .gt_table {
+#ehngxwgtzz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -472,12 +2365,12 @@ Table&nbsp;D.1: Data record type
   border-left-color: #D3D3D3;
 }
 
-#zadtiyorgq .gt_caption {
+#ehngxwgtzz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zadtiyorgq .gt_title {
+#ehngxwgtzz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -489,7 +2382,7 @@ Table&nbsp;D.1: Data record type
   border-bottom-width: 0;
 }
 
-#zadtiyorgq .gt_subtitle {
+#ehngxwgtzz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -501,7 +2394,7 @@ Table&nbsp;D.1: Data record type
   border-top-width: 0;
 }
 
-#zadtiyorgq .gt_heading {
+#ehngxwgtzz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -513,13 +2406,13 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#zadtiyorgq .gt_bottom_border {
+#ehngxwgtzz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zadtiyorgq .gt_col_headings {
+#ehngxwgtzz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -534,7 +2427,7 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#zadtiyorgq .gt_col_heading {
+#ehngxwgtzz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -554,7 +2447,7 @@ Table&nbsp;D.1: Data record type
   overflow-x: hidden;
 }
 
-#zadtiyorgq .gt_column_spanner_outer {
+#ehngxwgtzz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -566,15 +2459,15 @@ Table&nbsp;D.1: Data record type
   padding-right: 4px;
 }
 
-#zadtiyorgq .gt_column_spanner_outer:first-child {
+#ehngxwgtzz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zadtiyorgq .gt_column_spanner_outer:last-child {
+#ehngxwgtzz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zadtiyorgq .gt_column_spanner {
+#ehngxwgtzz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -586,11 +2479,11 @@ Table&nbsp;D.1: Data record type
   width: 100%;
 }
 
-#zadtiyorgq .gt_spanner_row {
+#ehngxwgtzz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zadtiyorgq .gt_group_heading {
+#ehngxwgtzz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -616,7 +2509,7 @@ Table&nbsp;D.1: Data record type
   text-align: left;
 }
 
-#zadtiyorgq .gt_empty_group_heading {
+#ehngxwgtzz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -631,15 +2524,15 @@ Table&nbsp;D.1: Data record type
   vertical-align: middle;
 }
 
-#zadtiyorgq .gt_from_md > :first-child {
+#ehngxwgtzz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zadtiyorgq .gt_from_md > :last-child {
+#ehngxwgtzz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zadtiyorgq .gt_row {
+#ehngxwgtzz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -658,7 +2551,7 @@ Table&nbsp;D.1: Data record type
   overflow-x: hidden;
 }
 
-#zadtiyorgq .gt_stub {
+#ehngxwgtzz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -671,7 +2564,7 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#zadtiyorgq .gt_stub_row_group {
+#ehngxwgtzz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -685,15 +2578,15 @@ Table&nbsp;D.1: Data record type
   vertical-align: top;
 }
 
-#zadtiyorgq .gt_row_group_first td {
+#ehngxwgtzz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zadtiyorgq .gt_row_group_first th {
+#ehngxwgtzz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zadtiyorgq .gt_summary_row {
+#ehngxwgtzz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -703,16 +2596,16 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#zadtiyorgq .gt_first_summary_row {
+#ehngxwgtzz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zadtiyorgq .gt_first_summary_row.thick {
+#ehngxwgtzz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zadtiyorgq .gt_last_summary_row {
+#ehngxwgtzz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -722,7 +2615,7 @@ Table&nbsp;D.1: Data record type
   border-bottom-color: #D3D3D3;
 }
 
-#zadtiyorgq .gt_grand_summary_row {
+#ehngxwgtzz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -732,7 +2625,7 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#zadtiyorgq .gt_first_grand_summary_row {
+#ehngxwgtzz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -742,7 +2635,7 @@ Table&nbsp;D.1: Data record type
   border-top-color: #D3D3D3;
 }
 
-#zadtiyorgq .gt_last_grand_summary_row_top {
+#ehngxwgtzz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -752,11 +2645,11 @@ Table&nbsp;D.1: Data record type
   border-bottom-color: #D3D3D3;
 }
 
-#zadtiyorgq .gt_striped {
+#ehngxwgtzz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zadtiyorgq .gt_table_body {
+#ehngxwgtzz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -765,7 +2658,7 @@ Table&nbsp;D.1: Data record type
   border-bottom-color: #D3D3D3;
 }
 
-#zadtiyorgq .gt_footnotes {
+#ehngxwgtzz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -779,7 +2672,7 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#zadtiyorgq .gt_footnote {
+#ehngxwgtzz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -788,7 +2681,7 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#zadtiyorgq .gt_sourcenotes {
+#ehngxwgtzz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -802,7 +2695,7 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#zadtiyorgq .gt_sourcenote {
+#ehngxwgtzz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -810,72 +2703,72 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#zadtiyorgq .gt_left {
+#ehngxwgtzz .gt_left {
   text-align: left;
 }
 
-#zadtiyorgq .gt_center {
+#ehngxwgtzz .gt_center {
   text-align: center;
 }
 
-#zadtiyorgq .gt_right {
+#ehngxwgtzz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zadtiyorgq .gt_font_normal {
+#ehngxwgtzz .gt_font_normal {
   font-weight: normal;
 }
 
-#zadtiyorgq .gt_font_bold {
+#ehngxwgtzz .gt_font_bold {
   font-weight: bold;
 }
 
-#zadtiyorgq .gt_font_italic {
+#ehngxwgtzz .gt_font_italic {
   font-style: italic;
 }
 
-#zadtiyorgq .gt_super {
+#ehngxwgtzz .gt_super {
   font-size: 65%;
 }
 
-#zadtiyorgq .gt_footnote_marks {
+#ehngxwgtzz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zadtiyorgq .gt_asterisk {
+#ehngxwgtzz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zadtiyorgq .gt_indent_1 {
+#ehngxwgtzz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zadtiyorgq .gt_indent_2 {
+#ehngxwgtzz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zadtiyorgq .gt_indent_3 {
+#ehngxwgtzz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zadtiyorgq .gt_indent_4 {
+#ehngxwgtzz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zadtiyorgq .gt_indent_5 {
+#ehngxwgtzz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zadtiyorgq .katex-display {
+#ehngxwgtzz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zadtiyorgq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ehngxwgtzz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -913,595 +2806,9 @@ Table&nbsp;D.1: Data record type
 </figure>
 </div>
 </div>
+
+
 </section>
-</section>
-<section id="sec-erd-setting" class="level2" data-number="D.2">
-<h2 data-number="D.2" class="anchored" data-anchor-id="sec-erd-setting"><span class="header-section-number">D.2</span> Soil Setting</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">erDiagram
-  site ||--|| location : "has one"
-  location ||--o{ site_events : "may have some"
-  site ||--|| landscape : "has one"
-  landscape ||--|{ landform : "has at least one"
-  
-
-</pre>
-</div>
-<p></p><figcaption> Overview - main tables only</figcaption> </figure><p></p>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">erDiagram
-  site ||--|| location : "has one"
-  location ||--o{ siteEvents : "may have some"
-  sitePurposes }|--|{ site : "code comes from"
-  siteSelMethods }|--|{ site : "code comes from"
-  siteEventTypes  }|--|{ siteEvents : "code comes from"
-  site ||--|| landscape : "has one"
-  landscape ||--|{ landform : "has at least one"
-  
-
-</pre>
-</div>
-<p></p><figcaption> Overview - including support tables</figcaption> </figure><p></p>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">erDiagram
-  site ||--|| location : "has one"
-  location ||--o{ siteEvents : "may have some"
-  sitePurposes }|--|{ site : "code comes from"
-  siteSelMethods }|--|{ site : "code comes from"
-  siteEventTypes  }|--|{ siteEvents : "code comes from"
-  site ||--|| landscape : "has one"
-  landscape ||--|{ landform : "has at least one"
-  lscapeTypes }|--|{ landscape : "code comes from"
-  
-  site {
-  id siteIdentifier "Section 3.1"
-  text author "Section 3.2"
-  date visitDate "Section 3.4"
-  catu sitePurposeCode "Section 3.5"
-  catu siteSelMethodCode "Section 3.6"
-  }
-  
-  
-  
-  siteSelMethods {
-  id siteSelMethodIdentifier
-  catu siteSelMethodCode "Table 3.2"
-  text siteSelMethodName "Table 3.2"
-  text siteSelMethodDesc "Table 3.2" 
-  }
-  
-  location {
-  id siteIdentifier "Section 3.1"
-  geo locationXY "Sections 3.3, 4.1.1"
-  number elevationAbsZ "Section 4.1.1"
-  number errorXY "Section 4.1.2"
-  number errorZ "Section 4.1.2"
-  catu elevMethod "Section 4.1.3"
-  catu GNSSType "Section 4.1.4"
-  number elevationRelZ "Section 4.2.1"
-  text triangulationNotes "Section 4.2.2"
-  text locationDesc "Section 4.2.3"
-  catu adminRC "Section 4.2.4 - Optional"
-  catu adminDC "Section 4.2.4 - Optional"
-  }
-  
-  siteEvents {
-  id siteIdentifier "Section 3.1"
-  id eventIdentifier 
-  catu siteEventCode "Section 4.2.5"
-  integer[0-Inf] daysSinceEvent "Section 4.2.5"
-}
-
- siteEventTypes {
-  id siteEventIdentifier
-  catu siteEventCode "Table 4.3"
-  text siteEventName "Table 4.3"
-  text siteEventDesc "Table 4.3"
-  }
-  
-  landscape {
-  id siteIdentifier "Section 3.1"
-  catu lscapeTypeCode "Section 5.1.4"
-  number[0-Inf] lscapeReliefMedian "Section 5.1.1"
-  number[0-90]  lscapeSlopeMedian "Section 5.1.2"
-  number[0-Inf] lscapeSlopeRangeLo "Section 5.1.2"
-  number[0-Inf] lscapeSlopeRangeHi "Section 5.1.2"
-  }
-
-  lscapeTypes {
-  id lscapeTypeIdentifier
-  catu lscapeTypeCode "Table TBA"
-  text lscapeTypeName "Table TBA"
-  }
-  
-  landform {
-  id siteIdentifier "Section 3.1"
-  catu lformTypeCode "Section 5.1.4"
-  number[0-Inf] lformReliefMedian "Section 5.1.1"
-  number[0-90]  lformSlopeMedian "Section 5.1.2"
-  number[0-Inf] lformSlopeRangeLo "Section 5.1.2"
-  number[0-Inf] lformSlopeRangeHi "Section 5.1.2"
-  }
-
-</pre>
-</div>
-<p></p><figcaption> Details</figcaption> </figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="sec-erd-profile" class="level2" data-number="D.3">
-<h2 data-number="D.3" class="anchored" data-anchor-id="sec-erd-profile"><span class="header-section-number">D.3</span> Profile data</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">erDiagram
-  site ||--o{ disturbances : "may have some"
-
-</pre>
-</div>
-<p></p><figcaption> Overview - main tables only</figcaption> </figure><p></p>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">erDiagram
-  site ||--|{ disturbances : "has one or more"
-  disturbances }|--|{ disturbance_types : "code comes from"
-  disturbances }|--|{ disturbance_ages : "code comes from"
-  site }|--|{ site_purposes : "code comes from"
-  site }|--|{ site_selection_methods : "code comes from"
-  site }|--|{ site_exposure_types : "code comes from"
-  site }|--|{ site_early_stop_types : "code comes from"
-  
-
-</pre>
-</div>
-<p></p><figcaption> Profile overview - including support tables</figcaption> </figure><p></p>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">erDiagram
-  site ||--|{ disturbances : "has one or more"
-  disturbances }|--|{ disturbance_types : "code comes from"
-  disturbances }|--|{ disturbance_ages : "code comes from"
-  site }|--|{ site_purposes : "code comes from"
-  site }|--|{ site_selection_methods : "code comes from"
-  site }|--|{ site_exposure_types : "code comes from"
-  site }|--|{ site_early_stop_types : "code comes from"
-
-  site {
-    id          id_site                  "10.2.1"
-    usr         usr_author               "10.2.2"
-    geo         loc_site                 "10.2.3"
-    dt          dt_site                  "10.2.4"
-    cat         catu_site_purpose        "10.2.5"
-    cat         catu_site_selection      "10.2.6"
-    cat         catu_site_exposure       "10.2.7"
-    num[0-1000] amt_site_depth_max_cm    "10.2.8"
-    txt         catu_early_stop          "10.2.9"
-  }
-  
-  site_purposes {
-    id          id_site_purpose
-    cat         catu_site_purpose        "Table 10.1"
-    txt         txt_site_purpose         "Table 10.1"
-  }
-  
-  site_selection_methods {
-    id          id_site_selection
-    cat         catu_site_selection      "Table 10.2"
-    txt         txt_site_selection       "Table 10.2"
-  }
-  
-  site_exposure_types {
-    id          id_site_exposure
-    cat         catu_site_exposure       "Table 10.3"
-    txt         txt_site_exposure_name   "Table 10.3"
-  }
-  
-  site_early_stop_types {
-    id          id_site_stop
-    cat         catu_site_stop           "Table 10.4"
-    txt         txt_site_stop            "Table 10.4"
-}
-  
-  disturbances {
-    id          id_site
-    id          id_disturbance
-    txt         catu_disturbance         "Table 10.5"
-    txt         catu_disturbance_age     "Table 10.6"
-    num[0-Inf]  amt_disturbance_age_days "10.3"
-  }
-
-  disturbance_types {
-    id          id_disturbance
-    cat         catu_disturbance         "Table 10.5"
-    txt         txt_disturbance_name     "Table 10.5"
-    txt         txt_disturbance_desc     "Table 10.5"
-  }
-  
-  disturbance_ages {
-    id          id_disturbance_age
-    cat         catu_disturbance_age     "Table 10.5"
-    txt         txt_disturbance_age_name "Table 10.5"
-    txt         txt_disturbance_age_desc "Table 10.5"
-  }
-  
-</pre>
-</div>
-<p></p><figcaption> Profile - Details</figcaption> </figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="sec-erd-surface" class="level2" data-number="D.4">
-<h2 data-number="D.4" class="anchored" data-anchor-id="sec-erd-surface"><span class="header-section-number">D.4</span> Soil Surface</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">erDiagram
-  site ||--|{ surface_cover : "has"
-  site ||--o{ erosion : "may have"
-  site ||--o{ deposition : "may have"
-
-</pre>
-</div>
-<p></p><figcaption> Surface - main tables only</figcaption> </figure><p></p>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">erDiagram
-  site }|--|{ slope_methods : "code comes from"
-  site }|--|{ measurement_types : "code comes from"
-  site }|--|{ aspect_methods : "code comes from"
-  site ||--|{ surface_cover : "has"
-  surface_cover }|--|{ surface_cover_types : "code comes from"
-  site }|--|{ surface_water_types : "code comes from"
-  site }|--|{ surface_water_persts : "code comes from"
-  site }|--|{ surface_crack_types : "code comes from"
-  site }|--|{ surface_crack_shapes : "code comes from"
-  site ||--o{ site_erosion : "may have"
-  site }|--|{ site_microrelief_nat : "code comes from"
-  site }|--|{ site_microrelief_ant : "code comes from"
-  site_erosion }|--|{ erosion_types : "code comes from"
-  site_erosion }|--|{ erosion_severity : "code comes from"
-  site_erosion }|--|{ erosion_activity : "code comes from"
-  site ||--o{ site_deposition : "may have"
-  site_deposition }|--|{ deposition_types : "code comes from"
-  site_deposition }|--|{ deposition_severity : "code comes from"
-  site_deposition }|--|{ deposition_activity : "code comes from"
-  
-
-</pre>
-</div>
-<p></p><figcaption> Surface - including support tables</figcaption> </figure><p></p>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">erDiagram
-  site }|--|{ slope_methods : "code comes from"
-  site }|--|{ measurement_types : "code comes from"
-  site }|--|{ aspect_methods : "code comes from"
-  site ||--|{ surface_cover : "has at least one"
-  surface_cover }|--|{ surface_cover_types : "code comes from"
-  site }|--|{ surface_water_types : "code comes from"
-  site }|--|{ surface_water_persts : "code comes from"
-  site }|--|{ surface_crack_types : "code comes from"
-  site }|--|{ surface_crack_shapes : "code comes from"
-  site ||--o{ site_erosion : "may have some"
-  site }|--|{ site_microrelief_nat : "code comes from"
-  site }|--|{ site_microrelief_ant : "code comes from"
-  site_erosion }|--|{ erosion_types : "code comes from"
-  site_erosion }|--|{ erosion_severity : "code comes from"
-  site_erosion }|--|{ erosion_activity : "code comes from"
-  site ||--o{ site_deposition : "may have some"
-  site_deposition }|--|{ deposition_types : "code comes from"
-  site_deposition }|--|{ deposition_severity : "code comes from"
-  site_deposition }|--|{ deposition_activity : "code comes from"
-
-  site {
-    id          id_site                  "10.2.1"
-    num[0-90]   amt_slope_d              "11.1"
-    cat         catu_slope_rec           "Table D.1.1"
-    cat         catu_slope_method        "Table 11.1"
-    num[0-359]  amt_aspect_d             "11.2"
-    cat         catu_aspect_rec          "Table D.1.1"
-    cat         catu_aspect_method       "Table 11.2"
-    cat         catu_surface_water       "11.4"
-    cat         cato_surface_water_perst "11.4"
-    cat         catu_surface_cracks      "11.5"
-    cat         catu_surface_crack_shp   "11.5"
-    cat         catu_microrelief_nat     "11.6.1"
-    cat         catu_microrelief_ant     "11.6.2"
-  }
-  
-  slope_methods {
-    id          id_slope_method
-    cat         catu_slope_method        "Table 11.1"
-    txt         txt_slope_method_name    "Table 11.1"
-    txt         txt_slope_method_desc    "Table 11.1"
-  }
-  
-  aspect_methods {
-    id          id_aspect_method
-    cat         catu_aspect_method        "Table 11.2"
-    txt         txt_aspect_method_name    "Table 11.2"
-    txt         txt_aspect_method_desc    "Table 11.2"
-  }
-  
-  measurement_types {
-    id          id_mtype
-    cat         catu_mtype
-    txt         txt_mtype_name           "Table D1"
-    txt         txt_mtype_desc           "Table D1"
-  }
-
-  surface_cover {
-    id          id_site
-    cat         catu_surface_cover       "11.3"
-    num[0-100]  amt_surface_cover        "11.3"
-  }
-  
-  surface_cover_types {
-    id          id_surfcov
-    cat         catu_surface_cover       "Table 11.3"
-    txt         txt_surface_cover_name   "Table 11.3"
-    txt         txt_surface_cover_desc   "Table 11.3"
-  }
-  
-  surface_water_types {
-    id          id_surface_water
-    cat         catu_surface_water      "Table 11.4"
-    txt         txt_surface_water_name  "Table 11.4"
-    txt         txt_surface_water_desc  "Table 11.4"
-  }
-
-  surface_water_persts {
-    id          id_surface_water_perst
-    cat         catu_surface_water_perst       "Table 11.5"
-    txt         txt_surface_water_perst_name   "Table 11.5"
-    txt         txt_surface_water_perst_desc   "Table 11.5"
-  }
-
-  surface_crack_types {
-    id          id_surface_crack
-    cat         catu_surface_crack             "Table 11.6"
-    txt         txt_surface_crack_name         "Table 11.6"
-    txt         txt_surface_crack_desc         "Table 11.6"
-  }
-  
-  surface_crack_shapes {
-    id          id_surface_crack_shp
-    cat         catu_surface_crack_shp         "Table 11.7"
-    txt         txt_surface_crack_shp_name     "Table 11.7"
-    txt         txt_surface_crack_shp_desc     "Table 11.7"
-  }
-  
-  site_microrelief_nat {
-    id          id_microrelief_nat
-    cat         catu_microrelief_nat         "Table 11.8"
-    txt         txt_microrelief_nat_name     "Table 11.8"
-    txt         txt_microrelief_nat_desc     "Table 11.8"
-  }
-  
-  site_microrelief_ant {
-    id          id_microrelief_ant
-    cat         catu_microrelief_ant         "Table 11.9"
-    txt         txt_microrelief_ant_name     "Table 11.9"
-    txt         txt_microrelief_ant_desc     "Table 11.9"
-  }
-  
-  site_erosion {
-    id          id_site
-    id          id_erosion                   
-    cat         catu_erosion                  
-    cat         cato_erosion_severity
-    cat         cato_erosion_activity
-  }
-  
-  erosion_types {
-    id          id_erosion
-    cat         catu_erosion                   "Table 11.10"
-    txt         txt_erosion_name               "Table 11.10"
-    txt         txt_erosion_desc               "Table 11.10"
-  }
-  
-  erosion_severity {
-    id          id_erosion_severity
-    cat         catu_erosion_severity          "Table 11.11"
-    txt         txt_erosion_severity_name      "Table 11.11"
-    txt         txt_erosion_severity_desc      "Table 11.11"
-  }  
-  
-  erosion_activity {
-    id          id_erosion_activity
-    cat         catu_erosion_activity          "Table 11.12"
-    txt         txt_erosion_activity_name      "Table 11.12"
-    txt         txt_erosion_activity_desc      "Table 11.12"
-  }  
-  
- site_deposition {
-    id          id_site
-    id          id_deposition               
-    cat         catu_deposition                   
-    cat         cato_deposition_severity
-    cat         cato_deposition_activity
-  }
-  
-  deposition_types {
-    id          id_deposition
-    cat         catu_deposition                   "Table 11.13"
-    txt         txt_deposition_name               "Table 11.13"
-    txt         txt_deposition_desc               "Table 11.13"
-  }  
-  
-  deposition_severity {
-    id          id_deposition_severity
-    cat         catu_deposition_severity          "Table 11.14"
-    txt         txt_deposition_severity_name      "Table 11.14"
-    txt         txt_deposition_severity_desc      "Table 11.14"
-  }  
-  
-  deposition_activity {
-    id          id_deposition_activity
-    cat         catu_deposition_activity          "Table 11.15"
-    txt         txt_deposition_activity_name      "Table 11.15"
-    txt         txt_deposition_activity_desc      "Table 11.15"
-  }  
-</pre>
-</div>
-<p></p><figcaption> Surface - Details</figcaption> </figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="sec-erd-horizon" class="level2" data-number="D.5">
-<h2 data-number="D.5" class="anchored" data-anchor-id="sec-erd-horizon"><span class="header-section-number">D.5</span> Horizon data</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">erDiagram
-  site ||--|{ horizon : "has at least one"
-
-</pre>
-</div>
-<p></p><figcaption> Horizon - main tables only</figcaption> </figure><p></p>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">erDiagram
-  site ||--|{ horizon : "has at least one"
-  site }|--|{ boundary_shapes : "code comes from"
-  site }|--|{ boundary_widths : "code comes from"
-  site }|--|{ soil_moistures : "code comes from"
-  site }|--|{ water_depths : "code comes from"
-
-</pre>
-</div>
-<p></p><figcaption> Horizon - including support tables</figcaption> </figure><p></p>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">erDiagram
-  site ||--|{ horizon : "has at least one"
-  site }|--|{ boundary_shapes : "code comes from"
-  site }|--|{ boundary_widths : "code comes from"
-  site }|--|{ soil_moistures : "code comes from"
-  site }|--|{ water_depths : "code comes from"
-  
-  horizon {
-  id         id_site
-  id         id_horizon
-  amt[0-Inf] amt_upper_depth_cm      "12.2"
-  amt[0-Inf] amt_upper_depth_med_cm  "12.2"
-  amt[0-Inf] amt_upper_depth_min_cm  "12.2"
-  amt[0-Inf] amt_upper_depth_max_cm  "12.2"
-  amt[0-Inf] amt_upper_depth_cm      "12.2"
-  amt[0-Inf] amt_lower_depth_med_cm  "12.2"
-  amt[0-Inf] amt_upper_depth_min_cm  "12.2"
-  amt[0-Inf] amt_upper_depth_max_cm  "12.2"
-  cat        catu_boundary_shape     "12.4"
-  amt[0-Inf] amt_boundary_cm         "12.5"
-  cat        catu_boundary_width     "12.5" 
-  cat        cato_soil_moisture      "12.6"
-  amt[0-Inf] amt_depth_water         "12.7"
-  cat        catu_depth_water        "12.7"
-  }
-  
-  boundary_shapes {
-    id          id_boundary_shape
-    cat         catu_boundary_shape          "Table 12.1"
-    txt         txt_boundary_shape_name      "Table 12.1"
-    txt         txt_boundary_shape_desc      "Table 12.1"
-  }
- 
-  boundary_widths {
-    id          id_boundary_width
-    cat         catu_boundary_width          "Table 12.2"
-    txt         txt_boundary_width_name      "Table 12.2"
-    txt         txt_boundary_width_desc      "Table 12.2"
-  } 
-  
-  soil_moistures {
-    id          id_soil_moisture
-    cat         catu_soil_moisture          "Table 12.3"
-    txt         txt_soil_moisture_name      "Table 12.3"
-  }
-  
-  water_depths {
-    id          id_water_depths
-    cat         catu_water_depths           "Table 12.4"
-    txt         txt_water_depths_name       "Table 12.4"
-    txt         txt_water_depths_desc       "Table 12.4"  
-}
-</pre>
-</div>
-<p></p><figcaption> Horizon - Details</figcaption> </figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="sec-erd-samples" class="level2" data-number="D.6">
-<h2 data-number="D.6" class="anchored" data-anchor-id="sec-erd-samples"><span class="header-section-number">D.6</span> Sample data</h2>
-</section>
-<section id="sec-erd-interp" class="level2" data-number="D.7">
-<h2 data-number="D.7" class="anchored" data-anchor-id="sec-erd-interp"><span class="header-section-number">D.7</span> Interpretation data</h2>
-
-
 </section>
 
 </main> <!-- /main -->
