@@ -207,8 +207,9 @@ tbl_hr_lfnames <- gt(dat_hr_lfnames) |>
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  tab_row_group(label = 'Natural', rows = 1:30, id = 'n') |>
-  tab_row_group(label = 'Human-induced', rows = 31:35, id = 'a') |>
+  # consider replacing this with a column in dat_hr_lfnames, maintenance sucks
+  tab_row_group(label = 'Natural', rows = 1:31, id = 'n') |>
+  tab_row_group(label = 'Human-induced', rows = 32:35, id = 'a') |>
   row_group_order(groups = c('n', 'a')) |>
   tab_style(style = list(cell_text(weight = 'bold')),
             locations = cells_row_groups()) |>
