@@ -108,8 +108,9 @@ dat_hr_coattype <-
           'SC', 'Sand coats', 'Sand grains concentrated at surfaces; they may be residual concentrations resulting from silt and/or clay removal, or may have moved in from horizons above',
           'OG', 'Organic coats', 'Surface features that have a moist colour value of 4 or less and are rich in organic matter compared to the interior of the solid.',
           'SQ', 'Sesquioxide coats', 'Films of sesquioxides on interfaces or impregnating interfaces. They vary in colour depending on the composition and degree of oxidation and hydration. They are difficult to identify chemically, and the different kinds cannot normally be distinguished in the field. Ferri-manganiferous coats, however, are normally very dark brown or black and effervesce vigorously with hydrogen peroxide',
-          'MN', 'Manganese coats', 'dark coatings of precipitated manganese oxides.',
-          'CB', 'Carbonate coats', 'Precipitated calcium carbonate (CaCO~3~)')
+          'MN', 'Manganese coats', 'Dark coatings of precipitated manganese oxides, reactive to H~2~O~2~.',
+          'CB', 'Carbonate coats', 'Precipitated calcium carbonate (CaCO~3~). Usually pale-coloured, and reactive to HCl.',
+          'SI', 'Silica coats', 'Precipiated silica (SiO~2~). Usually pale-coloured, and non-reacive to HCl.')
 
 tbl_hr_coattype <- gt(dat_hr_coattype) |>
    tab_options(
