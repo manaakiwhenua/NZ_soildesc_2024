@@ -122,10 +122,13 @@ Some soil terms that don't seem to fit into the above schema are still in common
 Both structures are more correctly described as spheroidal with a characteristic size range of 1 ± 0.5 mm for crumb and 15 ± 10 mm for nut. Their use as a shorthand description is convenient, but the terms should not be used in databases because they conflate size and shape in a way that the modern schemas seek to avoid.
 :::
 
-| Code | Name | Description | Orientation |
-|:--:|:---|:---|:---|
-| [CL]{.ceg} | Clod | An artificially induced soil aggregate ≥ 100 mm in length | Any |
-| [FM]{.ceg} | Fragment | An artificially induced soil aggregate \< 100 mm in length | Any |
++------------+-----------+------------------------------------------------------------+-------------+
+| Code       | Name      | Description                                                | Orientation |
++:==========:+:==========+:===========================================================+:============+
+| [CL]{.ceg} | Clod      | An artificially induced soil aggregate ≥ 100 mm in length  | Any         |
++------------+-----------+------------------------------------------------------------+-------------+
+| [FM]{.ceg} | Fragment  | An artificially induced soil aggregate \< 100 mm in length | Any         |
++------------+-----------+------------------------------------------------------------+-------------+
 
 : : Artificially induced pedality shapes and identifying characteristics {#tbl-hr-clodshp .striped cols-width=\[10,20,50,20\]}
 
@@ -262,7 +265,7 @@ dat_hr_artefs <-
          'As', 'Asphalt',  'Asphalt and other bitumen-containing materials',
          'Br', 'Brick',    'Fired clay building materials, usually unglazed',
          'Cr', 'Ceramic',  'Fired clay objects, usually glazed',
-         'Ce', 'Concrete', 'Concrete materials',
+         'Ce', 'Concrete', 'Concrete materials, cements',
          'Gl', 'Glass',    'Fragments from windows, containers, etc',
          'Tn', 'Textiles - natural', 'Fabrics and carpets made from e.g. wool',
          'Tx', 'Textiles - artificial', 'Fabrics derived from or dominated by plastics',
@@ -285,6 +288,126 @@ tbl_hr_artefs <- gt(dat_hr_artefs) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_hr_artefs
+
+```
+
+### Plastics {#sec-hr-plas}
+
+Specific assessment of macroplastics may be desired for certain applications. The following optional schema is adapted from @weber2022. For the size fractions in @tbl-hr-rockfrsz, one may describe abundance by volume plus any or all of the origin, fixation, shape, and degradation codes supplied below. Colour may also be described using common terms. Smaller plastic fragments (microplastics) may require sampling and laboratory analysis.
+
+```{r}
+#| label: tbl-hr-aorg
+#| tbl-cap: "Plastic fragment origin"
+
+dat_hr_aorg <-
+  tribble(~Code, ~Name, ~Description,
+         'N', 'Not verifiable', 'Designation not possible / uncertain',    
+         'C', 'Consumer', 'Consumer-products (everyday-products) like PET-bottles, SUP bags, packages, signs etc.', 
+         'A', 'Agricultural', 'Agricultural products like mulch film, silage film, straw bale nets, tire wear etc.',
+         'I', 'Industrial', 'Industrial products like broken pieces of industrial equipment, industrial waste',
+         'C', 'Construction', 'All plastic materials which were placed in soil for construction and supply purposes (e.g., power cables, geomembranes)')
+
+tbl_hr_aorg <- gt(dat_hr_aorg) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_aorg
+
+```
+
+```{r}
+#| label: tbl-hr-afix
+#| tbl-cap: "Plastic fragment fixation"
+
+dat_hr_afix <-
+  tribble(~Code, ~Name, ~Description,
+         'NF', 'None',    'Plastic pieces are not included in soil aggregates (no soil aggregates or loose plastic)',
+         'SF', 'Solely',   'Single plastic pieces are in cooperated into soil aggregates, but others are loose',
+         'MF', 'Moderate', 'The majority of plastic pieces is in cooperated into soil aggregates, but single are loose',
+         'CF', 'Complete', 'All plastic pieces are in cooperated into soil aggregates')
+
+tbl_hr_afix <- gt(dat_hr_afix) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_afix
+
+```
+
+```{r}
+#| label: tbl-hr-ashp
+#| tbl-cap: "Plastic fragment shape"
+
+dat_hr_ashp <-
+  tribble(~Code, ~Name, ~Description,
+         'P', 'Preserved', 'The original manufactured shape of the object is recognisable',  
+         'B', 'Broken',  'The fragment is recognisable as having been part of a larger object',
+         'F', 'Flat', 'Tabular or sheet-like',
+         'A', 'Angular', 'Sharp-edged',
+         'R', 'Rounded', 'Has edges that are not sharp',
+         'S', 'Spherical', 'Ball shaped or ovoid')
+
+tbl_hr_ashp <- gt(dat_hr_ashp) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_ashp
+
+```
+
+```{r}
+#| label: tbl-hr-adeg
+#| tbl-cap: "Plastic fragment degradation"
+
+dat_hr_adeg <-
+  tribble(~Code, ~Name, ~Description,
+         'N', 'Not verifiable', 'Designation not possible / uncertain',    
+         'F', 'Fresh', 'Fresh plastic pieces with bride colours, unaffected shape, without signs of deterioration (cracks, broken edges, rough surfaces)', 
+         'I', 'Incipient alteration', 'Plastic pieces with incipient deterioration surface such as first cracks, broken edges or roughened/grooved surfaces',
+         'D', 'Degraded', 'Plastic pieces with clear indications of ageing such as pale colours or yellowing (UV light), strong fragmentation, frayed edges',
+         'S', 'Strongly degraded', 'Plastic pieces with strong degraded surfaces, faded colours, soft surface, frayed areas or edges')
+
+tbl_hr_adeg <- gt(dat_hr_adeg) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_adeg
 
 ```
 
