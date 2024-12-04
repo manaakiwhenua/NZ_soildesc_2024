@@ -632,14 +632,14 @@ tbl_in_fhtxx
 #| label: tbl-in-fhstr
 #| tbl-cap: "Functional horizon - structure classes"
 
-dat_in_fhtxx <-
+dat_in_fhstr <-
   tribble(~Code, ~Name, ~Description,
-         'C', 'Coarse', 'At least 50% peds of size > 40 mm, *or* apedal massive structure',
-         'F', 'Fine', 'At least 50% peds of size < 40 mm, including horizons where coarse structure breaks to finer nested peds',
+         'C', 'Coarse', 'At least 50% peds of size > 20 mm (\'coarse\'), *or* apedal massive structure',
+         'F', 'Fine', 'At least 50% peds of size < 20 mm (\'coarse\'), including horizons where coarse structure breaks to finer nested peds',
          'E', 'Earthy', 'Weak soil strength with very weak ped strength', 
          'K', 'Platy',  'At least 50% peds of any size, with a platy shape')
 
-tbl_in_fhtxx <- gt(dat_in_fhtxx) |>
+tbl_in_fhstr <- gt(dat_in_fhstr) |>
   tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
@@ -650,9 +650,10 @@ tbl_in_fhtxx <- gt(dat_in_fhtxx) |>
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
+  fmt_markdown(columns = 3) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
-tbl_in_fhtxx
+tbl_in_fhstr
 ```
 
 -   Structure codes ([C]{.ceg}, [F]{.ceg}) can only be used with [L]{.ceg} or [Y]{.ceg} texture codes, and only where consistence is not [w]{.ceg}.
