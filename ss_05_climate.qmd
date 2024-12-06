@@ -9,7 +9,6 @@ editor_options:
 library(dplyr)
 library(tibble)
 library(gt)
-library(gtExtras)
 ```
 
 ## Climate {#sec-clim}
@@ -55,7 +54,7 @@ tbl_ss_koppenz <- gt(dat_ss_koppenz) |>
 tbl_ss_koppenz
 ```
 
-[map goes here]{.diags}
+![Köppen-Geiger climate regions for New Zealand](data/NZ_Koppen.png){#fig-kop .lightbox width="65%"}
 
 Since most work programs will take place within one zone, regional climate rarely needs to be noted in the field.
 
@@ -135,7 +134,7 @@ The prevailing wind direction, its usual strength and seasonality all affect eva
 
 Contemporary weather conditions have not necessarily had a strong influence on soil formation, except perhaps in young and/or rapidly developing soils. These parameters are more relevant for agricultural suitability assessment and for interpreting soil profile descriptions.
 
-### Current Weather {#sec-weath-now}
+### Current weather {#sec-weath-now}
 
 Record the weather at the time of observation using the codes in @tbl-ss-weatherc, plus temperature in degrees Celsius. These are not always essential, but can affect colour recording and some field tests.
 
@@ -172,7 +171,7 @@ tbl_ss_weatherc
 
 ### Recent rainfall {#sec-weath-rrain}
 
-Record recent rainfall using the codes in @tbl-ss-weatherp.
+Record recent rainfall using the codes in @tbl-ss-weatherp. This is optional, but can provide valuable context when recording surface cover (@sec-pr-surfcov), the presence of surface water at a site (@sec-pr-surfw), detailed erosion/deposition descriptions (@sec-pr-erosion, @sec-pr-deposition) and soil moisture status (@sec-pr-sws).
 
 ```{r}
 #| label: tbl-ss-weatherp
