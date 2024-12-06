@@ -333,7 +333,7 @@ erDiagram
     cat         catu_site_selection FK   "Section 10.2.6"
     cat         catu_site_exposure FK    "Section 10.2.7"
     num[0-1000] amt_site_depth_max_cm    "Section 10.2.8"
-    txt         catu_early_stop FK       "Section 10.2.9"
+    cat         catu_early_stop FK       "Section 10.2.9"
     %% weather at visit %%
     cat         catu_weather FK          "Section 6.3.1"
     num[-50-50] val_temperature_c        "Section 6.3.1"
@@ -364,14 +364,15 @@ erDiagram
   site_early_stop_types {
     id          id_site_stop PK
     cat         catu_site_stop FK        "Table 10.4"
-    txt         txt_site_stop            "Table 10.4"
+    txt         txt_site_stop_name       "Table 10.4"
+    txt         txt_site_stop_desc       "Table 10.4"
 }
   
   disturbances {
     id          id_site PK
     id          id_disturbance PK
-    txt         catu_disturbance FK      "Section 10.3"
-    txt         catu_disturbance_age FK  "Section 10.3"
+    cat         catu_disturbance FK      "Section 10.3"
+    cat         catu_disturbance_age FK  "Section 10.3"
     num[0-Inf]  amt_disturbance_age_days "Section 10.3"
   }
 
@@ -916,7 +917,7 @@ erDiagram
     num[0-100] num_plastic_p            "Section 14.2.4"
     cat        cato_plastic_fixation    "Table 14.9"
     cat        catu_plastic_shape       "Table 14.10"
-    catu       cato_plastic_degradation "Table 14.11"
+    cat        cato_plastic_degradation "Table 14.11"
   } 
   
   plastic_types {
