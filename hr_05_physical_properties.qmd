@@ -17,7 +17,7 @@ library(gtExtras)
 
 Consistency tests should be performed down-profile, with at least one sample tested per horizon. Samples should be taken from the mid-point of each horizon. Additional samples in transition zones may also be of interest.
 
-::: {#nte-consnzsc .callout-note collapse=true title='Consistence tests and the New Zealand Soil Classification (NZSC)'}
+::: {#nte-consnzsc .callout-note appearance="minimal" collapse=true title='Consistence tests and the New Zealand Soil Classification (NZSC)'}
 For classifying using the NZSC, particular tests down to a certain depth may be required. At the order level:
 
 -   **Gley soils:** must not have any moderately or very fluid (@sec-cn-flu) layers within 30 cm of the soil surface. Unconfined soil strength (@sec-cn-stru) and cementation (@sec-cn-ind) tests may be required to confirm absence of an underlying fragipan.
@@ -48,12 +48,12 @@ For classifying using the NZSC, particular tests down to a certain depth may be 
 %%| fig-cap: Determining sample cohesion
 
 flowchart TD
-  q1["Can a sample cube be formed\n from remoulded material?"] -->|yes| q2[Is the material plastic?]
+  q1["Can a sample cube be formed from remoulded material?"] -->|yes| q2[Is the material plastic?]
   q2 ---->|yes| a1(["**Cohesive**"])
   q1 -->|no| q3[Is the material plastic?]
   q3 -->|yes| q4
-  q2 -->|no| q4["Does the material have a\n fast positive reaction to\n the dilatency test?"]
-  q4 -->|no| q5["Does the material have a\n distinctly negative reaction to\n the dilatency test?"]
+  q2 -->|no| q4["Does the material have a fast positive reaction to the dilatency test?"]
+  q4 -->|no| q5["Does the material have a distinctly negative reaction to the dilatency test?"]
   q4 --->|yes| a2
   q3 ---->|no| a2(["**Non-cohesive**"])
   q5 -->|yes| a1
@@ -62,6 +62,8 @@ flowchart TD
 ```
 
 ### Dry coherence {#sec-cn-dryco}
+
+*Procedure* 
 
 1.  Remould a 30 mm test sample into a cube, and air-dry.
 2.  If the cube collapses under its own weight or after being lightly touched, treat the soil as non-cohesive.
@@ -113,7 +115,7 @@ tbl_cn_str
 
 *Procedure*
 
-1.  Perform the test on an minimally disturbed 30 mm cube.
+1.  Perform the test on a minimally disturbed 30 mm cube.
 2.  Hold the cube between the thumb and forefinger. Both digits must be straight and fully extended.
 3.  Pinch down. If the cube can be crushed, rate the difficulty using categories [1-4]{.ceg} in @tbl-cn-str.
 4.  If the cube cannot be crushed by hand, attempt to crush it slowly underfoot, against a hard surface. Rate the difficulty using categories [5-7]{.ceg} in @tbl-cn-str.
@@ -384,7 +386,6 @@ tbl_cn_fail <- gt(dat_cn_fail) |>
 
 tbl_cn_fail
 ```
-
 
 ## Mode of failure {#sec-cn-fail}
 

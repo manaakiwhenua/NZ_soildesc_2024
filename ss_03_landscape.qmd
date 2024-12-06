@@ -96,7 +96,7 @@ The characteristic slope is the most common range of slopes within a regional la
 
 Characteristic slope is usually best determined from zonal analysis of a DEM-derived slope dataset, but can be estimated in the field. Estimate in the field as a median and range, in whole degrees, e.g. [25° (20-28)]{.ceg}. Slope classes may be applied to the recorded data; some options are presented in @sec-slopeclass.
 
-::: {.callout-note appearance="simple" collapse="true" title="Multiple characteristic slopes"}
+::: {#nte-multislopes .callout-note appearance="simple" collapse="true" title="Multiple characteristic slopes"}
 Some landscapes may have two or more distinct characteristic slopes, e.g. the fronts and tops of alluvial terrace elements. In this case the median will describe the dominant surface while the range will capture the steeper areas. Recording multiple characteristic slopes at landscape scale is not considered useful, as adequate context is provided by naming the landscape and its component landforms.
 :::
 
@@ -286,10 +286,10 @@ Slopes can be further refined by including information about their relationship 
 
 dat_hr_slopeinc <-
   tribble(~Code, ~Name, ~Description,
-          'X', 'Waxing', 'element upslope is gentler, element downslope is steeper.',
-          'N', 'Waning', 'element upslope is steeper, element downslope is gentler.',
-          'A', 'Maximal', 'element upslope is gentler, element downslope is gentler.',
-          'I', 'Minimal', 'element upslope is steeper, element downslope is steeper.')
+          'X', 'Waxing', 'Element upslope is gentler, element downslope is steeper.',
+          'N', 'Waning', 'Element upslope is steeper, element downslope is gentler.',
+          'A', 'Maximal', 'Element upslope is gentler, element downslope is gentler.',
+          'I', 'Minimal', 'Element upslope is steeper, element downslope is steeper.')
 
 tbl_hr_slopeinc <- gt(dat_hr_slopeinc) |>
    tab_options(

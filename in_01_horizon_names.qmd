@@ -9,7 +9,9 @@ library(gtExtras)
 
 ## Conventional horizons {#sec-hzn-conv}
 
-Horizon names operate as a shorthand for describing the full profile, making it easier to compare and contrast groups of profiles, and easier to classify them. Horizons are given a particular designation according to their position in the profile and according to soil properties that reflect the kind and degree of pedogenic alteration. As designations are made in the field, they are defined mainly by morphological properties that differentiate horizons from those above or below, or from a presumed parent material. Laboratory data may be needed to confirm identification, especially in marginal cases. This scheme was developed from the system used in England and Wales [@avery1980] by Clayden and Hewitt [-@clayden2015], and is broadly similar to those used overseas (e.g. WRB [-@iussworkinggroupwrb2022]). However, note that significant differences in suffix use exist between all of these systems as they have become adapted to regional conditions.
+Horizon names operate as a shorthand for describing the full profile, making it easier to compare and contrast groups of profiles, and easier to classify them. Horizons are given a particular designation according to their position in the profile and according to soil properties that reflect the kind and degree of pedogenic alteration. As designations are made in the field, they are defined mainly by morphological properties that differentiate horizons from those above or below, or from a presumed parent material. Laboratory data may be needed to confirm identification, especially in marginal cases.
+
+This scheme was developed from the system used in England and Wales [@avery1980] by Clayden and Hewitt [-@clayden2015], and is broadly similar to those used overseas (e.g. WRB [-@iussworkinggroupwrb2022]). However, note that significant differences in suffix use exist between all of these systems as they have become adapted to regional conditions.
 
 ### Primary Divisions {#sec-hzn-convp}
 
@@ -563,11 +565,11 @@ tbl_in_fhst
 
 dat_in_fhtx <-
   tribble(~Code, ~Name, ~Description,
-         'A', 'Sandy',          'Sand and Loamy Sand [texture classes](hr_03_texture.qmd#sec-hr-tex)',
+         'A', 'Sandy',          'Sandy [texture classes](hr_03_texture.qmd#sec-hr-tex)',
          'L', 'Loamy or Silty', 'Loamy and Silty [texture classes](hr_03_texture.qmd#sec-hr-tex)',
          'Y', 'Clayey',         'Clayey [texture classes](hr_03_texture.qmd#sec-hr-tex)', 
          'O', 'Organic',        'Organic soil materials',
-         'J', 'Fluid',          'Moderately or very fluid',
+         'J', 'Fluid',          'Moderately or very fluid materials',
          'Q', 'Pan',            'Indurated pan',
          'P', 'Placic',         'Placic horizon')
 
@@ -742,7 +744,7 @@ Valid combinations of the above components are listed below, along with associat
 -   A good reason is needed to deviate from the default permeability (e.g. an [Lw]{.ceg} with [r]{.ceg} permeability would need a low clay content).
 
 | Code | Name | Allowed permeabilities | Topsoil allowed permeabilities |
-|:----------------:|:-----------------|:-----------------|:-----------------|
+|:-----------------|:-----------------|:-----------------|:-----------------|
 | [J]{.ceg} | Fluid | **xs** | **xs** |
 | [Or]{.ceg} | Fibric organic | r **m** | **r** m |
 | [Oh]{.ceg} | Humic organic | **m** ms s | **m** ms |
