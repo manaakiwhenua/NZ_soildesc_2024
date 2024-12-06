@@ -1,3 +1,9 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+lightbox: true
+---
 # Location {#sec-loc}
 
 ```{r}
@@ -5,6 +11,9 @@ library(dplyr)
 library(tibble)
 library(gt)
 library(gtExtras)
+library(sf)
+library(tmap)
+library(spData)
 ```
 
 A soil description is essentially useless without a confident location. Confidence is supported by clear communication about equipment, datum and coordinate reference system, measurement units, and expected error.
@@ -17,10 +26,22 @@ Record X and Y location coordinates as eastings and northings using New Zealand 
 
 X and Y precision does not need to exceed 1 m for pits, or 0.1 m for cores and auger holes. Z precision will rarely need to exceed 0.1 m.
 
-Example: [1586090E, 5405722N (462 m)]{.ceg}
-
 ```{r}
-# map goes here - its the centre of NZ
+#| label: fig-loc
+#| fig-cap: "Example location: [1586090E, 5405722N (462 m)]{.ceg}"
+
+loc <- st_point(c(1586090, 5405722, 462), dim = "XYZ") |>
+  st_sfc(crs = 2193) |>
+  st_as_sf() |>
+  dplyr::mutate(label = '1586090E, 5405722N (462 m)')
+
+tm_shape(nz) +
+  tm_fill() +
+tm_shape(loc) +
+  tm_symbols(col = 'red') +
+  #tm_text(text = 'label', size = 0.75, xmod = 4.25, ymod = -0.5) +
+tm_compass(type='arrow') +
+tm_scale_bar(breaks = c(0, 100, 200))
 
 ```
 
