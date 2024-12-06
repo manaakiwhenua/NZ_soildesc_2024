@@ -13,7 +13,6 @@ library(gt)
 library(gtExtras)
 library(sf)
 library(tmap)
-library(spData)
 ```
 
 A soil description is essentially useless without a confident location. Confidence is supported by clear communication about equipment, datum and coordinate reference system, measurement units, and expected error.
@@ -35,15 +34,23 @@ loc <- st_point(c(1586090, 5405722, 462), dim = "XYZ") |>
   st_as_sf() |>
   dplyr::mutate(label = '1586090E, 5405722N (462 m)')
 
-tm_shape(nz) +
+nzch <- rnaturalearth::ne_countries(country = 'New Zealand', scale = 10) |>
+  st_transform(2193) %>% 
+  # force match with Fig 6.1
+  st_crop(xmin = 952959.375186378, ymin = 4659879.67004712,
+          xmax = 2489543.47037023, ymax = 6237836.51954394)
+
+tm_shape(nzch) +
   tm_fill() +
+  tm_borders() +
 tm_shape(loc) +
   tm_symbols(col = 'red') +
   #tm_text(text = 'label', size = 0.75, xmod = 4.25, ymod = -0.5) +
 tm_compass(type='arrow') +
-tm_scale_bar(breaks = c(0, 100, 200))
+tm_scale_bar(breaks = c(0, 100, 200)) 
 
 ```
+
 
 ::: {#wrn-wgs84 .callout-warning collapse="true" appearance="minimal" title="Use of WGS84"}
 Location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around 3 m, and coordinate accuracy also degrades over time due to continental drift. This is compensated for using a date-based 'epoch' adjustment. Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.
@@ -137,6 +144,7 @@ tbl_ss_elevsrc <- gt(dat_ss_elevsrc) |>
 tbl_ss_elevsrc
 
 ```
+
 
 ::: {#tip-gnss .callout-tip collapse="true" appearance="minimal" title="GNSS types"}
 Multi-constellation GNSS is not the same as multi-band GNSS. The former signifies access to multiple location satellite networks operated by various parties, e.g. GPS (USA), Galileo (EU), BeiDou (China). This can improve signal *consistency* due to having access to more total satellites, but not necessarily overall accuracy.
