@@ -413,9 +413,10 @@ tbl_pr_erosion <- gt(dat_pr_erosion) |>
   tab_row_group(label = 'Water-driven', rows = 1:5, id = 'w') |>
   tab_row_group(label = 'Gravity-driven', rows = 6:10, id = 'g') |>
   tab_row_group(label = 'Wind-driven', rows = 11, id = 'i') |>
+  tab_row_group(label = 'Other', rows = 12:14, id = 'o') |>
   tab_style(style = list(cell_text(weight = 'bold')),
             locations = cells_row_groups()) |>
-  row_group_order(c('w', 'g')) |>
+  row_group_order(c('w', 'g', 'i', 'o')) |>
   sub_missing(missing_text = '')
 
 tbl_pr_erosion
@@ -531,9 +532,10 @@ tbl_pr_deposition <- gt(dat_pr_deposition) |>
   tab_row_group(label = 'Water-driven', rows = 1:3, id = 'w') |>
   tab_row_group(label = 'Gravity-driven', rows = 4:8, id = 'g') |>
   tab_row_group(label = 'Wind-driven', rows = 9:11, id = 'i') |>
+  tab_row_group(label = 'Other', rows = 12:14, id = 'o') |>
   tab_style(style = list(cell_text(weight = 'bold')),
             locations = cells_row_groups()) |>
-  row_group_order(c('w', 'g', 'i')) |>
+  row_group_order(c('w', 'g', 'i', 'o')) |>
   sub_missing(missing_text = '')
 
 tbl_pr_deposition
