@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.37">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-273e46d7b3848a679358d7b360117b95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -102,8 +102,25 @@ ul.task-list li input[type="checkbox"] {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Soil Description Handbook</a> 
-        <div class="sidebar-tools-main">
+        <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/manaakiwhenua/NZ_soildesc_2024" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./MWLR_2024_DRAFT_soil-description-handbook.docx">
+              <i class="bi bi-file-word pe-1"></i>
+            Download Docx
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./MWLR_2024_DRAFT_soil-description-handbook.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -391,7 +408,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sec-erd-colour" id="toc-sec-erd-colour" class="nav-link" data-scroll-target="#sec-erd-colour"><span class="header-section-number">D.7</span> Horizon colour</a></li>
   <li><a href="#sec-erd-texture" id="toc-sec-erd-texture" class="nav-link" data-scroll-target="#sec-erd-texture"><span class="header-section-number">D.8</span> Horizon texture</a></li>
   <li><a href="#sec-erd-secf" id="toc-sec-erd-secf" class="nav-link" data-scroll-target="#sec-erd-secf"><span class="header-section-number">D.9</span> Horizon secondary features</a></li>
-  <li><a href="#sec-erc-cons" id="toc-sec-erc-cons" class="nav-link" data-scroll-target="#sec-erc-cons"><span class="header-section-number">D.10</span> Horizon consistence Tests</a></li>
+  <li><a href="#sec-erc-cons" id="toc-sec-erc-cons" class="nav-link" data-scroll-target="#sec-erc-cons"><span class="header-section-number">D.10</span> Horizon consistence tests</a></li>
   <li><a href="#sec-erd-fts" id="toc-sec-erd-fts" class="nav-link" data-scroll-target="#sec-erd-fts"><span class="header-section-number">D.11</span> Field tests</a></li>
   <li><a href="#sec-erd-interp" id="toc-sec-erd-interp" class="nav-link" data-scroll-target="#sec-erd-interp"><span class="header-section-number">D.12</span> Interpretation data</a>
   <ul class="collapse">
@@ -422,7 +439,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">December 4, 2024</p>
+      <p class="date-modified">December 7, 2024</p>
     </div>
   </div>
     
@@ -433,7 +450,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The following diagrams demonstrate one way in which the the contents of this manual can be structured in a database. The diagrams only deal with the data themselves - security, user management, change tracking and other helper functionalities are left out for clarity. Data tables for samples and laboratory results are also not included. The model is optimised to highlight the relationships between the various data points and contains some structures that support the controlled vocabulary lists, but is not optimised for performance.</p>
+<p>The following diagrams demonstrate one way in which the contents of this manual can be structured in a database. The diagrams only deal with the data themselves - security, user management, change tracking and other helper functionalities are left out for clarity. Data tables for samples and laboratory results are also not included. The model is optimised to highlight the relationships between the various data points and contains some structures that support the controlled vocabulary lists, but is not optimised for performance.</p>
 <section id="conceptual-model" class="level2" data-number="D.1">
 <h2 data-number="D.1" class="anchored" data-anchor-id="conceptual-model"><span class="header-section-number">D.1</span> Conceptual model</h2>
 <p>This overview shows the relationships between each part of the standard.</p>
@@ -783,7 +800,7 @@ erDiagram
     cat         catu_site_selection FK   "Section 10.2.6"
     cat         catu_site_exposure FK    "Section 10.2.7"
     num[0-1000] amt_site_depth_max_cm    "Section 10.2.8"
-    txt         catu_early_stop FK       "Section 10.2.9"
+    cat         catu_early_stop FK       "Section 10.2.9"
     %% weather at visit %%
     cat         catu_weather FK          "Section 6.3.1"
     num[-50-50] val_temperature_c        "Section 6.3.1"
@@ -814,14 +831,15 @@ erDiagram
   site_early_stop_types {
     id          id_site_stop PK
     cat         catu_site_stop FK        "Table 10.4"
-    txt         txt_site_stop            "Table 10.4"
+    txt         txt_site_stop_name       "Table 10.4"
+    txt         txt_site_stop_desc       "Table 10.4"
 }
   
   disturbances {
     id          id_site PK
     id          id_disturbance PK
-    txt         catu_disturbance FK      "Section 10.3"
-    txt         catu_disturbance_age FK  "Section 10.3"
+    cat         catu_disturbance FK      "Section 10.3"
+    cat         catu_disturbance_age FK  "Section 10.3"
     num[0-Inf]  amt_disturbance_age_days "Section 10.3"
   }
 
@@ -1402,7 +1420,7 @@ erDiagram
     num[0-100] num_plastic_p            "Section 14.2.4"
     cat        cato_plastic_fixation    "Table 14.9"
     cat        catu_plastic_shape       "Table 14.10"
-    catu       cato_plastic_degradation "Table 14.11"
+    cat        cato_plastic_degradation "Table 14.11"
   } 
   
   plastic_types {
@@ -1862,7 +1880,7 @@ erDiagram
 </div>
 </section>
 <section id="sec-erc-cons" class="level2" data-number="D.10">
-<h2 data-number="D.10" class="anchored" data-anchor-id="sec-erc-cons"><span class="header-section-number">D.10</span> Horizon consistence Tests</h2>
+<h2 data-number="D.10" class="anchored" data-anchor-id="sec-erc-cons"><span class="header-section-number">D.10</span> Horizon consistence tests</h2>
 <p>The consistence tests table can optionally extend the horizon overview table (<a href="#sec-erd-horizono" class="quarto-xref"><span>Section D.5</span></a>) as it has a 1:1 relationship.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -2380,23 +2398,23 @@ Table&nbsp;D.1: Data record type
 </figcaption>
 <div aria-describedby="tbl-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="itpuyeuvnp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#itpuyeuvnp table {
+<div id="ofamlikgdw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ofamlikgdw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#itpuyeuvnp thead, #itpuyeuvnp tbody, #itpuyeuvnp tfoot, #itpuyeuvnp tr, #itpuyeuvnp td, #itpuyeuvnp th {
+#ofamlikgdw thead, #ofamlikgdw tbody, #ofamlikgdw tfoot, #ofamlikgdw tr, #ofamlikgdw td, #ofamlikgdw th {
   border-style: none;
 }
 
-#itpuyeuvnp p {
+#ofamlikgdw p {
   margin: 0;
   padding: 0;
 }
 
-#itpuyeuvnp .gt_table {
+#ofamlikgdw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2422,12 +2440,12 @@ Table&nbsp;D.1: Data record type
   border-left-color: #D3D3D3;
 }
 
-#itpuyeuvnp .gt_caption {
+#ofamlikgdw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#itpuyeuvnp .gt_title {
+#ofamlikgdw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2439,7 +2457,7 @@ Table&nbsp;D.1: Data record type
   border-bottom-width: 0;
 }
 
-#itpuyeuvnp .gt_subtitle {
+#ofamlikgdw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2451,7 +2469,7 @@ Table&nbsp;D.1: Data record type
   border-top-width: 0;
 }
 
-#itpuyeuvnp .gt_heading {
+#ofamlikgdw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2463,13 +2481,13 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#itpuyeuvnp .gt_bottom_border {
+#ofamlikgdw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#itpuyeuvnp .gt_col_headings {
+#ofamlikgdw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2484,7 +2502,7 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#itpuyeuvnp .gt_col_heading {
+#ofamlikgdw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2504,7 +2522,7 @@ Table&nbsp;D.1: Data record type
   overflow-x: hidden;
 }
 
-#itpuyeuvnp .gt_column_spanner_outer {
+#ofamlikgdw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2516,15 +2534,15 @@ Table&nbsp;D.1: Data record type
   padding-right: 4px;
 }
 
-#itpuyeuvnp .gt_column_spanner_outer:first-child {
+#ofamlikgdw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#itpuyeuvnp .gt_column_spanner_outer:last-child {
+#ofamlikgdw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#itpuyeuvnp .gt_column_spanner {
+#ofamlikgdw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2536,11 +2554,11 @@ Table&nbsp;D.1: Data record type
   width: 100%;
 }
 
-#itpuyeuvnp .gt_spanner_row {
+#ofamlikgdw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#itpuyeuvnp .gt_group_heading {
+#ofamlikgdw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2566,7 +2584,7 @@ Table&nbsp;D.1: Data record type
   text-align: left;
 }
 
-#itpuyeuvnp .gt_empty_group_heading {
+#ofamlikgdw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2581,15 +2599,15 @@ Table&nbsp;D.1: Data record type
   vertical-align: middle;
 }
 
-#itpuyeuvnp .gt_from_md > :first-child {
+#ofamlikgdw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#itpuyeuvnp .gt_from_md > :last-child {
+#ofamlikgdw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#itpuyeuvnp .gt_row {
+#ofamlikgdw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2608,7 +2626,7 @@ Table&nbsp;D.1: Data record type
   overflow-x: hidden;
 }
 
-#itpuyeuvnp .gt_stub {
+#ofamlikgdw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2621,7 +2639,7 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#itpuyeuvnp .gt_stub_row_group {
+#ofamlikgdw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2635,15 +2653,15 @@ Table&nbsp;D.1: Data record type
   vertical-align: top;
 }
 
-#itpuyeuvnp .gt_row_group_first td {
+#ofamlikgdw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#itpuyeuvnp .gt_row_group_first th {
+#ofamlikgdw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#itpuyeuvnp .gt_summary_row {
+#ofamlikgdw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2653,16 +2671,16 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#itpuyeuvnp .gt_first_summary_row {
+#ofamlikgdw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#itpuyeuvnp .gt_first_summary_row.thick {
+#ofamlikgdw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#itpuyeuvnp .gt_last_summary_row {
+#ofamlikgdw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2672,7 +2690,7 @@ Table&nbsp;D.1: Data record type
   border-bottom-color: #D3D3D3;
 }
 
-#itpuyeuvnp .gt_grand_summary_row {
+#ofamlikgdw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2682,7 +2700,7 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#itpuyeuvnp .gt_first_grand_summary_row {
+#ofamlikgdw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2692,7 +2710,7 @@ Table&nbsp;D.1: Data record type
   border-top-color: #D3D3D3;
 }
 
-#itpuyeuvnp .gt_last_grand_summary_row_top {
+#ofamlikgdw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2702,11 +2720,11 @@ Table&nbsp;D.1: Data record type
   border-bottom-color: #D3D3D3;
 }
 
-#itpuyeuvnp .gt_striped {
+#ofamlikgdw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#itpuyeuvnp .gt_table_body {
+#ofamlikgdw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2715,7 +2733,7 @@ Table&nbsp;D.1: Data record type
   border-bottom-color: #D3D3D3;
 }
 
-#itpuyeuvnp .gt_footnotes {
+#ofamlikgdw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2729,7 +2747,7 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#itpuyeuvnp .gt_footnote {
+#ofamlikgdw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2738,7 +2756,7 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#itpuyeuvnp .gt_sourcenotes {
+#ofamlikgdw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2752,7 +2770,7 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#itpuyeuvnp .gt_sourcenote {
+#ofamlikgdw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2760,72 +2778,72 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#itpuyeuvnp .gt_left {
+#ofamlikgdw .gt_left {
   text-align: left;
 }
 
-#itpuyeuvnp .gt_center {
+#ofamlikgdw .gt_center {
   text-align: center;
 }
 
-#itpuyeuvnp .gt_right {
+#ofamlikgdw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#itpuyeuvnp .gt_font_normal {
+#ofamlikgdw .gt_font_normal {
   font-weight: normal;
 }
 
-#itpuyeuvnp .gt_font_bold {
+#ofamlikgdw .gt_font_bold {
   font-weight: bold;
 }
 
-#itpuyeuvnp .gt_font_italic {
+#ofamlikgdw .gt_font_italic {
   font-style: italic;
 }
 
-#itpuyeuvnp .gt_super {
+#ofamlikgdw .gt_super {
   font-size: 65%;
 }
 
-#itpuyeuvnp .gt_footnote_marks {
+#ofamlikgdw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#itpuyeuvnp .gt_asterisk {
+#ofamlikgdw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#itpuyeuvnp .gt_indent_1 {
+#ofamlikgdw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#itpuyeuvnp .gt_indent_2 {
+#ofamlikgdw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#itpuyeuvnp .gt_indent_3 {
+#ofamlikgdw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#itpuyeuvnp .gt_indent_4 {
+#ofamlikgdw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#itpuyeuvnp .gt_indent_5 {
+#ofamlikgdw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#itpuyeuvnp .katex-display {
+#ofamlikgdw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#itpuyeuvnp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ofamlikgdw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>

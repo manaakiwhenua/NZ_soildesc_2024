@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.37">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -56,10 +56,13 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-273e46d7b3848a679358d7b360117b95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -117,8 +120,25 @@ div.csl-indent {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Soil Description Handbook</a> 
-        <div class="sidebar-tools-main">
+        <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/manaakiwhenua/NZ_soildesc_2024" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./MWLR_2024_DRAFT_soil-description-handbook.docx">
+              <i class="bi bi-file-word pe-1"></i>
+            Download Docx
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./MWLR_2024_DRAFT_soil-description-handbook.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -431,7 +451,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 23, 2024</p>
+      <p class="date-modified">December 7, 2024</p>
     </div>
   </div>
     
@@ -449,7 +469,20 @@ div.csl-indent {
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="sec-loc-rec"><span class="header-section-number">3.1.1</span> Recording location</h3>
 <p>Record X and Y location coordinates as eastings and northings using New Zealand Transverse Mercator (EPSG:2193). For Z coordinates (elevation), use the New Zealand Vertical Datum 2016 (EPSG:1169).</p>
 <p>X and Y precision does not need to exceed 1&nbsp;m for pits, or 0.1&nbsp;m for cores and auger holes. Z precision will rarely need to exceed 0.1&nbsp;m.</p>
-<p>Example: <span class="ceg">1586090E, 5405722N (462 m)</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-loc" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-loc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="ss_02_location_files/figure-html/fig-loc-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;3.1: Example location: 1586090E, 5405722N (462 m)"><img src="ss_02_location_files/figure-html/fig-loc-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-loc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Example location: <span class="ceg">1586090E, 5405722N (462 m)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <div id="wrn-wgs84" class="callout callout-style-simple callout-warning no-icon callout-titled" title="Use of WGS84">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -514,23 +547,23 @@ Table&nbsp;3.1: Elevation data sources
 </figcaption>
 <div aria-describedby="tbl-ss-elevsrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="jozacmfmxo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jozacmfmxo table {
+<div id="oqurbqntbn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#oqurbqntbn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jozacmfmxo thead, #jozacmfmxo tbody, #jozacmfmxo tfoot, #jozacmfmxo tr, #jozacmfmxo td, #jozacmfmxo th {
+#oqurbqntbn thead, #oqurbqntbn tbody, #oqurbqntbn tfoot, #oqurbqntbn tr, #oqurbqntbn td, #oqurbqntbn th {
   border-style: none;
 }
 
-#jozacmfmxo p {
+#oqurbqntbn p {
   margin: 0;
   padding: 0;
 }
 
-#jozacmfmxo .gt_table {
+#oqurbqntbn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -556,12 +589,12 @@ Table&nbsp;3.1: Elevation data sources
   border-left-color: #D3D3D3;
 }
 
-#jozacmfmxo .gt_caption {
+#oqurbqntbn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jozacmfmxo .gt_title {
+#oqurbqntbn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -573,7 +606,7 @@ Table&nbsp;3.1: Elevation data sources
   border-bottom-width: 0;
 }
 
-#jozacmfmxo .gt_subtitle {
+#oqurbqntbn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -585,7 +618,7 @@ Table&nbsp;3.1: Elevation data sources
   border-top-width: 0;
 }
 
-#jozacmfmxo .gt_heading {
+#oqurbqntbn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -597,13 +630,13 @@ Table&nbsp;3.1: Elevation data sources
   border-right-color: #D3D3D3;
 }
 
-#jozacmfmxo .gt_bottom_border {
+#oqurbqntbn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jozacmfmxo .gt_col_headings {
+#oqurbqntbn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -618,7 +651,7 @@ Table&nbsp;3.1: Elevation data sources
   border-right-color: #D3D3D3;
 }
 
-#jozacmfmxo .gt_col_heading {
+#oqurbqntbn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -638,7 +671,7 @@ Table&nbsp;3.1: Elevation data sources
   overflow-x: hidden;
 }
 
-#jozacmfmxo .gt_column_spanner_outer {
+#oqurbqntbn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -650,15 +683,15 @@ Table&nbsp;3.1: Elevation data sources
   padding-right: 4px;
 }
 
-#jozacmfmxo .gt_column_spanner_outer:first-child {
+#oqurbqntbn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jozacmfmxo .gt_column_spanner_outer:last-child {
+#oqurbqntbn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jozacmfmxo .gt_column_spanner {
+#oqurbqntbn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -670,11 +703,11 @@ Table&nbsp;3.1: Elevation data sources
   width: 100%;
 }
 
-#jozacmfmxo .gt_spanner_row {
+#oqurbqntbn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jozacmfmxo .gt_group_heading {
+#oqurbqntbn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -700,7 +733,7 @@ Table&nbsp;3.1: Elevation data sources
   text-align: left;
 }
 
-#jozacmfmxo .gt_empty_group_heading {
+#oqurbqntbn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -715,15 +748,15 @@ Table&nbsp;3.1: Elevation data sources
   vertical-align: middle;
 }
 
-#jozacmfmxo .gt_from_md > :first-child {
+#oqurbqntbn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jozacmfmxo .gt_from_md > :last-child {
+#oqurbqntbn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jozacmfmxo .gt_row {
+#oqurbqntbn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -742,7 +775,7 @@ Table&nbsp;3.1: Elevation data sources
   overflow-x: hidden;
 }
 
-#jozacmfmxo .gt_stub {
+#oqurbqntbn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -755,7 +788,7 @@ Table&nbsp;3.1: Elevation data sources
   padding-right: 5px;
 }
 
-#jozacmfmxo .gt_stub_row_group {
+#oqurbqntbn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -769,15 +802,15 @@ Table&nbsp;3.1: Elevation data sources
   vertical-align: top;
 }
 
-#jozacmfmxo .gt_row_group_first td {
+#oqurbqntbn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jozacmfmxo .gt_row_group_first th {
+#oqurbqntbn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jozacmfmxo .gt_summary_row {
+#oqurbqntbn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -787,16 +820,16 @@ Table&nbsp;3.1: Elevation data sources
   padding-right: 5px;
 }
 
-#jozacmfmxo .gt_first_summary_row {
+#oqurbqntbn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jozacmfmxo .gt_first_summary_row.thick {
+#oqurbqntbn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jozacmfmxo .gt_last_summary_row {
+#oqurbqntbn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -806,7 +839,7 @@ Table&nbsp;3.1: Elevation data sources
   border-bottom-color: #D3D3D3;
 }
 
-#jozacmfmxo .gt_grand_summary_row {
+#oqurbqntbn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -816,7 +849,7 @@ Table&nbsp;3.1: Elevation data sources
   padding-right: 5px;
 }
 
-#jozacmfmxo .gt_first_grand_summary_row {
+#oqurbqntbn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -826,7 +859,7 @@ Table&nbsp;3.1: Elevation data sources
   border-top-color: #D3D3D3;
 }
 
-#jozacmfmxo .gt_last_grand_summary_row_top {
+#oqurbqntbn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -836,11 +869,11 @@ Table&nbsp;3.1: Elevation data sources
   border-bottom-color: #D3D3D3;
 }
 
-#jozacmfmxo .gt_striped {
+#oqurbqntbn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jozacmfmxo .gt_table_body {
+#oqurbqntbn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -849,7 +882,7 @@ Table&nbsp;3.1: Elevation data sources
   border-bottom-color: #D3D3D3;
 }
 
-#jozacmfmxo .gt_footnotes {
+#oqurbqntbn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -863,7 +896,7 @@ Table&nbsp;3.1: Elevation data sources
   border-right-color: #D3D3D3;
 }
 
-#jozacmfmxo .gt_footnote {
+#oqurbqntbn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -872,7 +905,7 @@ Table&nbsp;3.1: Elevation data sources
   padding-right: 5px;
 }
 
-#jozacmfmxo .gt_sourcenotes {
+#oqurbqntbn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -886,7 +919,7 @@ Table&nbsp;3.1: Elevation data sources
   border-right-color: #D3D3D3;
 }
 
-#jozacmfmxo .gt_sourcenote {
+#oqurbqntbn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -894,72 +927,72 @@ Table&nbsp;3.1: Elevation data sources
   padding-right: 5px;
 }
 
-#jozacmfmxo .gt_left {
+#oqurbqntbn .gt_left {
   text-align: left;
 }
 
-#jozacmfmxo .gt_center {
+#oqurbqntbn .gt_center {
   text-align: center;
 }
 
-#jozacmfmxo .gt_right {
+#oqurbqntbn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jozacmfmxo .gt_font_normal {
+#oqurbqntbn .gt_font_normal {
   font-weight: normal;
 }
 
-#jozacmfmxo .gt_font_bold {
+#oqurbqntbn .gt_font_bold {
   font-weight: bold;
 }
 
-#jozacmfmxo .gt_font_italic {
+#oqurbqntbn .gt_font_italic {
   font-style: italic;
 }
 
-#jozacmfmxo .gt_super {
+#oqurbqntbn .gt_super {
   font-size: 65%;
 }
 
-#jozacmfmxo .gt_footnote_marks {
+#oqurbqntbn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jozacmfmxo .gt_asterisk {
+#oqurbqntbn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jozacmfmxo .gt_indent_1 {
+#oqurbqntbn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jozacmfmxo .gt_indent_2 {
+#oqurbqntbn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jozacmfmxo .gt_indent_3 {
+#oqurbqntbn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jozacmfmxo .gt_indent_4 {
+#oqurbqntbn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jozacmfmxo .gt_indent_5 {
+#oqurbqntbn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jozacmfmxo .katex-display {
+#oqurbqntbn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jozacmfmxo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#oqurbqntbn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1036,23 +1069,23 @@ Table&nbsp;3.2: Location data source
 </figcaption>
 <div aria-describedby="tbl-ss-locsrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="yvucndxcqu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yvucndxcqu table {
+<div id="wynndnavwd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wynndnavwd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yvucndxcqu thead, #yvucndxcqu tbody, #yvucndxcqu tfoot, #yvucndxcqu tr, #yvucndxcqu td, #yvucndxcqu th {
+#wynndnavwd thead, #wynndnavwd tbody, #wynndnavwd tfoot, #wynndnavwd tr, #wynndnavwd td, #wynndnavwd th {
   border-style: none;
 }
 
-#yvucndxcqu p {
+#wynndnavwd p {
   margin: 0;
   padding: 0;
 }
 
-#yvucndxcqu .gt_table {
+#wynndnavwd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1078,12 +1111,12 @@ Table&nbsp;3.2: Location data source
   border-left-color: #D3D3D3;
 }
 
-#yvucndxcqu .gt_caption {
+#wynndnavwd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yvucndxcqu .gt_title {
+#wynndnavwd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1095,7 +1128,7 @@ Table&nbsp;3.2: Location data source
   border-bottom-width: 0;
 }
 
-#yvucndxcqu .gt_subtitle {
+#wynndnavwd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1107,7 +1140,7 @@ Table&nbsp;3.2: Location data source
   border-top-width: 0;
 }
 
-#yvucndxcqu .gt_heading {
+#wynndnavwd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1119,13 +1152,13 @@ Table&nbsp;3.2: Location data source
   border-right-color: #D3D3D3;
 }
 
-#yvucndxcqu .gt_bottom_border {
+#wynndnavwd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yvucndxcqu .gt_col_headings {
+#wynndnavwd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1140,7 +1173,7 @@ Table&nbsp;3.2: Location data source
   border-right-color: #D3D3D3;
 }
 
-#yvucndxcqu .gt_col_heading {
+#wynndnavwd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1160,7 +1193,7 @@ Table&nbsp;3.2: Location data source
   overflow-x: hidden;
 }
 
-#yvucndxcqu .gt_column_spanner_outer {
+#wynndnavwd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1172,15 +1205,15 @@ Table&nbsp;3.2: Location data source
   padding-right: 4px;
 }
 
-#yvucndxcqu .gt_column_spanner_outer:first-child {
+#wynndnavwd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yvucndxcqu .gt_column_spanner_outer:last-child {
+#wynndnavwd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yvucndxcqu .gt_column_spanner {
+#wynndnavwd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1192,11 +1225,11 @@ Table&nbsp;3.2: Location data source
   width: 100%;
 }
 
-#yvucndxcqu .gt_spanner_row {
+#wynndnavwd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yvucndxcqu .gt_group_heading {
+#wynndnavwd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1222,7 +1255,7 @@ Table&nbsp;3.2: Location data source
   text-align: left;
 }
 
-#yvucndxcqu .gt_empty_group_heading {
+#wynndnavwd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1237,15 +1270,15 @@ Table&nbsp;3.2: Location data source
   vertical-align: middle;
 }
 
-#yvucndxcqu .gt_from_md > :first-child {
+#wynndnavwd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yvucndxcqu .gt_from_md > :last-child {
+#wynndnavwd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yvucndxcqu .gt_row {
+#wynndnavwd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1264,7 +1297,7 @@ Table&nbsp;3.2: Location data source
   overflow-x: hidden;
 }
 
-#yvucndxcqu .gt_stub {
+#wynndnavwd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1277,7 +1310,7 @@ Table&nbsp;3.2: Location data source
   padding-right: 5px;
 }
 
-#yvucndxcqu .gt_stub_row_group {
+#wynndnavwd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1291,15 +1324,15 @@ Table&nbsp;3.2: Location data source
   vertical-align: top;
 }
 
-#yvucndxcqu .gt_row_group_first td {
+#wynndnavwd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yvucndxcqu .gt_row_group_first th {
+#wynndnavwd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yvucndxcqu .gt_summary_row {
+#wynndnavwd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1309,16 +1342,16 @@ Table&nbsp;3.2: Location data source
   padding-right: 5px;
 }
 
-#yvucndxcqu .gt_first_summary_row {
+#wynndnavwd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yvucndxcqu .gt_first_summary_row.thick {
+#wynndnavwd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yvucndxcqu .gt_last_summary_row {
+#wynndnavwd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1328,7 +1361,7 @@ Table&nbsp;3.2: Location data source
   border-bottom-color: #D3D3D3;
 }
 
-#yvucndxcqu .gt_grand_summary_row {
+#wynndnavwd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1338,7 +1371,7 @@ Table&nbsp;3.2: Location data source
   padding-right: 5px;
 }
 
-#yvucndxcqu .gt_first_grand_summary_row {
+#wynndnavwd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1348,7 +1381,7 @@ Table&nbsp;3.2: Location data source
   border-top-color: #D3D3D3;
 }
 
-#yvucndxcqu .gt_last_grand_summary_row_top {
+#wynndnavwd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1358,11 +1391,11 @@ Table&nbsp;3.2: Location data source
   border-bottom-color: #D3D3D3;
 }
 
-#yvucndxcqu .gt_striped {
+#wynndnavwd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yvucndxcqu .gt_table_body {
+#wynndnavwd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1371,7 +1404,7 @@ Table&nbsp;3.2: Location data source
   border-bottom-color: #D3D3D3;
 }
 
-#yvucndxcqu .gt_footnotes {
+#wynndnavwd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1385,7 +1418,7 @@ Table&nbsp;3.2: Location data source
   border-right-color: #D3D3D3;
 }
 
-#yvucndxcqu .gt_footnote {
+#wynndnavwd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1394,7 +1427,7 @@ Table&nbsp;3.2: Location data source
   padding-right: 5px;
 }
 
-#yvucndxcqu .gt_sourcenotes {
+#wynndnavwd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1408,7 +1441,7 @@ Table&nbsp;3.2: Location data source
   border-right-color: #D3D3D3;
 }
 
-#yvucndxcqu .gt_sourcenote {
+#wynndnavwd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1416,72 +1449,72 @@ Table&nbsp;3.2: Location data source
   padding-right: 5px;
 }
 
-#yvucndxcqu .gt_left {
+#wynndnavwd .gt_left {
   text-align: left;
 }
 
-#yvucndxcqu .gt_center {
+#wynndnavwd .gt_center {
   text-align: center;
 }
 
-#yvucndxcqu .gt_right {
+#wynndnavwd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yvucndxcqu .gt_font_normal {
+#wynndnavwd .gt_font_normal {
   font-weight: normal;
 }
 
-#yvucndxcqu .gt_font_bold {
+#wynndnavwd .gt_font_bold {
   font-weight: bold;
 }
 
-#yvucndxcqu .gt_font_italic {
+#wynndnavwd .gt_font_italic {
   font-style: italic;
 }
 
-#yvucndxcqu .gt_super {
+#wynndnavwd .gt_super {
   font-size: 65%;
 }
 
-#yvucndxcqu .gt_footnote_marks {
+#wynndnavwd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yvucndxcqu .gt_asterisk {
+#wynndnavwd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yvucndxcqu .gt_indent_1 {
+#wynndnavwd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yvucndxcqu .gt_indent_2 {
+#wynndnavwd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yvucndxcqu .gt_indent_3 {
+#wynndnavwd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yvucndxcqu .gt_indent_4 {
+#wynndnavwd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yvucndxcqu .gt_indent_5 {
+#wynndnavwd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yvucndxcqu .katex-display {
+#wynndnavwd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yvucndxcqu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wynndnavwd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1548,7 +1581,7 @@ Tip&nbsp;3.1: GNSS types
 <div class="callout-body-container callout-body">
 <p>Multi-constellation GNSS is not the same as multi-band GNSS. The former signifies access to multiple location satellite networks operated by various parties, e.g.&nbsp;GPS (USA), Galileo (EU), BeiDou (China). This can improve signal <em>consistency</em> due to having access to more total satellites, but not necessarily overall accuracy.</p>
 <p>Multi-band GNSS involves receiving signals from location satellites on multiple frequency bands. The extra data from each satellite can significantly improve connection reliability and accuracy, particularly when open sky is restricted by rough terrain, dense vegetation or poor weather.</p>
-<p>Multi-sensor GNSS involves receiving signals not just from location satellites, but from other on-ground equipment, like mobile phone towers, wifi routers and nearby personal electronic devices. These sensors can be extremely accurate in urban areas, but much less so elsewhere.</p>
+<p>Multi-sensor GNSS involves receiving signals not just from location satellites, but from other on-ground equipment, like mobile phone towers, Wi-Fi routers and nearby personal electronic devices. These sensors can be extremely accurate in urban areas, but much less so elsewhere.</p>
 <p>Most consumer electronic devices capable of reporting location will be of <span class="ceg">LM</span> type by default, unless using an app that actively forces a GNSS-only connection. At the time of writing, most of these apps can still only return <span class="ceg">GS</span>-quality data due to hardware limitations.</p>
 </div>
 </div>
@@ -2059,6 +2092,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
