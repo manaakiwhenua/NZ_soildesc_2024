@@ -1,20 +1,14 @@
----
-title: 'NZSC Family and Sibling'
-output: html_document
-editor_options: 
-  chunk_output_type: console
----
-
-Levels 4 and 5 of the NZSC, the Family and Sibling, provide useful summaries of key whole-profile parameters.
-
-## NZSC Family {#sec-in-nzscfam}
+# NZSC Family and Sibling {#sec-nzsc45}
 
 ```{r}
 library(dplyr)
 library(tibble)
 library(gt)
-library(gtExtras)
 ```
+
+Levels 4 and 5 of the NZSC, the Family and Sibling, provide useful summaries of key whole-profile parameters.
+
+## NZSC Family {#sec-in-nzscfam}
 
 ### Soil Profile Material {#sec-fam-pm}
 
@@ -109,7 +103,11 @@ tbl_ss_pm
 
 ```
 
-::: callout-note
+::: {.content-visible when-format="docx"}
+delete me
+:::
+
+::: {#nte-softrock .callout-note appearance="minimal" collapse="true" title="What are soft rocks?"}
 'Soft' rocks in this context can at most be broken readily with a light hammer blow, and can be scraped and peeled by a pocket knife. 'Hard' rocks can at best be scratched with a knife but not scraped or peeled, and require a firm hammer blow to crack [@lynn1991, p. 11].
 :::
 
@@ -162,6 +160,9 @@ tbl_in_famtex <- gt(dat_in_famtex) |>
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
   fmt_missing(missing_text = '-') |>
+  cols_label(Orgc = "Organic Carbon %",
+             Silt = 'Silt %',
+             Clay = 'Clay %') |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_in_famtex
@@ -261,6 +262,7 @@ tbl_ss_pmo <- gt(dat_ss_pmo) |>
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
+  fmt_markdown(columns = 3) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_ss_pmo
@@ -274,11 +276,11 @@ These codes help define level 5 of the NZSC, the soil sibling.
 
 Soil depth from a sibling perspective is the depth to where digging becomes difficult, e.g.
 
--   A horizon with ≥ 35% stones by volume (V or X functional horizons, @sec-in-fh)
--   A soft- or hard-rock surface (M rooting barrier, @sec-profbar)
--   A shattered-lithic contact (F rooting barrier, @sec-profbar)
--   A pan (Q functional horizons, @sec-in-fh-tx)
--   Firm strength with massive or coarse structure (\*Cf functional horizons, @sec-fh-name)
+-   A horizon with ≥ 35% stones by volume ([V]{.ceg} or [X]{.ceg} functional horizons, @sec-in-fh)
+-   A soft- or hard-rock surface ([M]{.ceg} rooting barrier, @sec-profbar)
+-   A shattered-lithic contact ([F]{.ceg} rooting barrier, @sec-profbar)
+-   A pan ([Q]{.ceg} functional horizons, @sec-in-fh-tx)
+-   Firm strength with massive or coarse structure ([\*Cf]{.ceg} functional horizons, @sec-fh-name)
 
 Use the codes in @tbl-in-sibdepth to assign a depth class to a profile.
 
@@ -506,7 +508,7 @@ Rooting barriers may be identified in some soils, potentially determining their 
 
 +------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
 | Code       | Name                   | Description                                                                                                        |
-+:==========:+:=======================+:===================================================================================================================+
++:===========+:=======================+:===================================================================================================================+
 | [C]{.ceg}  | Chemical               | Chemical toxicity affecting pasture growth, that is not readily alleviated through management. Not salinity.       |
 +------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
 | [D]{.ceg}  | Densely packed gravels | -   Has very dense particle packing (**4)**                                                                        |

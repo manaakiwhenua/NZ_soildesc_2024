@@ -110,6 +110,10 @@ tbl_ss_reason <- gt(dat_ss_reason) |>
 tbl_ss_reason
 ```
 
+::: {.content-visible when-format="docx"}
+delete me
+:::
+
 ::: {#nte-ss-reason .callout-note collapse="true" appearance="minimal" title="About these categories"}
 [D]{.ceg} sites are often carried out as part of planning for a resource consent. The soil they describe may be removed or sealed after observation, limiting data re-use potential. [M]{.ceg} monitoring sites imply repeated, regular re-sampling activity and perhaps an expectation of minimal major disturbance between visits.
 
@@ -153,7 +157,11 @@ tbl_ss_sampstrat <- gt(dat_ss_sampstrat) |>
 tbl_ss_sampstrat
 ```
 
-::: {#nte-ss-sampstrat .callout-note collapse="true" appearance="minimal" title="About these categories"}
+::: {.content-visible when-format="docx"}
+delete me
+:::
+
+::: {#nte-ss-sampstrat .callout-note appearance="minimal" collapse="true" title="About sampling strategies"}
 The difference between data-driven [D]{.ceg} and model-based [M]{.ceg} centres around replicability. Data-driven sites are nominated using a loose set of rules or principles (e.g. “visit the major landforms on this farm but don’t go too far off the tracks”) and may be subject to minor changes once the worker is on-ground. Model-based site choices formalise this process with reference to specific input datasets, and the worker is committed to sample at the exact point chosen. Model-based methods may include ‘backup points’ for where an intended location cannot be physically accessed, but these are also pre-determined. Importantly, model-based choices can be regenerated from the same inputs.
 
 Arbitrary [A]{.ceg} points are not pre-determined at all; rather, they are chosen after the worker is on site, in response to direct observation of on-ground conditions. These are often practical and time-efficient but are also likely to over-sample the more easily accessible and/or interesting parts of the landscape, to the detriment of overall representativeness.
@@ -205,7 +213,7 @@ tbl_pr_gear
 
 Record the maximum depth of observation from the soil surface in whole centimetres (e.g. '[100 cm]{.ceg}'). This does not necessarily need to be recorded in the field as it can be determined from the lower depth of the last horizon in the profile description.
 
-A full profile description ideally extends to bedrock, but this may not always be accessible with the equipment and time available. The target depth of observation for most applications in New Zealand is 100 cm. Classification systems like the NZSC and LUC rely on ruling out certain soil features within that depth range, as well as positively identifying others.
+A full profile description ideally extends to bedrock, but this may not always be accessible with the equipment and time available. The target depth of observation for most applications in New Zealand is 100 cm. Classification systems like the NZSC and LUC rely on ruling out certain soil features within that depth range, as well as positively identifying others.
 
 See @sec-digging for information on appropriate excavation equipment.
 
@@ -285,7 +293,6 @@ tbl_ss_eventp <- gt(dat_ss_eventp) |>
 
 tbl_ss_eventp
 ```
-
 
 ```{r}
 #| label: tbl-ss-eventt

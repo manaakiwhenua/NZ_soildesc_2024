@@ -51,6 +51,9 @@ tm_scale_bar(breaks = c(0, 100, 200))
 
 ```
 
+::: {.content-visible when-format='docx'}
+delete me 
+:::
 
 ::: {#wrn-wgs84 .callout-warning collapse="true" appearance="minimal" title="Use of WGS84"}
 Location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around 3 m, and coordinate accuracy also degrades over time due to continental drift. This is compensated for using a date-based 'epoch' adjustment. Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.
@@ -145,13 +148,16 @@ tbl_ss_elevsrc
 
 ```
 
+::: {.content-visible when-format='docx'}
+delete me 
+:::
 
 ::: {#tip-gnss .callout-tip collapse="true" appearance="minimal" title="GNSS types"}
 Multi-constellation GNSS is not the same as multi-band GNSS. The former signifies access to multiple location satellite networks operated by various parties, e.g. GPS (USA), Galileo (EU), BeiDou (China). This can improve signal *consistency* due to having access to more total satellites, but not necessarily overall accuracy.
 
 Multi-band GNSS involves receiving signals from location satellites on multiple frequency bands. The extra data from each satellite can significantly improve connection reliability and accuracy, particularly when open sky is restricted by rough terrain, dense vegetation or poor weather.
 
-Multi-sensor GNSS involves receiving signals not just from location satellites, but from other on-ground equipment, like mobile phone towers, wifi routers and nearby personal electronic devices. These sensors can be extremely accurate in urban areas, but much less so elsewhere.
+Multi-sensor GNSS involves receiving signals not just from location satellites, but from other on-ground equipment, like mobile phone towers, Wi-Fi routers and nearby personal electronic devices. These sensors can be extremely accurate in urban areas, but much less so elsewhere.
 
 Most consumer electronic devices capable of reporting location will be of [LM]{.ceg} type by default, unless using an app that actively forces a GNSS-only connection. At the time of writing, most of these apps can still only return [GS]{.ceg}-quality data due to hardware limitations. 
 :::

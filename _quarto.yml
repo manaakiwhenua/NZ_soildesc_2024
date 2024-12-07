@@ -12,6 +12,8 @@ book:
   publisher-place: "Palmerston North, New Zealand"
   reader-mode: true
   search: true
+  downloads: [docx, epub]
+  output-file: MWLR_2024_DRAFT_soil-description-handbook
   repo-url: https://github.com/manaakiwhenua/NZ_soildesc_2024
   back-to-top-navigation: true
   chapters:
@@ -72,23 +74,41 @@ format:
     css: styles.css
     mermaid:
       theme: neutral
+
+  docx:
+    reference-doc: custom-reference-doc.docx
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
+    number-sections: true
+    number-depth: 4
+    df-print: paged
+    link-citations: true
+
   epub: 
     split-level: 2
     toc: true
-  pdf:
-    documentclass: scrreport
-    toc: true
+    css: styles.css
     number-sections: true
-    number-depth: 3
-    top-level-division: chapter
-    mainfont: Ebrima
-    monofont: "Fira Code"
-    linkcolor: "#0563C1"
-    papersize: "A5"
-    include-in-header:
-      - text: |
-          \usepackage[table]{xcolor}
+    number-depth: 4
+    tbl-colwidths: true
+    df-print: paged
 
+#  pdf:
+#    documentclass: scrreport
+#    toc: true
+#    number-sections: true
+#    number-depth: 3
+#    top-level-division: chapter
+#    mainfont: Ebrima
+#    monofont: "Fira Code"
+#    linkcolor: "#0563C1"
+#    papersize: "A5"
+#    include-in-header:
+#      - text: |
+#          \usepackage[table]{xcolor}
+
+    
 # global knitr options
 knitr:
   opts_chunk:

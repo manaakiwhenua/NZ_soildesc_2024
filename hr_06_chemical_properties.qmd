@@ -21,9 +21,9 @@ Field tests do have limited precision and accuracy vs their laboratory equivalen
 
 Field tests should be performed down-profile, with at least one sample tested per horizon. Samples should be taken from the mid-point of each horizon. Additional samples in transition zones may also be of interest. Properties within the upper part of the first B horizon can be diagnostic in soil classification.
 
+::: {#nte-chemnzsc .callout-note appearance="minimal" collapse="true" title="Field chemical tests and the New Zealand Soil Classification (NZSC)"}
 For classifying using the NZSC, particular tests down to a certain depth may be required. At the order level, these are:
 
-::: {#nte-chemnzsc .callout-note collapse="true" title="Field chemical tests and the New Zealand Soil Classification (NZSC)"}
 -   **Gley soils:** Detectable ferrous ions (Fe^2+^) in the soil solution within the top 30 cm, signifying a reduced/anoxic environment (@sec-ft-rdx). A slaking test may be required to confirm absence of an underlying duripan (@sec-ft-slak)
 -   **Ultic soils:** pH below 5.5 anywhere between the base of the A horizon and 60 cm depth (@sec-ft-phf or @sec-ft-phfw)
 -   **Allophanic soils:** Strong pH response to sodium fluoride in at least 35 cm of the top 60 cm (@sec-ft-naf)
@@ -55,7 +55,7 @@ This method, after @raupach1959, requires the use of a pre-made kit containing u
 2.  Sprinkle the sample surface with just enough barium sulfate powder to cover. This is used to make it easier to see the pH indicator colour.
 3.  Add a couple of drops of pH indicator. Match the indicator colour to the card provided and record the pH of the closest match (e.g. [40 cm - 5.5]{.ceg}). Do not interpolate between chips. Do not wait to read the pH - readings are unreliable after the sample has dried.
 
-::: {.callout-note collapse="true" title="Sources of variation between pH~f~ and laboratory pH"}
+::: {#nte-phvar .callout-note appearance="minimal" collapse="true" title="Sources of variation between pH~f~ and laboratory pH"}
 Some variability between colorimetric field and electronic laboratory pH is expected. Reasons for the variability may include:
 
 -   The quality of the reagents in use, the kit's age and how carefully it has been stored. The dye recipe needs to have been followed accurately so that the resulting colours match the calibration card. Impurities in the supplied barium sulfate powder can also cause issues. The calibration card itself needs to be printed with accurate colours, waterproofed, and not left to bleach in the sun.
@@ -81,7 +81,7 @@ pH~fw~ is measured with a field-ready electronic pH meter. Electronic meters are
 3.  Record the reading and the depth it was taken from (e.g. [40 cm - 5.2]{.ceg}).
 4.  Thoroughly rinse the probe before testing the next sample.
 
-::: {.callout-tip collpase="true" title="Sample handling"}
+::: {#tip-shand .callout-tip appearance="minimal" collpase="true" title="Sample handling"}
 Make sure to sample with clean hands; tests can be easily contaminated by residues. In particular, sunscreens will cause a falsely high pH reading.
 :::
 
@@ -108,7 +108,7 @@ The following method is reproduced from @sullivan2018, section A1.4.3.
 5.  Where reactions occur, wait for them to settle and add a little more H~2~O~2~. Repeat until the reaction no longer occurs.
 6.  Once reactions have fully completed and the tubes have cooled, measure the pH of each sample with the electronic meter. Record to the nearest 0.1 units as for pH~fw~, and rinse the probe thoroughly between readings.
 
-::: {.callout-warning collapse="true" title="Safe handling and preparation of hydrogen peroxide"}
+::: {#wrn-prox .callout-warning appearance="minimal" collapse="true" title="Safe handling and preparation of hydrogen peroxide"}
 -   Concentrated hydrogen peroxide is highly corrosive. Wear safety glasses and gloves when handling, and in a field situation make sure that there is access to plenty of clean water for rinsing.
 -   Before bringing H~2~O~2~ into the field, it must be buffered to pH 4.5-5.5. While stirring, add a few drops of dilute NaOH and regularly check the pH with a calibrated electrode until the correct range is reached. Allow the H~2~O~2~ to stand for 15 minutes and then recheck the pH.
 -   As H~2~O~2~ degrades over time, only buffer small quantities at a time and refrigerate when not in use.
@@ -144,7 +144,11 @@ tbl_ft_foxrx <- gt(dat_ft_foxrx) |>
 tbl_ft_foxrx
 ```
 
-::: {.callout-note collapse="true" title="Incubation methods for Acid Sulfate Soils"}
+::: {.content-visible when-format='docx'}
+delete me 
+:::
+
+::: {#nte-assinc .callout-note appearance="minimal" collapse="true" title="Incubation methods for Acid Sulfate Soils"}
 Field-adjacent incubation methods are available as an alternative low-cost method of identifying acid sulfate soils. These involve minimal equipment and no hazardous chemicals, but can take up to three months to complete. See [@sullivan2018a], Appendix C for further information.
 :::
 
@@ -166,7 +170,7 @@ The soil solution's EC~f~ estimates its soluble salt content, which can affect p
 3.  Use the EC meter to record the solution conductivity. Report to the nearest 0.1 dS/m.
 4.  Rinse the probe thoroughly between measurements.
 
-::: {.callout-note collapse="true" title="Conductivity units"}
+::: {#nte-condu .callout-note appearance="minimal" collapse="true" title="Conductivity units"}
 EC is most commonly reported in units of millisiemens/centimetre (mS/cm) or decisiemens per metre (dS/m), which are numerically equivalent. Other units less commonly used require specific conversion, e.g. electronic meters may report in µS/cm. 1 mS/cm = 1000 µS/cm.
 :::
 
@@ -189,7 +193,7 @@ Calcium carbonate reacts with acidic solutions in a neutralisation reaction, rel
 
 HCl can also be applied directly to a soil exposure, but be careful not to include the tested patches in any soil samples.
 
-::: {.callout-warning collapse="true" title="Safe handling and preparation of HCl"}
+::: {#wrn-hcl .callout-warning appearance="minimal" collapse="true" title="Safe handling and preparation of HCl"}
 -   HCl is corrosive. Wear safety glasses and gloves when handling, and in a field situation make sure that there is access to plenty of clean water for rinsing.
 -   Don't transport large quantities of HCl, even dilute. A 25-50 mL bottle will normally last for weeks of fieldwork.
 -   Make sure HCl containers are clearly labelled. For dropper bottles with soft plastic or rubber lids, monitor for degradation.
@@ -223,7 +227,11 @@ tbl_ft_hcl <- gt(dat_ft_hcl) |>
 tbl_ft_hcl
 ```
 
-::: {.callout-note collapse="true" title="Measuring CaCO~3~"}
+::: {.content-visible when-format='docx'}
+delete me 
+:::
+
+::: {#nte-meascarb .callout-note appearance="minimal" collapse="true" title="Measuring CaCO~3~"}
 While @milne1995 and some other publications [@rayment2011; @kalra1991] have attempted to use the degree of fizzing to estimate CaCO~3~ % content, the estimates and descriptions of fizzing vary and are not considered highly reliable. If a precise numeric estimate of CaCO~3~ % is required, it should be measured under laboratory conditions.
 :::
 
@@ -259,7 +267,7 @@ This test indicates the presence of reactive hydroxy-aluminium sites on soil min
 2.  Using a dropper bottle, add a drop or two of 1 M NaF (enough to wet the sample but not flood it) and wait up to 2 minutes.
 3.  Record the reaction intensity using @tbl-ft-naf (e.g. [40 cm - M]{.ceg}).
 
-::: {.callout-warning collapse="true" title="Safe handling and preparation of NaF"}
+::: {#wrn-naf .callout-warning appearance="minimal" collapse="true" title="Safe handling and preparation of NaF"}
 -   NaF is toxic. Wear safety glasses and gloves when handling, and in a field situation make sure that there is access to plenty of clean water for rinsing.
 -   Make sure NaF containers are clearly labelled.
 :::
@@ -302,13 +310,17 @@ tbl_ft_naf <- gt(dat_ft_naf) |>
 tbl_ft_naf
 ```
 
-::: {.callout-important collapse="true" title="Use caution interpreting the NaF~f~ test"}
+::: {.content-visible when-format='docx'}
+delete me 
+:::
+
+::: {#imp-naf .callout-important appearance="minimal" collapse="true" title="Use caution interpreting the NaF~f~ test"}
 -   The presence of alkaline conditions and/or free calcium carbonate will cause a strong false positive for this test, as the NaF will precipitate to CaF~2~ and yield Na~2~CO~3~. When in doubt, pre-screening with 10% HCl or a field pH test is recommended to avoid confusion.
 -   The presence of organic matter can interfere with the test by buffering the pH change.
 -   Soils containing free aluminium (Al^2+^) may also react.
 :::
 
-::: {.callout-note collapse="true" title="NaF~f~ test interpretation"}
+::: {#nte-nafint .callout-note appearance="minimal" collapse="true" title="NaF~f~ test interpretation"}
 Scales used to interpret the NaF~f~ test have been inconsistently presented over the decades since its original publication, with a tendency to get more complicated over time. The scale presented in @tbl-ft-naf is a return towards the simpler schemas seen in early reporting.
 
 While a correlation can be made between P-retention and NaF reaction intensity within younger volcanic soils (Allophanic and Pumice soil orders) the correlation does not hold across all soils.
@@ -328,11 +340,11 @@ Reducing conditions can be suggested by low-chroma soil colours, redox mottling 
 
 In both cases work quickly, as if reduced, the sample will oxidise rapidly on excavation.
 
-::: {.callout-warning collapse="true" title="Safe handling of 2,2'-Bipyridine solution"}
+::: {#wrn-aasaf .callout-warning appearance="minimal" collapse="true" title="Safe handling of 2,2'-Bipyridine solution"}
 Some manuals have suggested the use of a spray bottle to apply 2,2'-Bipyridine to an exposure or extracted sample. This is not recommended due to the chemical's toxicity. See [@nationalcenterforbiotechnologyinformation2024] for further details.
 :::
 
-::: {.callout-note collapse="true" title="Other methods of assessing reduction"}
+::: {#nte-reduc .callout-note appearance="minimal" collapse="true" title="Other methods of assessing reduction"}
 Current best practice for research-grade monitoring of redox potential in soils involves the use of IRIS indicator devices [@sapkota2022], sometimes in concert with electronic sensors. IRIS devices require specialist construction, installation for several weeks and careful post-processing.
 :::
 

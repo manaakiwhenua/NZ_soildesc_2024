@@ -46,29 +46,24 @@ tbl_pr_slpmth <- gt(dat_pr_slpmth) |>
 tbl_pr_slpmth
 ```
 
-::: {#nte-flatwhat .callout-note collapse="true" title="Defining 'flat' in soil survey"}
-Truly flat land is extremely rare over distances of more than a few meters. The cutoff slope value for flatness is not always provided in soil description standards (e.g. @schoeneberger2012) and is not consistent when it is, e.g.
-
--   0.58° (\~1%) for level ground in @nationalcommitteeonsoilandterrain2023, p. 19
--   2.86° (5%) in @hurst2022, p. 14
-
-The slope measurement method in use can restrict the recordable limit of flat land. For instance, a hand-held clinometer may be difficult to use consistently and accurately at slopes of less than 3°, while survey-grade equipment (e.g. a tripod-mounted laser level) will have a higher accuracy. Slope calculated from a DEM also has inherent limitations. For example, a DEM with a cell size of 20 m and a vertical resolution of 0.5 m cannot discriminate slope increments of less than \~1.43° ($tan^{-1}(0.5/20)$).
+::: {.content-visible when-format="docx"}
+delete me
 :::
 
-::: {#nte-slpdem .callout-note collapse="true" title="Extracting slope from DEMs"}
+::: {#nte-slpdem .callout-note appearance="minimal" collapse="true" title="Extracting slope from DEMs"}
 Slope data for a site can be extracted from a DEM, provided some conditions are met:
 
 -   Cell size should be less than 10 m; larger cells systematically underestimate local slope
 -   DEM source should ideally be of type [D]{.ceg} for acceptable accuracy (see @sec-loc-abs-elev)
 -   Extract the median slope within a 20 m radius, not the single value directly under the recorded point
--   Review and, if necessary, adjust slopes extracted from sites described on exposures. These may be overestimates (e.g. where a track cuts into a slope, the values upslope behind the site would better represent the landform). Similarly, sites close to landform or landscape boundaries may also need review.
+-   Review and, if necessary, adjust slopes extracted from sites described on exposures. These may be overestimates (e.g. where a track cuts into a slope, the values upslope behind the site would better represent the landform). Sites located close to landform or landscape boundaries may also need review.
 :::
 
 ## Aspect {#sec-pr-aspect}
 
 Aspect is the direction a slope faces. Slope aspect helps determine exposure to sun, rain and prevailing winds, and so influences the biome growing in a particular soil. In some environments it also helps determine how much new material is received by deposition.
 
-Aspect should be measured at the same time and over the same transect as slope. Record aspect in whole degrees clockwise from North, using the range \[0-359°\] (360° = 0°). Use [ND]{.ceg} for flat ground. Use [NR]{.ceg} if no measurement was taken. Aspect classes may be applied to the recorded data; some options are presented in @sec-aspectclass.
+Aspect should be measured at the same time and over the same transect as slope. Record aspect in whole degrees clockwise from North, using the range \[0-359°\] (360° = 0°). Use [ND]{.ceg} for flat ground (see @nte-flatwhat). Use [NR]{.ceg} if no measurement was taken. Aspect classes may be applied to the recorded data; some options are presented in @sec-aspectclass.
 
 Record the equipment used to measure aspect using @tbl-pr-aspmth.
 
@@ -98,9 +93,26 @@ tbl_pr_aspmth <- gt(dat_pr_aspmth) |>
 tbl_pr_aspmth
 ```
 
+::: {.content-visible when-format="docx"}
+delete me
+:::
+
+::: {#nte-flatwhat .callout-note appearance="minimal" collapse="true" title="Defining 'flat' in soil survey"}
+Truly flat land is extremely rare over distances of more than a few meters. The cutoff slope value for flatness is not always provided in soil description standards (e.g. @schoeneberger2012) and is not consistent when it is, e.g.
+
+-   0.58° (\~1%) for level ground in @nationalcommitteeonsoilandterrain2023, p. 19
+-   2.86° (5%) in @hurst2022, p. 14
+
+The slope measurement method in use can restrict the recordable limit of flat land. For instance, a hand-held clinometer may be difficult to use consistently and accurately at slopes of less than 3°, while survey-grade equipment (e.g. a tripod-mounted laser level) will have a higher accuracy.
+
+Slope calculated from a DEM also has inherent limitations. For example, a DEM with a cell size of 20 m and a vertical resolution of 0.5 m cannot discriminate slope increments of less than \~1.43° ($tan^{-1}(0.5/20)$).
+
+For site-scale aspect measurement, a flatness threshold of 1° (1.75%) is acceptable. This equates to a \~35 cm fall over 20 m.
+:::
+
 ## Surface cover {#sec-pr-surfcov}
 
-Surface cover helps visualise the site and its landform, and provides some information on infiltration behaviour. Soil cover (specifically, 'The number of days in a year that the soil (agricultural land) is covered with vegetation') is a key agricultural performance indicator [@oecd2001].
+Surface cover helps visualise the site and its landform and provides some information on infiltration behaviour. Soil cover (specifically, 'The number of days in a year that the soil (agricultural land) is covered with vegetation') is a key agricultural performance indicator [@oecd2001].
 
 Estimate and record the following generalised surface cover components as a percentage composition of the site (@sec-pr-site). Consider the land cover from the surface to a height of 1.35 m, for consistency with @hurst2022.
 
@@ -278,9 +290,7 @@ tbl_pr_crackshape <- gt(dat_pr_crackshape) |>
 tbl_pr_crackshape
 ```
 
-::: callout-note
-Recent weather data is useful for interpreting surface crack information. See @sec-weath-rrain.
-:::
+Recent weather data is useful for interpreting surface crack information (@sec-weath-rrain).
 
 ## Microrelief {#sec-pr-micror}
 
@@ -494,7 +504,7 @@ For example, [FL M FR]{.ceg} for a recent flood that has dropped sediment on a l
 dat_pr_deposition <-
   tribble(~Code, ~Name, ~Description,
           # water
-          'FL', 'Flood', 'Deposition driven by indunation events along streams',
+          'FL', 'Flood', 'Deposition driven by inundation events along streams',
           'SS', 'Surge', 'Deposition driven by storm surge',
           'TI', 'Till',  'Glacial deposition',
           
