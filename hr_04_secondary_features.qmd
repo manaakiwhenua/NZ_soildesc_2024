@@ -57,8 +57,8 @@ tbl_hr_concform
 
 dat_hr_conctype <-
   tribble(~Code, ~Name, ~Description,
-          'E',  'Earthy', 'loamy or silty texture within a sandy or clayey matrix',
-          'A',  'Argillaceous', 'clayey texture within a lower-clay matrix',
+          'E',  'Earthy', 'Loamy or silty texture within a sandy or clayey matrix',
+          'A',  'Argillaceous', 'Clayey texture within a lower-clay matrix',
           'F',  'Ferruginious', 'Iron-dominated',
           'M',  'Manganiferous', 'Manganese-dominated',
           'N',  'Ferromanganiferous', 'Dominated by a mix of iron and manganese',
@@ -110,7 +110,7 @@ dat_hr_coattype <-
           'SQ', 'Sesquioxide coats', 'Films of sesquioxides on interfaces or impregnating interfaces. They vary in colour depending on the composition and degree of oxidation and hydration. They are difficult to identify chemically, and the different kinds cannot normally be distinguished in the field. Ferri-manganiferous coats, however, are normally very dark brown or black and effervesce vigorously with hydrogen peroxide',
           'MN', 'Manganese coats', 'Dark coatings of precipitated manganese oxides, reactive to H~2~O~2~.',
           'CB', 'Carbonate coats', 'Precipitated calcium carbonate (CaCO~3~). Usually pale-coloured, and reactive to HCl.',
-          'SI', 'Silica coats', 'Precipiated silica (SiO~2~). Usually pale-coloured, and non-reacive to HCl.')
+          'SI', 'Silica coats', 'Precipiated silica (SiO~2~). Usually pale-coloured, and non-reactive to HCl.')
 
 tbl_hr_coattype <- gt(dat_hr_coattype) |>
    tab_options(
@@ -144,7 +144,7 @@ Pans can be described in detail in terms of type, thickness, continuity, structu
 dat_hr_pantype <-
   tribble(~Code, ~Name, ~Description, ~Horizon,
           'C', 'Cultivation pan', 'Pan comprising compressed soil, induced by cultivation (e.g. use of heavy farm machinery)', NA,
-          'D', 'Densipan', 'Silty layers with a very high bulk density and extremly slow permeability', '\\*d (E horizons only)',
+          'D', 'Densipan', 'Silty layers with a very high bulk density and extremely slow permeability', '\\*d (E horizons only)',
           'H', 'Humus-pan', 'Cemented by aluminium and organic matter. Common in Podzols; sometimes known as \'coffee rock\'', 'Bhm',
           'F', 'Iron pan', 'Interlocking nodules of Fe(/Mn) precipitates (bog iron), often at a texture contrast boundary', NA,
           'K', 'Calcareous pan', 'Created by the precipitation of calcium carbonate (CaCO~3~)', '\\*km (B or BC horizons)',

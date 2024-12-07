@@ -17,7 +17,7 @@ library(gtExtras)
 
 Consistency tests should be performed down-profile, with at least one sample tested per horizon. Samples should be taken from the mid-point of each horizon. Additional samples in transition zones may also be of interest.
 
-::: {#nte-consnzsc .callout-note appearance="minimal" collapse=true title='Consistence tests and the New Zealand Soil Classification (NZSC)'}
+::: {#nte-consnzsc .callout-note appearance="minimal" collapse="true" title="Consistence tests and the New Zealand Soil Classification (NZSC)"}
 For classifying using the NZSC, particular tests down to a certain depth may be required. At the order level:
 
 -   **Gley soils:** must not have any moderately or very fluid (@sec-cn-flu) layers within 30 cm of the soil surface. Unconfined soil strength (@sec-cn-stru) and cementation (@sec-cn-ind) tests may be required to confirm absence of an underlying fragipan.
@@ -63,7 +63,7 @@ flowchart TD
 
 ### Dry coherence {#sec-cn-dryco}
 
-*Procedure* 
+*Procedure*
 
 1.  Remould a 30 mm test sample into a cube, and air-dry.
 2.  If the cube collapses under its own weight or after being lightly touched, treat the soil as non-cohesive.
@@ -208,8 +208,7 @@ tbl_cn_sens
 
 ## Plasticity {#sec-cn-pla}
 
-[Plasticity is the capacity of soil material to change shape continuously when stress is
-applied and to retain that shape after the removal of stress.]{.milne}
+[Plasticity is the capacity of soil material to change shape continuously when stress is applied and to retain that shape after the removal of stress.]{.milne}
 
 -   Test soil at a wet state.
 -   Perform the test on 3-4 cm^2^ of soil.
@@ -217,9 +216,9 @@ applied and to retain that shape after the removal of stress.]{.milne}
 
 *Procedure*
 
-1. Thoroughly remould the sample, keeping it in a wet state.
-2. Adjust the water content to slightly above the plastic limit. [In practice this water content is slightly above that at which a 4-mm diameter roll of sample crumbles but less than that when sample becomes sticky (@sec-cn-sti), if stickiness is exhibited.]{.milne}
-3. Attempt to roll the sample out into a rod of 40 mm length. Assess the minimum achievable diameter of the rod and its behaviour using @tbl-cn-plas.
+1.  Thoroughly remould the sample, keeping it in a wet state.
+2.  Adjust the water content to slightly above the plastic limit. [In practice this water content is slightly above that at which a 4-mm diameter roll of sample crumbles but less than that when sample becomes sticky (@sec-cn-sti), if stickiness is exhibited.]{.milne}
+3.  Attempt to roll the sample out into a rod of 40 mm length. Assess the minimum achievable diameter of the rod and its behaviour using @tbl-cn-plas.
 
 ```{r}
 #| label: tbl-cn-plas
@@ -250,7 +249,7 @@ tbl_cn_plas
 
 ## Stickiness {#sec-cn-sti}
 
-[Stickiness is the degree to which remoulded soil adheres to foreign objects. ]{.milne}
+[Stickiness is the degree to which remoulded soil adheres to foreign objects.]{.milne}
 
 -   Test soil at a wet state.
 -   Perform the test on 3-4 cm^2^ of soil.
@@ -258,10 +257,10 @@ tbl_cn_plas
 
 *Procedure*
 
-1. Thoroughly remould the sample, keeping it in a wet state.
-2. [Press the remoulded material between thumb and forefinger, and note its adherence to the fingers.]{.milne}
-3. [Adjust the water content by working the sample in the hand to remove water, or by adding water as necessary to achieve the maximum stickiness that the material will exhibit]{.milne}
-4. Assess maximum stickiness and record using @tbl-cn-stik.
+1.  Thoroughly remould the sample, keeping it in a wet state.
+2.  [Press the remoulded material between thumb and forefinger, and note its adherence to the fingers.]{.milne}
+3.  [Adjust the water content by working the sample in the hand to remove water, or by adding water as necessary to achieve the maximum stickiness that the material will exhibit]{.milne}
+4.  Assess maximum stickiness and record using @tbl-cn-stik.
 
 ```{r}
 #| label: tbl-cn-stik
@@ -292,7 +291,7 @@ tbl_cn_stik
 
 ## Dilatency
 
-[Dilatancy occurs due to volume change during shearing and is used as a criterion for the distinguishing non-cohesive from cohesive soil materials.]{.milne} 
+[Dilatancy occurs due to volume change during shearing and is used as a criterion for the distinguishing non-cohesive from cohesive soil materials.]{.milne}
 
 -   Test soil at a moist to wet state.
 -   Perform the test on 3-4 cm^2^ of soil.
@@ -300,22 +299,22 @@ tbl_cn_stik
 
 *Procedure*
 
-1. Adjust the soil to a moist to wet state.
-2. Roll into a ball ~30 mm diameter.
-3. Hold sample in upturned palm and slap the back of the hand containing the sample several times with the other hand.
+1.  Adjust the soil to a moist to wet state.
+2.  Roll into a ball \~30 mm diameter.
+3.  Hold sample in upturned palm and slap the back of the hand containing the sample several times with the other hand.
 
-[A dilatant reaction is shown by a shiny surface caused by water extrusion, and by a dull surface when the palm of the hand is folded to partly remould the sample, causing water to be drawn into the sample.]{.milne} Record dilatent behaviour as a binary, [true/false]{.ceg}. 
+[A dilatant reaction is shown by a shiny surface caused by water extrusion, and by a dull surface when the palm of the hand is folded to partly remould the sample, causing water to be drawn into the sample.]{.milne} Record dilatent behaviour as a binary, [true/false]{.ceg}.
 
 ## Penetration resistance
 
 Penetration resistance is the capacity of the soil, in its natural confined state, to resist penetration by rigid objects. This property is commonly related to strength by empirical means (@tbl-cn-penr).
 
-- This test requires a large pit or exposure
+-   This test requires a large pit or exposure
 
 *Procedure*
 
-1. Expose a soil profile.
-2. Assess ease of penetrating a vertical face using @tbl-cn-penr.
+1.  Expose a soil profile.
+2.  Assess ease of penetrating a vertical face using @tbl-cn-penr.
 
 ```{r}
 #| label: tbl-cn-penr
@@ -351,14 +350,14 @@ tbl_cn_penr
 
 Particle packing assesses the stability of a gravelly soil.
 
-- Test only on gravelly soils where strength cannot be assessed
-- This test requires a large pit or exposure
-- Do not test at wet or saturated field moisture conditions, as this is unsafe
+-   Test only on gravelly soils where strength cannot be assessed
+-   This test requires a large pit or exposure
+-   Do not test at wet or saturated field moisture conditions, as this is unsafe
 
 *Procedure*
 
-1. Expose a gravelly soil profile.
-2. Assess ease of excavating and maintaining a vertical face using @tbl-cn-pack.
+1.  Expose a gravelly soil profile.
+2.  Assess ease of excavating and maintaining a vertical face using @tbl-cn-pack.
 
 ```{r}
 #| label: tbl-cn-pack
@@ -435,13 +434,13 @@ Fluidity tests whether saturated soils have an unconfined strength that is large
 
 -   Test soil at a saturated state.
 -   Only test soils that are saturated under field conditions.
--   Perform the test on ~50 cm^2^ of soil (a large handful).
+-   Perform the test on \~50 cm^2^ of soil (a large handful).
 -   This test can be reliably performed on auger-extracted samples.
 
 *Procedure*
 
-1. Extract the sample and squeeze firmly in the hand.
-2. Evaluate the sample behaviour using @tbl-cn-fluid.
+1.  Extract the sample and squeeze firmly in the hand.
+2.  Evaluate the sample behaviour using @tbl-cn-fluid.
 
 ```{r}
 #| label: tbl-cn-fluid
@@ -474,21 +473,21 @@ tbl_cn_fluid
 [Induration is the degree to which soil particles are held together by some combination of cementation and close packing.]{.milne}
 
 -   Perform the test on a minimally disturbed 30 mm cube or aggregate.
-- This test may also be performed on individual nodules and other solids < 30 mm.
+-   This test may also be performed on individual nodules and other solids \< 30 mm.
 -   This test cannot be reliably performed on auger-extracted samples.
 -   This test requires a minimum one hour to complete so may be done immediately following fieldwork.
 
 *Equipment*
 
-- Sponge (~50mm diameter, flat)
-- Deionised (DI) water
+-   Sponge (\~50 mm diameter, flat)
+-   Deionised (DI) water
 
 *Procedure*
 
-1. Test the soil strength at field-moist condition according to @sec-cn-stru.
-2. Place the sample cube on a wet sponge until thoroughly moistened, then immerse the sample in DI water for 1 hour.
-3. Retest the soil strength of the wet sample according to @sec-cn-stru.
-4. Assess the behaviour of the sample using @tbl-cn-ind.
+1.  Test the soil strength at field-moist condition according to @sec-cn-stru.
+2.  Place the sample cube on a wet sponge until thoroughly moistened, then immerse the sample in DI water for 1 hour.
+3.  Retest the soil strength of the wet sample according to @sec-cn-stru.
+4.  Assess the behaviour of the sample using @tbl-cn-ind.
 
 ```{r}
 #| label: tbl-cn-ind
@@ -498,7 +497,7 @@ dat_cn_ind <-
   tribble(~Code, ~Name, ~Description,
           1, 'Non-indurated', 'A wet test specimen slakes within one hour when placed in water',
           2, 'Very weakly indurated', 'A wet test specimen that has been immersed for one hour and has not slaked has strength class of 2-4',
-          3, 'Weakly indurated', 'A wet test specimen that has been immersed for one hour has a stength class of 6',
+          3, 'Weakly indurated', 'A wet test specimen that has been immersed for one hour has a strength class of 6',
           4, 'Strongly indurated', 'A wet test specimen that has been immersed for an hour has a strength class of 7',
           5, 'Very strongly indurated', 'A wet test specimen after immersion for an hour has a strength class of >7 and does not break when struck by a sharp blow with a hammer.')
 
@@ -517,7 +516,3 @@ tbl_cn_ind <- gt(dat_cn_ind) |>
 
 tbl_cn_ind
 ```
-
-
-
-
