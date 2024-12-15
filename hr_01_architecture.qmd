@@ -39,7 +39,7 @@ dat_hr_form <-
           'P', 'Pedogenic', 'Structural units meet the definition of natural soil peds and occur largely within the solum',
           'G', 'Geogenic', 'Structural units are inherited from parent materials that have undergone limited weathering e.g. bedding planes, and occur largely below the solum',
           'A', 'Anthrogenic', 'Structural units have been induced by human activity, usually within the solum and most commonly in surface horizons',
-          'UK', 'Unknown', 'Type of structural development could not be determined with confidence')
+          'U', 'Unknown', 'Type of structural development could not be determined with confidence')
 
 tbl_hr_form <- gt(dat_hr_form) |>
   tab_options(
@@ -415,7 +415,7 @@ tbl_hr_ashp
 dat_hr_adeg <-
   tribble(~Code, ~Name, ~Description,
          'N', 'Not verifiable', 'Designation not possible / uncertain',    
-         'F', 'Fresh', 'Fresh plastic pieces with bride colours, unaffected shape, without signs of deterioration (cracks, broken edges, rough surfaces)', 
+         'F', 'Fresh', 'Fresh plastic pieces with bright colours, unaffected shape, without signs of deterioration (cracks, broken edges, rough surfaces)', 
          'I', 'Incipient alteration', 'Plastic pieces with incipient deterioration surface such as first cracks, broken edges or roughened/grooved surfaces',
          'D', 'Degraded', 'Plastic pieces with clear indications of ageing such as pale colours or yellowing (UV light), strong fragmentation, frayed edges',
          'S', 'Strongly degraded', 'Plastic pieces with strong degraded surfaces, faded colours, soft surface, frayed areas or edges')
@@ -561,7 +561,7 @@ tbl_hr_voidtype
 
 dat_hr_voidcon <-
   tribble(~Code, ~Name, ~Description,
-          'I', 'isolated', 'Voids are not connected to each other, and may only reach up to the soil surface',
+          'I', 'Isolated', 'Voids are not connected to each other, and may only reach up to the soil surface',
           'P', 'Partly connected', 'Voids are sometimes connected to each other within the horizon, or continue into neighbouring horizons',
           'C', 'Continuous',  'Void spaces are well connected and form a continuous network')
 
