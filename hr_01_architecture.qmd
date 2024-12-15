@@ -15,32 +15,66 @@ library(gtExtras)
 
 Soil horizon architecture comprises presence and arrangement of fine earth, stones, roots, and other materials. The presence and connectivity of voids is also described.
 
-## Fine-earth structure {#sec-hr-stru}
+## Structure {#sec-hr-stru}
 
-Structure refers to the physical arrangement of the fine-earth fraction (\< 2 mm). Structure is determined by mineralogy, chemistry, the action of soil biota and land use history.
+Structure refers to the physical arrangement of the fine-earth fraction (mineral materials \< 2 mm). Structure is determined by mineralogy, chemistry, the action of soil biota and land use history. Structure may be pedogenic, geogenic, or human-induced [@anderson2024].
 
--   To assess the structure in an [E]{.ceg} or [P2]{.ceg} type profile (@tbl-pr-gear), insert a spade horizontally near the base of the horizon and push down on the handle, levering out a section of soil. Drop the spade blade with the soil, approximately 0.3 m onto a hard surface, e.g., the blade of another spade. Remove major roots that bind the mass together and again note the attributes of the newly produced solids. Note that this procedure will not necessarily disaggregate very moist or wet soils.
+-   To assess the structure in an [E]{.ceg} or [P2]{.ceg} type profile (@tbl-pr-gear), insert a spade horizontally near the base of the horizon and push down on the handle, levering out a section of soil. Drop the spade blade with the soil, approximately 0.3 m onto a hard surface, e.g., the blade of another spade. Remove major roots that bind the mass together and again note the attributes of the newly produced solids. Note that this procedure will not necessarily disaggregate very moist or wet soils.
 -   For smaller exposures ([P1]{.ceg}, [C1]{.ceg}, [C2]{.ceg}), remove a handful of soil from the extracted horizon and carefully disaggregate the soil mass to segregate all peds. Do not destroy peds to create fragments, or disaggregate existing apedal material. Note the attributes of the solids as instructed below. For smaller exposures, also use a spade to extract surface material so that at least the topmost horizon can be assessed in detail.
 -   Assessing structure is generally impossible for [A]{.ceg} augered profiles, as the extraction method destroys it. However, the surface horizon should still be extracted with a spade and assessed if possible.
+-   Structure of hard layers may need to be assessed in place, or by careful removal of individual units, and will usually require an [E]{.ceg} or [P2]{.ceg} type profile.
 
 Sieving or direct measurement of solids may help estimate size. Weighing, or filling volumetric containers, may help estimate abundance of different classes of solids.
 
-### Pedality {#sec-hr-stru-pedality}
+### Structure type
 
-Pedality refers to the degree of structural development evident within the horizon, independent of size or shape. For rapid assessment, record pedality once per horizon using @tbl-hr-pedality. For routine or detailed assessment, record pedality for each nested ped observed (if more than one is seen; see @sec-hr-stru-nest).
+Structural development can be controlled by different processes depending on vertical position within the profile and land use history. Optionally, record the dominant structural unit type using @tbl-hr-form. Where not recorded, it should be assumed that the formation mechanism is [P]{.ceg}.
+
+```{r}
+#| label: tbl-hr-form
+#| tbl-cap: "Type of structural development"
+
+dat_hr_form <-
+  tribble(~Code, ~Name,  ~Description,
+          'P', 'Pedogenic', 'Structural units meet the definition of natural soil peds and occur largely within the solum',
+          'G', 'Geogenic', 'Structural units are inherited from parent materials that have undergone limited weathering e.g. bedding planes, and occur largely below the solum',
+          'A', 'Anthrogenic', 'Structural units have been induced by human activity, usually within the solum and most commonly in surface horizons',
+          'UK', 'Unknown', 'Type of structural development could not be determined with confidence')
+
+tbl_hr_form <- gt(dat_hr_form) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_form
+
+```
+
+### Structure development {#sec-hr-stru-pedality}
+
+Degree of structural development provides information about permeability, in concert with texture and firmness.
+
+For rapid assessment, record degree of overall structural development once per horizon using @tbl-hr-pedality. For routine or detailed assessment, record degree of development for each nested structural unit observed (if more than one is seen; see @sec-hr-stru-nest).
 
 ```{r}
 #| label: tbl-hr-pedality
-#| tbl-cap: "Degree of pedality"
+#| tbl-cap: "Degree of structural development"
 
 dat_hr_pedality <-
   tribble(~Code, ~Name,  ~Description,
           'G', 'Single grain', 'Material is structureless and incoherent, with more than 85% by weight of discrete primary particles ranging in size from sand to very coarse gravel.',
           'V', 'Massive', 'Material is structureless but coherent, with no fissures at spacings of less than 200 mm',
-          'W', 'Weak', 'Material where 15-25% of the soil comprises coherent peds',
-          'M', 'Moderate', 'Material where 25-75% of the soil comprises coherent peds',
-          'S', 'Strong', 'Material where >75% of the soil comprises coherent peds',
-          'D', 'Disturbed', 'Material where ped structure has been altered or destroyed by disturbance, e.g. recent tillage or animal pugging')
+          'W', 'Weak', 'Material where 15-25% of the material comprises coherent structural units',
+          'M', 'Moderate', 'Material where 25-75% of the material comprises coherent structural units',
+          'S', 'Strong', 'Material where >75% of the material comprises coherent structural units')
 
 tbl_hr_pedality <- gt(dat_hr_pedality) |>
   tab_options(
@@ -59,9 +93,9 @@ tbl_hr_pedality
 
 ```
 
-### Ped shape {#sec-hr-stru-shp}
+### Structure shape {#sec-hr-stru-shp}
 
-Where natural peds can be identified (pedality types [W]{.ceg}, [M]{.ceg}, [S]{.ceg}), describe their dominant shape using @tbl-hr-pedshp. Use @tbl-hr-clodshp for [D]{.ceg} pedality.
+Where distinct structural units can be identified (development types [W]{.ceg}, [M]{.ceg}, [S]{.ceg}), record their dominant shape using @tbl-hr-pedshp.
 
 +------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | Code       | Name           | Description                                                                                                                            | Orientation                 |
@@ -109,38 +143,30 @@ Where natural peds can be identified (pedality types [W]{.ceg}, [M]{.ceg}, [S]{.
 |            |                | -   much accommodation to the faces of surrounding aggregates                                                                          |                             |
 +------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 
-: Natural ped shapes and identifying characteristics (adapted from @milne1995, @iussworkinggroupwrb2022, and @nationalcommitteeonsoilandterrain2009) {#tbl-hr-pedshp .striped cols-width=\[10,20,50,20\]}
+: Structural shapes and identifying characteristics (adapted from @milne1995, @iussworkinggroupwrb2022, and @nationalcommitteeonsoilandterrain2009) {#tbl-hr-pedshp .striped cols-width=\[10,20,50,20\]}
 
 [add diagrams]{.diags}
 
-::: {#nte-nut .callout-note appearance="minimal" collapse="true" title="shorthand terms for soil structure"}
-Some soil terms that don't seem to fit into the above schema are still in common use.
+::: {#nte-nut .callout-note collapse="true" title="Shorthand terms for structural units" appearance="minimal"}
+Some pedogenic structural terms that don't seem to fit into the above schema are still in common use.
 
--   Crumb structure: a very fine structure seen in many silty to loamy horizons. The appearance is as of breadcrumbs, with 0.5-2mm rounded peds loosely to firmly packed, depending on depth and drainage. Larger weak subangular blocky structures in well-drained allophanic soils almost always break down into moderately or strongly developed crumb structure.
--   Nut structure: a larger version of crumb, usually on the order of 5-20 mm in diameter, often encased in a network of grass roots. Nut structures are more common in topsoils but can also occur in well-drained loamy subsoils.
+-   Crumb structure: a very fine structure seen in many silty to loamy horizons. The appearance is as of breadcrumbs, with 0.5-2 mm rounded peds loosely to firmly packed, depending on depth and drainage. Larger weak subangular blocky structures in well-drained allophanic soils almost always break down into moderately or strongly developed crumb structure.
+-   Nut structure: a larger version of crumb, usually on the order of 5-20 mm in diameter, often encased in a network of grass roots. Nut structures are more common in topsoils but can also occur in well-drained loamy subsoils.
 
-Both structures are more correctly described as spheroidal with a characteristic size range of 1 ± 0.5 mm for crumb and 15 ± 10 mm for nut. Their use as a shorthand description is convenient, but the terms should not be used in databases because they conflate size and shape in a way that the modern schemas seek to avoid.
+Both structures are more correctly described as type [P]{.ceg} with SR shape. 'Crumbs' have a size range of about 1 ± 0.5 mm and 'nuts' are about 15 ± 10 mm. Their use as a shorthand description is convenient, but the terms should not be used in databases because they conflate size and shape in a way that the modern schemas seek to avoid.
+
+Similarly, the terms 'clod' and 'fragment', previously used to signify tillage-induced structures greater and less than 100 mm in length respectively, also conflate size and shape. These should more correctly be described as type [A]{.ceg} structures with (usually) [BL]{.ceg} or [PH]{.ceg} shape.
 :::
 
-+------------+----------+------------------------------------------------------------+-------------+
-| Code       | Name     | Description                                                | Orientation |
-+:==========:+:=========+:===========================================================+:============+
-| [CL]{.ceg} | Clod     | An artificially induced soil aggregate ≥ 100 mm in length  | Any         |
-+------------+----------+------------------------------------------------------------+-------------+
-| [FM]{.ceg} | Fragment | An artificially induced soil aggregate \< 100 mm in length | Any         |
-+------------+----------+------------------------------------------------------------+-------------+
+### Structure size {#sec-hr-stru-size}
 
-: : Artificially induced pedality shapes and identifying characteristics {#tbl-hr-clodshp .striped cols-width=\[10,20,50,20\]}
+Record the median length of the structural units observed, along their longest axis. Record in mm with a range estimate, e.g. [25 ± 2 mm]{.ceg}.
 
-### Ped size {#sec-hr-stru-size}
+For rapid assessment, the dominant size may be recorded consistent with the NZSC Functional Horizon convention - (@tbl-in-fhstr, [C]{.ceg} for Coarse or [F]{.ceg} for Fine).
 
-Record the median length of the peds observed, along their longest axis. Record in mm with a range estimate, e.g. [25 ± 2 mm]{.ceg}
+#### Nesting units {#sec-hr-stru-nest}
 
-For rapid assessment, the dominant ped size may be recorded consistent with the NZSC Functional Horizon convention - (@tbl-in-fhstr, [C]{.ceg} for Coarse or [F]{.ceg} for Fine).
-
-#### Nesting peds {#sec-hr-stru-nest}
-
-Peds are commonly nested, with large structures breaking down to smaller ones that may also be a different shape. For highly detailed descriptions, multiple sets of nesting peds may be described in terms of their development, shape and size.
+Structural units are commonly nested, with large structures breaking down to smaller ones that may also be a different type and shape. For highly detailed descriptions, multiple sets of nesting peds may be described in terms of their development, shape and size.
 
 For example, [S PR 80 ± 10]{.ceg} parting to [M BL 20 ± 2]{.ceg}.
 

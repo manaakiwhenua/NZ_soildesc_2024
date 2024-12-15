@@ -708,13 +708,15 @@ The horizon architecture table stores parent material origin, as well as data ab
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram 
-  horizon_arch ||--|{ horizon_peds : "may have"
+  horizon_arch ||--|{ horizon_structures : "may have"
   horizon_arch }|--|{ nzsc_parent_material_origin : "code comes from"
   horizon_arch }|--|{ parent_material_origin_mod : "code comes from"
-  horizon_arch }|--|{ pedality_grades : "code comes from"
-  horizon_arch }|--|{ ped_sizes_rapid : "code comes from"
-  horizon_peds }|--|{ pedality_grades : "code comes from"
-  horizon_peds }|--|{ ped_shapes : "code comes from"
+  horizon_arch }|--|{ structure_types : "code comes from"
+  horizon_arch }|--|{ structure_grades : "code comes from"
+  horizon_arch }|--|{ structure_sizes_rapid : "code comes from"
+  horizon_structures }|--|{ structure_types : "code comes from"
+  horizon_structures }|--|{ structure_grades : "code comes from"
+  horizon_structures }|--|{ structure_shapes : "code comes from"
   horizon_arch ||--|{ horizon_rock_fragments : "may have"
   horizon_rock_fragments }|--|{ fragment_sizes_simple : "code comes from"
   horizon_rock_fragments }|--|{ rock_fragment_shapes : "code comes from"
@@ -746,13 +748,15 @@ erDiagram
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
-  horizon_arch ||--|{ horizon_peds : "may have"
+  horizon_arch ||--|{ horizon_structures : "may have"
   horizon_arch }|--|{ nzsc_parent_material_origin : "code comes from"
   horizon_arch }|--|{ parent_material_origin_mod : "code comes from"
-  horizon_arch }|--|{ pedality_grades : "code comes from"
-  horizon_arch }|--|{ ped_sizes_rapid : "code comes from"
-  horizon_peds }|--|{ pedality_grades : "code comes from"
-  horizon_peds }|--|{ ped_shapes : "code comes from"
+  horizon_arch }|--|{ structure_types : "code comes from"
+  horizon_arch }|--|{ structure_grades : "code comes from"
+  horizon_arch }|--|{ structure_sizes_rapid : "code comes from"
+  horizon_structures }|--|{ structure_types : "code comes from"
+  horizon_structures }|--|{ structure_grades : "code comes from"
+  horizon_structures }|--|{ structure_shapes : "code comes from"
   horizon_arch ||--|{ horizon_rock_fragments : "may have"
   horizon_rock_fragments }|--|{ fragment_sizes_simple : "code comes from"
   horizon_rock_fragments }|--|{ rock_fragment_shapes : "code comes from"
@@ -782,10 +786,11 @@ erDiagram
     %% pmo %%
     cat        catu_parent_material_origin FK    "Section 13.7.1"
     cat        catu_anthropic_origin_modifier FK "Section 13.7.1"
-    %% pedality rapid (detailed in subtable) %%
-    cat        cato_pedality_grade FK           "Section 14.1.1"
-    cat        cato_ped_shape FK                "Section 14.1.2-3"
-    cat        cato_ped_size FK                 "Section 14.1.3"
+    %% structures rapid (detailed in subtable) %%
+    cat        catu_structure_type FK            "Section 14.1.1"
+    cat        cato_structure_grade FK           "Section 14.1.2"
+    cat        catu_structure_shape FK           "Section 14.1.3"
+    cat        cato_structure_size FK            "Section 14.1.4"
     %% all frags super rapid (record this OR the next three) %%
     num[0-100] amt_total_frags_p                "Section 4.2"
     %% rock frags rapid (detailed in subtable) %%
@@ -821,37 +826,45 @@ erDiagram
     txt         txt_pmo_mod_desc        "Table 13.1"  
   }
 
-  pedality_grades {
-    id          id_pedality_grade PK      
-    cat         catu_pedality_grade FK    "Table 14.1"
-    txt         txt_pedality_grade_name   "Table 14.1"
-    txt         txt_pedality_grade_desc   "Table 14.1"
+  structure_types {
+    id          id_structure_type PK      
+    cat         catu_structure_type FK    "Table 14.1"
+    txt         txt_structure_type_name   "Table 14.1"
+    txt         txt_structure_type_desc   "Table 14.1"
   }
 
-  ped_sizes_rapid {
-    id          id_ped_size_rapid PK      "Section 14.1.3"
-    cat         catu_ped_size_rapid FK    "C, F"
-    txt         txt_ped_size_rapid_name   "Coarse, Fine"
-    txt         txt_ped_size_rapid_desc   "> 40 mm, <= 40 mm"
+  structure_grades {
+    id          id_structure_grade PK      
+    cat         cato_structure_grade FK    "Table 14.2"
+    txt         txt_structure_grade_name   "Table 14.2"
+    txt         txt_structure_grade_desc   "Table 14.2"
+  }
+
+  structure_sizes_rapid {
+    id          id_structure_size_rapid PK      "Section 14.1.4"
+    cat         catu_structure_size_rapid FK    "C, F"
+    txt         txt_structure_size_rapid_name   "Coarse, Fine"
   }
   
-  horizon_peds {
+  %% structures detailed %%
+  horizon_structures {
     id id_site PK
     id id_horizon PK
-    id id_ped PK
-    cat        cato_pedality_grade FK     "Section 14.1.1"
-    cat        cato_ped_shape FK          "Section 14.1.2-3"
-    num[0-Inf] amt_ped_size_med_mm        "Section 14.1.3" 
-    num[0-Inf] amt_ped_size_min_mm        "Section 14.1.3" 
-    num[0-Inf] amt_ped_size_max_mm        "Section 14.1.3"
+    id id_structure PK
+    cat        catu_structure_type FK     "Section 14.1.1"
+    cat        cato_structure_grade FK    "Section 14.1.2"
+    cat        cato_structure_shape FK    "Section 14.1.3"
+    num[0-Inf] amt_structure_size_med_mm        "Section 14.1.4" 
+    num[0-Inf] amt_structure_size_min_mm        "Section 14.1.4" 
+    num[0-Inf] amt_structure_size_max_mm        "Section 14.1.4"
   }
   
 
-  ped_shapes {
-    id          id_ped_shape PK     
-    cat         catu_ped_shape FK        "Table 14.2/3"
-    txt         txt_ped_shape_name       "Table 14.2/3"
-    txt         txt_ped_shape_desc       "Table 14.2/3"
+  structure_shapes {
+    id          id_structure_shape PK     
+    cat         catu_structure_shape FK        "Table 14.3"
+    txt         txt_structure_shape_name       "Table 14.3"
+    txt         txt_structure_shape_desc       "Table 14.3"
   }
   
   horizon_rock_fragments {
