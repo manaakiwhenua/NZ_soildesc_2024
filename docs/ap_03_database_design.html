@@ -439,7 +439,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">December 7, 2024</p>
+      <p class="date-modified">December 15, 2024</p>
     </div>
   </div>
     
@@ -1196,13 +1196,15 @@ erDiagram
 <div>
 <pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram 
-  horizon_arch ||--|{ horizon_peds : "may have"
+  horizon_arch ||--|{ horizon_structures : "may have"
   horizon_arch }|--|{ nzsc_parent_material_origin : "code comes from"
   horizon_arch }|--|{ parent_material_origin_mod : "code comes from"
-  horizon_arch }|--|{ pedality_grades : "code comes from"
-  horizon_arch }|--|{ ped_sizes_rapid : "code comes from"
-  horizon_peds }|--|{ pedality_grades : "code comes from"
-  horizon_peds }|--|{ ped_shapes : "code comes from"
+  horizon_arch }|--|{ structure_types : "code comes from"
+  horizon_arch }|--|{ structure_grades : "code comes from"
+  horizon_arch }|--|{ structure_sizes_rapid : "code comes from"
+  horizon_structures }|--|{ structure_types : "code comes from"
+  horizon_structures }|--|{ structure_grades : "code comes from"
+  horizon_structures }|--|{ structure_shapes : "code comes from"
   horizon_arch ||--|{ horizon_rock_fragments : "may have"
   horizon_rock_fragments }|--|{ fragment_sizes_simple : "code comes from"
   horizon_rock_fragments }|--|{ rock_fragment_shapes : "code comes from"
@@ -1239,13 +1241,15 @@ erDiagram
 <div>
 <pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
-  horizon_arch ||--|{ horizon_peds : "may have"
+  horizon_arch ||--|{ horizon_structures : "may have"
   horizon_arch }|--|{ nzsc_parent_material_origin : "code comes from"
   horizon_arch }|--|{ parent_material_origin_mod : "code comes from"
-  horizon_arch }|--|{ pedality_grades : "code comes from"
-  horizon_arch }|--|{ ped_sizes_rapid : "code comes from"
-  horizon_peds }|--|{ pedality_grades : "code comes from"
-  horizon_peds }|--|{ ped_shapes : "code comes from"
+  horizon_arch }|--|{ structure_types : "code comes from"
+  horizon_arch }|--|{ structure_grades : "code comes from"
+  horizon_arch }|--|{ structure_sizes_rapid : "code comes from"
+  horizon_structures }|--|{ structure_types : "code comes from"
+  horizon_structures }|--|{ structure_grades : "code comes from"
+  horizon_structures }|--|{ structure_shapes : "code comes from"
   horizon_arch ||--|{ horizon_rock_fragments : "may have"
   horizon_rock_fragments }|--|{ fragment_sizes_simple : "code comes from"
   horizon_rock_fragments }|--|{ rock_fragment_shapes : "code comes from"
@@ -1275,10 +1279,11 @@ erDiagram
     %% pmo %%
     cat        catu_parent_material_origin FK    "Section 13.7.1"
     cat        catu_anthropic_origin_modifier FK "Section 13.7.1"
-    %% pedality rapid (detailed in subtable) %%
-    cat        cato_pedality_grade FK           "Section 14.1.1"
-    cat        cato_ped_shape FK                "Section 14.1.2-3"
-    cat        cato_ped_size FK                 "Section 14.1.3"
+    %% structures rapid (detailed in subtable) %%
+    cat        catu_structure_type FK            "Section 14.1.1"
+    cat        cato_structure_grade FK           "Section 14.1.2"
+    cat        catu_structure_shape FK           "Section 14.1.3"
+    cat        cato_structure_size FK            "Section 14.1.4"
     %% all frags super rapid (record this OR the next three) %%
     num[0-100] amt_total_frags_p                "Section 4.2"
     %% rock frags rapid (detailed in subtable) %%
@@ -1314,37 +1319,45 @@ erDiagram
     txt         txt_pmo_mod_desc        "Table 13.1"  
   }
 
-  pedality_grades {
-    id          id_pedality_grade PK      
-    cat         catu_pedality_grade FK    "Table 14.1"
-    txt         txt_pedality_grade_name   "Table 14.1"
-    txt         txt_pedality_grade_desc   "Table 14.1"
+  structure_types {
+    id          id_structure_type PK      
+    cat         catu_structure_type FK    "Table 14.1"
+    txt         txt_structure_type_name   "Table 14.1"
+    txt         txt_structure_type_desc   "Table 14.1"
   }
 
-  ped_sizes_rapid {
-    id          id_ped_size_rapid PK      "Section 14.1.3"
-    cat         catu_ped_size_rapid FK    "C, F"
-    txt         txt_ped_size_rapid_name   "Coarse, Fine"
-    txt         txt_ped_size_rapid_desc   "&gt; 40 mm, &lt;= 40 mm"
+  structure_grades {
+    id          id_structure_grade PK      
+    cat         cato_structure_grade FK    "Table 14.2"
+    txt         txt_structure_grade_name   "Table 14.2"
+    txt         txt_structure_grade_desc   "Table 14.2"
+  }
+
+  structure_sizes_rapid {
+    id          id_structure_size_rapid PK      "Section 14.1.4"
+    cat         catu_structure_size_rapid FK    "C, F"
+    txt         txt_structure_size_rapid_name   "Coarse, Fine"
   }
   
-  horizon_peds {
+  %% structures detailed %%
+  horizon_structures {
     id id_site PK
     id id_horizon PK
-    id id_ped PK
-    cat        cato_pedality_grade FK     "Section 14.1.1"
-    cat        cato_ped_shape FK          "Section 14.1.2-3"
-    num[0-Inf] amt_ped_size_med_mm        "Section 14.1.3" 
-    num[0-Inf] amt_ped_size_min_mm        "Section 14.1.3" 
-    num[0-Inf] amt_ped_size_max_mm        "Section 14.1.3"
+    id id_structure PK
+    cat        catu_structure_type FK     "Section 14.1.1"
+    cat        cato_structure_grade FK    "Section 14.1.2"
+    cat        cato_structure_shape FK    "Section 14.1.3"
+    num[0-Inf] amt_structure_size_med_mm        "Section 14.1.4" 
+    num[0-Inf] amt_structure_size_min_mm        "Section 14.1.4" 
+    num[0-Inf] amt_structure_size_max_mm        "Section 14.1.4"
   }
   
 
-  ped_shapes {
-    id          id_ped_shape PK     
-    cat         catu_ped_shape FK        "Table 14.2/3"
-    txt         txt_ped_shape_name       "Table 14.2/3"
-    txt         txt_ped_shape_desc       "Table 14.2/3"
+  structure_shapes {
+    id          id_structure_shape PK     
+    cat         catu_structure_shape FK        "Table 14.3"
+    txt         txt_structure_shape_name       "Table 14.3"
+    txt         txt_structure_shape_desc       "Table 14.3"
   }
   
   horizon_rock_fragments {
@@ -2398,23 +2411,23 @@ Table&nbsp;D.1: Data record type
 </figcaption>
 <div aria-describedby="tbl-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="cmnoxjgzdi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cmnoxjgzdi table {
+<div id="eqwcoxonfd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eqwcoxonfd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cmnoxjgzdi thead, #cmnoxjgzdi tbody, #cmnoxjgzdi tfoot, #cmnoxjgzdi tr, #cmnoxjgzdi td, #cmnoxjgzdi th {
+#eqwcoxonfd thead, #eqwcoxonfd tbody, #eqwcoxonfd tfoot, #eqwcoxonfd tr, #eqwcoxonfd td, #eqwcoxonfd th {
   border-style: none;
 }
 
-#cmnoxjgzdi p {
+#eqwcoxonfd p {
   margin: 0;
   padding: 0;
 }
 
-#cmnoxjgzdi .gt_table {
+#eqwcoxonfd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2440,12 +2453,12 @@ Table&nbsp;D.1: Data record type
   border-left-color: #D3D3D3;
 }
 
-#cmnoxjgzdi .gt_caption {
+#eqwcoxonfd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cmnoxjgzdi .gt_title {
+#eqwcoxonfd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2457,7 +2470,7 @@ Table&nbsp;D.1: Data record type
   border-bottom-width: 0;
 }
 
-#cmnoxjgzdi .gt_subtitle {
+#eqwcoxonfd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2469,7 +2482,7 @@ Table&nbsp;D.1: Data record type
   border-top-width: 0;
 }
 
-#cmnoxjgzdi .gt_heading {
+#eqwcoxonfd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2481,13 +2494,13 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#cmnoxjgzdi .gt_bottom_border {
+#eqwcoxonfd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cmnoxjgzdi .gt_col_headings {
+#eqwcoxonfd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2502,7 +2515,7 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#cmnoxjgzdi .gt_col_heading {
+#eqwcoxonfd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2522,7 +2535,7 @@ Table&nbsp;D.1: Data record type
   overflow-x: hidden;
 }
 
-#cmnoxjgzdi .gt_column_spanner_outer {
+#eqwcoxonfd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2534,15 +2547,15 @@ Table&nbsp;D.1: Data record type
   padding-right: 4px;
 }
 
-#cmnoxjgzdi .gt_column_spanner_outer:first-child {
+#eqwcoxonfd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cmnoxjgzdi .gt_column_spanner_outer:last-child {
+#eqwcoxonfd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cmnoxjgzdi .gt_column_spanner {
+#eqwcoxonfd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2554,11 +2567,11 @@ Table&nbsp;D.1: Data record type
   width: 100%;
 }
 
-#cmnoxjgzdi .gt_spanner_row {
+#eqwcoxonfd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cmnoxjgzdi .gt_group_heading {
+#eqwcoxonfd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2584,7 +2597,7 @@ Table&nbsp;D.1: Data record type
   text-align: left;
 }
 
-#cmnoxjgzdi .gt_empty_group_heading {
+#eqwcoxonfd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2599,15 +2612,15 @@ Table&nbsp;D.1: Data record type
   vertical-align: middle;
 }
 
-#cmnoxjgzdi .gt_from_md > :first-child {
+#eqwcoxonfd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cmnoxjgzdi .gt_from_md > :last-child {
+#eqwcoxonfd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cmnoxjgzdi .gt_row {
+#eqwcoxonfd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2626,7 +2639,7 @@ Table&nbsp;D.1: Data record type
   overflow-x: hidden;
 }
 
-#cmnoxjgzdi .gt_stub {
+#eqwcoxonfd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2639,7 +2652,7 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#cmnoxjgzdi .gt_stub_row_group {
+#eqwcoxonfd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2653,15 +2666,15 @@ Table&nbsp;D.1: Data record type
   vertical-align: top;
 }
 
-#cmnoxjgzdi .gt_row_group_first td {
+#eqwcoxonfd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cmnoxjgzdi .gt_row_group_first th {
+#eqwcoxonfd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cmnoxjgzdi .gt_summary_row {
+#eqwcoxonfd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2671,16 +2684,16 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#cmnoxjgzdi .gt_first_summary_row {
+#eqwcoxonfd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cmnoxjgzdi .gt_first_summary_row.thick {
+#eqwcoxonfd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cmnoxjgzdi .gt_last_summary_row {
+#eqwcoxonfd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2690,7 +2703,7 @@ Table&nbsp;D.1: Data record type
   border-bottom-color: #D3D3D3;
 }
 
-#cmnoxjgzdi .gt_grand_summary_row {
+#eqwcoxonfd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2700,7 +2713,7 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#cmnoxjgzdi .gt_first_grand_summary_row {
+#eqwcoxonfd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2710,7 +2723,7 @@ Table&nbsp;D.1: Data record type
   border-top-color: #D3D3D3;
 }
 
-#cmnoxjgzdi .gt_last_grand_summary_row_top {
+#eqwcoxonfd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2720,11 +2733,11 @@ Table&nbsp;D.1: Data record type
   border-bottom-color: #D3D3D3;
 }
 
-#cmnoxjgzdi .gt_striped {
+#eqwcoxonfd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cmnoxjgzdi .gt_table_body {
+#eqwcoxonfd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2733,7 +2746,7 @@ Table&nbsp;D.1: Data record type
   border-bottom-color: #D3D3D3;
 }
 
-#cmnoxjgzdi .gt_footnotes {
+#eqwcoxonfd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2747,7 +2760,7 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#cmnoxjgzdi .gt_footnote {
+#eqwcoxonfd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2756,7 +2769,7 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#cmnoxjgzdi .gt_sourcenotes {
+#eqwcoxonfd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2770,7 +2783,7 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#cmnoxjgzdi .gt_sourcenote {
+#eqwcoxonfd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2778,72 +2791,72 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#cmnoxjgzdi .gt_left {
+#eqwcoxonfd .gt_left {
   text-align: left;
 }
 
-#cmnoxjgzdi .gt_center {
+#eqwcoxonfd .gt_center {
   text-align: center;
 }
 
-#cmnoxjgzdi .gt_right {
+#eqwcoxonfd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cmnoxjgzdi .gt_font_normal {
+#eqwcoxonfd .gt_font_normal {
   font-weight: normal;
 }
 
-#cmnoxjgzdi .gt_font_bold {
+#eqwcoxonfd .gt_font_bold {
   font-weight: bold;
 }
 
-#cmnoxjgzdi .gt_font_italic {
+#eqwcoxonfd .gt_font_italic {
   font-style: italic;
 }
 
-#cmnoxjgzdi .gt_super {
+#eqwcoxonfd .gt_super {
   font-size: 65%;
 }
 
-#cmnoxjgzdi .gt_footnote_marks {
+#eqwcoxonfd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cmnoxjgzdi .gt_asterisk {
+#eqwcoxonfd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cmnoxjgzdi .gt_indent_1 {
+#eqwcoxonfd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cmnoxjgzdi .gt_indent_2 {
+#eqwcoxonfd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cmnoxjgzdi .gt_indent_3 {
+#eqwcoxonfd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cmnoxjgzdi .gt_indent_4 {
+#eqwcoxonfd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cmnoxjgzdi .gt_indent_5 {
+#eqwcoxonfd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#cmnoxjgzdi .katex-display {
+#eqwcoxonfd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#cmnoxjgzdi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#eqwcoxonfd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
