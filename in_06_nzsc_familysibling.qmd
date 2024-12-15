@@ -208,7 +208,7 @@ Follow the flowchart to assign family permeability class:
 
 %%{ init: { 'flowchart': { 'curve': 'stepAfter' } } }%%
 graph TD
-  A[Identify the uppermost horizon with the slowest permeability, or rock above 100 cm. This is Horizon X.]-->B[Does Horizon X have > 30 cm of contrasting permeability above?]
+  A["Identify the uppermost horizon with the slowest permeability, or rock above 100 cm. This is Horizon X."]-->B["Does Horizon X have > 30 cm of contrasting permeability above?"]
   B--->|Yes|C("Use **m/s**, **r/s**, **r/m**")
   B--> |No|D["Does the profile have a horizon ≥ 20 cm thick below Horizon X with a different permeability class?"]
   D-->|Yes|E("Use **s/m**, **s/r** or **m/r**")

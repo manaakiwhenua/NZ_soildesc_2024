@@ -48,9 +48,9 @@ For classifying using the NZSC, particular tests down to a certain depth may be 
 %%| fig-cap: Determining sample cohesion
 
 flowchart TD
-  q1["Can a sample cube be formed from remoulded material?"] -->|yes| q2[Is the material plastic?]
+  q1["Can a sample cube be formed from remoulded material?"] -->|yes| q2["Is the material plastic?"]
   q2 ---->|yes| a1(["**Cohesive**"])
-  q1 -->|no| q3[Is the material plastic?]
+  q1 -->|no| q3["Is the material plastic?"]
   q3 -->|yes| q4
   q2 -->|no| q4["Does the material have a fast positive reaction to the dilatency test?"]
   q4 -->|no| q5["Does the material have a distinctly negative reaction to the dilatency test?"]
