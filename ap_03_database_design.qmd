@@ -639,7 +639,7 @@ The horizon overview table stores boundary definitions and soil moisture status 
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
-%%| fig-cap: "Horizon - including support tables"
+%%| fig-cap: "Horizon - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
@@ -704,7 +704,7 @@ The horizon architecture table stores parent material origin, as well as data ab
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
-%%| fig-cap: "Horizon architecture - table arrangement"
+%%| fig-cap: "Horizon architecture - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram 
@@ -1027,7 +1027,7 @@ These tables store matrix colours (@sec-col-matrix) and colour patterns (@sec-co
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
-%%| fig-cap: "Horizon colour - table arrangement"
+%%| fig-cap: "Horizon colour - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
@@ -1133,28 +1133,30 @@ The horizon texture table stores texture category as well as field estimates of 
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
-%%| fig-cap: "Horizon texture - table arrangement"
+%%| fig-cap: "Horizon texture - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   horizon_texture }|--|{ simple_textures : "code comes from"
-  horizon_texture }|--|{ textures : "code comes from"
+  horizon_texture }|--|{ mineral_textures : "code comes from"
   horizon_texture }|--|{ sand_sizes : "code comes from"
   horizon_texture }|--|{ organic_levels : "code comes from"
-  horizon_texture }|--|{ organic_decomps : "code comes from" 
+  horizon_texture }|--|{ organic_types : "code comes from"
+  horizon_texture }|--|{ organic_decomps : "code comes from"
 
 ```
 :::
 
 ```{mermaid}
-%%| fig-cap: "Horizon colour - Details"
+%%| fig-cap: "Horizon texture - Details"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   horizon_texture }|--|{ simple_textures : "code comes from"
-  horizon_texture }|--|{ textures : "code comes from"
+  horizon_texture }|--|{ mineral_textures : "code comes from"
   horizon_texture }|--|{ sand_sizes : "code comes from"
   horizon_texture }|--|{ organic_levels : "code comes from"
+  horizon_texture }|--|{ organic_types : "code comes from"
   horizon_texture }|--|{ organic_decomps : "code comes from"
   
   horizon_texture {
@@ -1162,9 +1164,11 @@ erDiagram
     id          id_horizon PK
     cat         catu_texture_simple FK    "Section 16.1.1"
     cat         catu_texture FK           "Section 16.1"
-    cat         catu_sand_size_mod FK     "Section 16.2.1"
-    cat         catu_organics FK          "Section 16.2.2"
-    cat         catu_organics_decomp FK   "Section 16.2.2"
+    cat         catu_texture_sandmod FK   "Section 16.2.1"
+    cat         catu_texture_orgmod FK    "Section 16.2.2"
+    cat         catu_organic_type FK      "Section 16.4"
+    cat         catu_organic_decomp FK    "Section 16.4.1"
+    cat         catu_organic_minmod FK    "Section 16.4.2"
     num[0-100]  amt_sand_est_med_p        "Section 16.3"
     num[0-100]  amt_sand_est_min_p        "Section 16.3"
     num[0-100]  amt_sand_est_max_p        "Section 16.3"
@@ -1180,7 +1184,7 @@ erDiagram
     txt         txt_simple_texture_desc   "Table 16.3"
   } 
 
-  textures {
+  mineral_textures {
     id          id_texture PK
     cat         catu_texture FK           "Table 16.2"
     txt         txt_texture_name          "Table 16.2"
@@ -1200,22 +1204,29 @@ erDiagram
     txt         txt_organic_name          "Table 16.5"
     txt         txt_organic_desc          "Table 16.5"
   }
+
+  organic_types {
+    id          id_organic_type PK
+    cat         catu_organic_type FK    "Table 16.6"
+    txt         txt_organic_type_name   "Table 16.6"
+    txt         txt_organic_type_desc   "Table 16.6"
+  }
   
   organic_decomps {
     id          id_organic_decomp PK
-    cat         catu_organic_decomp FK    "Table 16.6"
-    txt         txt_organic_decomp_name   "Table 16.6"
-    txt         txt_organic_decomp_desc   "Table 16.6"
+    cat         catu_organic_decomp FK    "Table 16.7"
+    txt         txt_organic_decomp_name   "Table 16.7"
+    txt         txt_organic_decomp_desc   "Table 16.7"
   }
 ```
 
 ## Horizon secondary features {#sec-erd-secf}
 
-The secondary features tables stores essential information in a parent table and more detailed optional descriptions in child tables. The parent table can optionally extend the horizon overview table (@sec-erd-horizono) as it has a 1:1 relationship.
+The secondary features tables store essential information in a parent table and more detailed optional descriptions in child tables. The parent table can optionally extend the horizon overview table (@sec-erd-horizono) as it has a 1:1 relationship.
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
-%%| fig-cap: "Horizon secondary features - table arrangement"
+%%| fig-cap: "Horizon secondary features - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
@@ -1370,7 +1381,7 @@ The consistence tests table can optionally extend the horizon overview table (@s
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
-%%| fig-cap: "Horizon consistence tests - table arrangement"
+%%| fig-cap: "Horizon consistence tests - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
@@ -1388,7 +1399,7 @@ erDiagram
 :::
 
 ```{mermaid}
-%%| fig-cap: "Horizon secondary features - Details"
+%%| fig-cap: "Horizon consistence tests - Details"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
@@ -1492,7 +1503,7 @@ Field tests are conducted from samples taken at set depths so in this example ar
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
-%%| fig-cap: "Horizon field tests - table arrangement"
+%%| fig-cap: "Horizon field tests - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
@@ -1583,7 +1594,7 @@ erDiagram
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
-%%| fig-cap: "Horizon field tests - table arrangement"
+%%| fig-cap: "NZSC - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
@@ -1606,7 +1617,7 @@ erDiagram
 :::
 
 ```{mermaid}
-%%| fig-cap: "Horizon field tests - Details"
+%%| fig-cap: "NZSC - Details"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
@@ -1745,12 +1756,14 @@ The horizon names tables stores conventional and functional names. This table ca
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
-%%| fig-cap: "Horizon Names - table arrangement"
+%%| fig-cap: "Horizon names - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   horizon_names }|--|{ horizon_names_primary : "code comes from"
   horizon_names }|--|{ horizon_names_conventional : "code comes from"
+  horizon_names }|--|{ horizon_names_functional : "code comes from"
+  horizon_names }|--|{ functional_horizon_permeabilities : "code comes from"
 
 ```
 :::
