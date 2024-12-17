@@ -266,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_03_texture.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Soil texture</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Horizon texture</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -439,7 +439,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">December 15, 2024</p>
+      <p class="date-modified">December 17, 2024</p>
     </div>
   </div>
     
@@ -1127,7 +1127,7 @@ erDiagram
 
 </pre>
 </div>
-<p></p><figcaption> Horizon - including support tables</figcaption> </figure><p></p>
+<p></p><figcaption> Horizon - Overview</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
@@ -1230,7 +1230,7 @@ erDiagram
 
 </pre>
 </div>
-<p></p><figcaption> Horizon architecture - table arrangement</figcaption> </figure><p></p>
+<p></p><figcaption> Horizon architecture - Overview</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
@@ -1540,7 +1540,7 @@ erDiagram
   horizon_colour_patterns }|--|{ pattern_edges : "code comes from"
 </pre>
 </div>
-<p></p><figcaption> Horizon colour - table arrangement</figcaption> </figure><p></p>
+<p></p><figcaption> Horizon colour - Overview</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
@@ -1646,14 +1646,15 @@ erDiagram
 <pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   horizon_texture }|--|{ simple_textures : "code comes from"
-  horizon_texture }|--|{ textures : "code comes from"
+  horizon_texture }|--|{ mineral_textures : "code comes from"
   horizon_texture }|--|{ sand_sizes : "code comes from"
   horizon_texture }|--|{ organic_levels : "code comes from"
-  horizon_texture }|--|{ organic_decomps : "code comes from" 
+  horizon_texture }|--|{ organic_types : "code comes from"
+  horizon_texture }|--|{ organic_decomps : "code comes from"
 
 </pre>
 </div>
-<p></p><figcaption> Horizon texture - table arrangement</figcaption> </figure><p></p>
+<p></p><figcaption> Horizon texture - Overview</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
@@ -1665,9 +1666,10 @@ erDiagram
 <pre class="mermaid mermaid-js">%%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   horizon_texture }|--|{ simple_textures : "code comes from"
-  horizon_texture }|--|{ textures : "code comes from"
+  horizon_texture }|--|{ mineral_textures : "code comes from"
   horizon_texture }|--|{ sand_sizes : "code comes from"
   horizon_texture }|--|{ organic_levels : "code comes from"
+  horizon_texture }|--|{ organic_types : "code comes from"
   horizon_texture }|--|{ organic_decomps : "code comes from"
   
   horizon_texture {
@@ -1675,9 +1677,11 @@ erDiagram
     id          id_horizon PK
     cat         catu_texture_simple FK    "Section 16.1.1"
     cat         catu_texture FK           "Section 16.1"
-    cat         catu_sand_size_mod FK     "Section 16.2.1"
-    cat         catu_organics FK          "Section 16.2.2"
-    cat         catu_organics_decomp FK   "Section 16.2.2"
+    cat         catu_texture_sandmod FK   "Section 16.2.1"
+    cat         catu_texture_orgmod FK    "Section 16.2.2"
+    cat         catu_organic_type FK      "Section 16.4"
+    cat         catu_organic_decomp FK    "Section 16.4.1"
+    cat         catu_organic_minmod FK    "Section 16.4.2"
     num[0-100]  amt_sand_est_med_p        "Section 16.3"
     num[0-100]  amt_sand_est_min_p        "Section 16.3"
     num[0-100]  amt_sand_est_max_p        "Section 16.3"
@@ -1693,7 +1697,7 @@ erDiagram
     txt         txt_simple_texture_desc   "Table 16.3"
   } 
 
-  textures {
+  mineral_textures {
     id          id_texture PK
     cat         catu_texture FK           "Table 16.2"
     txt         txt_texture_name          "Table 16.2"
@@ -1713,23 +1717,30 @@ erDiagram
     txt         txt_organic_name          "Table 16.5"
     txt         txt_organic_desc          "Table 16.5"
   }
+
+  organic_types {
+    id          id_organic_type PK
+    cat         catu_organic_type FK    "Table 16.6"
+    txt         txt_organic_type_name   "Table 16.6"
+    txt         txt_organic_type_desc   "Table 16.6"
+  }
   
   organic_decomps {
     id          id_organic_decomp PK
-    cat         catu_organic_decomp FK    "Table 16.6"
-    txt         txt_organic_decomp_name   "Table 16.6"
-    txt         txt_organic_decomp_desc   "Table 16.6"
+    cat         catu_organic_decomp FK    "Table 16.7"
+    txt         txt_organic_decomp_name   "Table 16.7"
+    txt         txt_organic_decomp_desc   "Table 16.7"
   }
 </pre>
 </div>
-<p></p><figcaption> Horizon colour - Details</figcaption> </figure><p></p>
+<p></p><figcaption> Horizon texture - Details</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
 </section>
 <section id="sec-erd-secf" class="level2" data-number="D.9">
 <h2 data-number="D.9" class="anchored" data-anchor-id="sec-erd-secf"><span class="header-section-number">D.9</span> Horizon secondary features</h2>
-<p>The secondary features tables stores essential information in a parent table and more detailed optional descriptions in child tables. The parent table can optionally extend the horizon overview table (<a href="#sec-erd-horizono" class="quarto-xref"><span>Section D.5</span></a>) as it has a 1:1 relationship.</p>
+<p>The secondary features tables store essential information in a parent table and more detailed optional descriptions in child tables. The parent table can optionally extend the horizon overview table (<a href="#sec-erd-horizono" class="quarto-xref"><span>Section D.5</span></a>) as it has a 1:1 relationship.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -1754,7 +1765,7 @@ erDiagram
 
 </pre>
 </div>
-<p></p><figcaption> Horizon secondary features - table arrangement</figcaption> </figure><p></p>
+<p></p><figcaption> Horizon secondary features - Overview</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
@@ -1914,7 +1925,7 @@ erDiagram
 
 </pre>
 </div>
-<p></p><figcaption> Horizon consistence tests - table arrangement</figcaption> </figure><p></p>
+<p></p><figcaption> Horizon consistence tests - Overview</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
@@ -2019,7 +2030,7 @@ erDiagram
   
 </pre>
 </div>
-<p></p><figcaption> Horizon secondary features - Details</figcaption> </figure><p></p>
+<p></p><figcaption> Horizon consistence tests - Details</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
@@ -2043,7 +2054,7 @@ erDiagram
 
 </pre>
 </div>
-<p></p><figcaption> Horizon field tests - table arrangement</figcaption> </figure><p></p>
+<p></p><figcaption> Horizon field tests - Overview</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
@@ -2153,7 +2164,7 @@ erDiagram
 
 </pre>
 </div>
-<p></p><figcaption> Horizon field tests - table arrangement</figcaption> </figure><p></p>
+<p></p><figcaption> NZSC - Overview</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
@@ -2293,7 +2304,7 @@ erDiagram
   }
 </pre>
 </div>
-<p></p><figcaption> Horizon field tests - Details</figcaption> </figure><p></p>
+<p></p><figcaption> NZSC - Details</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
@@ -2310,10 +2321,12 @@ erDiagram
 erDiagram
   horizon_names }|--|{ horizon_names_primary : "code comes from"
   horizon_names }|--|{ horizon_names_conventional : "code comes from"
+  horizon_names }|--|{ horizon_names_functional : "code comes from"
+  horizon_names }|--|{ functional_horizon_permeabilities : "code comes from"
 
 </pre>
 </div>
-<p></p><figcaption> Horizon Names - table arrangement</figcaption> </figure><p></p>
+<p></p><figcaption> Horizon names - Overview</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
@@ -2411,23 +2424,23 @@ Table&nbsp;D.1: Data record type
 </figcaption>
 <div aria-describedby="tbl-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="jfldjwnrbj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jfldjwnrbj table {
+<div id="tsyymimoil" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tsyymimoil table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jfldjwnrbj thead, #jfldjwnrbj tbody, #jfldjwnrbj tfoot, #jfldjwnrbj tr, #jfldjwnrbj td, #jfldjwnrbj th {
+#tsyymimoil thead, #tsyymimoil tbody, #tsyymimoil tfoot, #tsyymimoil tr, #tsyymimoil td, #tsyymimoil th {
   border-style: none;
 }
 
-#jfldjwnrbj p {
+#tsyymimoil p {
   margin: 0;
   padding: 0;
 }
 
-#jfldjwnrbj .gt_table {
+#tsyymimoil .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2453,12 +2466,12 @@ Table&nbsp;D.1: Data record type
   border-left-color: #D3D3D3;
 }
 
-#jfldjwnrbj .gt_caption {
+#tsyymimoil .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jfldjwnrbj .gt_title {
+#tsyymimoil .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2470,7 +2483,7 @@ Table&nbsp;D.1: Data record type
   border-bottom-width: 0;
 }
 
-#jfldjwnrbj .gt_subtitle {
+#tsyymimoil .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2482,7 +2495,7 @@ Table&nbsp;D.1: Data record type
   border-top-width: 0;
 }
 
-#jfldjwnrbj .gt_heading {
+#tsyymimoil .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2494,13 +2507,13 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#jfldjwnrbj .gt_bottom_border {
+#tsyymimoil .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jfldjwnrbj .gt_col_headings {
+#tsyymimoil .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2515,7 +2528,7 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#jfldjwnrbj .gt_col_heading {
+#tsyymimoil .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2535,7 +2548,7 @@ Table&nbsp;D.1: Data record type
   overflow-x: hidden;
 }
 
-#jfldjwnrbj .gt_column_spanner_outer {
+#tsyymimoil .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2547,15 +2560,15 @@ Table&nbsp;D.1: Data record type
   padding-right: 4px;
 }
 
-#jfldjwnrbj .gt_column_spanner_outer:first-child {
+#tsyymimoil .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jfldjwnrbj .gt_column_spanner_outer:last-child {
+#tsyymimoil .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jfldjwnrbj .gt_column_spanner {
+#tsyymimoil .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2567,11 +2580,11 @@ Table&nbsp;D.1: Data record type
   width: 100%;
 }
 
-#jfldjwnrbj .gt_spanner_row {
+#tsyymimoil .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jfldjwnrbj .gt_group_heading {
+#tsyymimoil .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2597,7 +2610,7 @@ Table&nbsp;D.1: Data record type
   text-align: left;
 }
 
-#jfldjwnrbj .gt_empty_group_heading {
+#tsyymimoil .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2612,15 +2625,15 @@ Table&nbsp;D.1: Data record type
   vertical-align: middle;
 }
 
-#jfldjwnrbj .gt_from_md > :first-child {
+#tsyymimoil .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jfldjwnrbj .gt_from_md > :last-child {
+#tsyymimoil .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jfldjwnrbj .gt_row {
+#tsyymimoil .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2639,7 +2652,7 @@ Table&nbsp;D.1: Data record type
   overflow-x: hidden;
 }
 
-#jfldjwnrbj .gt_stub {
+#tsyymimoil .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2652,7 +2665,7 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#jfldjwnrbj .gt_stub_row_group {
+#tsyymimoil .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2666,15 +2679,15 @@ Table&nbsp;D.1: Data record type
   vertical-align: top;
 }
 
-#jfldjwnrbj .gt_row_group_first td {
+#tsyymimoil .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jfldjwnrbj .gt_row_group_first th {
+#tsyymimoil .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jfldjwnrbj .gt_summary_row {
+#tsyymimoil .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2684,16 +2697,16 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#jfldjwnrbj .gt_first_summary_row {
+#tsyymimoil .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jfldjwnrbj .gt_first_summary_row.thick {
+#tsyymimoil .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jfldjwnrbj .gt_last_summary_row {
+#tsyymimoil .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2703,7 +2716,7 @@ Table&nbsp;D.1: Data record type
   border-bottom-color: #D3D3D3;
 }
 
-#jfldjwnrbj .gt_grand_summary_row {
+#tsyymimoil .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2713,7 +2726,7 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#jfldjwnrbj .gt_first_grand_summary_row {
+#tsyymimoil .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2723,7 +2736,7 @@ Table&nbsp;D.1: Data record type
   border-top-color: #D3D3D3;
 }
 
-#jfldjwnrbj .gt_last_grand_summary_row_top {
+#tsyymimoil .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2733,11 +2746,11 @@ Table&nbsp;D.1: Data record type
   border-bottom-color: #D3D3D3;
 }
 
-#jfldjwnrbj .gt_striped {
+#tsyymimoil .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jfldjwnrbj .gt_table_body {
+#tsyymimoil .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2746,7 +2759,7 @@ Table&nbsp;D.1: Data record type
   border-bottom-color: #D3D3D3;
 }
 
-#jfldjwnrbj .gt_footnotes {
+#tsyymimoil .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2760,7 +2773,7 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#jfldjwnrbj .gt_footnote {
+#tsyymimoil .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2769,7 +2782,7 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#jfldjwnrbj .gt_sourcenotes {
+#tsyymimoil .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2783,7 +2796,7 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#jfldjwnrbj .gt_sourcenote {
+#tsyymimoil .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2791,72 +2804,72 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#jfldjwnrbj .gt_left {
+#tsyymimoil .gt_left {
   text-align: left;
 }
 
-#jfldjwnrbj .gt_center {
+#tsyymimoil .gt_center {
   text-align: center;
 }
 
-#jfldjwnrbj .gt_right {
+#tsyymimoil .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jfldjwnrbj .gt_font_normal {
+#tsyymimoil .gt_font_normal {
   font-weight: normal;
 }
 
-#jfldjwnrbj .gt_font_bold {
+#tsyymimoil .gt_font_bold {
   font-weight: bold;
 }
 
-#jfldjwnrbj .gt_font_italic {
+#tsyymimoil .gt_font_italic {
   font-style: italic;
 }
 
-#jfldjwnrbj .gt_super {
+#tsyymimoil .gt_super {
   font-size: 65%;
 }
 
-#jfldjwnrbj .gt_footnote_marks {
+#tsyymimoil .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jfldjwnrbj .gt_asterisk {
+#tsyymimoil .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jfldjwnrbj .gt_indent_1 {
+#tsyymimoil .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jfldjwnrbj .gt_indent_2 {
+#tsyymimoil .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jfldjwnrbj .gt_indent_3 {
+#tsyymimoil .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jfldjwnrbj .gt_indent_4 {
+#tsyymimoil .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jfldjwnrbj .gt_indent_5 {
+#tsyymimoil .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jfldjwnrbj .katex-display {
+#tsyymimoil .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jfldjwnrbj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#tsyymimoil div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
