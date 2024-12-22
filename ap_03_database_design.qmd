@@ -146,7 +146,6 @@ erDiagram
   
   landscape {
     id id_site PK
-    id id_landscape PK
     cat          catu_province FK          "Section 4.1"
     cat          catu_landscape FK         "Section 4.2.1.4"
     %% landscape relief %%
@@ -311,7 +310,8 @@ erDiagram
   site }|--|{ site_selection_methods : "code comes from"
   site }|--|{ site_exposure_types : "code comes from"
   site }|--|{ site_early_stop_types : "code comes from"
-  
+  site }|--|{ current_weather : "code comes from"
+  site }|--|{ recent_rainfall : "code comes from"
 
 ```
 :::
@@ -328,6 +328,8 @@ erDiagram
   site }|--|{ site_selection_methods : "code comes from"
   site }|--|{ site_exposure_types : "code comes from"
   site }|--|{ site_early_stop_types : "code comes from"
+  site }|--|{ current_weather : "code comes from"
+  site }|--|{ recent_rainfall : "code comes from"
 
   site {
     id          id_site PK               "Section 10.2.1"
@@ -342,9 +344,6 @@ erDiagram
     cat         catu_weather FK          "Section 6.3.1"
     num[-50-50] val_temperature_c        "Section 6.3.1"
     cat         cato_recent_rain FK      "Section 6.3.2"
-    %% veg %%
-    cat        cat_vegetation_luc FK     "Section 7.1"
-    
   }
   
   site_purposes {
@@ -392,6 +391,18 @@ erDiagram
     cat         catu_disturbance_age FK  "Table 10.6"
     txt         txt_disturbance_age_name "Table 10.6"
     txt         txt_disturbance_age_desc "Table 10.6"
+  }
+
+  current_weather {
+    id          id_weather PK
+    cat         catu_weather FK  "Table 6.3.1"
+    txt         txt_weather_name "Table 6.3.1"
+  }
+  
+  recent_rainfall {
+    id          id_rainfall PK
+    cat         catu_rainfall FK  "Table 6.3.2"
+    txt         txt_rainfall_name "Table 6.3.2"
   }
   
 ```
