@@ -646,7 +646,7 @@ erDiagram
 
 ## Horizon overview {#sec-erd-horizono}
 
-The horizon overview table stores boundary definitions and soil moisture status at the time of examination. 
+The horizon overview table stores boundary definitions, soil moisture status at the time of examination, and parent material origin. 
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
@@ -657,6 +657,8 @@ erDiagram
   horizon }|--|{ boundary_shapes : "code comes from"
   horizon }|--|{ boundary_widths : "code comes from"
   horizon }|--|{ soil_moistures : "code comes from"
+  horizon }|--|{ nzsc_parent_material_origin : "code comes from"
+  horizon }|--|{ parent_material_origin_mod : "code comes from"
 
 ```
 :::
@@ -669,6 +671,8 @@ erDiagram
   horizon }|--|{ boundary_shapes : "code comes from"
   horizon }|--|{ boundary_widths : "code comes from"
   horizon }|--|{ soil_moistures : "code comes from"
+  horizon }|--|{ nzsc_parent_material_origin : "code comes from"
+  horizon }|--|{ parent_material_origin_mod : "code comes from"
   
   horizon {
   id         id_site PK
@@ -685,6 +689,9 @@ erDiagram
   num[0-Inf] amt_boundary_cm         "Section 12.5"
   cat        catu_boundary_width FK  "Section 12.5" 
   cat        cato_soil_moisture FK   "Section 12.6"
+  %% pmo %%
+  cat        catu_parent_material_origin FK    "Section 13.7.1"
+  cat        catu_anthropic_origin_modifier FK "Section 13.7.1"
   }
   
   boundary_shapes {
@@ -707,11 +714,25 @@ erDiagram
     txt         txt_soil_moisture_name      "Table 12.3"
   }
   
+  nzsc_parent_material_origin {
+    id          id_pmo PK
+    cat         catu_pmo FK             "Table 24.5"
+    txt         txt_pmo_name            "Table 24.5"
+    txt         txt_pmo_desc            "Table 24.5"  
+  }
+  
+  parent_material_origin_mod {
+    id          id_pmo_mod PK
+    cat         catu_pmo_mod FK         "Table 13.1"
+    txt         txt_pmo_mod_name        "Table 13.1"
+    txt         txt_pmo_mod_desc        "Table 13.1"  
+  }
+  
 ```
 
 ## Horizon architecture {#sec-erd-horizona}
 
-The horizon architecture table stores parent material origin, as well as data about pedality, fragments, roots, voids and pores. This table can optionally extend the horizon overview table (@sec-erd-horizono) as it has a 1:1 relationship.
+The horizon architecture table stores data about pedality, fragments, roots, voids and pores. This table can optionally extend the horizon overview table (@sec-erd-horizono) as it has a 1:1 relationship.
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
@@ -720,8 +741,6 @@ The horizon architecture table stores parent material origin, as well as data ab
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram 
   horizon_arch ||--|{ horizon_structures : "may have"
-  horizon_arch }|--|{ nzsc_parent_material_origin : "code comes from"
-  horizon_arch }|--|{ parent_material_origin_mod : "code comes from"
   horizon_arch }|--|{ structure_types : "code comes from"
   horizon_arch }|--|{ structure_grades : "code comes from"
   horizon_arch }|--|{ structure_sizes_rapid : "code comes from"
@@ -760,8 +779,6 @@ erDiagram
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   horizon_arch ||--|{ horizon_structures : "may have"
-  horizon_arch }|--|{ nzsc_parent_material_origin : "code comes from"
-  horizon_arch }|--|{ parent_material_origin_mod : "code comes from"
   horizon_arch }|--|{ structure_types : "code comes from"
   horizon_arch }|--|{ structure_grades : "code comes from"
   horizon_arch }|--|{ structure_sizes_rapid : "code comes from"
@@ -794,9 +811,6 @@ erDiagram
   horizon_arch {
     id         id_site PK
     id         id_horizon PK
-    %% pmo %%
-    cat        catu_parent_material_origin FK    "Section 13.7.1"
-    cat        catu_anthropic_origin_modifier FK "Section 13.7.1"
     %% structures rapid (detailed in subtable) %%
     cat        catu_structure_type FK            "Section 14.1.1"
     cat        cato_structure_grade FK           "Section 14.1.2"
@@ -821,20 +835,6 @@ erDiagram
     num[0-10]  amt_macropores_p                 "Section 14.5"
     num[0-10]  amt_micropores_p                 "Section 14.5"
                   
-  }
- 
-  nzsc_parent_material_origin {
-    id          id_pmo PK
-    cat         catu_pmo FK             "Table 24.5"
-    txt         txt_pmo_name            "Table 24.5"
-    txt         txt_pmo_desc            "Table 24.5"  
-  }
-  
-  parent_material_origin_mod {
-    id          id_pmo_mod PK
-    cat         catu_pmo_mod FK         "Table 13.1"
-    txt         txt_pmo_mod_name        "Table 13.1"
-    txt         txt_pmo_mod_desc        "Table 13.1"  
   }
 
   structure_types {
@@ -1140,7 +1140,7 @@ erDiagram
 
 ## Horizon texture {#sec-erd-texture}
 
-The horizon texture table stores texture category as well as field estimates of sand and clay. This table can optionally extend the horizon overview table (@sec-erd-horizono) as it has a 1:1 relationship.
+The horizon texture table stores texture category as well as field estimates of sand and clay, and optionally lithology and mineralogy of the fine earth fraction. This table can optionally extend the horizon overview table (@sec-erd-horizono) as it has a 1:1 relationship.
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
@@ -1154,6 +1154,8 @@ erDiagram
   horizon_texture }|--|{ organic_levels : "code comes from"
   horizon_texture }|--|{ organic_types : "code comes from"
   horizon_texture }|--|{ organic_decomps : "code comes from"
+  horizon_texture }|--|{ nzsc_lithologies : "code comes from"
+  horizon_texture }|--|{ nzsc_mineralogies : "code comes from"
 
 ```
 :::
@@ -1169,6 +1171,8 @@ erDiagram
   horizon_texture }|--|{ organic_levels : "code comes from"
   horizon_texture }|--|{ organic_types : "code comes from"
   horizon_texture }|--|{ organic_decomps : "code comes from"
+  horizon_texture }|--|{ nzsc_lithologies : "code comes from"
+  horizon_texture }|--|{ nzsc_mineralogies : "code comes from"
   
   horizon_texture {
     id          id_site PK
@@ -1186,6 +1190,8 @@ erDiagram
     num[0-100]  amt_clay_est_med_p        "Section 16.3"
     num[0-100]  amt_clay_est_min_p        "Section 16.3"
     num[0-100]  amt_clay_est_max_p        "Section 16.3"
+    cat         catu_lithology            "Section 5.2.2"
+    cat         catu_mineralogy           "Section 5.3"
   }
    
   simple_textures {
@@ -1228,6 +1234,19 @@ erDiagram
     cat         catu_organic_decomp FK    "Table 16.7"
     txt         txt_organic_decomp_name   "Table 16.7"
     txt         txt_organic_decomp_desc   "Table 16.7"
+  }
+  
+  nzsc_lithologies {
+    id          id_nzsc_lithology PK    
+    cat         catu_nzsc_lithology FK        "Table 24.2"
+    txt         txt_nzsc_lithology_name       "Table 24.2"
+  }
+
+  nzsc_mineralogies {
+    id          id_nzsc_mineralogy PK    
+    cat         catu_nzsc_mineralogy FK        "Table 5.2"
+    txt         txt_nzsc_mineralogy_name       "Table 5.2"
+    txt         txt_nzsc_mineralogy_desc       "Table 5.2"
   }
 ```
 
