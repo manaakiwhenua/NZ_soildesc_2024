@@ -14,17 +14,31 @@ library(gtExtras)
 
 # Defining soil horizons {#sec-hor}
 
-A soil horizon is a distinct layer within a soil profile. [Horizons are distinguished by differences in texture, stoniness, structure, colour, consistence or other soil properties as described in]{.milne} the following section. [Delineated horizons should ideally represent depth intervals over which important soil attributes change minimally. Conversely, the horizon boundaries should represent depth intervals over which there is a relatively high rate of change of important soil properties.]{.milne}
+A soil horizon is a distinct layer observable within a soil profile. [Horizons are distinguished by differences in texture, stoniness, structure, colour, consistence or other soil properties as described in]{.milne} the following sections. [Delineated horizons should ideally represent depth intervals over which important soil attributes change minimally. Conversely, the horizon boundaries should represent depth intervals over which there is a relatively high rate of change of important soil properties.]{.milne}
 
 [Not all important soil properties change from one horizon to the next or at the same rate with depth. In some instances confident interpretation of the suitability of a soil for a particular end use may depend on the rate of change of a single property at a horizon boundary. For this reason the basis for separating the horizon may need to be explicitly stated, not just the traditional generalised estimate of the amount of overall change.]{.milne}
 
-## The soil surface {#sec-pr-ssurf}
+::: {#nte-chor .callout-note appearance="minimal" collapse="true" title="Complex horizons"}
+Some horizons have an internally complex structure that nonetheless clearly represents a distinct zone within the soil profile. Examples of such may include:
+
+- Partially weathered layers comprising a mix of soil, saprolite and rock materials
+- Layers comprising a complex depositional environment, e.g. 
+  - A sequence of very thin deposits, sometimes in a repeating pattern of texture contrasts (lamellae or lamina)
+  - Volcanic ash products of contrasting texture, weathered in place (soft blocks or bombs in a finer ash matrix)
+- Layers that have been partially mixed together by tectonic, biotic, climatic, or anthropic forces.
+
+These layers may require some additional parameters or notes to adequately describe but do not need to be split excessively.
+:::
+
+## Defining the soil surface {#sec-pr-ssurf}
 
 The soil surface has a slightly more restrictive definition than the land surface. The soil surface begins below the layer of fresh leaf litter or small living plants, but above organic soil materials such as peat. The mineral soil surface is further restricted, being the top of the first horizon dominated by mineral soil material. Horizon depths are defined only with reference to the soil surface overall - scrape back litter or grasses and measure from there.
 
 [draw this]{.diags}
 
 ## Recording depths {#sec-pr-depths}
+
+Horizon depths are recorded starting from the soil surface. 
 
 When examining single small cores or auger points (see @tbl-pr-gear, type [A]{.ceg}, [C1]{.ceg} and perhaps [C2]{.ceg}), record the observable upper and lower depth of each horizon from the soil surface in whole centimetres.
 
@@ -205,4 +219,74 @@ tbl_hr_frw <- gt(dat_hr_frw) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_hr_frw
+```
+
+## Parent material origin {#sec-orig}
+
+Parent material origin, or mode of emplacement, describes how soil parent materials have arrived at the point of observation. Multiple modes may have operated in different parts of the soil profile.
+
+Record one parent material origin code per soil horizon, using the codes in @tbl-ss-pmo. At the horizon level, the [An]{.ceg} Anthropic class can be subdivided by origin using the codes in @tbl-hr-antype (e.g. [Ann]{.ceg} for a fill pad in a residential housing development).
+
+```{r}
+#| label: tbl-hr-antype
+#| tbl-cap: "Subtypes of Anthropic soil materials"
+
+dat_hr_antype <-
+  tribble(~Code, ~Name, ~Description,
+          'm', 'Māori', 'Soil modifications dating from Māori arrival in New Zealand, particularly pre-modern soil management practices',
+          'p', 'Pakeha', 'Soil modifications dating from Pakeha (non-Māori) arrival in New Zealand up to modern times (e.g. European agricultural practices)',
+          'n', 'Modern', 'Anthropic modifications resulting from modern techniques or addition of modern materials to the soil (e.g. plastics)'
+          )
+
+tbl_hr_antype <- gt(dat_hr_antype) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20))
+
+tbl_hr_antype
+```
+
+Parent material origin is also summarised across the top 100 cm of the soil profile as part of defining the NZSC Soil Family (@sec-fam-pmo).
+
+## Degree of weathering {#sec-sedweath}
+
+The effects of weathering and pedogenesis vary down-profile (usually, but not always, decreasing with depth). Horizons that have experienced limited weathering may require specific descriptors (e.g. texture (@sec-tex-rec) cannot be determined on slightly weathered rocks, but bedding (@sec-reg-bed) may need to be described), so the need for these should be assessed early in the description process. Record degree of weathering once per horizon.
+
+```{r}
+#| label: tbl-hr-wdeg
+#| tbl-cap: "Degree of weathering"
+
+dat_hr_wdeg <-
+  tribble(~Code, ~Name, ~Description_c, ~Description_u,
+          1, 'Unweathered', 'Material shows no discolouration, loss of strength, or any other effects due to weathering', 'Particles are uncoated and their physical arrangement has not been disturbed (e.g. visible cross-bedding, absence of burrows). Secondary minerals and precipitates are absent',
+          2, 'Slightly weathered', 'Material may be slightly discoloured. Discontinuities have discoloured surfaces. The rock material is not significantly weaker than fresh rock material', 'Particle physical arrangement is undisturbed, but some evidence of secondary mineral formation may be evident (e.g. pyrite formation in anoxic marine sediments)',
+          3, 'Moderately weathered', 'Rock material is discoloured and discontinuity surfaces will have a greater discolouration which also penetrates slightly into the rock material. The rock material is significantly weaker than the fresh rock and part of the rock mass may have been changed to soil material.', 'Sediments may be largely discoloured by secondary mineral precipitation or illuviation; some clay minerals may have weathered from the material, some physical disturbance by meso- or macrofauna may be apparent',
+          4, 'Highly weathered', 'Rock material is discoloured and more than half the rock mass is changed to soil material. Weathering adjacent to discontinuities penetrates deeply into the rock material but lithorelicts or core stones of fresh or slightly weathered rock may still be present.', 'Sediments show substantial alteration by weathering processes as evidenced by e.g. clay mineral production, presence of secondary materials and perhaps some structural development. Evidence of bedding may be absent or difficult to identify',
+          5, 'Very highly weathered', 'All the rock mass is decomposed and externally changed to soil material, but the original rock fabric is mainly preserved.', 'Sediments have largely changed to soil material, but the expression of features like structure may be weak relative to adjacent layers',
+          6, 'Completely weathered',  'Rock is completely changed to soil material with the original fabric completely destroyed but the resulting soil is not significantly transported.', 'Sediments have completely changed to soil material')
+
+tbl_hr_wdeg <- gt(dat_hr_wdeg) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_label(Description_c = "Rock and rock fragments",
+             Description_u = "Unconsolidated sediments") |>
+  cols_width(Code ~pct(10), Name ~pct(20))
+
+tbl_hr_wdeg
 ```

@@ -13,7 +13,28 @@ library(gtExtras)
 
 # Horizon architecture {#sec-hr-arch}
 
-Soil horizon architecture comprises presence and arrangement of fine earth, stones, roots, and other materials. The presence and connectivity of voids is also described.
+Each soil horizon may include any or all of the following major components:
+
+-   Solid fraction
+    -   Fine earth
+    -   Fragments 
+    -   Artefacts 
+-   Biological fraction
+    -   Fine organic matter
+    -   Coarse organic matter 
+    -   Living plant roots
+-   Liquid fraction
+-   Void space fraction
+    - Voids
+    - Pores 
+      - Macropores 
+      - Micropores 
+
+These fractions can be communicated as compositional percentage by volume, adding to 100%. The fine-earth fraction also has its own compositional data based on finer divisions of the \< 2 mm fraction (see @sec-tex). Volumetric water content is best determined in the laboratory, and so is not described further.
+
+[complicated exploding pie chart or similar goes here]{.diags}
+
+Soil horizon architecture includes both composition and the physical arrangement of the above components. 
 
 ## Structure {#sec-hr-stru}
 
@@ -293,6 +314,7 @@ dat_hr_artefs <-
          'Cr', 'Ceramic',  'Fired clay objects, usually glazed',
          'Ce', 'Concrete', 'Concrete materials, cements',
          'Gl', 'Glass',    'Fragments from windows, containers, etc',
+         'Pl', 'Plastics', 'Artificial polymers (non-textile)',
          'Tn', 'Textiles - natural', 'Fabrics and carpets made from e.g. wool',
          'Tx', 'Textiles - artificial', 'Fabrics derived from or dominated by plastics',
          'Mt', 'Metals', 'Refined ore products',
@@ -319,7 +341,7 @@ tbl_hr_artefs
 
 ### Plastics {#sec-hr-plas}
 
-Specific assessment of macroplastics may be desired for certain applications. The following optional schema is adapted from @weber2022. For the size fractions in @tbl-hr-rockfrsz, one may describe abundance by volume plus any or all of the origin, fixation, shape, and degradation codes supplied below. Colour may also be described using common terms. Smaller plastic fragments (microplastics) may require sampling and laboratory analysis.
+More specific and detailed assessment of macroplastics may be desired for certain applications. The following optional schema is adapted from @weber2022. For the size fractions in @tbl-hr-rockfrsz, one may describe abundance by volume plus any or all of the origin, fixation, shape, and degradation codes supplied below. Colour may also be described using common terms. Smaller plastic fragments (microplastics) may require sampling and laboratory analysis.
 
 ```{r}
 #| label: tbl-hr-aorg
@@ -449,17 +471,17 @@ For rapid assessment, estimate the volume of the whole root mass as integer %, c
 
 For example: [25%]{.ceg} for a healthy pasture topsoil.
 
-For detailed assessment, provide separate estimates for roots \< 2 mm, 2 - 10 mm and \> 10 mm. Record as whole percentages, confirming [0%]{.ceg} where no roots are observable in a given size range. The data may be classified using @tbl-hr-rtab.
+For detailed assessment, provide separate estimates for the root size classes in @tbl-hr-rsz. Record as whole percentages, confirming [0%]{.ceg} where no roots are observable in a given size range. The data may be classified using @tbl-hr-rtab.
 
 ```{r}
 #| label: tbl-hr-rsz
 #| tbl-cap: "Plant root size classes for detailed assessment"
 
 dat_hr_rsz <-
-  tribble(~Code,        ~Name,  ~Description,
-            'F',     'Fine', '< 2',
-            'M',    'Medium', '2 - 10',
-            'C', 'Coarse', '> 10')
+  tribble(~Code,    ~Name,  ~Description,
+            'F',   'Fine',         '< 2',
+            'M', 'Medium',      '2 - 10',
+            'C', 'Coarse',        '> 10')
 
 tbl_hr_rsz <- gt(dat_hr_rsz) |>
   tab_options(
@@ -492,7 +514,7 @@ Where abundance is \> 0%, record how roots are distributed within the horizon u
 dat_hr_rpos <-
   tribble(~Code,        ~Name,  ~Description,
             'W',     'Within', 'Roots are primarily located within peds.',
-            'B',    'Between', 'Roots are primarily located between peds',
+            'B',    'Between', 'Roots are primarily located between peds, within fissures or along bedding planes',
             'T', 'Throughout', 'Roots are spread throughout the soil mass.',
             'U',    'Unknown', 'Sampling method did not allow reliable observation.')
 
@@ -593,3 +615,46 @@ For rapid assessment, estimate total percentage volume of pores. This will rarel
 For detailed assessment, estimate the percentage volume of macropores and micropores separately. This will require the use of a magnifier.
 
 [size example diagram here]{.diags}
+
+## Substrate-specific Features {#sec-reg}
+
+Horizons that have experienced limited weathering may exhibit geogenic features that relate to their parent material and its mode of emplacement. These can affect water movement, slope stability and plant growth [@wysocki2005; @juilleret2016].
+
+### Bedding {#sec-reg-bed}
+
+Sedimentary deposits may comprise multiple thin layers of alternating materials. These can be partly or fully consolidated, and may have been compressed, folded and/or faulted. Where degree of weathering (@tbl-hr-wdeg) is assessed at [4]{.ceg} or less and bedding is apparent:
+
+-   For rapid assessment, note bedding presence and measure the median angle of the bedding off horizontal. For example, [✔ 25°]{.ceg}.
+-   For routine assessment, measure bedding thickness range in cm, angle off horizontal, strength (@sec-cn-str), and lithology, e.g. [10-30 cm, 25°, 5 Sm/Ss]{.ceg} for thin, very firm, folded marine sediments.
+
+### Fractures {#sec-reg-fra}
+
+Rock at the base of the profile may be significantly fractured by tectonic and weathering processes. Where degree of weathering (@tbl-hr-wdeg) is assessed at [4]{.ceg} or less and fractures are apparent, note fracture type using @tbl-hr-fractyp. For each type observed also record angle off horizontal, and spacing in cm. For single fractures, record spacing as [0 cm]{.ceg}.
+
+```{r}
+#| label: tbl-hr-fractyp
+#| tbl-cap: "Fracture types"
+
+dat_hr_fractyp <-
+  tribble(~Code, ~Name, ~Description,
+          'F', 'Fault', 'Tectonically induced fractures that may cut across bedding',
+          'C', 'Crush', 'Fracture patterns induced by crushing and shearing forces',
+          'P', 'Pressure', 'Fracture patterns induced by release of overburden pressure')
+
+tbl_hr_fractyp <- gt(dat_hr_fractyp) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_hr_fractyp
+```
+

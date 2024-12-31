@@ -690,8 +690,10 @@ erDiagram
   cat        catu_boundary_width FK  "Section 12.5" 
   cat        cato_soil_moisture FK   "Section 12.6"
   %% pmo %%
-  cat        catu_parent_material_origin FK    "Section 13.7.1"
-  cat        catu_anthropic_origin_modifier FK "Section 13.7.1"
+  cat        catu_parent_material_origin FK    "Section 12.8"
+  cat        catu_anthropic_origin_modifier FK "Section 12.8"
+  %% weathering %%
+  cat        cato_horizon_weathering FK  "Section 12.9"
   }
   
   boundary_shapes {
@@ -716,16 +718,16 @@ erDiagram
   
   nzsc_parent_material_origin {
     id          id_pmo PK
-    cat         catu_pmo FK             "Table 24.5"
-    txt         txt_pmo_name            "Table 24.5"
-    txt         txt_pmo_desc            "Table 24.5"  
+    cat         catu_pmo FK             "Table 25.5"
+    txt         txt_pmo_name            "Table 25.5"
+    txt         txt_pmo_desc            "Table 25.5"  
   }
   
   parent_material_origin_mod {
     id          id_pmo_mod PK
-    cat         catu_pmo_mod FK         "Table 13.1"
-    txt         txt_pmo_mod_name        "Table 13.1"
-    txt         txt_pmo_mod_desc        "Table 13.1"  
+    cat         catu_pmo_mod FK         "Table 12.5"
+    txt         txt_pmo_mod_name        "Table 12.5"
+    txt         txt_pmo_mod_desc        "Table 12.5"  
   }
   
 ```
@@ -865,9 +867,9 @@ erDiagram
     cat        catu_structure_type FK     "Section 14.1.1"
     cat        cato_structure_grade FK    "Section 14.1.2"
     cat        cato_structure_shape FK    "Section 14.1.3"
-    num[0-Inf] amt_structure_size_med_mm        "Section 14.1.4" 
-    num[0-Inf] amt_structure_size_min_mm        "Section 14.1.4" 
-    num[0-Inf] amt_structure_size_max_mm        "Section 14.1.4"
+    num[0-Inf] amt_structure_size_med_mm  "Section 14.1.4" 
+    num[0-Inf] amt_structure_size_min_mm  "Section 14.1.4" 
+    num[0-Inf] amt_structure_size_max_mm  "Section 14.1.4"
   }
   
 
@@ -885,7 +887,7 @@ erDiagram
     cat        cato_rock_fragment_size FK       "Section 14.2.1"
     cat        catu_rock_fragment_shape FK      "Section 14.2.1"
     num[0-100] num_rock_fragment_p         
-    cat        catu_rock_fragment_lithology FK  "Section 24.1.2"
+    cat        catu_rock_fragment_lithology FK  "Section 25.1.2"
   }
   
   fragment_sizes_simple {
@@ -904,8 +906,8 @@ erDiagram
   
   nzsc_lithologies {
     id          id_nzsc_lithology PK     
-    cat         catu_nzsc_lithology FK        "Table 24.2"
-    txt         txt_nzsc_lithology_name       "Table 24.2"
+    cat         catu_nzsc_lithology FK        "Table 25.2"
+    txt         txt_nzsc_lithology_name       "Table 25.2"
   }
   
   %% %%
@@ -1238,8 +1240,8 @@ erDiagram
   
   nzsc_lithologies {
     id          id_nzsc_lithology PK    
-    cat         catu_nzsc_lithology FK        "Table 24.2"
-    txt         txt_nzsc_lithology_name       "Table 24.2"
+    cat         catu_nzsc_lithology FK        "Table 25.2"
+    txt         txt_nzsc_lithology_name       "Table 25.2"
   }
 
   nzsc_mineralogies {
@@ -1446,20 +1448,20 @@ erDiagram
   consistence_tests {
     id          id_site PK
     id          id_horizon PK
-    bool        ind_cohesive "Section 18.1.1"
+    bool        ind_cohesive                "Section 18.1.1"
     cat         cato_strength_unconfined FK "Section 18.2.1"
-    cat         cato_strength_ped FK "Section 18.2.2"
-    cat         cato_strength_remoulded FK "Section 18.2.3"
-    cat         cato_strength_plastic FK "Section 18.2.4"
-    cat         cato_sensitivity FK "Section 18.3"
-    cat         cato_plasticity FK "Section 18.4"
-    cat         cato_stickiness FK "Section 18.5"
-    bool        ind_dilatent "Section 18.6"
-    cat         cato_penetration_rest FK "Section 18.7"
-    cat         cato_packing FK "Section 18.8"
-    cat         catu_failure FK "Section 18.9"
-    cat         cato_fluidity FK "Section 18.10"
-    cat         catu_induration FK "Section 18.11"
+    cat         cato_strength_ped FK        "Section 18.2.2"
+    cat         cato_strength_remoulded FK  "Section 18.2.3"
+    cat         cato_strength_plastic FK    "Section 18.2.4"
+    cat         cato_sensitivity FK         "Section 18.3"
+    cat         cato_plasticity FK          "Section 18.4"
+    cat         cato_stickiness FK          "Section 18.5"
+    bool        ind_dilatent                "Section 18.6"
+    cat         cato_penetration_rest FK    "Section 18.7"
+    cat         cato_packing FK             "Section 18.8"
+    cat         catu_failure FK             "Section 18.9"
+    cat         cato_fluidity FK            "Section 18.10"
+    cat         catu_induration FK          "Section 18.11"
   }
 
   strengths {
@@ -1562,18 +1564,18 @@ erDiagram
   field_tests {
     id          id_site PK
     num[0-Inf]  amt_test_depth_cm
-    cat         cato_pH_raupach FK "Section 19.1.1"
-    num[0-14]   val_pH_water "Section 19.1.2"
-    num[0-14]   val_pH_h2o2 "Section 19.1.3"
-    cat         cato_h2o2_rxn FK "Section 19.1.3"
-    num[0-Inf]  amt_ec_dSm "Section 19.1.4"
-    cat         cato_hcl_rxn FK "Section 19.1.5"
-    bool        ind_mn_rxn "Section 19.1.6"
-    cat         cato_naf_rxn FK "Section 19.1.7"
-    bool        ind_22bip_rxn "Section 19.1.8"
+    cat         cato_pH_raupach FK  "Section 19.1.1"
+    num[0-14]   val_pH_water        "Section 19.1.2"
+    num[0-14]   val_pH_h2o2         "Section 19.1.3"
+    cat         cato_h2o2_rxn FK    "Section 19.1.3"
+    num[0-Inf]  amt_ec_dSm          "Section 19.1.4"
+    cat         cato_hcl_rxn FK     "Section 19.1.5"
+    bool        ind_mn_rxn          "Section 19.1.6"
+    cat         cato_naf_rxn FK     "Section 19.1.7"
+    bool        ind_22bip_rxn       "Section 19.1.8"
     bool        ind_water_repellent "Section 19.1.9"
-    cat         cato_slaking FK "Section 19.1.10"
-    cat         cato_dispersion FK "Section 19.1.10"
+    cat         cato_slaking FK     "Section 19.1.10"
+    cat         cato_dispersion FK  "Section 19.1.10"
   }
 
   pH_raupachs {
@@ -1583,9 +1585,9 @@ erDiagram
 
   h2o2_rxns {
     id          id_h2o2_rxn PK
-    cat         catu_h2o2_rxn FK         "Table 19.1"
-    txt         txt_h2o2_rxn_name        "Table 19.1"
-    txt         txt_h2o2_rxn_desc        "Table 19.1"
+    cat         catu_h2o2_rxn FK        "Table 19.1"
+    txt         txt_h2o2_rxn_name       "Table 19.1"
+    txt         txt_h2o2_rxn_desc       "Table 19.1"
   }
 
   hcl_rxns {
@@ -1604,16 +1606,16 @@ erDiagram
 
   slaking_rxns {
     id          id_slaking_rxn PK
-    cat         catu_slaking_rxn FK         "Table 19.4"
-    txt         txt_slaking_rxn_name        "Table 19.4"
-    txt         txt_slaking_rxn_desc        "Table 19.4"
+    cat         catu_slaking_rxn FK     "Table 19.4"
+    txt         txt_slaking_rxn_name    "Table 19.4"
+    txt         txt_slaking_rxn_desc    "Table 19.4"
   }
   
   dispersion_rxns {
     id          id_dispersion_rxn PK
-    cat         catu_dispersion_rxn FK         "Table 19.5"
-    txt         txt_dispersion_rxn_name        "Table 19.5"
-    txt         txt_dispersion_rxn_desc        "Table 19.5"
+    cat         catu_dispersion_rxn FK  "Table 19.5"
+    txt         txt_dispersion_rxn_name "Table 19.5"
+    txt         txt_dispersion_rxn_desc "Table 19.5"
   }
   
 ```

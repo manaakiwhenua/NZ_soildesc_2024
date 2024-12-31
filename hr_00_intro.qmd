@@ -6,29 +6,8 @@ editor: source
 ```{r}
 library(tidyverse) 
 library(gt)
-library(gtExtras)
-library(ggtern)
-library(extrafont)
-loadfonts(quiet = TRUE)
 ```
 
-## Composition
-
-Each soil horizon comprises the following major components:
-
--   Mineral fraction
-    -   Fine earth (mineral particles \< 2 mm)
-    -   Rock fragments (mineral particles \> 2 mm)
-    -   Concentrations (precipitates of any size)
--   Biological fraction
-    -   Fine organic matter
-    -   Coarse organic matter (timber, plant roots)
--   Liquid fraction (moisture content)
--   Voids
-
-These fractions can be communicated as percentage by volume, adding to 100%. The fine-earth fraction also has its own compositional data based on finer divisions of the \< 2 mm fraction (see @sec-tex). Volumetric water content is best determined in the laboratory, and so is not described further in this section.
-
-[complicated exploding pie chart or similar goes here]{.diags}
 
 ## Architecture {#sec-arch}
 
@@ -50,39 +29,3 @@ Composition and architecture give rise to particular soil physical behaviours. T
 
 Soil chemistry can be partially assessed in the field using the tests in @sec-chem.
 
-## Origins {#sec-orig}
-
-### Parent material origin
-
-Parent material origin, or mode of emplacement, describes how soil parent materials have arrived at the point of observation. Multiple modes may have operated in different parts of the soil profile.
-
-Record one parent material origin code per soil horizon, using the codes in @tbl-ss-pmo. At the horizon level, the [An]{.ceg} Anthropic class can be subdivided by origin using the codes in @tbl-hr-antype (e.g. [Ann]{.ceg} for a fill pad in a residential housing development).
-
-```{r}
-#| label: tbl-hr-antype
-#| tbl-cap: "Subtypes of Anthropic soil materials"
-
-dat_hr_antype <-
-  tribble(~Code, ~Name, ~Description,
-          'm', 'Māori', 'Soil modifications dating from Māori arrival in New Zealand, particularly pre-modern soil management practices',
-          'p', 'Pakeha', 'Soil modifications dating from Pakeha (non-Māori) arrival in New Zealand up to modern times (e.g. European agricultural practices)',
-          'n', 'Modern', 'Anthropic modifications resulting from modern techniques or addition of modern materials to the soil (e.g. plastics)'
-          )
-
-tbl_hr_antype <- gt(dat_hr_antype) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red',
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10), Name ~pct(20))
-
-tbl_hr_antype
-```
-
-Parent material origin is also summarised across the top 100 cm of the soil profile as part of defining the NZSC Soil Family (@sec-fam-pmo).
