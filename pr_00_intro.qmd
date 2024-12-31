@@ -227,11 +227,11 @@ When the target depth cannot be achieved, note the reason for stopping early usi
 
 dat_ss_stoppage <-
   tribble(~Code, ~Name, ~Description,
-          'B', 'Bedrock', 'underlying rock mass encountered, no more soil to describe',
-          'R', 'Resistance', 'soil too difficult to extract with available equipment',
-          'C', 'Collapse', 'excavation unstable or unsafe due to wetness or loose particle packing',
-          'I', 'Identified', 'the depth required to confirm a key parameter was reached',
-          'O', 'Other', 'circumstances unrelated to the soil itself caused early stoppage')
+          'B', 'Bedrock', 'Underlying fresh rock mass encountered, no more soil or weathering substrate to describe',
+          'R', 'Resistance', 'Materials too difficult to extract with available equipment',
+          'C', 'Collapse', 'Excavation unstable or unsafe due to e.g. wetness or loose particle packing',
+          'I', 'Identified', 'The depth required to confirm a target parameter of interest was reached',
+          'O', 'Other', 'Circumstances unrelated to the soil itself caused early stoppage')
 
 tbl_ss_stoppage <- gt(dat_ss_stoppage) |>
    tab_options(
