@@ -56,7 +56,7 @@ Slope data for a site can be extracted from a DEM, provided some conditions are 
 -   Cell size should be less than 10 m; larger cells systematically underestimate local slope
 -   DEM source should ideally be of type [D]{.ceg} for acceptable accuracy (see @sec-loc-abs-elev)
 -   Extract the median slope within a 20 m radius, not the single value directly under the recorded point
--   Review and, if necessary, adjust slopes extracted from sites described on exposures. These may be overestimates (e.g. where a track cuts into a slope, the values upslope behind the site would better represent the landform). Sites located close to landform or landscape boundaries may also need review.
+-   Review and, if necessary, adjust slopes extracted from sites described on exposures. These may be overestimates (e.g. where a track cuts into a slope, the values upslope behind the site would better represent the soil-forming environment). Sites located close to landform or landscape boundaries may also need review.
 :::
 
 ## Aspect {#sec-pr-aspect}
@@ -164,7 +164,7 @@ It will be unusual to encounter more than three components at any one site.
 
 Information about surface water presence can contribute to drainage assessments.
 
-Where water is present above the landform surface, as well as noting its areal dominance above, note the type and degree of persistence using the codes in @tbl-pr-swater and @tbl-pr-swaterp below.
+Where water is present above the site surface, as well as noting its areal dominance above, note the type and degree of persistence using the codes in @tbl-pr-swater and @tbl-pr-swaterp below.
 
 ```{r}
 #| label: tbl-pr-swater
@@ -232,7 +232,7 @@ Soil surface cracking can occur for a number of reasons:
 -   Sediment was originally deposited underwater (e.g. during a flood) and cracks on drying out.
 -   Mass movement or earthquake has caused surface heave.
 
-Within the landform, record surface crack presence/persistence using the codes in @tbl-pr-cracktype. If present, record spatial arrangement using the codes in @tbl-pr-crackshape. For detailed descriptions, report median width and spacing between cracks in cm.
+Within the site, record surface crack presence/persistence using the codes in @tbl-pr-cracktype. If present, record spatial arrangement using the codes in @tbl-pr-crackshape. For detailed descriptions, report median width and spacing between cracks in cm.
 
 e.g. [RT P 0.5 cm, 15 cm]{.ceg} for surface cracking patterns common to Vertic Melanic soils.
 
@@ -294,7 +294,7 @@ Recent weather data is useful for interpreting surface crack information (@sec-w
 
 ## Microrelief {#sec-pr-micror}
 
-Microrelief occurs within a landform, so its components are smaller than the landform itself - usually too small to be sensed remotely. Its presence helps signify particular soil types and influences many small-scale soil processes such as local water infiltration, accumulation of surface litter, and topsoil development.
+Microrelief occurs within a landform, so its components are smaller than the landform itself - often too small to be reliably sensed remotely. Its presence helps signify particular soil types and influences many small-scale soil processes such as local water infiltration, accumulation of surface litter, and topsoil development.
 
 ### Natural Microrelief {#sec-pr-microrn}
 
@@ -308,9 +308,9 @@ Record the dominant microrelief type using the codes in @tbl-pr-micreltype. For 
 
 dat_pr_micreltype <-
   tribble(~Code, ~Name, ~Description,
-          'N', 'None',   'Landform surface is naturally smooth or level', 
+          'N', 'None',   'Site surface is naturally smooth or level', 
           'G', 'Gilgai', 'Induced by shrink-swell clay activity',
-          'S', 'Swamp',  'Hummocky landforms common in wetland areas, derived by biotic activity',
+          'S', 'Swamp',  'Hummocky surfaces common in wetland areas, derived by biotic activity',
           'K', 'Karst',  'Induced by subsurface collapse in limestone-dominated landscapes',
           'A', 'Animal', 'Trampling or pugging induced by larger animals standing on low-slope ground (cows, pigs, ungulates)',
           'T', 'Terracettes', 'Small terraces on moderate to steep slopes, generally induced by larger animals navigating the terrain',
@@ -345,8 +345,8 @@ Record the dominant anthropogenic microrelief type using the codes in @tbl-pr-am
 
 dat_pr_micreltype <-
   tribble(~Code, ~Name, ~Description,
-          'N', 'None',        'Landform surface is not significantly altered by humans', 
-          'C', 'Smoothed',    'Landform surface has been smoothed, contoured, rock-picked, infilled or levelled, beyond normal tillage effects',
+          'N', 'None',        'Site surface is not significantly altered by humans', 
+          'C', 'Smoothed',    'Site surface has been smoothed, contoured, rock-picked, infilled or levelled, beyond normal tillage effects',
           'B', 'Raised Beds', 'Elevated areas have been created and maintained for specific crops, e.g. raised rows or puke for kūmara',
           'R', 'Terraces and tracks', 'Hillsides have been cut/filled into terraces, or tracks cut in across the slope',
           'D', 'Drained',     'Open drainage ditches have been installed'
