@@ -82,23 +82,23 @@ tbl_ss_lcdb
 
 ## Land Use {#sec-luse}
 
-New Zealand currently lacks an official land use classification framework, but a proposal has been developed [@law2024] and can be implemented during soil survey work. As shown in @fig-ss-nzluc, the classification has three nested levels with increasing specificity. The system also allows for recording further information as 'attributes' of the land use (e.g tenure or management practices). This classification can be applied independent of scale, so advice on how and when to apply it to Landscapes, Landforms, and Profiles follows.
+New Zealand currently lacks an official land use classification framework, but a proposal has been developed [@law2024] and can be implemented during soil survey work. As shown in @fig-ss-nzluc, the classification has three nested levels with increasing specificity. The system also allows for recording further information as 'attributes' of the land use (e.g tenure or management practices). This classification can be applied independent of scale, so advice on how and when to apply it to Landscapes and Landforms follows.
 
 Land use classification does not have to be done in the field provided adequate supporting information (notes and photographs) are available for later use. Given that the classification is expected to evolve over time, the observation date can be used to infer the edition in use.
 
 ![Overview of the New Zealand Land Use Management classification system (reproduced from @law2024, p. 44)](data/nzluc_snip.png){#fig-ss-nzluc fig-alt='A diagram of the NZ Land Use CLassification' width=95% .lightbox}
 
-### Land use at Landscape scale
+### Land use at Landscape scale {#sec-luse-lsc}
 
 The Landscape will most likely contain multiple land uses. Record the primary land use and up to two ancillary land uses, but only to the second level of the classification. Uses recorded must be considered to occupy at least 20% of the landscape under examination.
 
 This parameter is optional as it may only be useful when writing high-level reporting or metadata.
 
-### Land use at Landform scale
+### Land use at Landform scale {#sec-luse-lfm}
 
-The Landform is a more local concept. As such it is less likely to contain multiple land uses, and these should be recorded at the third level of the classification. Record the primary land use and up to two ancillary land uses. These do not have to be contained within the land uses recorded at Landscape level, as they may be locally distinct. The uses recorded should occupy at least 20% of the landform under consideration.
+The Landform is a more local concept. As such it is less likely to contain multiple land uses, and these should be recorded at the third level of the classification. Optionally, record the primary land use within the landform, and up to two ancillary land uses. These do not have to be contained within the land uses recorded at Landscape level, as they may be locally distinct. The uses recorded should occupy at least 20% of the landform under consideration. Where more than one use occurs within a Landform, the primary use is the one considered to have had the most impact on the soil profile being described.
 
-Where more than one use occurs within a Landform, the primary use is the one considered to have had the most impact on the soil profile being described. Attribute each Landform-scale land use with the degree to which it is considered to have impacted the soil profile, using @tbl-ss-luimp.
+Attribute any recorded land uses with the degree to which they are considered to have impacted the soil profile being described, using @tbl-ss-luimp.
 
 ```{r}
 #| label: tbl-ss-luimp
