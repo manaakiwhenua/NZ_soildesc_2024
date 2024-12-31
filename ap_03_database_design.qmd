@@ -718,9 +718,9 @@ erDiagram
   
   nzsc_parent_material_origin {
     id          id_pmo PK
-    cat         catu_pmo FK             "Table 25.5"
-    txt         txt_pmo_name            "Table 25.5"
-    txt         txt_pmo_desc            "Table 25.5"  
+    cat         catu_pmo FK             "Table 24.5"
+    txt         txt_pmo_name            "Table 24.5"
+    txt         txt_pmo_desc            "Table 24.5"  
   }
   
   parent_material_origin_mod {
@@ -814,47 +814,47 @@ erDiagram
     id         id_site PK
     id         id_horizon PK
     %% structures rapid (detailed in subtable) %%
-    cat        catu_structure_type FK            "Section 14.1.1"
-    cat        cato_structure_grade FK           "Section 14.1.2"
-    cat        catu_structure_shape FK           "Section 14.1.3"
-    cat        cato_structure_size FK            "Section 14.1.4"
+    cat        catu_structure_type FK            "Section 13.1.1"
+    cat        cato_structure_grade FK           "Section 13.1.2"
+    cat        catu_structure_shape FK           "Section 13.1.3"
+    cat        cato_structure_size FK            "Section 13.1.4"
     %% all frags super rapid (record this OR the next three) %%
     num[0-100] amt_total_frags_p                "Section 4.2"
     %% rock frags rapid (detailed in subtable) %%
-    num[0-100] amt_rockfrags_p                  "Section 14.2"
+    num[0-100] amt_rockfrags_p                  "Section 13.2"
     %% notrock frags rapid %%
-    num[0-100] amt_otherfrags_p                 "Section 14.2.1.1"
+    num[0-100] amt_otherfrags_p                 "Section 13.2.1.1"
     %% notrock frags rapid %%
-    num[0-100] amt_artefacts_p                  "Section 14.2.1.2"
+    num[0-100] amt_artefacts_p                  "Section 13.2.1.2"
     %% roots rapid %%
-    num[0-100] amt_total_roots_p                "Section 14.3.1"
-    cat        catu_total_roots_pos FK          "Section 14.3.2"
+    num[0-100] amt_total_roots_p                "Section 13.3.1"
+    cat        catu_total_roots_pos FK          "Section 13.3.2"
     %% void rapid %%
-    num[0-100] amt_total_voids_p                "Section 14.4"
+    num[0-100] amt_total_voids_p                "Section 13.4"
     %% pores rapid %%
-    num[0-10]  amt_total_pores_p                "Section 14.5"
+    num[0-10]  amt_total_pores_p                "Section 13.5"
     %% pores detailed (could also spin out to subtable) %%
-    num[0-10]  amt_macropores_p                 "Section 14.5"
-    num[0-10]  amt_micropores_p                 "Section 14.5"
+    num[0-10]  amt_macropores_p                 "Section 13.5"
+    num[0-10]  amt_micropores_p                 "Section 13.5"
                   
   }
 
   structure_types {
     id          id_structure_type PK      
-    cat         catu_structure_type FK    "Table 14.1"
-    txt         txt_structure_type_name   "Table 14.1"
-    txt         txt_structure_type_desc   "Table 14.1"
+    cat         catu_structure_type FK    "Table 13.1"
+    txt         txt_structure_type_name   "Table 13.1"
+    txt         txt_structure_type_desc   "Table 13.1"
   }
 
   structure_grades {
     id          id_structure_grade PK      
-    cat         cato_structure_grade FK    "Table 14.2"
-    txt         txt_structure_grade_name   "Table 14.2"
-    txt         txt_structure_grade_desc   "Table 14.2"
+    cat         cato_structure_grade FK    "Table 13.2"
+    txt         txt_structure_grade_name   "Table 13.2"
+    txt         txt_structure_grade_desc   "Table 13.2"
   }
 
   structure_sizes_rapid {
-    id          id_structure_size_rapid PK      "Section 14.1.4"
+    id          id_structure_size_rapid PK      "Section 13.1.4"
     cat         catu_structure_size_rapid FK    "C, F"
     txt         txt_structure_size_rapid_name   "Coarse, Fine"
   }
@@ -864,50 +864,50 @@ erDiagram
     id id_site PK
     id id_horizon PK
     id id_structure PK
-    cat        catu_structure_type FK     "Section 14.1.1"
-    cat        cato_structure_grade FK    "Section 14.1.2"
-    cat        cato_structure_shape FK    "Section 14.1.3"
-    num[0-Inf] amt_structure_size_med_mm  "Section 14.1.4" 
-    num[0-Inf] amt_structure_size_min_mm  "Section 14.1.4" 
-    num[0-Inf] amt_structure_size_max_mm  "Section 14.1.4"
+    cat        catu_structure_type FK     "Section 13.1.1"
+    cat        cato_structure_grade FK    "Section 13.1.2"
+    cat        cato_structure_shape FK    "Section 13.1.3"
+    num[0-Inf] amt_structure_size_med_mm  "Section 13.1.4" 
+    num[0-Inf] amt_structure_size_min_mm  "Section 13.1.4" 
+    num[0-Inf] amt_structure_size_max_mm  "Section 13.1.4"
   }
   
 
   structure_shapes {
     id          id_structure_shape PK     
-    cat         catu_structure_shape FK        "Table 14.3"
-    txt         txt_structure_shape_name       "Table 14.3"
-    txt         txt_structure_shape_desc       "Table 14.3"
+    cat         catu_structure_shape FK        "Table 13.3"
+    txt         txt_structure_shape_name       "Table 13.3"
+    txt         txt_structure_shape_desc       "Table 13.3"
   }
   
   horizon_rock_fragments {
     id         id_site PK
     id         id_horizon PK
     id         id_rock_fragment PK
-    cat        cato_rock_fragment_size FK       "Section 14.2.1"
-    cat        catu_rock_fragment_shape FK      "Section 14.2.1"
+    cat        cato_rock_fragment_size FK       "Section 13.2.1"
+    cat        catu_rock_fragment_shape FK      "Section 13.2.1"
     num[0-100] num_rock_fragment_p         
-    cat        catu_rock_fragment_lithology FK  "Section 25.1.2"
+    cat        catu_rock_fragment_lithology FK  "Section 24.1.2"
   }
   
   fragment_sizes_simple {
     id          id_rockfrag_size PK    
-    cat         catu_rockfrag_size FK         "Table 14.4"
-    txt         txt_rockfrag_size_name        "Table 14.4"
-    txt         txt_rockfrag_size_desc        "Table 14.4"
+    cat         catu_rockfrag_size FK         "Table 13.4"
+    txt         txt_rockfrag_size_name        "Table 13.4"
+    txt         txt_rockfrag_size_desc        "Table 13.4"
   }
   
   rock_fragment_shapes {
     id          id_rockfrag_shape PK    
-    cat         catu_rockfrag_shape FK        "Table 14.5"
-    txt         txt_rockfrag_shape_name       "Table 14.5"
-    txt         txt_rockfrag_shape_desc       "Table 14.5"
+    cat         catu_rockfrag_shape FK        "Table 13.5"
+    txt         txt_rockfrag_shape_name       "Table 13.5"
+    txt         txt_rockfrag_shape_desc       "Table 13.5"
   }
   
   nzsc_lithologies {
     id          id_nzsc_lithology PK     
-    cat         catu_nzsc_lithology FK        "Table 25.2"
-    txt         txt_nzsc_lithology_name       "Table 25.2"
+    cat         catu_nzsc_lithology FK        "Table 24.2"
+    txt         txt_nzsc_lithology_name       "Table 24.2"
   }
   
   %% %%
@@ -915,16 +915,16 @@ erDiagram
     id         id_site PK
     id         id_horizon PK
     id         id_other_fragment PK
-    cat        cato_other_fragment_size FK      "Table 14.4"
-    cat        cato_other_fragment FK           "Table 14.6"
-    num[0-100] num_rock_fragment_p              "Section 14.2.1"
+    cat        cato_other_fragment_size FK      "Table 13.4"
+    cat        cato_other_fragment FK           "Table 13.6"
+    num[0-100] num_rock_fragment_p              "Section 13.2.1"
   }  
   
   other_fragment_types {
     id          id_other_fragment PK
-    cat         cato_other_fragment FK        "Table 14.6"
-    txt         txt_other_fragment_name       "Table 14.6"
-    txt         txt_other_fragment_desc       "Table 14.6"
+    cat         cato_other_fragment FK        "Table 13.6"
+    txt         txt_other_fragment_name       "Table 13.6"
+    txt         txt_other_fragment_desc       "Table 13.6"
   }
 
   %% %%
@@ -932,16 +932,16 @@ erDiagram
     id         id_site PK
     id         id_horizon PK
     id         id_artefact PK
-    cat        cato_artefact_size FK           "Table 14.4"
-    cat        cato_artefact FK                "Table 14.7"
-    num[0-100] num_artefact_p                  "Section 14.2.2"
+    cat        cato_artefact_size FK           "Table 13.4"
+    cat        cato_artefact FK                "Table 13.7"
+    num[0-100] num_artefact_p                  "Section 13.2.2"
   } 
   
   artefact_types {
     id          id_artefact PK
-    cat         catu_artefact FK             "Table 14.7"
-    txt         txt_artefact_type_name       "Table 14.7"
-    txt         txt_artefact_type_desc       "Table 14.7"
+    cat         catu_artefact FK             "Table 13.7"
+    txt         txt_artefact_type_name       "Table 13.7"
+    txt         txt_artefact_type_desc       "Table 13.7"
   }
   
   %% %%
@@ -949,39 +949,39 @@ erDiagram
     id         id_site PK
     id         id_horizon PK
     id         id_plastic PK
-    cat        catu_plastic FK          "Table 14.8"
-    num[0-100] num_plastic_p            "Section 14.2.4"
-    cat        cato_plastic_fixation    "Table 14.9"
-    cat        catu_plastic_shape       "Table 14.10"
-    cat        cato_plastic_degradation "Table 14.11"
+    cat        catu_plastic FK          "Table 13.8"
+    num[0-100] num_plastic_p            "Section 13.2.4"
+    cat        cato_plastic_fixation    "Table 13.9"
+    cat        catu_plastic_shape       "Table 13.10"
+    cat        cato_plastic_degradation "Table 13.11"
   } 
   
   plastic_types {
     id          id_plastic PK
-    cat         catu_plastic FK        "Table 14.8"
-    txt         txt_plastic_name       "Table 14.8"
-    txt         txt_plastie_desc       "Table 14.8"
+    cat         catu_plastic FK        "Table 13.8"
+    txt         txt_plastic_name       "Table 13.8"
+    txt         txt_plastie_desc       "Table 13.8"
   }
 
   plastic_fixations {
     id          id_plastic_fixation PK
-    cat         catu_plastic_fixation FK        "Table 14.9"
-    txt         txt_plastic_fixation_name       "Table 14.9"
-    txt         txt_plastic_fixation_desc       "Table 14.9"
+    cat         catu_plastic_fixation FK        "Table 13.9"
+    txt         txt_plastic_fixation_name       "Table 13.9"
+    txt         txt_plastic_fixation_desc       "Table 13.9"
   }  
   
   plastic_shapes {
     id          id_plastic_shape PK
-    cat         catu_plastic_shape FK        "Table 14.10"
-    txt         txt_plastic_shape_name       "Table 14.10"
-    txt         txt_plastic_shape_desc       "Table 14.10"
+    cat         catu_plastic_shape FK        "Table 13.10"
+    txt         txt_plastic_shape_name       "Table 13.10"
+    txt         txt_plastic_shape_desc       "Table 13.10"
   }    
   
   plastic_degradations {
     id          id_plastic_degradations PK
-    cat         catu_plastic_degradations FK        "Table 14.11"
-    txt         txt_plastic_degradations_name       "Table 14.11"
-    txt         txt_plastic_degradations_desc       "Table 14.11"
+    cat         catu_plastic_degradations FK        "Table 13.11"
+    txt         txt_plastic_degradations_name       "Table 13.11"
+    txt         txt_plastic_degradations_desc       "Table 13.11"
   }   
   
   %% %%
@@ -989,23 +989,23 @@ erDiagram
     id         id_site PK
     id         id_horizon PK
     id         id_root PK
-    cat        cato_root_size FK           "Table 14.12"
-    cat        cato_root_pos FK            "Table 14.13"
-    num[0-100] num_root_p                  "Section 14.3.1"
+    cat        cato_root_size FK           "Table 13.12"
+    cat        cato_root_pos FK            "Table 13.13"
+    num[0-100] num_root_p                  "Section 13.3.1"
   } 
 
   root_sizes_simple {
     id          id_root_size PK     
-    cat         catu_root_size FK         "Table 14.12"
-    txt         txt_root_size_name        "Table 14.12"
-    txt         txt_root_size_desc        "Table 14.12"
+    cat         catu_root_size FK         "Table 13.12"
+    txt         txt_root_size_name        "Table 13.12"
+    txt         txt_root_size_desc        "Table 13.12"
   }
   
   root_positions {
     id          id_root_pos PK     
-    cat         catu_root_pos FK         "Table 14.13"
-    txt         txt_root_pos_name        "Table 14.13"
-    txt         txt_root_pos_desc        "Table 14.13"
+    cat         catu_root_pos FK         "Table 13.13"
+    txt         txt_root_pos_name        "Table 13.13"
+    txt         txt_root_pos_desc        "Table 13.13"
   }
 
   %% %%
@@ -1013,23 +1013,23 @@ erDiagram
     id         id_site PK
     id         id_horizon PK
     id         id_void PK
-    cat        catu_void FK                 "Table 14.14"
-    cat        catu_void_conn FK            "Table 14.15"
-    num[0-100] num_void_p                   "Section 14.4"
+    cat        catu_void FK                 "Table 13.14"
+    cat        catu_void_conn FK            "Table 13.15"
+    num[0-100] num_void_p                   "Section 13.4"
   } 
   
   void_types {
     id          id_void PK 
-    cat         catu_void FK              "Table 14.14"
-    txt         txt_void_name             "Table 14.14"
-    txt         txt_void_desc             "Table 14.14"
+    cat         catu_void FK              "Table 13.14"
+    txt         txt_void_name             "Table 13.14"
+    txt         txt_void_desc             "Table 13.14"
   }  
 
   void_conns {
     id          id_void_conn PK 
-    cat         catu_void_conn FK         "Table 14.15"
-    txt         txt_void_conn_name        "Table 14.15"
-    txt         txt_void_conn_desc        "Table 14.15"
+    cat         catu_void_conn FK         "Table 13.15"
+    txt         txt_void_conn_name        "Table 13.15"
+    txt         txt_void_conn_desc        "Table 13.15"
   }  
   
 ```
@@ -1074,11 +1074,11 @@ erDiagram
   horizon_matrix_colours {
     id          id_site PK
     id          id_horizon PK
-    id          id_colour_matrix PK        "Section 15.2"
+    id          id_colour_matrix PK        "Section 14.2"
     %% can also split into hue/value/chroma with subtables %%
-    cat         cato_matrix_munsell        "Section 15.2"
+    cat         cato_matrix_munsell        "Section 14.2"
     %% no simple colours on the matrix!! %%
-    cat         catu_colour_moisture       "Section 15.2"
+    cat         catu_colour_moisture       "Section 14.2"
   }
   
   horizon_colour_patterns {
@@ -1086,15 +1086,15 @@ erDiagram
     id          id_horizon PK
     id          id_colour_pattern PK
     %% either %%
-    cat         cato_pattern_munsell FK        "Section 15.2"
+    cat         cato_pattern_munsell FK        "Section 14.2"
     %% or, %%
-    cat         catu_pattern_short_colour FK   "Section 15.1.1"
-    cat         catu_pattern_type FK           "Section 15.3.1"
-    num[0-100]  amt_pattern_p                  "Section 15.3.2"
-    cat         catu_pattern_shape  FK         "Section 15.3.3"
-    num[0-Inf]  amt_pattern_size_mm            "Section 15.3.4"
-    cat         cato_pattern_contrast FK       "Section 15.3.5"
-    cat         cato_pattern_edge FK           "Section 15.3.6"
+    cat         catu_pattern_short_colour FK   "Section 1r.1.1"
+    cat         catu_pattern_type FK           "Section 14.3.1"
+    num[0-100]  amt_pattern_p                  "Section 14.3.2"
+    cat         catu_pattern_shape  FK         "Section 14.3.3"
+    num[0-Inf]  amt_pattern_size_mm            "Section 14.3.4"
+    cat         cato_pattern_contrast FK       "Section 14.3.5"
+    cat         cato_pattern_edge FK           "Section 14.3.6"
    }
  
   munsell_colours {
@@ -1106,37 +1106,37 @@ erDiagram
    
   short_colours {
     id          id_colour PK
-    cat         catu_colour FK            "Table 15.2"
-    txt         txt_colour_name           "Table 15.2"
-    txt         txt_colour_desc           "Table 15.2"
+    cat         catu_colour FK            "Table 14.2"
+    txt         txt_colour_name           "Table 14.2"
+    txt         txt_colour_desc           "Table 14.2"
   } 
 
   pattern_types {
     id          id_pattern PK
-    cat         catu_pattern FK           "Table 15.3"
-    txt         txt_pattern_name          "Table 15.3"
-    txt         txt_pattern_desc          "Table 15.3"
+    cat         catu_pattern FK           "Table 14.3"
+    txt         txt_pattern_name          "Table 14.3"
+    txt         txt_pattern_desc          "Table 14.3"
   } 
 
   pattern_shapes {
     id          id_pattern_shape PK
-    cat         catu_pattern_shape FK     "Table 15.4"
-    txt         txt_pattern_shape_name    "Table 15.4"
-    txt         txt_pattern_shape_desc    "Table 15.4"
+    cat         catu_pattern_shape FK     "Table 14.4"
+    txt         txt_pattern_shape_name    "Table 14.4"
+    txt         txt_pattern_shape_desc    "Table 14.4"
   }
 
   pattern_contrasts {
     id          id_pattern_contrast PK
-    cat         catu_pattern_contrast FK  "Table 15.5"
-    txt         txt_pattern_contrast_name "Table 15.5"
-    txt         txt_pattern_contrast_desc "Table 15.5"
+    cat         catu_pattern_contrast FK  "Table 14.5"
+    txt         txt_pattern_contrast_name "Table 14.5"
+    txt         txt_pattern_contrast_desc "Table 14.5"
   }
   
   pattern_edges {
     id          id_pattern_edge PK
-    cat         catu_pattern_edge FK      "Table 15.6"
-    txt         txt_pattern_edge_name     "Table 15.6"
-    txt         txt_pattern_edge_desc     "Table 15.6"
+    cat         catu_pattern_edge FK      "Table 14.6"
+    txt         txt_pattern_edge_name     "Table 14.6"
+    txt         txt_pattern_edge_desc     "Table 14.6"
   }
 ```
 
@@ -1179,69 +1179,69 @@ erDiagram
   horizon_texture {
     id          id_site PK
     id          id_horizon PK
-    cat         catu_texture_simple FK    "Section 16.1.1"
-    cat         catu_texture FK           "Section 16.1"
-    cat         catu_texture_sandmod FK   "Section 16.2.1"
-    cat         catu_texture_orgmod FK    "Section 16.2.2"
-    cat         catu_organic_type FK      "Section 16.4"
-    cat         catu_organic_decomp FK    "Section 16.4.1"
-    cat         catu_organic_minmod FK    "Section 16.4.2"
-    num[0-100]  amt_sand_est_med_p        "Section 16.3"
-    num[0-100]  amt_sand_est_min_p        "Section 16.3"
-    num[0-100]  amt_sand_est_max_p        "Section 16.3"
-    num[0-100]  amt_clay_est_med_p        "Section 16.3"
-    num[0-100]  amt_clay_est_min_p        "Section 16.3"
-    num[0-100]  amt_clay_est_max_p        "Section 16.3"
+    cat         catu_texture_simple FK    "Section 15.1.1"
+    cat         catu_texture FK           "Section 15.1"
+    cat         catu_texture_sandmod FK   "Section 15.2.1"
+    cat         catu_texture_orgmod FK    "Section 15.2.2"
+    cat         catu_organic_type FK      "Section 15.4"
+    cat         catu_organic_decomp FK    "Section 15.4.1"
+    cat         catu_organic_minmod FK    "Section 15.4.2"
+    num[0-100]  amt_sand_est_med_p        "Section 15.3"
+    num[0-100]  amt_sand_est_min_p        "Section 15.3"
+    num[0-100]  amt_sand_est_max_p        "Section 15.3"
+    num[0-100]  amt_clay_est_med_p        "Section 15.3"
+    num[0-100]  amt_clay_est_min_p        "Section 15.3"
+    num[0-100]  amt_clay_est_max_p        "Section 15.3"
     cat         catu_lithology            "Section 5.2.2"
     cat         catu_mineralogy           "Section 5.3"
   }
    
   simple_textures {
     id          id_simple_texture PK
-    cat         catu_simple_texture FK    "Table 16.3"
-    txt         txt_simple_texture_name   "Table 16.3"
-    txt         txt_simple_texture_desc   "Table 16.3"
+    cat         catu_simple_texture FK    "Table 15.3"
+    txt         txt_simple_texture_name   "Table 15.3"
+    txt         txt_simple_texture_desc   "Table 15.3"
   } 
 
   mineral_textures {
     id          id_texture PK
-    cat         catu_texture FK           "Table 16.2"
-    txt         txt_texture_name          "Table 16.2"
-    txt         txt_texture_desc          "Table 16.2"
+    cat         catu_texture FK           "Table 15.2"
+    txt         txt_texture_name          "Table 15.2"
+    txt         txt_texture_desc          "Table 15.2"
   } 
 
   sand_sizes {
     id          id_sand_size PK
-    cat         catu_sand_size FK         "Table 16.4"
-    txt         txt_sand_size_name        "Table 16.4"
-    txt         txt_sand_size_desc        "Table 16.4"
+    cat         catu_sand_size FK         "Table 15.4"
+    txt         txt_sand_size_name        "Table 15.4"
+    txt         txt_sand_size_desc        "Table 15.4"
   }
 
   organic_levels {
     id          id_organic PK
-    cat         catu_organic FK           "Table 16.5"
-    txt         txt_organic_name          "Table 16.5"
-    txt         txt_organic_desc          "Table 16.5"
+    cat         catu_organic FK           "Table 15.5"
+    txt         txt_organic_name          "Table 15.5"
+    txt         txt_organic_desc          "Table 15.5"
   }
 
   organic_types {
     id          id_organic_type PK
-    cat         catu_organic_type FK    "Table 16.6"
-    txt         txt_organic_type_name   "Table 16.6"
-    txt         txt_organic_type_desc   "Table 16.6"
+    cat         catu_organic_type FK    "Table 15.6"
+    txt         txt_organic_type_name   "Table 15.6"
+    txt         txt_organic_type_desc   "Table 15.6"
   }
   
   organic_decomps {
     id          id_organic_decomp PK
-    cat         catu_organic_decomp FK    "Table 16.7"
-    txt         txt_organic_decomp_name   "Table 16.7"
-    txt         txt_organic_decomp_desc   "Table 16.7"
+    cat         catu_organic_decomp FK    "Table 15.7"
+    txt         txt_organic_decomp_name   "Table 15.7"
+    txt         txt_organic_decomp_desc   "Table 15.7"
   }
   
   nzsc_lithologies {
     id          id_nzsc_lithology PK    
-    cat         catu_nzsc_lithology FK        "Table 25.2"
-    txt         txt_nzsc_lithology_name       "Table 25.2"
+    cat         catu_nzsc_lithology FK        "Table 24.2"
+    txt         txt_nzsc_lithology_name       "Table 24.2"
   }
 
   nzsc_mineralogies {
@@ -1304,17 +1304,17 @@ erDiagram
     id          id_site PK
     id          id_horizon PK
     %% concentrations_rapid %%  
-    cat         catu_concentration_form FK       "Section 17.1"
-    num[0-100]  amt_concentration_p              "Section 17.1"
+    cat         catu_concentration_form FK       "Section 16.1"
+    num[0-100]  amt_concentration_p              "Section 16.1"
     %% coatings rapid still has to go in a subtable, see below %%
     %% rapid pans (you can only have one) %%
-    cat         catu_pan_type FK                 "Section 17.3"
+    cat         catu_pan_type FK                 "Section 16.3"
     %% add this stuff for details %%
-    cat         cato_pan_continuity  FK          "Section 17.3"
-    cat         catu_pan_structure FK            "Section 17.3"
+    cat         cato_pan_continuity  FK          "Section 16.3"
+    cat         catu_pan_structure FK            "Section 16.3"
     %% stress features (NB you get one or the other because Physics) %%
-    cat         catu_stress_type FK              "Section 17.4"
-    num[0-100]  amt_stress_p                     "Section 17.4"
+    cat         catu_stress_type FK              "Section 16.4"
+    num[0-100]  amt_stress_p                     "Section 16.4"
     
   }
    
@@ -1322,87 +1322,87 @@ erDiagram
     id          id_site PK
     id          id_horizon PK
     id          id_concentration PK
-    cat         catu_concentration_form FK       "Table 17.1"
-    cat         catu_concentration_type FK       "Table 17.2"
-    num[0-Inf]  amt_concentration_size_med_mm    "Section 17.1"
-    num[0-Inf]  amt_concentration_size_min_mm    "Section 17.1"
-    num[0-Inf]  amt_concentration_size_max_mm    "Section 17.1"
-    num[0-Inf]  amt_concentration_med_p          "Section 17.1"
-    num[0-Inf]  amt_concentration_min_p          "Section 17.1"
-    num[0-Inf]  amt_concentration_max_p          "Section 17.1"
+    cat         catu_concentration_form FK       "Table 16.1"
+    cat         catu_concentration_type FK       "Table 16.2"
+    num[0-Inf]  amt_concentration_size_med_mm    "Section 16.1"
+    num[0-Inf]  amt_concentration_size_min_mm    "Section 16.1"
+    num[0-Inf]  amt_concentration_size_max_mm    "Section 16.1"
+    num[0-Inf]  amt_concentration_med_p          "Section 16.1"
+    num[0-Inf]  amt_concentration_min_p          "Section 16.1"
+    num[0-Inf]  amt_concentration_max_p          "Section 16.1"
 
   } 
 
   concentration_forms {
     id          id_conc_form PK
-    cat         catu_conc_form FK         "Table 17.1"
-    txt         txt_conc_form_name        "Table 17.1"
-    txt         txt_conc_form_desc        "Table 17.1"
+    cat         catu_conc_form FK         "Table 16.1"
+    txt         txt_conc_form_name        "Table 16.1"
+    txt         txt_conc_form_desc        "Table 16.1"
   }
 
   concentration_types {
     id          id_conc PK
-    cat         catu_conc FK         "Table 17.2"
-    txt         txt_conc_form_name   "Table 17.2"
-    txt         txt_conc_form_desc   "Table 17.2"
+    cat         catu_conc FK         "Table 16.2"
+    txt         txt_conc_form_name   "Table 16.2"
+    txt         txt_conc_form_desc   "Table 16.2"
   }
 
   pan_types {
     id          id_pan PK
-    cat         catu_pan FK         "Table 17.4"
-    txt         txt_pan_form_name   "Table 17.4"
-    txt         txt_pan_form_desc   "Table 17.4"
+    cat         catu_pan FK         "Table 16.4"
+    txt         txt_pan_form_name   "Table 16.4"
+    txt         txt_pan_form_desc   "Table 16.4"
   }
 
   pan_continuities {
     id          id_pan_cont PK
-    cat         catu_pan_cont FK    "Table 17.5"
-    txt         txt_pan_cont_name   "Table 17.5"
-    txt         txt_pan_cont_desc   "Table 17.5"
+    cat         catu_pan_cont FK    "Table 16.5"
+    txt         txt_pan_cont_name   "Table 16.5"
+    txt         txt_pan_cont_desc   "Table 16.5"
   }
 
   pan_structures {
     id          id_pan_structure PK
-    cat         catu_pan_structure FK  "Table 17.6"
-    txt         txt_pan_structure_name "Table 17.6"
-    txt         txt_pan_structure_desc "Table 17.6"
+    cat         catu_pan_structure FK  "Table 16.6"
+    txt         txt_pan_structure_name "Table 16.6"
+    txt         txt_pan_structure_desc "Table 16.6"
   }
   
   stress_types {
     id          id_stress PK
-    cat         catu_stress FK           "Table 17.7"
-    txt         txt_stress_name          "Table 17.7"
-    txt         txt_stress_desc          "Table 17.7"
+    cat         catu_stress FK           "Table 16.7"
+    txt         txt_stress_name          "Table 16.7"
+    txt         txt_stress_desc          "Table 16.7"
   }
 
   horizon_coatings {
     id          id_site PK
     id          id_horizon PK
     id          id_coating PK
-    cat         catu_coating FK           "Section 17.2"
-    num[0-100]  amt_coating_p             "Section 17.2"
+    cat         catu_coating FK           "Section 16.2"
+    num[0-100]  amt_coating_p             "Section 16.2"
   } 
 
   coating_types {
     id          id_coating PK
-    cat         catu_coating FK         "Table 17.3"
-    txt         txt_coating_name        "Table 17.3"
-    txt         txt_coating_desc        "Table 17.3"
+    cat         catu_coating FK         "Table 16.3"
+    txt         txt_coating_name        "Table 16.3"
+    txt         txt_coating_desc        "Table 16.3"
   }
 
   horizon_bio_features {
     id          id_site PK
     id          id_horizon PK
     id          id_bio_feature PK
-    cat         catu_bio_feature FK           "Section 17.5"
-    num[0-100]  amt_bio_feature_p             "Section 17.5"
+    cat         catu_bio_feature FK           "Section 16.5"
+    num[0-100]  amt_bio_feature_p             "Section 16.5"
   }
 
   bio_feature_types {
     id          id_bio_feature PK
-    cat         catu_bio_feature FK         "Table 17.8"
-    txt         txt_bio_feature_name        "Table 17.8"
-    txt         txt_bio_feature_desc        "Table 17.8"
+    cat         catu_bio_feature FK         "Table 16.8"
+    txt         txt_bio_feature_name        "Table 16.8"
+    txt         txt_bio_feature_desc        "Table 16.8"
   }
 
 ```
@@ -1448,83 +1448,83 @@ erDiagram
   consistence_tests {
     id          id_site PK
     id          id_horizon PK
-    bool        ind_cohesive                "Section 18.1.1"
-    cat         cato_strength_unconfined FK "Section 18.2.1"
-    cat         cato_strength_ped FK        "Section 18.2.2"
-    cat         cato_strength_remoulded FK  "Section 18.2.3"
-    cat         cato_strength_plastic FK    "Section 18.2.4"
-    cat         cato_sensitivity FK         "Section 18.3"
-    cat         cato_plasticity FK          "Section 18.4"
-    cat         cato_stickiness FK          "Section 18.5"
-    bool        ind_dilatent                "Section 18.6"
-    cat         cato_penetration_rest FK    "Section 18.7"
-    cat         cato_packing FK             "Section 18.8"
-    cat         catu_failure FK             "Section 18.9"
-    cat         cato_fluidity FK            "Section 18.10"
-    cat         catu_induration FK          "Section 18.11"
+    bool        ind_cohesive                "Section 17.1.1"
+    cat         cato_strength_unconfined FK "Section 17.2.1"
+    cat         cato_strength_ped FK        "Section 17.2.2"
+    cat         cato_strength_remoulded FK  "Section 17.2.3"
+    cat         cato_strength_plastic FK    "Section 17.2.4"
+    cat         cato_sensitivity FK         "Section 17.3"
+    cat         cato_plasticity FK          "Section 17.4"
+    cat         cato_stickiness FK          "Section 17.5"
+    bool        ind_dilatent                "Section 17.6"
+    cat         cato_penetration_rest FK    "Section 17.7"
+    cat         cato_packing FK             "Section 17.8"
+    cat         catu_failure FK             "Section 17.9"
+    cat         cato_fluidity FK            "Section 17.10"
+    cat         catu_induration FK          "Section 17.11"
   }
 
   strengths {
     id          id_strength PK
-    cat         catu_strength FK         "Table 18.1"
-    txt         txt_strength_name        "Table 18.1"
-    txt         txt_strength_desc        "Table 18.1"
+    cat         catu_strength FK         "Table 17.1"
+    txt         txt_strength_name        "Table 17.1"
+    txt         txt_strength_desc        "Table 17.1"
   }
 
   sensitivities {
     id          id_sensitivity PK
-    cat         catu_sensitivity FK         "Table 18.2"
-    txt         txt_sensitivity_name        "Table 18.2"
-    txt         txt_sensitivity_desc        "Table 18.2"
+    cat         catu_sensitivity FK         "Table 17.2"
+    txt         txt_sensitivity_name        "Table 17.2"
+    txt         txt_sensitivity_desc        "Table 17.2"
   }
 
   plasticities {
     id          id_plasticity PK
-    cat         catu_plasticity FK         "Table 18.3"
-    txt         txt_plasticity_name        "Table 18.3"
-    txt         txt_plasticity_desc        "Table 18.3"
+    cat         catu_plasticity FK         "Table 17.3"
+    txt         txt_plasticity_name        "Table 17.3"
+    txt         txt_plasticity_desc        "Table 17.3"
   }
 
   stickinesses {
     id          id_stickiness PK
-    cat         catu_stickiness FK         "Table 18.4"
-    txt         txt_stickiness_name        "Table 18.4"
-    txt         txt_stickiness_desc        "Table 18.4"
+    cat         catu_stickiness FK         "Table 17.4"
+    txt         txt_stickiness_name        "Table 17.4"
+    txt         txt_stickiness_desc        "Table 17.4"
   }
 
   penrests {
     id          id_penrest PK
-    cat         catu_penrest FK         "Table 18.5"
-    txt         txt_penrest_name        "Table 18.5"
-    txt         txt_penrest_desc        "Table 18.5"
+    cat         catu_penrest FK         "Table 17.5"
+    txt         txt_penrest_name        "Table 17.5"
+    txt         txt_penrest_desc        "Table 17.5"
   }
 
   packings {
     id          id_packing PK
-    cat         catu_packing FK         "Table 18.6"
-    txt         txt_packing_name        "Table 18.6"
-    txt         txt_packing_desc        "Table 18.6"
+    cat         catu_packing FK         "Table 17.6"
+    txt         txt_packing_name        "Table 17.6"
+    txt         txt_packing_desc        "Table 17.6"
   }
 
   failures {
     id          id_failure PK
-    cat         catu_failure FK         "Table 18.7"
-    txt         txt_failure_name        "Table 18.7"
-    txt         txt_failure_desc        "Table 18.7"
+    cat         catu_failure FK         "Table 17.7"
+    txt         txt_failure_name        "Table 17.7"
+    txt         txt_failure_desc        "Table 17.7"
   }
   
   fluidities {
     id          id_fluidity PK
-    cat         catu_fluidity FK         "Table 18.8"
-    txt         txt_fluidity_name        "Table 18.8"
-    txt         txt_fluidity_desc        "Table 18.8"
+    cat         catu_fluidity FK         "Table 17.8"
+    txt         txt_fluidity_name        "Table 17.8"
+    txt         txt_fluidity_desc        "Table 17.8"
   }  
 
   indurations {
     id          id_induration PK
-    cat         catu_induration FK         "Table 18.9"
-    txt         txt_induration_name        "Table 18.9"
-    txt         txt_induration_desc        "Table 18.9"
+    cat         catu_induration FK         "Table 17.9"
+    txt         txt_induration_name        "Table 17.9"
+    txt         txt_induration_desc        "Table 17.9"
   }    
   
 ```
@@ -1564,18 +1564,18 @@ erDiagram
   field_tests {
     id          id_site PK
     num[0-Inf]  amt_test_depth_cm
-    cat         cato_pH_raupach FK  "Section 19.1.1"
-    num[0-14]   val_pH_water        "Section 19.1.2"
-    num[0-14]   val_pH_h2o2         "Section 19.1.3"
-    cat         cato_h2o2_rxn FK    "Section 19.1.3"
-    num[0-Inf]  amt_ec_dSm          "Section 19.1.4"
-    cat         cato_hcl_rxn FK     "Section 19.1.5"
-    bool        ind_mn_rxn          "Section 19.1.6"
-    cat         cato_naf_rxn FK     "Section 19.1.7"
-    bool        ind_22bip_rxn       "Section 19.1.8"
-    bool        ind_water_repellent "Section 19.1.9"
-    cat         cato_slaking FK     "Section 19.1.10"
-    cat         cato_dispersion FK  "Section 19.1.10"
+    cat         cato_pH_raupach FK  "Section 18.1.1"
+    num[0-14]   val_pH_water        "Section 18.1.2"
+    num[0-14]   val_pH_h2o2         "Section 18.1.3"
+    cat         cato_h2o2_rxn FK    "Section 18.1.3"
+    num[0-Inf]  amt_ec_dSm          "Section 18.1.4"
+    cat         cato_hcl_rxn FK     "Section 18.1.5"
+    bool        ind_mn_rxn          "Section 18.1.6"
+    cat         cato_naf_rxn FK     "Section 18.1.7"
+    bool        ind_22bip_rxn       "Section 18.1.8"
+    bool        ind_water_repellent "Section 18.1.9"
+    cat         cato_slaking FK     "Section 18.1.10"
+    cat         cato_dispersion FK  "Section 18.1.10"
   }
 
   pH_raupachs {
@@ -1585,37 +1585,37 @@ erDiagram
 
   h2o2_rxns {
     id          id_h2o2_rxn PK
-    cat         catu_h2o2_rxn FK        "Table 19.1"
-    txt         txt_h2o2_rxn_name       "Table 19.1"
-    txt         txt_h2o2_rxn_desc       "Table 19.1"
+    cat         catu_h2o2_rxn FK        "Table 18.1"
+    txt         txt_h2o2_rxn_name       "Table 18.1"
+    txt         txt_h2o2_rxn_desc       "Table 18.1"
   }
 
   hcl_rxns {
     id          id_hcl_rxn PK
-    cat         catu_hcl_rxn FK         "Table 19.2"
-    txt         txt_hcl_rxn_name        "Table 19.2"
-    txt         txt_hcl_rxn_desc        "Table 19.2"
+    cat         catu_hcl_rxn FK         "Table 18.2"
+    txt         txt_hcl_rxn_name        "Table 18.2"
+    txt         txt_hcl_rxn_desc        "Table 18.2"
   }
 
   naf_rxns {
     id          id_naf_rxn PK
-    cat         catu_naf_rxn FK         "Table 19.3"
-    txt         txt_naf_rxn_name        "Table 19.3"
-    txt         txt_naf_rxn_desc        "Table 19.3"
+    cat         catu_naf_rxn FK         "Table 18.3"
+    txt         txt_naf_rxn_name        "Table 18.3"
+    txt         txt_naf_rxn_desc        "Table 18.3"
   }
 
   slaking_rxns {
     id          id_slaking_rxn PK
-    cat         catu_slaking_rxn FK     "Table 19.4"
-    txt         txt_slaking_rxn_name    "Table 19.4"
-    txt         txt_slaking_rxn_desc    "Table 19.4"
+    cat         catu_slaking_rxn FK     "Table 18.4"
+    txt         txt_slaking_rxn_name    "Table 18.4"
+    txt         txt_slaking_rxn_desc    "Table 18.4"
   }
   
   dispersion_rxns {
     id          id_dispersion_rxn PK
-    cat         catu_dispersion_rxn FK  "Table 19.5"
-    txt         txt_dispersion_rxn_name "Table 19.5"
-    txt         txt_dispersion_rxn_desc "Table 19.5"
+    cat         catu_dispersion_rxn FK  "Table 18.5"
+    txt         txt_dispersion_rxn_name "Table 18.5"
+    txt         txt_dispersion_rxn_desc "Table 18.5"
   }
   
 ```
@@ -1814,45 +1814,45 @@ erDiagram
     id          id_site PK
     id          id_horizon PK
     %% for very rapid assessment %%
-    cat         catu_horizon_primary FK   "Section 21.1.1"
+    cat         catu_horizon_primary FK   "Section 20.1.1"
     %% for full naming protocol %%
-    cat         catu_horizon_name FK      "Sections 21.1.1-4"
-    int[2-Inf]  val_lith_discont          "Section 21.1.5"
-    int[2-Inf]  val_duplicate             "Section 21.1.6"
-    bool        ind_buried                "Section 21.1.7"
+    cat         catu_horizon_name FK      "Sections 20.1.1-4"
+    int[2-Inf]  val_lith_discont          "Section 20.1.5"
+    int[2-Inf]  val_duplicate             "Section 20.1.6"
+    bool        ind_buried                "Section 20.1.7"
     %% FH
-    cat         catu_functional_name FK   "Section 21.2"
-    cat         cato_functional_perm FK   "Section 21.2.1.8"
-    bool        ind_topsoil               "Table 21.1"
-    bool        ind_tephra_acid           "Table 21.2"
-    bool        ind_tephra_basic          "Table 21.2"
+    cat         catu_functional_name FK   "Section 20.2"
+    cat         cato_functional_perm FK   "Section 20.2.1.8"
+    bool        ind_topsoil               "Table 20.1"
+    bool        ind_tephra_acid           "Table 20.2"
+    bool        ind_tephra_basic          "Table 20.2"
   }
 
   horizon_names_primary {
     id          id_horizon_primary PK     
-    cat         catu_horizon_primary FK        "Table 21.1"
-    txt         txt_horizon_primary_name       "Table 21.1"
-    txt         txt_horizon_primary_desc       "Table 21.1"
+    cat         catu_horizon_primary FK        "Table 20.1"
+    txt         txt_horizon_primary_name       "Table 20.1"
+    txt         txt_horizon_primary_desc       "Table 20.1"
   }
 
   horizon_names_conventional {
     id          id_horizon_name_conv PK    
-    cat         catu_horizon_name_conv FK        "Tables 21.2-9"
-    txt         txt_horizon_name_conv_name       "Tables 21.2-9"
-    txt         txt_horizon_name_conv_desc       "Tables 21.2-9"
+    cat         catu_horizon_name_conv FK        "Tables 20.2-9"
+    txt         txt_horizon_name_conv_name       "Tables 20.2-9"
+    txt         txt_horizon_name_conv_desc       "Tables 20.2-9"
   }
 
   horizon_names_functional {
     id          id_horizon_name_func PK   
-    cat         catu_horizon_name_func FK        "Table 21.18"
-    txt         txt_horizon_name_func_desc       "Table 21.18"
+    cat         catu_horizon_name_func FK        "Table 20.18"
+    txt         txt_horizon_name_func_desc       "Table 20.18"
   }
 
   functional_horizon_permeabilities {
     id          id_horizon_perm PK  
-    cat         cato_functional_perm FK        "Table 21.17"
-    txt         txt_functional_perm_name       "Table 21.17"
-    txt         txt_horizon_name_func_desc     "Table 21.17"
+    cat         cato_functional_perm FK        "Table 20.17"
+    txt         txt_functional_perm_name       "Table 20.17"
+    txt         txt_horizon_name_func_desc     "Table 20.17"
   }
 
 ```
