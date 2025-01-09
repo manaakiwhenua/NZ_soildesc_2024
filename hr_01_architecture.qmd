@@ -242,7 +242,7 @@ dat_hr_rockfrshp <-
   tribble(~Code, ~Name, ~Description,
          'R', 'Rounded',   'Rock fragments considerably smoothed by transport processes',
          'A', 'Angular', 'Rock fragments with little smoothing by transport processes',
-         'M', 'Mixed', 'Both rounded and angular fragments mixed together',) 
+         'M', 'Mixed', 'Both rounded and angular fragments mixed together') 
 
 tbl_hr_rockfrshp <- gt(dat_hr_rockfrshp) |>
   tab_options(
@@ -353,7 +353,7 @@ dat_hr_aorg <-
          'C', 'Consumer', 'Consumer-products (everyday-products) like PET-bottles, SUP bags, packages, signs etc.', 
          'A', 'Agricultural', 'Agricultural products like mulch film, silage film, straw bale nets, tire wear etc.',
          'I', 'Industrial', 'Industrial products like broken pieces of industrial equipment, industrial waste',
-         'C', 'Construction', 'All plastic materials which were placed in soil for construction and supply purposes (e.g., power cables, geomembranes)')
+         'B', 'Construction', 'All plastic materials which were placed in soil for construction and supply purposes (e.g., power cables, geomembranes)')
 
 tbl_hr_aorg <- gt(dat_hr_aorg) |>
   tab_options(
