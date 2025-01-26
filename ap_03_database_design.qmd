@@ -153,8 +153,8 @@ erDiagram
     num[0-Inf]   amt_lscape_relief_med_m   "Section 4.2.1.1"
     %% landscape slope %%
     num[0-90]    amt_lscape_slope_med_d    "Section 4.2.1.2"
-    num[0-Inf]   amt_lscape_slope_min_d    "Section 4.2.1.2"
-    num[0-Inf]   amt_lscape_slope_max_d    "Section 4.2.1.2"
+    num[0-90]    amt_lscape_slope_min_d    "Section 4.2.1.2"
+    num[0-90]    amt_lscape_slope_max_d    "Section 4.2.1.2"
     %% not implementing stream channel stuff here %%
   }
 
@@ -491,7 +491,7 @@ erDiagram
     %% optional details %%
     num[0-Inf]  amt_microrelief_ant_width_cm    "Section 11.6.1"
     num[0-Inf]  amt_microrelief_ant_height_cm   "Section 11.6.1"
-    num[0-Inf]  amt_depth_water                 "Section 12.7"
+    num[0-Inf]  amt_depth_water_cm              "Section 12.7"
     cat         catu_depth_water FK             "Section 12.7"
     %% vegetation could also be stored at landscape and/or landform %%
     cat         catu_vegetation_luc FK          "Section 7.1"
@@ -522,7 +522,7 @@ erDiagram
   surface_cover {
     id          id_site PK
     cat         catu_surface_cover FK    "Section 11.3"
-    num[0-100]  amt_surface_cover        "Section 11.3"
+    num[0-100]  amt_surface_cover_p      "Section 11.3"
   }
   
   surface_cover_types {
@@ -759,9 +759,6 @@ The horizon architecture table stores data about pedality, fragments, roots, voi
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram 
   horizon_arch ||--|{ horizon_structures : "may have"
-  horizon_arch }|--|{ structure_types : "code comes from"
-  horizon_arch }|--|{ structure_grades : "code comes from"
-  horizon_arch }|--|{ structure_sizes_rapid : "code comes from"
   horizon_structures }|--|{ structure_types : "code comes from"
   horizon_structures }|--|{ structure_grades : "code comes from"
   horizon_structures }|--|{ structure_shapes : "code comes from"
@@ -797,9 +794,6 @@ erDiagram
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
 erDiagram
   horizon_arch ||--|{ horizon_structures : "may have"
-  horizon_arch }|--|{ structure_types : "code comes from"
-  horizon_arch }|--|{ structure_grades : "code comes from"
-  horizon_arch }|--|{ structure_sizes_rapid : "code comes from"
   horizon_structures }|--|{ structure_types : "code comes from"
   horizon_structures }|--|{ structure_grades : "code comes from"
   horizon_structures }|--|{ structure_shapes : "code comes from"
@@ -829,18 +823,14 @@ erDiagram
   horizon_arch {
     id         id_site PK
     id         id_horizon PK
-    %% structures rapid (detailed in subtable) %%
-    cat        catu_structure_type FK            "Section 13.1.1"
-    cat        cato_structure_grade FK           "Section 13.1.2"
-    cat        catu_structure_shape FK           "Section 13.1.3"
-    cat        cato_structure_size FK            "Section 13.1.4"
+    %% structures are in subtable %%
     %% all frags super rapid (record this OR the next three) %%
     num[0-100] amt_total_frags_p                "Section 4.2"
     %% rock frags rapid (detailed in subtable) %%
     num[0-100] amt_rockfrags_p                  "Section 13.2"
     %% notrock frags rapid %%
     num[0-100] amt_otherfrags_p                 "Section 13.2.1.1"
-    %% notrock frags rapid %%
+    %% artefacts rapid %%
     num[0-100] amt_artefacts_p                  "Section 13.2.1.2"
     %% roots rapid %%
     num[0-100] amt_total_roots_p                "Section 13.3.1"
@@ -890,7 +880,11 @@ erDiagram
     cat        catu_structure_type FK     "Section 13.1.1"
     cat        cato_structure_grade FK    "Section 13.1.2"
     cat        cato_structure_shape FK    "Section 13.1.3"
+    %% rapid size %%
+    cat        cato_structure_size FK     "Section 13.1.4"
+    %% routine size %%
     num[0-Inf] amt_structure_size_med_mm  "Section 13.1.4" 
+    %% add for detailed size %%
     num[0-Inf] amt_structure_size_min_mm  "Section 13.1.4" 
     num[0-Inf] amt_structure_size_max_mm  "Section 13.1.4"
   }
@@ -1353,9 +1347,9 @@ erDiagram
     num[0-Inf]  amt_concentration_size_med_mm    "Section 16.1"
     num[0-Inf]  amt_concentration_size_min_mm    "Section 16.1"
     num[0-Inf]  amt_concentration_size_max_mm    "Section 16.1"
-    num[0-Inf]  amt_concentration_med_p          "Section 16.1"
-    num[0-Inf]  amt_concentration_min_p          "Section 16.1"
-    num[0-Inf]  amt_concentration_max_p          "Section 16.1"
+    num[0-100]  amt_concentration_med_p          "Section 16.1"
+    num[0-100]  amt_concentration_min_p          "Section 16.1"
+    num[0-100]  amt_concentration_max_p          "Section 16.1"
   } 
 
   concentration_forms {
@@ -1811,7 +1805,7 @@ erDiagram
 
 ### Horizon names {#sec-erd-names}
 
-The horizon names tables stores conventional and functional names. This table can optionally extend the horizon overview table as it has a 1:1 relationship (@sec-erd-horizono).
+The horizon names tables stores conventional and functional names. This table can optionally extend the horizon overview table as it has a 1:1 relationship (@sec-erd-horizono). Horizon drainage class is also stored here.
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
@@ -1826,6 +1820,7 @@ erDiagram
   horizon_names_suffix_other }|--|{ horizon_suffix_other : "code comes from"
   horizon_names }|--|{ horizon_names_functional : "code comes from"
   horizon_names }|--|{ functional_horizon_permeabilities : "code comes from"
+  horizon_names }|--|{ horizon_drainage_classes : "code comes from"
 
 ```
 :::
@@ -1842,6 +1837,7 @@ erDiagram
   horizon_names_suffix_other }|--|{ horizon_suffix_other : "code comes from"
   horizon_names }|--|{ horizon_names_functional : "code comes from"
   horizon_names }|--|{ functional_horizon_permeabilities : "code comes from"
+  horizon_names }|--|{ horizon_drainage_classes : "code comes from"
   
   %% data %%
   horizon_names {
@@ -1863,6 +1859,7 @@ erDiagram
     bool        ind_topsoil                  "Table 20.1"
     bool        ind_tephra_acid              "Table 20.2"
     bool        ind_tephra_basic             "Table 20.2"
+    cat         cato_horizon_drainage        "Section 21.3"
   }
   
   %% data %%
@@ -1913,7 +1910,13 @@ erDiagram
     txt         txt_functional_perm_name       "Table 20.17"
     txt         txt_horizon_name_func_desc     "Table 20.17"
   }
-
+  
+  horizon_drainage_classes {
+    id          id_horizon_drainage PK
+    cat         cato_horizon_drainage FK     "Table 21.5"
+    txt         txt_horizon_drainage_name    "Table 21.5"
+  }
+  
 ```
 
 ::: {.content-visible when-format='docx'}
