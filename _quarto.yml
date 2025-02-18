@@ -74,7 +74,16 @@ format:
     css: styles.css
     mermaid:
       theme: neutral
-
+  epub: 
+    split-level: 2
+    toc: true
+    css: styles.css
+    number-sections: true
+    number-depth: 4
+    tbl-colwidths: true
+    df-print: paged
+    mermaid:
+      theme: neutral
   docx:
     reference-doc: custom-reference-doc.docx
     toc: true
@@ -85,15 +94,6 @@ format:
     df-print: paged
     link-citations: true
 
-  epub: 
-    split-level: 2
-    toc: true
-    css: styles.css
-    number-sections: true
-    number-depth: 4
-    tbl-colwidths: true
-    df-print: paged
-      
 #  pdf:
 #    documentclass: scrreport
 #    toc: true
