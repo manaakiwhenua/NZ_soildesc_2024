@@ -14,6 +14,7 @@ The following diagrams demonstrate one way in which the contents of this manual 
 This overview shows the relationships between each part of the standard.
 
 ```{mermaid}
+%%| label: fig-movv
 %%| fig-cap: "Overview - conceptual relationships"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -58,6 +59,7 @@ The setting tables store site location (@sec-loc), landscape and landform (@sec-
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
+%%| label: fig-msettingo
 %%| fig-cap: "Setting - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -88,6 +90,7 @@ erDiagram
 :::
 
 ```{mermaid}
+%%| label: fig-msettingd
 %%| fig-cap: "Setting - Details"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -298,6 +301,7 @@ The site table stores reference data (@sec-ref), except for location.
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
+%%| label: fig-msiteo
 %%| fig-cap: "Site - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -316,6 +320,7 @@ erDiagram
 :::
 
 ```{mermaid}
+%%| label: fig-msited
 %%| fig-cap: "Site - Details"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -414,6 +419,7 @@ The surface table stores slope, aspect, surface cover, surface water, surface cr
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
+%%| label: fig-msurfaceo
 %%| fig-cap: "Surface - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -444,6 +450,7 @@ erDiagram
 :::
 
 ```{mermaid}
+%%| label: fig-msurfaced
 %%| fig-cap: "Surface - Details"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -655,6 +662,7 @@ The horizon overview table stores boundary definitions, soil moisture status at 
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
+%%| label: fig-mhorizono
 %%| fig-cap: "Horizon - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -670,6 +678,7 @@ erDiagram
 :::
 
 ```{mermaid}
+%%| label: fig-mhorizond
 %%| fig-cap: "Horizon - Details"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -754,6 +763,7 @@ The horizon architecture table stores data about pedality, fragments, roots, voi
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
+%%| label: fig-mhorao
 %%| fig-cap: "Horizon architecture - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -789,6 +799,7 @@ erDiagram
 :::
 
 ```{mermaid}
+%%| label: fig-mhorad
 %%| fig-cap: "Horizon architecture - Details"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -1050,6 +1061,7 @@ These tables store matrix colours (@sec-col-matrix) and colour patterns (@sec-co
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
+%%| label: fig-mhorcolo
 %%| fig-cap: "Horizon colour - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -1067,6 +1079,7 @@ erDiagram
 :::
 
 ```{mermaid}
+%%| label: fig-mhorcold
 %%| fig-cap: "Horizon colour - Details"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -1164,6 +1177,7 @@ The horizon texture table stores texture category as well as field estimates of 
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
+%%| label: fig-mhortexo
 %%| fig-cap: "Horizon texture - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -1181,6 +1195,7 @@ erDiagram
 :::
 
 ```{mermaid}
+%%| label: fig-mhortexd
 %%| fig-cap: "Horizon texture - Details"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -1277,6 +1292,7 @@ The secondary features tables store essential information in a parent table and 
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
+%%| label: fig-mhorseco
 %%| fig-cap: "Horizon secondary features - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -1300,6 +1316,7 @@ erDiagram
 :::
 
 ```{mermaid}
+%%| label: fig-mhorsecd
 %%| fig-cap: "Horizon secondary features - Details"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -1434,6 +1451,7 @@ The consistence tests table can optionally extend the horizon overview table (@s
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
+%%| label: fig-mhorcono
 %%| fig-cap: "Horizon consistence tests - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -1452,6 +1470,7 @@ erDiagram
 :::
 
 ```{mermaid}
+%%| label: fig-mhorcond
 %%| fig-cap: "Horizon consistence tests - Details"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -1556,6 +1575,7 @@ Field tests are conducted from samples taken at set depths so in this example ar
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
+%%| label: fig-mhorfto
 %%| fig-cap: "Horizon field tests - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -1571,6 +1591,7 @@ erDiagram
 :::
 
 ```{mermaid}
+%%| label: fig-mhorftd
 %%| fig-cap: "Horizon field tests - Details"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -1647,6 +1668,7 @@ erDiagram
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
+%%| label: fig-mnzsco
 %%| fig-cap: "NZSC - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -1670,6 +1692,7 @@ erDiagram
 :::
 
 ```{mermaid}
+%%| label: fig-mnzscd
 %%| fig-cap: "NZSC - Details"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -1809,6 +1832,7 @@ The horizon names tables stores conventional and functional names. This table ca
 
 ::: {.content-hidden when-format='docx'}
 ```{mermaid}
+%%| label: fig-mhnmo
 %%| fig-cap: "Horizon names - Overview"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
@@ -1826,6 +1850,7 @@ erDiagram
 :::
 
 ```{mermaid}
+%%| label: fig-mhnmd
 %%| fig-cap: "Horizon names - Details"
 
 %%{ init: { 'er': { 'layoutDirection': 'LR' } } }%%
