@@ -32,17 +32,17 @@ book:
         
     - part: "Soil surface and profile"
       chapters:
-        - pr_00_intro.qmd                ## Horizonation
-        - pr_01_surface.qmd              ## Rocks etc
-        - pr_02_layers.qmd               ## soil moisture
+        - pr_00_intro.qmd                
+        - pr_01_surface.qmd              
+        - pr_02_layers.qmd              
 
     - part: "Soil horizons"
       chapters:
-        - hr_01_architecture.qmd         ## Structure voids roots
+        - hr_01_architecture.qmd         
         - hr_02_colour.qmd
         - hr_03_texture.qmd
         - hr_04_secondary_features.qmd
-        - hr_05_physical_properties.qmd  ##
+        - hr_05_physical_properties.qmd  
         - hr_06_chemical_properties.qmd
         
     - part: "Soil interpretations"
@@ -72,6 +72,7 @@ format:
     date-modified: last-modified
     callout-appearance: "simple"
     css: styles.css
+    lightbox: true
     mermaid:
       theme: neutral
   epub: 
@@ -93,20 +94,6 @@ format:
     number-depth: 4
     df-print: paged
     link-citations: true
-
-#  pdf:
-#    documentclass: scrreport
-#    toc: true
-#    number-sections: true
-#    number-depth: 3
-#    top-level-division: chapter
-#    mainfont: Ebrima
-#    monofont: "Fira Code"
-#    linkcolor: "#0563C1"
-#    papersize: "A5"
-#    include-in-header:
-#      - text: |
-#          \usepackage[table]{xcolor}
 
 # global knitr options
 knitr:
