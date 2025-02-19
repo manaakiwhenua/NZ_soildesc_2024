@@ -1,16 +1,9 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: console
----
-
 # Parent material {#sec-pm}
 
 ```{r}
 library(dplyr)
 library(tibble)
 library(gt)
-library(gtExtras)
 ```
 
 Parent material can be explored in terms of geological units, lithology, and mineralogy.
@@ -30,7 +23,7 @@ The specific lithology, or rock type, of the soil parent material offers a more 
 
 ### NZLRI Rock Type {#sec-pm-lri}
 
-An identification and coding system for New Zealand rock types is available in [@lynn1991]. This system is tuned for land resource assessment, particularly assessment of erosivity, and is used in the NZ Land Resource Inventory and Land Use Capability (LUC) methodology [@lynn2009]. The system is mentioned here as an option where consistency with LUC mapping is desired.
+An identification and coding system for New Zealand rock types is available in [-@lynn1991]. This system is tuned for land resource assessment, particularly assessment of erosivity, and is used in the NZ Land Resource Inventory and Land Use Capability (LUC) methodology [@lynn2009]. The system is mentioned here as an option where consistency with LUC mapping is desired.
 
 ### NZSC Rock Class {#sec-ss-pmat}
 
@@ -44,7 +37,7 @@ Several research-grade vocabularies for describing geology have been developed i
 
 #### Silica-content classification {#sec-pm-lithsi}
 
-Soil parent material classifications have largely focused on major geological origin (igneous, metamorphic, sedimentary), grain size, and some obvious compositional classes. [@gray2016] contend that the major differentiator for soil formation should first be silica (SiO~2~) content and propose an alternate lithology classification per @tbl-ss-sio2lith below. This is optional to record as it has not been extensively tested.
+Soil parent material classifications have largely focused on major geological origin (igneous, metamorphic, sedimentary), grain size, and some obvious compositional classes. [-@gray2016] contend that the major differentiator for soil formation should first be silica (SiO~2~) content and propose an alternate lithology classification per @tbl-ss-sio2lith below. This is optional to record as it has not been extensively tested.
 
 ```{r}
 #| label: tbl-ss-sio2lith

@@ -1,12 +1,5 @@
 # Data model {#sec-erds}
 
-```{r}
-library(dplyr)
-library(tibble)
-library(gt)
-library(gtExtras)
-```
-
 The following diagrams demonstrate one way in which the contents of this manual can be structured in a database. The diagrams only deal with the data themselves - security, user management, change tracking and other helper functionalities are left out for clarity. Data tables for samples and laboratory results are also not included. The model is optimised to highlight the relationships between the various data points and contains some structures that support the controlled vocabulary lists, but is not optimised for performance. 
 
 ## Conceptual model
@@ -1961,6 +1954,10 @@ Some numeric parameters require a separate specification for types of missing da
 ```{r}
 #| label: tbl-missing
 #| tbl-cap: "Data record type"
+
+library(dplyr)
+library(tibble)
+library(gt)
 
 dat_ss_eventt <-
   tribble(~Code, ~Name,

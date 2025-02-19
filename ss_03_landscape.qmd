@@ -1,9 +1,3 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: console
----
-
 # Geomorphology {#sec-gmph}
 
 ```{r}
@@ -84,7 +78,7 @@ A landscape can be described in terms of a short list of parameters: relief, cha
 
 #### Relief {#sec-gmph-lscrel}
 
-Relief is the degree of separation between high and low points in a landscape. As described in [@ncst2024, pp. 36], relief can be visualised by picturing two surfaces roughly parallel to the land surface - one passing through local crests and one through local depressions. The median vertical distance between the two surfaces is the relief.
+Relief is the degree of separation between high and low points in a landscape. As described in [-@ncst2024, pp. 36], relief can be visualised by picturing two surfaces roughly parallel to the land surface - one passing through local crests and one through local depressions. The median vertical distance between the two surfaces is the relief.
 
 [add a diagram here]{.diags}
 
@@ -102,7 +96,7 @@ Some landscapes may have two or more distinct characteristic slopes, e.g. the fr
 
 #### Stream channels {#sec-gmph-lscchn}
 
-Natural stream channel patterns are relevant to understanding landscape development, but are best observed remotely. They do not need to be recorded in the field. If desired, assess the landscape drainage pattern using available data sources and define it using the stream channel attributes given in @ncst2024, p. 38-41.
+Natural stream channel patterns are relevant to understanding landscape development, but are best observed remotely. They do not need to be recorded in the field. If desired, assess the landscape drainage pattern using available data sources and define it using the stream channel attributes given in [-@ncst2024, p. 38-41].
 
 #### Landscape description {#sec-gmph-lscdsc}
 
@@ -240,7 +234,7 @@ Aspect classes may be applied to the recorded data; some options are presented i
 
 #### Landform element {#sec-gmph-lfmelem}
 
-The following is adapted from [@ncst2024, pp. 19-25].
+The following is adapted from [-@ncst2024, pp. 19-25].
 
 A landform element is the simplest component of a landform, and some landforms are made up of only one element. Landform elements are first assigned to a morphological type - one of a series of simple shapes - at the scale of observation. These are:
 
@@ -353,7 +347,7 @@ Slope length is used in assessments of erosion vulnerability. Length is measured
 
 ### Mesoscale topographic index {#sec-gmph-mti}
 
-The Mesoscale Topographic Index (MTI) [@hurst2022, p. 15] is a measure of how sheltered or exposed a location is within a landscape. To measure in the field, use a compass and clinometer to measure angle to the horizon at the 8 cardinal compass bearings. Record positive values if looking up and negative when looking down. The average of the eight values defines the index, with high values signifying a sheltered area and low values signifying exposure.
+The Mesoscale Topographic Index (MTI, @hurst2022, p. 15) is a measure of how sheltered or exposed a location is within a landscape. To measure in the field, use a compass and clinometer to measure angle to the horizon at the 8 cardinal compass bearings. Record positive values if looking up and negative when looking down. The average of the eight values defines the index, with high values signifying a sheltered area and low values signifying exposure.
 
 ::: {#tip-automti .callout-tip collapse="true" appearance="minimal" title="Automating the MTI"}
 The closest automated equivalents of the MTI appear to be the 'Morphometric Protection Index' (MPI) as implemented in SAGA-GIS [@yokoyama2002; @conrad2015], and the 'intensity' output of the 'Geomorphons' module as implemented in GRASS-GIS [@jasiewicz2013; @grassdevelopmentteam2023]. In the case of geomorphon intensity, the output also reports the mean relative elevation in meters of the 8 defining points rather than their average angles above or below the central point.
