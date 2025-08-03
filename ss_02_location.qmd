@@ -56,15 +56,7 @@ Location sensors default to the global longitude-latitude based WGS84 datum (EPS
 Alternate geocoding systems involving e.g. text-based encoding or nested hashes should not be used during fieldwork. These systems are often proprietary, sometimes prone to ambiguity or edge-case errors, and at their core often wrap around WGS84 anyway. They may still be useful during data analysis.
 :::
 
-### Expected Error {#sec-loc-err}
-
-Expected horizontal error can be automatically reported by equipment, or estimated. When estimating, record in meters with a maximum precision of 0.01 (1 cm) e.g. [± 5.1 m]{.ceg}. Record expected vertical elevation error separately in the same units, as it will differ.
-
-::: {#nte-locrev .callout-note collapse="true" appearance="minimal" title="Revising locations"}
-Location data quality can sometimes be improved by revising the location data in GIS after fieldwork, with reference to e.g. satellite imagery. Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error.
-:::
-
-### Elevation measurement {#sec-loc-abs-elev}
+### Recording elevation {#sec-loc-abs-elev}
 
 Parts of New Zealand still lack highly accurate elevation data. Record the elevation measurement method using the codes in @tbl-ss-elevsrc below.
 
@@ -74,11 +66,12 @@ Parts of New Zealand still lack highly accurate elevation data. Record the eleva
 
 dat_ss_elevsrc <-
   tribble(~Code, ~Name,
-          'E', 'Estimate',
-          'A', 'Measured by a calibrated altimeter',
-          'M', 'Interpolated from contour map with interval of ≤ 20 m, or extracted from similar-quality Digital Elevation Model (DEM)',
+          'D', 'Extracted from high-accuracy DEM e.g. Lidar-based',
           'G', 'Measured using a GNSS system with an adequate 3D fix',
-          'D', 'Extracted from high-accuracy DEM e.g. Lidar-based')
+          'M', 'Extracted from a similar-quality Digital Elevation Model (DEM)',
+          'A', 'Measured by a calibrated altimeter',
+          'E', 'Estimated'
+          )
 
 
 tbl_ss_elevsrc <- gt(dat_ss_elevsrc) |>
@@ -98,14 +91,24 @@ tbl_ss_elevsrc
 
 ```
 
-Where the [A]{.ceg} code is used, the time and location of the most recent altimeter calibration should be noted. Hand altimeters can be expected to be accurate to within ± 3 m.
+[G]{.ceg} type elevation measurements are unlikely to be accurate if not using a [GR]{.ceg}-type sensor (see @sec-loc-eq), and may require additional conversion to the NZ Vertical Datum. However, some specialist GNSS systems can achieve elevation accuracies exceeding ± 0.01 m.
 
 The [M]{.ceg} code should be used for most non-Lidar DEMs, as those available for public use were constructed from interpolated contour data or other methods with comparable vertical accuracy [see @barringer2002; @uuemaa2020]. [M]{.ceg} DEMs can be off by over 10 m in some areas, e.g valley floors where small landscape features are not captured [@barringer2002]. By contrast, [D]{.ceg} DEMs are usually accurate to around ± 0.2 m.
 
-[G]{.ceg} type elevation measurements are unlikely to be accurate if not using a [GR]{.ceg}-type sensor (see @sec-loc-eq), and may require additional conversion to the NZ Vertical Datum. However, some specialist GNSS systems can achieve elevation accuracies exceeding ± 0.01 m.
+Where the [A]{.ceg} code is used, the time and location of the most recent altimeter calibration should be noted. Handheld altimeters can be expected to be accurate to within ± 3 m.
+
+[E]{.ceg} estimated elevations might include interpolation from a contour map with interval of > 20 m, or a 'best guess'.
 
 ::: {#nte-dems .callout-note collapse="true" appearance="minimal" title="DEMs and location"}
 Where DEMs (Digital Elevation Models) are used, they should be as contemporary as possible; New Zealand’s rate of landscape evolution is relatively high and these data sources will become less reliable with age. DEMs more than 20 years old should be accompanied by a vertical error estimate adjusted upwards for age.
+:::
+
+### Expected Error {#sec-loc-err}
+
+Expected error can be automatically reported by equipment, or estimated. When estimating horizontal error, record in meters with a maximum precision of 0.01 (1 cm) e.g. [± 5.12 m]{.ceg}. Record estimated vertical elevation error separately in the same units, as it will differ.
+
+::: {#nte-locrev .callout-note collapse="true" appearance="minimal" title="Revising locations"}
+Location data quality can sometimes be improved by revising the location data in GIS after fieldwork, with reference to e.g. satellite imagery. Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error.
 :::
 
 ### Equipment {#sec-loc-eq}
