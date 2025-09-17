@@ -74,17 +74,17 @@ With these characteristics established, a texture class should be identifiable f
 
 dat_hr_texchar <-
   tribble(~Group, ~Code, ~Name, ~Features,
-          'Sandy', 'S', 'Sand', 'Dominated by visible grains. Cannot form a persistent ball under moist conditions. Working the sample leaves no clay stain on hands. Cannot form a ribbon.',
+          'Sandy', 'SS', 'Sand', 'Dominated by visible grains. Cannot form a persistent ball under moist conditions. Working the sample leaves no clay stain on hands. Cannot form a ribbon.',
           'Sandy', 'LS', 'Loamy Sand', 'Dominated by visible grains. May hold a very weak ball if carefully handled. Working the sample may leave a clay stain on hands. Cannot form a ribbon.',
           'Loamy', 'SL', 'Sandy Loam', 'Visible grains in a matrix of finer material. Feels gritty to the touch. Can form a weak ball and a short ribbon (< ~25 mm).',
           'Loamy', 'SC', 'Sandy Clay Loam', 'Visible grains in a matrix of finer material. Feels gritty to the touch. Can form a coherent ball and a short ribbon (< ~25 mm).',
           'Loamy', 'CL', 'Clay Loam', 'Some visible grains but mostly finer material. Feels slightly gritty to the touch. Can form a coherent ball and a ribbon of ~25–50 mm length.',
           'Silty', 'LZ', 'Loamy silt', 'Some visible grains but mostly finer material. Feels smooth or floury to the touch. Can form a weak ball but cannot easily form a ribbon.',
-          'Silty', 'Z', 'Silt', 'Fine material without visible grains. Feels smooth or floury to the touch. May form a weak ball but usually smears when attempting to form a ribbon.',
+          'Silty', 'ZZ', 'Silt', 'Fine material without visible grains. Feels smooth or floury to the touch. May form a weak ball but usually smears when attempting to form a ribbon.',
           'Silty', 'ZL', 'Silty loam', 'Fine material without visible grains. Feels smooth or floury to the touch. Can form a coherent ball and a ribbon of ~25–50 mm length.',
           'Clayey', 'LC', 'Loamy clay', 'Fine material with some appreciable grit. Forms a coherent, smooth ball that may be difficult to compress. Can form a ribbon of > ~50 mm length.',
           'Clayey', 'ZC', 'Silty clay', 'Fine material without visible grains. Forms a coherent, very smooth ball that may be difficult to compress. Can form a ribbon of > ~50 mm length.',
-          'Clayey', 'C', 'Clay', 'Fine material without visible grains. Forms a coherent, smooth ball that may be difficult to compress, but can usually compress without cracking. Can form a ribbon of > ~50 mm length.')
+          'Clayey', 'CC', 'Clay', 'Fine material without visible grains. Forms a coherent, smooth ball that may be difficult to compress, but can usually compress without cracking. Can form a ribbon of > ~50 mm length.')
 
 tbl_hr_texchar <- gt(group_by(dat_hr_texchar, Group)) |>
   tab_options(
@@ -154,7 +154,10 @@ tbl_hr_earthgrps
 
 nztt_dat <- readRDS(file.path('data', 'NZTT.RDS')) 
 
-nztt_labels <- readRDS(file.path('data', 'NZTT_LABELS.RDS'))
+nztt_labels <- readRDS(file.path('data', 'NZTT_LABELS.RDS')) |>
+    mutate(cat_texture_code = ifelse(cat_texture_code == 'S', 'SS', cat_texture_code)) |>
+  mutate(cat_texture_code = ifelse(cat_texture_code == 'Z', 'ZZ', cat_texture_code)) |>
+  mutate(cat_texture_code = ifelse(cat_texture_code == 'C', 'CC', cat_texture_code))
 
 texgrpcols <- c('Sandy' = '#ffffb3', 'Loamy' = '#8dd3c7', 'Silty' = '#bebada', 'Clayey' = '#fb8072')
 
@@ -198,6 +201,10 @@ dat_hr_textri <- nztt_labels |>
   mutate(across(matches("_range"), \(x) {gsub(' ', '\u00A0', x)})) |>
   # Fix SL silt, its annoying 
   mutate(txt_silt_range = ifelse(txt_silt_range == '0–< 40%', '< 40%', txt_silt_range)) |>
+  # replace CZS codes (prevent duplication vs group codes)
+  mutate(cat_texture_code = ifelse(cat_texture_code == 'S', 'SS', cat_texture_code)) |>
+  mutate(cat_texture_code = ifelse(cat_texture_code == 'Z', 'ZZ', cat_texture_code)) |>
+  mutate(cat_texture_code = ifelse(cat_texture_code == 'C', 'CC', cat_texture_code)) |>
   dplyr::arrange(txgroup) |>
   dplyr::select(txgroup, everything()) |>
   group_by(txgroup)
@@ -366,9 +373,9 @@ tbl_hr_omdec
 dat_hr_omo <-
   tribble(~Code,     ~Name, ~Description,
             'M',    'Moss', 'Organic materials dominantly derived from moss species e.g. *Sphagnum* spp.',
-            'D',   'Sedge', 'Organic materials dominantly derived from non-woody vascular plants e.g. Harakeke/Flax, *Phormium tenax*',
             'R',    'Rush', 'Organic materials dominantly derived from the Restionaceae family, e.g., *Sporadanthus* spp.',
-            'T',    'Tree', 'Organic materials dominantly derived from woody shrubs and trees, e.g. Manoao/Silver Pine, *Manoao colesnoi*',
+            'D',   'Sedge', 'Organic materials dominantly derived from non-woody vascular plants e.g. Harakeke/Flax, *Phormium tenax*',
+            'T',    'Tree', 'Organic materials dominantly derived from woody vascular plants, e.g. Manoao/Silver Pine, *Manoao colesnoi*',
             'U', 'Unknown', 'Origin of organic materials cannot be identified with confidence')
 
 tbl_hr_omo <- gt(dat_hr_omo) |>
@@ -546,8 +553,7 @@ dat_hr_txab <-
   tribble(~Fraction, ~Format, ~abund_m, ~eg_m, ~abund_o, ~eg_o,
           'Dominant', 'Term' ,             '≥ 70%', 'Gravel', '≥ 50%', 'Peat',
           'Major',    'Term(ly/y/ose)',    '≥ 35%', 'Gravelly', '≥ 30%', 'Peaty',
-          'Minor',    'with (term)',       '≥ 5%',  'with gravel', '≥ 5%', 'with peat',
-          'Trace',    'with trace (term)', '< 5%', 'with trace gravel','< 5%', 'with trace peat')
+          'Minor',    'with (term)',       '≥ 5%',  'with gravel', '≥ 5%', 'with peat')
 
 tbl_hr_txab <- gt(dat_hr_txab) |>
   tab_options(
