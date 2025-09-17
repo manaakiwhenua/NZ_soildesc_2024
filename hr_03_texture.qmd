@@ -306,8 +306,8 @@ tbl_hr_omtyp
 # not happy with the lack of source for these cutoffs but the NZSC uses them so shrug emoji
 dat_hr_omtex <-
   tribble(~Percent, ~Convention, ~egcode, ~egtext,
-         '< 5%', 'Do not append', 'CL', 'for a clay loam with little organic material',
-         '5 - 30%', 'Append as suffix', 'CL(P)', 'for a clay loam with ~10% peaty organic material',
+         '< 17%', 'Do not append', 'CL', 'for a clay loam with little organic material',
+         '17 - 30%', 'Append as suffix', 'CL(P)', 'for a clay loam with ~20% peaty organic material',
          '30 - 50%', 'Append as prefix', '(P)CL', 'for a clay loam with ~40% peaty organic material',
          '> 50%', 'Use as primary code', 'P', 'for a peat with little to no mineral material')
 
@@ -338,7 +338,7 @@ Soil organic matter (SOM) is rarely measured directly due to accuracy concerns. 
 
 ### Organic material modifiers {#sec-tex-orgmod}
 
-If more detail is desired, organic material decomposition and origin can also be appended using @tbl-hr-omdec and @tbl-hr-omo, e.g. [PHU]{.ceg} for a well-decomposed hemic peat where the contributing plant species cannot be clearly identified.
+If more detail is desired, organic material decomposition and origin can also be appended using @tbl-hr-omdec and @tbl-hr-omo, e.g. [PHU]{.ceg} for a well-decomposed humic peat where the contributing plant species cannot be clearly identified.
 
 ```{r}
 #| label: tbl-hr-omdec
@@ -553,7 +553,7 @@ dat_hr_txab <-
   tribble(~Fraction, ~Format, ~abund_m, ~eg_m, ~abund_o, ~eg_o,
           'Dominant', 'Term' ,             '≥ 70%', 'Gravel', '≥ 50%', 'Peat',
           'Major',    'Term(ly/y/ose)',    '≥ 35%', 'Gravelly', '≥ 30%', 'Peaty',
-          'Minor',    'with (term)',       '≥ 5%',  'with gravel', '≥ 5%', 'with peat')
+          'Minor',    'with (term)',       '≥ 5%',  'with gravel', '≥ 17%', 'with peat')
 
 tbl_hr_txab <- gt(dat_hr_txab) |>
   tab_options(
