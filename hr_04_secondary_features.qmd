@@ -6,11 +6,11 @@ library(tibble)
 library(gt)
 ```
 
-Secondary soil features develop as a result of pedogenesis. Many create barriers to water movement or alter chemistry in a way that affects soil biota.
+Secondary soil features are bodies formed within the soil through pedogenic (natural soil-forming) processes. They contain a higher amount of a particular substance (or association of substances) and thus contrast with the surrounding material. Many create barriers to water movement or alter chemistry in a way that affects both soil biota and plant root growth.
 
 ## Concentrations {#sec-hr-conc}
 
-[These are bodies of pedogenic origin enriched in a particular constituent that are not associated with a particular surface within the soil. They may contrast sharply with the surrounding material in strength, composition or internal organisation, or differences with the surrounding material may be slight.]{.milne}
+Concentrations are secondary features that are not associated with specific surfaces within the soil. Some concentrations contrast sharply with the surrounding material due to differences in colour, hardness, or composition, while others may be more subtle.
 
 For rapid assessment, record concentration form and abundance percentage using @tbl-hr-concform.
 
@@ -83,11 +83,9 @@ tbl_hr_conctype
 
 ## Coatings {#sec-hr-coat}
 
-Coatings develop around other soil features, e.g. covering the surfaces of grains or peds, or lining the interior of voids. Some are chemical precipitates like concentrations, some form from material left behind as other material is selectively removed, and some are biological in origin (e.g. some ant species line their burrow tunnel walls with fine material).
+Coatings are layers of material that form on  the surfaces of other soil features, e.g. grains, peds, or the walls of voids. Some coatings are formed by chemical precipitation, similar to concentrations, while others form as a result of selective removal processes, where the material left behind accumulates. Some coatings may be biological in origin (e.g. some ant species line their burrow tunnel walls with fine material).
 
-For rapid assessment note the presence of coating type(s) using @tbl-hr-coattype.
-
-For detailed assessment, optionally also note their abundance as percentage of soil available surfaces covered.
+To record coatings, note their type using the options in @tbl-hr-coattype and their abundance as percentage of soil surfaces covered. For rapid assessment, only record the most abundant or well-developed coating.
 
 e.g. [OG 80%]{.ceg} for well-developed organic coats covering most ped surfaces.
 
@@ -125,9 +123,9 @@ tbl_hr_coattype
 
 ## Pans {#sec-pan}
 
-Pans form when particular chemicals precipitate out of the soil solution and cement a layer of mineral particles (perhaps as a further accumulation and joining together of coatings and/or concentrations), or when particular particle size distributions and/or shape range become very tightly packed. Many pans are diagnostic in the NZSC.
+Pans form when particular chemicals precipitate out of the soil solution and cement a layer of mineral particles (perhaps as a further accumulation and joining together of coatings and/or concentrations), or when particular particle size distributions and/or shape range become very tightly packed. Many pans are diagnostic in the NZSC, because they can form a barrier to plant root growth or water movement.
 
-For rapid assessment, record only the pan type using @tbl-hr-pantype. It is assumed that pans recorded this way are strongly developed enough to be classification-relevant. Note also that many (but not all) pans have dedicated conventional horizon names, and in those cases the horizon names these can be used for rapid assessment instead.
+For rapid assessment, record only the pan type using @tbl-hr-pantype. It is assumed that pans recorded this way are strongly developed enough to be classification-relevant. Note also that many (but not all) pans have dedicated conventional horizon names, and in those cases the horizon names can be used for rapid assessment instead. The full definitions of those horizons are available in @sec-hzn-conv.
 
 Pans can be described in detail in terms of type, thickness, continuity, structure, strength and cementation. Pans comprise distinct horizons, so their thickness is defined using horizon boundaries. Their strength and cementation are assessed using @tbl-cn-str and @tbl-cn-ind. Codes for type, continuity and structure are given below. Note that continuity can only be observed in large pits or exposures.
 
@@ -145,7 +143,7 @@ dat_hr_pantype <-
           'O', 'Ortstein pan', 'Pan cemented by iron and organic matter. Common in Podzols', 'Bsm',
           'P', 'Placic', 'A very thin (< 10 mm), dark, iron-dominated pan with sharp boundaries', 'Bfm',
           'Q', 'Silica pan', 'Created by the precipitation of silica (SiO~2~)', '\\*qm (not A horizons)',
-          'X', 'Fragipan', 'An earthy, high density, erosion-resistant layer common to Pallic soils', '\\*x (B or BC horizons)',
+          'X', 'Fragipan', 'An unstructured, uncemented but high-density, erosion-resistant layer common to Pallic soils', '\\*x (B or BC horizons)',
           'UK', 'Unknown', 'Pan origin cannot be clearly determined', NA
           )
 
@@ -256,7 +254,7 @@ tbl_hr_pftype
 
 ## Biological features {#sec-hr-bio}
 
-Biological secondary features are mostly created by plant roots as they grow into the soil, and soil fauna as they create burrows.
+Biological secondary features are mostly created by plant roots as they grow into the soil, and soil fauna as they create and infill burrows.
 
 For rapid assessment, note type(s) using the codes in @tbl-hr-biotype.
 
@@ -292,4 +290,4 @@ tbl_hr_biotype
 
 ## Cryofeatures {#sec-cryof}
 
-Soils and substrate materials subject to freezing conditions (or that have been subject to such in the past) may show evidence of cryoturbation. This may comprise disrupted soil horizons and physical mixing from intense shrink-swell activity induced by ice formation. Freezing and thawing can also accelerate downslope creep (solifluction), mixing in rock fragments that may be angular and poorly sorted. These individual features may be identified by noting horizon boundary characteristics (@sec-pr-bdyshp, @sec-pr-bdydist), colour patterns from mixing (@sec-patt-type), and rock fragment characteristics (@sec-rockfrag).
+Cryoturbation refers to the physical disturbance and mixing of soil caused by repeated freezing and thawing. It commonly occurs in soils exposed to seasonal or historic freeze and thaw cycles. Affected soils may show discontinuous horizon boundaries and physical mixing as a result of intense shrink-swell activity caused by ice formation. Freezing and thawing can also accelerate downslope movement (solifluction), often incorporating angular, poorly sorted rock fragments into the soil. These features can be recognised by examining horizon boundary characteristics (@sec-pr-bdyshp, @sec-pr-bdydist), colour patterns from mixing (@sec-patt-type), and rock fragment characteristics (@sec-rockfrag).
