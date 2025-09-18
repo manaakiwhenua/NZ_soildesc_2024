@@ -14,7 +14,7 @@ While the true particle size distribution is continuous, for ease of communicati
 
 ```{r}
 #| label: tbl-hr-simpletex
-#| tbl-cap: "Generalised whole-earth texture classes"
+#| tbl-cap: "Generalised soil texture classes"
 
 dat_hr_simpletex <-
   tribble(~Code, ~Name, ~Description,
@@ -437,6 +437,8 @@ If a horizon has \> 70% coarse mineral material and \> 5% fine mineral materia
 
 When recording texture for a mixed fine-earth/organic horizon containing coarse material, record the coarse modifier before the organic modifier, separated by a comma, e.g. [SL(G, H)]{.ceg} for a sandy loam with gravel and humus, or [(G, H)SL]{.ceg} for a gravelly, humic sandy loam.
 
+For poorly sorted horizons where a single coarse fraction does not dominate the particle size distribution, choose the largest coarse code for recording and determine coarse material abundance from the total percentage of coarse materials. For example, in a silt loam horizon with 15% gravel, 15% cobble and 10% boulder, use [(C)ZL]{.ceg} (total coarse fraction 40%, largest co-dominant fraction cobble).
+
 Coarse mineral particle ('rock fragment') abundance, size, shape, lithology and distribution may also be assessed independently of texture, using the conventions in @sec-rockfrag.
 
 #### Gravel fraction modifiers
@@ -473,7 +475,7 @@ Similar subdivisions are not considered useful for the cobble or boulder fractio
 
 ## Recording soil texture {#sec-tex-rec}
 
-For rapid assessment of texture, record one of the codes in @tbl-hr-simpletex per horizon. For routine assessment, record one texture code per horizon, using the more detailed system described in @sec-hr-texture.
+For rapid assessment of texture, record one of the codes in @tbl-hr-simpletex per horizon. For routine assessment, use the codes in  @tbl-hr-texchar. Where further detail is required, apply the modifiers as described in @sec-hr-texture.
 
 ## Recording particle size
 
@@ -524,9 +526,9 @@ tbl_hr_texcompar
 Size fraction boundaries also vary by discipline; sedimentologists set the limit of 'clay' at 0.004 mm while colloid chemists use 0.001 mm [@guggenheim1995]. Clay mineralogists use an alternate definition of clay that does not rely on particle size at all, instead highlighting physical behaviour. Alternate soil texture triangles compatible with this concept have been proposed, but cannot be determined in the field [@moreno-maroto2022].
 :::
 
-### Recording whole-earth particle size estimates
+### Recording whole-soil particle size estimates
 
-Percentage estimates of solid components require some adjustment when reporting on a whole-earth basis. Clay, silt and sand percentage estimates are initially reported as a fraction of the mineral fine earth only, and organic matter as a fraction of the total fine earth. Coarse materials are reported as a percentage of the whole soil mass.
+Percentage estimates of solid components require some adjustment when reporting on a whole-soil basis. Clay, silt and sand percentage estimates are initially reported as a fraction of the mineral fine earth only, and organic matter as a fraction of the total fine earth. Coarse materials are reported as a percentage of the whole soil mass.
 
 For a worked example, take a soil with 25% clay, 35% silt, 40% sand, 15% organic matter, and 15% cobble.
 
@@ -539,7 +541,7 @@ For a worked example, take a soil with 25% clay, 35% silt, 40% sand, 15% organic
 
 Report the final results in whole percentages; the method in use can't support any higher precision.
 
-## Whole-earth texture description statements
+## Whole-soil texture description statements
 
 Plain-text descriptions of texture (or of laboratory-analysed particle size distribution) may be preferred in some cases, for example in teaching materials and long-form reporting. The coding system described above can be translated into plain text. Use the grammatical conventions in @tbl-hr-txab to describe their relative dominance. For each abundance fraction, the dominant size class is mentioned in descending order.
 
