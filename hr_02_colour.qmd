@@ -1,4 +1,4 @@
-# Horizon colour
+# Horizon colour {#sec-col}
 
 ```{r}
 library(dplyr)
@@ -9,7 +9,7 @@ library(munsell)
 
 ## Colour recording {#sec-hr-col}
 
-The colour of soil components is recorded using the Munsell Soil Colour system [@munsellcolorcompany2009; @pantone2017], which conceptualises colour using Hue, Value and Chroma parameters.
+The colour of soil components is recorded using the Munsell Soil Colour system [@munsellcolorcompany2009; @pantone2017], which conceptualises colour using Hue, Value and Chroma parameters. @tbl-hr-coloreg shows some example soil colours and their representation in the Munsell system as well as their approximate translations into other colour spaces. A comprehensive primer on colour and its application in soil science can be found in [@bigham1993].
 
 ```{r}
 #| label: tbl-hr-coloreg
@@ -40,25 +40,180 @@ tbl_hr_munsell
 
 For accurately describing colour:
 
--   The colour charts must be used in clear direct or non-dappled indirect daylight. Avoid describing colours in the early morning, late afternoon, in dappled light or in deep shade.
--   Record the **moist** colour of each soil sample to standardise the readings across profiles. Use a spray bottle to gently wet up a sample, if necessary, or wait for a saturated sample to dry out slightly. In both cases wait until the sample surface is no longer glistening.
+-   The colour charts must be used in clear direct or non-dappled indirect daylight. Avoid describing colours in the early morning, late afternoon, in dappled light or in deep shade. Avoid using damaged or faded colour books.
 -   Remove sunglasses and turn to keep the main light source behind your shoulder.
+-   Record the **moist** colour to standardise the readings across profiles. Use a spray bottle to gently wet up a sample, if necessary, or wait for a saturated sample to dry out slightly. In both cases wait until the sample surface is no longer glistening.
 -   The sample may not perfectly match any one chip; record the closest match available. Do not interpolate between chips.
--   Do not record the colour of a texture bolus or a smeared sample as these can be altered by e.g. mixing in mottles or breaking down ped surface features.
-
-For sands, which may have multicoloured grains from multiple parent materials, colour matching can be difficult, but try to pick the colour of the dominant mineral component. Additional colour information can be stored as free-text notes.
 
 ::: {#wrn-col .callout-warning appearance="minimal" collapse="true" title="Colour vision acuity"}
 Operators need full colour vision to use the Munsell colour system correctly. While diagnosed colour blindness is relatively rare, many people have minor colour-recognition limitations without knowing it. Taking a colour vision test periodically is recommended.
 :::
 
-::: {#nte-colpic .callout-note appearance="minimal" collapse="true" title="Obtaining soil colour from photographs"}
-Obtaining soil colour information from photographs is possible, but the photographs must meet certain requirements. See @roudier2016 and @kirillova2021 for more information.
+::: {#nte-colpic .callout-note appearance="minimal" collapse="true" title="Obtaining soil colour from photographs and electronic devices"}
+Obtaining soil colour information from digital photographs is possible, but the photographs must meet certain requirements. See @roudier2016 and @kirillova2021 for more information. Direct electronic colour sensing devices are available commercially, and research into using smartphones as colour-sensors is ongoing [@mancini2020; @sinclair2024].
 :::
+
+## Matrix colour {#sec-col-matrix}
+
+The matrix colour of the soil is the dominant 'background' colour. This excludes the colours of redox-induced mottles.
+
+To determine matrix colour, take a 2-3 cm^3^ sample of fresh soil from the target horizon, avoiding colour transition zones (e.g. horizon boundaries). If large enough peds are available, extract a ped and break it open to expose a fresh face. Otherwise, cut or scoop a fresh sample from the soil mass. Moisten the sample lightly before assessing the colour. Do not record the colour of a texture bolus or a smeared surface as these can be altered by mixing in mottles or destroying ped surface features. For sands, which may have differently-coloured grains from multiple parent materials, colour matching can be difficult, but try to pick the colour of the dominant mineral component. Holding the sample out at arms' length may also help choose a dominant colour. Additional colour information can be stored as free-text notes.
+
+For routine assessment, record the single dominant matrix colour per horizon. For detailed assessment, up to three matrix colours may be recorded if necessary. It is assumed that multiple matrix colours are co-dominant, otherwise the subdominant ones must logically be recorded as colour patterns (@sec-col-patt).
+
+Dry soil matrix colours are sometimes necessary as well, e.g. for diagnosing a bleached E horizon. If moist and dry matrix colours are both obtained for a horizon, append them with their moisture status as [D]{.ceg} or [M]{.ceg}.
+
+Example: [10YR52 M / 10YR71 D]{.ceg}.
+
+::: {#nte-lowch .callout-note appearance="minimal" collapse="true" title="Low-chroma colours"}
+Naming soil horizons and classifying soils according to the NZSC requires, in many cases, the ability to identify 'low chroma colours'. These colours have:
+
+1.  a moist chroma of ≤ 2, or
+2.  a moist chroma of 3 and a value ≥ 6.
+
+Visually, the red outline in @fig-lowch contains the low chroma colours. These are in the same location on any given page in the Munsell colour book. Additionally, all of the colours on the Gley and White pages qualify as low chroma.
+
+![One page from the Munsell Soil Colour Chart book, with the low-chroma colours outlined in red.](data/Munsell_75YR_lowchroma.JPG){#fig-lowch fig-align="center" width="250"}
+:::
+
+## Colour patterns {#sec-col-patt}
+
+For most assessments, only pattern type (@sec-patt-type) and abundance ( @sec-patt-abund) are required in addition to the pattern colour itself. Further detail is optional, but descriptive measures for pattern shape, size and distinctness are provided below.
+
+### Pattern type {#sec-patt-type}
+
+Soil colour patterns are most commonly driven by redox processes affecting iron and/or manganese-dominated minerals, but can also be a product of parent material weathering, water movement, or mixing. Record pattern type using the codes in @tbl-hr-pattype.
+
+```{r}
+#| label: tbl-hr-pattype
+#| tbl-cap: "Types of soil colour pattern"
+
+dat_hr_pattype <-
+  tribble(~Code, ~Name, ~Description,
+         'M', 'Mottles', 'Colour patterns induced by redox processes',
+         'R', 'Structural', 'Colour patterns induced by preferential flow',
+         'W', 'Weathering', 'Colour patterns induced by parent material weathering, most commonly seen in BC horizons and below (e.g. rock ghost patterns)',
+         'X', 'Mixing', 'Colour patterns created by biological (e.g. worm tunnels) or mechanical (e.g. landslide) means')
+
+tbl_hr_pattype <- gt(dat_hr_pattype) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_pattype
+```
+
+### Pattern abundance {#sec-patt-abund}
+
+Estimate the areal percentage of the cut exposure face occupied by the colour pattern, versus the matrix colour. Use the visual guides in @sec-in-abundpics to help estimate accurately. Abundance data can be classified according to @tbl-in-abgen where needed.
+
+For example, [M 7.5YR58 25%]{.ceg} for a bright orange redox mottle observed in moist soil conditions.
+
+### Pattern shape {#sec-patt-shape}
+
+Record pattern shape using the codes in @tbl-hr-patshp.
+
+```{r}
+#| label: tbl-hr-patshp
+#| tbl-cap: "Types of soil colour pattern shape"
+
+dat_hr_patshp <-
+  tribble(~Code, ~Name, ~Description,
+         'B', 'Blotches', 'Rounded shapes, blobs, where colour patterns penetrate the soil mass',
+         'S', 'Stripes',  'Linear colour patterns e.g. root linings',
+         'C', 'Coatings', 'Patterns caused by ped surface features e.g. cutans')
+
+tbl_hr_patshp <- gt(dat_hr_patshp) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_patshp
+```
+
+### Pattern size {#sec-patt-size}
+
+Estimate the average size of each pattern in mm, e.g. [5 ± 2 mm]{.ceg}. Pattern size may be classified against @sec-in-solsz if necessary.
+
+### Pattern contrast {#sec-patt-contrast}
+
+Rules for determining contrast in the field are defined in @tbl-hr-patcont. If both matrix and pattern colours are recorded using the Munsell system, contrast can be calculated automatically. Complete rules for automating this process are found in @schoeneberger2012, section 2-15.
+
++-----------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Code      | Name      | Description                                                                                                                                                                                                                |
++:==========+:==========+:===========================================================================================================================================================================================================================+
+| [F]{.ceg} | Faint     | Indistinct colour variation evident only on close examination. The secondary colour is typically of the same hue as the primary colour and will generally differ by no more than one unit of chroma or two units of value. |
++-----------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [D]{.ceg} | Distinct  | Although not striking, the colour variation is readily seen. The secondary and primary colours usually:                                                                                                                    |
+|           |           |                                                                                                                                                                                                                            |
+|           |           | 1.  Have the same hue. but differ by more than one and less than four units of chroma, or more than two and less than four units of value, or                                                                              |
+|           |           | 2.  Differ by one hue (2.5 Munsell units) and not more than one unit of chroma or two units of value.                                                                                                                      |
++-----------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [P]{.ceg} | Prominent | The colour variation is conspicuous. The secondary and primary colours normally differ by                                                                                                                                  |
+|           |           |                                                                                                                                                                                                                            |
+|           |           | 1.  At least two full hues (5 Munsell units) if chroma and value are the same, or                                                                                                                                          |
+|           |           | 2.  At least four units of value or chroma if the hue is the same, or                                                                                                                                                      |
+|           |           | 3.  At least one unit of chroma or two units of value if there is a difference of one full hue (2.5 Munsell units).                                                                                                        |
++-----------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+: Types of soil colour pattern contrast {#tbl-hr-patcont .striped cols_width=\[10,20,70\]}
+
+### Pattern boundary distinctness {#sec-patt-dist}
+
+Record pattern boundary distinctness using the codes in @tbl-hr-patdist.
+
+```{r}
+#| label: tbl-hr-patdist
+#| tbl-cap: "Types of soil colour pattern distinctness"
+
+dat_hr_patdist <-
+  tribble(~Code, ~Name, ~Description,
+         'S', 'Sharp', 'Knife-edge boundaries between colours.',
+         'C', 'Clear', 'Colour transition < 2 mm wide',
+         'D', 'Diffuse', 'Colour transition > 2 mm wide')
+
+tbl_hr_patdist <- gt(dat_hr_patdist) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_patdist
+```
 
 ### Colour short codes {#sec-col-quick}
 
-In some circumstances (e.g. rapid assessment of redox mottles), a series of single letter codes can be used for colour.
+For rapid recording of pattern colour, the single letter codes in @tbl-hr-colorshort can be used.
+
+For example, [M O 25%]{.ceg} for a bright orange redox mottle observed in moist soil conditions.
+
+::: {.callout-important appearance="minimal" collapse="false"}
+Colour short codes must not be used for recording the matrix colour(s), as they do not provide enough detail for soil classification.
+:::
+
 
 ```{r}
 #| label: tbl-hr-colorshort
@@ -90,138 +245,4 @@ tbl_hr_colorshort <- gt(dat_hr_colorshort) |>
   
 tbl_hr_colorshort
 
-```
-
-## Matrix colour {#sec-col-matrix}
-
-The matrix colour of the soil is the dominant 'background' colour. This excludes the colours of redox-induced mottles (mostly oranges and gleys).
-
-For routine assessment, record the single dominant matrix colour per horizon. For detailed assessment, up to three matrix colours may be recorded if necessary. It is assumed that multiple matrix colours are co-dominant, otherwise the subdominant one must logically be recorded as colour patterns (@sec-col-patt).
-
-Dry soil matrix colours are sometimes necessary as well, e.g. for diagnosing a bleached E horizon. If moist and dry matrix colours are both obtained for a horizon, append them with their moisture status as [D]{.ceg} or [M]{.ceg}.
-
-Example: [10YR52 M / 10YR71 D]{.ceg}.
-
-## Colour patterns {#sec-col-patt}
-
-For most assessments, only pattern type and abundance are required. Further detail is optional, but descriptive measures for pattern shape, size and distinctness are provided below.
-
-### Pattern type {#sec-patt-type}
-
-Soil colour patterns are most commonly driven by redox processes affecting iron minerals, but can also be a product of parent material weathering, water movement, or mixing.
-
-```{r}
-#| label: tbl-hr-pattype
-#| tbl-cap: "Types of soil colour pattern"
-
-dat_hr_pattype <-
-  tribble(~Code, ~Name, ~Description,
-         'M', 'Mottles', 'Colour patterns induced by redox processes',
-         'R', 'Reticulate', 'Colour patterns induced by preferential flow (e.g. gammate patterns in pallic soils)',
-         'W', 'Weathering', 'Colour patterns induced by parent material weathering, most commonly seen in BC horizons and below (e.g. rock ghost patterns)',
-         'X', 'Mixing', 'Colour patterns created by biological (e.g. worm tunnels) or mechanical (e.g. landslide) means')
-
-tbl_hr_pattype <- gt(dat_hr_pattype) |>
-  tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red',
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10), Name ~ pct(20))
-  
-tbl_hr_pattype
-```
-
-### Pattern abundance
-
-Estimate the areal percentage of the cut exposure face occupied by the colour pattern, versus the matrix colour. Use the visual guides in @sec-in-abundpics to help estimate accurately. Abundance data can be classified according to @tbl-in-abgen where needed.
-
-For example, [M 7.5YR58 25%]{.ceg} for a bright orange redox mottle.
-
-### Pattern shape
-
-```{r}
-#| label: tbl-hr-patshp
-#| tbl-cap: "Types of soil colour pattern shape"
-
-dat_hr_patshp <-
-  tribble(~Code, ~Name, ~Description,
-         'B', 'Blotches', 'Rounded shapes, blobs, where colour patterns penetrate the soil mass',
-         'S', 'Stripes', 'Linear colour patterns e.g. root linings',
-         'C', 'Coatings', 'Patterns caused by ped surface features e.g. cutans')
-
-tbl_hr_patshp <- gt(dat_hr_patshp) |>
-  tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10), Name ~ pct(20))
-  
-tbl_hr_patshp
-```
-
-### Pattern size
-
-Estimate the average size of each pattern in mm, e.g. [5 ± 2 mm]{.ceg}. Pattern size may be classified against @sec-in-solsz if necessary.
-
-### Pattern contrast
-
-If both matrix and pattern colours are recorded using the Munsell system, the following parameter can be calculated automatically. Complete rules for automating this process are found in @schoeneberger2012, section 2-15.
-
-+-----------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Code      | Name      | Description                                                                                                                                                                                                                |
-+:==========+:==========+:===========================================================================================================================================================================================================================+
-| [F]{.ceg} | Faint     | Indistinct colour variation evident only on close examination. The secondary colour is typically of the same hue as the primary colour and will generally differ by no more than one unit of chroma or two units of value. |
-+-----------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| [D]{.ceg} | Distinct  | Although not striking, the colour variation is readily seen. The secondary and primary colours usually:                                                                                                                    |
-|           |           |                                                                                                                                                                                                                            |
-|           |           | 1.  Have the same hue. but differ by more than one and less than four units of chroma, or more than two and less than four units of value, or                                                                              |
-|           |           | 2.  Differ by one hue (2.5 Munsell units) and not more than one unit of chroma or two units of value.                                                                                                                      |
-+-----------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| [P]{.ceg} | Prominent | The colour variation is conspicuous. The secondary and primary colours normally differ by                                                                                                                                  |
-|           |           |                                                                                                                                                                                                                            |
-|           |           | 1.  At least two full hues (5 Munsell units) if chroma and value are the same, or                                                                                                                                          |
-|           |           | 2.  At least four units of value or chroma if the hue is the same, or                                                                                                                                                      |
-|           |           | 3.  At least one unit of chroma or two units of value if there is a difference of one full hue (2.5 Munsell units).                                                                                                        |
-+-----------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-: Types of soil colour pattern contrast {#tbl-hr-patcont .striped cols_width=\[10,20,70\]}
-
-### Pattern boundary distinctness
-
-```{r}
-#| label: tbl-hr-patdist
-#| tbl-cap: "Types of soil colour pattern distinctness"
-
-dat_hr_patdist <-
-  tribble(~Code, ~Name, ~Description,
-         'S', 'Sharp', 'Knife-edge boundaries between colours.',
-         'C', 'Clear', 'Colour transition < 2 mm wide',
-         'D', 'Diffuse', 'Colour transition > 2 mm wide')
-
-tbl_hr_patdist <- gt(dat_hr_patdist) |>
-  tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red',
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10), Name ~ pct(20))
-  
-tbl_hr_patdist
 ```
