@@ -3,123 +3,28 @@
 ```{r}
 library(tidyverse) 
 library(gt)
-library(ggtern)
+library(ggtern) # NB not compatible with ggplot2 v. 4 at 2025-09 - stick to 3.5.2
 library(extrafont)
 loadfonts(quiet = TRUE)
 ```
 
-A great deal of soil physical and chemical behaviour is dependant on the particle size distribution within the solid fraction - the relative dominance of particular sizes, as well as the total size range present. This includes both mineral and organic matter. In the field, particle size distribution is estimated on a per-horizon basis using a combination of visual examination and hand manipulation under moist conditions. Field estimates of particle size distribution, particularly of the \< 2 mm fraction, are commonly referred to as 'soil texture'.
+A great deal of soil physical and chemical behaviour is dependant on the particle size distribution within the solid fraction - the relative dominance of particular sizes, as well as the total size range present. This includes both mineral and organic matter. In the field, particle size distribution is estimated on a per-horizon basis using a combination of visual examination and hand manipulation under moist conditions.
 
-While the true particle size distribution is continuous, for ease of communication it is divided up into set ranges, the broadest of which are detailed in @tbl-hr-simpletex. Organic matter is treated slightly differently, in that it can't be separated easily from the soil mass in the field, and its particle size is less important than other characteristics (see @sec-hr-ortxt).
-
-```{r}
-#| label: tbl-hr-simpletex
-#| tbl-cap: "Generalised soil texture classes"
-
-dat_hr_simpletex <-
-  tribble(~Code, ~Name, ~Description,
-         'F', 'Fine earth',   'Comprised largely of mineral particles < 2 mm',
-         'G', 'Gravelly', 'Comprised largely of mineral particles 2–60 mm',
-         'C', 'Cobbly',   'Comprised largely of mineral particles 60–200 mm',
-         'B', 'Bouldery', 'Comprised largely of mineral particles > 200 mm',
-         'O', 'Organic',  'Comprised largely of decomposing organic matter')
-
-tbl_hr_simpletex <- gt(dat_hr_simpletex) |>
-  tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10), Name ~ pct(20))
-  
-tbl_hr_simpletex
-
-```
-
-There is no set upper limit for the 'Bouldery' class, but in practice rocks larger than the profile are either recorded as (effectively) the bedrock (see @sec-pr-rsa, @sec-hor-r) or as surface features (see @sec-pr-surfcov) depending on their position.
+The true particle size distribution is continuous, and open-ended. For ease of communication, particle size distribution is divided into set ranges, the broadest of which are the fine earth (\< 2 mm) and coarse mineral (≥ 2 mm, 'rock fragments') fractions. Organic matter is treated slightly differently, in that it can't be separated easily from the soil mass in the field, and its particle size is less important than other characteristics (see @sec-hr-ortxt). Field estimates of particle size distribution are commonly referred to as 'soil texture'.
 
 ::: {#nte-psz .callout-note appearance="minimal" collapse="true" title="Particle size boundaries in New Zealand"}
-All the particle size ranges in this section align with those of NZS 4402.1:1986 [@standardsnewzealand], although terminology differs somewhat. In the standard, the fine earth fraction is called 'fine soil', the gravelly fraction 'medium soil', and the cobbly fraction 'coarse soil'. Materials with particle sizes over 200 mm are not part of the standard.
+The particle size ranges used in this chapter align with those of NZS 4402.1:1986 [@standardsnewzealand] for civil-engineering soil testing, although the terminology differs somewhat. In the civil-engineering standard, the fine earth fraction is called 'fine soil', the gravelly fraction 'medium soil', and the cobbly fraction 'coarse soil'. Materials with particle sizes over 200 mm are not part of the standard.
 :::
 
 ## Describing texture components {#sec-hr-texture}
 
-### Fine earth soil materials {#sec-hr-eatxt}
+### Fine earth materials {#sec-hr-eatxt}
 
-The composition of the fine earth mineral fraction (\< 2 mm) is assessed separately to coarser mineral materials for practical reasons - not least because a coarse fraction is not always present. The fine fraction is assessed by removing any coarse material present by picking or sieving, and then manipulating the remaining sample in a moist state (see @sec-pr-sws).
+The composition of the fine earth mineral fraction is assessed separately to that of larger rock fragments for practical reasons - not least because rock fragments are not always present. The fine fraction is assessed in the field by removing any rock fragments present by picking or sieving, and then manipulating the remaining sample in a moist state (see @sec-pr-sws).
 
-### Estimating soil texture by hand
+Soil texture is organised in two levels. At the broadest level, there are four major texture groups (clay, silt, sand, loam), defined in @tbl-hr-earthgrps. Within these groups, there are eleven recognised texture classes, which are the categories most commonly used in description and interpretation. The texture classes are most easily visualised on a ternary diagram, as seen in @fig-texture-tri. The range limits for each class are given in @tbl-texture-tri.
 
-The following method is recommended for use in the field. The method can also be used on fresh soil from representative bagged samples if field time is limited. Oven-dried samples are not reliable estimators of texture, as some soil minerals clump together when heated and cannot be redispersed by hand.
-
-1.  Collect a small handful of soil material (\~30 mm block) from the target soil horizon, avoiding macrofeatures and boundary transition zones as much as possible.
-2.  Pick or sieve to remove the coarse fraction.
-3.  If the sample is not already moist, either add small amounts of water while working the sample to bring its moisture content up, or work it in the hand until it dries. Additional soil might be required if too much water is added at once. Once the correct moisture state is reached, the sample should feel moist to the touch but not release much, if any, water when squeezed.
-4.  Continue working the sample in the hand until any structural units are broken down and the mixture is homogenised.
-5.  Attempt to roll the sample into a ball. Can this be done easily? Does the ball hold together, or break apart under gentle pressure?
-6.  If a ball can be reliably formed, compress the ball between thumb and forefinger. How much force is required to compress the ball by half? Does the ball crack, or keep a smooth outer surface?
-7.  Check the look and feel of the ball. Is it gritty, floury, or buttery? Does it behave like plasticine? Can it be polished to a shiny surface?
-8.  Attempt to form a ribbon \~5-10 mm wide and \~3 mm thick, by extruding the sample between the thumb and the side of the forefinger. Can a ribbon be formed without smearing or breaking? If so, how long a ribbon can be generated?
-
-With these characteristics established, a texture class should be identifiable from the list in @tbl-hr-texchar.
-
-```{r}
-#| label: tbl-hr-texchar
-#| tbl-cap: "Texture class characteristics"
-
-dat_hr_texchar <-
-  tribble(~Group, ~Code, ~Name, ~Features,
-          'Sandy', 'SS', 'Sand', 'Dominated by visible grains. Cannot form a persistent ball under moist conditions. Working the sample leaves no clay stain on hands. Cannot form a ribbon.',
-          'Sandy', 'LS', 'Loamy Sand', 'Dominated by visible grains. May hold a very weak ball if carefully handled. Working the sample may leave a clay stain on hands. Cannot form a ribbon.',
-          'Loamy', 'SL', 'Sandy Loam', 'Visible grains in a matrix of finer material. Feels gritty to the touch. Can form a weak ball and a short ribbon (< ~25 mm).',
-          'Loamy', 'SC', 'Sandy Clay Loam', 'Visible grains in a matrix of finer material. Feels gritty to the touch. Can form a coherent ball and a short ribbon (< ~25 mm).',
-          'Loamy', 'CL', 'Clay Loam', 'Some visible grains but mostly finer material. Feels slightly gritty to the touch. Can form a coherent ball and a ribbon of ~25–50 mm length.',
-          'Silty', 'LZ', 'Loamy silt', 'Some visible grains but mostly finer material. Feels smooth or floury to the touch. Can form a weak ball but cannot easily form a ribbon.',
-          'Silty', 'ZZ', 'Silt', 'Fine material without visible grains. Feels smooth or floury to the touch. May form a weak ball but usually smears when attempting to form a ribbon.',
-          'Silty', 'ZL', 'Silty loam', 'Fine material without visible grains. Feels smooth or floury to the touch. Can form a coherent ball and a ribbon of ~25–50 mm length.',
-          'Clayey', 'LC', 'Loamy clay', 'Fine material with some appreciable grit. Forms a coherent, smooth ball that may be difficult to compress. Can form a ribbon of > ~50 mm length.',
-          'Clayey', 'ZC', 'Silty clay', 'Fine material without visible grains. Forms a coherent, very smooth ball that may be difficult to compress. Can form a ribbon of > ~50 mm length.',
-          'Clayey', 'CC', 'Clay', 'Fine material without visible grains. Forms a coherent, smooth ball that may be difficult to compress, but can usually compress without cracking. Can form a ribbon of > ~50 mm length.')
-
-tbl_hr_texchar <- gt(group_by(dat_hr_texchar, Group)) |>
-  tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%',
-    row_group.as_column = TRUE
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red',
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 2)) |>
-  tab_style(style = list(cell_text(weight = 'bold', 
-                                   v_align = 'middle')),
-            locations = cells_row_groups()) |>
-  cols_width(Group ~pct(10), Code ~pct(10), Name ~ pct(20))
-  
-tbl_hr_texchar
-```
-
-::: {#wrn-tex .callout-warning appearance="minimal" collapse="true" title="Caveats for hand texturing"}
-Since hand texturing is a sense-dependent process that involves manipulating the whole fine fraction, accurate estimation of particle size can be hampered by competing factors. Some of the more well-known [@salley2018] are:
-
--   **Grading:** a small amount of coarse sand in a finer matrix can cause underestimation of clay content, because the large particles are more noticeable.
--   **Clay mineralogy:** The physical properties of 2:1 phyllosilicate clays like smectite make it easier to form a ball or ribbon than 1:1 phyllosilicates like kaolinite, or clay-size secondary minerals like allophane. Thus, clay content can be underestimated in older soils weathered under humid conditions, and in volcanic ash soils.
--   **Microstructure:** in some soils, very small aggregates cannot be broken down by hand manipulation, or at best require dedicated working for over ten minutes per sample. This characteristic can lead to clay content underestimation - but crucially, hand texture may more closely align with *in-situ* physical properties than laboratory texture from chemically dispersed samples.
--   **Organic matter:** organic matter can lend a spongy or silky feel to a sample that may lead to overestimating silt and underestimating clay.
--   **Sharpness:** angular particles are more likely to be interpreted as sandy than silty.
--   **Experience and environment:** workers who spend most of their time in landscapes that have a narrow range of soil textures become more sensitive to minor variations in hand-feel, and are more likely to assign unusual textures to a neighbouring class because it 'feels wrong' to get the same class all the time.
-
-All of these confounding factors can be minimised with regular training, using a wide variety of samples of known composition.
-:::
-
-Soil texture has four major classes, defined in @tbl-hr-earthgrps. These in turn contain several subdivisions each, for a total of eleven texture classes. The classes are most easily visualised on a ternary diagram, as seen in @fig-texture-tri. The range limits for each class are given in @tbl-texture-tri.
+These divisions can reflect significant changes in measurable properties like hydraulic conductivity, but it is important to note that there are no sudden and obvious changes in hand-feel or visual appearance at each boundary.
 
 ```{r}
 #| label: tbl-hr-earthgrps
@@ -128,8 +33,8 @@ Soil texture has four major classes, defined in @tbl-hr-earthgrps. These in turn
 dat_hr_earthgrps <-
   tribble(~Code, ~Name, ~Description,
          'C', 'Clayey', 'Comprised largely of mineral particles < 0.002 mm',
-         'Z', 'Silty',  'Comprised largely of mineral particles 0.002–0.06 mm',
-         'S', 'Sandy',  'Comprised largely of mineral particles 0.06–2.0 mm',
+         'Z', 'Silty',  'Comprised largely of mineral particles ≥ 0.002–< .06 mm',
+         'S', 'Sandy',  'Comprised largely of mineral particles ≥ 0.06–< 2.0 mm',
          'L', 'Loamy',  'Comprising a mixture of mineral particles < 2.0 mm')
 
 tbl_hr_earthgrps <- gt(dat_hr_earthgrps) |>
@@ -155,7 +60,7 @@ tbl_hr_earthgrps
 nztt_dat <- readRDS(file.path('data', 'NZTT.RDS')) 
 
 nztt_labels <- readRDS(file.path('data', 'NZTT_LABELS.RDS')) |>
-    mutate(cat_texture_code = ifelse(cat_texture_code == 'S', 'SS', cat_texture_code)) |>
+  mutate(cat_texture_code = ifelse(cat_texture_code == 'S', 'SS', cat_texture_code)) |>
   mutate(cat_texture_code = ifelse(cat_texture_code == 'Z', 'ZZ', cat_texture_code)) |>
   mutate(cat_texture_code = ifelse(cat_texture_code == 'C', 'CC', cat_texture_code))
 
@@ -236,11 +141,15 @@ tbl_hr_textri
 
 ```
 
-These divisions reflect significant changes in measurable properties like hydraulic conductivity, but it is important to note that there are no sudden and obvious changes in hand-feel at each boundary.
+::: {#nte-nztri .callout-note appearance="minimal" collapse="true" title="Soil texture triangles"}
+Soil texture triangles are a communication tool. They vary by jurisdiction, with class numbers, names, and boundary lines reflecting the local evolution of pedological practice. The triangle in use in New Zealand was formulated in the 1980's by New Zealand pedologists to align with both the USDA texture triangle [@schoeneberger2012] and a previous New Zealand standard [@taylor1979], while remaining conceptually simple and easy to amalgamate into the four texture groups [@milne1995].
+
+Translating texture classes between different triangles is not recommended, although numeric data describing sand, silt and clay can be reclassified. The class boundaries and the size fraction boundaries must both be accounted for (see @nte-psb).
+:::
 
 #### Sand fraction modifiers {#sec-hr-sandmods}
 
-The loamy and sandy texture classes in @tbl-texture-tri can optionally be accompanied by additional information about the sand fraction. These codes, listed in @tbl-hr-sandquals, can be appended to a texture class as a prefix, e.g. [KLS]{.ceg} for coarse loamy sand.
+The loamy and sandy texture classes in @tbl-texture-tri can optionally be accompanied by additional information about the sand fraction. These codes, listed in @tbl-hr-sandquals, can be appended to a texture class as a prefix, e.g. [KLS]{.ceg} for coarse loamy sand. Only use a modifier when confident that ≥ 50% of the sand fraction will fall into the modifier's size range.
 
 ```{r}
 #| label: tbl-hr-sandquals
@@ -248,9 +157,9 @@ The loamy and sandy texture classes in @tbl-texture-tri can optionally be accomp
 
 dat_hr_sandquals <-
   tribble(~Code,    ~Name,                       ~Description,
-            'F',   'Fine', 'Sand is dominantly 0.06–0.2 mm',
-            'M', 'Medium', 'Sand is dominantly 0.2–0.6 mm',
-            'K', 'Coarse', 'Sand is dominantly 0.6–2.0 mm')
+            'F',   'Fine', 'Sand is dominantly ≥ 0.06–< 0.2 mm',
+            'M', 'Medium', 'Sand is dominantly ≥ 0.2–< 0.6 mm',
+            'K', 'Coarse', 'Sand is dominantly ≥ 0.6–< 2.0 mm')
 
 tbl_hr_sandquals <- gt(dat_hr_sandquals) |>
   tab_options(
@@ -269,6 +178,115 @@ tbl_hr_sandquals
 ```
 
 Subdivisions in the silt fraction can be determined in the laboratory but cannot be reliably detected by hand, and so are not included here.
+
+### Rock fragments
+
+Where total rock fragments occupy more than 5% of the horizon volume, their presence should be signified in the texture code. Choose the code from @tbl-hr-rocksz that describes the majority of the fragments, and apply it using the conventions in @tbl-hr-cftex.
+
+```{r}
+#| label: tbl-hr-rocksz
+#| tbl-cap: "Organic matter types"
+
+dat_hr_rocksz <-
+  tribble(~Code, ~Name, ~Description,
+         'G', 'Gravelly',   'Mineral particles ≥ 2–< 60 mm',
+         'C', 'Cobbly',     'Mineral particles ≥ 60–< 200 mm',
+         'B', 'Bouldery',   'Mineral particles ≥ 200 mm')
+
+tbl_hr_rocksz <- gt(dat_hr_rocksz) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_rocksz
+```
+
+```{r}
+#| label: tbl-hr-cftex
+#| tbl-cap: "Rock fragment modifier rules"
+
+dat_hr_cftex <-
+  tribble(~Percent, ~Convention, ~egcode, ~egtext,
+         '< 5%', 'Do not append', 'CL', 'clay loam with ~2% gravel',
+         '≥ 5–< 35%', 'Append as suffix', 'CL(G)', 'clay loam with ~10% gravel',
+         '≥ 35–< 70 ',  'Append as prefix', '(G)CL', 'clay loam with ~50% gravel',
+         '≥ 70%', 'Use as primary code', 'G', 'clean gravel')
+
+tbl_hr_cftex <- gt(dat_hr_cftex) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'right')),
+            locations = cells_body(columns = 3)) |>
+  cols_label('egcode' = 'Example', egtext = '') |>
+  cols_width(Percent ~pct(10), Convention ~pct(25), egcode ~pct(10))
+  
+tbl_hr_cftex
+```
+
+There is no set upper limit for the 'Bouldery' class, but in practice rocks larger than the profile are either recorded as (effectively) the bedrock (see @sec-pr-rsa, @sec-hor-r) or as surface features (see @sec-pr-surfcov) depending on their position.
+
+If a horizon has \> 70% rock fragments and \> 5% fine earth, mineral texture codes can still be appended as a suffix, e.g. [G(ZL)]{.ceg} for a gravel with some interstitial silt loam.
+
+When recording texture for a mixed fine-earth/organic horizon containing rock fragments, record the rock fragment modifier before the organic modifier, separated by a comma, e.g. [SL(G, H)]{.ceg} for a sandy loam with gravel and humus, or [(G, H)SL]{.ceg} for a gravelly, humic sandy loam.
+
+For poorly sorted horizons where a single fraction does not dominate the particle size distribution of rock fragments, choose the largest rock fragment code for recording. Determine abundance from the total percentage of rock fragments. For example, in a silt loam horizon with 15% gravel, 15% cobble and 10% boulder, use [(C)ZL]{.ceg} (total rock fragments 40%, largest co-dominant fraction cobble).
+
+Conventions for describing rock fragment abundance, size, shape, lithology and distribution are outlined in @sec-rockfrag.
+
+::: {#nte-rockvis .callout-note appearance="minimal" collapse="true" title="Visually estimating rock fragments"}
+At a pit face or exposure, *in situ* rock fragment abundance can be assessed using the visual aids in @sec-in-abundpics. The range boundaries in @tbl-hr-cftex can also be recognised with the following:
+
+-   35% by volume rock fragments approximately represents the boundary between materials in which the fragments seem to be entirely 'floating' in the fine-earth matrix, and materials in which rock fragments are to some extent touching one another.
+-   70% by volume rock fragments approximately represents the boundary beyond which individual rock fragments are in complete contact, and any fine earth is confined to interstices.
+
+More reliable assessments require sampling and sieving (see @sec-obssamp).
+:::
+
+#### Gravel fraction modifiers
+
+The gravel fraction can optionally be subdivided into fine, medium and coarse gravel, much like the sand fraction (see @sec-hr-sandmods). These codes, listed in @tbl-hr-gvquals, can be appended to the [G]{.ceg} code as a prefix e.g. [KG]{.ceg} for coarse gravel. Only use a modifier when confident that ≥ 50% of the gravel fraction will fall into the modifier's size range.
+
+```{r}
+#| label: tbl-hr-gvquals
+#| tbl-cap: "Gravel fraction modifiers"
+
+dat_hr_gvquals <-
+  tribble(~Code, ~Name, ~Description,
+            'F', 'Fine',   'Gravel is dominantly ≥ 2–< 6 mm',
+            'M', 'Medium', 'Gravel is dominantly ≥ 6–< 20 mm',
+            'K', 'Coarse', 'Gravel is dominantly ≥ 20–< 60 mm')
+
+tbl_hr_gvquals <- gt(dat_hr_gvquals) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_gvquals
+```
+
+Similar subdivisions are not considered useful for the cobble or boulder fractions.
 
 ### Organic materials {#sec-hr-ortxt}
 
@@ -306,10 +324,10 @@ tbl_hr_omtyp
 # not happy with the lack of source for these cutoffs but the NZSC uses them so shrug emoji
 dat_hr_omtex <-
   tribble(~Percent, ~Convention, ~egcode, ~egtext,
-         '< 17%', 'Do not append', 'CL', 'for a clay loam with little organic material',
-         '17 - 30%', 'Append as suffix', 'CL(P)', 'for a clay loam with ~20% peaty organic material',
-         '30 - 50%', 'Append as prefix', '(P)CL', 'for a clay loam with ~40% peaty organic material',
-         '> 50%', 'Use as primary code', 'P', 'for a peat with little to no mineral material')
+         '< 17%', 'Do not append', 'CL', 'clay loam with little organic material',
+         '≥ 17–< 30%', 'Append as suffix', 'CL(P)', 'clay loam with ~20% peaty organic material',
+         '≥ 30–< 50%', 'Append as prefix', '(P)CL', 'clay loam with ~40% peaty organic material',
+         '≥ 50%', 'Use as primary code', 'P', 'peat with little to no mineral material')
 
 tbl_hr_omtex <- gt(dat_hr_omtex) |>
   tab_options(
@@ -328,17 +346,19 @@ tbl_hr_omtex <- gt(dat_hr_omtex) |>
 tbl_hr_omtex
 ```
 
-If a horizon has \> 50% organic material and \> 5% mineral material, mineral codes can still be appended as a suffix, e.g. [H(ZL)]{.ceg} for a forest litter layer containing some fine mineral material, or [P(G)]{.ceg} for a peat with some volcanic lapilli present.
+If a horizon has ≥ 50% organic material and \> 5% mineral material, mineral codes can still be appended as a suffix, e.g. [H(ZL)]{.ceg} for a forest litter layer containing some fine mineral material, or [P(G)]{.ceg} for a peat with some volcanic lapilli present.
 
 More precise field estimates of organic matter content within the ranges in @tbl-hr-cftex are unlikely to be accurate; direct measurement of SOC paired with bulk density is preferred.
 
 ::: {#nte-ocom .callout-note collapse="true" title="Soil organic matter and soil organic carbon" appearance="minimal"}
-Soil organic matter (SOM) is not estimated to a high precision in the field due to accuracy concerns. Lab-based SOM methods (e.g. wet or low-temperature combustion) also produce results that vary by soil type and organic matter characteristics. As a result, soil organic carbon (SOC) is the far more frequent measurement, and is most often assessed by high-temperature combustion methods. Some debate remains in the literature about the best way to estimate SOM from SOC, but the most commonly used method at present is a simple conversion factor of $SOM = 2 \times SOC$ [@pribyl2010].
+Soil organic matter (SOM) is not estimated to a high precision in the field due to accuracy concerns. Lab-based SOM methods (e.g. wet or low-temperature combustion) also produce results that vary by soil type. As a result, soil organic carbon (SOC) is the far more frequent measurement, and is most often assessed by high-temperature combustion methods. The debate about the best way to estimate SOM from SOC remains active [@pribyl2010; @klingenfuß2014], but the most commonly used method at present is a conversion factor of $SOM = 1.72 \times SOC$ .
 :::
 
-### Organic material modifiers {#sec-tex-orgmod}
+#### Organic material modifiers {#sec-tex-orgmod}
 
 If more detail is desired, organic material decomposition and origin can also be appended using @tbl-hr-omdec and @tbl-hr-omo, e.g. [PHU]{.ceg} for a well-decomposed humic peat where the contributing plant species cannot be clearly identified.
+
+Note that degree of decomposition is roughly analogous to the coarse/medium/fine subdivisions seen in the mineral fraction, but without strict size limits.
 
 ```{r}
 #| label: tbl-hr-omdec
@@ -348,7 +368,7 @@ dat_hr_omdec <-
   tribble(~Code, ~Name, ~Description,
          'F', 'Fibric', 'Organic matter weakly decomposed and dominated by visible plant remains',
          'M', 'Mesic', 'Organic matter moderately decomposed, some visible plant structures but mostly amorphous',
-         'H', 'Humic', 'Organic matter no longer identifiable, minimal fibre content')
+         'H', 'Humic', 'Plant remains no longer identifiable, minimal fibre content')
 
 tbl_hr_omdec <- gt(dat_hr_omdec) |>
   tab_options(
@@ -373,8 +393,7 @@ tbl_hr_omdec
 dat_hr_omo <-
   tribble(~Code,     ~Name, ~Description,
             'M',    'Moss', 'Organic materials dominantly derived from moss species e.g. *Sphagnum* spp.',
-            'R',    'Rush', 'Organic materials dominantly derived from the Restionaceae family, e.g., *Empodisma* spp.',
-            'D',   'Sedge', 'Organic materials dominantly derived from non-woody vascular plants e.g. Harakeke/Flax, *Phormium tenax*',
+            'L',    'Plants', 'Organic materials dominantly derived from non-woody plants like grasses, sedges, rushes e.g., *Empodisma* spp.',
             'T',    'Tree', 'Organic materials dominantly derived from woody vascular plants, e.g. Manoao/Silver Pine, *Manoao colesnoi*',
             'U', 'Unknown', 'Origin of organic materials cannot be identified with confidence')
 
@@ -395,104 +414,105 @@ tbl_hr_omo <- gt(dat_hr_omo) |>
 tbl_hr_omo
 ```
 
-Note that degree of decomposition is roughly analogous to the coarse/medium/fine subdivisions seen in the mineral fraction, but without strict size limits.
-
 ::: {#nte-vpost .callout-note appearance="minimal" collapse="true" title="Use of the von Post scale"}
 The 10-point von Post scale of organic matter decomposition [@vonpost1922] was previously recommended for assessing the degree of organic material decomposition. The scale is no longer recommended as it has been criticised as overly subjective, and has been found inadequate for some materials [@grover2013; @whittington2021; @beyer2000].
 :::
 
-### Coarse mineral materials
+## Method: Estimating soil texture by hand
 
-Where total coarse mineral materials occupy more than 5% of the horizon volume, their presence should be signified in the texture code. Use the [G]{.ceg} gravel, [C]{.ceg} cobble, or [B]{.ceg} boulder codes from @tbl-hr-simpletex, choosing the code that describes the majority of the coarse material, and apply it using the conventions in @tbl-hr-cftex.
+The following method is recommended for use in the field. The method can also be used on fresh soil from representative bagged samples if field time is limited. Oven-dried samples should not be used to determine field texture, as some soil minerals clump together when heated and cannot be re-dispersed by hand.
+
+1.  Collect a handful of soil material (no smaller than a \~30 mm block) from the target soil horizon, avoiding macrofeatures and boundary transition zones as much as possible.
+2.  Pick or sieve to remove rock fragments and other coarse material.
+3.  If the sample is not already moist, add small amounts of water while working the sample to bring its moisture content up. If the sample is too moist, work it in the hand until it dries. Additional soil might be required if too much water is added at once. A suitable moisture state is indicated when the sample feels moist to the touch but releases little, if any, water when squeezed.
+4.  Continue working the sample in the hand until any structural units are broken down and the mixture is homogenised.
+5.  Attempt to roll the sample into a ball. Can this be done easily? Does the ball hold together, or break apart under gentle pressure?
+6.  If a ball can be reliably formed, compress the ball between thumb and forefinger. How much force is required to compress the ball by half? Does the ball crack, or keep a smooth outer surface?
+7.  Check the look and feel of the ball. Does it feel gritty, floury, or buttery? Is it easy to mould and reshape? Can it be polished to a shiny surface?
+8.  Attempt to form a ribbon \~5-10 mm wide and \~3 mm thick, by extruding the sample between the thumb and the side of the forefinger. Can a ribbon be formed without smearing or breaking? If so, how long a ribbon can be generated?
+
+With these characteristics established, a texture class should be identifiable from the list in @tbl-hr-texchar.
 
 ```{r}
-#| label: tbl-hr-cftex
-#| tbl-cap: "Coarse mineral material modifier rules"
+#| label: tbl-hr-texchar
+#| tbl-cap: "Texture class characteristics"
 
-dat_hr_cftex <-
-  tribble(~Percent, ~Convention, ~egcode, ~egtext,
-         '< 5%', 'Do not append', 'CL', 'for a clay loam with ~2% gravel',
-         '5 - 35%', 'Append as suffix', 'CL(G)', 'for a clay loam with ~10% gravel',
-         '35 - 70 ',  'Append as prefix', '(G)CL', 'for a clay loam with ~50% gravel',
-         '> 70%', 'Use as primary code', 'G', 'for a clean gravel')
+dat_hr_texchar <-
+  tribble(~Group, ~Code, ~Name, ~Features,
+          'Sandy', 'SS', 'Sand', 'Dominated by visible grains. Cannot form a persistent ball under moist conditions. Working the sample leaves no clay stain on hands. Cannot form a ribbon.',
+          'Sandy', 'LS', 'Loamy Sand', 'Dominated by visible grains. May hold a very weak ball if carefully handled. Working the sample may leave a clay stain on hands. Cannot form a ribbon.',
+          'Loamy', 'SL', 'Sandy Loam', 'Visible grains in a matrix of finer material. Feels gritty to the touch. Can form a weak ball and a short ribbon (< ~25 mm).',
+          'Loamy', 'SC', 'Sandy Clay Loam', 'Visible grains in a matrix of finer material. Feels gritty to the touch. Can form a coherent ball and a short ribbon (< ~25 mm).',
+          'Loamy', 'CL', 'Clay Loam', 'Some visible grains but mostly finer material. Feels slightly gritty to the touch. Can form a coherent ball that will crack when compressed. Will form a ribbon of ~25–50 mm length.',
+          'Silty', 'LZ', 'Loamy silt', 'Some visible grains but mostly finer material. Feels smooth or floury to the touch. Can form a weak ball but cannot easily form a ribbon.',
+          'Silty', 'ZZ', 'Silt', 'Fine material without visible grains. Feels smooth or floury to the touch. May form a weak ball but tends to smear rather than form a ribbon.',
+          'Silty', 'ZL', 'Silty loam', 'Fine material without visible grains. Feels smooth or floury to the touch. Can form a coherent ball that will usually crack when compressed. Will form a ribbon of ~25–50 mm length.',
+          'Clayey', 'LC', 'Loamy clay', 'Fine material with some appreciable grit. Forms a coherent, smooth ball that may be difficult to compress and tends not to crack. Can form a ribbon of > ~50 mm length.',
+          'Clayey', 'ZC', 'Silty clay', 'Fine material without visible grains. Forms a coherent, very smooth ball that may be difficult to compress and tends not to crack. Can form a ribbon of > ~50 mm length.',
+          'Clayey', 'CC', 'Clay', 'Fine material without visible grains. Forms a coherent, smooth ball that may be difficult to compress, but can compress without cracking. Can form a ribbon of > ~50 mm length.')
 
-tbl_hr_cftex <- gt(dat_hr_cftex) |>
+tbl_hr_texchar <- gt(group_by(dat_hr_texchar, Group)) |>
   tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
     table.align = 'center',
-    table.width = '85%'
+    table.width = '85%',
+    row_group.as_column = TRUE
   ) |>
   tab_style(style = list(cell_text(color  = 'red',
                                    weight = 'bold',
-                                   align  = 'right')),
-            locations = cells_body(columns = 3)) |>
-  cols_label('egcode' = 'Example', egtext = '') |>
-  cols_width(Percent ~pct(10), Convention ~pct(25), egcode ~pct(10))
-  
-tbl_hr_cftex
-```
-
-If a horizon has \> 70% coarse mineral material and \> 5% fine mineral material, mineral codes can still be appended as a suffix, e.g. [G(ZL)]{.ceg} for a gravel with some interstitial clay loamy material.
-
-When recording texture for a mixed fine-earth/organic horizon containing coarse material, record the coarse modifier before the organic modifier, separated by a comma, e.g. [SL(G, H)]{.ceg} for a sandy loam with gravel and humus, or [(G, H)SL]{.ceg} for a gravelly, humic sandy loam.
-
-For poorly sorted horizons where a single coarse fraction does not dominate the particle size distribution, choose the largest coarse code for recording and determine coarse material abundance from the total percentage of coarse materials. For example, in a silt loam horizon with 15% gravel, 15% cobble and 10% boulder, use [(C)ZL]{.ceg} (total coarse fraction 40%, largest co-dominant fraction cobble).
-
-Coarse mineral particle ('rock fragment') abundance, size, shape, lithology and distribution may also be assessed independently of texture, using the conventions in @sec-rockfrag.
-
-#### Gravel fraction modifiers
-
-The gravel fraction can optionally be subdivided into fine, medium and coarse gravel, much like the sand fraction (see @sec-hr-sandmods). These codes, listed in @tbl-hr-gvquals, can be appended to the [G]{.ceg} code as a prefix e.g. [KG]{.ceg} for coarse gravel.
-
-```{r}
-#| label: tbl-hr-gvquals
-#| tbl-cap: "Gravel fraction modifiers"
-
-dat_hr_gvquals <-
-  tribble(~Code, ~Name, ~Description,
-            'F', 'Fine',   'Gravel is dominantly 2–6 mm',
-            'M', 'Medium', 'Gravel is dominantly 6–20 mm',
-            'K', 'Coarse', 'Gravel is dominantly 20–60 mm')
-
-tbl_hr_gvquals <- gt(dat_hr_gvquals) |>
-  tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
-                                   weight = 'bold',
                                    align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10), Name ~ pct(20))
+            locations = cells_body(columns = 2)) |>
+  tab_style(style = list(cell_text(weight = 'bold', 
+                                   v_align = 'middle')),
+            locations = cells_row_groups()) |>
+  cols_width(Group ~pct(10), Code ~pct(10), Name ~ pct(20))
   
-tbl_hr_gvquals
+tbl_hr_texchar
 ```
 
-Similar subdivisions are not considered useful for the cobble or boulder fractions.
+::: {#wrn-tex .callout-warning appearance="minimal" collapse="true" title="Caveats for hand texturing"}
+Since hand texturing is a sense-dependent process that involves manipulating the whole fine fraction, accurate estimation of particle size can be hampered by competing factors. Some of the more well-known [@salley2018] are:
+
+-   **Grading:** a small amount of coarse sand in a finer matrix can cause underestimation of clay content, because the large particles are more noticeable.
+-   **Clay mineralogy:** The physical properties of 2:1 phyllosilicate clays like smectite make it easier to form a ball or ribbon than 1:1 phyllosilicates like kaolinite, or clay-size secondary minerals like allophane. Thus, clay content can be underestimated in older soils weathered under humid conditions, and in volcanic ash soils.
+-   **Microstructure:** in some soils, very small aggregates cannot be broken down by hand manipulation, or at best require dedicated working for over ten minutes per sample. This characteristic can lead to clay content underestimation - but crucially, hand texture may more closely align with *in-situ* physical properties than laboratory texture from chemically dispersed samples.
+-   **Organic matter:** organic matter can lend a spongy or silky feel to a sample that may lead to overestimating silt and underestimating clay.
+-   **Sharpness:** angular particles are more likely to be interpreted as sandy than silty.
+-   **Experience and environment:** workers who spend most of their time in landscapes that have a narrow range of soil textures become more sensitive to minor variations in hand-feel, and are more likely to assign unusual textures to a different texture class even when the difference is not sufficient to justify it.
+
+All of these confounding factors can be minimised with regular training, using a wide variety of samples of known composition.
+:::
 
 ## Recording soil texture {#sec-tex-rec}
 
-For rapid assessment of texture, record one of the codes in @tbl-hr-simpletex per horizon. For routine assessment, use the codes in  @tbl-hr-texchar. Where further detail is required, apply the modifiers as described in @sec-hr-texture.
+For rapid assessment of texture:
 
-## Recording particle size
+-   For the fine earth fraction, use one of the texture group codes in @tbl-hr-earthgrps per horizon.
+-   Where rock fragments need to be recorded, use the dominant rock fragment code in @tbl-hr-rocksz
+-   Where organic materials need to be recorded, use one of the options in @tbl-hr-omtyp.
+-   Do not use any further modifiers.
 
-Numerical estimates of particle size may be desired, particularly where it is known that laboratory particle size measurements will not be available. For the fine-earth fraction, field estimates of clay and sand content derived from hand texturing should be recorded, and silt worked out by difference. Optionally, add a separate error estimate (± x%) as an expression of confidence.
+For routine assessment, record one of the texture class codes in @tbl-hr-texchar per horizon. Where further detail is required, apply the relevant modifiers as described in @sec-hr-texture.
+
+Example: a coarse sandy loam with fine gravel. Rapid: [L(G)]{.ceg}, Routine: [KSL(FG)]{.ceg}
+
+## Recording particle size distribution
+
+Numerical estimates of particle size distribution for the fine earth fraction may be desired, particularly where it is known that laboratory particle size measurements will not be available. Record field estimates of clay and sand content derived from hand texturing to the nearest 1%, and work silt out by difference. It is recommended to add a separate error estimate (± x%) as an expression of confidence.
 
 Example: [KLS, 70 ± 5% sand, 3% clay]{.ceg} for a coarse loamy sand.
 
 ::: {#nte-fvl .callout-note appearance="minimal" collapse="true" title="Comparing field and laboratory assessment of texture"}
-As discussed in @wrn-tex, fine-earth texture estimated by hand in the field can include information about other soil characteristics. Estimating particle size from hand texturing requires practice, developing an ability to identify and account for these sources of interference.
+Both field and laboratory measurements provide useful, but distinct, information on soil particle size distribution, and the two must never be treated as interchangeable. Field-estimated and laboratory-determined values must be stored separately in databases, and one must not override the other. Laboratory particle size analysis should not be used to change field texture codes; instead, a separate ‘laboratory texture’ should be generated from the analytical results. The origin of particle size estimates must always be clearly documented.
 
-Laboratory particle size measurement also has some limitations. Available methods can involve measurements of particle shape and mineralogy, but these methods are labour-intensive and generally confined to a research context. High-throughput analyses are far more common and usually involve removal of organic materials and soluble minerals, as well as more aggressive aggregate dispersion using shaking and chemical solutions. Below approximately 0.04 mm, the method of measurement switches from sieving to less direct observations (commonly related to settling time in a liquid column). The calculations used to translate these observations into particle size estimates make some assumptions about shape and mineralogy that may not hold true for the sample under examination (see @loveland2001, for a more detailed discussion).
+As discussed in @wrn-tex, fine-earth texture estimated by hand in the field can include information about other soil characteristics. Estimating particle size from hand texturing requires practice, and the ability to identify and account for these sources of interference.
 
-For these reasons, field-estimated and laboratory-determined particle size should never be stored in the same fields in a database, nor should one measurement override another. Laboratory particle size analysis should not be used to change field texture codes; rather, a 'laboratory texture' may be generated from the data. It is important to clearly document the origin of particle size estimates .
+Laboratory particle size measurement also has limitations. Available methods can incorporate particle shape and mineralogy, but these methods are labour-intensive and generally confined to research contexts. High-throughput analyses are far more common and usually involve removal of organic materials and soluble minerals, along with more aggressive aggregate dispersion using shaking and chemical solutions. Below approximately 0.04 mm, the method of measurement switches from sieving to less direct observations (commonly based on settling time in a liquid column). The calculations used to translate these observations into particle size estimates make some assumptions about shape and mineralogy that may not hold true for the sample under examination (see @loveland2001, for a more detailed discussion).
 :::
 
 ::: {#nte-psb .callout-note appearance="minimal" collapse="true" title="Particle size fraction boundaries"}
-The boundaries of the fine-earth size fractions vary by jurisdiction. The silt-clay boundary is usually consistent within soil science, and aligns with some major changes in particle properties; chief among them the emergence of electrostatic behaviour in the clay fraction. The sand/silt boundary can range from 0.02–0.063 mm. See @tbl-hr-texcompar for the fractions used in New Zealand and elsewhere. Other jurisdictions may also have different approaches to subdividing the major fractions further [@ncst2024, p. 162].
+The boundaries of the fine-earth size fractions vary by jurisdiction. The silt-clay boundary is usually consistent within soil science, and aligns with some major changes in particle properties; chief among them the emergence of electrostatic behaviour in the clay fraction. The sand/silt boundary can range from 0.02–0.063 mm. See @tbl-hr-texcompar for the fractions used in New Zealand and elsewhere. Other jurisdictions may also have different approaches to subdividing the major fractions further [@ncst2024, p. 162]. Particle size data can be mathematically transformed between systems [@minasny2001].
 
 ```{r}
 #| label: tbl-hr-texcompar
@@ -523,21 +543,25 @@ tbl_hr_texcompar
 
 ```
 
-Size fraction boundaries also vary by discipline; sedimentologists set the limit of 'clay' at 0.004 mm while colloid chemists use 0.001 mm [@guggenheim1995]. Clay mineralogists use an alternate definition of clay that does not rely on particle size at all, instead highlighting physical behaviour. Alternate soil texture triangles compatible with this concept have been proposed, but cannot be determined in the field [@moreno-maroto2022].
+Size fraction boundaries also vary by discipline; sedimentologists set the limit of 'clay' at 0.004 mm while colloid chemists use 0.001 mm. Clay mineralogists use an alternate definition of clay that does not rely on particle size at all, instead highlighting physical behaviour [@guggenheim1995]. Alternate soil texture triangles compatible with this concept have been proposed, but cannot be determined in the field [@moreno-maroto2022].
 :::
 
 ### Recording whole-soil particle size estimates
 
-Percentage estimates of solid components require some adjustment when reporting on a whole-soil basis. Clay, silt and sand percentage estimates are initially reported as a fraction of the mineral fine earth only, and organic matter as a fraction of the total fine earth. Coarse materials are reported as a percentage of the whole soil mass.
+Percentage estimates of particle size require some adjustment when reporting on a whole-soil basis. Total fine earth is the sum of the mineral fine earth and the organic matter. Clay, silt and sand percentage estimates are initially reported as a fraction of the *mineral* fine earth only, and organic matter as a fraction of the total fine earth. Rock fragments are reported as a percentage of the whole soil volume.
 
 For a worked example, take a soil with 25% clay, 35% silt, 40% sand, 15% organic matter, and 15% cobble.
 
+-   The total coarse fraction is 15% of the soil volume
 -   The total fine fraction is 85% of the soil volume ($100 - coarse fraction$)
 -   The organic fraction of the fine earth is then $15\% \times 85\% = 12.75\%$
--   This leaves $85\% - 12.75\% = 72.25\%$ as the fine fraction adjustment:
+-   This leaves the mineral fraction of the fine earth as $85\% - 12.75\% = 72.25\%$
+-   Distributed between clay, sand and silt:
     -   clay $25\% \times 72.25\% = 18.06\%$
     -   silt $35\% \times 72.25\% = 25.29\%$
     -   sand $40\% \times 72.25\% = 28.90\%$
+
+The final whole-earth composition is 18% clay, 25% silt, 29% sand, 15% cobble, and 13% organic matter.
 
 Report the final results in whole percentages; the method in use can't support any higher precision.
 
@@ -575,4 +599,4 @@ tbl_hr_txab <- gt(dat_hr_txab) |>
 tbl_hr_txab
 ```
 
-For example, a horizon with a sandy loam fine earth texture of 60% sand, 25% silt, and 15% clay along with 10% cobble would be described at its very simplest as a "loam with cobble", or in more detail as a "sandy loam with cobble". If the cobble occupied 50% of the total solid volume it would be a "cobbly sandy loam", and if the cobble occupied 90% of the total solid volume it would be "cobble with trace sandy loam".
+For example, a horizon with a sandy loam fine earth texture of 60% sand, 25% silt, and 15% clay along with 10% cobble would be described at its very simplest as a "loam with cobble", or in more detail as a "sandy loam with cobble". If the cobble occupied 50% of the total solid volume it would be a "cobbly sandy loam".
