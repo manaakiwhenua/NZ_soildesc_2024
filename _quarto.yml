@@ -29,22 +29,22 @@ book:
         - ss_06_biota.qmd
         - ss_07_landuse_mgmt.qmd
         - ss_08_soils.qmd
-        
+
     - part: "Soil surface and profile"
       chapters:
-        - pr_00_intro.qmd                
-        - pr_01_surface.qmd              
-        - pr_02_layers.qmd              
+        - pr_00_intro.qmd
+        - pr_01_surface.qmd
+        - pr_02_layers.qmd
 
     - part: "Soil horizons"
       chapters:
-        - hr_01_architecture.qmd         
+        - hr_01_architecture.qmd
         - hr_02_colour.qmd
         - hr_03_texture.qmd
         - hr_04_secondary_features.qmd
-        - hr_05_physical_properties.qmd  
+        - hr_05_physical_properties.qmd
         - hr_06_chemical_properties.qmd
-        
+
     - part: "Soil interpretations"
       chapters:
         - in_00_intro.qmd
@@ -53,8 +53,8 @@ book:
         - in_04_setting_properties.qmd
         - in_05_nzsc_toplevel.qmd
         - in_06_nzsc_familysibling.qmd
-    - references.qmd     
-  appendices: 
+    - references.qmd
+  appendices:
     - ap_01_equipment.qmd
     - ap_02_field_recording.qmd
     - ap_sampling.qmd
@@ -62,7 +62,7 @@ book:
     - ap_compat.qmd
     - ap_04_glossary.qmd
     - changelog.qmd
-    
+
 bibliography: soil_desc_refs_2024.bib
 csl: mwlr-citation-style-second-ed.csl
 
@@ -73,9 +73,11 @@ format:
     callout-appearance: "simple"
     css: styles.css
     lightbox: true
+    toc-depth: 3
+    toc-expand: true
     mermaid:
       theme: neutral
-  epub: 
+  epub:
     split-level: 2
     toc: true
     css: styles.css
@@ -107,4 +109,3 @@ knitr:
     warning: false
     message: false
     error: false
-    

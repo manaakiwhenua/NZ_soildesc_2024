@@ -61,6 +61,9 @@ div.csl-indent {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -411,23 +414,25 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-hr-col" id="toc-sec-hr-col" class="nav-link active" data-scroll-target="#sec-hr-col"><span class="header-section-number">14.1</span> Colour recording</a>
+  <li><a href="#sec-hr-col" id="toc-sec-hr-col" class="nav-link active" data-scroll-target="#sec-hr-col"><span class="header-section-number">14.1</span> Colour recording</a></li>
+  <li><a href="#sec-col-matrix" id="toc-sec-col-matrix" class="nav-link" data-scroll-target="#sec-col-matrix"><span class="header-section-number">14.2</span> Matrix colour</a>
   <ul class="collapse">
-  <li><a href="#sec-col-quick" id="toc-sec-col-quick" class="nav-link" data-scroll-target="#sec-col-quick"><span class="header-section-number">14.1.1</span> Colour short codes</a></li>
+  <li><a href="#method-determining-matrix-colour" id="toc-method-determining-matrix-colour" class="nav-link" data-scroll-target="#method-determining-matrix-colour"><span class="header-section-number">14.2.1</span> Method: Determining matrix colour</a></li>
+  <li><a href="#recording-matrix-colour" id="toc-recording-matrix-colour" class="nav-link" data-scroll-target="#recording-matrix-colour"><span class="header-section-number">14.2.2</span> Recording matrix colour</a></li>
   </ul></li>
-  <li><a href="#sec-col-matrix" id="toc-sec-col-matrix" class="nav-link" data-scroll-target="#sec-col-matrix"><span class="header-section-number">14.2</span> Matrix colour</a></li>
   <li><a href="#sec-col-patt" id="toc-sec-col-patt" class="nav-link" data-scroll-target="#sec-col-patt"><span class="header-section-number">14.3</span> Colour patterns</a>
   <ul class="collapse">
   <li><a href="#sec-patt-type" id="toc-sec-patt-type" class="nav-link" data-scroll-target="#sec-patt-type"><span class="header-section-number">14.3.1</span> Pattern type</a></li>
-  <li><a href="#pattern-abundance" id="toc-pattern-abundance" class="nav-link" data-scroll-target="#pattern-abundance"><span class="header-section-number">14.3.2</span> Pattern abundance</a></li>
-  <li><a href="#pattern-shape" id="toc-pattern-shape" class="nav-link" data-scroll-target="#pattern-shape"><span class="header-section-number">14.3.3</span> Pattern shape</a></li>
-  <li><a href="#pattern-size" id="toc-pattern-size" class="nav-link" data-scroll-target="#pattern-size"><span class="header-section-number">14.3.4</span> Pattern size</a></li>
-  <li><a href="#pattern-contrast" id="toc-pattern-contrast" class="nav-link" data-scroll-target="#pattern-contrast"><span class="header-section-number">14.3.5</span> Pattern contrast</a></li>
-  <li><a href="#pattern-boundary-distinctness" id="toc-pattern-boundary-distinctness" class="nav-link" data-scroll-target="#pattern-boundary-distinctness"><span class="header-section-number">14.3.6</span> Pattern boundary distinctness</a></li>
+  <li><a href="#sec-patt-abund" id="toc-sec-patt-abund" class="nav-link" data-scroll-target="#sec-patt-abund"><span class="header-section-number">14.3.2</span> Pattern abundance</a></li>
+  <li><a href="#sec-patt-shape" id="toc-sec-patt-shape" class="nav-link" data-scroll-target="#sec-patt-shape"><span class="header-section-number">14.3.3</span> Pattern shape</a></li>
+  <li><a href="#sec-patt-size" id="toc-sec-patt-size" class="nav-link" data-scroll-target="#sec-patt-size"><span class="header-section-number">14.3.4</span> Pattern size</a></li>
+  <li><a href="#sec-patt-contrast" id="toc-sec-patt-contrast" class="nav-link" data-scroll-target="#sec-patt-contrast"><span class="header-section-number">14.3.5</span> Pattern contrast</a></li>
+  <li><a href="#sec-patt-dist" id="toc-sec-patt-dist" class="nav-link" data-scroll-target="#sec-patt-dist"><span class="header-section-number">14.3.6</span> Pattern boundary distinctness</a></li>
+  <li><a href="#sec-col-quick" id="toc-sec-col-quick" class="nav-link" data-scroll-target="#sec-col-quick"><span class="header-section-number">14.3.7</span> Colour short codes</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -437,7 +442,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hr_01_architecture.html">Soil horizons</a></li><li class="breadcrumb-item"><a href="./hr_02_colour.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Horizon colour</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Horizon colour</span></h1>
+<h1 class="title"><span id="sec-col" class="quarto-section-identifier"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Horizon colour</span></span></h1>
 </div>
 
 
@@ -449,7 +454,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 19, 2025</p>
+      <p class="date-modified">September 20, 2025</p>
     </div>
   </div>
     
@@ -462,7 +467,7 @@ div.csl-indent {
 
 <section id="sec-hr-col" class="level2" data-number="14.1">
 <h2 data-number="14.1" class="anchored" data-anchor-id="sec-hr-col"><span class="header-section-number">14.1</span> Colour recording</h2>
-<p>The colour of soil components is recorded using the Munsell Soil Colour system <span class="citation" data-cites="munsellcolorcompany2009 pantone2017">(<a href="references.html#ref-munsellcolorcompany2009" role="doc-biblioref">Munsell Color Company 2009</a>; <a href="references.html#ref-pantone2017" role="doc-biblioref">Pantone 2017</a>)</span>, which conceptualises colour using Hue, Value and Chroma parameters.</p>
+<p>The colour of soil components is recorded using the Munsell Soil Colour system <span class="citation" data-cites="munsellcolorcompany2009 pantone2017">(<a href="references.html#ref-munsellcolorcompany2009" role="doc-biblioref">Munsell Color Company 2009</a>; <a href="references.html#ref-pantone2017" role="doc-biblioref">Pantone 2017</a>)</span>, which conceptualises colour using Hue, Value and Chroma parameters. <a href="#tbl-hr-coloreg" class="quarto-xref">Table&nbsp;<span>14.1</span></a> shows some example soil colours and their representation in the Munsell system as well as their approximate translations into other colour spaces. A comprehensive primer on colour and its application in soil science can be found in <span class="citation" data-cites="bigham1993">(<a href="references.html#ref-bigham1993" role="doc-biblioref">Bigham and Ciolkosz 1993</a>)</span>.</p>
 <div class="cell no-stripe" data-layout-align="center">
 <div id="tbl-hr-coloreg" class="cell no-stripe quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -471,23 +476,23 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
 </figcaption>
 <div aria-describedby="tbl-hr-coloreg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="fpmomuuzqg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fpmomuuzqg table {
+<div id="eqqzddrbpz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eqqzddrbpz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fpmomuuzqg thead, #fpmomuuzqg tbody, #fpmomuuzqg tfoot, #fpmomuuzqg tr, #fpmomuuzqg td, #fpmomuuzqg th {
+#eqqzddrbpz thead, #eqqzddrbpz tbody, #eqqzddrbpz tfoot, #eqqzddrbpz tr, #eqqzddrbpz td, #eqqzddrbpz th {
   border-style: none;
 }
 
-#fpmomuuzqg p {
+#eqqzddrbpz p {
   margin: 0;
   padding: 0;
 }
 
-#fpmomuuzqg .gt_table {
+#eqqzddrbpz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -513,12 +518,12 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   border-left-color: #D3D3D3;
 }
 
-#fpmomuuzqg .gt_caption {
+#eqqzddrbpz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fpmomuuzqg .gt_title {
+#eqqzddrbpz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -530,7 +535,7 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   border-bottom-width: 0;
 }
 
-#fpmomuuzqg .gt_subtitle {
+#eqqzddrbpz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -542,7 +547,7 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   border-top-width: 0;
 }
 
-#fpmomuuzqg .gt_heading {
+#eqqzddrbpz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -554,13 +559,13 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   border-right-color: #D3D3D3;
 }
 
-#fpmomuuzqg .gt_bottom_border {
+#eqqzddrbpz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fpmomuuzqg .gt_col_headings {
+#eqqzddrbpz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -575,7 +580,7 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   border-right-color: #D3D3D3;
 }
 
-#fpmomuuzqg .gt_col_heading {
+#eqqzddrbpz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -595,7 +600,7 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   overflow-x: hidden;
 }
 
-#fpmomuuzqg .gt_column_spanner_outer {
+#eqqzddrbpz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -607,15 +612,15 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   padding-right: 4px;
 }
 
-#fpmomuuzqg .gt_column_spanner_outer:first-child {
+#eqqzddrbpz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fpmomuuzqg .gt_column_spanner_outer:last-child {
+#eqqzddrbpz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fpmomuuzqg .gt_column_spanner {
+#eqqzddrbpz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -627,11 +632,11 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   width: 100%;
 }
 
-#fpmomuuzqg .gt_spanner_row {
+#eqqzddrbpz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fpmomuuzqg .gt_group_heading {
+#eqqzddrbpz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -657,7 +662,7 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   text-align: left;
 }
 
-#fpmomuuzqg .gt_empty_group_heading {
+#eqqzddrbpz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -672,15 +677,15 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   vertical-align: middle;
 }
 
-#fpmomuuzqg .gt_from_md > :first-child {
+#eqqzddrbpz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fpmomuuzqg .gt_from_md > :last-child {
+#eqqzddrbpz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fpmomuuzqg .gt_row {
+#eqqzddrbpz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -699,7 +704,7 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   overflow-x: hidden;
 }
 
-#fpmomuuzqg .gt_stub {
+#eqqzddrbpz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -712,7 +717,7 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   padding-right: 5px;
 }
 
-#fpmomuuzqg .gt_stub_row_group {
+#eqqzddrbpz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -726,15 +731,15 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   vertical-align: top;
 }
 
-#fpmomuuzqg .gt_row_group_first td {
+#eqqzddrbpz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fpmomuuzqg .gt_row_group_first th {
+#eqqzddrbpz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fpmomuuzqg .gt_summary_row {
+#eqqzddrbpz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -744,16 +749,16 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   padding-right: 5px;
 }
 
-#fpmomuuzqg .gt_first_summary_row {
+#eqqzddrbpz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fpmomuuzqg .gt_first_summary_row.thick {
+#eqqzddrbpz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fpmomuuzqg .gt_last_summary_row {
+#eqqzddrbpz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -763,7 +768,7 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   border-bottom-color: #D3D3D3;
 }
 
-#fpmomuuzqg .gt_grand_summary_row {
+#eqqzddrbpz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -773,7 +778,7 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   padding-right: 5px;
 }
 
-#fpmomuuzqg .gt_first_grand_summary_row {
+#eqqzddrbpz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -783,7 +788,7 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   border-top-color: #D3D3D3;
 }
 
-#fpmomuuzqg .gt_last_grand_summary_row_top {
+#eqqzddrbpz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -793,11 +798,11 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   border-bottom-color: #D3D3D3;
 }
 
-#fpmomuuzqg .gt_striped {
+#eqqzddrbpz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fpmomuuzqg .gt_table_body {
+#eqqzddrbpz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -806,7 +811,7 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   border-bottom-color: #D3D3D3;
 }
 
-#fpmomuuzqg .gt_footnotes {
+#eqqzddrbpz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -820,7 +825,7 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   border-right-color: #D3D3D3;
 }
 
-#fpmomuuzqg .gt_footnote {
+#eqqzddrbpz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -829,7 +834,7 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   padding-right: 5px;
 }
 
-#fpmomuuzqg .gt_sourcenotes {
+#eqqzddrbpz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -843,7 +848,7 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   border-right-color: #D3D3D3;
 }
 
-#fpmomuuzqg .gt_sourcenote {
+#eqqzddrbpz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -851,72 +856,72 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
   padding-right: 5px;
 }
 
-#fpmomuuzqg .gt_left {
+#eqqzddrbpz .gt_left {
   text-align: left;
 }
 
-#fpmomuuzqg .gt_center {
+#eqqzddrbpz .gt_center {
   text-align: center;
 }
 
-#fpmomuuzqg .gt_right {
+#eqqzddrbpz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fpmomuuzqg .gt_font_normal {
+#eqqzddrbpz .gt_font_normal {
   font-weight: normal;
 }
 
-#fpmomuuzqg .gt_font_bold {
+#eqqzddrbpz .gt_font_bold {
   font-weight: bold;
 }
 
-#fpmomuuzqg .gt_font_italic {
+#eqqzddrbpz .gt_font_italic {
   font-style: italic;
 }
 
-#fpmomuuzqg .gt_super {
+#eqqzddrbpz .gt_super {
   font-size: 65%;
 }
 
-#fpmomuuzqg .gt_footnote_marks {
+#eqqzddrbpz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fpmomuuzqg .gt_asterisk {
+#eqqzddrbpz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fpmomuuzqg .gt_indent_1 {
+#eqqzddrbpz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fpmomuuzqg .gt_indent_2 {
+#eqqzddrbpz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fpmomuuzqg .gt_indent_3 {
+#eqqzddrbpz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fpmomuuzqg .gt_indent_4 {
+#eqqzddrbpz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fpmomuuzqg .gt_indent_5 {
+#eqqzddrbpz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fpmomuuzqg .katex-display {
+#eqqzddrbpz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fpmomuuzqg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#eqqzddrbpz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -966,13 +971,11 @@ Table&nbsp;14.1: Examples of Munsell Colour codes and their approximate matches 
 </div>
 <p>For accurately describing colour:</p>
 <ul>
-<li>The colour charts must be used in clear direct or non-dappled indirect daylight. Avoid describing colours in the early morning, late afternoon, in dappled light or in deep shade.</li>
-<li>Record the <strong>moist</strong> colour of each soil sample to standardise the readings across profiles. Use a spray bottle to gently wet up a sample, if necessary, or wait for a saturated sample to dry out slightly. In both cases wait until the sample surface is no longer glistening.</li>
+<li>The colour charts must be used in clear direct or non-dappled indirect daylight. Avoid describing colours in the early morning, late afternoon, in dappled light or in deep shade. Avoid using damaged or faded colour books.</li>
+<li>Record the <strong>moist</strong> colour to standardise the readings across profiles. Use a spray bottle to gently wet up a sample, if necessary, or wait for a saturated sample to dry out slightly. In both cases wait until the sample surface is no longer glistening.</li>
 <li>Remove sunglasses and turn to keep the main light source behind your shoulder.</li>
 <li>The sample may not perfectly match any one chip; record the closest match available. Do not interpolate between chips.</li>
-<li>Do not record the colour of a texture bolus or a smeared sample as these can be altered by e.g.&nbsp;mixing in mottles or breaking down ped surface features.</li>
 </ul>
-<p>For sands, which may have multicoloured grains from multiple parent materials, colour matching can be difficult, but try to pick the colour of the dominant mineral component. Additional colour information can be stored as free-text notes.</p>
 <div id="wrn-col" class="callout callout-style-simple callout-warning no-icon callout-titled" title="Colour vision acuity">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -989,50 +992,107 @@ Warning&nbsp;14.1: Colour vision acuity
 </div>
 </div>
 </div>
-<div id="nte-colpic" class="callout callout-style-simple callout-note no-icon callout-titled" title="Obtaining soil colour from photographs">
+<div id="nte-colpic" class="callout callout-style-simple callout-note no-icon callout-titled" title="Obtaining soil colour from photographs and electronic devices">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;14.1: Obtaining soil colour from photographs
+Note&nbsp;14.1: Obtaining soil colour from photographs and electronic devices
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Obtaining soil colour information from photographs is possible, but the photographs must meet certain requirements. See <span class="citation" data-cites="roudier2016">Roudier et al. (<a href="references.html#ref-roudier2016" role="doc-biblioref">2016</a>)</span> and <span class="citation" data-cites="kirillova2021">Kirillova et al. (<a href="references.html#ref-kirillova2021" role="doc-biblioref">2021</a>)</span> for more information.</p>
+<p>Obtaining soil colour information from digital photographs is possible, but the photographs must meet certain requirements. See <span class="citation" data-cites="roudier2016">Roudier et al. (<a href="references.html#ref-roudier2016" role="doc-biblioref">2016</a>)</span> and <span class="citation" data-cites="kirillova2021">Kirillova et al. (<a href="references.html#ref-kirillova2021" role="doc-biblioref">2021</a>)</span> for more information. Direct electronic colour sensing devices are available commercially, and research into using smartphones as colour-sensors is ongoing <span class="citation" data-cites="mancini2020 sinclair2024">(<a href="references.html#ref-mancini2020" role="doc-biblioref">Mancini et al. 2020</a>; <a href="references.html#ref-sinclair2024" role="doc-biblioref">Sinclair et al. 2024</a>)</span>.</p>
 </div>
 </div>
 </div>
-<section id="sec-col-quick" class="level3" data-number="14.1.1">
-<h3 data-number="14.1.1" class="anchored" data-anchor-id="sec-col-quick"><span class="header-section-number">14.1.1</span> Colour short codes</h3>
-<p>In some circumstances (e.g.&nbsp;rapid assessment of redox mottles), a series of single letter codes can be used for colour.</p>
-<div class="cell" data-layout-align="center">
-<div id="tbl-hr-colorshort" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hr-colorshort-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="citation" data-cites="ncst2024">(<a href="references.html#ref-ncst2024" role="doc-biblioref">National Committee on Soil and Terrain 2024, p. 137–8</a>)</span>. NB: The Munsell colour ranges given are a general guide only, do not interpret them strictly.
+</section>
+<section id="sec-col-matrix" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="sec-col-matrix"><span class="header-section-number">14.2</span> Matrix colour</h2>
+<p>The matrix colour of the soil is the dominant ‘background’ colour. This excludes the colours of redox-induced mottles.</p>
+<section id="method-determining-matrix-colour" class="level3" data-number="14.2.1">
+<h3 data-number="14.2.1" class="anchored" data-anchor-id="method-determining-matrix-colour"><span class="header-section-number">14.2.1</span> Method: Determining matrix colour</h3>
+<ul>
+<li>Take a 2-3 cm<sup>3</sup> sample of fresh soil from the target horizon, avoiding colour transition zones (e.g.&nbsp;horizon boundaries). If large enough peds are available, extract a ped and break it open to expose a fresh face. Otherwise, cut or scoop a fresh sample from the soil mass.</li>
+<li>Moisten the sample lightly before assessing the colour, by holding the sample up against the chips in the colour book. Hold the sample just in front of a colour chip for comparison. Look for a colour where the sample appears to fade into the chip.
+<ul>
+<li>Do not record the colour of a texture bolus or a smeared surface, as these can be altered by mixing in mottles or destroying ped surface features.</li>
+<li>For sands, which may have differently-coloured grains from multiple parent materials, colour matching can be difficult. Try to pick the colour of the dominant mineral component. Holding the sample out at arms’ length may also help determine a dominant colour.</li>
+</ul></li>
+</ul>
+<p>Additional colour information can be stored as free-text notes.</p>
+</section>
+<section id="recording-matrix-colour" class="level3" data-number="14.2.2">
+<h3 data-number="14.2.2" class="anchored" data-anchor-id="recording-matrix-colour"><span class="header-section-number">14.2.2</span> Recording matrix colour</h3>
+<p>For routine assessment, record the single dominant matrix colour per horizon. For detailed assessment, up to three matrix colours may be recorded if necessary. It is assumed that multiple matrix colours are co-dominant, otherwise the subdominant ones must logically be recorded as colour patterns (<a href="#sec-col-patt" class="quarto-xref"><span>Section 14.3</span></a>).</p>
+<p>Dry soil matrix colours are sometimes necessary as well, e.g.&nbsp;for diagnosing a bleached E horizon. If moist and dry matrix colours are both obtained for a horizon, append them with their moisture status as <span class="ceg">D</span> or <span class="ceg">M</span>.</p>
+<p>Example: <span class="ceg">10YR52&nbsp;M / 10YR71&nbsp;D</span>.</p>
+<div id="nte-lowch" class="callout callout-style-simple callout-note no-icon callout-titled" title="Low-chroma colours">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;14.2: Low-chroma colours
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Naming soil horizons and classifying soils according to the NZSC requires, in many cases, the ability to identify ‘low chroma colours’. These colours have:</p>
+<ol type="1">
+<li>a moist chroma of ≤&nbsp;2, or</li>
+<li>a moist chroma of 3 and a value ≥&nbsp;6.</li>
+</ol>
+<p>Visually, the red outline in <a href="#fig-lowch" class="quarto-xref">Figure&nbsp;<span>14.1</span></a> contains the low chroma colours. These are in the same location on any given page in the Munsell colour book. Additionally, all of the colours on the Gley and White pages qualify as low chroma.</p>
+<div id="fig-lowch" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lowch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="data/Munsell_75YR_lowchroma.JPG" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;14.1: One page from the Munsell Soil Colour Chart book, with the low-chroma colours outlined in red."><img src="data/Munsell_75YR_lowchroma.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" width="250"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lowch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.1: One page from the Munsell Soil Colour Chart book, with the low-chroma colours outlined in red.
 </figcaption>
-<div aria-describedby="tbl-hr-colorshort-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-col-patt" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="sec-col-patt"><span class="header-section-number">14.3</span> Colour patterns</h2>
+<p>For most assessments, only pattern type (<a href="#sec-patt-type" class="quarto-xref"><span>Section 14.3.1</span></a>) and abundance ( <a href="#sec-patt-abund" class="quarto-xref"><span>Section 14.3.2</span></a>) are required in addition to the pattern colour itself. Further detail is optional, but descriptive measures for pattern shape, size and distinctness are provided below.</p>
+<section id="sec-patt-type" class="level3" data-number="14.3.1">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="sec-patt-type"><span class="header-section-number">14.3.1</span> Pattern type</h3>
+<p>Soil colour patterns are most commonly driven by redox processes affecting iron and/or manganese-dominated minerals, but can also be a product of parent material weathering, water movement, or mixing. Record pattern type using the codes in <a href="#tbl-hr-pattype" class="quarto-xref">Table&nbsp;<span>14.2</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-hr-pattype" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hr-pattype-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;14.2: Types of soil colour pattern
+</figcaption>
+<div aria-describedby="tbl-hr-pattype-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="jysqpczocl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jysqpczocl table {
+<div id="rpcdnjcuei" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rpcdnjcuei table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jysqpczocl thead, #jysqpczocl tbody, #jysqpczocl tfoot, #jysqpczocl tr, #jysqpczocl td, #jysqpczocl th {
+#rpcdnjcuei thead, #rpcdnjcuei tbody, #rpcdnjcuei tfoot, #rpcdnjcuei tr, #rpcdnjcuei td, #rpcdnjcuei th {
   border-style: none;
 }
 
-#jysqpczocl p {
+#rpcdnjcuei p {
   margin: 0;
   padding: 0;
 }
 
-#jysqpczocl .gt_table {
+#rpcdnjcuei .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1058,12 +1118,12 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   border-left-color: #D3D3D3;
 }
 
-#jysqpczocl .gt_caption {
+#rpcdnjcuei .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jysqpczocl .gt_title {
+#rpcdnjcuei .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1075,7 +1135,7 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   border-bottom-width: 0;
 }
 
-#jysqpczocl .gt_subtitle {
+#rpcdnjcuei .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1087,7 +1147,7 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   border-top-width: 0;
 }
 
-#jysqpczocl .gt_heading {
+#rpcdnjcuei .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1099,13 +1159,13 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   border-right-color: #D3D3D3;
 }
 
-#jysqpczocl .gt_bottom_border {
+#rpcdnjcuei .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jysqpczocl .gt_col_headings {
+#rpcdnjcuei .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1120,7 +1180,7 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   border-right-color: #D3D3D3;
 }
 
-#jysqpczocl .gt_col_heading {
+#rpcdnjcuei .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1140,7 +1200,7 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   overflow-x: hidden;
 }
 
-#jysqpczocl .gt_column_spanner_outer {
+#rpcdnjcuei .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1152,15 +1212,15 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   padding-right: 4px;
 }
 
-#jysqpczocl .gt_column_spanner_outer:first-child {
+#rpcdnjcuei .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jysqpczocl .gt_column_spanner_outer:last-child {
+#rpcdnjcuei .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jysqpczocl .gt_column_spanner {
+#rpcdnjcuei .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1172,11 +1232,11 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   width: 100%;
 }
 
-#jysqpczocl .gt_spanner_row {
+#rpcdnjcuei .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jysqpczocl .gt_group_heading {
+#rpcdnjcuei .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1202,7 +1262,7 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   text-align: left;
 }
 
-#jysqpczocl .gt_empty_group_heading {
+#rpcdnjcuei .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1217,15 +1277,15 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   vertical-align: middle;
 }
 
-#jysqpczocl .gt_from_md > :first-child {
+#rpcdnjcuei .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jysqpczocl .gt_from_md > :last-child {
+#rpcdnjcuei .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jysqpczocl .gt_row {
+#rpcdnjcuei .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1244,7 +1304,7 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   overflow-x: hidden;
 }
 
-#jysqpczocl .gt_stub {
+#rpcdnjcuei .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1257,7 +1317,7 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   padding-right: 5px;
 }
 
-#jysqpczocl .gt_stub_row_group {
+#rpcdnjcuei .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1271,15 +1331,15 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   vertical-align: top;
 }
 
-#jysqpczocl .gt_row_group_first td {
+#rpcdnjcuei .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jysqpczocl .gt_row_group_first th {
+#rpcdnjcuei .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jysqpczocl .gt_summary_row {
+#rpcdnjcuei .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1289,16 +1349,16 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   padding-right: 5px;
 }
 
-#jysqpczocl .gt_first_summary_row {
+#rpcdnjcuei .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jysqpczocl .gt_first_summary_row.thick {
+#rpcdnjcuei .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jysqpczocl .gt_last_summary_row {
+#rpcdnjcuei .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1308,7 +1368,7 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   border-bottom-color: #D3D3D3;
 }
 
-#jysqpczocl .gt_grand_summary_row {
+#rpcdnjcuei .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1318,7 +1378,7 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   padding-right: 5px;
 }
 
-#jysqpczocl .gt_first_grand_summary_row {
+#rpcdnjcuei .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1328,7 +1388,7 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   border-top-color: #D3D3D3;
 }
 
-#jysqpczocl .gt_last_grand_summary_row_top {
+#rpcdnjcuei .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1338,11 +1398,11 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   border-bottom-color: #D3D3D3;
 }
 
-#jysqpczocl .gt_striped {
+#rpcdnjcuei .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jysqpczocl .gt_table_body {
+#rpcdnjcuei .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1351,7 +1411,7 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   border-bottom-color: #D3D3D3;
 }
 
-#jysqpczocl .gt_footnotes {
+#rpcdnjcuei .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1365,7 +1425,7 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   border-right-color: #D3D3D3;
 }
 
-#jysqpczocl .gt_footnote {
+#rpcdnjcuei .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1374,7 +1434,7 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   padding-right: 5px;
 }
 
-#jysqpczocl .gt_sourcenotes {
+#rpcdnjcuei .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1388,7 +1448,7 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   border-right-color: #D3D3D3;
 }
 
-#jysqpczocl .gt_sourcenote {
+#rpcdnjcuei .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1396,72 +1456,1650 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
   padding-right: 5px;
 }
 
-#jysqpczocl .gt_left {
+#rpcdnjcuei .gt_left {
   text-align: left;
 }
 
-#jysqpczocl .gt_center {
+#rpcdnjcuei .gt_center {
   text-align: center;
 }
 
-#jysqpczocl .gt_right {
+#rpcdnjcuei .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jysqpczocl .gt_font_normal {
+#rpcdnjcuei .gt_font_normal {
   font-weight: normal;
 }
 
-#jysqpczocl .gt_font_bold {
+#rpcdnjcuei .gt_font_bold {
   font-weight: bold;
 }
 
-#jysqpczocl .gt_font_italic {
+#rpcdnjcuei .gt_font_italic {
   font-style: italic;
 }
 
-#jysqpczocl .gt_super {
+#rpcdnjcuei .gt_super {
   font-size: 65%;
 }
 
-#jysqpczocl .gt_footnote_marks {
+#rpcdnjcuei .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jysqpczocl .gt_asterisk {
+#rpcdnjcuei .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jysqpczocl .gt_indent_1 {
+#rpcdnjcuei .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jysqpczocl .gt_indent_2 {
+#rpcdnjcuei .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jysqpczocl .gt_indent_3 {
+#rpcdnjcuei .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jysqpczocl .gt_indent_4 {
+#rpcdnjcuei .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jysqpczocl .gt_indent_5 {
+#rpcdnjcuei .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jysqpczocl .katex-display {
+#rpcdnjcuei .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jysqpczocl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rpcdnjcuei div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">M</td>
+<td class="gt_row gt_left" headers="Name">Mottles</td>
+<td class="gt_row gt_left" headers="Description">Colour patterns induced by redox processes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">R</td>
+<td class="gt_row gt_left" headers="Name">Structural</td>
+<td class="gt_row gt_left" headers="Description">Colour patterns induced by preferential flow</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">W</td>
+<td class="gt_row gt_left" headers="Name">Weathering</td>
+<td class="gt_row gt_left" headers="Description">Colour patterns induced by parent material weathering, most commonly seen in BC horizons and below (e.g. rock ghost patterns)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">X</td>
+<td class="gt_row gt_left" headers="Name">Mixing</td>
+<td class="gt_row gt_left" headers="Description">Colour patterns created by biological (e.g. worm tunnels) or mechanical (e.g. landslide) means</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="sec-patt-abund" class="level3" data-number="14.3.2">
+<h3 data-number="14.3.2" class="anchored" data-anchor-id="sec-patt-abund"><span class="header-section-number">14.3.2</span> Pattern abundance</h3>
+<p>Estimate the areal percentage of the cut exposure face occupied by the colour pattern, versus the matrix colour. Use the visual guides in <a href="in_02_horizon_properties.html#sec-in-abundpics" class="quarto-xref"><span>Section 21.2.3</span></a> to help estimate accurately. Abundance data can be classified according to <a href="in_02_horizon_properties.html#tbl-in-abgen" class="quarto-xref">Table&nbsp;<span>21.4</span></a> where needed.</p>
+<p>For example, <span class="ceg">M&nbsp;7.5YR58&nbsp;25%</span> for a bright orange redox mottle observed in moist soil conditions.</p>
+</section>
+<section id="sec-patt-shape" class="level3" data-number="14.3.3">
+<h3 data-number="14.3.3" class="anchored" data-anchor-id="sec-patt-shape"><span class="header-section-number">14.3.3</span> Pattern shape</h3>
+<p>Record pattern shape using the codes in <a href="#tbl-hr-patshp" class="quarto-xref">Table&nbsp;<span>14.3</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-hr-patshp" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hr-patshp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;14.3: Types of soil colour pattern shape
+</figcaption>
+<div aria-describedby="tbl-hr-patshp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="shdllhbcje" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#shdllhbcje table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#shdllhbcje thead, #shdllhbcje tbody, #shdllhbcje tfoot, #shdllhbcje tr, #shdllhbcje td, #shdllhbcje th {
+  border-style: none;
+}
+
+#shdllhbcje p {
+  margin: 0;
+  padding: 0;
+}
+
+#shdllhbcje .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#shdllhbcje .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#shdllhbcje .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#shdllhbcje .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#shdllhbcje .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#shdllhbcje .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#shdllhbcje .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#shdllhbcje .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#shdllhbcje .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#shdllhbcje .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#shdllhbcje .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#shdllhbcje .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#shdllhbcje .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#shdllhbcje .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#shdllhbcje .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#shdllhbcje .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#shdllhbcje .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#shdllhbcje .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#shdllhbcje .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shdllhbcje .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#shdllhbcje .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#shdllhbcje .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#shdllhbcje .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shdllhbcje .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#shdllhbcje .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#shdllhbcje .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#shdllhbcje .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shdllhbcje .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#shdllhbcje .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#shdllhbcje .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#shdllhbcje .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#shdllhbcje .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#shdllhbcje .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shdllhbcje .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#shdllhbcje .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shdllhbcje .gt_left {
+  text-align: left;
+}
+
+#shdllhbcje .gt_center {
+  text-align: center;
+}
+
+#shdllhbcje .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#shdllhbcje .gt_font_normal {
+  font-weight: normal;
+}
+
+#shdllhbcje .gt_font_bold {
+  font-weight: bold;
+}
+
+#shdllhbcje .gt_font_italic {
+  font-style: italic;
+}
+
+#shdllhbcje .gt_super {
+  font-size: 65%;
+}
+
+#shdllhbcje .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#shdllhbcje .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#shdllhbcje .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#shdllhbcje .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#shdllhbcje .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#shdllhbcje .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#shdllhbcje .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#shdllhbcje .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#shdllhbcje div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">B</td>
+<td class="gt_row gt_left" headers="Name">Blotches</td>
+<td class="gt_row gt_left" headers="Description">Rounded shapes, blobs, where colour patterns penetrate the soil mass</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">S</td>
+<td class="gt_row gt_left" headers="Name">Stripes</td>
+<td class="gt_row gt_left" headers="Description">Linear colour patterns e.g. root linings</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">C</td>
+<td class="gt_row gt_left" headers="Name">Coatings</td>
+<td class="gt_row gt_left" headers="Description">Patterns caused by ped surface features e.g. cutans</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="sec-patt-size" class="level3" data-number="14.3.4">
+<h3 data-number="14.3.4" class="anchored" data-anchor-id="sec-patt-size"><span class="header-section-number">14.3.4</span> Pattern size</h3>
+<p>Estimate the average size of each pattern in mm, e.g.&nbsp;<span class="ceg">5&nbsp;±&nbsp;2&nbsp;mm</span>. Pattern size may be classified against <a href="in_02_horizon_properties.html#sec-in-solsz" class="quarto-xref"><span>Section 21.1.1</span></a> if necessary.</p>
+</section>
+<section id="sec-patt-contrast" class="level3" data-number="14.3.5">
+<h3 data-number="14.3.5" class="anchored" data-anchor-id="sec-patt-contrast"><span class="header-section-number">14.3.5</span> Pattern contrast</h3>
+<p>Rules for determining contrast in the field are defined in <a href="#tbl-hr-patcont" class="quarto-xref">Table&nbsp;<span>14.4</span></a>. If both matrix and pattern colours are recorded using the Munsell system, contrast can be calculated automatically. Complete rules for automating this process are found in <span class="citation" data-cites="schoeneberger2012">Schoeneberger et al. (<a href="references.html#ref-schoeneberger2012" role="doc-biblioref">2012</a>)</span>, section 2-15.</p>
+<div id="tbl-hr-patcont" class="striped quarto-float quarto-figure quarto-figure-center anchored" data-cols_width="[10,20,70]">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hr-patcont-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;14.4: Types of soil colour pattern contrast
+</figcaption>
+<div aria-describedby="tbl-hr-patcont-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 89%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Code</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="ceg">F</span></td>
+<td style="text-align: left;">Faint</td>
+<td style="text-align: left;">Indistinct colour variation evident only on close examination. The secondary colour is typically of the same hue as the primary colour and will generally differ by no more than one unit of chroma or two units of value.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="ceg">D</span></td>
+<td style="text-align: left;">Distinct</td>
+<td style="text-align: left;"><p>Although not striking, the colour variation is readily seen. The secondary and primary colours usually:</p>
+<ol type="1">
+<li>Have the same hue. but differ by more than one and less than four units of chroma, or more than two and less than four units of value, or</li>
+<li>Differ by one hue (2.5 Munsell units) and not more than one unit of chroma or two units of value.</li>
+</ol></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="ceg">P</span></td>
+<td style="text-align: left;">Prominent</td>
+<td style="text-align: left;"><p>The colour variation is conspicuous. The secondary and primary colours normally differ by</p>
+<ol type="1">
+<li>At least two full hues (5 Munsell units) if chroma and value are the same, or</li>
+<li>At least four units of value or chroma if the hue is the same, or</li>
+<li>At least one unit of chroma or two units of value if there is a difference of one full hue (2.5 Munsell units).</li>
+</ol></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-patt-dist" class="level3" data-number="14.3.6">
+<h3 data-number="14.3.6" class="anchored" data-anchor-id="sec-patt-dist"><span class="header-section-number">14.3.6</span> Pattern boundary distinctness</h3>
+<p>Record pattern boundary distinctness using the codes in <a href="#tbl-hr-patdist" class="quarto-xref">Table&nbsp;<span>14.5</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-hr-patdist" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hr-patdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;14.5: Types of soil colour pattern distinctness
+</figcaption>
+<div aria-describedby="tbl-hr-patdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="svbepdrvia" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#svbepdrvia table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#svbepdrvia thead, #svbepdrvia tbody, #svbepdrvia tfoot, #svbepdrvia tr, #svbepdrvia td, #svbepdrvia th {
+  border-style: none;
+}
+
+#svbepdrvia p {
+  margin: 0;
+  padding: 0;
+}
+
+#svbepdrvia .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#svbepdrvia .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#svbepdrvia .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#svbepdrvia .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#svbepdrvia .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#svbepdrvia .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#svbepdrvia .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#svbepdrvia .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#svbepdrvia .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#svbepdrvia .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#svbepdrvia .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#svbepdrvia .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#svbepdrvia .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#svbepdrvia .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#svbepdrvia .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#svbepdrvia .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#svbepdrvia .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#svbepdrvia .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#svbepdrvia .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#svbepdrvia .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#svbepdrvia .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#svbepdrvia .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#svbepdrvia .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#svbepdrvia .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#svbepdrvia .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#svbepdrvia .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#svbepdrvia .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#svbepdrvia .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#svbepdrvia .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#svbepdrvia .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#svbepdrvia .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#svbepdrvia .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#svbepdrvia .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#svbepdrvia .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#svbepdrvia .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#svbepdrvia .gt_left {
+  text-align: left;
+}
+
+#svbepdrvia .gt_center {
+  text-align: center;
+}
+
+#svbepdrvia .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#svbepdrvia .gt_font_normal {
+  font-weight: normal;
+}
+
+#svbepdrvia .gt_font_bold {
+  font-weight: bold;
+}
+
+#svbepdrvia .gt_font_italic {
+  font-style: italic;
+}
+
+#svbepdrvia .gt_super {
+  font-size: 65%;
+}
+
+#svbepdrvia .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#svbepdrvia .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#svbepdrvia .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#svbepdrvia .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#svbepdrvia .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#svbepdrvia .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#svbepdrvia .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#svbepdrvia .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#svbepdrvia div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">S</td>
+<td class="gt_row gt_left" headers="Name">Sharp</td>
+<td class="gt_row gt_left" headers="Description">Knife-edge boundaries between colours.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">C</td>
+<td class="gt_row gt_left" headers="Name">Clear</td>
+<td class="gt_row gt_left" headers="Description">Colour transition &lt;&nbsp;2&nbsp;mm wide</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">D</td>
+<td class="gt_row gt_left" headers="Name">Diffuse</td>
+<td class="gt_row gt_left" headers="Description">Colour transition &gt;&nbsp;2&nbsp;mm wide</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="sec-col-quick" class="level3" data-number="14.3.7">
+<h3 data-number="14.3.7" class="anchored" data-anchor-id="sec-col-quick"><span class="header-section-number">14.3.7</span> Colour short codes</h3>
+<p>For rapid recording of pattern colour, the single letter codes in <a href="#tbl-hr-colorshort" class="quarto-xref">Table&nbsp;<span>14.6</span></a> can be used.</p>
+<p>For example, <span class="ceg">M&nbsp;O&nbsp;25%</span> for a bright orange redox mottle observed in moist soil conditions.</p>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Colour short codes must not be used for recording the matrix colour(s), as they do not provide enough detail for soil classification.</p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div id="tbl-hr-colorshort" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hr-colorshort-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;14.6: Short codes for major soil colours, adapted from <span class="citation" data-cites="ncst2024">(<a href="references.html#ref-ncst2024" role="doc-biblioref">National Committee on Soil and Terrain 2024, p. 137–8</a>)</span>. NB: The Munsell colour ranges given are a general guide only, do not interpret them strictly.
+</figcaption>
+<div aria-describedby="tbl-hr-colorshort-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="gfgrfeanaa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gfgrfeanaa table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#gfgrfeanaa thead, #gfgrfeanaa tbody, #gfgrfeanaa tfoot, #gfgrfeanaa tr, #gfgrfeanaa td, #gfgrfeanaa th {
+  border-style: none;
+}
+
+#gfgrfeanaa p {
+  margin: 0;
+  padding: 0;
+}
+
+#gfgrfeanaa .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#gfgrfeanaa .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#gfgrfeanaa .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#gfgrfeanaa .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#gfgrfeanaa .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gfgrfeanaa .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gfgrfeanaa .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gfgrfeanaa .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#gfgrfeanaa .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#gfgrfeanaa .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#gfgrfeanaa .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#gfgrfeanaa .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#gfgrfeanaa .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#gfgrfeanaa .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#gfgrfeanaa .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#gfgrfeanaa .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#gfgrfeanaa .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#gfgrfeanaa .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#gfgrfeanaa .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gfgrfeanaa .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#gfgrfeanaa .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#gfgrfeanaa .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#gfgrfeanaa .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gfgrfeanaa .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#gfgrfeanaa .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#gfgrfeanaa .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gfgrfeanaa .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gfgrfeanaa .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#gfgrfeanaa .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gfgrfeanaa .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#gfgrfeanaa .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gfgrfeanaa .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gfgrfeanaa .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gfgrfeanaa .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gfgrfeanaa .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gfgrfeanaa .gt_left {
+  text-align: left;
+}
+
+#gfgrfeanaa .gt_center {
+  text-align: center;
+}
+
+#gfgrfeanaa .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#gfgrfeanaa .gt_font_normal {
+  font-weight: normal;
+}
+
+#gfgrfeanaa .gt_font_bold {
+  font-weight: bold;
+}
+
+#gfgrfeanaa .gt_font_italic {
+  font-style: italic;
+}
+
+#gfgrfeanaa .gt_super {
+  font-size: 65%;
+}
+
+#gfgrfeanaa .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#gfgrfeanaa .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#gfgrfeanaa .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#gfgrfeanaa .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#gfgrfeanaa .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#gfgrfeanaa .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#gfgrfeanaa .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#gfgrfeanaa .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#gfgrfeanaa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1529,1587 +3167,17 @@ Table&nbsp;14.2: Short codes for major soil colours, adapted from <span class="c
 </figure>
 </div>
 </div>
-</section>
-</section>
-<section id="sec-col-matrix" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="sec-col-matrix"><span class="header-section-number">14.2</span> Matrix colour</h2>
-<p>The matrix colour of the soil is the dominant ‘background’ colour. This excludes the colours of redox-induced mottles (mostly oranges and gleys).</p>
-<p>For routine assessment, record the single dominant matrix colour per horizon. For detailed assessment, up to three matrix colours may be recorded if necessary. It is assumed that multiple matrix colours are co-dominant, otherwise the subdominant one must logically be recorded as colour patterns (<a href="#sec-col-patt" class="quarto-xref"><span>Section 14.3</span></a>).</p>
-<p>Dry soil matrix colours are sometimes necessary as well, e.g.&nbsp;for diagnosing a bleached E horizon. If moist and dry matrix colours are both obtained for a horizon, append them with their moisture status as <span class="ceg">D</span> or <span class="ceg">M</span>.</p>
-<p>Example: <span class="ceg">10YR52 M / 10YR71 D</span>.</p>
-</section>
-<section id="sec-col-patt" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="sec-col-patt"><span class="header-section-number">14.3</span> Colour patterns</h2>
-<p>For most assessments, only pattern type and abundance are required. Further detail is optional, but descriptive measures for pattern shape, size and distinctness are provided below.</p>
-<section id="sec-patt-type" class="level3" data-number="14.3.1">
-<h3 data-number="14.3.1" class="anchored" data-anchor-id="sec-patt-type"><span class="header-section-number">14.3.1</span> Pattern type</h3>
-<p>Soil colour patterns are most commonly driven by redox processes affecting iron minerals, but can also be a product of parent material weathering, water movement, or mixing.</p>
-<div class="cell" data-layout-align="center">
-<div id="tbl-hr-pattype" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hr-pattype-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;14.3: Types of soil colour pattern
-</figcaption>
-<div aria-describedby="tbl-hr-pattype-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div id="lspvlnnhgk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lspvlnnhgk table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#lspvlnnhgk thead, #lspvlnnhgk tbody, #lspvlnnhgk tfoot, #lspvlnnhgk tr, #lspvlnnhgk td, #lspvlnnhgk th {
-  border-style: none;
-}
-
-#lspvlnnhgk p {
-  margin: 0;
-  padding: 0;
-}
-
-#lspvlnnhgk .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: 85%;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#lspvlnnhgk .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#lspvlnnhgk .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: bold;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#lspvlnnhgk .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#lspvlnnhgk .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#lspvlnnhgk .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lspvlnnhgk .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#lspvlnnhgk .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#lspvlnnhgk .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#lspvlnnhgk .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#lspvlnnhgk .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#lspvlnnhgk .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#lspvlnnhgk .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#lspvlnnhgk .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#lspvlnnhgk .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#lspvlnnhgk .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#lspvlnnhgk .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#lspvlnnhgk .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#lspvlnnhgk .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lspvlnnhgk .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#lspvlnnhgk .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#lspvlnnhgk .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#lspvlnnhgk .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lspvlnnhgk .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#lspvlnnhgk .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#lspvlnnhgk .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lspvlnnhgk .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lspvlnnhgk .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#lspvlnnhgk .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lspvlnnhgk .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#lspvlnnhgk .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lspvlnnhgk .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#lspvlnnhgk .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lspvlnnhgk .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#lspvlnnhgk .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lspvlnnhgk .gt_left {
-  text-align: left;
-}
-
-#lspvlnnhgk .gt_center {
-  text-align: center;
-}
-
-#lspvlnnhgk .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#lspvlnnhgk .gt_font_normal {
-  font-weight: normal;
-}
-
-#lspvlnnhgk .gt_font_bold {
-  font-weight: bold;
-}
-
-#lspvlnnhgk .gt_font_italic {
-  font-style: italic;
-}
-
-#lspvlnnhgk .gt_super {
-  font-size: 65%;
-}
-
-#lspvlnnhgk .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#lspvlnnhgk .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#lspvlnnhgk .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#lspvlnnhgk .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#lspvlnnhgk .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#lspvlnnhgk .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#lspvlnnhgk .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#lspvlnnhgk .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#lspvlnnhgk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 20%">
-<col>
-</colgroup>
-<thead>
-<tr class="gt_col_headings header">
-<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
-<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
-<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">M</td>
-<td class="gt_row gt_left" headers="Name">Mottles</td>
-<td class="gt_row gt_left" headers="Description">Colour patterns induced by redox processes</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">R</td>
-<td class="gt_row gt_left" headers="Name">Reticulate</td>
-<td class="gt_row gt_left" headers="Description">Colour patterns induced by preferential flow (e.g. gammate patterns in pallic soils)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">W</td>
-<td class="gt_row gt_left" headers="Name">Weathering</td>
-<td class="gt_row gt_left" headers="Description">Colour patterns induced by parent material weathering, most commonly seen in BC horizons and below (e.g. rock ghost patterns)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">X</td>
-<td class="gt_row gt_left" headers="Name">Mixing</td>
-<td class="gt_row gt_left" headers="Description">Colour patterns created by biological (e.g. worm tunnels) or mechanical (e.g. landslide) means</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-</section>
-<section id="pattern-abundance" class="level3" data-number="14.3.2">
-<h3 data-number="14.3.2" class="anchored" data-anchor-id="pattern-abundance"><span class="header-section-number">14.3.2</span> Pattern abundance</h3>
-<p>Estimate the areal percentage of the cut exposure face occupied by the colour pattern, versus the matrix colour. Use the visual guides in <a href="in_02_horizon_properties.html#sec-in-abundpics" class="quarto-xref"><span>Section 21.2.3</span></a> to help estimate accurately. Abundance data can be classified according to <a href="in_02_horizon_properties.html#tbl-in-abgen" class="quarto-xref">Table&nbsp;<span>21.4</span></a> where needed.</p>
-<p>For example, <span class="ceg">M 7.5YR58 25%</span> for a bright orange redox mottle.</p>
-</section>
-<section id="pattern-shape" class="level3" data-number="14.3.3">
-<h3 data-number="14.3.3" class="anchored" data-anchor-id="pattern-shape"><span class="header-section-number">14.3.3</span> Pattern shape</h3>
-<div class="cell" data-layout-align="center">
-<div id="tbl-hr-patshp" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hr-patshp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;14.4: Types of soil colour pattern shape
-</figcaption>
-<div aria-describedby="tbl-hr-patshp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div id="bpoaamlaxx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bpoaamlaxx table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#bpoaamlaxx thead, #bpoaamlaxx tbody, #bpoaamlaxx tfoot, #bpoaamlaxx tr, #bpoaamlaxx td, #bpoaamlaxx th {
-  border-style: none;
-}
-
-#bpoaamlaxx p {
-  margin: 0;
-  padding: 0;
-}
-
-#bpoaamlaxx .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: 85%;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#bpoaamlaxx .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#bpoaamlaxx .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: bold;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#bpoaamlaxx .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#bpoaamlaxx .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#bpoaamlaxx .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#bpoaamlaxx .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#bpoaamlaxx .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#bpoaamlaxx .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#bpoaamlaxx .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#bpoaamlaxx .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#bpoaamlaxx .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#bpoaamlaxx .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#bpoaamlaxx .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#bpoaamlaxx .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#bpoaamlaxx .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#bpoaamlaxx .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#bpoaamlaxx .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#bpoaamlaxx .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#bpoaamlaxx .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#bpoaamlaxx .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#bpoaamlaxx .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#bpoaamlaxx .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#bpoaamlaxx .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#bpoaamlaxx .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#bpoaamlaxx .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#bpoaamlaxx .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#bpoaamlaxx .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#bpoaamlaxx .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#bpoaamlaxx .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#bpoaamlaxx .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#bpoaamlaxx .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#bpoaamlaxx .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#bpoaamlaxx .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#bpoaamlaxx .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#bpoaamlaxx .gt_left {
-  text-align: left;
-}
-
-#bpoaamlaxx .gt_center {
-  text-align: center;
-}
-
-#bpoaamlaxx .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#bpoaamlaxx .gt_font_normal {
-  font-weight: normal;
-}
-
-#bpoaamlaxx .gt_font_bold {
-  font-weight: bold;
-}
-
-#bpoaamlaxx .gt_font_italic {
-  font-style: italic;
-}
-
-#bpoaamlaxx .gt_super {
-  font-size: 65%;
-}
-
-#bpoaamlaxx .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#bpoaamlaxx .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#bpoaamlaxx .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#bpoaamlaxx .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#bpoaamlaxx .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#bpoaamlaxx .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#bpoaamlaxx .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#bpoaamlaxx .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#bpoaamlaxx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 20%">
-<col>
-</colgroup>
-<thead>
-<tr class="gt_col_headings header">
-<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
-<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
-<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">B</td>
-<td class="gt_row gt_left" headers="Name">Blotches</td>
-<td class="gt_row gt_left" headers="Description">Rounded shapes, blobs, where colour patterns penetrate the soil mass</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">S</td>
-<td class="gt_row gt_left" headers="Name">Stripes</td>
-<td class="gt_row gt_left" headers="Description">Linear colour patterns e.g. root linings</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">C</td>
-<td class="gt_row gt_left" headers="Name">Coatings</td>
-<td class="gt_row gt_left" headers="Description">Patterns caused by ped surface features e.g. cutans</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-</section>
-<section id="pattern-size" class="level3" data-number="14.3.4">
-<h3 data-number="14.3.4" class="anchored" data-anchor-id="pattern-size"><span class="header-section-number">14.3.4</span> Pattern size</h3>
-<p>Estimate the average size of each pattern in mm, e.g.&nbsp;<span class="ceg">5&nbsp;±&nbsp;2&nbsp;mm</span>. Pattern size may be classified against <a href="in_02_horizon_properties.html#sec-in-solsz" class="quarto-xref"><span>Section 21.1.1</span></a> if necessary.</p>
-</section>
-<section id="pattern-contrast" class="level3" data-number="14.3.5">
-<h3 data-number="14.3.5" class="anchored" data-anchor-id="pattern-contrast"><span class="header-section-number">14.3.5</span> Pattern contrast</h3>
-<p>If both matrix and pattern colours are recorded using the Munsell system, the following parameter can be calculated automatically. Complete rules for automating this process are found in <span class="citation" data-cites="schoeneberger2012">Schoeneberger et al. (<a href="references.html#ref-schoeneberger2012" role="doc-biblioref">2012</a>)</span>, section 2-15.</p>
-<div id="tbl-hr-patcont" class="striped quarto-float quarto-figure quarto-figure-center anchored" data-cols_width="[10,20,70]">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hr-patcont-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;14.5: Types of soil colour pattern contrast
-</figcaption>
-<div aria-describedby="tbl-hr-patcont-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-striped caption-top table">
-<colgroup>
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 89%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Code</th>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><span class="ceg">F</span></td>
-<td style="text-align: left;">Faint</td>
-<td style="text-align: left;">Indistinct colour variation evident only on close examination. The secondary colour is typically of the same hue as the primary colour and will generally differ by no more than one unit of chroma or two units of value.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><span class="ceg">D</span></td>
-<td style="text-align: left;">Distinct</td>
-<td style="text-align: left;"><p>Although not striking, the colour variation is readily seen. The secondary and primary colours usually:</p>
-<ol type="1">
-<li>Have the same hue. but differ by more than one and less than four units of chroma, or more than two and less than four units of value, or</li>
-<li>Differ by one hue (2.5 Munsell units) and not more than one unit of chroma or two units of value.</li>
-</ol></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><span class="ceg">P</span></td>
-<td style="text-align: left;">Prominent</td>
-<td style="text-align: left;"><p>The colour variation is conspicuous. The secondary and primary colours normally differ by</p>
-<ol type="1">
-<li>At least two full hues (5 Munsell units) if chroma and value are the same, or</li>
-<li>At least four units of value or chroma if the hue is the same, or</li>
-<li>At least one unit of chroma or two units of value if there is a difference of one full hue (2.5 Munsell units).</li>
-</ol></td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-</section>
-<section id="pattern-boundary-distinctness" class="level3" data-number="14.3.6">
-<h3 data-number="14.3.6" class="anchored" data-anchor-id="pattern-boundary-distinctness"><span class="header-section-number">14.3.6</span> Pattern boundary distinctness</h3>
-<div class="cell" data-layout-align="center">
-<div id="tbl-hr-patdist" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hr-patdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;14.6: Types of soil colour pattern distinctness
-</figcaption>
-<div aria-describedby="tbl-hr-patdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div id="lhsdxzeiuq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lhsdxzeiuq table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#lhsdxzeiuq thead, #lhsdxzeiuq tbody, #lhsdxzeiuq tfoot, #lhsdxzeiuq tr, #lhsdxzeiuq td, #lhsdxzeiuq th {
-  border-style: none;
-}
-
-#lhsdxzeiuq p {
-  margin: 0;
-  padding: 0;
-}
-
-#lhsdxzeiuq .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: 85%;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#lhsdxzeiuq .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#lhsdxzeiuq .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: bold;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#lhsdxzeiuq .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#lhsdxzeiuq .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#lhsdxzeiuq .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lhsdxzeiuq .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#lhsdxzeiuq .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#lhsdxzeiuq .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#lhsdxzeiuq .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#lhsdxzeiuq .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#lhsdxzeiuq .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#lhsdxzeiuq .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#lhsdxzeiuq .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#lhsdxzeiuq .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#lhsdxzeiuq .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#lhsdxzeiuq .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#lhsdxzeiuq .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#lhsdxzeiuq .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lhsdxzeiuq .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#lhsdxzeiuq .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#lhsdxzeiuq .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#lhsdxzeiuq .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lhsdxzeiuq .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#lhsdxzeiuq .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#lhsdxzeiuq .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lhsdxzeiuq .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lhsdxzeiuq .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#lhsdxzeiuq .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lhsdxzeiuq .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#lhsdxzeiuq .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lhsdxzeiuq .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#lhsdxzeiuq .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lhsdxzeiuq .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#lhsdxzeiuq .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lhsdxzeiuq .gt_left {
-  text-align: left;
-}
-
-#lhsdxzeiuq .gt_center {
-  text-align: center;
-}
-
-#lhsdxzeiuq .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#lhsdxzeiuq .gt_font_normal {
-  font-weight: normal;
-}
-
-#lhsdxzeiuq .gt_font_bold {
-  font-weight: bold;
-}
-
-#lhsdxzeiuq .gt_font_italic {
-  font-style: italic;
-}
-
-#lhsdxzeiuq .gt_super {
-  font-size: 65%;
-}
-
-#lhsdxzeiuq .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#lhsdxzeiuq .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#lhsdxzeiuq .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#lhsdxzeiuq .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#lhsdxzeiuq .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#lhsdxzeiuq .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#lhsdxzeiuq .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#lhsdxzeiuq .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#lhsdxzeiuq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 20%">
-<col>
-</colgroup>
-<thead>
-<tr class="gt_col_headings header">
-<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
-<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
-<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">S</td>
-<td class="gt_row gt_left" headers="Name">Sharp</td>
-<td class="gt_row gt_left" headers="Description">Knife-edge boundaries between colours.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">C</td>
-<td class="gt_row gt_left" headers="Name">Clear</td>
-<td class="gt_row gt_left" headers="Description">Colour transition &lt; 2 mm wide</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">D</td>
-<td class="gt_row gt_left" headers="Name">Diffuse</td>
-<td class="gt_row gt_left" headers="Description">Colour transition &gt; 2 mm wide</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-bigham1993" class="csl-entry" role="listitem">
+Bigham JM, Ciolkosz EJ 1993. Soil color. Madison, USA: Soil Science Society of America.
+</div>
 <div id="ref-kirillova2021" class="csl-entry" role="listitem">
 Kirillova NP, Zhang Y, Hartemink AE, Zhulidova DA, Artemyeva ZS, Khomyakov DM 2021. Calibration methods for measuring the color of moist soils with digital cameras. CATENA [Internet]. 202:105274. <a href="https://doi.org/10.1016/j.catena.2021.105274">https://doi.org/10.1016/j.catena.2021.105274</a>
+</div>
+<div id="ref-mancini2020" class="csl-entry" role="listitem">
+Mancini M, Weindorf DC, Monteiro MEC, De Faria ÁJG, Dos Santos Teixeira AF, De Lima W, De Lima FRD, Dijair TSB, Marques FD, Ribeiro D, et al. 2020. From sensor data to munsell color system: Machine learning algorithm applied to tropical soil color classification via nix<span></span> pro sensor. Geoderma [Internet]. 375:114471. <a href="https://doi.org/10.1016/j.geoderma.2020.114471">https://doi.org/10.1016/j.geoderma.2020.114471</a>
 </div>
 <div id="ref-munsellcolorcompany2009" class="csl-entry" role="listitem">
 Munsell Color Company 2009. Munsell soil colour charts. [Internet]. 2009 revised. Grand Rapids, MI, USA: Pantone. <a href="https://munsell.com/">https://munsell.com/</a>
@@ -3125,6 +3193,9 @@ Roudier P, Manderson A, Hedley C 2016. Advances towards quantitative assessments
 </div>
 <div id="ref-schoeneberger2012" class="csl-entry" role="listitem">
 Schoeneberger PJ, Wysocki DA, Benham EC, Soil Survey Staff 2012. Field book for describing and sampling soils, version 3.0. [Internet]. Lincoln, NE, USA: Natural Resources Conservation Service, National Soil Survey Center. <a href="https://www.nrcs.usda.gov/sites/default/files/2022-09/field-book.pdf">https://www.nrcs.usda.gov/sites/default/files/2022-09/field-book.pdf</a>
+</div>
+<div id="ref-sinclair2024" class="csl-entry" role="listitem">
+Sinclair R, Nodi S, Kabir MA 2024. Evaluating mobile applications for estimating soil properties: Quality of current apps, limitations and future directions. Computers and Electronics in Agriculture [Internet]. 216:108527. <a href="https://doi.org/10.1016/j.compag.2023.108527">https://doi.org/10.1016/j.compag.2023.108527</a>
 </div>
 </div>
 </section>
@@ -3543,6 +3614,38 @@ Schoeneberger PJ, Wysocki DA, Benham EC, Soil Survey Staff 2012. Field book for 
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
