@@ -12,7 +12,7 @@ The surface at a site is described primarily in terms of its slope, aspect, and 
 
 Slope is the inclination of the land surface relative to the horizontal plane. Slope steepness affects many soil processes, notably erosion, water run-off and infiltration behaviour.
 
-Direct measurements of slope should be taken over a minimum distance of 20 meters. Stand 10 m upslope from the point of observation and measure downhill. Record in units of degrees, with a maximum precision of 0.1 (e.g. [6°]{.ceg}). Record [ND]{.ceg} if slope cannot be reliably determined. Record [NR]{.ceg} if no measurement was taken.
+Direct measurements of slope should be taken over a minimum distance of 20 meters. Stand 10 m upslope from the point of observation and measure downhill. Record in units of degrees, with a maximum precision of 0.1 (e.g. [6.3°]{.ceg}). Record [ND]{.ceg} if slope cannot be reliably determined. Record [NR]{.ceg} if no measurement was taken.
 
 Precision needs will vary with slope and survey purpose; whole number degrees are sufficient on any slope over about 5 degrees, but finer gradations can be useful for flatter locations. Slope classes may be applied to the recorded data; some options are presented in @sec-slopeclass.
 
@@ -25,7 +25,7 @@ Record the equipment used to measure slope using @tbl-pr-slpmth.
 dat_pr_slpmth <-
   tribble(~Code, ~Name, ~Description,
           'E', 'Estimate', 'Estimated by eye',
-          'C', 'Clinometer', 'Handheld clinometer',
+          'C', 'Clinometer', 'Handheld clinometer or Abney level',
           'T', 'Tripod', 'Survey-grade equipment mounted on a tripod',
           'D', 'DEM', 'Calculated from a DEM with suitable resolution and vertical accuracy')
 
@@ -52,9 +52,9 @@ delete me
 ::: {#nte-slpdem .callout-note appearance="minimal" collapse="true" title="Extracting slope from DEMs"}
 Slope data for a site can be extracted from a DEM, provided some conditions are met:
 
--   Cell size should be less than 10 m; larger cells systematically underestimate local slope
+-   Cell size should be less than 10 m; larger cells systematically underestimate local slope
 -   DEM source should ideally be of type [D]{.ceg} for acceptable accuracy (see @sec-loc-abs-elev)
--   Extract the median slope within a 20 m radius, not the single value directly under the recorded point
+-   Extract the median slope within a 10 m radius, not the single value directly under the recorded point
 -   Review and, if necessary, adjust slopes extracted from sites described on exposures. These may be overestimates (e.g. where a track cuts into a slope, the values upslope behind the site would better represent the soil-forming environment). Sites located close to landform or landscape boundaries may also need review.
 :::
 
@@ -99,8 +99,8 @@ delete me
 ::: {#nte-flatwhat .callout-note appearance="minimal" collapse="true" title="Defining 'flat' in soil survey"}
 Truly flat land is extremely rare over distances of more than a few meters. The cutoff slope value for *effective* flatness is not always provided in soil description standards (e.g. @schoeneberger2012) and is not consistent when it is, e.g.
 
--   0.58° (\~1%) for level ground in @ncst2024, p. 19
--   2.86° (5%) in @hurst2022, p. 14
+-   0.58° (\~1%) for level ground in @ncst2024
+-   2.86° (5%) in @hurst2022
 
 The slope measurement method in use can restrict the recordable limit of flat land. For instance, a hand-held clinometer may be difficult to use consistently and accurately at slopes of less than 3°, while survey-grade equipment (e.g. a tripod-mounted laser level) will have a higher accuracy.
 
@@ -115,6 +115,8 @@ Surface cover helps visualise the site and its landform and provides some inform
 
 Estimate and record the following generalised surface cover components as a percentage composition of the site (@sec-pr-site). Consider the land cover from the surface to a height of 1.35 m, for consistency with @hurst2022.
 
+Example: 
+
 ```{r}
 #| label: tbl-pr-surfcov
 #| tbl-cap: "Surface cover types"
@@ -122,8 +124,8 @@ Estimate and record the following generalised surface cover components as a perc
 dat_pr_surfcov <-
   tribble(~Code, ~Name, ~Description,
           'BE', 'Earth', 'Bare sediment or soil, < 2 mm', 
-          'BR', 'Fragments', ' Small rock fragments, shells, or bones, 2 - 60 mm', # LCDB
-          'BO', 'Rock', 'Bare rock outcrop or rock fragments >60 mm',
+          'BR', 'Fragments', ' Rock fragments, shells, or bones, 2 - 200 mm',
+          'BO', 'Rock', 'Bare rock outcrop or large rock fragments > 200 mm',
           'WT', 'Water', 'Open water, ice or snow',
           'PT', 'Peat', 'Plant material decomposing under persistently saturated conditions',
           'LI', 'Litter', 'Plant material decomposing under intermittently wet to dry conditions',

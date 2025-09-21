@@ -6,7 +6,7 @@ library(tibble)
 library(gt)
 ```
 
-Secondary soil features are bodies formed within the soil through pedogenic (natural soil-forming) processes. They contain a higher amount of a particular substance (or association of substances) and thus contrast with the surrounding material. Many create barriers to water movement or alter chemistry in a way that affects both soil biota and plant root growth.
+Secondary soil features are bodies formed within the soil through pedogenic (natural soil-forming) processes. They contain a higher amount of a particular substance (or association of substances) and thus contrast with the surrounding material. Many of these features create barriers to water movement or alter chemistry in a way that affects both soil biota and plant root growth.
 
 ## Concentrations {#sec-hr-conc}
 
@@ -14,7 +14,7 @@ Concentrations are secondary features that are not associated with specific surf
 
 For rapid assessment, record concentration form and abundance percentage using @tbl-hr-concform.
 
-For detailed assessment, note form, type, abundance in percentage, and size range in mm. Colour is not required as it is usually determined by type and may have already been recorded as a colour pattern (@sec-col-patt). Abundance and size can be classified using @tbl-in-size and @tbl-in-abgen respectively.
+For detailed assessment, note form, type, abundance in percentage, and size range in millimetres. Colour is not required as it is usually determined by type and may have already been recorded as a colour pattern (@sec-col-patt). Abundance and size can be classified using @tbl-in-size and @tbl-in-abgen respectively.
 
 Example: [NO F 10% 6-8 mm]{.ceg} for scattered small ironstone nodules.
 
@@ -24,8 +24,8 @@ Example: [NO F 10% 6-8 mm]{.ceg} for scattered small ironstone nodules.
 
 dat_hr_concform <-
   tribble(~Code, ~Name, ~Description,
-          'CC', 'Concretion', 'hard concentrations with a layered internal structure, usually rounded',
-          'NO', 'Nodule', 'hard concentrations with no internal structure, usually irregular',
+          'CC', 'Concretion', 'Hard concentrations with a layered internal structure, usually rounded',
+          'NO', 'Nodule', 'Hard concentrations with no internal structure, usually irregular',
           'CT', 'Crystal', 'A mineral arranged as interlocking or twinned macroscopic crystals or as a single macroscopic crystal, e.g., gypsum.',
           'SS', 'Soft masses', 'A non-cemented concentration that can seldom be removed from the soil as a discrete unit')
 
@@ -53,13 +53,13 @@ dat_hr_conctype <-
   tribble(~Code, ~Name, ~Description,
           'E',  'Earthy', 'Loamy or silty texture within a sandy or clayey matrix',
           'A',  'Argillaceous', 'Clayey texture within a lower-clay matrix',
-          'F',  'Ferruginious', 'Iron-dominated',
-          'M',  'Manganiferous', 'Manganese-dominated',
+          'F',  'Ferrugineous', 'Iron-dominated minerals',
+          'M',  'Manganiferous', 'Manganese-dominated minerals',
           'N',  'Ferromanganiferous', 'Dominated by a mix of iron and manganese',
           'K',  'Calcareous', 'Dominated by calcium carbonate (CaCO~3~)',
           'Y',  'Gypseous', 'Dominated by calcium sulfate (gypsum, CaSO~4~)',
           'Z',  'Salty', 'Dominated by salts more soluble than Calcium carbonate or calcium sulfate',
-          'S',  'Sulfurous', 'Dominated by sulfur, e.g. jarosite in acid sulfate soils',
+          'S',  'Sulfurous', 'Dominated by sulfur-bearing minerals, e.g. jarosite in acid sulfate soils',
           'O',  'Organic', 'Organic texture in a low-organics matrix',
           'UK', 'Unknown', 'Composition cannot be reliably determined'
           )
@@ -99,8 +99,8 @@ dat_hr_coattype <-
           'ZC', 'Silt coats', 'Silt grains concentrated at surfaces; they may be residual concentrations resulting from clay removal, or may have moved in from horizons above',
           'SC', 'Sand coats', 'Sand grains concentrated at surfaces; they may be residual concentrations resulting from silt and/or clay removal, or may have moved in from horizons above',
           'OG', 'Organic coats', 'Surface features that have a moist colour value of 4 or less and are rich in organic matter compared to the interior of the solid.',
-          'SQ', 'Sesquioxide coats', 'Films of sesquioxides on interfaces or impregnating interfaces. They vary in colour depending on the composition and degree of oxidation and hydration. They are difficult to identify chemically, and the different kinds cannot normally be distinguished in the field. Ferri-manganiferous coats, however, are normally very dark brown or black and effervesce vigorously with hydrogen peroxide',
-          'MN', 'Manganese coats', 'Dark coatings of precipitated manganese oxides, reactive to H~2~O~2~.',
+          'SQ', 'Sesquioxide coats', 'Films of sesquioxides on interfaces or impregnating interfaces. They vary in colour depending on the composition and degree of oxidation and hydration. They are difficult to identify chemically, and the different kinds cannot normally be distinguished in the field. Ferri-manganiferous coats, however, are normally very dark brown or black and effervesce vigorously with hydrogen peroxide (H~2~O~2~)',
+          'MN', 'Manganese coats', 'Dark to black coatings of precipitated manganese oxides, reactive to H~2~O~2~.',
           'CB', 'Carbonate coats', 'Precipitated calcium carbonate (CaCO~3~). Usually pale-coloured, and reactive to HCl.',
           'SI', 'Silica coats', 'Precipitated silica (SiO~2~). Usually pale-coloured, and non-reactive to HCl.')
 
@@ -123,27 +123,29 @@ tbl_hr_coattype
 
 ## Pans {#sec-pan}
 
-Pans form when particular chemicals precipitate out of the soil solution and cement a layer of mineral particles (perhaps as a further accumulation and joining together of coatings and/or concentrations), or when particular particle size distributions and/or shape range become very tightly packed. Many pans are diagnostic in the NZSC, because they can form a barrier to plant root growth or water movement.
+Pans form when particular chemical compounds precipitate out of the soil solution and cement a layer of mineral particles (perhaps as a further accumulation and joining together of coatings and/or concentrations), or when particular particle size distributions and/or shape range become very tightly packed. Many pans are diagnostic layers in the New Zealand Soil Classification, because they can form a barrier to plant root growth or water movement.
 
-For rapid assessment, record only the pan type using @tbl-hr-pantype. It is assumed that pans recorded this way are strongly developed enough to be classification-relevant. Note also that many (but not all) pans have dedicated conventional horizon names, and in those cases the horizon names can be used for rapid assessment instead. The full definitions of those horizons are available in @sec-hzn-conv.
+For rapid assessment, only record pans that are strongly developed enough to be classification-relevant. A classification-relevant pan is one that is developed enough to meet all of the relevant diagnostic requirements listed in the New Zealand Soil Classification. Record the pan type using @tbl-hr-pantype.
 
-Pans can be described in detail in terms of type, thickness, continuity, structure, strength and cementation. Pans comprise distinct horizons, so their thickness is defined using horizon boundaries. Their strength and cementation are assessed using @tbl-cn-str and @tbl-cn-ind. Codes for type, continuity and structure are given below. Note that continuity can only be observed in large pits or exposures.
+Many (but not all) pans have dedicated conventional horizon names. The full definitions of those horizons are available in @sec-hzn-conv.
+
+Pans can be described in detail in terms of type, thickness, continuity, structure, strength and cementation. Pans comprise distinct horizons, so their thickness is defined using horizon boundaries. Their strength and cementation are assessed using @tbl-cn-str and @tbl-cn-ind. Codes for type, continuity and structure are given below in @tbl-hr-pantype, @tbl-hrpancont, and @tbl-hr-panstr. Note that continuity can only be observed in large pits or exposures.
 
 ```{r}
 #| label: tbl-hr-pantype
-#| tbl-cap: "Types of Pan"
+#| tbl-cap: "Types of pan"
 
 dat_hr_pantype <-
   tribble(~Code, ~Name, ~Description, ~Horizon,
           'C', 'Cultivation pan', 'Pan comprising compressed soil, induced by cultivation (e.g. use of heavy farm machinery)', NA,
           'D', 'Densipan', 'Silty layers with a very high bulk density and extremely slow permeability', '\\*d (E horizons only)',
-          'H', 'Humus-pan', 'Cemented by aluminium and organic matter. Common in Podzols; sometimes known as \'coffee rock\'', 'Bhm',
+          'H', 'Humus-pan', 'Cemented by aluminium and organic matter. Common in some Podzol Soils; sometimes known as \'coffee rock\'', 'Bhm',
           'F', 'Iron pan', 'Interlocking nodules of Fe(/Mn) precipitates (bog iron), often at a texture contrast boundary', NA,
           'K', 'Calcareous pan', 'Created by the precipitation of calcium carbonate (CaCO~3~)', '\\*km (B or BC horizons)',
-          'O', 'Ortstein pan', 'Pan cemented by iron and organic matter. Common in Podzols', 'Bsm',
+          'O', 'Ortstein pan', 'Pan cemented by iron and organic matter. Common in some Podzol Soils', 'Bsm',
           'P', 'Placic', 'A very thin (< 10 mm), dark, iron-dominated pan with sharp boundaries', 'Bfm',
           'Q', 'Silica pan', 'Created by the precipitation of silica (SiO~2~)', '\\*qm (not A horizons)',
-          'X', 'Fragipan', 'An unstructured, uncemented but high-density, erosion-resistant layer common to Pallic soils', '\\*x (B or BC horizons)',
+          'X', 'Fragipan', 'An unstructured, uncemented but high-density, erosion-resistant layer common in many Pallic Soils', '\\*x (B or BC horizons)',
           'UK', 'Unknown', 'Pan origin cannot be clearly determined', NA
           )
 
@@ -197,7 +199,7 @@ tbl_hr_pancont
 
 dat_hr_panstr <-
   tribble(~Code, ~Name, ~Description,
-          'V', 'Massive', 'No recognisable structure',
+          'L', 'Solid', 'Either no recognisable structure, or close-packed peds > 100 mm',
           'S', 'Vesicular', 'Sponge-like structure having large pores, which may or may not be filled with softer material',
           'C', 'Concretionary', 'Spheroidal concretions cemented together',
           'N', 'Nodular', 'Irregular nodules cemented together',
@@ -223,7 +225,7 @@ tbl_hr_panstr
 
 Stress features develop along fissures or on ped faces in soils that shrink and swell as water content changes. Stress features are usually shiny but do not differ in colour from the soil matrix. Magnification may be required to observe them clearly. Stress features will not develop in sandy soil textures (see @tbl-hr-earthgrps).
 
-Stress features can be optionally noted during a detailed soil description. Describe type and abundance as percentage of ped faces covered.
+Stress features can be optionally noted during a detailed soil description. Describe type using @tbl-hr-pftype and abundance as integer percentage of ped faces covered.
 
 Example: [SL 30%]{.ceg} in a well-developed Vertic Melanic soil.
 

@@ -187,7 +187,7 @@ Further discussion of appropriate tools for soil profile exposure may be found i
 
 Record the maximum depth of observation from the soil surface in whole centimetres (e.g. '[100 cm]{.ceg}'). This does not necessarily need to be recorded in the field as it can be determined from the lower depth of the last horizon in the profile description.
 
-A full profile description ideally extends to bedrock, but this may not always be accessible with the equipment and time available. The target depth of observation for most applications in New Zealand is 100 cm. Classification systems like the NZSC and LUC rely on ruling out certain soil features within that depth range, as well as positively identifying others.
+A full profile description ideally extends to bedrock, but this may not always be accessible with the equipment and time available. More commonly, reaching the C horizon (@sec-hzn-convp) is the deepest practically achievable goal. The minimum depth of observation for most applications in New Zealand, where possible, is 100 cm. Classification systems like the NZSC and LUC rely on ruling out certain soil features within that depth range, as well as positively identifying others.
 
 See @sec-digging for information on appropriate excavation equipment.
 
@@ -204,6 +204,7 @@ dat_ss_stoppage <-
           'B', 'Bedrock', 'Underlying fresh rock mass encountered, no more soil or weathering substrate to describe',
           'R', 'Resistance', 'Materials too difficult to extract with available equipment',
           'C', 'Collapse', 'Excavation unstable or unsafe due to e.g. wetness or loose particle packing',
+          'W', 'Water', 'Excavation reached the water table and cannot extract saturated material from below',
           'I', 'Identified', 'The depth required to confirm a target parameter of interest was reached',
           'O', 'Other', 'Circumstances unrelated to the soil itself caused early stoppage')
 
@@ -237,7 +238,7 @@ If the time since the event is known with low certainty, record the general time
 
 dat_ss_eventp <-
   tribble(~Code, ~Name,
-          'MC', 'Mechanical disturbance (e.g. tillage, deep ripping, subsoiling)',
+          'MC', 'Mechanical disturbance (e.g. tillage, deep ripping, subsoiling, recontouring)',
           'AN', 'Animal disturbance (e.g. pugging, rooting, tunnelling, excretion)',
           'CL', 'Complete vegetation clearance (e.g. clearfelling)',
           'CO', 'Selective vegetation clearance (e.g. tree removal or weed clearance)', 
