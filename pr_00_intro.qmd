@@ -51,9 +51,7 @@ A tagging system can be useful in these cases. Otherwise, consider whether addit
 
 ### Authors {#sec-ref-auth}
 
-Each profile description must have a single responsible author. Record their name. Additional participants may also be noted.
-
-Use a short unique identifier for each officer, for example [SMITJ]{.ceg} for John Smith. These may be linked to a more complex user management system.
+Each profile description must have a single responsible author. Record their name. Additional participants should also be noted.
 
 ::: {#cau-priv .callout-caution collapse="true" appearance="minimal" title="Data privacy"}
 New Zealand data privacy laws are strict. Personally identifying information must be stored securely and not distributed without a good reason. Personal details such as names may not be publishable without explicit consent. Data storage solutions must respect these requirements.
@@ -80,13 +78,13 @@ Record the reason for sampling using the schema in @tbl-ss-reason. This paramete
 #| tbl-cap: "Site purpose"
 
 dat_ss_reason <-
-  tribble(~Code, ~Name,
-          'E', 'Mapping exploration',
-          'V', 'Mapping validation',
-          'R', 'Research',
-          'M', 'Monitoring',
-          'T', 'Reference',
-          'D', 'Development')
+  tribble(~Code, ~Name, ~Description,
+          'E', 'Mapping exploration', 'Reconnaissance sites, or sites described in the early stages of building knowledge to underpin, for example, a soil map. May have biased or opportunistic sample locations (e.g. chosen during fieldwork) and moderate location precision',
+          'V', 'Mapping validation', 'Sites described when there is already a substantial knowledge base from previous work, with the purpose of gap‑filling or refining. May be low‑detail, as their main role is to confirm or disprove predictions',
+          'R', 'Research', 'Sites described to support a scientific investigation, which may or may not be related to soil mapping. Often predetermined by a model and located with high precision',
+          'M', 'Monitoring', 'Sites intended primarily for repeated, regular re‑sampling over time. This code implies ongoing measurements, with an expectation of minimal major disturbance between visits',
+          'T', 'Reference', 'Calibration sites that provide a definitive description and analysis of a soil type, serving as benchmarks for consistent classification. Typically have high morphological detail and extensive analytical data, representing ‘ideal’ profiles for particular soil classes',
+          'D', 'Development', 'Sites established to inform proposed or planned changes to the land, such as altering land use or undertaking construction. Often part of resource consent planning. The soil may be removed or sealed after observation, limiting data re‑use potential')
 
 tbl_ss_reason <- gt(dat_ss_reason) |>
    tab_options(
@@ -99,22 +97,10 @@ tbl_ss_reason <- gt(dat_ss_reason) |>
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10))
+  cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_ss_reason
 ```
-
-::: {.content-visible when-format="docx"}
-delete me
-:::
-
-::: {#nte-ss-reason .callout-note collapse="true" title="About site purpose types" appearance="minimal"}
-[D]{.ceg} sites are often carried out as part of planning for a resource consent. The soil they describe may be removed or sealed after observation, limiting data re-use potential. [M]{.ceg} monitoring sites imply repeated, regular re-sampling activity and perhaps an expectation of minimal major disturbance between visits.
-
-[V]{.ceg} validation sites may be low-detail, as they are intended to confirm or deny a prediction. [T]{.ceg} reference sites (T for ‘type’) may be expected to have high morphological detail and a lot of accompanying analytical data, as they represent ‘ideal’ profiles for particular soil classes.
-
-[E]{.ceg} mapping exploration sites may have biased, opportunistic sample locations and moderate location precision, while [R]{.ceg} sites are more likely to have been predetermined by a model and located with high precision.
-:::
 
 ### Site selection method {#sec-ref-sampstrat}
 
@@ -127,13 +113,13 @@ Record the spatial sampling strategy used using the schema in @tbl-ss-sampstrat.
 #| tbl-cap: "Spatial sampling strategies"
 
 dat_ss_sampstrat <-
-  tribble(~Code, ~Name,
-          'A', 'Arbitrary/opportunistic',
-          'D', 'Data-driven',
-          'M', 'Model-based',
-          'R', 'Random',
-          'T', 'Transect',
-          'G', 'Grid')
+  tribble(~Code, ~Name, ~Description,
+          'A', 'Arbitrary', 'Sites chosen while in the field, in response to direct observation of on-ground conditions. These are often practical and time-efficient but are also likely to over-sample the more easily accessible and/or interesting parts of the landscape, to the detriment of overall representativeness',
+          'D', 'Data-driven', 'Sites chosen before a field visit using a loose set of rules or principles (e.g. “visit the major landforms on this farm but don’t go too far off the tracks”). May be subject to minor changes once on site',
+          'M', 'Model-based', 'Sites chosen before a field visit using a deterministic and replicable set of rules, including rules for relocating sites where on-ground conditions make this necessary',
+          'R', 'Random', 'Sites chosen by a randomised method, including stratified-random sampling',
+          'T', 'Transect', 'Sites chosen to form a line over the land surface, with or without regular spacing',
+          'G', 'Grid', 'Sites chosen to form a regular or semi-regular lattice over the land surface')
 
 tbl_ss_sampstrat <- gt(dat_ss_sampstrat) |>
    tab_options(
@@ -146,28 +132,20 @@ tbl_ss_sampstrat <- gt(dat_ss_sampstrat) |>
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10))
+  cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_ss_sampstrat
 ```
 
-::: {.content-visible when-format="docx"}
-delete me
-:::
+Arbitrary, data-driven, and rule-based sampling all intend to use secondary environmental data sources to increase the efficiency of fieldwork, attempting to minimise total sites while maximising information quality. The success of these strategies depends on the availability of relevant and accurate model inputs.
 
-::: {#nte-ss-sampstrat .callout-note appearance="minimal" collapse="true" title="About sampling strategies"}
-The difference between data-driven [D]{.ceg} and model-based [M]{.ceg} centres around replicability. Data-driven sites are nominated using a loose set of rules or principles (e.g. “visit the major landforms on this farm but don’t go too far off the tracks”) and may be subject to minor changes once the worker is on-ground. Model-based site choices formalise this process with reference to specific input datasets, and the worker is committed to sample at the exact point chosen. Model-based methods may include ‘backup points’ for where an intended location cannot be physically accessed, but these are also pre-determined. Importantly, model-based choices can be regenerated from the same inputs.
+Random, transect and grid sampling [R]{.ceg}, [T]{.ceg}, [G]{.ceg} effectively ignore environmental parameters, although stratified random sampling might partially incorporate such information. Random sampling is useful when the spatial distribution of a parameter of interest is unknown or poorly understood, but can lead to sites in inefficient or unsafe locations.
 
-Arbitrary [A]{.ceg} points are not pre-determined at all; rather, they are chosen after the worker is on site, in response to direct observation of on-ground conditions. These are often practical and time-efficient but are also likely to over-sample the more easily accessible and/or interesting parts of the landscape, to the detriment of overall representativeness.
-
-Random, transect and grid sampling [R]{.ceg}, [T]{.ceg}, [G]{.ceg} effectively ignore environmental parameters. This is useful when the spatial distribution of a parameter of interest is unknown or poorly understood.
-
-Some of these methods can be combined - for example, data-driven transect choices with randomised locations along each. In such cases, the 'last choice' should be recorded - in this case, [R]{.ceg}. The details of the full sampling strategy should be discussed in project metadata.
-:::
+Some of these methods can be combined - for example, data-driven transect choices with randomised locations along each. In such cases, the 'last choice' should be recorded - in this example, [R]{.ceg}. The details of the full sampling strategy should be discussed in project metadata.
 
 ### Exposure type {#sec-pr-exptype}
 
-The method by which the soil was exposed for observation affects which parameters can be recorded, or at least recorded reliably.
+The method by which the soil was exposed for observation affects which parameters can be recorded, or at least recorded reliably. Record profile exposure method using one of the options in @tbl-pr-gear.
 
 ```{r}
 #| label: tbl-pr-gear
@@ -175,8 +153,8 @@ The method by which the soil was exposed for observation affects which parameter
 
 dat_pr_gear <-
   tribble(~Code, ~Name, ~Description,
-          'P1', 'Quick pit', 'Pit up to 0.5 m wide and generally no deeper than 1m',
-          'P2', 'Full pit', 'Pit or trench > 1 m wide, exposing the complete profile to regolith or bedrock',
+          'P1', 'Minimal pit', 'Pit up to 0.5 m wide and generally no deeper than 1m',
+          'P2', 'Standard pit', 'Pit or trench > 1 m wide, exposing the complete profile to regolith or bedrock',
           'E', 'Exposure', 'Road cutting or similar, chipped back and cleaned',
           'C1', 'Small Core', 'Relatively undisturbed soil core, < 50 mm diameter',
           'C2', 'Large Core', 'Relatively undisturbed soil core, ≥ 50 mm diameter',
@@ -198,14 +176,16 @@ tbl_pr_gear <- gt(dat_pr_gear) |>
 tbl_pr_gear
 ```
 
--   [A]{.ceg} samples generally cannot be used to determine soil structure due to the degree of disturbance.
+-   [A]{.ceg} samples cannot be used to reliably determine soil structure due to the degree of disturbance.
 -   Combined sampling is common in field mapping, e.g. small pit excavation to \~0.50-0.75 m and augering to a required depth in relatively well-understood landscapes. Record these as [P1]{.ceg}.
 -   Gouge-style augers used in soft marine sediments may be included in [C2]{.ceg} even though they commonly narrow to \< 50 mm at their maximum depth.
 -   [C1]{.ceg} style samplers are common in paddock-scale monitoring and research, where they are used for rapid surface measurement. These are not generally suitable for mapping as they cannot sample below the topsoil.
 
+Further discussion of appropriate tools for soil profile exposure may be found in @sec-digging.
+
 ### Depth of observation {#sec-pr-doa}
 
-Record the maximum depth of observation from the soil surface in whole centimetres (e.g. '[100 cm]{.ceg}'). This does not necessarily need to be recorded in the field as it can be determined from the lower depth of the last horizon in the profile description.
+Record the maximum depth of observation from the soil surface in whole centimetres (e.g. '[100 cm]{.ceg}'). This does not necessarily need to be recorded in the field as it can be determined from the lower depth of the last horizon in the profile description.
 
 A full profile description ideally extends to bedrock, but this may not always be accessible with the equipment and time available. The target depth of observation for most applications in New Zealand is 100 cm. Classification systems like the NZSC and LUC rely on ruling out certain soil features within that depth range, as well as positively identifying others.
 
