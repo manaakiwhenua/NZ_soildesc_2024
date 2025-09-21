@@ -6,35 +6,35 @@ library(tibble)
 library(gt)
 ```
 
-[Consistence is a general term for the field-assessed behaviour of soil materials in response to applied stress over a range of soil-water states from wet to dry. The consistence properties described are strength, failure, fluidity, penetration resistance, packing, sensitivity, induration, plasticity, stickiness, dilatancy, and dry coherence.]{.milne}
+Consistence is a general term for the field-assessed behaviour of soil materials in response to applied stress over a range of soil-water states from wet to dry. The consistence properties described are strength, failure, fluidity, penetration resistance, packing, sensitivity, induration, plasticity, stickiness, dilatency, and dry coherence.
 
-Consistency tests should be performed down-profile, with at least one sample tested per horizon. Samples should be taken from the mid-point of each horizon. Additional samples in transition zones may also be of interest.
+Consistency tests should be performed down-profile, with at least one sample tested per horizon. Samples should be taken from the mid-point of each horizon. Additional samples in transition zones may also be of interest. Within each horizon, the consistency tests that can and should be undertaken will depend on the cohesion (@sec-dn-prep) of the soil materials in that horizon.
 
 ::: {#nte-consnzsc .callout-note appearance="minimal" collapse="true" title="Consistence tests and the New Zealand Soil Classification (NZSC)"}
-For classifying using the NZSC, particular tests down to a certain depth may be required. At the order level:
+For classifying using the NZSC, particular tests down to or at a certain depth may be required to progress through the Key to Soil Orders. At the soil order level, these are:
 
--   **Gley soils:** must not have any moderately or very fluid (@sec-cn-flu) layers within 30 cm of the soil surface. Unconfined soil strength (@sec-cn-stru) and cementation (@sec-cn-ind) tests may be required to confirm absence of an underlying fragipan.
--   **Ultic soils:** need an assessment of soil strength (@sec-cn-stru) in the B horizon under moist conditions. May need assessment of failure mode (@sec-cn-fail) over a range of moisture conditions to rule out oxidic or cutanoxidic horizons. May need assessment of sensitivity (@sec-cn-sens) and stickiness (@sec-cn-sti) to rule out allophanic soil materials.
--   **Podzols:** may need unconfined strength (@sec-cn-stru) and failure mode (@sec-cn-fail) tests to help identify a Podzolic B horizon, as well as the presence of humus- and ortstein-pans.
--   **Allophanic soils:** may need assessment of sensitivity (@sec-cn-sens) and stickiness (@sec-cn-sti) to help confirm allophanic soil materials.
--   **Melanic soils:** may require stickiness assessment (@sec-cn-sti) in the B horizon.
--   **Semiarid soils:** may require cementation tests (@sec-cn-ind) to confirm fragipan absence.
--   **Oxidic soils:** May need assessment of ped strength (@sec-cn-stra), soil strength (@sec-cn-stru), and failure mode (@sec-cn-fail) over a range of moisture conditions to confirm presence of an oxidic horizon. Stickiness (@sec-cn-sti) and plasticity (@sec-cn-pla) may also be helpful.
--   **Granular soils:** May need assessment of ped strength (@sec-cn-stra), soil strength (@sec-cn-stru), and failure mode (@sec-cn-fail) over a range of moisture conditions to confirm presence of a cutanoxidic horizon. Stickiness (@sec-cn-sti) and plasticity (@sec-cn-pla) may also be helpful.
--   **Pallic soils:** may require cementation tests (@sec-cn-ind) to confirm fragipan presence. May require assessment of failure mode (@sec-cn-fail) to help confirm Brittle-B horizon presence. May require ped strength assessment in the B horizon.
--   **Recent soils:** must not have any moderately or very fluid (@sec-cn-flu) layers within 30 cm of the soil surface.
+-   **Gley Soils:** must not have any moderately or very fluid (@sec-cn-flu) layers within 30 cm of the soil surface. Unconfined soil strength (@sec-cn-stru) and cementation (@sec-cn-ind) tests may be required to confirm absence of an underlying fragipan.
+-   **Ultic Soils:** need an assessment of soil strength (@sec-cn-stru) in the B horizon under moist conditions. May need assessment of failure mode (@sec-cn-fail) over a range of moisture conditions to rule out oxidic or cutanoxidic horizons. May need assessment of sensitivity (@sec-cn-sens) and stickiness (@sec-cn-sti) to rule out allophanic soil materials.
+-   **Podzol Soils:** may need unconfined strength (@sec-cn-stru) and failure mode (@sec-cn-fail) tests to help identify a Podzolic B horizon, as well as the presence of humus- and ortstein-pans.
+-   **Allophanic Soils:** may need assessment of sensitivity (@sec-cn-sens) and stickiness (@sec-cn-sti) to help confirm the presence of allophanic soil materials.
+-   **Melanic Soils:** may require stickiness assessment (@sec-cn-sti) in the B horizon.
+-   **Semiarid Soils:** may require cementation tests (@sec-cn-ind) to confirm fragipan absence.
+-   **Oxidic Soils:** May need assessment of ped strength (@sec-cn-stra), soil strength (@sec-cn-stru), and failure mode (@sec-cn-fail) over a range of moisture conditions to confirm presence of an oxidic horizon. Stickiness (@sec-cn-sti) and plasticity (@sec-cn-pla) may also be helpful.
+-   **Granular Soils:** May need assessment of ped strength (@sec-cn-stra), soil strength (@sec-cn-stru), and failure mode (@sec-cn-fail) over a range of moisture conditions to confirm presence of a cutanoxidic horizon. Stickiness (@sec-cn-sti) and plasticity (@sec-cn-pla) may also be helpful.
+-   **Pallic Soils:** may require a negative cementation test (@sec-cn-ind) to help identify any fragipans. May require assessment of failure mode (@sec-cn-fail) to help confirm Brittle-B horizon presence. May require ped strength assessment in the B horizon.
+-   **Recent Soils:** must not have any moderately or very fluid (@sec-cn-flu) layers within 30 cm of the soil surface.
 :::
 
 ## Preparing for consistence assessment {#sec-dn-prep}
 
-[The nature of the soil materials in each horizon determines what tests can and should be done. The first step is to determine if the sample is cohesive.]{.milne}
+The nature of the soil materials in each horizon determines what tests can and should be done. The first step is to determine if the sample is cohesive.
 
--   [**Cohesive soil materials** may have plasticity and stickiness characteristics and have a strength which can be measured in unconfined compression. All listed properties, except particle packing, can be described for non-gravelly, cohesive soils.]{.milne}
--   [**Non-cohesive soil materials** have no shear resistance other than that developed by internal friction between grains. Non-cohesive soil materials, by definition, have no unconfined dry strength or plasticity, and the only property that can be meaningfully described is degree of packing or particle packing.]{.milne}
+-   **Cohesive soil materials** may have plasticity and stickiness characteristics and have a strength which can be measured in unconfined compression. All listed properties, except particle packing, can be described for non-gravelly, cohesive soils.
+-   **Non-cohesive soil materials** have no shear resistance other than that developed by internal friction between grains. Non-cohesive soil materials, by definition, have no unconfined dry strength or plasticity, and the only property that can be meaningfully described is degree of packing or particle packing.
 
-[The range of properties which can be described in gravelly, cohesive soils varies with gravel content. In practice, this depends on the feasibility of obtaining samples for the required tests.]{.milne}
+The range of properties which can be described in gravelly, cohesive soils varies with gravel content. In practice, this depends on the feasibility of obtaining samples for the required tests.
 
-[The distinction between cohesive and non-cohesive is recognised by performing moulding, plasticity, and dilatancy tests in the following sequence (@fig-cn-cohes).]{.milne} Where doubt still remains after these tests have been completed, the dry coherence test (@sec-cn-dryco) may be necessary.
+The distinction between cohesive and non-cohesive is recognised by performing moulding, plasticity, and dilatency tests in the following sequence (@fig-cn-cohes). Where doubt still remains after these tests have been completed, the dry coherence test (@sec-cn-dryco) may be necessary.
 
 ```{mermaid}
 %%| label: fig-cn-cohes
@@ -58,7 +58,7 @@ flowchart TD
 
 *Procedure*
 
-1.  Remould a 30 mm test sample into a cube, and air-dry.
+1.  Remould a 30 mm test sample into a cube, and air-dry.
 2.  If the cube collapses under its own weight or after being lightly touched, treat the soil as non-cohesive.
 
 ## Strength {#sec-cn-str}
@@ -103,7 +103,7 @@ tbl_cn_str
 ### Unconfined soil strength {#sec-cn-stru}
 
 -   Test at observed field moisture condition.
--   If a test cube cannot be formed, the result is [1]{.ceg} 'Very Weak' (see @tbl-cn-str). This can happen when soil pedality is weak or absent, but also when pedality is strong and peds are small.
+-   If a test cube cannot be formed, the result is strength class [1]{.ceg} 'Very Weak' (see @tbl-cn-str). This can happen when soil pedality is weak or absent, but also when pedality is strong and peds are small.
 -   This test cannot be reliably performed on auger-extracted samples.
 
 *Procedure*
@@ -201,17 +201,17 @@ tbl_cn_sens
 
 ## Plasticity {#sec-cn-pla}
 
-[Plasticity is the capacity of soil material to change shape continuously when stress is applied and to retain that shape after the removal of stress.]{.milne}
+Plasticity is the capacity of soil material to change shape continuously when stress is applied and to retain that shape after the removal of stress.
 
 -   Test soil at a wet state.
--   Perform the test on 3-4 cm^2^ of soil.
+-   Perform the test on 3-4 cm^3^ of soil.
 -   This test can be reliably performed on auger-extracted samples.
 
 *Procedure*
 
 1.  Thoroughly remould the sample, keeping it in a wet state.
-2.  Adjust the water content to slightly above the plastic limit. [In practice this water content is slightly above that at which a 4-mm diameter roll of sample crumbles but less than that when sample becomes sticky (@sec-cn-sti), if stickiness is exhibited.]{.milne}
-3.  Attempt to roll the sample out into a rod of 40 mm length. Assess the minimum achievable diameter of the rod and its behaviour using @tbl-cn-plas.
+2.  Adjust the water content to slightly above the plastic limit. In practice this water content is slightly above that at which a 4-mm diameter roll of sample crumbles but less than that when sample becomes sticky (@sec-cn-sti), if stickiness is exhibited.
+3.  Attempt to roll the sample out into a rod of 40 mm length. Assess the minimum achievable diameter of the rod and its behaviour using @tbl-cn-plas.
 
 ```{r}
 #| label: tbl-cn-plas
@@ -219,10 +219,10 @@ tbl_cn_sens
 
 dat_cn_plas <-
   tribble(~Code, ~Name, ~Description,
-          1, 'Non-plastic', 'A roll 40 mm long and 6 mm thick that supports its own weight cannot be formed.',
-          2, 'Slightly plastic', 'A roll 40 mm long and 6 mm thick can be formed and will support its own weight, but a roll 4 mm thick will not support its own weight.',
-          3, 'Moderately plastic', 'A roll 40 mm long and 4 mm diameter can be formed, and will support its own weight, but a roll 2 mm thick will not support its own weight.',
-          4, 'Very plastic', 'A roll 40 mm long and 2 mm thick can be formed and will support its own weight.')
+          1, 'Non-plastic', 'A roll 40 mm long and 6 mm thick that supports its own weight cannot be formed.',
+          2, 'Slightly plastic', 'A roll 40 mm long and 6 mm thick can be formed and will support its own weight, but a roll 4 mm thick will not support its own weight.',
+          3, 'Moderately plastic', 'A roll 40 mm long and 4 mm diameter can be formed, and will support its own weight, but a roll 2 mm thick will not support its own weight.',
+          4, 'Very plastic', 'A roll 40 mm long and 2 mm thick can be formed and will support its own weight.')
 
 tbl_cn_plas <- gt(dat_cn_plas) |>
    tab_options(
@@ -242,17 +242,17 @@ tbl_cn_plas
 
 ## Stickiness {#sec-cn-sti}
 
-[Stickiness is the degree to which remoulded soil adheres to foreign objects.]{.milne}
+Stickiness is the degree to which remoulded soil adheres to foreign objects.
 
 -   Test soil at a wet state.
--   Perform the test on 3-4 cm^2^ of soil.
+-   Perform the test on 3-4 cm^3^ of soil.
 -   This test can be reliably performed on auger-extracted samples.
 
 *Procedure*
 
 1.  Thoroughly remould the sample, keeping it in a wet state.
-2.  [Press the remoulded material between thumb and forefinger, and note its adherence to the fingers.]{.milne}
-3.  [Adjust the water content by working the sample in the hand to remove water, or by adding water as necessary to achieve the maximum stickiness that the material will exhibit]{.milne}
+2.  Press the remoulded material between thumb and forefinger, and note its adherence to the fingers.
+3.  Adjust the water content by working the sample in the hand to remove water, or by adding water as necessary to achieve the maximum stickiness that the material will exhibit.
 4.  Assess maximum stickiness and record using @tbl-cn-stik.
 
 ```{r}
@@ -284,25 +284,25 @@ tbl_cn_stik
 
 ## Dilatency
 
-[Dilatancy occurs due to volume change during shearing and is used as a criterion for the distinguishing non-cohesive from cohesive soil materials.]{.milne}
+Dilatency occurs due to volume change during shearing and is used as a criterion for the distinguishing non-cohesive from cohesive soil materials.
 
 -   Test soil at a moist to wet state.
--   Perform the test on 3-4 cm^2^ of soil.
+-   Perform the test on 3-4 cm^3^ of soil.
 -   This test can be reliably performed on auger-extracted samples.
 
 *Procedure*
 
 1.  Adjust the soil to a moist to wet state.
-2.  Roll into a ball \~30 mm diameter.
+2.  Roll into a ball \~30 mm diameter.
 3.  Hold sample in upturned palm and slap the back of the hand containing the sample several times with the other hand.
 
-[A dilatant reaction is shown by a shiny surface caused by water extrusion, and by a dull surface when the palm of the hand is folded to partly remould the sample, causing water to be drawn into the sample.]{.milne} Record dilatent behaviour as a binary, [true/false]{.ceg}.
+A dilatent reaction is shown by a shiny surface caused by water extrusion, and by a dull surface when the palm of the hand is folded to partly remould the sample, causing water to be drawn into the sample. Record dilatent behaviour as a binary, [true/false]{.ceg}.
 
 ## Penetration resistance
 
 Penetration resistance is the capacity of the soil, in its natural confined state, to resist penetration by rigid objects. This property is commonly related to strength by empirical means (@tbl-cn-penr).
 
--   This test requires a large pit or exposure
+-   This test requires a large pit or exposure.
 
 *Procedure*
 
@@ -381,16 +381,16 @@ tbl_cn_fail
 
 ## Mode of failure {#sec-cn-fail}
 
-[Failure is the manner in which unconfined soil yields to increasing stress.]{.milne}
+Failure is the manner in which unconfined soil yields to increasing stress.
 
 -   Test at observed field moisture condition.
--   Perform the test on a minimally disturbed 30 mm cube or aggregate.
+-   Perform the test on a minimally disturbed 30 mm cube or aggregate.
 -   If diagnosing Oxidic or Cutanoxidic soil material for the NZSC, repeat the test under dry to wet moisture conditions.
 
 *Procedure*
 
 1.  Perform the unconfined strength test according to @sec-cn-stru.
-2.  At strengths of 4 or less, mode of failure can be observed. Assess and record per @tbl-cn-fail.
+2.  At strengths of class [4]{.ceg} or less, mode of failure can be observed. Assess and record per @tbl-cn-fail.
 
 ```{r}
 #| label: tbl-cn-fail
@@ -401,7 +401,7 @@ dat_cn_fail <-
            'N', 'Not determinable', 'Soil is either too dry or too wet to reliably test',
            'V', 'Very friable', 'Test specimen cannot be formed, or crumbles under very slight stress on crushing within the hand, into aggregates predominantly <2 mm in size. In most instances the test specimen is difficult to obtain.',
           'F', 'Friable', 'Test sample cannot be formed, or crumbles under very slight stress on crushing within the hand, into aggregates predominantly >2 mm in size, or crumbles under slight stress on crushing within the hand into aggregates predominantly <2 mm in size.',
-          'B', 'Brittle', 'Under slowly increasing pressure between the extended thumb and forefinger, a test specimen retains its size and shape with few or no cracks until it fractures abruptly into aggregates predominantly > 2 mm in size.',
+          'B', 'Brittle', 'Under slowly increasing pressure between the extended thumb and forefinger, a test specimen retains its size and shape with few or no cracks until it fractures abruptly into aggregates predominantly > 2 mm in size.',
           'S', 'Semi-deformable', 'Under increasing pressure between the extended thumb and forefinger the test specimen as a whole is perceptibly compressed in the direction along which pressure is exerted, but cracks develop and the specimen ruptures before it has been compressed to half its original thickness. Before rupture, parts crumble and fall away if the specimen is shaken while held between the thumb and forefinger.',
           'D', 'Deformable', 'Under slowly increasing pressure between the extended thumb and forefinger, the test specimen can be compressed to at least half its original thickness without the appearance of cracks and without rupture.')
 
@@ -427,7 +427,7 @@ Fluidity tests whether saturated soils have an unconfined strength that is large
 
 -   Test soil at a saturated state.
 -   Only test soils that are saturated under field conditions.
--   Perform the test on \~50 cm^2^ of soil (a large handful).
+-   Perform the test on \~50 cm^3^ of soil (a large handful).
 -   This test can be reliably performed on auger-extracted samples.
 
 *Procedure*
@@ -463,10 +463,10 @@ tbl_cn_fluid
 
 ## Induration {#sec-cn-ind}
 
-[Induration is the degree to which soil particles are held together by some combination of cementation and close packing.]{.milne}
+Induration is the degree to which soil particles are held together by some combination of cementation and close packing.
 
--   Perform the test on a minimally disturbed 30 mm cube or aggregate.
--   This test may also be performed on individual nodules and other solids \< 30 mm.
+-   Perform the test on a minimally disturbed 30 mm cube or aggregate.
+-   This test may also be performed on individual nodules and other solids \< 30 mm.
 -   This test cannot be reliably performed on auger-extracted samples.
 -   This test requires a minimum one hour to complete so may be done immediately following fieldwork.
 
@@ -479,7 +479,7 @@ tbl_cn_fluid
 
 1.  Test the soil strength at field-moist condition according to @sec-cn-stru.
 2.  Place the sample cube on a wet sponge until thoroughly moistened, then immerse the sample in DI water for 1 hour.
-3.  Retest the soil strength of the wet sample according to @sec-cn-stru.
+3.  If the sample has not slaked (see @sec-ft-slak), retest the soil strength of the wet sample according to @sec-cn-stru.
 4.  Assess the behaviour of the sample using @tbl-cn-ind.
 
 ```{r}
@@ -488,11 +488,11 @@ tbl_cn_fluid
 
 dat_cn_ind <-
   tribble(~Code, ~Name, ~Description,
-          1, 'Non-indurated', 'A wet test specimen slakes within one hour when placed in water',
-          2, 'Very weakly indurated', 'A wet test specimen that has been immersed for one hour and has not slaked has strength class of 2-4',
-          3, 'Weakly indurated', 'A wet test specimen that has been immersed for one hour has a strength class of 6',
-          4, 'Strongly indurated', 'A wet test specimen that has been immersed for an hour has a strength class of 7',
-          5, 'Very strongly indurated', 'A wet test specimen after immersion for an hour has a strength class of >7 and does not break when struck by a sharp blow with a hammer.')
+          1, 'Non-indurated', 'Sample slakes within one hour',
+          2, 'Very weakly indurated', 'Has not slaked, strength class of 2-4',
+          3, 'Weakly indurated', 'strength class of 5-6',
+          4, 'Strongly indurated', 'strength class of 7',
+          5, 'Very strongly indurated', 'strength class of >7; does not break when struck by a sharp blow with a hammer.')
 
 tbl_cn_ind <- gt(dat_cn_ind) |>
    tab_options(
