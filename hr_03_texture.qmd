@@ -22,7 +22,7 @@ The particle size ranges used in this chapter align with those of NZS 4402.1:198
 
 The composition of the fine earth mineral fraction is assessed separately to that of larger rock fragments for practical reasons - not least because rock fragments are not always present. The fine fraction is assessed in the field by removing any rock fragments present by picking or sieving, and then manipulating the remaining sample in a moist state (see @sec-pr-sws).
 
-Soil texture is organised in two levels. At the broadest level, there are four major texture groups (clay, silt, sand, loam), defined in @tbl-hr-earthgrps. Within these groups, there are eleven recognised texture classes, which are the categories most commonly used in description and interpretation. The texture classes are most easily visualised on a ternary diagram, as seen in @fig-texture-tri. The range limits for each class are given in @tbl-texture-tri.
+Soil texture is organised in two levels. At the broadest level, there are four major texture groups (clayey, silty, sandy, loamy), defined in @tbl-hr-earthgrps. Within these groups, there are eleven recognised texture classes, which are the categories most commonly used in description and interpretation. The texture classes are most easily visualised on a ternary diagram, as seen in @fig-texture-tri. The range limits for each class are given in @tbl-texture-tri.
 
 These divisions can reflect significant changes in measurable properties like hydraulic conductivity, but it is important to note that there are no sudden and obvious changes in hand-feel or visual appearance at each boundary.
 
@@ -35,7 +35,7 @@ dat_hr_earthgrps <-
          'C', 'Clayey', 'Comprised largely of mineral particles < 0.002 mm',
          'Z', 'Silty',  'Comprised largely of mineral particles ≥ 0.002–< .06 mm',
          'S', 'Sandy',  'Comprised largely of mineral particles ≥ 0.06–< 2.0 mm',
-         'L', 'Loamy',  'Comprising a mixture of mineral particles < 2.0 mm')
+         'L', 'Loamy',  'Comprising a mixture of mineral particles < 2.0 mm')
 
 tbl_hr_earthgrps <- gt(dat_hr_earthgrps) |>
   tab_options(
@@ -96,20 +96,17 @@ nz_tri
 dat_hr_textri <- nztt_labels |>
   dplyr::select(matches('cat_'), matches('txt_'), -cat_texture_group) |>
   dplyr::select(cat_texture_code, cat_texture_name, everything()) |>
-  dplyr::mutate(txgroup = case_when(cat_texture_code %in% c('S', 'LS') ~ 'Sandy',
-                                  cat_texture_code %in% c('Z', 'LZ', 'ZL') ~ 'Silty',
-                                  cat_texture_code %in% c('LC', 'ZC', 'C') ~ 'Clayey',
-                                  TRUE ~ 'Loamy'),
+  dplyr::mutate(txgroup = 
+                  case_when(cat_texture_code %in% c('SS', 'LS') ~ 'Sandy',
+                            cat_texture_code %in% c('ZZ', 'LZ', 'ZL') ~ 'Silty',
+                            cat_texture_code %in% c('LC', 'ZC', 'CC') ~ 'Clayey',
+                            TRUE ~ 'Loamy'),
                 txgroup = factor(txgroup, ordered = TRUE, levels = c('Sandy', 'Loamy', 'Silty', 'Clayey'))) |>
   # reformat ranges to have en dashes and non-breaking spaces
   mutate(across(matches("_range"), \(x) {gsub(' -[ ]*', '–', x)})) |>
   mutate(across(matches("_range"), \(x) {gsub(' ', '\u00A0', x)})) |>
   # Fix SL silt, its annoying 
   mutate(txt_silt_range = ifelse(txt_silt_range == '0–< 40%', '< 40%', txt_silt_range)) |>
-  # replace CZS codes (prevent duplication vs group codes)
-  mutate(cat_texture_code = ifelse(cat_texture_code == 'S', 'SS', cat_texture_code)) |>
-  mutate(cat_texture_code = ifelse(cat_texture_code == 'Z', 'ZZ', cat_texture_code)) |>
-  mutate(cat_texture_code = ifelse(cat_texture_code == 'C', 'CC', cat_texture_code)) |>
   dplyr::arrange(txgroup) |>
   dplyr::select(txgroup, everything()) |>
   group_by(txgroup)
@@ -185,7 +182,7 @@ Where total rock fragments occupy more than 5% of the horizon volume, their pres
 
 ```{r}
 #| label: tbl-hr-rocksz
-#| tbl-cap: "Organic matter types"
+#| tbl-cap: "Rock fragment size fractions"
 
 dat_hr_rocksz <-
   tribble(~Code, ~Name, ~Description,
@@ -211,7 +208,7 @@ tbl_hr_rocksz
 
 ```{r}
 #| label: tbl-hr-cftex
-#| tbl-cap: "Rock fragment modifier rules"
+#| tbl-cap: "Rock fragment code rules"
 
 dat_hr_cftex <-
   tribble(~Percent, ~Convention, ~egcode, ~egtext,
@@ -232,7 +229,7 @@ tbl_hr_cftex <- gt(dat_hr_cftex) |>
                                    align  = 'right')),
             locations = cells_body(columns = 3)) |>
   cols_label('egcode' = 'Example', egtext = '') |>
-  cols_width(Percent ~pct(10), Convention ~pct(25), egcode ~pct(10))
+  cols_width(Percent ~pct(15), Convention ~pct(25), egcode ~pct(10))
   
 tbl_hr_cftex
 ```
