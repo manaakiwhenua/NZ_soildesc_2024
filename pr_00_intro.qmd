@@ -8,70 +8,76 @@ library(gt)
 
 ## Defining the site {#sec-pr-site}
 
-Soil profiles are described at sites. The 'site' concept is necessarily somewhat flexible to account for the range of sampling purposes and methods. Generally speaking, it is considered to include the immediate surroundings of a profile description, up to a radius of \~10 m. As such, it will generally nest within a landform unless the site selection method was prescriptive and landform-blind.
+Soil profiles are described at sites. The 'site' concept is necessarily somewhat flexible to account for the range of sampling purposes and methods. Generally speaking, it is considered to include the immediate surroundings of a profile description, up to a radius of \~10 m. As such, it will generally nest within a landform (@sec-gmph-lfm) unless the site selection method (@sec-ref-sampstrat) was prescriptive and landform-blind.
 
-Larger plots and long transects that definitely cover multiple landforms, or even landscapes, should be considered as being built from multiple related sites.
+Larger sampling plots or long transects that cross multiple landforms (or even landscapes) should be treated as a series of related sites, rather than a single site.
 
-The soil profile description starts with an observation of the site's surface and works down. The chief tasks are assessing the surface, delineating soil layers, or horizons, and describing their morphological character. Prior to that, some additional reference data should be recorded:
+The soil profile description starts with an observation of the site's surface and works downwards towards the parent material. The chief tasks are assessing the surface, delineating pedologic horizons (and any additional geogenic layers, if present) and describing their morphological character.
+
+Before beginning a soil profile description, it is essential to record some additional reference data.
 
 ## Reference data {#sec-ref}
 
-Reference data is metadata that clearly identifies a soil profile description. This enables linking the description to other profiles, samples, analytical results and photographs. Reference data includes:
+Reference data is metadata that clearly identifies a soil profile description. These data enable the description to be linked with other profiles, samples, analytical results and photographs. Reference data includes:
 
 -   an identifier
 -   who completed the description
 -   when and where it was located
 -   why the description was needed
 -   how the location was chosen
+-   what equipment was used
+-   depth of observation
 
-These are discussed in turn below.
+These data are discussed in turn below.
 
-### Profile description identifiers {#sec-ref-id}
+### Site identifier {#sec-ref-id}
 
-Assign each profile description a job or project identifier followed by a sequential number, e.g. '[ABC_001]{.ceg}'.
+Assign each profile description an identifier that is at least unique at a whole-of-project level, and preferably at a whole-of-organisation level. There are many ways to build identifier systems (see @nte-uuid), but a good system usually has a predictable structure, is open-ended, and is easy to remember. Incorporating location data into the identifier can help avoid confusion between multiple projects within an organisation.
+
+e.g. a region code followed by a sequential number: [WLG_001]{.ceg}.
+
+This kind of identifier is 'semi-unique' in that there is still some potential for confusion if the data is combined with datasets from other sources - for example, a vegetation survey group working independently in the same region may have decided to use the same naming protocol for their sites.
 
 ::: {#nte-uuid .callout-note collapse="true" appearance="minimal" title="Unique identifiers"}
-There are many ways to build profile identifiers. The recommendation above is a compromise between robustness and simplicity that can at least guarantee unique identifiers within an active working group, e.g. a small business.
-
-Well-designed databases use truly unique identifiers for every piece of data they hold. Under contemporary best practice, these are usually 'UUIDs', 128-bit hexadecimal codes (see @davis2024). While technically robust, these are difficult to work with day-to-day, and most workers will find themselves preferring to interact with simpler identifiers. In a soil profile database, these should be implemented as UUID aliases. End users should primarily interact with the aliases, and the UUIDs should remain hidden.
+Profile identifier formats are often a compromise between robustness and simplicity. Well-designed databases use truly unique identifiers for every piece of data they hold. Under contemporary best practice, these are usually 'UUIDs', 128-bit hexadecimal codes (see @davis2024). Although technically robust, these are difficult to work with day-to-day, and most workers will find themselves preferring to interact with simpler semi-unique identifiers. In a soil profile database, semi-unique identifiers should be implemented as UUID aliases. End users should primarily interact with the aliases, and the UUIDs should remain hidden.
 :::
 
 ::: {#nte-teamsites .callout-note collapse="true" appearance="minimal" title="Working in teams"}
-Semi-unique identifiers require active management when working with multiple field teams operating in parallel. This avoids the risk of two sites being given the same ID on the same day. Each team should be assigned a 'block' of identifiers to work through, large enough to cover the intended number of profile descriptions.
+Semi-unique identifiers require active management when working with multiple field teams operating in parallel. This process avoids the risk of two sites being given the same ID on the same day. Each team should be assigned a 'block' of identifiers to work through, large enough to cover the intended number of profile descriptions. Unused numbers may need be flagged in databases (e.g. in project-level metadata) to prevent future users erroneously thinking that site data is missing.
 :::
 
 ::: {#nte-sitetags .callout-note collapse="true" appearance="minimal" title="Other profile groupings"}
-It may be desirable to be able to group profile descriptions in more complex ways. Examples of these might include
+It may be desirable to be able to group profile descriptions in more complex ways within a database. Examples of these might include
 
 -   descriptions belonging to a transect or plot
 -   descriptions representing a chrono-, climo- or topo-sequence
 
-A tagging system can be useful in these cases. Otherwise, consider whether additional custom metadata fields should be implemented.
+A tagging system, where multiple labels can be added to a given site, can be useful in these cases. Otherwise, consider whether additional custom metadata fields should be implemented.
 :::
 
-### Authors {#sec-ref-auth}
+### Description authors {#sec-ref-auth}
 
-Each profile description must have a single responsible author. Record their name. Additional participants should also be noted.
+Each profile description must have a single responsible author. Record their name. Additional participants should also be noted - soil description is often a group activity. Where sample chain of custody needs to be tracked, recording the name of the sampler may also be necessary.
 
 ::: {#cau-priv .callout-caution collapse="true" appearance="minimal" title="Data privacy"}
 New Zealand data privacy laws are strict. Personally identifying information must be stored securely and not distributed without a good reason. Personal details such as names may not be publishable without explicit consent. Data storage solutions must respect these requirements.
 :::
 
-### Location {#sec-ref-loc}
+### Site location {#sec-ref-loc}
 
 Record location coordinates as eastings and northings in New Zealand Transverse Mercator, e.g [1586090E, 5405720N]{.ceg}.
 
-This is the bare minimum requirement for site location; see @sec-loc for a more detailed discussion.
+Location coordinates are the minimum requirement for site location; see @sec-loc for a more detailed discussion.
 
-### Date {#sec-ref-dt}
+### Date of observation {#sec-ref-dt}
 
-Record the date of observation using the ISO 8601 standard, [YYYY-MM-DD]{.ceg} [@internationalorganizationforstandardization]. Time is not essential but may be useful for correlating site descriptions with photographs.
+Record the date of observation using the ISO 8601 standard, [YYYY-MM-DD]{.ceg} [@internationalorganizationforstandardization] e.g., [2025-01-01]{.ceg}. Time is not essential but is recommended, as it can be useful for correlating site descriptions with photographs or other data recorded using digital means (e.g. GPS tracks, environmental sensor data). If recording time, use the 24-hour format, e.g. [14:35]{.ceg} for 2:35 pm.
 
 ### Site purpose {#sec-ref-why}
 
 The original task for which a site was observed can affect what data is recorded and is relevant to data re-use decisions.
 
-Record the reason for sampling using the schema in @tbl-ss-reason. This parameter does not need to be recorded in the field.
+Record the reason for observing the site using the schema in @tbl-ss-reason. This parameter does not need to be recorded in the field.
 
 ```{r}
 #| label: tbl-ss-reason
@@ -104,7 +110,7 @@ tbl_ss_reason
 
 ### Site selection method {#sec-ref-sampstrat}
 
-Spatial sampling strategies vary in their statistical properties. Soil data is stored for long periods and is often re-used for multiple projects; specific re-uses may not be appropriate.
+Spatial sampling strategies vary in their statistical properties. Soil data is stored for long periods and is often re-used for multiple projects; specific re-uses may not be appropriate or may require that certain permissions be obtained.
 
 Record the spatial sampling strategy used using the schema in @tbl-ss-sampstrat. This parameter does not usually need to be recorded in the field.
 
@@ -115,7 +121,7 @@ Record the spatial sampling strategy used using the schema in @tbl-ss-sampstrat.
 dat_ss_sampstrat <-
   tribble(~Code, ~Name, ~Description,
           'A', 'Arbitrary', 'Sites chosen while in the field, in response to direct observation of on-ground conditions. These are often practical and time-efficient but are also likely to over-sample the more easily accessible and/or interesting parts of the landscape, to the detriment of overall representativeness',
-          'D', 'Data-driven', 'Sites chosen before a field visit using a loose set of rules or principles (e.g. “visit the major landforms on this farm but don’t go too far off the tracks”). May be subject to minor changes once on site',
+          'D', 'Data-driven', 'Sites chosen before a field visit using a loose set of rules or principles (e.g. “visit the major landforms on this farm but stay close to tracks”). May be subject to minor changes once on site',
           'M', 'Model-based', 'Sites chosen before a field visit using a deterministic and replicable set of rules, including rules for relocating sites where on-ground conditions make this necessary',
           'R', 'Random', 'Sites chosen by a randomised method, including stratified-random sampling',
           'T', 'Transect', 'Sites chosen to form a line over the land surface, with or without regular spacing',
@@ -137,11 +143,15 @@ tbl_ss_sampstrat <- gt(dat_ss_sampstrat) |>
 tbl_ss_sampstrat
 ```
 
-Arbitrary, data-driven, and rule-based sampling all intend to use secondary environmental data sources to increase the efficiency of fieldwork, attempting to minimise total sites while maximising information quality. The success of these strategies depends on the availability of relevant and accurate model inputs.
+[A]{.ceg} Arbitrary, [D]{.ceg} data-driven, and [R]{.ceg} model-based sampling all represent attempts to use secondary environmental data sources to increase the efficiency of fieldwork, with the goal of minimising total sites while maximising the representativeness and quality of information gathered at each site. The success of these strategies depends on whether relevant and accurate model inputs are available.
 
-Random, transect and grid sampling [R]{.ceg}, [T]{.ceg}, [G]{.ceg} effectively ignore environmental parameters, although stratified random sampling might partially incorporate such information. Random sampling is useful when the spatial distribution of a parameter of interest is unknown or poorly understood, but can lead to sites in inefficient or unsafe locations.
+[R]{.ceg} Random, [T]{.ceg} (regular) transect and [G]{.ceg} (regular) grid sampling effectively ignore environmental parameters, although stratified random sampling might partially incorporate such information. These strategies are useful when the spatial distribution of a parameter of interest is unknown or poorly understood, but can lead to sites in inefficient or unsafe locations.
 
 Some of these methods can be combined - for example, data-driven transect choices with randomised locations along each. In such cases, the 'last choice' should be recorded - in this example, [R]{.ceg}. The details of the full sampling strategy should be discussed in project metadata.
+
+::: {#nte-sitenum .callout-note collapse="true" appearance="minimal" title="How many sites?"}
+Estimating the number of sites required to complete a project and choosing an optimal sampling strategy is outside the scope of this document. Advice on these topics can be found in @grealish2017 and @mckenzie2008.
+:::
 
 ### Exposure type {#sec-pr-exptype}
 
@@ -177,7 +187,7 @@ tbl_pr_gear
 ```
 
 -   [A]{.ceg} samples cannot be used to reliably determine soil structure due to the degree of disturbance.
--   Combined sampling is common in field mapping, e.g. small pit excavation to \~0.50-0.75 m and augering to a required depth in relatively well-understood landscapes. Record these as [P1]{.ceg}.
+-   Combined sampling is common in field mapping, e.g. small pit excavation to \~50-75 cm followed by augering to a required depth in relatively well-understood landscapes. Record each method used and note the depth at which the method changed, e.g., [P1/A (75 cm)]{.ceg}.
 -   Gouge-style augers used in soft marine sediments may be included in [C2]{.ceg} even though they commonly narrow to \< 50 mm at their maximum depth.
 -   [C1]{.ceg} style samplers are common in paddock-scale monitoring and research, where they are used for rapid surface measurement. These are not generally suitable for mapping as they cannot sample below the topsoil.
 
@@ -185,13 +195,11 @@ Further discussion of appropriate tools for soil profile exposure may be found i
 
 ### Depth of observation {#sec-pr-doa}
 
-Record the maximum depth of observation from the soil surface in whole centimetres (e.g. '[100 cm]{.ceg}'). This does not necessarily need to be recorded in the field as it can be determined from the lower depth of the last horizon in the profile description.
+Record the maximum depth of observation from the soil surface in whole centimetres. This depth does not necessarily need to be recorded in the field as it can be determined from the lower depth of the last horizon in the profile description.
 
-A full profile description ideally extends to bedrock, but this may not always be accessible with the equipment and time available. More commonly, reaching the C horizon (@sec-hzn-convp) is the deepest practically achievable goal. The minimum depth of observation for most applications in New Zealand, where possible, is 100 cm. Classification systems like the NZSC and LUC rely on ruling out certain soil features within that depth range, as well as positively identifying others.
+A full profile description ideally extends to bedrock or underlying geological material, but such materials may not always be accessible with the equipment and time available. More commonly, reaching the C horizon (@sec-hzn-convp) is the deepest practically achievable goal. The minimum depth of observation for most applications in New Zealand, where possible, is 100 cm. Classification systems like the *New Zealand Soil Classification* [@hewitt2025] and LUC [@lynn2009] rely on ruling out certain soil features within that depth range, as well as positively identifying others.
 
-See @sec-digging for information on appropriate excavation equipment.
-
-### Stopping early {#sec-pr-rsa}
+#### Stopping early {#sec-pr-rsa}
 
 When the target depth cannot be achieved, note the reason for stopping early using the codes in @tbl-ss-stoppage.
 
@@ -222,77 +230,4 @@ tbl_ss_stoppage <- gt(dat_ss_stoppage) |>
   cols_width(Code ~pct(10))
 
 tbl_ss_stoppage
-```
-
-## Recent site disturbance {#sec-pr-dist}
-
-Site disturbances have the potential to influence the soil as well as its cover. Noting these events can provide context for the parameters recorded, and some are especially useful when interpreting laboratory results.
-
-Only record recent events directly affecting the site. 'Recent' is a relatively flexible concept which highlights the reasons some parameters observed might be locally unusual. Some of these events recur regularly (e.g. tillage) so only need to be noted if very recent (e.g. previous week).
-
-If the time since the event is known with low certainty, record the general timescale involved using @tbl-ss-eventt. If the time since the event is known with high certainty, record days since the event (e.g. [FL 10]{.ceg} for a well-documented recent flood).
-
-```{r}
-#| label: tbl-ss-eventp
-#| tbl-cap: "Recent site-affecting events"
-
-dat_ss_eventp <-
-  tribble(~Code, ~Name,
-          'MC', 'Mechanical disturbance (e.g. tillage, deep ripping, subsoiling, recontouring)',
-          'AN', 'Animal disturbance (e.g. pugging, rooting, tunnelling, excretion)',
-          'CL', 'Complete vegetation clearance (e.g. clearfelling)',
-          'CO', 'Selective vegetation clearance (e.g. tree removal or weed clearance)', 
-          'WI', 'Wind-induced treefall',
-          'SL', 'Erosion event - material lost from site',
-          'SD', 'Deposition event - material added to site',
-          'FC', 'Fire - controlled burn',
-          'FW', 'Fire - uncontrolled burn',
-          'FL', 'Flooding - freshwater',
-          'FS', 'Flooding - saline water (e.g. storm surge event)',
-          'PO', 'Pollution event (e.g. petrol spill)',
-          'NO', 'No recent events',
-          'UK', 'Unknown')
-
-tbl_ss_eventp <- gt(dat_ss_eventp) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10))
-
-tbl_ss_eventp
-```
-
-```{r}
-#| label: tbl-ss-eventt
-#| tbl-cap: "Generalised time since recent site-affecting events"
-
-dat_ss_eventt <-
-  tribble(~Code, ~Name,
-            'D', 'Within the past day',
-            'W', 'Within the past week',
-            'M', 'Within the past month',
-            'S', 'Within the past 6 months',
-            'Y', 'Within the past year')
-
-tbl_ss_eventt <- gt(dat_ss_eventt) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10))
-
-tbl_ss_eventt
 ```

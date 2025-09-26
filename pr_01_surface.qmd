@@ -8,7 +8,9 @@ library(gt)
 
 The surface at a site is described primarily in terms of its slope, aspect, and surface cover. If present, surface water and microtopography should also be recorded. Ongoing or recent erosion and deposition events may be briefly noted or described in more detail.
 
-## Slope {#sec-pr-slope}
+## Geomorphometry
+
+### Slope {#sec-pr-slope}
 
 Slope is the inclination of the land surface relative to the horizontal plane. Slope steepness affects many soil processes, notably erosion, water run-off and infiltration behaviour.
 
@@ -58,13 +60,15 @@ Slope data for a site can be extracted from a DEM, provided some conditions are 
 -   Review and, if necessary, adjust slopes extracted from sites described on exposures. These may be overestimates (e.g. where a track cuts into a slope, the values upslope behind the site would better represent the soil-forming environment). Sites located close to landform or landscape boundaries may also need review.
 :::
 
-## Aspect {#sec-pr-aspect}
+### Aspect {#sec-pr-aspect}
 
 Aspect is the direction a slope faces. Slope aspect helps determine exposure to sun, rain and prevailing winds, and so influences the biome growing in a particular soil. In some environments it also helps determine how much new material is received by deposition.
 
 Aspect should be measured at the same time and over the same transect as slope. Record aspect in whole degrees clockwise from North, using the range \[0-359°\] (360° = 0°). Use [ND]{.ceg} for flat ground (see @nte-flatwhat). Use [NR]{.ceg} if no measurement was taken. Aspect classes may be applied to the recorded data; some options are presented in @sec-aspectclass.
 
 Record the equipment used to measure aspect using @tbl-pr-aspmth.
+
+E.g. [135° C]{.ceg} for a southeast-facing slope recorded using a compass.
 
 ```{r}
 #| label: tbl-pr-aspmth
@@ -115,7 +119,7 @@ Surface cover helps visualise the site and its landform and provides some inform
 
 Estimate and record the following generalised surface cover components as a percentage composition of the site (@sec-pr-site). Consider the land cover from the surface to a height of 1.35 m, for consistency with @hurst2022.
 
-Example: 
+Example: [BE 10%, GR 90%]{.ceg} for a pasture with near-complete ground coverage.  
 
 ```{r}
 #| label: tbl-pr-surfcov
@@ -124,7 +128,7 @@ Example:
 dat_pr_surfcov <-
   tribble(~Code, ~Name, ~Description,
           'BE', 'Earth', 'Bare sediment or soil, < 2 mm', 
-          'BR', 'Fragments', ' Rock fragments, shells, or bones, 2 - 200 mm',
+          'BR', 'Fragments', ' Rock fragments, shells, or bones, 2–200 mm',
           'BO', 'Rock', 'Bare rock outcrop or large rock fragments > 200 mm',
           'WT', 'Water', 'Open water, ice or snow',
           'PT', 'Peat', 'Plant material decomposing under persistently saturated conditions',
@@ -161,11 +165,88 @@ It will be unusual to encounter more than three components at any one site.
 
 ```
 
+## Surface disturbances {#sec-pr-dist}
+
+Disturbances have the potential to influence the soil as well as its cover. Noting these events can provide context for the parameters recorded, and some are especially useful when interpreting laboratory results.
+
+Only record recent events directly affecting the site. 'Recent' is a relatively flexible concept which highlights the reasons some parameters observed might be locally unusual. Some of these events recur regularly (e.g. tillage) so only need to be noted if very recent (e.g. previous week).
+
+If the time since the event is uncertain, record an estimate using one of the options in @tbl-ss-eventt (e.g. [FL S]{.ceg} for a flood estimated to have occurred within the past 6 months).
+
+If the time since the event is known with high certainty, record days since the event (e.g. [FL 10]{.ceg} for a well-documented recent flood).
+
+```{r}
+#| label: tbl-ss-eventp
+#| tbl-cap: "Recent site-affecting events"
+
+dat_ss_eventp <-
+  tribble(~Code, ~Name,
+          'MC', 'Mechanical disturbance (e.g. tillage, deep ripping, subsoiling, recontouring)',
+          'AN', 'Animal disturbance (e.g. pugging, rooting, tunnelling, excretion)',
+          'CL', 'Complete vegetation clearance by humans (e.g. clearfelling, harvest)',
+          'CO', 'Selective vegetation clearance by humans (e.g. tree removal or weed clearance)', 
+          'WI', 'Wind-induced treefall',
+          'SL', 'Natural erosion event - material lost from site',
+          'SD', 'Natural deposition event - material added to site',
+          'FC', 'Fire - controlled burn',
+          'FW', 'Fire - uncontrolled burn',
+          'FL', 'Flooding - freshwater',
+          'FS', 'Flooding - saline water (e.g. storm surge event)',
+          'PO', 'Pollution event (e.g. petrol spill)',
+          'NO', 'No recent events',
+          'UK', 'Unknown')
+
+tbl_ss_eventp <- gt(dat_ss_eventp) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10))
+
+tbl_ss_eventp
+```
+
+```{r}
+#| label: tbl-ss-eventt
+#| tbl-cap: "Generalised time since recent site-affecting events"
+
+dat_ss_eventt <-
+  tribble(~Code, ~Name,
+            'D', 'Within the past day',
+            'W', 'Within the past week',
+            'M', 'Within the past month',
+            'S', 'Within the past 6 months',
+            'Y', 'Within the past year')
+
+tbl_ss_eventt <- gt(dat_ss_eventt) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10))
+
+tbl_ss_eventt
+```
+
 ## Surface water {#sec-pr-surfw}
 
-Information about surface water presence can contribute to drainage assessments.
+Information about surface water can contribute to drainage assessments. If surface water is present at the site, record its presence and estimate the area covered using the options in @sec-pr-surfcov.
 
-Where water is present above the site surface, as well as noting its areal dominance above, note the type and degree of persistence using the codes in @tbl-pr-swater and @tbl-pr-swaterp below.
+Optionally, append type and degree of persistence using the codes in @tbl-pr-swater and @tbl-pr-swaterp.
+
+e.g. [WT 20% (R, T)]{.ceg} for a paddock experiencing limited surface ponding from a recent cyclone at the time of observation.
 
 ```{r}
 #| label: tbl-pr-swater
@@ -222,8 +303,6 @@ tbl_pr_swaterp <- gt(dat_pr_swaterp) |>
 
 tbl_pr_swaterp
 ```
-
-e.g. [R T 20%]{.ceg} for a paddock experiencing limited surface ponding from a recent cyclone at the time of observation.
 
 ## Surface cracking {#sec-pr-crack}
 
@@ -295,7 +374,7 @@ Recent weather data is useful for interpreting surface crack information (@sec-w
 
 ## Microrelief {#sec-pr-micror}
 
-Microrelief occurs within a landform, so its components are smaller than the landform itself - often too small to be reliably sensed remotely. Its presence helps signify particular soil types and influences many small-scale soil processes such as local water infiltration, accumulation of surface litter, and topsoil development.
+Microrelief occurs within a landform, so its components are smaller than the landform itself - often too small to be reliably sensed remotely. Microrelief presence and character can help signify particular soil types, and influences many small-scale soil processes such as local water infiltration, accumulation of surface litter, and topsoil development.
 
 ### Natural Microrelief {#sec-pr-microrn}
 
