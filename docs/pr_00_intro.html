@@ -418,17 +418,15 @@ div.csl-indent {
   <li><a href="#sec-pr-site" id="toc-sec-pr-site" class="nav-link active" data-scroll-target="#sec-pr-site"><span class="header-section-number">10.1</span> Defining the site</a></li>
   <li><a href="#sec-ref" id="toc-sec-ref" class="nav-link" data-scroll-target="#sec-ref"><span class="header-section-number">10.2</span> Reference data</a>
   <ul class="collapse">
-  <li><a href="#sec-ref-id" id="toc-sec-ref-id" class="nav-link" data-scroll-target="#sec-ref-id"><span class="header-section-number">10.2.1</span> Profile description identifiers</a></li>
-  <li><a href="#sec-ref-auth" id="toc-sec-ref-auth" class="nav-link" data-scroll-target="#sec-ref-auth"><span class="header-section-number">10.2.2</span> Authors</a></li>
-  <li><a href="#sec-ref-loc" id="toc-sec-ref-loc" class="nav-link" data-scroll-target="#sec-ref-loc"><span class="header-section-number">10.2.3</span> Location</a></li>
-  <li><a href="#sec-ref-dt" id="toc-sec-ref-dt" class="nav-link" data-scroll-target="#sec-ref-dt"><span class="header-section-number">10.2.4</span> Date</a></li>
+  <li><a href="#sec-ref-id" id="toc-sec-ref-id" class="nav-link" data-scroll-target="#sec-ref-id"><span class="header-section-number">10.2.1</span> Site identifier</a></li>
+  <li><a href="#sec-ref-auth" id="toc-sec-ref-auth" class="nav-link" data-scroll-target="#sec-ref-auth"><span class="header-section-number">10.2.2</span> Description authors</a></li>
+  <li><a href="#sec-ref-loc" id="toc-sec-ref-loc" class="nav-link" data-scroll-target="#sec-ref-loc"><span class="header-section-number">10.2.3</span> Site location</a></li>
+  <li><a href="#sec-ref-dt" id="toc-sec-ref-dt" class="nav-link" data-scroll-target="#sec-ref-dt"><span class="header-section-number">10.2.4</span> Date of observation</a></li>
   <li><a href="#sec-ref-why" id="toc-sec-ref-why" class="nav-link" data-scroll-target="#sec-ref-why"><span class="header-section-number">10.2.5</span> Site purpose</a></li>
   <li><a href="#sec-ref-sampstrat" id="toc-sec-ref-sampstrat" class="nav-link" data-scroll-target="#sec-ref-sampstrat"><span class="header-section-number">10.2.6</span> Site selection method</a></li>
   <li><a href="#sec-pr-exptype" id="toc-sec-pr-exptype" class="nav-link" data-scroll-target="#sec-pr-exptype"><span class="header-section-number">10.2.7</span> Exposure type</a></li>
   <li><a href="#sec-pr-doa" id="toc-sec-pr-doa" class="nav-link" data-scroll-target="#sec-pr-doa"><span class="header-section-number">10.2.8</span> Depth of observation</a></li>
-  <li><a href="#sec-pr-rsa" id="toc-sec-pr-rsa" class="nav-link" data-scroll-target="#sec-pr-rsa"><span class="header-section-number">10.2.9</span> Stopping early</a></li>
   </ul></li>
-  <li><a href="#sec-pr-dist" id="toc-sec-pr-dist" class="nav-link" data-scroll-target="#sec-pr-dist"><span class="header-section-number">10.3</span> Recent site disturbance</a></li>
   </ul>
 </nav>
     </div>
@@ -449,7 +447,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 21, 2025</p>
+      <p class="date-modified">September 26, 2025</p>
     </div>
   </div>
     
@@ -462,24 +460,29 @@ div.csl-indent {
 
 <section id="sec-pr-site" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="sec-pr-site"><span class="header-section-number">10.1</span> Defining the site</h2>
-<p>Soil profiles are described at sites. The ‘site’ concept is necessarily somewhat flexible to account for the range of sampling purposes and methods. Generally speaking, it is considered to include the immediate surroundings of a profile description, up to a radius of ~10&nbsp;m. As such, it will generally nest within a landform unless the site selection method was prescriptive and landform-blind.</p>
-<p>Larger plots and long transects that definitely cover multiple landforms, or even landscapes, should be considered as being built from multiple related sites.</p>
-<p>The soil profile description starts with an observation of the site’s surface and works down. The chief tasks are assessing the surface, delineating soil layers, or horizons, and describing their morphological character. Prior to that, some additional reference data should be recorded:</p>
+<p>Soil profiles are described at sites. The ‘site’ concept is necessarily somewhat flexible to account for the range of sampling purposes and methods. Generally speaking, it is considered to include the immediate surroundings of a profile description, up to a radius of ~10&nbsp;m. As such, it will generally nest within a landform (<a href="ss_03_landscape.html#sec-gmph-lfm" class="quarto-xref"><span>Section 4.3</span></a>) unless the site selection method (<a href="#sec-ref-sampstrat" class="quarto-xref"><span>Section 10.2.6</span></a>) was prescriptive and landform-blind.</p>
+<p>Larger sampling plots or long transects that cross multiple landforms (or even landscapes) should be treated as a series of related sites, rather than a single site.</p>
+<p>The soil profile description starts with an observation of the site’s surface and works downwards towards the parent material. The chief tasks are assessing the surface, delineating pedologic horizons (and any additional geogenic layers, if present) and describing their morphological character.</p>
+<p>Before beginning a soil profile description, it is essential to record some additional reference data.</p>
 </section>
 <section id="sec-ref" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="sec-ref"><span class="header-section-number">10.2</span> Reference data</h2>
-<p>Reference data is metadata that clearly identifies a soil profile description. This enables linking the description to other profiles, samples, analytical results and photographs. Reference data includes:</p>
+<p>Reference data is metadata that clearly identifies a soil profile description. These data enable the description to be linked with other profiles, samples, analytical results and photographs. Reference data includes:</p>
 <ul>
 <li>an identifier</li>
 <li>who completed the description</li>
 <li>when and where it was located</li>
 <li>why the description was needed</li>
 <li>how the location was chosen</li>
+<li>what equipment was used</li>
+<li>depth of observation</li>
 </ul>
-<p>These are discussed in turn below.</p>
+<p>These data are discussed in turn below.</p>
 <section id="sec-ref-id" class="level3" data-number="10.2.1">
-<h3 data-number="10.2.1" class="anchored" data-anchor-id="sec-ref-id"><span class="header-section-number">10.2.1</span> Profile description identifiers</h3>
-<p>Assign each profile description a job or project identifier followed by a sequential number, e.g.&nbsp;‘<span class="ceg">ABC_001</span>’.</p>
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="sec-ref-id"><span class="header-section-number">10.2.1</span> Site identifier</h3>
+<p>Assign each profile description an identifier that is at least unique at a whole-of-project level, and preferably at a whole-of-organisation level. There are many ways to build identifier systems (see <a href="#nte-uuid" class="quarto-xref">Note&nbsp;<span>10.1</span></a>), but a good system usually has a predictable structure, is open-ended, and is easy to remember. Incorporating location data into the identifier can help avoid confusion between multiple projects within an organisation.</p>
+<p>e.g.&nbsp;a region code followed by a sequential number: <span class="ceg">WLG_001</span>.</p>
+<p>This kind of identifier is ‘semi-unique’ in that there is still some potential for confusion if the data is combined with datasets from other sources - for example, a vegetation survey group working independently in the same region may have decided to use the same naming protocol for their sites.</p>
 <div id="nte-uuid" class="callout callout-style-simple callout-note no-icon callout-titled" title="Unique identifiers">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -492,8 +495,7 @@ Note&nbsp;10.1: Unique identifiers
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>There are many ways to build profile identifiers. The recommendation above is a compromise between robustness and simplicity that can at least guarantee unique identifiers within an active working group, e.g.&nbsp;a small business.</p>
-<p>Well-designed databases use truly unique identifiers for every piece of data they hold. Under contemporary best practice, these are usually ‘UUIDs’, 128-bit hexadecimal codes (see <span class="citation" data-cites="davis2024">Davis et al. (<a href="references.html#ref-davis2024" role="doc-biblioref">2024</a>)</span>). While technically robust, these are difficult to work with day-to-day, and most workers will find themselves preferring to interact with simpler identifiers. In a soil profile database, these should be implemented as UUID aliases. End users should primarily interact with the aliases, and the UUIDs should remain hidden.</p>
+<p>Profile identifier formats are often a compromise between robustness and simplicity. Well-designed databases use truly unique identifiers for every piece of data they hold. Under contemporary best practice, these are usually ‘UUIDs’, 128-bit hexadecimal codes (see <span class="citation" data-cites="davis2024">Davis et al. (<a href="references.html#ref-davis2024" role="doc-biblioref">2024</a>)</span>). Although technically robust, these are difficult to work with day-to-day, and most workers will find themselves preferring to interact with simpler semi-unique identifiers. In a soil profile database, semi-unique identifiers should be implemented as UUID aliases. End users should primarily interact with the aliases, and the UUIDs should remain hidden.</p>
 </div>
 </div>
 </div>
@@ -509,7 +511,7 @@ Note&nbsp;10.2: Working in teams
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Semi-unique identifiers require active management when working with multiple field teams operating in parallel. This avoids the risk of two sites being given the same ID on the same day. Each team should be assigned a ‘block’ of identifiers to work through, large enough to cover the intended number of profile descriptions.</p>
+<p>Semi-unique identifiers require active management when working with multiple field teams operating in parallel. This process avoids the risk of two sites being given the same ID on the same day. Each team should be assigned a ‘block’ of identifiers to work through, large enough to cover the intended number of profile descriptions. Unused numbers may need be flagged in databases (e.g.&nbsp;in project-level metadata) to prevent future users erroneously thinking that site data is missing.</p>
 </div>
 </div>
 </div>
@@ -525,19 +527,19 @@ Note&nbsp;10.3: Other profile groupings
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>It may be desirable to be able to group profile descriptions in more complex ways. Examples of these might include</p>
+<p>It may be desirable to be able to group profile descriptions in more complex ways within a database. Examples of these might include</p>
 <ul>
 <li>descriptions belonging to a transect or plot</li>
 <li>descriptions representing a chrono-, climo- or topo-sequence</li>
 </ul>
-<p>A tagging system can be useful in these cases. Otherwise, consider whether additional custom metadata fields should be implemented.</p>
+<p>A tagging system, where multiple labels can be added to a given site, can be useful in these cases. Otherwise, consider whether additional custom metadata fields should be implemented.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="sec-ref-auth" class="level3" data-number="10.2.2">
-<h3 data-number="10.2.2" class="anchored" data-anchor-id="sec-ref-auth"><span class="header-section-number">10.2.2</span> Authors</h3>
-<p>Each profile description must have a single responsible author. Record their name. Additional participants should also be noted.</p>
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="sec-ref-auth"><span class="header-section-number">10.2.2</span> Description authors</h3>
+<p>Each profile description must have a single responsible author. Record their name. Additional participants should also be noted - soil description is often a group activity. Where sample chain of custody needs to be tracked, recording the name of the sampler may also be necessary.</p>
 <div id="cau-priv" class="callout callout-style-simple callout-caution no-icon callout-titled" title="Data privacy">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -556,18 +558,18 @@ Caution&nbsp;10.1: Data privacy
 </div>
 </section>
 <section id="sec-ref-loc" class="level3" data-number="10.2.3">
-<h3 data-number="10.2.3" class="anchored" data-anchor-id="sec-ref-loc"><span class="header-section-number">10.2.3</span> Location</h3>
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="sec-ref-loc"><span class="header-section-number">10.2.3</span> Site location</h3>
 <p>Record location coordinates as eastings and northings in New Zealand Transverse Mercator, e.g <span class="ceg">1586090E, 5405720N</span>.</p>
-<p>This is the bare minimum requirement for site location; see <a href="ss_02_location.html" class="quarto-xref"><span>Chapter 3</span></a> for a more detailed discussion.</p>
+<p>Location coordinates are the minimum requirement for site location; see <a href="ss_02_location.html" class="quarto-xref"><span>Chapter 3</span></a> for a more detailed discussion.</p>
 </section>
 <section id="sec-ref-dt" class="level3" data-number="10.2.4">
-<h3 data-number="10.2.4" class="anchored" data-anchor-id="sec-ref-dt"><span class="header-section-number">10.2.4</span> Date</h3>
-<p>Record the date of observation using the ISO 8601 standard, <span class="ceg">YYYY-MM-DD</span> <span class="citation" data-cites="internationalorganizationforstandardization">(<a href="references.html#ref-internationalorganizationforstandardization" role="doc-biblioref">International Organization for Standardization 2019</a>)</span>. Time is not essential but may be useful for correlating site descriptions with photographs.</p>
+<h3 data-number="10.2.4" class="anchored" data-anchor-id="sec-ref-dt"><span class="header-section-number">10.2.4</span> Date of observation</h3>
+<p>Record the date of observation using the ISO 8601 standard, <span class="ceg">YYYY-MM-DD</span> <span class="citation" data-cites="internationalorganizationforstandardization">(<a href="references.html#ref-internationalorganizationforstandardization" role="doc-biblioref">International Organization for Standardization 2019</a>)</span> e.g., <span class="ceg">2025-01-01</span>. Time is not essential but is recommended, as it can be useful for correlating site descriptions with photographs or other data recorded using digital means (e.g.&nbsp;GPS tracks, environmental sensor data). If recording time, use the 24-hour format, e.g.&nbsp;<span class="ceg">14:35</span> for 2:35 pm.</p>
 </section>
 <section id="sec-ref-why" class="level3" data-number="10.2.5">
 <h3 data-number="10.2.5" class="anchored" data-anchor-id="sec-ref-why"><span class="header-section-number">10.2.5</span> Site purpose</h3>
 <p>The original task for which a site was observed can affect what data is recorded and is relevant to data re-use decisions.</p>
-<p>Record the reason for sampling using the schema in <a href="#tbl-ss-reason" class="quarto-xref">Table&nbsp;<span>10.1</span></a>. This parameter does not need to be recorded in the field.</p>
+<p>Record the reason for observing the site using the schema in <a href="#tbl-ss-reason" class="quarto-xref">Table&nbsp;<span>10.1</span></a>. This parameter does not need to be recorded in the field.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-ss-reason" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -576,23 +578,23 @@ Table&nbsp;10.1: Site purpose
 </figcaption>
 <div aria-describedby="tbl-ss-reason-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="bdidyyajwa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bdidyyajwa table {
+<div id="xucvughbyg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xucvughbyg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bdidyyajwa thead, #bdidyyajwa tbody, #bdidyyajwa tfoot, #bdidyyajwa tr, #bdidyyajwa td, #bdidyyajwa th {
+#xucvughbyg thead, #xucvughbyg tbody, #xucvughbyg tfoot, #xucvughbyg tr, #xucvughbyg td, #xucvughbyg th {
   border-style: none;
 }
 
-#bdidyyajwa p {
+#xucvughbyg p {
   margin: 0;
   padding: 0;
 }
 
-#bdidyyajwa .gt_table {
+#xucvughbyg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -618,12 +620,12 @@ Table&nbsp;10.1: Site purpose
   border-left-color: #D3D3D3;
 }
 
-#bdidyyajwa .gt_caption {
+#xucvughbyg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bdidyyajwa .gt_title {
+#xucvughbyg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -635,7 +637,7 @@ Table&nbsp;10.1: Site purpose
   border-bottom-width: 0;
 }
 
-#bdidyyajwa .gt_subtitle {
+#xucvughbyg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -647,7 +649,7 @@ Table&nbsp;10.1: Site purpose
   border-top-width: 0;
 }
 
-#bdidyyajwa .gt_heading {
+#xucvughbyg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -659,13 +661,13 @@ Table&nbsp;10.1: Site purpose
   border-right-color: #D3D3D3;
 }
 
-#bdidyyajwa .gt_bottom_border {
+#xucvughbyg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bdidyyajwa .gt_col_headings {
+#xucvughbyg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -680,7 +682,7 @@ Table&nbsp;10.1: Site purpose
   border-right-color: #D3D3D3;
 }
 
-#bdidyyajwa .gt_col_heading {
+#xucvughbyg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -700,7 +702,7 @@ Table&nbsp;10.1: Site purpose
   overflow-x: hidden;
 }
 
-#bdidyyajwa .gt_column_spanner_outer {
+#xucvughbyg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -712,15 +714,15 @@ Table&nbsp;10.1: Site purpose
   padding-right: 4px;
 }
 
-#bdidyyajwa .gt_column_spanner_outer:first-child {
+#xucvughbyg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bdidyyajwa .gt_column_spanner_outer:last-child {
+#xucvughbyg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bdidyyajwa .gt_column_spanner {
+#xucvughbyg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -732,11 +734,11 @@ Table&nbsp;10.1: Site purpose
   width: 100%;
 }
 
-#bdidyyajwa .gt_spanner_row {
+#xucvughbyg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bdidyyajwa .gt_group_heading {
+#xucvughbyg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -762,7 +764,7 @@ Table&nbsp;10.1: Site purpose
   text-align: left;
 }
 
-#bdidyyajwa .gt_empty_group_heading {
+#xucvughbyg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -777,15 +779,15 @@ Table&nbsp;10.1: Site purpose
   vertical-align: middle;
 }
 
-#bdidyyajwa .gt_from_md > :first-child {
+#xucvughbyg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bdidyyajwa .gt_from_md > :last-child {
+#xucvughbyg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bdidyyajwa .gt_row {
+#xucvughbyg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -804,7 +806,7 @@ Table&nbsp;10.1: Site purpose
   overflow-x: hidden;
 }
 
-#bdidyyajwa .gt_stub {
+#xucvughbyg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -817,7 +819,7 @@ Table&nbsp;10.1: Site purpose
   padding-right: 5px;
 }
 
-#bdidyyajwa .gt_stub_row_group {
+#xucvughbyg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -831,15 +833,15 @@ Table&nbsp;10.1: Site purpose
   vertical-align: top;
 }
 
-#bdidyyajwa .gt_row_group_first td {
+#xucvughbyg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bdidyyajwa .gt_row_group_first th {
+#xucvughbyg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bdidyyajwa .gt_summary_row {
+#xucvughbyg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -849,16 +851,16 @@ Table&nbsp;10.1: Site purpose
   padding-right: 5px;
 }
 
-#bdidyyajwa .gt_first_summary_row {
+#xucvughbyg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bdidyyajwa .gt_first_summary_row.thick {
+#xucvughbyg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bdidyyajwa .gt_last_summary_row {
+#xucvughbyg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -868,7 +870,7 @@ Table&nbsp;10.1: Site purpose
   border-bottom-color: #D3D3D3;
 }
 
-#bdidyyajwa .gt_grand_summary_row {
+#xucvughbyg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -878,7 +880,7 @@ Table&nbsp;10.1: Site purpose
   padding-right: 5px;
 }
 
-#bdidyyajwa .gt_first_grand_summary_row {
+#xucvughbyg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -888,7 +890,7 @@ Table&nbsp;10.1: Site purpose
   border-top-color: #D3D3D3;
 }
 
-#bdidyyajwa .gt_last_grand_summary_row_top {
+#xucvughbyg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -898,11 +900,11 @@ Table&nbsp;10.1: Site purpose
   border-bottom-color: #D3D3D3;
 }
 
-#bdidyyajwa .gt_striped {
+#xucvughbyg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bdidyyajwa .gt_table_body {
+#xucvughbyg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -911,7 +913,7 @@ Table&nbsp;10.1: Site purpose
   border-bottom-color: #D3D3D3;
 }
 
-#bdidyyajwa .gt_footnotes {
+#xucvughbyg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -925,7 +927,7 @@ Table&nbsp;10.1: Site purpose
   border-right-color: #D3D3D3;
 }
 
-#bdidyyajwa .gt_footnote {
+#xucvughbyg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -934,7 +936,7 @@ Table&nbsp;10.1: Site purpose
   padding-right: 5px;
 }
 
-#bdidyyajwa .gt_sourcenotes {
+#xucvughbyg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -948,7 +950,7 @@ Table&nbsp;10.1: Site purpose
   border-right-color: #D3D3D3;
 }
 
-#bdidyyajwa .gt_sourcenote {
+#xucvughbyg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -956,72 +958,72 @@ Table&nbsp;10.1: Site purpose
   padding-right: 5px;
 }
 
-#bdidyyajwa .gt_left {
+#xucvughbyg .gt_left {
   text-align: left;
 }
 
-#bdidyyajwa .gt_center {
+#xucvughbyg .gt_center {
   text-align: center;
 }
 
-#bdidyyajwa .gt_right {
+#xucvughbyg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bdidyyajwa .gt_font_normal {
+#xucvughbyg .gt_font_normal {
   font-weight: normal;
 }
 
-#bdidyyajwa .gt_font_bold {
+#xucvughbyg .gt_font_bold {
   font-weight: bold;
 }
 
-#bdidyyajwa .gt_font_italic {
+#xucvughbyg .gt_font_italic {
   font-style: italic;
 }
 
-#bdidyyajwa .gt_super {
+#xucvughbyg .gt_super {
   font-size: 65%;
 }
 
-#bdidyyajwa .gt_footnote_marks {
+#xucvughbyg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bdidyyajwa .gt_asterisk {
+#xucvughbyg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bdidyyajwa .gt_indent_1 {
+#xucvughbyg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bdidyyajwa .gt_indent_2 {
+#xucvughbyg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bdidyyajwa .gt_indent_3 {
+#xucvughbyg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bdidyyajwa .gt_indent_4 {
+#xucvughbyg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bdidyyajwa .gt_indent_5 {
+#xucvughbyg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bdidyyajwa .katex-display {
+#xucvughbyg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bdidyyajwa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xucvughbyg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1082,7 +1084,7 @@ Table&nbsp;10.1: Site purpose
 </section>
 <section id="sec-ref-sampstrat" class="level3" data-number="10.2.6">
 <h3 data-number="10.2.6" class="anchored" data-anchor-id="sec-ref-sampstrat"><span class="header-section-number">10.2.6</span> Site selection method</h3>
-<p>Spatial sampling strategies vary in their statistical properties. Soil data is stored for long periods and is often re-used for multiple projects; specific re-uses may not be appropriate.</p>
+<p>Spatial sampling strategies vary in their statistical properties. Soil data is stored for long periods and is often re-used for multiple projects; specific re-uses may not be appropriate or may require that certain permissions be obtained.</p>
 <p>Record the spatial sampling strategy used using the schema in <a href="#tbl-ss-sampstrat" class="quarto-xref">Table&nbsp;<span>10.2</span></a>. This parameter does not usually need to be recorded in the field.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-ss-sampstrat" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
@@ -1092,23 +1094,23 @@ Table&nbsp;10.2: Spatial sampling strategies
 </figcaption>
 <div aria-describedby="tbl-ss-sampstrat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tdpqmymqec" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tdpqmymqec table {
+<div id="pnwtlvceyt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pnwtlvceyt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tdpqmymqec thead, #tdpqmymqec tbody, #tdpqmymqec tfoot, #tdpqmymqec tr, #tdpqmymqec td, #tdpqmymqec th {
+#pnwtlvceyt thead, #pnwtlvceyt tbody, #pnwtlvceyt tfoot, #pnwtlvceyt tr, #pnwtlvceyt td, #pnwtlvceyt th {
   border-style: none;
 }
 
-#tdpqmymqec p {
+#pnwtlvceyt p {
   margin: 0;
   padding: 0;
 }
 
-#tdpqmymqec .gt_table {
+#pnwtlvceyt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1134,12 +1136,12 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-left-color: #D3D3D3;
 }
 
-#tdpqmymqec .gt_caption {
+#pnwtlvceyt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tdpqmymqec .gt_title {
+#pnwtlvceyt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1151,7 +1153,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-bottom-width: 0;
 }
 
-#tdpqmymqec .gt_subtitle {
+#pnwtlvceyt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1163,7 +1165,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-top-width: 0;
 }
 
-#tdpqmymqec .gt_heading {
+#pnwtlvceyt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1175,13 +1177,13 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-right-color: #D3D3D3;
 }
 
-#tdpqmymqec .gt_bottom_border {
+#pnwtlvceyt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tdpqmymqec .gt_col_headings {
+#pnwtlvceyt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1196,7 +1198,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-right-color: #D3D3D3;
 }
 
-#tdpqmymqec .gt_col_heading {
+#pnwtlvceyt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1216,7 +1218,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   overflow-x: hidden;
 }
 
-#tdpqmymqec .gt_column_spanner_outer {
+#pnwtlvceyt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1228,15 +1230,15 @@ Table&nbsp;10.2: Spatial sampling strategies
   padding-right: 4px;
 }
 
-#tdpqmymqec .gt_column_spanner_outer:first-child {
+#pnwtlvceyt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tdpqmymqec .gt_column_spanner_outer:last-child {
+#pnwtlvceyt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tdpqmymqec .gt_column_spanner {
+#pnwtlvceyt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1248,11 +1250,11 @@ Table&nbsp;10.2: Spatial sampling strategies
   width: 100%;
 }
 
-#tdpqmymqec .gt_spanner_row {
+#pnwtlvceyt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tdpqmymqec .gt_group_heading {
+#pnwtlvceyt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1278,7 +1280,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   text-align: left;
 }
 
-#tdpqmymqec .gt_empty_group_heading {
+#pnwtlvceyt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1293,15 +1295,15 @@ Table&nbsp;10.2: Spatial sampling strategies
   vertical-align: middle;
 }
 
-#tdpqmymqec .gt_from_md > :first-child {
+#pnwtlvceyt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tdpqmymqec .gt_from_md > :last-child {
+#pnwtlvceyt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tdpqmymqec .gt_row {
+#pnwtlvceyt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1320,7 +1322,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   overflow-x: hidden;
 }
 
-#tdpqmymqec .gt_stub {
+#pnwtlvceyt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1333,7 +1335,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   padding-right: 5px;
 }
 
-#tdpqmymqec .gt_stub_row_group {
+#pnwtlvceyt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1347,15 +1349,15 @@ Table&nbsp;10.2: Spatial sampling strategies
   vertical-align: top;
 }
 
-#tdpqmymqec .gt_row_group_first td {
+#pnwtlvceyt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tdpqmymqec .gt_row_group_first th {
+#pnwtlvceyt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tdpqmymqec .gt_summary_row {
+#pnwtlvceyt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1365,16 +1367,16 @@ Table&nbsp;10.2: Spatial sampling strategies
   padding-right: 5px;
 }
 
-#tdpqmymqec .gt_first_summary_row {
+#pnwtlvceyt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tdpqmymqec .gt_first_summary_row.thick {
+#pnwtlvceyt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tdpqmymqec .gt_last_summary_row {
+#pnwtlvceyt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1384,7 +1386,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-bottom-color: #D3D3D3;
 }
 
-#tdpqmymqec .gt_grand_summary_row {
+#pnwtlvceyt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1394,7 +1396,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   padding-right: 5px;
 }
 
-#tdpqmymqec .gt_first_grand_summary_row {
+#pnwtlvceyt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1404,7 +1406,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-top-color: #D3D3D3;
 }
 
-#tdpqmymqec .gt_last_grand_summary_row_top {
+#pnwtlvceyt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1414,11 +1416,11 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-bottom-color: #D3D3D3;
 }
 
-#tdpqmymqec .gt_striped {
+#pnwtlvceyt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tdpqmymqec .gt_table_body {
+#pnwtlvceyt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1427,7 +1429,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-bottom-color: #D3D3D3;
 }
 
-#tdpqmymqec .gt_footnotes {
+#pnwtlvceyt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1441,7 +1443,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-right-color: #D3D3D3;
 }
 
-#tdpqmymqec .gt_footnote {
+#pnwtlvceyt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1450,7 +1452,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   padding-right: 5px;
 }
 
-#tdpqmymqec .gt_sourcenotes {
+#pnwtlvceyt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1464,7 +1466,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-right-color: #D3D3D3;
 }
 
-#tdpqmymqec .gt_sourcenote {
+#pnwtlvceyt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1472,72 +1474,72 @@ Table&nbsp;10.2: Spatial sampling strategies
   padding-right: 5px;
 }
 
-#tdpqmymqec .gt_left {
+#pnwtlvceyt .gt_left {
   text-align: left;
 }
 
-#tdpqmymqec .gt_center {
+#pnwtlvceyt .gt_center {
   text-align: center;
 }
 
-#tdpqmymqec .gt_right {
+#pnwtlvceyt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tdpqmymqec .gt_font_normal {
+#pnwtlvceyt .gt_font_normal {
   font-weight: normal;
 }
 
-#tdpqmymqec .gt_font_bold {
+#pnwtlvceyt .gt_font_bold {
   font-weight: bold;
 }
 
-#tdpqmymqec .gt_font_italic {
+#pnwtlvceyt .gt_font_italic {
   font-style: italic;
 }
 
-#tdpqmymqec .gt_super {
+#pnwtlvceyt .gt_super {
   font-size: 65%;
 }
 
-#tdpqmymqec .gt_footnote_marks {
+#pnwtlvceyt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tdpqmymqec .gt_asterisk {
+#pnwtlvceyt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tdpqmymqec .gt_indent_1 {
+#pnwtlvceyt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tdpqmymqec .gt_indent_2 {
+#pnwtlvceyt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tdpqmymqec .gt_indent_3 {
+#pnwtlvceyt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tdpqmymqec .gt_indent_4 {
+#pnwtlvceyt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tdpqmymqec .gt_indent_5 {
+#pnwtlvceyt .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tdpqmymqec .katex-display {
+#pnwtlvceyt .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tdpqmymqec div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pnwtlvceyt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1564,7 +1566,7 @@ Table&nbsp;10.2: Spatial sampling strategies
 <tr class="even">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">D</td>
 <td class="gt_row gt_left" headers="Name">Data-driven</td>
-<td class="gt_row gt_left" headers="Description">Sites chosen before a field visit using a loose set of rules or principles (e.g. “visit the major landforms on this farm but don’t go too far off the tracks”). May be subject to minor changes once on site</td>
+<td class="gt_row gt_left" headers="Description">Sites chosen before a field visit using a loose set of rules or principles (e.g. “visit the major landforms on this farm but stay close to tracks”). May be subject to minor changes once on site</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">M</td>
@@ -1595,9 +1597,25 @@ Table&nbsp;10.2: Spatial sampling strategies
 </figure>
 </div>
 </div>
-<p>Arbitrary, data-driven, and rule-based sampling all intend to use secondary environmental data sources to increase the efficiency of fieldwork, attempting to minimise total sites while maximising information quality. The success of these strategies depends on the availability of relevant and accurate model inputs.</p>
-<p>Random, transect and grid sampling <span class="ceg">R</span>, <span class="ceg">T</span>, <span class="ceg">G</span> effectively ignore environmental parameters, although stratified random sampling might partially incorporate such information. Random sampling is useful when the spatial distribution of a parameter of interest is unknown or poorly understood, but can lead to sites in inefficient or unsafe locations.</p>
+<p><span class="ceg">A</span> Arbitrary, <span class="ceg">D</span> data-driven, and <span class="ceg">R</span> model-based sampling all represent attempts to use secondary environmental data sources to increase the efficiency of fieldwork, with the goal of minimising total sites while maximising the representativeness and quality of information gathered at each site. The success of these strategies depends on whether relevant and accurate model inputs are available.</p>
+<p><span class="ceg">R</span> Random, <span class="ceg">T</span> (regular) transect and <span class="ceg">G</span> (regular) grid sampling effectively ignore environmental parameters, although stratified random sampling might partially incorporate such information. These strategies are useful when the spatial distribution of a parameter of interest is unknown or poorly understood, but can lead to sites in inefficient or unsafe locations.</p>
 <p>Some of these methods can be combined - for example, data-driven transect choices with randomised locations along each. In such cases, the ‘last choice’ should be recorded - in this example, <span class="ceg">R</span>. The details of the full sampling strategy should be discussed in project metadata.</p>
+<div id="nte-sitenum" class="callout callout-style-simple callout-note no-icon callout-titled" title="How many sites?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;10.4: How many sites?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Estimating the number of sites required to complete a project and choosing an optimal sampling strategy is outside the scope of this document. Advice on these topics can be found in <span class="citation" data-cites="grealish2017">Grealish (<a href="references.html#ref-grealish2017" role="doc-biblioref">2017</a>)</span> and <span class="citation" data-cites="mckenzie2008">McKenzie et al. (<a href="references.html#ref-mckenzie2008" role="doc-biblioref">2008</a>)</span>.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="sec-pr-exptype" class="level3" data-number="10.2.7">
 <h3 data-number="10.2.7" class="anchored" data-anchor-id="sec-pr-exptype"><span class="header-section-number">10.2.7</span> Exposure type</h3>
@@ -1610,23 +1628,23 @@ Table&nbsp;10.3: Method of profile exposure
 </figcaption>
 <div aria-describedby="tbl-pr-gear-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="uwlheekvdy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uwlheekvdy table {
+<div id="bkimvrxcxw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bkimvrxcxw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uwlheekvdy thead, #uwlheekvdy tbody, #uwlheekvdy tfoot, #uwlheekvdy tr, #uwlheekvdy td, #uwlheekvdy th {
+#bkimvrxcxw thead, #bkimvrxcxw tbody, #bkimvrxcxw tfoot, #bkimvrxcxw tr, #bkimvrxcxw td, #bkimvrxcxw th {
   border-style: none;
 }
 
-#uwlheekvdy p {
+#bkimvrxcxw p {
   margin: 0;
   padding: 0;
 }
 
-#uwlheekvdy .gt_table {
+#bkimvrxcxw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1652,12 +1670,12 @@ Table&nbsp;10.3: Method of profile exposure
   border-left-color: #D3D3D3;
 }
 
-#uwlheekvdy .gt_caption {
+#bkimvrxcxw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uwlheekvdy .gt_title {
+#bkimvrxcxw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1669,7 +1687,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-bottom-width: 0;
 }
 
-#uwlheekvdy .gt_subtitle {
+#bkimvrxcxw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1681,7 +1699,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-top-width: 0;
 }
 
-#uwlheekvdy .gt_heading {
+#bkimvrxcxw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1693,13 +1711,13 @@ Table&nbsp;10.3: Method of profile exposure
   border-right-color: #D3D3D3;
 }
 
-#uwlheekvdy .gt_bottom_border {
+#bkimvrxcxw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uwlheekvdy .gt_col_headings {
+#bkimvrxcxw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1714,7 +1732,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-right-color: #D3D3D3;
 }
 
-#uwlheekvdy .gt_col_heading {
+#bkimvrxcxw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1734,7 +1752,7 @@ Table&nbsp;10.3: Method of profile exposure
   overflow-x: hidden;
 }
 
-#uwlheekvdy .gt_column_spanner_outer {
+#bkimvrxcxw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1746,15 +1764,15 @@ Table&nbsp;10.3: Method of profile exposure
   padding-right: 4px;
 }
 
-#uwlheekvdy .gt_column_spanner_outer:first-child {
+#bkimvrxcxw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uwlheekvdy .gt_column_spanner_outer:last-child {
+#bkimvrxcxw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uwlheekvdy .gt_column_spanner {
+#bkimvrxcxw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1766,11 +1784,11 @@ Table&nbsp;10.3: Method of profile exposure
   width: 100%;
 }
 
-#uwlheekvdy .gt_spanner_row {
+#bkimvrxcxw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uwlheekvdy .gt_group_heading {
+#bkimvrxcxw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1796,7 +1814,7 @@ Table&nbsp;10.3: Method of profile exposure
   text-align: left;
 }
 
-#uwlheekvdy .gt_empty_group_heading {
+#bkimvrxcxw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1811,15 +1829,15 @@ Table&nbsp;10.3: Method of profile exposure
   vertical-align: middle;
 }
 
-#uwlheekvdy .gt_from_md > :first-child {
+#bkimvrxcxw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uwlheekvdy .gt_from_md > :last-child {
+#bkimvrxcxw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uwlheekvdy .gt_row {
+#bkimvrxcxw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1838,7 +1856,7 @@ Table&nbsp;10.3: Method of profile exposure
   overflow-x: hidden;
 }
 
-#uwlheekvdy .gt_stub {
+#bkimvrxcxw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1851,7 +1869,7 @@ Table&nbsp;10.3: Method of profile exposure
   padding-right: 5px;
 }
 
-#uwlheekvdy .gt_stub_row_group {
+#bkimvrxcxw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1865,15 +1883,15 @@ Table&nbsp;10.3: Method of profile exposure
   vertical-align: top;
 }
 
-#uwlheekvdy .gt_row_group_first td {
+#bkimvrxcxw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uwlheekvdy .gt_row_group_first th {
+#bkimvrxcxw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uwlheekvdy .gt_summary_row {
+#bkimvrxcxw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1883,16 +1901,16 @@ Table&nbsp;10.3: Method of profile exposure
   padding-right: 5px;
 }
 
-#uwlheekvdy .gt_first_summary_row {
+#bkimvrxcxw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uwlheekvdy .gt_first_summary_row.thick {
+#bkimvrxcxw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uwlheekvdy .gt_last_summary_row {
+#bkimvrxcxw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1902,7 +1920,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-bottom-color: #D3D3D3;
 }
 
-#uwlheekvdy .gt_grand_summary_row {
+#bkimvrxcxw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1912,7 +1930,7 @@ Table&nbsp;10.3: Method of profile exposure
   padding-right: 5px;
 }
 
-#uwlheekvdy .gt_first_grand_summary_row {
+#bkimvrxcxw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1922,7 +1940,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-top-color: #D3D3D3;
 }
 
-#uwlheekvdy .gt_last_grand_summary_row_top {
+#bkimvrxcxw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1932,11 +1950,11 @@ Table&nbsp;10.3: Method of profile exposure
   border-bottom-color: #D3D3D3;
 }
 
-#uwlheekvdy .gt_striped {
+#bkimvrxcxw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uwlheekvdy .gt_table_body {
+#bkimvrxcxw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1945,7 +1963,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-bottom-color: #D3D3D3;
 }
 
-#uwlheekvdy .gt_footnotes {
+#bkimvrxcxw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1959,7 +1977,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-right-color: #D3D3D3;
 }
 
-#uwlheekvdy .gt_footnote {
+#bkimvrxcxw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1968,7 +1986,7 @@ Table&nbsp;10.3: Method of profile exposure
   padding-right: 5px;
 }
 
-#uwlheekvdy .gt_sourcenotes {
+#bkimvrxcxw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1982,7 +2000,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-right-color: #D3D3D3;
 }
 
-#uwlheekvdy .gt_sourcenote {
+#bkimvrxcxw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1990,72 +2008,72 @@ Table&nbsp;10.3: Method of profile exposure
   padding-right: 5px;
 }
 
-#uwlheekvdy .gt_left {
+#bkimvrxcxw .gt_left {
   text-align: left;
 }
 
-#uwlheekvdy .gt_center {
+#bkimvrxcxw .gt_center {
   text-align: center;
 }
 
-#uwlheekvdy .gt_right {
+#bkimvrxcxw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uwlheekvdy .gt_font_normal {
+#bkimvrxcxw .gt_font_normal {
   font-weight: normal;
 }
 
-#uwlheekvdy .gt_font_bold {
+#bkimvrxcxw .gt_font_bold {
   font-weight: bold;
 }
 
-#uwlheekvdy .gt_font_italic {
+#bkimvrxcxw .gt_font_italic {
   font-style: italic;
 }
 
-#uwlheekvdy .gt_super {
+#bkimvrxcxw .gt_super {
   font-size: 65%;
 }
 
-#uwlheekvdy .gt_footnote_marks {
+#bkimvrxcxw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uwlheekvdy .gt_asterisk {
+#bkimvrxcxw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uwlheekvdy .gt_indent_1 {
+#bkimvrxcxw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uwlheekvdy .gt_indent_2 {
+#bkimvrxcxw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uwlheekvdy .gt_indent_3 {
+#bkimvrxcxw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uwlheekvdy .gt_indent_4 {
+#bkimvrxcxw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uwlheekvdy .gt_indent_5 {
+#bkimvrxcxw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#uwlheekvdy .katex-display {
+#bkimvrxcxw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#uwlheekvdy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#bkimvrxcxw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2115,7 +2133,7 @@ Table&nbsp;10.3: Method of profile exposure
 </div>
 <ul>
 <li><span class="ceg">A</span> samples cannot be used to reliably determine soil structure due to the degree of disturbance.</li>
-<li>Combined sampling is common in field mapping, e.g.&nbsp;small pit excavation to ~0.50-0.75&nbsp;m and augering to a required depth in relatively well-understood landscapes. Record these as <span class="ceg">P1</span>.</li>
+<li>Combined sampling is common in field mapping, e.g.&nbsp;small pit excavation to ~50-75&nbsp;cm followed by augering to a required depth in relatively well-understood landscapes. Record each method used and note the depth at which the method changed, e.g., <span class="ceg">P1/A (75 cm)</span>.</li>
 <li>Gouge-style augers used in soft marine sediments may be included in <span class="ceg">C2</span> even though they commonly narrow to &lt;&nbsp;50&nbsp;mm at their maximum depth.</li>
 <li><span class="ceg">C1</span> style samplers are common in paddock-scale monitoring and research, where they are used for rapid surface measurement. These are not generally suitable for mapping as they cannot sample below the topsoil.</li>
 </ul>
@@ -2123,12 +2141,10 @@ Table&nbsp;10.3: Method of profile exposure
 </section>
 <section id="sec-pr-doa" class="level3" data-number="10.2.8">
 <h3 data-number="10.2.8" class="anchored" data-anchor-id="sec-pr-doa"><span class="header-section-number">10.2.8</span> Depth of observation</h3>
-<p>Record the maximum depth of observation from the soil surface in whole centimetres (e.g.&nbsp;‘<span class="ceg">100&nbsp;cm</span>’). This does not necessarily need to be recorded in the field as it can be determined from the lower depth of the last horizon in the profile description.</p>
-<p>A full profile description ideally extends to bedrock, but this may not always be accessible with the equipment and time available. More commonly, reaching the C horizon (<a href="in_01_horizon_names.html#sec-hzn-convp" class="quarto-xref"><span>Section 20.1.1</span></a>) is the deepest practically achievable goal. The minimum depth of observation for most applications in New Zealand, where possible, is 100&nbsp;cm. Classification systems like the NZSC and LUC rely on ruling out certain soil features within that depth range, as well as positively identifying others.</p>
-<p>See <a href="ap_01_equipment.html#sec-digging" class="quarto-xref"><span>Section A.1</span></a> for information on appropriate excavation equipment.</p>
-</section>
-<section id="sec-pr-rsa" class="level3" data-number="10.2.9">
-<h3 data-number="10.2.9" class="anchored" data-anchor-id="sec-pr-rsa"><span class="header-section-number">10.2.9</span> Stopping early</h3>
+<p>Record the maximum depth of observation from the soil surface in whole centimetres. This depth does not necessarily need to be recorded in the field as it can be determined from the lower depth of the last horizon in the profile description.</p>
+<p>A full profile description ideally extends to bedrock or underlying geological material, but such materials may not always be accessible with the equipment and time available. More commonly, reaching the C horizon (<a href="in_01_horizon_names.html#sec-hzn-convp" class="quarto-xref"><span>Section 20.1.1</span></a>) is the deepest practically achievable goal. The minimum depth of observation for most applications in New Zealand, where possible, is 100&nbsp;cm. Classification systems like the <em>New Zealand Soil Classification</em> <span class="citation" data-cites="hewitt2025">(<a href="references.html#ref-hewitt2025" role="doc-biblioref">Hewitt and MWLR Pedology Staff, 2025</a>)</span> and LUC <span class="citation" data-cites="lynn2009">(<a href="references.html#ref-lynn2009" role="doc-biblioref">Lynn et al. 2009</a>)</span> rely on ruling out certain soil features within that depth range, as well as positively identifying others.</p>
+<section id="sec-pr-rsa" class="level4" data-number="10.2.8.1">
+<h4 data-number="10.2.8.1" class="anchored" data-anchor-id="sec-pr-rsa"><span class="header-section-number">10.2.8.1</span> Stopping early</h4>
 <p>When the target depth cannot be achieved, note the reason for stopping early using the codes in <a href="#tbl-ss-stoppage" class="quarto-xref">Table&nbsp;<span>10.4</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-ss-stoppage" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
@@ -2138,23 +2154,23 @@ Table&nbsp;10.4: Stoppage reason
 </figcaption>
 <div aria-describedby="tbl-ss-stoppage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="gzjhhhfare" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gzjhhhfare table {
+<div id="sepkyituyn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sepkyituyn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gzjhhhfare thead, #gzjhhhfare tbody, #gzjhhhfare tfoot, #gzjhhhfare tr, #gzjhhhfare td, #gzjhhhfare th {
+#sepkyituyn thead, #sepkyituyn tbody, #sepkyituyn tfoot, #sepkyituyn tr, #sepkyituyn td, #sepkyituyn th {
   border-style: none;
 }
 
-#gzjhhhfare p {
+#sepkyituyn p {
   margin: 0;
   padding: 0;
 }
 
-#gzjhhhfare .gt_table {
+#sepkyituyn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2180,12 +2196,12 @@ Table&nbsp;10.4: Stoppage reason
   border-left-color: #D3D3D3;
 }
 
-#gzjhhhfare .gt_caption {
+#sepkyituyn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gzjhhhfare .gt_title {
+#sepkyituyn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2197,7 +2213,7 @@ Table&nbsp;10.4: Stoppage reason
   border-bottom-width: 0;
 }
 
-#gzjhhhfare .gt_subtitle {
+#sepkyituyn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2209,7 +2225,7 @@ Table&nbsp;10.4: Stoppage reason
   border-top-width: 0;
 }
 
-#gzjhhhfare .gt_heading {
+#sepkyituyn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2221,13 +2237,13 @@ Table&nbsp;10.4: Stoppage reason
   border-right-color: #D3D3D3;
 }
 
-#gzjhhhfare .gt_bottom_border {
+#sepkyituyn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gzjhhhfare .gt_col_headings {
+#sepkyituyn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2242,7 +2258,7 @@ Table&nbsp;10.4: Stoppage reason
   border-right-color: #D3D3D3;
 }
 
-#gzjhhhfare .gt_col_heading {
+#sepkyituyn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2262,7 +2278,7 @@ Table&nbsp;10.4: Stoppage reason
   overflow-x: hidden;
 }
 
-#gzjhhhfare .gt_column_spanner_outer {
+#sepkyituyn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2274,15 +2290,15 @@ Table&nbsp;10.4: Stoppage reason
   padding-right: 4px;
 }
 
-#gzjhhhfare .gt_column_spanner_outer:first-child {
+#sepkyituyn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gzjhhhfare .gt_column_spanner_outer:last-child {
+#sepkyituyn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gzjhhhfare .gt_column_spanner {
+#sepkyituyn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2294,11 +2310,11 @@ Table&nbsp;10.4: Stoppage reason
   width: 100%;
 }
 
-#gzjhhhfare .gt_spanner_row {
+#sepkyituyn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gzjhhhfare .gt_group_heading {
+#sepkyituyn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2324,7 +2340,7 @@ Table&nbsp;10.4: Stoppage reason
   text-align: left;
 }
 
-#gzjhhhfare .gt_empty_group_heading {
+#sepkyituyn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2339,15 +2355,15 @@ Table&nbsp;10.4: Stoppage reason
   vertical-align: middle;
 }
 
-#gzjhhhfare .gt_from_md > :first-child {
+#sepkyituyn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gzjhhhfare .gt_from_md > :last-child {
+#sepkyituyn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gzjhhhfare .gt_row {
+#sepkyituyn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2366,7 +2382,7 @@ Table&nbsp;10.4: Stoppage reason
   overflow-x: hidden;
 }
 
-#gzjhhhfare .gt_stub {
+#sepkyituyn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2379,7 +2395,7 @@ Table&nbsp;10.4: Stoppage reason
   padding-right: 5px;
 }
 
-#gzjhhhfare .gt_stub_row_group {
+#sepkyituyn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2393,15 +2409,15 @@ Table&nbsp;10.4: Stoppage reason
   vertical-align: top;
 }
 
-#gzjhhhfare .gt_row_group_first td {
+#sepkyituyn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gzjhhhfare .gt_row_group_first th {
+#sepkyituyn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gzjhhhfare .gt_summary_row {
+#sepkyituyn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2411,16 +2427,16 @@ Table&nbsp;10.4: Stoppage reason
   padding-right: 5px;
 }
 
-#gzjhhhfare .gt_first_summary_row {
+#sepkyituyn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gzjhhhfare .gt_first_summary_row.thick {
+#sepkyituyn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gzjhhhfare .gt_last_summary_row {
+#sepkyituyn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2430,7 +2446,7 @@ Table&nbsp;10.4: Stoppage reason
   border-bottom-color: #D3D3D3;
 }
 
-#gzjhhhfare .gt_grand_summary_row {
+#sepkyituyn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2440,7 +2456,7 @@ Table&nbsp;10.4: Stoppage reason
   padding-right: 5px;
 }
 
-#gzjhhhfare .gt_first_grand_summary_row {
+#sepkyituyn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2450,7 +2466,7 @@ Table&nbsp;10.4: Stoppage reason
   border-top-color: #D3D3D3;
 }
 
-#gzjhhhfare .gt_last_grand_summary_row_top {
+#sepkyituyn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2460,11 +2476,11 @@ Table&nbsp;10.4: Stoppage reason
   border-bottom-color: #D3D3D3;
 }
 
-#gzjhhhfare .gt_striped {
+#sepkyituyn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gzjhhhfare .gt_table_body {
+#sepkyituyn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2473,7 +2489,7 @@ Table&nbsp;10.4: Stoppage reason
   border-bottom-color: #D3D3D3;
 }
 
-#gzjhhhfare .gt_footnotes {
+#sepkyituyn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2487,7 +2503,7 @@ Table&nbsp;10.4: Stoppage reason
   border-right-color: #D3D3D3;
 }
 
-#gzjhhhfare .gt_footnote {
+#sepkyituyn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2496,7 +2512,7 @@ Table&nbsp;10.4: Stoppage reason
   padding-right: 5px;
 }
 
-#gzjhhhfare .gt_sourcenotes {
+#sepkyituyn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2510,7 +2526,7 @@ Table&nbsp;10.4: Stoppage reason
   border-right-color: #D3D3D3;
 }
 
-#gzjhhhfare .gt_sourcenote {
+#sepkyituyn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2518,72 +2534,72 @@ Table&nbsp;10.4: Stoppage reason
   padding-right: 5px;
 }
 
-#gzjhhhfare .gt_left {
+#sepkyituyn .gt_left {
   text-align: left;
 }
 
-#gzjhhhfare .gt_center {
+#sepkyituyn .gt_center {
   text-align: center;
 }
 
-#gzjhhhfare .gt_right {
+#sepkyituyn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gzjhhhfare .gt_font_normal {
+#sepkyituyn .gt_font_normal {
   font-weight: normal;
 }
 
-#gzjhhhfare .gt_font_bold {
+#sepkyituyn .gt_font_bold {
   font-weight: bold;
 }
 
-#gzjhhhfare .gt_font_italic {
+#sepkyituyn .gt_font_italic {
   font-style: italic;
 }
 
-#gzjhhhfare .gt_super {
+#sepkyituyn .gt_super {
   font-size: 65%;
 }
 
-#gzjhhhfare .gt_footnote_marks {
+#sepkyituyn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gzjhhhfare .gt_asterisk {
+#sepkyituyn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gzjhhhfare .gt_indent_1 {
+#sepkyituyn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gzjhhhfare .gt_indent_2 {
+#sepkyituyn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gzjhhhfare .gt_indent_3 {
+#sepkyituyn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gzjhhhfare .gt_indent_4 {
+#sepkyituyn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gzjhhhfare .gt_indent_5 {
+#sepkyituyn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gzjhhhfare .katex-display {
+#sepkyituyn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gzjhhhfare div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#sepkyituyn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2641,1057 +2657,30 @@ Table&nbsp;10.4: Stoppage reason
 </figure>
 </div>
 </div>
-</section>
-</section>
-<section id="sec-pr-dist" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="sec-pr-dist"><span class="header-section-number">10.3</span> Recent site disturbance</h2>
-<p>Site disturbances have the potential to influence the soil as well as its cover. Noting these events can provide context for the parameters recorded, and some are especially useful when interpreting laboratory results.</p>
-<p>Only record recent events directly affecting the site. ‘Recent’ is a relatively flexible concept which highlights the reasons some parameters observed might be locally unusual. Some of these events recur regularly (e.g.&nbsp;tillage) so only need to be noted if very recent (e.g.&nbsp;previous week).</p>
-<p>If the time since the event is known with low certainty, record the general timescale involved using <a href="#tbl-ss-eventt" class="quarto-xref">Table&nbsp;<span>10.6</span></a>. If the time since the event is known with high certainty, record days since the event (e.g.&nbsp;<span class="ceg">FL 10</span> for a well-documented recent flood).</p>
-<div class="cell" data-layout-align="center">
-<div id="tbl-ss-eventp" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ss-eventp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;10.5: Recent site-affecting events
-</figcaption>
-<div aria-describedby="tbl-ss-eventp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div id="iiiptuomqo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#iiiptuomqo table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#iiiptuomqo thead, #iiiptuomqo tbody, #iiiptuomqo tfoot, #iiiptuomqo tr, #iiiptuomqo td, #iiiptuomqo th {
-  border-style: none;
-}
-
-#iiiptuomqo p {
-  margin: 0;
-  padding: 0;
-}
-
-#iiiptuomqo .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: 85%;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#iiiptuomqo .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#iiiptuomqo .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: bold;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#iiiptuomqo .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#iiiptuomqo .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#iiiptuomqo .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#iiiptuomqo .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#iiiptuomqo .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#iiiptuomqo .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#iiiptuomqo .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#iiiptuomqo .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#iiiptuomqo .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#iiiptuomqo .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#iiiptuomqo .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#iiiptuomqo .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#iiiptuomqo .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#iiiptuomqo .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#iiiptuomqo .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#iiiptuomqo .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#iiiptuomqo .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#iiiptuomqo .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#iiiptuomqo .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#iiiptuomqo .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#iiiptuomqo .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#iiiptuomqo .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#iiiptuomqo .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#iiiptuomqo .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#iiiptuomqo .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#iiiptuomqo .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#iiiptuomqo .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#iiiptuomqo .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#iiiptuomqo .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#iiiptuomqo .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#iiiptuomqo .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#iiiptuomqo .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#iiiptuomqo .gt_left {
-  text-align: left;
-}
-
-#iiiptuomqo .gt_center {
-  text-align: center;
-}
-
-#iiiptuomqo .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#iiiptuomqo .gt_font_normal {
-  font-weight: normal;
-}
-
-#iiiptuomqo .gt_font_bold {
-  font-weight: bold;
-}
-
-#iiiptuomqo .gt_font_italic {
-  font-style: italic;
-}
-
-#iiiptuomqo .gt_super {
-  font-size: 65%;
-}
-
-#iiiptuomqo .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#iiiptuomqo .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#iiiptuomqo .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#iiiptuomqo .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#iiiptuomqo .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#iiiptuomqo .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#iiiptuomqo .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#iiiptuomqo .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#iiiptuomqo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 10%">
-<col>
-</colgroup>
-<thead>
-<tr class="gt_col_headings header">
-<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
-<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">MC</td>
-<td class="gt_row gt_left" headers="Name">Mechanical disturbance (e.g. tillage, deep ripping, subsoiling, recontouring)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">AN</td>
-<td class="gt_row gt_left" headers="Name">Animal disturbance (e.g. pugging, rooting, tunnelling, excretion)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">CL</td>
-<td class="gt_row gt_left" headers="Name">Complete vegetation clearance (e.g. clearfelling)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">CO</td>
-<td class="gt_row gt_left" headers="Name">Selective vegetation clearance (e.g. tree removal or weed clearance)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">WI</td>
-<td class="gt_row gt_left" headers="Name">Wind-induced treefall</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">SL</td>
-<td class="gt_row gt_left" headers="Name">Erosion event - material lost from site</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">SD</td>
-<td class="gt_row gt_left" headers="Name">Deposition event - material added to site</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">FC</td>
-<td class="gt_row gt_left" headers="Name">Fire - controlled burn</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">FW</td>
-<td class="gt_row gt_left" headers="Name">Fire - uncontrolled burn</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">FL</td>
-<td class="gt_row gt_left" headers="Name">Flooding - freshwater</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">FS</td>
-<td class="gt_row gt_left" headers="Name">Flooding - saline water (e.g. storm surge event)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">PO</td>
-<td class="gt_row gt_left" headers="Name">Pollution event (e.g. petrol spill)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">NO</td>
-<td class="gt_row gt_left" headers="Name">No recent events</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">UK</td>
-<td class="gt_row gt_left" headers="Name">Unknown</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div id="tbl-ss-eventt" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ss-eventt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;10.6: Generalised time since recent site-affecting events
-</figcaption>
-<div aria-describedby="tbl-ss-eventt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div id="tixahzywoi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tixahzywoi table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#tixahzywoi thead, #tixahzywoi tbody, #tixahzywoi tfoot, #tixahzywoi tr, #tixahzywoi td, #tixahzywoi th {
-  border-style: none;
-}
-
-#tixahzywoi p {
-  margin: 0;
-  padding: 0;
-}
-
-#tixahzywoi .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: 85%;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#tixahzywoi .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#tixahzywoi .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: bold;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#tixahzywoi .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#tixahzywoi .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#tixahzywoi .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#tixahzywoi .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#tixahzywoi .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#tixahzywoi .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#tixahzywoi .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#tixahzywoi .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#tixahzywoi .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#tixahzywoi .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#tixahzywoi .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#tixahzywoi .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#tixahzywoi .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#tixahzywoi .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#tixahzywoi .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#tixahzywoi .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#tixahzywoi .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#tixahzywoi .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#tixahzywoi .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#tixahzywoi .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#tixahzywoi .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#tixahzywoi .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#tixahzywoi .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#tixahzywoi .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#tixahzywoi .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#tixahzywoi .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#tixahzywoi .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#tixahzywoi .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#tixahzywoi .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#tixahzywoi .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#tixahzywoi .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#tixahzywoi .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#tixahzywoi .gt_left {
-  text-align: left;
-}
-
-#tixahzywoi .gt_center {
-  text-align: center;
-}
-
-#tixahzywoi .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#tixahzywoi .gt_font_normal {
-  font-weight: normal;
-}
-
-#tixahzywoi .gt_font_bold {
-  font-weight: bold;
-}
-
-#tixahzywoi .gt_font_italic {
-  font-style: italic;
-}
-
-#tixahzywoi .gt_super {
-  font-size: 65%;
-}
-
-#tixahzywoi .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#tixahzywoi .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#tixahzywoi .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#tixahzywoi .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#tixahzywoi .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#tixahzywoi .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#tixahzywoi .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#tixahzywoi .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#tixahzywoi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 10%">
-<col>
-</colgroup>
-<thead>
-<tr class="gt_col_headings header">
-<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
-<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">D</td>
-<td class="gt_row gt_left" headers="Name">Within the past day</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">W</td>
-<td class="gt_row gt_left" headers="Name">Within the past week</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">M</td>
-<td class="gt_row gt_left" headers="Name">Within the past month</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">S</td>
-<td class="gt_row gt_left" headers="Name">Within the past 6 months</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">Y</td>
-<td class="gt_row gt_left" headers="Name">Within the past year</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-davis2024" class="csl-entry" role="listitem">
 Davis K, Peabody B, Leach P 2024. Universally unique IDentifiers (UUIDs). [Internet]. <a href="https://www.rfc-editor.org/rfc/rfc9562.html">https://www.rfc-editor.org/rfc/rfc9562.html</a>
 </div>
+<div id="ref-grealish2017" class="csl-entry" role="listitem">
+Grealish G 2017. New zealand soil mapping protocols and guidelines. Palmerston North, New Zealand.
+</div>
+<div id="ref-hewitt2025" class="csl-entry" role="listitem">
+Hewitt AE, MWLR Pedology Staff, 2025. New zealand soil classification. 4th ed. Wellington, New Zealand: Manaaki Whenua Landcare Research. <a href="https://doi.org/10.7931/DL1-LRSS-1-2010">https://doi.org/10.7931/DL1-LRSS-1-2010</a>
+</div>
 <div id="ref-internationalorganizationforstandardization" class="csl-entry" role="listitem">
 International Organization for Standardization 2019. Date and time - representations for information interchange - part 1: Basic rules. [Internet]. <a href="https://www.iso.org/standard/70907.html">https://www.iso.org/standard/70907.html</a>
 </div>
+<div id="ref-lynn2009" class="csl-entry" role="listitem">
+Lynn IH, Manderson AK, Page MJ, Harmsworth GR, Eyles GO, Douglas GB, Mackay AD, Newsome PJF 2009. Land use capability survey handbook - a new zealand handbook for the classification of land. [Internet]. 3rd ed. Hamilton [N.Z.] Lincoln [N.Z.] Lower Hutt [N.Z.]: AgResearch Ltd, Hamilton; Landcare Research New Zealand Ltd, Lincoln; Institute of Geological; Nuclear Sciences Ltd, Lower Hutt. <a href="https://doi.org/10.7931/DL1MG6">https://doi.org/10.7931/DL1MG6</a>
 </div>
+<div id="ref-mckenzie2008" class="csl-entry" role="listitem">
+McKenzie NJ, Grundy MJ, Webster R, Ringrose-Voase AJ 2008. Guidelines for surveying soil and land resources. [Internet]. 2nd ed. Collingwood, Victoria: CSIRO Publishing. <a href="http://www.publish.csiro.au/book/5650/">http://www.publish.csiro.au/book/5650/</a>
+</div>
+</div>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
