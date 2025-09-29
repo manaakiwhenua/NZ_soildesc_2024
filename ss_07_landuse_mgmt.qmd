@@ -8,13 +8,11 @@ library(gt)
 
 Land cover is the physical cover over the soil, both natural and human made. Land use is the purpose(s) for which the land is used and provides context for why a particular land cover is present. Land management describes specific activities affecting land cover, driven by land use.
 
-Land cover, use and management information may be captured as part of soil survey when it is relevant to interpreting the landscape, landform, and soil profile description, and especially where it is likely to have affected the soil classification. Land use data is particularly important for long-term monitoring sites, where uses may change significantly between sampling events.
+Land cover, use and management information may be captured as part of soil survey when it is relevant to interpreting the landscape, landform, site, and soil profile description, and especially where it is likely to have affected the soil classification. Land use data is particularly important for long-term monitoring sites, where uses may change significantly between sampling events.
 
 ## Land cover {#sec-lcov}
 
-Land cover in New Zealand is monitored using the Land Cover Database (LCDB, @landcareresearchnewzealandltd2020). The database is used to publish a semi-automated map of land cover, derived from satellite imagery, with a minimum unit size of 1 hectare. The LCDB categories can also be applied on-ground. The categories are listed below, excluding some where it would be physically impossible to observe the soil. The first six are currently mapped to over 80% of New Zealand's land area and so are the most likely to encounter. The full set of category definitions are available in @manaakiwhenualandcareresearch2018.  
-
-Record the dominant land cover of the landform (@sec-gmph-lfm).
+Land cover in New Zealand is monitored using the Land Cover Database (LCDB, @landcareresearchnewzealandltd2020). The database is used to publish a semi-automated map of land cover, derived from satellite imagery, with a minimum unit size of 1 hectare. The LCDB categories can also be applied on-ground. The categories are listed below, excluding some where it would be physically impossible to observe the soil. The first six are currently mapped to over 80% of New Zealand's land area and so are the most likely to encounter. The full set of category definitions are available in @manaakiwhenualandcareresearch2018.
 
 ```{r}
 #| label: tbl-ss-lcdb
@@ -121,11 +119,6 @@ tbl_ss_luimp <- gt(dat_ss_luimp) |>
 tbl_ss_luimp
 
 ```
-
-Example for a site on a mixed sheep and beef farm in hill country: 
-
-- Landscape: Series of steep valleys with some forestry blocks and new waterway exclusion fencing - [2.2]{.ceg} ([2.1]{.ceg}, [1.4]{.ceg})
-- Landform: Moderate slope with pasture cover - [2.2.3 M]{.ceg} 
 
 ## Land Management {#sec-lman}
 

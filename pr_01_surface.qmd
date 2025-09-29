@@ -6,19 +6,19 @@ library(tibble)
 library(gt)
 ```
 
-The surface at a site is described primarily in terms of its slope, aspect, and surface cover. If present, surface water and microtopography should also be recorded. Ongoing or recent erosion and deposition events may be briefly noted or described in more detail.
-
-## Geomorphometry
+A site is placed in its landform and landscape context using the sustem described in @sec-ss-set. The local surface at a site is then described primarily in terms of its slope, aspect, and surface cover. If present, surface water and microtopography should also be recorded. Ongoing or recent erosion and deposition events may be briefly noted or described in more detail.
 
 ### Slope {#sec-pr-slope}
 
 Slope is the inclination of the land surface relative to the horizontal plane. Slope steepness affects many soil processes, notably erosion, water run-off and infiltration behaviour.
 
-Direct measurements of slope should be taken over a minimum distance of 20 meters. Stand 10 m upslope from the point of observation and measure downhill. Record in units of degrees, with a maximum precision of 0.1 (e.g. [6.3°]{.ceg}). Record [ND]{.ceg} if slope cannot be reliably determined. Record [NR]{.ceg} if no measurement was taken.
+Direct measurements of slope should be taken over a minimum distance of 20 meters. Stand 10 m upslope from the point of observation and measure downhill. Record in units of degrees, with a maximum precision of 0.1. Record [ND]{.ceg} if slope cannot be reliably determined. Record [NR]{.ceg} if no measurement was taken.
 
 Precision needs will vary with slope and survey purpose; whole number degrees are sufficient on any slope over about 5 degrees, but finer gradations can be useful for flatter locations. Slope classes may be applied to the recorded data; some options are presented in @sec-slopeclass.
 
 Record the equipment used to measure slope using @tbl-pr-slpmth.
+
+E.g, [5° E]{.ceg} for an estimated 5-degree slope.
 
 ```{r}
 #| label: tbl-pr-slpmth
@@ -55,7 +55,7 @@ delete me
 Slope data for a site can be extracted from a DEM, provided some conditions are met:
 
 -   Cell size should be less than 10 m; larger cells systematically underestimate local slope
--   DEM source should ideally be of type [D]{.ceg} for acceptable accuracy (see @sec-loc-abs-elev)
+-   DEM source should ideally be of type [D]{.ceg} for acceptable accuracy (see @tbl-ss-elevsrc)
 -   Extract the median slope within a 10 m radius, not the single value directly under the recorded point
 -   Review and, if necessary, adjust slopes extracted from sites described on exposures. These may be overestimates (e.g. where a track cuts into a slope, the values upslope behind the site would better represent the soil-forming environment). Sites located close to landform or landscape boundaries may also need review.
 :::
