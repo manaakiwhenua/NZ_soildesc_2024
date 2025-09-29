@@ -14,9 +14,15 @@ A soil description is essentially useless without a confident location. Confiden
 
 ### Recording location {#sec-loc-rec}
 
-Record X and Y location coordinates as eastings and northings using New Zealand Transverse Mercator (EPSG:2193). For Z coordinates (elevation), use the New Zealand Vertical Datum 2016 (EPSG:1169).
+Locations are recorded using a coordinate reference system (CRS), which defines a grid over the land surface. Geographic coordinate systems use angular coordinates (degrees latitude and longitude) and model the earth as a sphere or ellipsoid. Projected coordinate systems, per the name, project all or part of the earth's surface onto a flat plane by various methods, allowing use of linear coordinates (e.g. meters). Different types of projection have different strengths and weaknesses around preservation of distance and direction accuracy. Elevation can also be determined from a global model, or a locally calibrated one.
 
-Location accuracy is largely a function of the equipment available and the quality of data recording (see sec-loc-eq). Location precision must be recorded to a minimum of 5 m but does not need to exceed 1 m for pits, or 0.1 m for cores and auger holes. Z precision will rarely need to exceed 0.1 m.
+In New Zealand, the official projected coordinate reference system is New Zealand Transverse Mercator (EPSG:2193). Elevation is defined with reference to the New Zealand Vertical Datum 2016 (EPSG:1169). For more information on these systems, see @linz2025a.
+
+::: {#nte-proj .callout-note collapse="true" appearance="minimal" title="EPSG codes"}
+The full definition of a coordinate reference system comprises a long, structured list of parameters. To make it easier to refer to a specific set of these parameters, the EPSG database was established in the 1980s, giving commonly used parameter sets a short identifier. The database is maintained by the Geodesy Subcommittee of the IOGP Geomatics Committee and can be most easily accessed at [epsg.io](https://epsg.io).
+:::
+
+Location accuracy is largely a function of the equipment available and the quality of data recording (see @sec-loc-eq). For soil survey work, location precision must be recorded to a minimum of 3 m but does not need to exceed 1 m for pits, or 0.1 m for cores and auger holes. Elevation precision will rarely need to exceed 0.1 m.
 
 ```{r}
 #| label: fig-loc
@@ -49,77 +55,32 @@ delete me
 :::
 
 ::: {#wrn-wgs84 .callout-warning collapse="true" appearance="minimal" title="Use of WGS84"}
-Location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around ± 3 m, and coordinate accuracy also degrades over time due to continental drift. This is compensated for using a date-based 'epoch' adjustment. Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.
+Location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around ± 3 m, and its accuracy decreases over time due to continental drift and other tectonic events. This is compensated for using a periodic 'epoch' adjustment. Additionally, elevation data will not be accurate until it is converted into a local elevation datum.
+
+Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.
 :::
 
 ::: {#wrn-altgeo .callout-warning collapse="true" appearance="minimal" title="Alternate geocoding systems"}
 Alternate geocoding systems involving e.g. text-based encoding or nested hashes should not be used during fieldwork. These systems are often proprietary, sometimes prone to ambiguity or edge-case errors, and at their core often wrap around WGS84 anyway. They may still be useful during data analysis.
 :::
 
-### Recording elevation {#sec-loc-abs-elev}
+### Expected error {#sec-loc-err}
 
-Parts of New Zealand still lack highly accurate elevation data. Record the elevation measurement method using the codes in @tbl-ss-elevsrc below.
-
-```{r}
-#| label: tbl-ss-elevsrc
-#| tbl-cap: "Elevation data sources"
-
-dat_ss_elevsrc <-
-  tribble(~Code, ~Name,
-          'D', 'Extracted from high-accuracy Digital Terrain Model (DTM) e.g. Lidar-based',
-          'G', 'Measured using a GNSS system with an adequate 3D fix',
-          'M', 'Extracted from a  DTM',
-          'A', 'Measured by a calibrated altimeter',
-          'E', 'Estimated'
-          )
-
-
-tbl_ss_elevsrc <- gt(dat_ss_elevsrc) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
-                                   weight = 'bold', 
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10))
-
-tbl_ss_elevsrc
-
-```
-
-[D]{.ceg} type elevation measurements, for example data extracted from high resolution public datasets like @linz2025, offer the best accuracy currently available in New Zealand usually around ± 0.2 m. Global satellite-derived datasets like those available on Open Topography ([https://opentopography.org](https://opentopography.org/ "https://opentopography.org")) may offer comparable accuracy at a larger cell size and extend across some areas where lidar data is not yet available.
-
-[G]{.ceg} type elevation measurements are unlikely to be accurate if not using a [GR]{.ceg}-type sensor (see @sec-loc-eq), and may require additional conversion to the NZ Vertical Datum. However, some specialist GNSS systems can achieve elevation accuracies exceeding ± 0.01 m.
-
-The [M]{.ceg} code should be used for most non-Lidar DEMs, as those available for public use were constructed from interpolated contour data or other methods with comparable vertical accuracy [see @barringer2002; @uuemaa2020]. [M]{.ceg} DEMs can be off by over 10 m in some areas, e.g valley floors where small landscape features are not captured [@barringer2002].
-
-Where the [A]{.ceg} code is used, the time and location of the most recent altimeter calibration should be noted. Handheld altimeters can be expected to be accurate to within ± 3 m.
-
-[E]{.ceg} estimated elevations might include interpolation from a contour map with interval of \> 20 m, or a 'best guess'.
-
-::: {#nte-dems .callout-note collapse="true" appearance="minimal" title="DEMs and location"}
-Where DEMs (Digital Elevation Models) are used, they should be as contemporary as possible; New Zealand’s rate of landscape evolution is relatively high and these data sources will become less reliable with age. DEMs more than 20 years old should be accompanied by a vertical error estimate adjusted upwards for age.
-:::
-
-### Expected Error {#sec-loc-err}
-
-Expected error can be automatically reported by equipment, or estimated. When estimating horizontal error, record in meters with a maximum precision of 0.01 (1 cm) e.g. [± 5.12 m]{.ceg}. Record estimated vertical elevation error separately in the same units, as it will differ.
+Expected error can be automatically reported by equipment, or estimated. When estimating horizontal error, record in metres with a maximum precision of 0.01 (1 cm) e.g. [± 5.12 m]{.ceg}. Record estimated vertical elevation error separately in the same units, as it will differ.
 
 ::: {#nte-locrev .callout-note collapse="true" appearance="minimal" title="Revising locations"}
-Location data quality can sometimes be improved by revising the location data in GIS after fieldwork, with reference to e.g. satellite imagery. Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error. Document how and why the revision decision was made.
+Both on-ground photographs and high-resolution satellite imagery can sometimes help improve site location accuracy by showing the location of the site relative to nearby features. Satellite imagery must be precisely geolocated to be effective at this task, or the site will only be correct in relation to the image used and not to the true location. Photographs also need to be taken in a particular way to be useful for this task (see @sec-ap-fieldrec-pics).
+
+Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error. Document how and why the revision decision was made.
 :::
 
-### Equipment {#sec-loc-eq}
+### Equipment and data sources {#sec-loc-eq}
 
-Use a GNSS (Global Navigation Satellite System) with an expected horizontal accuracy of ± 3 m or better. Some applications may require centimetre accuracy. Record sensor type against the schema in @tbl-ss-locsrc.
+Use a GNSS (Global Navigation Satellite System) with an expected horizontal accuracy of ± 3 m or better. Some applications may require centimetre accuracy. Sensor type can be recorded using one of the codes in @tbl-ss-locsrc.
 
 ```{r}
 #| label: tbl-ss-locsrc
-#| tbl-cap: "Location data source"
+#| tbl-cap: "Location data sources"
 
 dat_ss_elevsrc <-
   tribble(~Code, ~Name, ~Description,
@@ -151,17 +112,64 @@ delete me
 :::
 
 ::: {#tip-gnss .callout-tip collapse="true" appearance="minimal" title="GNSS types"}
-Multi-constellation GNSS is not the same as multi-band GNSS. The former signifies access to multiple location satellite networks operated by various parties, e.g. GPS (USA), Galileo (EU), BeiDou (China). This can improve signal *consistency* due to having access to more total satellites, but not necessarily overall accuracy.
+Multi-constellation GNSS is not the same as multi-band GNSS. The former signifies access to multiple location satellite networks operated by various parties, e.g. GPS (USA), Galileo (EU), BeiDou (China). Multi-constellation GNSS can improve signal *consistency* due to having access to more total satellites, but not necessarily overall accuracy.
 
 Multi-band GNSS involves receiving signals from location satellites on multiple frequency bands. The extra data from each satellite can significantly improve connection reliability and accuracy, particularly when open sky is restricted by rough terrain, dense vegetation or poor weather.
 
-Multi-sensor GNSS involves receiving signals not just from location satellites, but from other on-ground equipment, like mobile phone towers, Wi-Fi routers and nearby personal electronic devices. These sensors can be extremely accurate in urban areas, but much less so elsewhere.
+Multi-sensor GNSS involves receiving signals not just from location satellites, but also from other on-ground equipment, such as mobile phone towers, Wi-Fi routers and nearby personal electronic devices. These sensors can be extremely accurate in urban areas, but much less so elsewhere.
 
 Most consumer electronic devices capable of reporting location, such as mobile phones, will be of [LM]{.ceg} type by default, unless using an app that actively forces a GNSS-only connection. At the time of writing, most of these apps can still only return [GS]{.ceg}-quality data due to hardware limitations.
 :::
 
 ::: {#nte-locman .callout-note collapse="true" appearance="minimal" title="Manual locations"}
-Estimating location manually using e.g. topographic maps and orienteering methods remains an option, but should usually be considered a last resort.
+Estimating location manually using topographic maps and orienteering methods remains an option, but should usually be considered a last resort.
+:::
+
+Parts of New Zealand still lack highly accurate elevation data. Recording the elevation measurement method using one of the codes in @tbl-ss-elevsrc below helps provide an estimate of confidence in the elevation data.
+
+```{r}
+#| label: tbl-ss-elevsrc
+#| tbl-cap: "Elevation data sources"
+
+dat_ss_elevsrc <-
+  tribble(~Code, ~Name,
+          'D', 'Extracted from high-accuracy Digital Terrain Model (DTM) e.g. Lidar-based',
+          'G', 'Measured using a GNSS system with an adequate 3D fix',
+          'M', 'Extracted from a low-accuracy DTM',
+          'A', 'Measured by a calibrated altimeter',
+          'E', 'Estimated'
+          )
+
+
+tbl_ss_elevsrc <- gt(dat_ss_elevsrc) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold', 
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10))
+
+tbl_ss_elevsrc
+
+```
+
+[D]{.ceg} type elevation measurements, for example data extracted from high resolution public datasets like @linz2025, offer the best accuracy currently available in New Zealand usually around ± 0.2 m. Global satellite-derived datasets like those available on Open Topography ([https://opentopography.org](https://opentopography.org/ "https://opentopography.org")) may offer comparable accuracy at a larger cell size and extend across some areas where lidar data is not yet available.
+
+[G]{.ceg} type elevation measurements are unlikely to be accurate if not using a [GR]{.ceg}-type sensor (see @sec-loc-eq), and may require additional conversion to the New Zealand Vertical Datum. However, some specialist GNSS systems can achieve elevation accuracies exceeding ± 0.01 m.
+
+The [M]{.ceg} code should be used for most non-Lidar DEMs, as those available for public use were constructed from interpolated contour data or other methods with comparable vertical accuracy [see @barringer2002; @uuemaa2020]. [M]{.ceg} DEMs can be off by over 10 m in some areas, e.g valley floors where small landscape features are not captured [@barringer2002].
+
+Where the [A]{.ceg} code is used, the time and location of the most recent altimeter calibration should be noted. Handheld altimeters can be expected to be accurate to within ± 3 m.
+
+[E]{.ceg} estimated elevations might include interpolation from a contour map with interval of \> 20 m, or a 'best guess'.
+
+::: {#nte-dems .callout-note collapse="true" appearance="minimal" title="DEMs and location"}
+Where DEMs are used, they should be as contemporary as possible; New Zealand’s rate of landscape evolution is relatively fast and these data sources will become less reliable with age. DEMs more than 20 years old should be accompanied by a vertical error estimate adjusted upwards for age.
 :::
 
 ## Relative location {#sec-loc-rel}
@@ -170,7 +178,7 @@ Absolute locations are enhanced by information about what is nearby. This contex
 
 ### Triangulating off local features {#sec-loc-reltri}
 
-Absolute location data can be backed up by measuring to nearby permanent or long-term features. This is particularly useful for relocating long-term monitoring plots. For this to work well, features should be within \~50 m of the target location and sufficiently sturdy to last until at least the next expected visit. Examples include fencelines, buildings, roads, and rock outcrops.
+Absolute location data can be backed up by measuring to nearby permanent or long-term features. This practice is particularly useful for relocating long-term monitoring plots. For this to work well, features should be within \~50 m of the target location and sufficiently sturdy to last until at least the next expected visit. Examples include fencelines, buildings, roads, and rock outcrops.
 
 For single-point sites, measure distance and direction using a tape and compass. Accuracy is improved by measuring to two or more features. For plot-based sites, one can measure from at least two corners to the target feature. Photographing the point/plot and reference points together is also useful (see @sec-ap-fieldrec-pics for guidance on field photography).
 
@@ -180,18 +188,18 @@ For single-point sites, measure distance and direction using a tape and compass.
 
 Elevation above the nearest down-slope drainage (open/flowing water, swampy ground, or a closed depression) is useful for landscape interpretations. The data can also be used to group profile descriptions, for instance when identifying sets of related terraces along river systems. The drainage feature to record against must be identified by tracing a path down-slope from the observation point, and may be far from the point of observation. As such, it will normally be more efficient to estimate this parameter after fieldwork using elevation and imagery data.
 
-Record relative elevation in meters, with a precision of no more than 0.01 (1 cm), e.g. [25.53 m]{.ceg}.
+Record relative elevation in metres, with a precision of no more than 0.01 (1 cm), e.g. [25.53 m]{.ceg}.
 
 ::: {#nte-rem .callout-note collapse="true" appearance="minimal" title="Relative elevation models"}
-With a sufficiently detailed DEM and stream network data, a Relative Elevation Model (REM) can be constructed to estimate this parameter. The result will need to be ground-truthed.
+With a sufficiently detailed DEM and stream network data, a Relative Elevation Model (REM) can be constructed to estimate this parameter. The result will need to be ground-truthed. See @greco2008 and @olson2014 for more information.
 :::
 
 ### Recording access details {#sec-loc-reldesc}
 
 For observation points that will be revisited, record practical information about how to return. This may include landholder contact details and records of previous interactions, notes about track conditions, locked gates, and potential hazards like water crossings. Spatial data recording the track from the nearest public road to the target location is particularly valuable.
 
-### Recroding administrative location {#sec-loc-admin}
+### Recording administrative location {#sec-loc-admin}
 
-Tagging sites with their administrative region(s) can help with discoverability (searching and filtering) in databases, and simplify information security and privacy arrangements. This does not need to be done in the field, provided accurate locations are recorded.
+Tagging sites with their administrative region(s) can help with discoverability (searching and filtering) in databases, and simplify information security and privacy arrangements. Tagging does not need to be done in the field, provided accurate locations are recorded.
 
-In New Zealand, relevant boundaries include Regional Council [@statsnz] and Territorial Authority (District Council, Stats NZ [-@statsnza]) areas. Note that these boundaries are periodically updated so need to be related to date of observation.
+In New Zealand, relevant boundaries include Regional Council [@statsnz] and Territorial Authority (District Council, @statsnza) areas. Note that these boundaries are periodically updated so need to be related to date of observation.
