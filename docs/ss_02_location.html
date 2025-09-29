@@ -396,8 +396,8 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ap_04_glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+  <a href="./ap_province.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Land provinces</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -421,16 +421,15 @@ div.csl-indent {
   <li><a href="#sec-loc-abs" id="toc-sec-loc-abs" class="nav-link active" data-scroll-target="#sec-loc-abs"><span class="header-section-number">3.1</span> Absolute location</a>
   <ul class="collapse">
   <li><a href="#sec-loc-rec" id="toc-sec-loc-rec" class="nav-link" data-scroll-target="#sec-loc-rec"><span class="header-section-number">3.1.1</span> Recording location</a></li>
-  <li><a href="#sec-loc-abs-elev" id="toc-sec-loc-abs-elev" class="nav-link" data-scroll-target="#sec-loc-abs-elev"><span class="header-section-number">3.1.2</span> Recording elevation</a></li>
-  <li><a href="#sec-loc-err" id="toc-sec-loc-err" class="nav-link" data-scroll-target="#sec-loc-err"><span class="header-section-number">3.1.3</span> Expected Error</a></li>
-  <li><a href="#sec-loc-eq" id="toc-sec-loc-eq" class="nav-link" data-scroll-target="#sec-loc-eq"><span class="header-section-number">3.1.4</span> Equipment</a></li>
+  <li><a href="#sec-loc-err" id="toc-sec-loc-err" class="nav-link" data-scroll-target="#sec-loc-err"><span class="header-section-number">3.1.2</span> Expected error</a></li>
+  <li><a href="#sec-loc-eq" id="toc-sec-loc-eq" class="nav-link" data-scroll-target="#sec-loc-eq"><span class="header-section-number">3.1.3</span> Equipment and data sources</a></li>
   </ul></li>
   <li><a href="#sec-loc-rel" id="toc-sec-loc-rel" class="nav-link" data-scroll-target="#sec-loc-rel"><span class="header-section-number">3.2</span> Relative location</a>
   <ul class="collapse">
   <li><a href="#sec-loc-reltri" id="toc-sec-loc-reltri" class="nav-link" data-scroll-target="#sec-loc-reltri"><span class="header-section-number">3.2.1</span> Triangulating off local features</a></li>
   <li><a href="#sec-loc-relel" id="toc-sec-loc-relel" class="nav-link" data-scroll-target="#sec-loc-relel"><span class="header-section-number">3.2.2</span> Recording relative elevation</a></li>
   <li><a href="#sec-loc-reldesc" id="toc-sec-loc-reldesc" class="nav-link" data-scroll-target="#sec-loc-reldesc"><span class="header-section-number">3.2.3</span> Recording access details</a></li>
-  <li><a href="#sec-loc-admin" id="toc-sec-loc-admin" class="nav-link" data-scroll-target="#sec-loc-admin"><span class="header-section-number">3.2.4</span> Recroding administrative location</a></li>
+  <li><a href="#sec-loc-admin" id="toc-sec-loc-admin" class="nav-link" data-scroll-target="#sec-loc-admin"><span class="header-section-number">3.2.4</span> Recording administrative location</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -452,7 +451,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 2, 2025</p>
+      <p class="date-modified">September 29, 2025</p>
     </div>
   </div>
     
@@ -468,8 +467,25 @@ div.csl-indent {
 <h2 data-number="3.1" class="anchored" data-anchor-id="sec-loc-abs"><span class="header-section-number">3.1</span> Absolute location</h2>
 <section id="sec-loc-rec" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="sec-loc-rec"><span class="header-section-number">3.1.1</span> Recording location</h3>
-<p>Record X and Y location coordinates as eastings and northings using New Zealand Transverse Mercator (EPSG:2193). For Z coordinates (elevation), use the New Zealand Vertical Datum 2016 (EPSG:1169).</p>
-<p>Location accuracy is largely a function of the equipment available and the quality of data recording (see sec-loc-eq). Location precision must be recorded to a minimum of 5&nbsp;m but does not need to exceed 1&nbsp;m for pits, or 0.1&nbsp;m for cores and auger holes. Z precision will rarely need to exceed 0.1&nbsp;m.</p>
+<p>Locations are recorded using a coordinate reference system (CRS), which defines a grid over the land surface. Geographic coordinate systems use angular coordinates (degrees latitude and longitude) and model the earth as a sphere or ellipsoid. Projected coordinate systems, per the name, project all or part of the earth’s surface onto a flat plane by various methods, allowing use of linear coordinates (e.g.&nbsp;meters). Different types of projection have different strengths and weaknesses around preservation of distance and direction accuracy. Elevation can also be determined from a global model, or a locally calibrated one.</p>
+<p>In New Zealand, the official projected coordinate reference system is New Zealand Transverse Mercator (EPSG:2193). Elevation is defined with reference to the New Zealand Vertical Datum 2016 (EPSG:1169). For more information on these systems, see <span class="citation" data-cites="linz2025a">LINZ (<a href="references.html#ref-linz2025a" role="doc-biblioref">2025a</a>)</span>.</p>
+<div id="nte-proj" class="callout callout-style-simple callout-note no-icon callout-titled" title="EPSG codes">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;3.1: EPSG codes
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The full definition of a coordinate reference system comprises a long, structured list of parameters. To make it easier to refer to a specific set of these parameters, the EPSG database was established in the 1980s, giving commonly used parameter sets a short identifier. The database is maintained by the Geodesy Subcommittee of the IOGP Geomatics Committee and can be most easily accessed at <a href="https://epsg.io">epsg.io</a>.</p>
+</div>
+</div>
+</div>
+<p>Location accuracy is largely a function of the equipment available and the quality of data recording (see <a href="#sec-loc-eq" class="quarto-xref"><span>Section 3.1.3</span></a>). For soil survey work, location precision must be recorded to a minimum of 3&nbsp;m but does not need to exceed 1&nbsp;m for pits, or 0.1&nbsp;m for cores and auger holes. Elevation precision will rarely need to exceed 0.1&nbsp;m.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-loc" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -485,7 +501,7 @@ Figure&nbsp;3.1: Example location: <span class="ceg">1586090E, 5405722N (462 m)<
 </div>
 </div>
 <div id="wrn-wgs84" class="callout callout-style-simple callout-warning no-icon callout-titled" title="Use of WGS84">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -494,14 +510,15 @@ Warning&nbsp;3.1: Use of WGS84
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around ±&nbsp;3&nbsp;m, and coordinate accuracy also degrades over time due to continental drift. This is compensated for using a date-based ‘epoch’ adjustment. Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.</p>
+<p>Location sensors default to the global longitude-latitude based WGS84 datum (EPSG:4326). As a global system, its maximum accuracy is around ±&nbsp;3&nbsp;m, and its accuracy decreases over time due to continental drift and other tectonic events. This is compensated for using a periodic ‘epoch’ adjustment. Additionally, elevation data will not be accurate until it is converted into a local elevation datum.</p>
+<p>Because of these limitations, WGS84 should only be used when reconciling data from multiple locations on a global scale.</p>
 </div>
 </div>
 </div>
 <div id="wrn-altgeo" class="callout callout-style-simple callout-warning no-icon callout-titled" title="Alternate geocoding systems">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -510,540 +527,16 @@ Warning&nbsp;3.2: Alternate geocoding systems
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Alternate geocoding systems involving e.g.&nbsp;text-based encoding or nested hashes should not be used during fieldwork. These systems are often proprietary, sometimes prone to ambiguity or edge-case errors, and at their core often wrap around WGS84 anyway. They may still be useful during data analysis.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="sec-loc-abs-elev" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="sec-loc-abs-elev"><span class="header-section-number">3.1.2</span> Recording elevation</h3>
-<p>Parts of New Zealand still lack highly accurate elevation data. Record the elevation measurement method using the codes in <a href="#tbl-ss-elevsrc" class="quarto-xref">Table&nbsp;<span>3.1</span></a> below.</p>
-<div class="cell" data-layout-align="center">
-<div id="tbl-ss-elevsrc" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ss-elevsrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.1: Elevation data sources
-</figcaption>
-<div aria-describedby="tbl-ss-elevsrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div id="jralyfvlyx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jralyfvlyx table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#jralyfvlyx thead, #jralyfvlyx tbody, #jralyfvlyx tfoot, #jralyfvlyx tr, #jralyfvlyx td, #jralyfvlyx th {
-  border-style: none;
-}
-
-#jralyfvlyx p {
-  margin: 0;
-  padding: 0;
-}
-
-#jralyfvlyx .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: 85%;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#jralyfvlyx .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#jralyfvlyx .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: bold;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#jralyfvlyx .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#jralyfvlyx .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#jralyfvlyx .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jralyfvlyx .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#jralyfvlyx .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#jralyfvlyx .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#jralyfvlyx .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#jralyfvlyx .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#jralyfvlyx .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#jralyfvlyx .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#jralyfvlyx .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#jralyfvlyx .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#jralyfvlyx .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#jralyfvlyx .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#jralyfvlyx .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#jralyfvlyx .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jralyfvlyx .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#jralyfvlyx .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#jralyfvlyx .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#jralyfvlyx .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jralyfvlyx .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#jralyfvlyx .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#jralyfvlyx .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jralyfvlyx .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jralyfvlyx .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#jralyfvlyx .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jralyfvlyx .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#jralyfvlyx .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jralyfvlyx .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#jralyfvlyx .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jralyfvlyx .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#jralyfvlyx .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jralyfvlyx .gt_left {
-  text-align: left;
-}
-
-#jralyfvlyx .gt_center {
-  text-align: center;
-}
-
-#jralyfvlyx .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#jralyfvlyx .gt_font_normal {
-  font-weight: normal;
-}
-
-#jralyfvlyx .gt_font_bold {
-  font-weight: bold;
-}
-
-#jralyfvlyx .gt_font_italic {
-  font-style: italic;
-}
-
-#jralyfvlyx .gt_super {
-  font-size: 65%;
-}
-
-#jralyfvlyx .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#jralyfvlyx .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#jralyfvlyx .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#jralyfvlyx .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#jralyfvlyx .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#jralyfvlyx .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#jralyfvlyx .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#jralyfvlyx .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#jralyfvlyx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<colgroup>
-<col style="width: 10%">
-<col>
-</colgroup>
-<thead>
-<tr class="gt_col_headings header">
-<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
-<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">D</td>
-<td class="gt_row gt_left" headers="Name">Extracted from high-accuracy Digital Terrain Model (DTM) e.g. Lidar-based</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">G</td>
-<td class="gt_row gt_left" headers="Name">Measured using a GNSS system with an adequate 3D fix</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">M</td>
-<td class="gt_row gt_left" headers="Name">Extracted from a DTM</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">A</td>
-<td class="gt_row gt_left" headers="Name">Measured by a calibrated altimeter</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">E</td>
-<td class="gt_row gt_left" headers="Name">Estimated</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p><span class="ceg">D</span> type elevation measurements, for example data extracted from high resolution public datasets like <span class="citation" data-cites="linz2025">LINZ (<a href="references.html#ref-linz2025" role="doc-biblioref">2025</a>)</span>, offer the best accuracy currently available in New Zealand usually around ±&nbsp;0.2&nbsp;m. Global satellite-derived datasets like those available on Open Topography (<a href="https://opentopography.org/" title="https://opentopography.org">https://opentopography.org</a>) may offer comparable accuracy at a larger cell size and extend across some areas where lidar data is not yet available.</p>
-<p><span class="ceg">G</span> type elevation measurements are unlikely to be accurate if not using a <span class="ceg">GR</span>-type sensor (see <a href="#sec-loc-eq" class="quarto-xref"><span>Section 3.1.4</span></a>), and may require additional conversion to the NZ Vertical Datum. However, some specialist GNSS systems can achieve elevation accuracies exceeding ±&nbsp;0.01&nbsp;m.</p>
-<p>The <span class="ceg">M</span> code should be used for most non-Lidar DEMs, as those available for public use were constructed from interpolated contour data or other methods with comparable vertical accuracy <span class="citation" data-cites="barringer2002 uuemaa2020">(see <a href="references.html#ref-barringer2002" role="doc-biblioref">Barringer et al. 2002</a>; <a href="references.html#ref-uuemaa2020" role="doc-biblioref">Uuemaa et al. 2020</a>)</span>. <span class="ceg">M</span> DEMs can be off by over 10&nbsp;m in some areas, e.g valley floors where small landscape features are not captured <span class="citation" data-cites="barringer2002">(<a href="references.html#ref-barringer2002" role="doc-biblioref">Barringer et al. 2002</a>)</span>.</p>
-<p>Where the <span class="ceg">A</span> code is used, the time and location of the most recent altimeter calibration should be noted. Handheld altimeters can be expected to be accurate to within ±&nbsp;3&nbsp;m.</p>
-<p><span class="ceg">E</span> estimated elevations might include interpolation from a contour map with interval of &gt;&nbsp;20&nbsp;m, or a ‘best guess’.</p>
-<div id="nte-dems" class="callout callout-style-simple callout-note no-icon callout-titled" title="DEMs and location">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note&nbsp;3.1: DEMs and location
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Where DEMs (Digital Elevation Models) are used, they should be as contemporary as possible; New Zealand’s rate of landscape evolution is relatively high and these data sources will become less reliable with age. DEMs more than 20&nbsp;years old should be accompanied by a vertical error estimate adjusted upwards for age.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="sec-loc-err" class="level3" data-number="3.1.3">
-<h3 data-number="3.1.3" class="anchored" data-anchor-id="sec-loc-err"><span class="header-section-number">3.1.3</span> Expected Error</h3>
-<p>Expected error can be automatically reported by equipment, or estimated. When estimating horizontal error, record in meters with a maximum precision of 0.01 (1&nbsp;cm) e.g.&nbsp;<span class="ceg">±&nbsp;5.12&nbsp;m</span>. Record estimated vertical elevation error separately in the same units, as it will differ.</p>
+<section id="sec-loc-err" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="sec-loc-err"><span class="header-section-number">3.1.2</span> Expected error</h3>
+<p>Expected error can be automatically reported by equipment, or estimated. When estimating horizontal error, record in metres with a maximum precision of 0.01 (1&nbsp;cm) e.g.&nbsp;<span class="ceg">±&nbsp;5.12&nbsp;m</span>. Record estimated vertical elevation error separately in the same units, as it will differ.</p>
 <div id="nte-locrev" class="callout callout-style-simple callout-note no-icon callout-titled" title="Revising locations">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1056,39 +549,40 @@ Note&nbsp;3.2: Revising locations
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Location data quality can sometimes be improved by revising the location data in GIS after fieldwork, with reference to e.g.&nbsp;satellite imagery. Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error. Document how and why the revision decision was made.</p>
+<p>Both on-ground photographs and high-resolution satellite imagery can sometimes help improve site location accuracy by showing the location of the site relative to nearby features. Satellite imagery must be precisely geolocated to be effective at this task, or the site will only be correct in relation to the image used and not to the true location. Photographs also need to be taken in a particular way to be useful for this task (see <a href="ap_02_field_recording.html#sec-ap-fieldrec-pics" class="quarto-xref"><span>Section B.3</span></a>).</p>
+<p>Where corrections are made, expected error from the measuring instrument should be overridden with a new manual estimate of expected error. Document how and why the revision decision was made.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="sec-loc-eq" class="level3" data-number="3.1.4">
-<h3 data-number="3.1.4" class="anchored" data-anchor-id="sec-loc-eq"><span class="header-section-number">3.1.4</span> Equipment</h3>
-<p>Use a GNSS (Global Navigation Satellite System) with an expected horizontal accuracy of ±&nbsp;3&nbsp;m or better. Some applications may require centimetre accuracy. Record sensor type against the schema in <a href="#tbl-ss-locsrc" class="quarto-xref">Table&nbsp;<span>3.2</span></a>.</p>
+<section id="sec-loc-eq" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="sec-loc-eq"><span class="header-section-number">3.1.3</span> Equipment and data sources</h3>
+<p>Use a GNSS (Global Navigation Satellite System) with an expected horizontal accuracy of ±&nbsp;3&nbsp;m or better. Some applications may require centimetre accuracy. Sensor type can be recorded using one of the codes in <a href="#tbl-ss-locsrc" class="quarto-xref">Table&nbsp;<span>3.1</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-ss-locsrc" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ss-locsrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.2: Location data source
+Table&nbsp;3.1: Location data sources
 </figcaption>
 <div aria-describedby="tbl-ss-locsrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="svcguszdwc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#svcguszdwc table {
+<div id="eyriumzthq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eyriumzthq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#svcguszdwc thead, #svcguszdwc tbody, #svcguszdwc tfoot, #svcguszdwc tr, #svcguszdwc td, #svcguszdwc th {
+#eyriumzthq thead, #eyriumzthq tbody, #eyriumzthq tfoot, #eyriumzthq tr, #eyriumzthq td, #eyriumzthq th {
   border-style: none;
 }
 
-#svcguszdwc p {
+#eyriumzthq p {
   margin: 0;
   padding: 0;
 }
 
-#svcguszdwc .gt_table {
+#eyriumzthq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1114,12 +608,12 @@ Table&nbsp;3.2: Location data source
   border-left-color: #D3D3D3;
 }
 
-#svcguszdwc .gt_caption {
+#eyriumzthq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#svcguszdwc .gt_title {
+#eyriumzthq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1131,7 +625,7 @@ Table&nbsp;3.2: Location data source
   border-bottom-width: 0;
 }
 
-#svcguszdwc .gt_subtitle {
+#eyriumzthq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1143,7 +637,7 @@ Table&nbsp;3.2: Location data source
   border-top-width: 0;
 }
 
-#svcguszdwc .gt_heading {
+#eyriumzthq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1155,13 +649,13 @@ Table&nbsp;3.2: Location data source
   border-right-color: #D3D3D3;
 }
 
-#svcguszdwc .gt_bottom_border {
+#eyriumzthq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#svcguszdwc .gt_col_headings {
+#eyriumzthq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1176,7 +670,7 @@ Table&nbsp;3.2: Location data source
   border-right-color: #D3D3D3;
 }
 
-#svcguszdwc .gt_col_heading {
+#eyriumzthq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1196,7 +690,7 @@ Table&nbsp;3.2: Location data source
   overflow-x: hidden;
 }
 
-#svcguszdwc .gt_column_spanner_outer {
+#eyriumzthq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1208,15 +702,15 @@ Table&nbsp;3.2: Location data source
   padding-right: 4px;
 }
 
-#svcguszdwc .gt_column_spanner_outer:first-child {
+#eyriumzthq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#svcguszdwc .gt_column_spanner_outer:last-child {
+#eyriumzthq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#svcguszdwc .gt_column_spanner {
+#eyriumzthq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1228,11 +722,11 @@ Table&nbsp;3.2: Location data source
   width: 100%;
 }
 
-#svcguszdwc .gt_spanner_row {
+#eyriumzthq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#svcguszdwc .gt_group_heading {
+#eyriumzthq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1258,7 +752,7 @@ Table&nbsp;3.2: Location data source
   text-align: left;
 }
 
-#svcguszdwc .gt_empty_group_heading {
+#eyriumzthq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1273,15 +767,15 @@ Table&nbsp;3.2: Location data source
   vertical-align: middle;
 }
 
-#svcguszdwc .gt_from_md > :first-child {
+#eyriumzthq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#svcguszdwc .gt_from_md > :last-child {
+#eyriumzthq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#svcguszdwc .gt_row {
+#eyriumzthq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1300,7 +794,7 @@ Table&nbsp;3.2: Location data source
   overflow-x: hidden;
 }
 
-#svcguszdwc .gt_stub {
+#eyriumzthq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1313,7 +807,7 @@ Table&nbsp;3.2: Location data source
   padding-right: 5px;
 }
 
-#svcguszdwc .gt_stub_row_group {
+#eyriumzthq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1327,15 +821,15 @@ Table&nbsp;3.2: Location data source
   vertical-align: top;
 }
 
-#svcguszdwc .gt_row_group_first td {
+#eyriumzthq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#svcguszdwc .gt_row_group_first th {
+#eyriumzthq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#svcguszdwc .gt_summary_row {
+#eyriumzthq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1345,16 +839,16 @@ Table&nbsp;3.2: Location data source
   padding-right: 5px;
 }
 
-#svcguszdwc .gt_first_summary_row {
+#eyriumzthq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#svcguszdwc .gt_first_summary_row.thick {
+#eyriumzthq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#svcguszdwc .gt_last_summary_row {
+#eyriumzthq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1364,7 +858,7 @@ Table&nbsp;3.2: Location data source
   border-bottom-color: #D3D3D3;
 }
 
-#svcguszdwc .gt_grand_summary_row {
+#eyriumzthq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1374,7 +868,7 @@ Table&nbsp;3.2: Location data source
   padding-right: 5px;
 }
 
-#svcguszdwc .gt_first_grand_summary_row {
+#eyriumzthq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1384,7 +878,7 @@ Table&nbsp;3.2: Location data source
   border-top-color: #D3D3D3;
 }
 
-#svcguszdwc .gt_last_grand_summary_row_top {
+#eyriumzthq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1394,11 +888,11 @@ Table&nbsp;3.2: Location data source
   border-bottom-color: #D3D3D3;
 }
 
-#svcguszdwc .gt_striped {
+#eyriumzthq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#svcguszdwc .gt_table_body {
+#eyriumzthq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1407,7 +901,7 @@ Table&nbsp;3.2: Location data source
   border-bottom-color: #D3D3D3;
 }
 
-#svcguszdwc .gt_footnotes {
+#eyriumzthq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1421,7 +915,7 @@ Table&nbsp;3.2: Location data source
   border-right-color: #D3D3D3;
 }
 
-#svcguszdwc .gt_footnote {
+#eyriumzthq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1430,7 +924,7 @@ Table&nbsp;3.2: Location data source
   padding-right: 5px;
 }
 
-#svcguszdwc .gt_sourcenotes {
+#eyriumzthq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1444,7 +938,7 @@ Table&nbsp;3.2: Location data source
   border-right-color: #D3D3D3;
 }
 
-#svcguszdwc .gt_sourcenote {
+#eyriumzthq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1452,72 +946,72 @@ Table&nbsp;3.2: Location data source
   padding-right: 5px;
 }
 
-#svcguszdwc .gt_left {
+#eyriumzthq .gt_left {
   text-align: left;
 }
 
-#svcguszdwc .gt_center {
+#eyriumzthq .gt_center {
   text-align: center;
 }
 
-#svcguszdwc .gt_right {
+#eyriumzthq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#svcguszdwc .gt_font_normal {
+#eyriumzthq .gt_font_normal {
   font-weight: normal;
 }
 
-#svcguszdwc .gt_font_bold {
+#eyriumzthq .gt_font_bold {
   font-weight: bold;
 }
 
-#svcguszdwc .gt_font_italic {
+#eyriumzthq .gt_font_italic {
   font-style: italic;
 }
 
-#svcguszdwc .gt_super {
+#eyriumzthq .gt_super {
   font-size: 65%;
 }
 
-#svcguszdwc .gt_footnote_marks {
+#eyriumzthq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#svcguszdwc .gt_asterisk {
+#eyriumzthq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#svcguszdwc .gt_indent_1 {
+#eyriumzthq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#svcguszdwc .gt_indent_2 {
+#eyriumzthq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#svcguszdwc .gt_indent_3 {
+#eyriumzthq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#svcguszdwc .gt_indent_4 {
+#eyriumzthq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#svcguszdwc .gt_indent_5 {
+#eyriumzthq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#svcguszdwc .katex-display {
+#eyriumzthq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#svcguszdwc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#eyriumzthq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1582,9 +1076,9 @@ Tip&nbsp;3.1: GNSS types
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Multi-constellation GNSS is not the same as multi-band GNSS. The former signifies access to multiple location satellite networks operated by various parties, e.g.&nbsp;GPS (USA), Galileo (EU), BeiDou (China). This can improve signal <em>consistency</em> due to having access to more total satellites, but not necessarily overall accuracy.</p>
+<p>Multi-constellation GNSS is not the same as multi-band GNSS. The former signifies access to multiple location satellite networks operated by various parties, e.g.&nbsp;GPS (USA), Galileo (EU), BeiDou (China). Multi-constellation GNSS can improve signal <em>consistency</em> due to having access to more total satellites, but not necessarily overall accuracy.</p>
 <p>Multi-band GNSS involves receiving signals from location satellites on multiple frequency bands. The extra data from each satellite can significantly improve connection reliability and accuracy, particularly when open sky is restricted by rough terrain, dense vegetation or poor weather.</p>
-<p>Multi-sensor GNSS involves receiving signals not just from location satellites, but from other on-ground equipment, like mobile phone towers, Wi-Fi routers and nearby personal electronic devices. These sensors can be extremely accurate in urban areas, but much less so elsewhere.</p>
+<p>Multi-sensor GNSS involves receiving signals not just from location satellites, but also from other on-ground equipment, such as mobile phone towers, Wi-Fi routers and nearby personal electronic devices. These sensors can be extremely accurate in urban areas, but much less so elsewhere.</p>
 <p>Most consumer electronic devices capable of reporting location, such as mobile phones, will be of <span class="ceg">LM</span> type by default, unless using an app that actively forces a GNSS-only connection. At the time of writing, most of these apps can still only return <span class="ceg">GS</span>-quality data due to hardware limitations.</p>
 </div>
 </div>
@@ -1601,7 +1095,528 @@ Note&nbsp;3.3: Manual locations
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Estimating location manually using e.g.&nbsp;topographic maps and orienteering methods remains an option, but should usually be considered a last resort.</p>
+<p>Estimating location manually using topographic maps and orienteering methods remains an option, but should usually be considered a last resort.</p>
+</div>
+</div>
+</div>
+<p>Parts of New Zealand still lack highly accurate elevation data. Recording the elevation measurement method using one of the codes in <a href="#tbl-ss-elevsrc" class="quarto-xref">Table&nbsp;<span>3.2</span></a> below helps provide an estimate of confidence in the elevation data.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-ss-elevsrc" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ss-elevsrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.2: Elevation data sources
+</figcaption>
+<div aria-describedby="tbl-ss-elevsrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="hkrjxlgmar" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hkrjxlgmar table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#hkrjxlgmar thead, #hkrjxlgmar tbody, #hkrjxlgmar tfoot, #hkrjxlgmar tr, #hkrjxlgmar td, #hkrjxlgmar th {
+  border-style: none;
+}
+
+#hkrjxlgmar p {
+  margin: 0;
+  padding: 0;
+}
+
+#hkrjxlgmar .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#hkrjxlgmar .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#hkrjxlgmar .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#hkrjxlgmar .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#hkrjxlgmar .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hkrjxlgmar .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hkrjxlgmar .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hkrjxlgmar .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#hkrjxlgmar .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#hkrjxlgmar .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#hkrjxlgmar .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#hkrjxlgmar .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#hkrjxlgmar .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#hkrjxlgmar .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#hkrjxlgmar .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hkrjxlgmar .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#hkrjxlgmar .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#hkrjxlgmar .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#hkrjxlgmar .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hkrjxlgmar .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#hkrjxlgmar .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#hkrjxlgmar .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#hkrjxlgmar .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hkrjxlgmar .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#hkrjxlgmar .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#hkrjxlgmar .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hkrjxlgmar .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hkrjxlgmar .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#hkrjxlgmar .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hkrjxlgmar .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#hkrjxlgmar .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hkrjxlgmar .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hkrjxlgmar .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hkrjxlgmar .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hkrjxlgmar .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hkrjxlgmar .gt_left {
+  text-align: left;
+}
+
+#hkrjxlgmar .gt_center {
+  text-align: center;
+}
+
+#hkrjxlgmar .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#hkrjxlgmar .gt_font_normal {
+  font-weight: normal;
+}
+
+#hkrjxlgmar .gt_font_bold {
+  font-weight: bold;
+}
+
+#hkrjxlgmar .gt_font_italic {
+  font-style: italic;
+}
+
+#hkrjxlgmar .gt_super {
+  font-size: 65%;
+}
+
+#hkrjxlgmar .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#hkrjxlgmar .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#hkrjxlgmar .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#hkrjxlgmar .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#hkrjxlgmar .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#hkrjxlgmar .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#hkrjxlgmar .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#hkrjxlgmar .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#hkrjxlgmar div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col>
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">D</td>
+<td class="gt_row gt_left" headers="Name">Extracted from high-accuracy Digital Terrain Model (DTM) e.g. Lidar-based</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">G</td>
+<td class="gt_row gt_left" headers="Name">Measured using a GNSS system with an adequate 3D fix</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">M</td>
+<td class="gt_row gt_left" headers="Name">Extracted from a low-accuracy DTM</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">A</td>
+<td class="gt_row gt_left" headers="Name">Measured by a calibrated altimeter</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">E</td>
+<td class="gt_row gt_left" headers="Name">Estimated</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><span class="ceg">D</span> type elevation measurements, for example data extracted from high resolution public datasets like <span class="citation" data-cites="linz2025">LINZ (<a href="references.html#ref-linz2025" role="doc-biblioref">2025b</a>)</span>, offer the best accuracy currently available in New Zealand usually around ±&nbsp;0.2&nbsp;m. Global satellite-derived datasets like those available on Open Topography (<a href="https://opentopography.org/" title="https://opentopography.org">https://opentopography.org</a>) may offer comparable accuracy at a larger cell size and extend across some areas where lidar data is not yet available.</p>
+<p><span class="ceg">G</span> type elevation measurements are unlikely to be accurate if not using a <span class="ceg">GR</span>-type sensor (see <a href="#sec-loc-eq" class="quarto-xref"><span>Section 3.1.3</span></a>), and may require additional conversion to the New Zealand Vertical Datum. However, some specialist GNSS systems can achieve elevation accuracies exceeding ±&nbsp;0.01&nbsp;m.</p>
+<p>The <span class="ceg">M</span> code should be used for most non-Lidar DEMs, as those available for public use were constructed from interpolated contour data or other methods with comparable vertical accuracy <span class="citation" data-cites="barringer2002 uuemaa2020">(see <a href="references.html#ref-barringer2002" role="doc-biblioref">Barringer et al. 2002</a>; <a href="references.html#ref-uuemaa2020" role="doc-biblioref">Uuemaa et al. 2020</a>)</span>. <span class="ceg">M</span> DEMs can be off by over 10&nbsp;m in some areas, e.g valley floors where small landscape features are not captured <span class="citation" data-cites="barringer2002">(<a href="references.html#ref-barringer2002" role="doc-biblioref">Barringer et al. 2002</a>)</span>.</p>
+<p>Where the <span class="ceg">A</span> code is used, the time and location of the most recent altimeter calibration should be noted. Handheld altimeters can be expected to be accurate to within ±&nbsp;3&nbsp;m.</p>
+<p><span class="ceg">E</span> estimated elevations might include interpolation from a contour map with interval of &gt;&nbsp;20&nbsp;m, or a ‘best guess’.</p>
+<div id="nte-dems" class="callout callout-style-simple callout-note no-icon callout-titled" title="DEMs and location">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;3.4: DEMs and location
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Where DEMs are used, they should be as contemporary as possible; New Zealand’s rate of landscape evolution is relatively fast and these data sources will become less reliable with age. DEMs more than 20&nbsp;years old should be accompanied by a vertical error estimate adjusted upwards for age.</p>
 </div>
 </div>
 </div>
@@ -1612,27 +1627,27 @@ Note&nbsp;3.3: Manual locations
 <p>Absolute locations are enhanced by information about what is nearby. This context is useful for checking that a site’s coordinates are correct and for revisiting a site in future.</p>
 <section id="sec-loc-reltri" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="sec-loc-reltri"><span class="header-section-number">3.2.1</span> Triangulating off local features</h3>
-<p>Absolute location data can be backed up by measuring to nearby permanent or long-term features. This is particularly useful for relocating long-term monitoring plots. For this to work well, features should be within ~50&nbsp;m of the target location and sufficiently sturdy to last until at least the next expected visit. Examples include fencelines, buildings, roads, and rock outcrops.</p>
+<p>Absolute location data can be backed up by measuring to nearby permanent or long-term features. This practice is particularly useful for relocating long-term monitoring plots. For this to work well, features should be within ~50&nbsp;m of the target location and sufficiently sturdy to last until at least the next expected visit. Examples include fencelines, buildings, roads, and rock outcrops.</p>
 <p>For single-point sites, measure distance and direction using a tape and compass. Accuracy is improved by measuring to two or more features. For plot-based sites, one can measure from at least two corners to the target feature. Photographing the point/plot and reference points together is also useful (see <a href="ap_02_field_recording.html#sec-ap-fieldrec-pics" class="quarto-xref"><span>Section B.3</span></a> for guidance on field photography).</p>
 <p><span style="background-color:lightgreen">add a diagram here</span></p>
 </section>
 <section id="sec-loc-relel" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="sec-loc-relel"><span class="header-section-number">3.2.2</span> Recording relative elevation</h3>
 <p>Elevation above the nearest down-slope drainage (open/flowing water, swampy ground, or a closed depression) is useful for landscape interpretations. The data can also be used to group profile descriptions, for instance when identifying sets of related terraces along river systems. The drainage feature to record against must be identified by tracing a path down-slope from the observation point, and may be far from the point of observation. As such, it will normally be more efficient to estimate this parameter after fieldwork using elevation and imagery data.</p>
-<p>Record relative elevation in meters, with a precision of no more than 0.01 (1&nbsp;cm), e.g.&nbsp;<span class="ceg">25.53&nbsp;m</span>.</p>
+<p>Record relative elevation in metres, with a precision of no more than 0.01 (1&nbsp;cm), e.g.&nbsp;<span class="ceg">25.53&nbsp;m</span>.</p>
 <div id="nte-rem" class="callout callout-style-simple callout-note no-icon callout-titled" title="Relative elevation models">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;3.4: Relative elevation models
+Note&nbsp;3.5: Relative elevation models
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>With a sufficiently detailed DEM and stream network data, a Relative Elevation Model (REM) can be constructed to estimate this parameter. The result will need to be ground-truthed.</p>
+<p>With a sufficiently detailed DEM and stream network data, a Relative Elevation Model (REM) can be constructed to estimate this parameter. The result will need to be ground-truthed. See <span class="citation" data-cites="greco2008">Greco et al. (<a href="references.html#ref-greco2008" role="doc-biblioref">2008</a>)</span> and <span class="citation" data-cites="olson2014">Olson et al. (<a href="references.html#ref-olson2014" role="doc-biblioref">2014</a>)</span> for more information.</p>
 </div>
 </div>
 </div>
@@ -1642,17 +1657,26 @@ Note&nbsp;3.4: Relative elevation models
 <p>For observation points that will be revisited, record practical information about how to return. This may include landholder contact details and records of previous interactions, notes about track conditions, locked gates, and potential hazards like water crossings. Spatial data recording the track from the nearest public road to the target location is particularly valuable.</p>
 </section>
 <section id="sec-loc-admin" class="level3" data-number="3.2.4">
-<h3 data-number="3.2.4" class="anchored" data-anchor-id="sec-loc-admin"><span class="header-section-number">3.2.4</span> Recroding administrative location</h3>
-<p>Tagging sites with their administrative region(s) can help with discoverability (searching and filtering) in databases, and simplify information security and privacy arrangements. This does not need to be done in the field, provided accurate locations are recorded.</p>
-<p>In New Zealand, relevant boundaries include Regional Council <span class="citation" data-cites="statsnz">(<a href="references.html#ref-statsnz" role="doc-biblioref">Stats NZ 2023a</a>)</span> and Territorial Authority (District Council, Stats NZ <span class="citation" data-cites="statsnza">(<a href="references.html#ref-statsnza" role="doc-biblioref">2023b</a>)</span>) areas. Note that these boundaries are periodically updated so need to be related to date of observation.</p>
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="sec-loc-admin"><span class="header-section-number">3.2.4</span> Recording administrative location</h3>
+<p>Tagging sites with their administrative region(s) can help with discoverability (searching and filtering) in databases, and simplify information security and privacy arrangements. Tagging does not need to be done in the field, provided accurate locations are recorded.</p>
+<p>In New Zealand, relevant boundaries include Regional Council <span class="citation" data-cites="statsnz">(<a href="references.html#ref-statsnz" role="doc-biblioref">Stats NZ 2023a</a>)</span> and Territorial Authority (District Council, <span class="citation" data-cites="statsnza">Stats NZ (<a href="references.html#ref-statsnza" role="doc-biblioref">2023b</a>)</span>) areas. Note that these boundaries are periodically updated so need to be related to date of observation.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-barringer2002" class="csl-entry" role="listitem">
 Barringer JRF, Pairman D, McNeill SJ 2002. Development of a high-resolution digital elevation model for new zealand. Wellington, New Zealand.
 </div>
+<div id="ref-greco2008" class="csl-entry" role="listitem">
+Greco SE, Girvetz EH, Larsen EW, Mann JP, Tuil JL, Lowney C 2008. Relative elevation topographic surface modelling of a large alluvial river floodplain and applications for the study and management of riparian landscapes. Landscape Research [Internet]. 33(4):461–486. <a href="https://doi.org/10.1080/01426390801949149">https://doi.org/10.1080/01426390801949149</a>
+</div>
 <div id="ref-linz2025" class="csl-entry" role="listitem">
-LINZ 2025. New zealand LiDAR 1m DEM. [Internet]. <a href="https://data.linz.govt.nz/layer/121859-new-zealand-lidar-1m-dem/">https://data.linz.govt.nz/layer/121859-new-zealand-lidar-1m-dem/</a>
+LINZ 2025b. New zealand LiDAR 1m DEM. [Internet]. <a href="https://data.linz.govt.nz/layer/121859-new-zealand-lidar-1m-dem/">https://data.linz.govt.nz/layer/121859-new-zealand-lidar-1m-dem/</a>
+</div>
+<div id="ref-linz2025a" class="csl-entry" role="listitem">
+LINZ 2025a. Understanding datums and projections. [Internet]. <a href="https://www.linz.govt.nz/guidance/geodetic-system/coordinate-systems-used-new-zealand/understanding-datums-and-projections">https://www.linz.govt.nz/guidance/geodetic-system/coordinate-systems-used-new-zealand/understanding-datums-and-projections</a>
+</div>
+<div id="ref-olson2014" class="csl-entry" role="listitem">
+Olson PL, Legg NT, Abbe TB, Reinhart MA, Radloff JK 2014. A methodology for delineating planning-level channel migration zones. [Internet].Washington (State). Dept. of Ecology, editor. (14-06-025). <a href="https://rosap.ntl.bts.gov/view/dot/27892">https://rosap.ntl.bts.gov/view/dot/27892</a>
 </div>
 <div id="ref-statsnz" class="csl-entry" role="listitem">
 Stats NZ 2023a. Regional council 2023 (generalised). [Internet]. <a href="https://datafinder.stats.govt.nz/layer/111182-regional-council-2023-generalised/">https://datafinder.stats.govt.nz/layer/111182-regional-council-2023-generalised/</a>
