@@ -10,10 +10,45 @@ loadfonts(quiet = TRUE)
 
 A great deal of soil physical and chemical behaviour is dependant on the particle size distribution within the solid fraction - the relative dominance of particular sizes, as well as the total size range present. This includes both mineral and organic matter. In the field, particle size distribution is estimated on a per-horizon basis using a combination of visual examination and hand manipulation under moist conditions.
 
-The true particle size distribution is continuous, and open-ended. For ease of communication, particle size distribution is divided into set ranges, the broadest of which are the fine earth (\< 2 mm) and coarse mineral (≥ 2 mm, 'rock fragments') fractions. Organic matter is treated slightly differently, in that it can't be separated easily from the soil mass in the field, and its particle size is less important than other characteristics (see @sec-hr-ortxt). Field estimates of particle size distribution are commonly referred to as 'soil texture'.
+The true particle size distribution is continuous, and open-ended. For ease of communication, particle size distribution is divided into set ranges, the broadest of which are the fine earth (\< 2 mm) and coarse mineral (≥ 2 mm, 'rock fragments') fractions. Within the fine-earth fraction, three fractions are defined - sand (\<2.0–≥0.06 mm), silt (\<0.06–≥0.002 mm) and clay (\<0.002 mm). Organic matter is treated slightly differently, in that it can't be separated easily from the soil mass in the field, and its particle size is less important than other characteristics (see @sec-hr-ortxt). Field estimates of particle size distribution are commonly referred to as 'soil texture'.
 
 ::: {#nte-psz .callout-note appearance="minimal" collapse="true" title="Particle size boundaries in New Zealand"}
-The particle size ranges used in this chapter align with those of NZS 4402.1:1986 [@standardsnewzealand] for civil-engineering soil testing, although the terminology differs somewhat. In the civil-engineering standard, the fine earth fraction is called 'fine soil', the gravelly fraction 'medium soil', and the cobbly fraction 'coarse soil'. Materials with particle sizes over 200 mm are not part of the standard.
+The particle size ranges used in this chapter align with those of NZS 4402.1:1986 [@standardsnewzealand] for civil-engineering soil testing, although the terminology differs somewhat. In the civil-engineering standard, the fine earth fraction is called 'fine soil', the gravelly fraction 'medium soil', and the cobbly fraction 'coarse soil'. Materials with particle sizes over 200 mm are defined as 'boulders' but are otherwise not part of the standard.
+:::
+
+::: {#nte-psb .callout-note appearance="minimal" collapse="true" title="Particle size fraction boundaries globally"}
+The boundaries of fine-earth size fractions vary by jurisdiction. The silt-clay boundary is usually consistent within soil science, and aligns with some major changes in particle properties; chief among them the emergence of electrostatic behaviour in the clay fraction. The sand/silt boundary can range from 0.02–0.063 mm. See @tbl-hr-texcompar for the fractions used in New Zealand and elsewhere. Other jurisdictions may also have different approaches to subdividing the major fractions further [@ncst2024, p. 162].
+
+```{r}
+#| label: tbl-hr-texcompar
+#| tbl-cap: "Size fraction limits: New Zealand and elsewhere" 
+#| classes : no-stripe
+
+# can also build out to coarse/med/fine sand and fine clay etc
+
+dat_hr_texcompar <-
+  tribble(~Jurisdiction, ~Sand, ~Silt, ~Clay,
+          'New Zealand, UK', '< 2.0 mm',  '< 0.06 mm', '< 0.002 mm',
+          'Australia  ',     '< 2.0 mm',  '< 0.02 mm', '< 0.002 mm',
+          'USA, Canada',     '< 2.0 mm',  '< 0.05 mm', '< 0.002 mm',
+          'Global',          '< 2.0 mm', '< 0.063 mm', '< 0.002 mm')
+
+tbl_hr_texcompar <- gt(dat_hr_texcompar) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(weight = 'bold')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Jurisdiction ~pct(40))
+  
+tbl_hr_texcompar
+
+```
+
+Size fraction boundaries also vary by discipline; sedimentologists set the limit of 'clay' at 0.004 mm while colloid chemists use 0.001 mm. Clay mineralogists use an alternate definition of clay that does not rely on particle size at all, instead highlighting physical behaviour [@guggenheim1995]. Alternate soil texture triangles compatible with this concept have been proposed, but cannot be determined in the field [@moreno-maroto2022].
 :::
 
 ## Describing texture components {#sec-hr-texture}
@@ -141,7 +176,7 @@ tbl_hr_textri
 ::: {#nte-nztri .callout-note appearance="minimal" collapse="true" title="Soil texture triangles"}
 Soil texture triangles are a communication tool. They vary by jurisdiction, with class numbers, names, and boundary lines reflecting the local evolution of pedological practice. The triangle in use in New Zealand was formulated in the 1980's by New Zealand pedologists to align with both the USDA texture triangle [@schoeneberger2012] and a previous New Zealand standard [@taylor1979], while remaining conceptually simple and easy to amalgamate into the four texture groups [@milne1995].
 
-Translating texture classes between different triangles is not recommended, although numeric data describing sand, silt and clay can be reclassified. The class boundaries and the size fraction boundaries must both be accounted for (see @nte-psb).
+Translating texture classes between different triangles is not recommended, although numeric data describing sand, silt and clay can be reclassified [@minasny2001]. The class boundaries and the size fraction boundaries must both be accounted for (see @nte-psb).
 :::
 
 #### Sand fraction modifiers {#sec-hr-sandmods}
@@ -242,6 +277,8 @@ When recording texture for a mixed fine-earth/organic horizon containing rock fr
 
 For poorly sorted horizons where a single fraction does not dominate the particle size distribution of rock fragments, choose the largest rock fragment code for recording. Determine abundance from the total percentage of rock fragments. For example, in a silt loam horizon with 15% gravel, 15% cobble and 10% boulder, use [(C)ZL]{.ceg} (total rock fragments 40%, largest co-dominant fraction cobble).
 
+The rock fragment component of soils is sometimes referred to as the 'soil skeleton', and horizons with \>35% rock fragments are sometimes called 'skeletal'. This nomenclature can be modified with reference to the fine-earth fraction texture group, e.g. 'sandy-skeletal'.
+
 Conventions for describing rock fragment abundance, size, shape, lithology and distribution are outlined in @sec-rockfrag.
 
 ::: {#nte-rockvis .callout-note appearance="minimal" collapse="true" title="Visually estimating rock fragments"}
@@ -250,7 +287,7 @@ At a pit face or exposure, *in situ* rock fragment abundance can be assessed usi
 -   35% by volume rock fragments approximately represents the boundary between materials in which the fragments seem to be entirely 'floating' in the fine-earth matrix, and materials in which rock fragments are to some extent touching one another.
 -   70% by volume rock fragments approximately represents the boundary beyond which individual rock fragments are in complete contact, and any fine earth is confined to interstices.
 
-More reliable assessments require sampling and sieving (see @sec-obssamp).
+More reliable assessments of abundance require sampling and sieving (see @sec-obssamp).
 :::
 
 #### Gravel fraction modifiers
@@ -506,41 +543,6 @@ Both field and laboratory measurements provide useful, but distinct, information
 As discussed in @wrn-tex, fine-earth texture estimated by hand in the field can include information about other soil characteristics. Estimating particle size from hand texturing requires practice, and the ability to identify and account for these sources of interference.
 
 Laboratory particle size measurement also has limitations. Available methods can incorporate particle shape and mineralogy, but these methods are labour-intensive and generally confined to research contexts. High-throughput analyses are far more common and usually involve removal of organic materials and soluble minerals, along with more aggressive aggregate dispersion using shaking and chemical solutions. Below approximately 0.04 mm, the method of measurement switches from sieving to less direct observations (commonly based on settling time in a liquid column). The calculations used to translate these observations into particle size estimates make some assumptions about shape and mineralogy that may not hold true for the sample under examination (see @loveland2001, for a more detailed discussion).
-:::
-
-::: {#nte-psb .callout-note appearance="minimal" collapse="true" title="Particle size fraction boundaries"}
-The boundaries of the fine-earth size fractions vary by jurisdiction. The silt-clay boundary is usually consistent within soil science, and aligns with some major changes in particle properties; chief among them the emergence of electrostatic behaviour in the clay fraction. The sand/silt boundary can range from 0.02–0.063 mm. See @tbl-hr-texcompar for the fractions used in New Zealand and elsewhere. Other jurisdictions may also have different approaches to subdividing the major fractions further [@ncst2024, p. 162]. Particle size data can be mathematically transformed between systems [@minasny2001].
-
-```{r}
-#| label: tbl-hr-texcompar
-#| tbl-cap: "Size fraction limits: New Zealand and elsewhere" 
-#| classes : no-stripe
-
-# can also build out to coarse/med/fine sand and fine clay etc
-
-dat_hr_texcompar <-
-  tribble(~Jurisdiction, ~Sand, ~Silt, ~Clay,
-          'New Zealand, UK', '< 2.0 mm',  '< 0.06 mm', '< 0.002 mm',
-          'Australia  ',     '< 2.0 mm',  '< 0.02 mm', '< 0.002 mm',
-          'USA, Canada',     '< 2.0 mm',  '< 0.05 mm', '< 0.002 mm',
-          'Global',          '< 2.0 mm', '< 0.063 mm', '< 0.002 mm')
-
-tbl_hr_texcompar <- gt(dat_hr_texcompar) |>
-  tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(weight = 'bold')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Jurisdiction ~pct(40))
-  
-tbl_hr_texcompar
-
-```
-
-Size fraction boundaries also vary by discipline; sedimentologists set the limit of 'clay' at 0.004 mm while colloid chemists use 0.001 mm. Clay mineralogists use an alternate definition of clay that does not rely on particle size at all, instead highlighting physical behaviour [@guggenheim1995]. Alternate soil texture triangles compatible with this concept have been proposed, but cannot be determined in the field [@moreno-maroto2022].
 :::
 
 ### Recording whole-soil particle size estimates
