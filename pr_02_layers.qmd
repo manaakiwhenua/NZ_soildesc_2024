@@ -7,9 +7,9 @@ library(ggplot2)
 library(gt)
 ```
 
-A soil horizon is a distinct layer observable within a soil profile. [Horizons are distinguished by differences in texture, stoniness, structure, colour, consistence or other soil properties as described in]{.milne} the following sections. [Delineated horizons should ideally represent depth intervals over which important soil attributes change minimally. Conversely, the horizon boundaries should represent depth intervals over which there is a relatively high rate of change of important soil properties.]{.milne}
+A soil horizon is a distinct layer observable within a soil profile. Horizons are distinguished by differences in texture, stoniness, structure, colour, consistence or other soil properties as described in the following sections. Delineated horizons should ideally represent depth intervals over which important soil attributes change minimally. Conversely, the horizon boundaries should represent depth intervals over which there is a relatively high rate of change of important soil properties.
 
-[Not all important soil properties change from one horizon to the next or at the same rate with depth. In some instances confident interpretation of the suitability of a soil for a particular end use may depend on the rate of change of a single property at a horizon boundary. For this reason the basis for separating the horizon may need to be explicitly stated, not just the traditional generalised estimate of the amount of overall change.]{.milne}
+Not all important soil properties change from one horizon to the next or at the same rate with depth. In some instances confident interpretation of the suitability of a soil for a particular end use may depend on the rate of change of a single property at a horizon boundary. For this reason the basis for separating the horizon may need to be explicitly stated, not just the traditional generalised estimate of the amount of overall change.
 
 ::: {#nte-chor .callout-note appearance="minimal" collapse="true" title="Complex horizons"}
 Some horizons have an internally complex structure that nonetheless clearly represents a distinct zone within the soil profile. Examples of such may include:
@@ -25,24 +25,24 @@ These layers may require some additional parameters or notes to adequately descr
 
 ## Defining the soil surface {#sec-pr-ssurf}
 
-The soil surface has a slightly more restrictive definition than the land surface. The soil surface begins below the layer of fresh leaf litter or small living plants, and at the top of organic soil materials such as decomposing litter or peat. The mineral soil surface is further restricted, being the top of the first horizon dominated by mineral soil material. Horizon depths are defined only with reference to the soil surface - scrape back fresh litter and/or small plants and measure from there.
+The soil surface has a slightly more restrictive definition than the land surface. The soil surface begins below the layer of fresh leaf litter or small living plants, and at the top of organic soil materials such as decomposing litter or peat. The mineral soil surface is further restricted, identified as the top of the first horizon that is dominated by mineral soil material. Horizon depths are defined with reference to the soil surface overall - thus only fresh litter and/or small plants should be scraped back before measuring.
 
 [draw this]{.diags}
 
 ## Recording depths {#sec-pr-depths}
 
-Horizon depths are recorded starting from the soil surface at 0 cm and working downwards.
+Horizon depths are recorded starting from the soil surface at 0 cm and working downwards cumulatively.
 
-When examining single small cores or auger points (see @tbl-pr-gear, type [A]{.ceg}, [C1]{.ceg} and perhaps [C2]{.ceg}), record the observable upper and lower depth of each horizon from the soil surface in whole centimetres (e.g. [28-38 cm]{.ceg}).
+When examining single small cores or auger points (see @tbl-pr-gear, type [A]{.ceg}, [C1]{.ceg} and perhaps [C2]{.ceg}), record the observable upper and lower boundary depths of each horizon from the soil surface in whole centimetres (e.g. [28-38 cm]{.ceg}).
 
-Where a wider exposure (see @tbl-pr-gear, type [E]{.ceg}, [P1]{.ceg}, [P2]{.ceg}) or multiple undisturbed cores are available and greater detail is desired, one may choose to record upper and lower depths as a median and range, again in whole centimetres (e.g. [28 cm (27-29), 38 cm (37-40)]{.ceg}). At least 5 measurements should contribute to such an assessment.
+Where a wider exposure (see @tbl-pr-gear, type [E]{.ceg}, [P1]{.ceg}, [P2]{.ceg}) or multiple undisturbed cores are available and greater detail is desired, one may choose to record upper and lower boundary depths as a median and range, again in whole centimetres (e.g. [28 cm (27-29), 38 cm (37-40)]{.ceg}). At least 5 measurements should contribute to such an assessment. This practice may be useful for describing irregular, convolute or discontinuous horizons (@sec-pr-bdyshp).
 
-Measure boundaries to and from the midpoint of each horizon transition zone (see @sec-pr-bdydist).
+Measure boundaries to and from the midpoint of each horizon transition zone (see @sec-pr-bdydist). Where depths are correctly measured, horizon thicknesses can be calculated after fieldwork.
 
 ::: {#imp-stp .callout-important collapse="true" appearance="simple" title="Defining horizons on steep slopes"}
 On steeper slopes, measuring horizons from vertical exposures can exaggerate horizon thicknesses, as the soil horizons mantle the landscape perpendicular to the sloping surface [@prietzel2019]. This starts to matter at slopes \> 25°, and progressively becomes more important - especially when calculating volumetric stocks of soil components. @fig-hr-slpex shows how a vertical 30-cm depth represents a progressively shallower 'true depth' as slope increases.
 
-To adjust vertically measured horizon depths to correct for slope, apply the formula $depth * cos(slope)$. Supply depth in cm and slope in radians. Slopes measured in degrees can be converted to radians using the formula $(slope * pi) / 180$.
+Where depths are measured perpendicular to the surface, no adjustment needs to be made. To adjust vertically measured horizon depths to correct for slope, apply the formula $depth * cos(slope)$. Supply depth in cm and slope in radians. Slopes measured in degrees can be converted to radians using the formula $(slope * pi) / 180$. If this correction is made, record that it has been done in the site notes to prevent the horizon depths from being adjusted any further.
 
 ```{r}
 #| label: fig-hr-slpex
@@ -63,13 +63,9 @@ ggplot(slp_dat) +
 ```
 :::
 
-## Thickness {#sec-pr-thick}
-
-Where depths are correctly measured, thickness should be calculated after fieldwork.
-
 ## Boundary shape {#sec-pr-bdyshp}
 
-Horizon boundary shape can only be observed on wider exposures (see @tbl-pr-gear, type [E]{.ceg}, [P1]{.ceg}, [P2]{.ceg}). Record against the following schema:
+Horizon boundary shape can only be observed on wider exposures (see @tbl-pr-gear, type [E]{.ceg}, [P1]{.ceg}, [P2]{.ceg}). Record using one of the options in @tbl-hr-bshp. Note that the boundary shape is associated with the lower boundary of any given horizon, so the lowest horizon described on a profile may have an undefined boundary shape if profile exposure stopped early (@sec-pr-rsa). In that case, use code [N]{.ceg}.
 
 ```{r}
 #| label: tbl-hr-bshp
@@ -81,7 +77,8 @@ dat_hr_bshp <-
           'W', 'Wavy', 'the boundary surface has broad, shallow, relatively regular pockets and none deeper than they are wide',
           'I', 'Irregular', 'the boundary surface has pockets which are deeper than they are wide but not recurved',
           'C', 'Convolute', 'the boundary surface has pockets which are deeper than they are wide and, in parts, recurved',
-          'D', 'Discontinuous', 'the boundary is discontinuous, usually due to external disturbance')
+          'D', 'Discontinuous', 'the boundary is discontinuous, usually due to external disturbance',
+          'N', 'Not observed', 'the lower horizon boundary could not be observed')
 
 tbl_hr_bshp <- gt(dat_hr_bshp) |>
    tab_options(
@@ -101,9 +98,9 @@ tbl_hr_bshp
 
 ## Boundary distinctness {#sec-pr-bdydist}
 
-Horizon boundaries comprise state changes over short distances. These should be reported as a direct measurement in the same way as horizon upper and lower depths, by reporting the range either side of the boundary. Report in 0.1 centimetre increments (e.g. [0.5 cm]{.ceg}).
+Horizon boundaries comprise state changes over short distances. These should be reported as a direct measurement in the same way as horizon upper and lower boundary depths, by reporting the range either side of the boundary. Report in 0.1 centimetre increments (e.g. [0.5 cm]{.ceg}).
 
-For rapid assessment, horizon boundaries can be classified using the following schema:
+For rapid assessment, horizon boundaries can be classified using the schema in @tbl-hr-bdst.
 
 ```{r}
 #| label: tbl-hr-bdst
@@ -112,10 +109,11 @@ For rapid assessment, horizon boundaries can be classified using the following s
 dat_hr_bdst <-
   tribble(~Code, ~Name, ~Description,
           'S', 'Sharp', '< 0.5 cm', 
-          'A', 'Abrupt', '0.5 - 2.0 cm',
-          'C', 'Clear', '2.0 - 5.0 cm',
-          'G', 'Gradual', '5.0 - 10.0 cm',
-          'D', 'Diffuse', '10 - 30.0 cm')
+          'A', 'Abrupt', '≥0.5–<2.0 cm',
+          'C', 'Clear', '≥2.0–<5.0 cm',
+          'G', 'Gradual', '≥5.0–<10.0 cm',
+          'D', 'Diffuse', '≥10–<30.0 cm',
+          'N', 'Not observed', 'the lower horizon boundary could not be observed')
 
 tbl_hr_bdst <- gt(dat_hr_bdst) |>
    tab_options(
