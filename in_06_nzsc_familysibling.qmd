@@ -224,50 +224,6 @@ Some additional rules apply for particular soil profile material classes:
 
 ### Parent material origin {#sec-fam-pmo}
 
-Parent material origin (PMO) is the final defining factor of the soil Family. It describes how soil parent materials have arrived at the point of observation. Allowable codes are listed in @tbl-ss-pmo.
-
-Multiple modes may have operated in different parts of the soil profile. Up to two may be recorded at Family level, in order of their occurrence down-profile (e.g. [Tp/Fl]{.ceg}). If PMO has been recorded at horizon level and more than two have been identified, the dominant two must be chosen on the basis of their cumulative thickness. Cumulative thicknesses \<20 cm should be ignored unless the layers include a significant pedological feature (e.g. a pan).
-
-```{r}
-#| label: tbl-ss-pmo
-#| tbl-cap: "Parent material origin"
-
-dat_ss_pmo <-
-  tribble(~Code, ~Name, ~Description,
-          'An', 'Anthropic', 'Deposits made by the direct actions of humans, including truncation, mixing, or deposition.',
-          'Cl', 'Colluvium', 'Weathered soil and rock material mantling slopes that has been transported primarily by gravity and sheet wash.',
-          'Fl', 'Alluvium', 'Sediments that have been deposited by streams, rivers and other running water.',
-          'Gl', 'Glacial till', 'Poorly stratified, poorly sorted rock fragments, sand and mud, surface or near-surface deposits resulting from the transportation by and deposition from ice or meltwater from beneath or in close proximity to glacial ice.',
-          'Lc', 'Lacustrine', 'Formed in and around lake beds; comprising extremely fine sediment deposited under very low-flow freshwater conditions.',
-          'Mr', 'Marine' , 'Unconsolidated sediments saturated by brackish or saline water.',
-          'Lh', 'Lahar', 'A flow of volcanic material, both ash and coarser products, mixed with water; often caused by the spilling over of a crater lake. Also used to describe the mounds formed on volcanic ring-plains where lahars stop.',
-          'Tp', 'Tephra', 'A general term for all solid (rather than molten) materials ejected from a volcano during an eruption: includes boulders, lapilli and ash.',
-          'Li', 'Litter', 'Partly or fully decomposed forest litter, equal to or greater than 30 cm depth that is **not** almost continually saturated in the natural state (**F** and **H** horizons).',
-          'Pt', 'Peat', 'Partly decomposed plant remains in a water-saturated environment, such as a bog',
-          'Lo', 'Loess', 'A blanket deposit of silt-sized particles (0.002--0.06 mm diameter); usually carried by wind from dry riverbeds or outwash plains during glacial and post-glacial periods.',
-          'Sa', 'Aeolian sand', 'Wind-deposited sand-sized particles (0.05--2.0 mm diameter), i.e. dune sand.',
-          'Rw', 'Highly Weathered Rock', 'Highly to completely weathered rock, formed in place by chemical weathering.',
-          'Rx', 'Rock', '*In situ* unweathered to moderately weathered lithified geologic material comprising one or more minerals showing rock structure.',
-          'Uk', 'Unknown', 'Origin cannot be determined with certainty.'
-          )
-
-tbl_ss_pmo <- gt(dat_ss_pmo) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  fmt_markdown(columns = 3) |>
-  cols_width(Code ~pct(10), Name ~pct(20))
-
-tbl_ss_pmo
-```
-
 ## NZSC Sibling {#sec-in-sib}
 
 These codes help define level 5 of the NZSC, the soil sibling.

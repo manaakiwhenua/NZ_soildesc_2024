@@ -218,6 +218,48 @@ Parent material origin, or mode of emplacement, describes how soil parent materi
 
 Record one parent material origin code per soil horizon, using the codes in @tbl-ss-pmo. At the horizon level, the [An]{.ceg} Anthropic class can be subdivided by origin using the codes in @tbl-hr-antype (e.g. [Ann]{.ceg} for a fill pad in a residential housing development).
 
+Note that parent material origin (PMO), when summarised on a whole-profile basis, is the final defining factor of the soil Family [@webb2011]. 
+
+```{r}
+#| label: tbl-ss-pmo
+#| tbl-cap: "Parent material origin"
+
+dat_ss_pmo <-
+  tribble(~Code, ~Name, ~Description,
+          'An', 'Anthropic', 'Deposits made by the direct actions of humans, including truncation, mixing, or deposition.',
+          'Cl', 'Colluvium', 'Weathered soil and rock material mantling slopes that has been transported primarily by gravity and sheet wash.',
+          'Fl', 'Alluvium', 'Sediments that have been deposited by streams, rivers and other running water.',
+          'Gl', 'Glacial till', 'Poorly stratified, poorly sorted rock fragments, sand and mud, surface or near-surface deposits resulting from the transportation by and deposition from ice or meltwater from beneath or in close proximity to glacial ice.',
+          'Lc', 'Lacustrine', 'Formed in and around lake beds; comprising extremely fine sediment deposited under very low-flow freshwater conditions.',
+          'Mr', 'Marine' , 'Unconsolidated sediments saturated by brackish or saline water.',
+          'Lh', 'Lahar', 'A flow of volcanic material, both ash and coarser products, mixed with water; often caused by the spilling over of a crater lake. Also used to describe the mounds formed on volcanic ring-plains where lahars stop.',
+          'Tp', 'Tephra', 'A general term for all solid (rather than molten) materials ejected from a volcano during an eruption: includes boulders, lapilli and ash.',
+          'Li', 'Litter', 'Partly or fully decomposed forest litter, equal to or greater than 30 cm depth that is **not** almost continually saturated in the natural state (**F** and **H** horizons).',
+          'Pt', 'Peat', 'Partly decomposed plant remains in a water-saturated environment, such as a bog',
+          'Lo', 'Loess', 'A blanket deposit of silt-sized particles (0.002--0.06 mm diameter); usually carried by wind from dry riverbeds or outwash plains during glacial and post-glacial periods.',
+          'Sa', 'Aeolian sand', 'Wind-deposited sand-sized particles (0.05--2.0 mm diameter), i.e. dune sand.',
+          'Rw', 'Highly Weathered Rock', 'Highly to completely weathered rock, formed in place by chemical weathering.',
+          'Rx', 'Rock', '*In situ* unweathered to moderately weathered lithified geologic material comprising one or more minerals showing rock structure.',
+          'Uk', 'Unknown', 'Origin cannot be determined with certainty.'
+          )
+
+tbl_ss_pmo <- gt(dat_ss_pmo) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  fmt_markdown(columns = 3) |>
+  cols_width(Code ~pct(10), Name ~pct(20))
+
+tbl_ss_pmo
+```
+
 ```{r}
 #| label: tbl-hr-antype
 #| tbl-cap: "Subtypes of Anthropic soil materials"
@@ -244,8 +286,6 @@ tbl_hr_antype <- gt(dat_hr_antype) |>
 
 tbl_hr_antype
 ```
-
-Parent material origin is also summarised across the top 100 cm of the soil profile as part of defining the NZSC Soil Family (@sec-fam-pmo).
 
 ## Degree of weathering {#sec-sedweath}
 
