@@ -8,7 +8,7 @@ library(gt)
 
 ## Defining the site {#sec-pr-site}
 
-Soil profiles are described at sites. The 'site' concept is necessarily somewhat flexible to account for the range of sampling purposes and methods. Generally speaking, it is considered to include the immediate surroundings of a profile description, up to a radius of \~10 m. As such, it will generally nest within a landform (@sec-gmph-lfm) unless the site selection method (@sec-ref-sampstrat) was prescriptive and landform-blind.
+Soil profiles are described at sites. The 'site' concept is necessarily somewhat flexible to account for the range of sampling purposes and methods. Generally speaking, it is considered to include the immediate surroundings of a profile description, up to a maximum radius of \~10 m. As such, it will generally sit within a single landform. Where a site is close to a landform edge and the processes operating on the neighbouring landform are not judged to affect the profile being described, those neighbouring landforms should be ignored.
 
 Larger sampling plots or long transects that cross multiple landforms (or even landscapes) should be treated as a series of related sites, rather than a single site.
 
@@ -240,7 +240,7 @@ The following requirements comprise a minimum dataset for any soil profile descr
 
 ### Location {#sec-ss-recloc}
 
-Location coordinates are captured as reference data (@sec-ref-loc). Additionally, record elevation in meters, and note the sensor or data source used to obtain location and elevation data using @tbl-ss-locsrc and @tbl-ss-elevsrc respectively. If the equipment in use does not estimate expected error automatically, make a note of it manually.
+Location coordinates are captured as reference data (@sec-ref-loc). Additionally, record elevation in meters, and note the sensor or data source used to obtain location and elevation data using @tbl-ss-locsrc and @tbl-ss-elevsrc respectively. If the equipment in use does not estimate expected error automatically, estimate it manually.
 
 [1586090E, 5405722N GS (462 ± 2 m A)]{.ceg} for a location obtained using a smartphone, and an elevation measured with a calibrated altimeter.
 
