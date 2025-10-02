@@ -98,9 +98,9 @@ tbl_hr_bshp
 
 ## Boundary distinctness {#sec-pr-bdydist}
 
-Horizon boundaries comprise state changes over short distances. These should be reported as a direct measurement in the same way as horizon upper and lower boundary depths, by reporting the range either side of the boundary. Report in 0.1 centimetre increments (e.g. [0.5 cm]{.ceg}).
+Horizon boundaries mark changes in soil properties over short vertical distances. The distinctness is variable, from very sudden to gradual, and can signify particular soil characteristics (e.g. a change in parent material). Horizon boundary distinctness is used when classifying soils. Measure the distinctness of a horizon's lower boundary in terms of its width. Report a median and range in 0.1 centimetre increments (e.g. [2.0 cm +/- 0.5 cm]{.ceg}).
 
-For rapid assessment, horizon boundaries can be classified using the schema in @tbl-hr-bdst.
+For rapid assessment, horizon boundary distinctness can be noted using one of the options in @tbl-hr-bdst.
 
 ```{r}
 #| label: tbl-hr-bdst
@@ -131,7 +131,11 @@ tbl_hr_bdst <- gt(dat_hr_bdst) |>
 tbl_hr_bdst
 ```
 
-Where a diffuse transition is thicker than 30 cm, it should be defined as a new horizon. Use transitional horizon names as needed (see @sec-hor-tran).
+Where a transition is thicker than 30 cm, it should be defined as a new horizon. Use transitional horizon names as needed (see @sec-hor-tran).
+
+
+
+
 
 [put a diagram unifying the previous three concepts here]{.diags}
 
@@ -145,11 +149,11 @@ Report soil moisture status for each horizon at the time of observation. This pa
 
 dat_hr_bdst <-
   tribble(~Code, ~Name, ~Sands, ~Light, ~Medium, ~Clays,
-          'D', 'Dry', 'loose, single grain', 'loose', 'easily broken down to powder', 'hard, baked, cracked',
-          'T', 'Moderately moist', 'will not form a ball', 'forms weak ball, breaks easily', 'forms a ball, very pliable', 'forms a ball, somewhat pliable',
-          'M', 'Moist', 'forms very weak ball', 'forms weak ball, breaks easily', 'forms a ball, very pliable', 'easily forms a ball',
-          'W', 'Wet', 'fluid, non-plastic, non-sticky', 'slightly fluid, slightly plastic', 'deformable, plastic', 'semi-deformable, very plastic',
-          'S', 'Saturated', 'water films visible, or below water table',  '',  '', '')
+          'D', 'Dry', 'Loose, single grain', 'Loose', 'Easily broken down to powder', 'Hard, baked, cracked',
+          'T', 'Moderately moist', 'Will not form a ball', 'Forms weak ball, breaks easily', 'Forms a ball, very pliable', 'Forms a ball, somewhat pliable',
+          'M', 'Moist', 'Forms very weak ball', 'Forms weak ball, breaks easily', 'Forms a ball, very pliable', 'Easily forms a ball',
+          'W', 'Wet', 'Fluid, non-plastic, non-sticky', 'Slightly fluid, slightly plastic', 'Deformable, plastic', 'Semi-deformable, very plastic',
+          'S', 'Saturated', 'Water films visible, or below water table',  '',  '', '')
 
 tbl_hr_bdst <- gt(dat_hr_bdst) |>
    tab_options(
@@ -164,7 +168,7 @@ tbl_hr_bdst <- gt(dat_hr_bdst) |>
             locations = cells_body(columns = 1)) |>
   tab_style(style = list(cell_text(align='center', style='italic')),
             locations = cells_body(columns = 3:6, rows = 5)) |>
-  tab_spanner(label = 'Behaviour of fine earth',
+  tab_spanner(label = 'Behaviour of the fine earth fraction',
               columns = Sands:Clays) |>
   cols_label(Sands = '> 80% Sand',
              Light = html("< 80% Sand<br />< 18% Clay"),
@@ -178,13 +182,13 @@ tbl_hr_bdst
 
 ## Depth to free water
 
-Depth to free water can be determined from the upper depth of the first [S]{.ceg} saturated horizon, or specifically recorded in whole centimetres. Depending on the soil's transmissivity, the presence of the water table may be revealed by the pit or core filling with water.
+Depth to free water can be determined from the upper depth of the uppermost [S]{.ceg} saturated horizon (@tbl-hr-soilmst), or may be recorded directly, in whole centimetres. Depending on the soil's transmissivity, the water table may be also become evident by the pit or core filling with water. In this case, wait for the water level to stabilise before measuring.
 
 -   If the water table is not encountered, record [NA]{.ceg}
--   If the water table is encountered, use @tbl-hr-frw to code its position in the profile, then record the depth above or below in whole centimetres. Do not record negative numbers to signify a water table above the surface.
+-   If the water table is encountered, use @tbl-hr-frw to code its position in the profile, then record its depth above or below the soil surface in whole centimetres. Do not record negative numbers to signify a water table above the surface.
 -   If the water table is exactly at the soil surface, record ['B 0']{.ceg}.
 
-e.g. ['B 80']{.ceg} for a profile saturated below 80 cm deep; ['A 1']{.ceg} for a barely-walkable peat.
+e.g. ['B 80']{.ceg} for a profile saturated below 80 cm depth; ['A 1']{.ceg} for a saturated and barely-walkable peat.
 
 ```{r}
 #| label: tbl-hr-frw
@@ -212,13 +216,58 @@ tbl_hr_frw <- gt(dat_hr_frw) |>
 tbl_hr_frw
 ```
 
-## Parent material origin {#sec-orig}
+## Parent materials {#sec-pr-pm}
+
+Information about the lithology, origin and weathering degree of the soil parent materials is essential for accurate classification and helps contextualise analytical data.
+
+### Lithology {#sec-pr-lith}
+
+The lithology of the fine earth (mineral particles <2 mm) and of rock fragments (if present) are noted separately for each soil horizon. Where weathering substrate layers are observed, their lithology is also noted. Use the codes in @tbl-ss-pm. 
+
+Example: [An, Hs]{.ceg} for a mix of eroded sedimentary rocks and volcanic ash.
+
+### Degree of weathering {#sec-sedweath}
+
+The effects of weathering and pedogenesis vary down-profile (usually, but not always, decreasing with depth). Horizons that have experienced limited weathering may require specific descriptors (e.g. texture (@sec-tex-rec) cannot be determined on slightly weathered rocks, but bedding (@sec-reg-bed) may need to be described), so the need for these should be assessed early in the description process. Record degree of weathering once per horizon.
+
+```{r}
+#| label: tbl-hr-wdeg
+#| tbl-cap: "Degree of weathering"
+
+dat_hr_wdeg <-
+  tribble(~Code, ~Name, ~Description_c, ~Description_u,
+          1, 'Unweathered', 'Material shows no discolouration, loss of strength, or any other effects due to weathering', 'Particles are uncoated and their physical arrangement has not been disturbed (e.g. visible cross-bedding, absence of burrows). Secondary minerals and precipitates are absent',
+          2, 'Slightly weathered', 'Material may be slightly discoloured compared to its unweathered state. Discontinuities have discoloured surfaces. The rock material is not significantly weaker than fresh rock material', 'Particle physical arrangement is undisturbed, but some evidence of secondary mineral formation may be evident (e.g. pyrite formation in anoxic marine sediments)',
+          3, 'Moderately weathered', 'Rock material is discoloured and discontinuity surfaces will have a greater discolouration which also penetrates slightly into the rock material. The rock material is significantly weaker than the fresh rock and part of the rock mass may have been changed to soil material.', 'Sediments may be largely discoloured by secondary mineral precipitation or illuviation; some clay minerals may have weathered from the material, some physical disturbance by meso- or macrofauna may be apparent',
+          4, 'Highly weathered', 'Rock material is discoloured and more than half the rock mass is changed to soil material. Weathering adjacent to discontinuities penetrates deeply into the rock material but lithorelicts or core stones of fresh or slightly weathered rock may still be present.', 'Sediments show substantial alteration by weathering processes as evidenced by e.g. clay mineral production, presence of secondary materials and perhaps some structural development. Evidence of bedding may be absent or difficult to identify',
+          5, 'Very highly weathered', 'All the rock mass is decomposed and externally changed to soil material, but the original rock fabric is mainly preserved.', 'Sediments have largely changed to soil material, but the expression of features like structure may be weak relative to adjacent layers',
+          6, 'Completely weathered',  'Rock is completely changed to soil material with the original fabric completely destroyed but the resulting soil is not significantly transported.', 'Sediments have completely changed to soil material')
+
+tbl_hr_wdeg <- gt(dat_hr_wdeg) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_label(Description_c = "Rock and rock fragments",
+             Description_u = "Unconsolidated mineral materials") |>
+  cols_width(Code ~pct(10), Name ~pct(20))
+
+tbl_hr_wdeg
+```
+
+### Parent material origin {#sec-pr-orig}
 
 Parent material origin, or mode of emplacement, describes how soil parent materials have arrived at the point of observation. Multiple modes may have operated in different parts of the soil profile.
 
 Record one parent material origin code per soil horizon, using the codes in @tbl-ss-pmo. At the horizon level, the [An]{.ceg} Anthropic class can be subdivided by origin using the codes in @tbl-hr-antype (e.g. [Ann]{.ceg} for a fill pad in a residential housing development).
 
-Note that parent material origin (PMO), when summarised on a whole-profile basis, is the final defining factor of the soil Family [@webb2011]. 
+Note that parent material origin, when summarised on a whole-profile basis, is the final defining factor of the soil Family within the *New Zealand Soil Classification* [@webb2011]. 
 
 ```{r}
 #| label: tbl-ss-pmo
@@ -238,8 +287,8 @@ dat_ss_pmo <-
           'Pt', 'Peat', 'Partly decomposed plant remains in a water-saturated environment, such as a bog',
           'Lo', 'Loess', 'A blanket deposit of silt-sized particles (0.002--0.06 mm diameter); usually carried by wind from dry riverbeds or outwash plains during glacial and post-glacial periods.',
           'Sa', 'Aeolian sand', 'Wind-deposited sand-sized particles (0.05--2.0 mm diameter), i.e. dune sand.',
-          'Rw', 'Highly Weathered Rock', 'Highly to completely weathered rock, formed in place by chemical weathering.',
-          'Rx', 'Rock', '*In situ* unweathered to moderately weathered lithified geologic material comprising one or more minerals showing rock structure.',
+          'Rw', 'Highly Weathered Rock', '*In situ* highly to completely weathered lithified geologic material',
+          'Rx', 'Rock', '*In situ* unweathered to moderately weathered lithified geologic material',
           'Uk', 'Unknown', 'Origin cannot be determined with certainty.'
           )
 
@@ -266,7 +315,7 @@ tbl_ss_pmo
 
 dat_hr_antype <-
   tribble(~Code, ~Name, ~Description,
-          'm', 'Māori', 'Soil modifications dating from Māori arrival in New Zealand, particularly pre-modern soil management practices',
+          'm', 'Māori', 'Soil modifications dating from Polynesian arrival in New Zealand, particularly pre-modern soil management practices (i.e. early Māori)',
           'p', 'Pakeha', 'Soil modifications dating from Pakeha (non-Māori) arrival in New Zealand up to modern times (e.g. European agricultural practices)',
           'n', 'Modern', 'Anthropic modifications resulting from modern techniques or addition of modern materials to the soil (e.g. plastics)'
           )
@@ -287,37 +336,3 @@ tbl_hr_antype <- gt(dat_hr_antype) |>
 tbl_hr_antype
 ```
 
-## Degree of weathering {#sec-sedweath}
-
-The effects of weathering and pedogenesis vary down-profile (usually, but not always, decreasing with depth). Horizons that have experienced limited weathering may require specific descriptors (e.g. texture (@sec-tex-rec) cannot be determined on slightly weathered rocks, but bedding (@sec-reg-bed) may need to be described), so the need for these should be assessed early in the description process. Record degree of weathering once per horizon.
-
-```{r}
-#| label: tbl-hr-wdeg
-#| tbl-cap: "Degree of weathering"
-
-dat_hr_wdeg <-
-  tribble(~Code, ~Name, ~Description_c, ~Description_u,
-          1, 'Unweathered', 'Material shows no discolouration, loss of strength, or any other effects due to weathering', 'Particles are uncoated and their physical arrangement has not been disturbed (e.g. visible cross-bedding, absence of burrows). Secondary minerals and precipitates are absent',
-          2, 'Slightly weathered', 'Material may be slightly discoloured. Discontinuities have discoloured surfaces. The rock material is not significantly weaker than fresh rock material', 'Particle physical arrangement is undisturbed, but some evidence of secondary mineral formation may be evident (e.g. pyrite formation in anoxic marine sediments)',
-          3, 'Moderately weathered', 'Rock material is discoloured and discontinuity surfaces will have a greater discolouration which also penetrates slightly into the rock material. The rock material is significantly weaker than the fresh rock and part of the rock mass may have been changed to soil material.', 'Sediments may be largely discoloured by secondary mineral precipitation or illuviation; some clay minerals may have weathered from the material, some physical disturbance by meso- or macrofauna may be apparent',
-          4, 'Highly weathered', 'Rock material is discoloured and more than half the rock mass is changed to soil material. Weathering adjacent to discontinuities penetrates deeply into the rock material but lithorelicts or core stones of fresh or slightly weathered rock may still be present.', 'Sediments show substantial alteration by weathering processes as evidenced by e.g. clay mineral production, presence of secondary materials and perhaps some structural development. Evidence of bedding may be absent or difficult to identify',
-          5, 'Very highly weathered', 'All the rock mass is decomposed and externally changed to soil material, but the original rock fabric is mainly preserved.', 'Sediments have largely changed to soil material, but the expression of features like structure may be weak relative to adjacent layers',
-          6, 'Completely weathered',  'Rock is completely changed to soil material with the original fabric completely destroyed but the resulting soil is not significantly transported.', 'Sediments have completely changed to soil material')
-
-tbl_hr_wdeg <- gt(dat_hr_wdeg) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red',
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_label(Description_c = "Rock and rock fragments",
-             Description_u = "Unconsolidated sediments") |>
-  cols_width(Code ~pct(10), Name ~pct(20))
-
-tbl_hr_wdeg
-```
