@@ -254,42 +254,6 @@ tbl_hr_pftype <- gt(dat_hr_pftype) |>
 tbl_hr_pftype
 ```
 
-## Biological features {#sec-hr-bio}
-
-Biological secondary features are mostly created by plant roots as they grow into the soil, and soil fauna as they create and infill burrows.
-
-For rapid assessment, note type(s) using the codes in @tbl-hr-biotype.
-
-For detailed assessment, also note the areal percentage of the exposed horizon face occupied by the feature.
-
-Example: [T 30%]{.ceg} for infilled earthworm burrows creating an A/Bw horizon.
-
-```{r}
-#| label: tbl-hr-biotype
-#| tbl-cap: "Types of secondary biological feature"
-
-dat_hr_biotype <-
-  tribble(~Code, ~Name, ~Description,
-          'T', 'Tunnel', 'Infilled earthworm or insect burrow, < 20 mm in diameter',
-          'B', 'Burrow', 'Infilled former macrofauna burrow, > 20 mm in diameter',
-          'C', 'Casts',  'Earthworm wastes forming balls of fine soil material')
-
-tbl_hr_biotype <- gt(dat_hr_biotype) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10), Name ~pct(20))
-
-tbl_hr_biotype
-```
-
 ## Cryofeatures {#sec-cryof}
 
 Cryoturbation refers to the physical disturbance and mixing of soil caused by repeated freezing and thawing. It commonly occurs in soils exposed to seasonal or historic freeze and thaw cycles. Affected soils may show discontinuous horizon boundaries and physical mixing as a result of intense shrink-swell activity caused by ice formation. Freezing and thawing can also accelerate downslope movement (solifluction), often incorporating angular, poorly sorted rock fragments into the soil. These features can be recognised by examining horizon boundary characteristics (@sec-pr-bdyshp, @sec-pr-bdydist), colour patterns from mixing (@sec-patt-type), and rock fragment characteristics (@sec-rockfrag).
