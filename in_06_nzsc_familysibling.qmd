@@ -58,58 +58,6 @@ Profile material class places restrictions on other parts of the family and sibl
 
 ### Rock class {#sec-fam-rcl}
 
-```{r}
-#| label: tbl-ss-pm
-#| tbl-cap: "NZSC Lithology"
-
-dat_ss_pm <-
-  tribble(~Code, ~Name,
-    'Cb',	'Carbonaceous Rock (Coal)',
-    'Sq',	'Soft Quartzitic Sediments',
-    'Hq',	'Hard Quartzitic Sediments',
-    'Sm',	'Soft mudstone',
-    'Ss',	'Soft sandstone',
-    'Hm',	'Hard mudstone',
-    'Hs',	'Hard sandstone',
-    'Tm',	'Tuffaceous mudstone',
-    'Ts',	'Tuffaceous sandstone',
-    'Sc',	'Schist',
-    'Ls',	'Soft calcareous',
-    'Li',	'Hard calcareous',
-    'Ma',	'Marble',
-    'Rh',	'Rhyolite',
-    'Ig',	'Ignimbrite',
-    'An',	'Andesite',
-    'Ba',	'Basalt',
-    'Gr',	'Granite and Gneiss',
-    'Di',	'Diorite',
-    'Ga',	'Gabbro',
-    'Fe',	'Iron Sands')
-      
-tbl_ss_pm <- gt(dat_ss_pm) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10))
-
-tbl_ss_pm
-
-```
-
-::: {.content-visible when-format="docx"}
-delete me
-:::
-
-::: {#nte-softrock .callout-note appearance="minimal" collapse="true" title="What are soft rocks?"}
-'Soft' rocks in this context can at most be broken readily with a light hammer blow, and can be scraped and peeled by a pocket knife. 'Hard' rocks can at best be scratched with a knife but not scraped or peeled, and require a firm hammer blow to crack [@lynn1991, p. 11].
-:::
 
 #### Rock class of stone and bedrock {#sec-fam-rclr}
 
