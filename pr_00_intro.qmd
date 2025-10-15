@@ -163,12 +163,12 @@ The method by which the soil was exposed for observation affects which parameter
 
 dat_pr_gear <-
   tribble(~Code, ~Name, ~Description,
-          'P1', 'Minimal pit', 'Pit up to 0.5 m wide and generally no deeper than 1m',
-          'P2', 'Standard pit', 'Pit or trench > 1 m wide, exposing the complete profile to regolith or bedrock',
-          'E', 'Exposure', 'Road cutting or similar, chipped back and cleaned',
-          'C1', 'Small Core', 'Relatively undisturbed soil core, < 50 mm diameter',
-          'C2', 'Large Core', 'Relatively undisturbed soil core, ≥ 50 mm diameter',
-          'A', 'Auger', 'Hand or mechanical auger, including e.g. post hole diggers')
+          'P1', 'Standard pit', 'Pit or trench > 1 m wide, exposing the complete profile to regolith or bedrock',
+          'P2', 'Minimal pit', 'Pit up to 0.5 m wide and generally no deeper than 1m',
+           'E', 'Exposure', 'Road cutting or similar, chipped back and cleaned',
+          'C1', 'Large Core', 'Relatively undisturbed soil core, ≥ 30 mm diameter',
+          'C2', 'Small Core', 'Relatively undisturbed soil core, < 30 mm diameter',
+           'A', 'Auger', 'Hand or mechanical auger, including e.g. post hole diggers')
 
 tbl_pr_gear <- gt(dat_pr_gear) |>
    tab_options(
@@ -187,11 +187,11 @@ tbl_pr_gear
 ```
 
 -   [A]{.ceg} samples cannot be used to reliably determine soil structure due to the degree of disturbance.
--   Combined sampling is common in field mapping, e.g. small pit excavation to \~50-75 cm followed by augering to a required depth in relatively well-understood landscapes. Record each method used and note the depth at which the method changed, e.g., [P1/A (75 cm)]{.ceg}.
--   Gouge-style augers used in soft marine sediments may be included in [C2]{.ceg} even though they commonly narrow to \< 50 mm at their maximum depth.
--   [C1]{.ceg} style samplers are common in paddock-scale monitoring and research, where they are used for rapid surface measurement. These are not generally suitable for mapping as they cannot sample below the topsoil.
+-   Combined sampling is common in field mapping, e.g. small pit excavation to \~50-75 cm followed by augering to a required depth in relatively well-understood landscapes. Record each method used and note the depth at which the method changed, e.g., [P2/A (75 cm)]{.ceg}.
+-   Gouge-style augers used in soft marine sediments may be included in [C1]{.ceg} even though they may narrow to \< 30 mm at their maximum depth.
+-   [C2]{.ceg} style samplers are common in paddock-scale monitoring and research, where they are used for rapid surface measurement. These are not generally suitable for mapping as they cannot sample below the topsoil.
 
-Further discussion of appropriate tools for soil profile exposure may be found in @sec-digging.
+Further discussion of appropriate tools for soil profile exposure may be found in @sec-gear-dig, and methods in @sec-dig.
 
 ### Depth of observation {#sec-pr-doa}
 
@@ -242,7 +242,7 @@ The following requirements comprise a minimum dataset for any soil profile descr
 
 Location coordinates are captured as reference data (@sec-ref-loc). Additionally, record elevation in meters, and note the sensor or data source used to obtain location and elevation data using @tbl-ss-locsrc and @tbl-ss-elevsrc respectively. If the equipment in use does not estimate expected error automatically, estimate it manually.
 
-[1586090E, 5405722N GS (462 ± 2 m A)]{.ceg} for a location obtained using a smartphone, and an elevation measured with a calibrated altimeter.
+E.g., [1586090E, 5405722N GS (462 ± 2 m A)]{.ceg} for a location obtained using a smartphone, and an elevation measured with a calibrated altimeter.
 
 When establishing a monitoring site, record additional data relevant to relocating the site during future visits as described in @sec-loc-rel.
 
@@ -262,7 +262,7 @@ E.g., [Tp Rh]{.ceg} for a landform blanketed in rhyolitic tephra.
 
 Record the current weather using an option from @tbl-ss-weatherc, and optionally note recent rainfall using @tbl-ss-weatherp.
 
-E.g. [SU 21°C, NW]{.ceg} for fine weather with no rainfall in the previous week.
+E.g., [SU 21°C, NW]{.ceg} for fine weather with no rainfall in the previous week.
 
 ### Biota
 
@@ -276,7 +276,7 @@ Record the dominant land cover class of the landform using an option from @sec-g
 
 Record the dominant land use of the landform using an option from [@law2024]. Note also the degree to which the land use has impacted the soil profile using @tbl-ss-luimp.
 
-E.g. [2.2.1 M]{.ceg} for a landform being used primarily for dairying.
+E.g., [2.2.1 M]{.ceg} for a landform being used primarily for dairying.
 
 Ancillary landuses may optionally be recorded if they are considered to be impacting the soil profile - for example, [2.7.3]{.ceg} for a landform on a dairy farm that is regularly receiving waste water.
 
