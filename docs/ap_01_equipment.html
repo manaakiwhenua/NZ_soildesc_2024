@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -399,13 +418,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-digging" id="toc-sec-digging" class="nav-link active" data-scroll-target="#sec-digging"><span class="header-section-number">A.1</span> Profile exposure tools</a>
+  <li><a href="#sec-gear-dig" id="toc-sec-gear-dig" class="nav-link active" data-scroll-target="#sec-gear-dig"><span class="header-section-number">A.1</span> Profile exposure tools</a>
   <ul class="collapse">
-  <li><a href="#hand" id="toc-hand" class="nav-link" data-scroll-target="#hand"><span class="header-section-number">A.1.1</span> Hand</a></li>
-  <li><a href="#mechanical" id="toc-mechanical" class="nav-link" data-scroll-target="#mechanical"><span class="header-section-number">A.1.2</span> Mechanical</a></li>
+  <li><a href="#sec-handtools" id="toc-sec-handtools" class="nav-link" data-scroll-target="#sec-handtools"><span class="header-section-number">A.1.1</span> Hand</a></li>
+  <li><a href="#sec-mechtools" id="toc-sec-mechtools" class="nav-link" data-scroll-target="#sec-mechtools"><span class="header-section-number">A.1.2</span> Mechanical</a></li>
   </ul></li>
-  <li><a href="#profile-description-tools" id="toc-profile-description-tools" class="nav-link" data-scroll-target="#profile-description-tools"><span class="header-section-number">A.2</span> Profile description tools</a></li>
-  <li><a href="#field-test-equipment" id="toc-field-test-equipment" class="nav-link" data-scroll-target="#field-test-equipment"><span class="header-section-number">A.3</span> Field test equipment</a></li>
+  <li><a href="#sec-gear-peat" id="toc-sec-gear-peat" class="nav-link" data-scroll-target="#sec-gear-peat"><span class="header-section-number">A.2</span> Peat sampling</a></li>
+  <li><a href="#sec-gear-liltools" id="toc-sec-gear-liltools" class="nav-link" data-scroll-target="#sec-gear-liltools"><span class="header-section-number">A.3</span> Profile description tools</a></li>
+  <li><a href="#sec-gear-fieldtest" id="toc-sec-gear-fieldtest" class="nav-link" data-scroll-target="#sec-gear-fieldtest"><span class="header-section-number">A.4</span> Field test equipment</a></li>
   </ul>
 </nav>
     </div>
@@ -426,7 +446,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 21, 2025</p>
+      <p class="date-modified">October 15, 2025</p>
     </div>
   </div>
     
@@ -437,10 +457,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="sec-digging" class="level2" data-number="A.1">
-<h2 data-number="A.1" class="anchored" data-anchor-id="sec-digging"><span class="header-section-number">A.1</span> Profile exposure tools</h2>
-<section id="hand" class="level3" data-number="A.1.1">
-<h3 data-number="A.1.1" class="anchored" data-anchor-id="hand"><span class="header-section-number">A.1.1</span> Hand</h3>
+<section id="sec-gear-dig" class="level2" data-number="A.1">
+<h2 data-number="A.1" class="anchored" data-anchor-id="sec-gear-dig"><span class="header-section-number">A.1</span> Profile exposure tools</h2>
+<section id="sec-handtools" class="level3" data-number="A.1.1">
+<h3 data-number="A.1.1" class="anchored" data-anchor-id="sec-handtools"><span class="header-section-number">A.1.1</span> Hand</h3>
 <p>Excavation by hand is often the only viable option in New Zealand terrain, which can severely limit vehicle access. A heavy duty steel spade with a wooden handle is the default choice. Other options that might suit particular environments include long-handled fencing spades and narrow trenching shovels. A breaker bar or crowbar may also be needed to loosen the soil before excavating.</p>
 <p>Hand augers are common tools for rapid profile extraction, but with the exception of gouge augers for soft muds, the degree to which they disturb the soil profile means that they are better off as an accessory tool. Augering is best confined to well-understood landscapes where quick cores are used to confirm that observations made in nearby pits are representative of the area being sampled. Auger heads useful for soil observations include</p>
 <ul>
@@ -450,57 +470,66 @@ ul.task-list li input[type="checkbox"] {
 <li>gouge augers for sampling soft muds</li>
 </ul>
 <p>Extendable systems are useful for reaching target depths &gt;&nbsp;1&nbsp;m, and systems with shorter rods may offer a better ergonomic experience for shorter workers. Augering safely and efficiently becomes difficult when the handles are above the base of the user’s ribcage.</p>
-<p><span class="ceg">C1</span> (<a href="pr_00_intro.html#tbl-pr-gear" class="quarto-xref">Table&nbsp;<span>10.3</span></a>) style tube samplers can be manually inserted with a steel post driver and sampling depths of up to 1&nbsp;m are usually achievable.</p>
+<p><span class="ceg">C2</span> (<a href="pr_00_intro.html#tbl-pr-gear" class="quarto-xref">Table&nbsp;<span>10.3</span></a>) style tube samplers can be manually inserted with a steel post driver and sampling depths of up to 1&nbsp;m are usually achievable.</p>
 </section>
-<section id="mechanical" class="level3" data-number="A.1.2">
-<h3 data-number="A.1.2" class="anchored" data-anchor-id="mechanical"><span class="header-section-number">A.1.2</span> Mechanical</h3>
-<p>Mechanical post drivers can be adapted to push <span class="ceg">C1</span> sampling tubes in as deep as 1.5&nbsp;m, provided the substrate is minimally stony and soil moisture conditions are favourable. Sampling in 30-50&nbsp;cm sections may be necessary in some cases.</p>
+<section id="sec-mechtools" class="level3" data-number="A.1.2">
+<h3 data-number="A.1.2" class="anchored" data-anchor-id="sec-mechtools"><span class="header-section-number">A.1.2</span> Mechanical</h3>
+<p>Mechanical post drivers can be adapted to push <span class="ceg">C2</span> sampling tubes in as deep as 1.5&nbsp;m, provided the substrate is minimally stony and soil moisture conditions are favourable. Sampling in 30-50&nbsp;cm sections may be necessary in some cases.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="data/mwlr_postdriver.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A researcher using a post driver to extract a C1 style core in the Ranigitikei River valley."><img src="data/mwlr_postdriver.png" class="img-fluid figure-img" style="width:70.0%" alt="A researcher using a post driver to extract a [C1]{.ceg} style core in the upper Rangitikei River valley."></a></p>
-<figcaption>A researcher using a post driver to extract a <span class="ceg">C1</span> style core in the Ranigitikei River valley.</figcaption>
+<p><a href="data/mwlr_postdriver.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A researcher using a post driver to extract a [C1]{.ceg} style core in the upper Rangitikei River valley."><img src="data/mwlr_postdriver.png" class="img-fluid figure-img" style="width:70.0%" alt="A researcher using a post driver to extract a [C1]{.ceg} style core in the upper Rangitikei River valley."></a></p>
+<figcaption>A researcher using a post driver to extract a [C1]{.ceg} style core in the upper Rangitikei River valley.</figcaption>
 </figure>
 </div>
 <p>Sampling in gravelly, dry-clayey or hard-setting soils may not be feasible without the use of an excavator. Compact models that can be moved on a light trailer are preferred. A narrow bucket gives the operator a choice of pit sizes.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="data/mwlr_excavator.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="A pedologist using a small excavator to dig a P2 style pit in Northland"><img src="data/mwlr_excavator.png" class="img-fluid figure-img" style="width:70.0%" alt="A pedologist is seen operating a small mechanical excavator to open up a large sampling pit on an alluvial plain in Northland."></a></p>
-<figcaption>A pedologist using a small excavator to dig a <span class="ceg">P2</span> style pit in Northland</figcaption>
+<p><a href="data/mwlr_excavator.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="A pedologist is seen operating a small mechanical excavator to open up a large sampling pit on an alluvial plain in Northland."><img src="data/mwlr_excavator.png" class="img-fluid figure-img" style="width:70.0%" alt="A pedologist is seen operating a small mechanical excavator to open up a large sampling pit on an alluvial plain in Northland."></a></p>
+<figcaption>A pedologist is seen operating a small mechanical excavator to open up a large sampling pit on an alluvial plain in Northland.</figcaption>
 </figure>
 </div>
 <p>For deeper sampling, or work in saturated soils, consider the use of vehicle-mounted dual tube sampling systems, where a <span class="ceg">C1</span> core is lined with a removable plastic tube. These are usually pushed into the soil with a hydraulic hammer and the more complex systems can sample to well over 10&nbsp;m. Another option is vacuum-assisted coring for working below the water table.</p>
 <p>Mechanical screw augers are not recommended as they disturb the soil profile too much for a reliable description. Hollow-core screw augers, however, may be able to minimise such disturbance.</p>
 </section>
 </section>
-<section id="profile-description-tools" class="level2" data-number="A.2">
-<h2 data-number="A.2" class="anchored" data-anchor-id="profile-description-tools"><span class="header-section-number">A.2</span> Profile description tools</h2>
+<section id="sec-gear-peat" class="level2" data-number="A.2">
+<h2 data-number="A.2" class="anchored" data-anchor-id="sec-gear-peat"><span class="header-section-number">A.2</span> Peat sampling</h2>
+<p>Sampling peats can be challenging due to their flexible structure and high water content. Advice on peat-specific extraction devices can be found in <span class="citation" data-cites="dettmann2022">Dettmann et al. (<a href="references.html#ref-dettmann2022" role="doc-biblioref">2022</a>)</span> and <span class="citation" data-cites="agus2011">Agus et al. (<a href="references.html#ref-agus2011" role="doc-biblioref">2011</a>)</span>.</p>
+</section>
+<section id="sec-gear-liltools" class="level2" data-number="A.3">
+<h2 data-number="A.3" class="anchored" data-anchor-id="sec-gear-liltools"><span class="header-section-number">A.3</span> Profile description tools</h2>
 <p>Essential small tools for a field sampling kit include:</p>
 <ul>
 <li>Pit tape with large markings, 1-5&nbsp;m length</li>
 <li>1-3&nbsp;m measuring tape</li>
 <li>Munsell colour book</li>
-<li>Putty knife or trowel</li>
-<li>Spray bottle or pressure sprayer</li>
-<li>Nails, golf tees or small marker flags for noting horizon boundaries</li>
+<li>Putty knife or trowel (plus a plastic option for sampling reduced horizons)</li>
+<li>Spray bottle or pressure sprayer for water</li>
+<li>Nails, golf tees or small marker flags for noting horizon boundaries (and pinning the pit tape into place)</li>
 <li>Cleaning cloths</li>
-<li>Notepad/pen, or tablet or field computer</li>
+<li>Notepad/pen, or electronic field recording device</li>
 <li>Camera or smartphone</li>
 <li>GPS</li>
+<li>Batteries and/or power packs and charging cables for electronics</li>
 <li>Clinometer</li>
+<li>Compass</li>
 <li>Plastic sample bags</li>
 <li>Permanent markers</li>
-<li>Tarpaulin or mat for laying out excavated profiles.</li>
+<li>Tarpaulin or mat for laying out excavated profiles (a minimum 100&nbsp;mm diameter polyethylene half-pipe or flat wooden board may also be used for auger samples).</li>
 </ul>
 <p>Optional, but useful tools include:</p>
 <ul>
 <li>Small-diameter 2&nbsp;mm sieve for removing fine gravel before texturing</li>
 <li>Gardening clippers for trimming overhanging vegetation around exposures.</li>
 <li>Medium-bristled brush, for cleaning up exposure faces.</li>
+<li>Small whiteboard and markers, for noting site identifiers in profile photographs.</li>
+<li>Extendible snap-blade knife, for precise sample excision in moist soils</li>
+<li>Niwashi gardening tool, for cleaning up pit faces and exposures</li>
 </ul>
-<p>A complete field kit should fit in a medium toolbox or sturdy backpack.</p>
+<p>A complete field kit should fit in a medium-sized toolbox or sturdy backpack.</p>
 </section>
-<section id="field-test-equipment" class="level2" data-number="A.3">
-<h2 data-number="A.3" class="anchored" data-anchor-id="field-test-equipment"><span class="header-section-number">A.3</span> Field test equipment</h2>
+<section id="sec-gear-fieldtest" class="level2" data-number="A.4">
+<h2 data-number="A.4" class="anchored" data-anchor-id="sec-gear-fieldtest"><span class="header-section-number">A.4</span> Field test equipment</h2>
 <p>A portable field test kit should be contained in a waterproof storage box in case of reagent leaks. Kit contents may include any or all of the following, per <a href="hr_06_chemical_properties.html#sec-ft" class="quarto-xref"><span>Section 18.1</span></a>:</p>
 <ul>
 <li>Raupach field pH kit (<a href="hr_06_chemical_properties.html#sec-ft-phf" class="quarto-xref"><span>Section 18.1.1</span></a>)</li>
@@ -510,13 +539,21 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="data/mwlr_testkit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Portable field test kit, set up for pHf, NaFf, Mnf and Caf."><img src="data/mwlr_testkit.png" class="img-fluid figure-img" style="width:50.0%" alt="A photo of an open multi-compartment storage box containing field test kit reagents in small dropper bottles. The box is roughly 20 by 35 cm."></a></p>
-<figcaption>Portable field test kit, set up for pH<sub>f</sub>, NaF<sub>f</sub>, Mn<sub>f</sub> and Ca<sub>f</sub>.</figcaption>
+<p><a href="data/mwlr_testkit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="A photo of an open multi-compartment storage box containing field test kit reagents in small dropper bottles. The box is roughly 20 by 35&nbsp;cm."><img src="data/mwlr_testkit.png" class="img-fluid figure-img" style="width:50.0%" alt="A photo of an open multi-compartment storage box containing field test kit reagents in small dropper bottles. The box is roughly 20 by 35&nbsp;cm."></a></p>
+<figcaption>A photo of an open multi-compartment storage box containing field test kit reagents in small dropper bottles. The box is roughly 20 by 35&nbsp;cm.</figcaption>
 </figure>
 </div>
-<p>Portable field pH/EC meters should travel in their own containers along with calibration and cleaning equipment, as well as sample containers and a rack to hold them (<a href="hr_06_chemical_properties.html#sec-ft-phfw" class="quarto-xref"><span>Section 18.1.2</span></a>, <a href="hr_06_chemical_properties.html#sec-ft-phfox" class="quarto-xref"><span>Section 18.1.3</span></a>, and <a href="hr_06_chemical_properties.html#sec-ft-ec" class="quarto-xref"><span>Section 18.1.4</span></a>) . A small toolbox will usually suffice.</p>
+<p>Portable electronic meters (e.g.&nbsp;for pH or EC) should travel in their own containers along with calibration and cleaning equipment, as well as sample containers and a rack to hold them (<a href="hr_06_chemical_properties.html#sec-ft-phfw" class="quarto-xref"><span>Section 18.1.2</span></a>, <a href="hr_06_chemical_properties.html#sec-ft-phfox" class="quarto-xref"><span>Section 18.1.3</span></a>, and <a href="hr_06_chemical_properties.html#sec-ft-ec" class="quarto-xref"><span>Section 18.1.4</span></a>) . A small toolbox will usually suffice.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-agus2011" class="csl-entry" role="listitem">
+Agus F, Hairiah K, Mulyani A 2011. Practical guidelines: Measuring carbon stock in peat soils. Practical guidelines [Internet]. <a href="https://www.worldagroforestry.org/sites/default/files/Publications/PDFS/MN17335.PDF">https://www.worldagroforestry.org/sites/default/files/Publications/PDFS/MN17335.PDF</a>
+</div>
+<div id="ref-dettmann2022" class="csl-entry" role="listitem">
+Dettmann U, Frank S, Wittnebel M, Piayda A, Tiemeyer B 2022. How to take volume-based peat samples down to mineral soil? Geoderma [Internet]. 427:116132. <a href="https://doi.org/10.1016/j.geoderma.2022.116132">https://doi.org/10.1016/j.geoderma.2022.116132</a>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
