@@ -623,14 +623,13 @@ Horizons that have experienced limited weathering may exhibit geogenic features 
 
 ### Bedding {#sec-reg-bed}
 
-Sedimentary deposits may comprise multiple thin layers of alternating materials. These can be partly or fully consolidated, and may have been compressed, folded and/or faulted. Where degree of weathering (@tbl-hr-wdeg) is assessed at [4]{.ceg} or less and bedding is apparent:
+Sedimentary deposits may comprise multiple thin layers of alternating materials. These can be partly or fully consolidated, and may have been compressed, folded and/or faulted. Where layers of subsolum material have been identified (@sec-pr-wdeg) and bedding is apparent within the layer, measure the median angle of the bedding off horizontal and note the dominant lithologies (@sec-pm-lith) involved. Optionally, add a thickness range for the bedding in centimetres.
 
--   For rapid assessment, note bedding presence and measure the median angle of the bedding off horizontal. For example, [✔ 25°]{.ceg}.
--   For routine assessment, measure bedding thickness range in cm, angle off horizontal, strength (@sec-cn-str), and lithology, e.g. [10-30 cm, 25°, 5 Sm/Ss]{.ceg} for thin, very firm, folded marine sediments.
+E.g. [25°, Sm/Ss, 10-30 cm]{.ceg} for thin, very firm marine sediments.
 
 ### Fractures {#sec-reg-fra}
 
-Rock at the base of the profile may be significantly fractured by tectonic and weathering processes. Where degree of weathering (@tbl-hr-wdeg) is assessed at [4]{.ceg} or less and fractures are apparent, note fracture type using @tbl-hr-fractyp. For each type observed also record angle off horizontal, and spacing in cm. For single fractures, record spacing as [0 cm]{.ceg}.
+Rock at the base of the profile may be significantly fractured by tectonic and weathering processes. Where lithic or paralithic layers (@sec-pr-wdeg) have been identified and fractures are apparent, note fracture type using @tbl-hr-fractyp, modal angle off horizontal in degrees, and median spacing in centimetres. For single fractures, record spacing as [0 cm]{.ceg}.
 
 ```{r}
 #| label: tbl-hr-fractyp
@@ -638,9 +637,9 @@ Rock at the base of the profile may be significantly fractured by tectonic and w
 
 dat_hr_fractyp <-
   tribble(~Code, ~Name, ~Description,
-          'F', 'Fault', 'Tectonically induced fractures that may cut across bedding',
-          'C', 'Crush', 'Fracture patterns induced by crushing and shearing forces',
-          'P', 'Pressure', 'Fracture patterns induced by release of overburden pressure')
+          'F', 'Fault', 'Tectonically induced fractures that may cut across bedding. Bedding displacement will be apparent along the fault',
+          'C', 'Crush', 'Fracture patterns induced by crushing and shearing forces. Fractures will have relatively close spacing and irregular orientation.',
+          'P', 'Pressure', 'Fracture patterns induced by release of overburden pressure. Fractures are likely to be near-horizontal or parallel to the surface and may be curved.')
 
 tbl_hr_fractyp <- gt(dat_hr_fractyp) |>
    tab_options(
@@ -658,3 +657,5 @@ tbl_hr_fractyp <- gt(dat_hr_fractyp) |>
 
 tbl_hr_fractyp
 ```
+
+[diagrams or photos - one for each type]{.ceg}
