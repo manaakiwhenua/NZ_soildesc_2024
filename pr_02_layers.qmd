@@ -7,20 +7,14 @@ library(ggplot2)
 library(gt)
 ```
 
-A soil horizon is a distinct layer observable within a soil profile. Horizons are distinguished by differences in texture, stoniness, structure, colour, consistence or other soil properties as described in the following sections. Delineated horizons should ideally represent depth intervals over which important soil attributes change minimally. Conversely, the horizon boundaries should represent depth intervals over which there is a relatively high rate of change of important soil properties.
+A soil horizon is a distinct zone that can be identified within a soil profile, usually but not always parallel to the land surface. Soil horizons are distinguished by differences in texture, stoniness, structure, colour, consistence or other soil properties as described in the following sections. Delineated horizons should ideally represent depth intervals over which important soil attributes change minimally, although some short-range internal variation may occur. Conversely, the horizon boundaries should represent depth intervals over which there is a relatively high rate of change of important soil properties. Soil horizons emerge from a complex interaction of differentiating and homogenising forces, the detailed discussion of which is beyond the scope of this handbook. See @hartemink2020 and @palmer2025 for further reading.
 
-Not all important soil properties change from one horizon to the next or at the same rate with depth. In some instances confident interpretation of the suitability of a soil for a particular end use may depend on the rate of change of a single property at a horizon boundary. For this reason the basis for separating the horizon may need to be explicitly stated, not just the traditional generalised estimate of the amount of overall change.
+Soil horizons are commonly grouped into two major zones - the topsoil, where biological activity is elevated and new additions of soil parent material may be received, and the subsoil, a zone where weathering processes are concentrated, generating new soil minerals and accumulating materials from above. Below these zones, collectively called the 'solum', a 'subsolum' of variably weathered soil parent materials continues, often for many meters. These materials can include paleosols buried by subsequent depositional events, unconsolidated deposits that have not been subject to strong weathering, and rocks weathering in place. In New Zealand, many landscapes are underlain by sedimentary rocks that were not strongly consolidated before becoming exposed to weathering forces, so the boundary between the solum and the subsolum can be particularly difficult to define.
 
-::: {#nte-chor .callout-note appearance="minimal" collapse="true" title="Complex horizons"}
-Some horizons have an internally complex structure that nonetheless clearly represents a distinct zone within the soil profile. Examples of such may include:
+While this handbook focuses primarily on describing the solum, the subsolum, when encountered, should be described as well. Subsolum materials play a key role in deep drainage, groundwater recharge, slope stability, and ecological support [@juilleret2016]. 'Horizon' boundaries within the subsolum will most commonly relate to lithological or depositional discontinuities.
 
--   Partially weathered layers comprising a mix of soil, saprolite and rock materials
--   Layers comprising a complex depositional environment, e.g.
-    -   A sequence of very thin deposits, sometimes in a repeating pattern of texture contrasts (lamellae or lamina)
-    -   Volcanic ash products of contrasting texture, weathered in place (soft blocks or bombs in a finer ash matrix)
--   Layers that have been partially mixed together by tectonic, biotic, climatic, or anthropic forces.
-
-These layers may require some additional parameters or notes to adequately describe but do not need to be split excessively.
+::: {#nte-hzn-cls .callout-note collapse="true" appearance="simple" title="Soil horizons and classification systems"}
+All soil classification systems use particular soil horizons to help locate a soil within the system. To be classification-relevant, such horizons must not be merely present but must also meet particular thresholds of development, e.g. by having a minimum thickness or a particular abundance range for a key property.
 :::
 
 ## Defining the soil surface {#sec-pr-ssurf}
@@ -98,7 +92,7 @@ tbl_hr_bshp
 
 ## Boundary distinctness {#sec-pr-bdydist}
 
-Horizon boundaries mark changes in soil properties over short vertical distances. The distinctness is variable, from very sudden to gradual, and can signify particular soil characteristics (e.g. a change in parent material). Horizon boundary distinctness is used when classifying soils. Measure the distinctness of a horizon's lower boundary in terms of its width. Report a median and range in 0.1 centimetre increments (e.g. [2.0 cm +/- 0.5 cm]{.ceg}).
+Horizon boundaries mark changes in soil properties over short vertical distances. The distinctness is variable, from very sudden to gradual, and can signify particular soil characteristics (e.g. a change in parent material). Horizon boundary distinctness is used when classifying soils. Measure the distinctness of a horizon's lower boundary in terms of its width. Report a median and range in 0.1 centimetre increments (e.g. [2.0 cm +/- 0.5 cm]{.ceg}).
 
 For rapid assessment, horizon boundary distinctness can be noted using one of the options in @tbl-hr-bdst.
 
@@ -137,7 +131,7 @@ Where a transition is thicker than 30 cm, it should be defined as a new horizon
 
 ## Infill features {#sec-pr-inf}
 
-Infill features are interruptions to the horizonation pattern caused by relatively recent biological or physical disturbances. Infill features are large enough that they can usually only be clearly observed at exposures or large pit faces. The interruption may extend across several horizons, and the infilled material may be from adjacent horizon(s) or comprise reworked material from the affected horizon(s). Where infill features are present, note the type using the options in @tbl-hr-infl, the horizons affected, and the infill material using the options in @tbl-hr-infm. 
+Infill features are interruptions to the horizonation pattern caused by relatively recent biological or physical disturbances. Infill features are large enough that they can usually only be clearly observed at exposures or large pit faces. The interruption may extend across several horizons, and the infilled material may be from adjacent horizon(s) or comprise reworked material from the affected horizon(s). Where infill features are present, note the type using the options in @tbl-hr-infl, the horizons affected, and the infill material using the options in @tbl-hr-infm.
 
 E.g., [C (1-3) T]{.ceg} for infilled shrink-swell cracks extending from the surface to the third horizon.
 
@@ -182,7 +176,8 @@ dat_hr_infm <-
           'S', 'Subsoil',  'Infilled by subsoil material (in topsoil or regolith horizons)',
           'O', 'Organic',  'Infilled by organic material',
           'L', 'Local',    'Infilled by reworked material from the same horizon',
-          'M', 'Mixed',    'Infilled by mixed materials from multiple horizons')
+          'M', 'Mixed',    'Infilled by mixed materials from multiple horizons',
+          'U', 'Unknown',  'Infill material cannot be determined with confidence')
 
 tbl_hr_infm <- gt(dat_hr_infm) |>
    tab_options(
@@ -283,52 +278,63 @@ Information about the lithology, origin and weathering degree of the soil parent
 
 ### Lithology {#sec-pr-lith}
 
-The lithology of the fine earth (mineral particles <2 mm) and of rock fragments (if present) are noted separately for each soil horizon. Where weathering substrate layers are observed, their lithology is also noted. Use the codes in @tbl-ss-pm. 
+The lithology of the fine earth (mineral particles \<2 mm) and of rock fragments (if present) are noted separately for each soil horizon. Where subsolum layers are observed, their lithology is also noted. Use the codes in @tbl-ss-pm.
 
 Example: [An, Hs]{.ceg} for a mix of eroded sedimentary rocks and volcanic ash.
 
-### Degree of weathering {#sec-sedweath}
+### Weathering {#sec-pr-wdeg}
 
-The effects of weathering and pedogenesis vary down-profile (usually, but not always, decreasing with depth). Horizons that have experienced limited weathering may require specific descriptors (e.g. texture (@sec-tex-rec) cannot be determined on slightly weathered rocks, but bedding (@sec-reg-bed) may need to be described), so the need for these should be assessed early in the description process. Record degree of weathering once per horizon.
+The effects of weathering and pedogenesis vary down-profile (usually, but not always, decreasing with depth). Horizons that have experienced limited weathering may require specific descriptors (e.g. texture (@sec-tex-rec) cannot be determined on slightly weathered rocks, but bedding (@sec-reg-bed) may need to be described), so the need for these should be assessed early in the description process. Use the guidance in @tbl-pr-wdeg to clearly identify the solum, as well as any subsolum materials encountered.
 
-```{r}
-#| label: tbl-hr-wdeg
-#| tbl-cap: "Degree of weathering"
++------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Code       | Name                 | Description                                                                                                                                                                                                                                                                                                              |
++:===========+:=====================+:=========================================================================================================================================================================================================================================================================================================================+
+| [So]{.ceg} | Soil material        | Horizon characteristics include any of:                                                                                                                                                                                                                                                                                  |
+|            |                      |                                                                                                                                                                                                                                                                                                                          |
+|            |                      | -   anthropic or pedogenic structure (@sec-str-origin),                                                                                                                                                                                                                                                                  |
+|            |                      | -   elevated biological activity,                                                                                                                                                                                                                                                                                        |
+|            |                      | -   formation of pedogenic features (@sec-secondary), *and*                                                                                                                                                                                                                                                              |
+|            |                      |                                                                                                                                                                                                                                                                                                                          |
+|            |                      | a lack of residual geogenic structure.                                                                                                                                                                                                                                                                                   |
++------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [Rg]{.ceg} | Regolithic material  | 1.  Horizon has geogenic structure in ≥ 50% (by volume) and pedogenic structure in \< 50% of the volume of the fine earth fraction (or is apedal), *and*                                                                                                                                                                 |
+|            |                      | 2.  shows evidence of the accumulation of transported material by:                                                                                                                                                                                                                                                       |
+|            |                      |     a)  the presence of a lithological discontinuity at its base, *or*                                                                                                                                                                                                                                                   |
+|            |                      |     b)  consisting of a mixture of rock fragments that does not have either the same lithology, or size, or shape, or weathering status and that can easily be dug with a spade or with a pickaxe, if the layer is slightly consolidated, or when air-dry, more than 50% (by volume) slakes in water within 1 hour, *or* |
+|            |                      | 3.  is composed of openwork rock fragments.                                                                                                                                                                                                                                                                              |
++------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [Sr]{.ceg} | Saprolithic material | 1.  Horizon has geogenic structure in ≥ 50% (by volume) and pedogenic structure in \< 50% of the volume of the fine earth fraction (or is apedal), *and*                                                                                                                                                                 |
+|            |                      | 2.  shows no evidence of accumulation of transported material, *and*                                                                                                                                                                                                                                                     |
+|            |                      | 3.  material can easily be dug with a spade or with a pickaxe if the material is slightly consolidated in \>75% of the volume, or when air-dry, more than 50 % (by volume) will slake in water within 1 hour.                                                                                                            |
+|            |                      |                                                                                                                                                                                                                                                                                                                          |
+|            |                      | Roots may be present in the matrix and/or along remnant geogenic features.                                                                                                                                                                                                                                               |
++------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [Pr]{.ceg} | Paralithic material  | 1.  Horizon has \>50% (by volume) of geogenic structure, *and*                                                                                                                                                                                                                                                           |
+|            |                      | 2.  is coherent to the extent that the material is difficult to dig with a spade (except for material occurring in-between geogenic features which may be chipped or scraped), *and*                                                                                                                                     |
+|            |                      | 3.  air-dry samples (25–30 mm) do not slake in water for 1 hour (except for material occurring in between geogenic features), *and*                                                                                                                                                                                      |
+|            |                      | 4.  shows signs of mechanical weakening in one or more of the following ways:                                                                                                                                                                                                                                            |
+|            |                      |     a)  occurrence of roots along geogenic features like cracks, sedimentary bedding or metamorphic foliations but not in the matrix, *or*                                                                                                                                                                               |
+|            |                      |     b)  to the naked eye visible fillings of *in situ* weathered materials, clays and/or other material from the above layer or horizon along geogenic features like cracks, sedimentary bedding or metamorphic foliations.                                                                                              |
++------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [Rr]{.ceg} | Lithic material      | 1.  Horizon has \> 90% (volume) of geogenic structure, *and*                                                                                                                                                                                                                                                             |
+|            |                      | 2.  its coherence is such that the material cannot be dug with a spade, or air-dry samples (25–30 mm) will not slake in water within 1 hour, *and*                                                                                                                                                                       |
+|            |                      | 3.  has one or more of the following:                                                                                                                                                                                                                                                                                    |
+|            |                      |     a)  no visible chemical or physical weathering (to the naked eye) along geogenic features along cracks, sedimentary bedding or metamorphic foliations, *or*                                                                                                                                                          |
+|            |                      |     b)  when chemical or physical weathering is visible (to the naked eye), it is only expressed by a discoloration or staining along geogenic features like cracks, sedimentary bedding or metamorphic foliations and representing ≤ 25% of the visible material, *and*                                                 |
+|            |                      | 4.  has no roots - neither along geogenic features nor in the matrix.                                                                                                                                                                                                                                                    |
++------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-dat_hr_wdeg <-
-  tribble(~Code, ~Name, ~Description_c, ~Description_u,
-          1, 'Unweathered', 'Material shows no discolouration, loss of strength, or any other effects due to weathering', 'Particles are uncoated and their physical arrangement has not been disturbed (e.g. visible cross-bedding, absence of burrows). Secondary minerals and precipitates are absent',
-          2, 'Slightly weathered', 'Material may be slightly discoloured compared to its unweathered state. Discontinuities have discoloured surfaces. The rock material is not significantly weaker than fresh rock material', 'Particle physical arrangement is undisturbed, but some evidence of secondary mineral formation may be evident (e.g. pyrite formation in anoxic marine sediments)',
-          3, 'Moderately weathered', 'Rock material is discoloured and discontinuity surfaces will have a greater discolouration which also penetrates slightly into the rock material. The rock material is significantly weaker than the fresh rock and part of the rock mass may have been changed to soil material.', 'Sediments may be largely discoloured by secondary mineral precipitation or illuviation; some clay minerals may have weathered from the material, some physical disturbance by meso- or macrofauna may be apparent',
-          4, 'Highly weathered', 'Rock material is discoloured and more than half the rock mass is changed to soil material. Weathering adjacent to discontinuities penetrates deeply into the rock material but lithorelicts or core stones of fresh or slightly weathered rock may still be present.', 'Sediments show substantial alteration by weathering processes as evidenced by e.g. clay mineral production, presence of secondary materials and perhaps some structural development. Evidence of bedding may be absent or difficult to identify',
-          5, 'Very highly weathered', 'All the rock mass is decomposed and externally changed to soil material, but the original rock fabric is mainly preserved.', 'Sediments have largely changed to soil material, but the expression of features like structure may be weak relative to adjacent layers',
-          6, 'Completely weathered',  'Rock is completely changed to soil material with the original fabric completely destroyed but the resulting soil is not significantly transported.', 'Sediments have completely changed to soil material')
+: Weathering status of soil-forming materials, adapted from @juilleret2016. {#tbl-pr-wdeg .striped .hover tbl-colwidths=\[10,20,70\]}
 
-tbl_hr_wdeg <- gt(dat_hr_wdeg) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red',
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_label(Description_c = "Rock and rock fragments",
-             Description_u = "Unconsolidated mineral materials") |>
-  cols_width(Code ~pct(10), Name ~pct(20))
+::: {#nte-stp .callout-note collapse="true" appearance="simple" title="Degree of weathering and the New Zealand Soil Classification"}
+For the purposes of classifying soils according to the New Zealand Soil Classification, profiles overlying a layer of Lithic material as defined in @tbl-pr-wdeg would qualify for the 'lithic contact', while profiles overlying Saprolithic or Paralithic material would qualify for the 'paralithic contact'.
+:::
 
-tbl_hr_wdeg
-```
+### Origin {#sec-pr-orig}
 
-### Parent material origin {#sec-pr-orig}
-
-Parent material origin, or mode of emplacement, describes how soil parent materials have arrived at the point of observation. Multiple modes may have operated in different parts of the soil profile.
+Parent material origin, or mode of emplacement, describes how soil parent materials have arrived at the point of observation. Multiple modes may have operated in different parts of the soil profile. For soil materials that have weathered from rocks *in situ*, the mode of emplacement is recorded as the last major formation process that left the rocks in a place where they could start weathering into soil.
 
 Record one parent material origin code per soil horizon, using the codes in @tbl-ss-pmo. At the horizon level, the [An]{.ceg} Anthropic class can be subdivided by origin using the codes in @tbl-hr-antype (e.g. [Ann]{.ceg} for a fill pad in a residential housing development).
-
-Note that parent material origin, when summarised on a whole-profile basis, is the final defining factor of the soil Family within the *New Zealand Soil Classification* [@webb2011]. 
 
 ```{r}
 #| label: tbl-ss-pmo
@@ -337,34 +343,43 @@ Note that parent material origin, when summarised on a whole-profile basis, is t
 dat_ss_pmo <-
   tribble(~Code, ~Name, ~Description,
           'An', 'Anthropic', 'Deposits made by the direct actions of humans, including truncation, mixing, or deposition.',
-          'Cl', 'Colluvium', 'Weathered soil and rock material mantling slopes that has been transported primarily by gravity and sheet wash.',
+          'Cl', 'Colluvium', 'Unconsolidated and unsorted, usually weathered soil and rock material deposited on lower slopes, transported primarily by gravity assisted by water. These deposits may comprise slow accumulations or result from sudden slope failures',
+          'Db', 'Debris avalanche', 'Deposits derived from the large-scale collapse of unstable slopes of stratovolcanoes, forming mounds and hummocky ground that can be unconsolidated or heat-welded.',
           'Fl', 'Alluvium', 'Sediments that have been deposited by streams, rivers and other running water.',
           'Gl', 'Glacial till', 'Poorly stratified, poorly sorted rock fragments, sand and mud, surface or near-surface deposits resulting from the transportation by and deposition from ice or meltwater from beneath or in close proximity to glacial ice.',
-          'Lc', 'Lacustrine', 'Formed in and around lake beds; comprising extremely fine sediment deposited under very low-flow freshwater conditions.',
+          'Lc', 'Lacustrine', 'Formed in and around lake bed deposits; comprises extremely fine sediment deposited under very low-flow and usually freshwater conditions.',
           'Mr', 'Marine' , 'Unconsolidated sediments saturated by brackish or saline water.',
-          'Lh', 'Lahar', 'A flow of volcanic material, both ash and coarser products, mixed with water; often caused by the spilling over of a crater lake. Also used to describe the mounds formed on volcanic ring-plains where lahars stop.',
-          'Tp', 'Tephra', 'A general term for all solid (rather than molten) materials ejected from a volcano during an eruption: includes boulders, lapilli and ash.',
-          'Li', 'Litter', 'Partly or fully decomposed forest litter, equal to or greater than 30 cm depth that is **not** almost continually saturated in the natural state (**F** and **H** horizons).',
-          'Pt', 'Peat', 'Partly decomposed plant remains in a water-saturated environment, such as a bog',
+          'Lh', 'Lahar', 'A flow of heterogenous volcaniclastic material mixed with water and deposited rapidly in river valleys associated with stratovolcanoes. Lahars may be triggered by volcanic eruption or by cone collapse in response to oversteepening.',
+          'Tp', 'Tephra', 'Unconsolidated primary pyroclastic products of explosive volcanic eruptions encompassing all grain sizes (ash, lapilli and larger) and lithologic compositions. Both airfall and non-welded pyroclastic flow deposits are included.',
+          
           'Lo', 'Loess', 'A blanket deposit of silt-sized particles (0.002--0.06 mm diameter); usually carried by wind from dry riverbeds or outwash plains during glacial and post-glacial periods.',
           'Sa', 'Aeolian sand', 'Wind-deposited sand-sized particles (0.05--2.0 mm diameter), i.e. dune sand.',
-          'Rw', 'Highly Weathered Rock', '*In situ* highly to completely weathered lithified geologic material',
-          'Rx', 'Rock', '*In situ* unweathered to moderately weathered lithified geologic material',
+          'Sf', 'Solifluction', 'Unconsolidated, unsorted, usually weathered soil and rock material mantling hillslopes and derived from slow, viscous, gravity-driven downslope movement of waterlogged soil amd materials in terrains underlain by frozen soil or permafrost, either now or in the past.',
+          'Ex', 'Extruded rock', 'Volcanic rocks that were emplaced on the land surface in a molten state',
+          'In', 'Intruded rock', 'Plutonic rocks that were emplaced beneath the land surface in a molten state',
+          'Rx', 'Indurated rock', 'Uplifted rocks with strong sedimentary induration and/or metamorphosis',
+          'Rw', 'Non-indurated rock', 'Uplifted sedimentary rocks with weak to moderate induration and no metamorphosis',
+          'Li', 'Litter', 'Plant material decomposing under intermittently wet to dry conditions',
+          'Pt', 'Peat', 'Plant material decomposing under saturated conditions',
           'Uk', 'Unknown', 'Origin cannot be determined with certainty.'
-          )
+          ) %>% 
+  mutate(Type = c(rep('Depositional', 12), rep('Residual', 4), 
+                  rep('Organic', 2), 'Other'))
 
-tbl_ss_pmo <- gt(dat_ss_pmo) |>
+tbl_ss_pmo <- gt(group_by(dat_ss_pmo, Type)) |>
    tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
     table.align = 'center',
     table.width = '85%'
   ) |>
+  tab_style(style = list(cell_text(weight = 'bold')),
+            locations = cells_row_groups()) |>
   tab_style(style = list(cell_text(color  = 'red', 
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  fmt_markdown(columns = 3) |>
+  fmt_markdown(columns = 4) |>
   cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_ss_pmo
@@ -376,9 +391,9 @@ tbl_ss_pmo
 
 dat_hr_antype <-
   tribble(~Code, ~Name, ~Description,
-          'm', 'Māori', 'Soil modifications dating from Polynesian arrival in New Zealand, particularly pre-modern soil management practices (i.e. early Māori)',
-          'p', 'Pakeha', 'Soil modifications dating from Pakeha (non-Māori) arrival in New Zealand up to modern times (e.g. European agricultural practices)',
-          'n', 'Modern', 'Anthropic modifications resulting from modern techniques or addition of modern materials to the soil (e.g. plastics)'
+          'm', 'Historic Māori', 'Soil modifications resulting from Māori cultural practices dating from Polynesian arrival in New Zealand, particularly agricultural practices',
+          'p', 'Historic Pakeha', 'Soil modifications dating from Pakeha (non-Māori) arrival in New Zealand up to modern times (e.g. non-mechanised European agricultural and mining practices)',
+          'n', 'Modern', 'Soil modifications resulting from modern mechanised agricultural practices, other land alteration practices (e.g. mining, terracing in urban environments) and/or addition of industrially produced materials to the soil (e.g. plastics).'
           )
 
 tbl_hr_antype <- gt(dat_hr_antype) |>
@@ -396,4 +411,3 @@ tbl_hr_antype <- gt(dat_hr_antype) |>
 
 tbl_hr_antype
 ```
-
