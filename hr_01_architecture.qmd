@@ -10,28 +10,29 @@ Each soil horizon may include any or all of the following major components:
 
 -   Solid fraction
     -   Fine earth
-    -   Fragments
+    -   Rock Fragments
     -   Artefacts
 -   Biological fraction
     -   Fine organic matter
     -   Coarse organic matter
     -   Living plant roots
 -   Liquid fraction
+    -   Soil solution
 -   Void space fraction
     -   Voids
     -   Pores
         -   Macropores
         -   Micropores
 
-These fractions can be communicated as compositional percentage by volume, adding to 100%. The fine-earth fraction also has its own compositional data based on finer divisions of the \< 2 mm fraction (see @sec-tex). Volumetric water content is best determined in the laboratory, and so is not described further in this handbook.
+These components can be communicated as compositional percentage by volume, adding to 100%. Volumetric water content is best determined in the laboratory, and so is not described further in this handbook.
 
 [complicated exploding pie chart or similar goes here]{.diags}
 
-Soil horizon architecture includes both composition and the physical arrangement of the above components.
+Soil horizon architecture involves describing the nature and the physical arrangement of the above components.
 
 ## Structure {#sec-hr-stru}
 
-Structure refers to the physical arrangement of the fine-earth fraction (mineral materials \< 2 mm). The type of structure present in a horizon and the extent of its development is determined by mineralogy, chemistry, the action of soil biota and land use history. Well-developed structural units are commonly referred to as 'peds' and can be identified by observing any or all of the following:
+Structure refers to the physical arrangement of the fine-earth fraction (mineral materials \< 2 mm). The type of structure present in a horizon and the extent of its development is determined by the fine-earth texture (@sec-he-eatxt) mineralogy, chemistry, the action of soil biota and land use history. Well-developed structural units are commonly referred to as 'peds' and can be identified by observing any or all of the following:
 
 -   repeating, regular units of similar shape and size
 -   small gaps or planes of physical weakness between units
@@ -194,46 +195,21 @@ For example, [P S PR 80 ± 10]{.ceg} breaking to [P M BL 20 ± 2]{.ceg}.
 
 ## Fragments {#sec-frag}
 
-Fragments in soil horizons (\> 2 mm) provide information about soil development, particularly mode of emplacement in depositional soils. They also restrict the soil's water holding capacity, and when large and common enough can restrict land use and management practices.
+Fragments are mineral or non‑mineral components > 2 mm within a soil horizon. They provide information about soil development, particularly mode of emplacement (@sec-pr-orig). They also reduce the soil’s water‑holding capacity and, when large and abundant enough, can restrict land use and management practices. 
 
-For very rapid assessment, estimate total fragment abundance (rocks and non-rock materials as well as any artefacts) as an integer percentage, recording [0%]{.ceg} when confirming absence.
+For very rapid assessment, estimate total fragment abundance (rocks and non-rock materials as well as any artefacts) as an integer percentage of the whole horizon volume. Where fragments are absent, always record [0%]{.ceg} as confirmation.
 
 ### Rock fragments {#sec-rockfrag}
 
-Rock fragments are soil mineral particles \> 2 mm. For rapid assessment, estimate total rock fragment abundance as an integer percentage, recording [0%]{.ceg} when confirming absence.
+Rock fragments are soil mineral particles \> 2 mm. For rapid assessment, use the texture class code modifiers provided for rock fragments in @sec-hr-rftex, and confirm absence by recording an abundance of [0%]{.ceg}.
 
-For routine assessment, estimate abundance of small, medium and large rock fragments separately (@tbl-hr-rockfrsz). Optionally, append dominant lithology class of each size fraction using @tbl-ss-pm and shape using @tbl-hr-rockfrshp.
+Example: [SL(G)]{.ceg} for a sandy loam soil with 5-35% gravels (size range 2-20 mm).
 
-Example: [60% M (Hs R), 5% L (Hs R)]{.ceg} for a fluvial deposit dominated by waterworn greywacke cobbles with a few boulders.
+For routine assessment, append an estimate of rock fragment abundance as integer percentage of the whole horizon volume, as well as dominant lithology class using @tbl-ss-pm and shape using @tbl-hr-rockfrshp.
 
-For detailed assessment, estimate abundance, lithology, and shape for each of the 'gravel' classes in @tbl-in-size.
+Example: [SL(G) 15% Hs R]{.ceg} for a sandy loam soil with 15% rounded greywacke gravels.
 
-```{r}
-#| label: tbl-hr-rockfrsz
-#| tbl-cap: "Fragment size classes for routine assessment"
-
-dat_hr_rockfrsz <-
-  tribble(~Code, ~Name, ~Description,
-         'S', 'Small',   '2–60',
-         'M', 'Medium', '60–200',
-         'L', 'Large', '> 200',) 
-
-tbl_hr_rockfrsz <- gt(dat_hr_rockfrsz) |>
-  tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red',
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_label(Description = 'Size range (mm)') |>
-  cols_width(Code ~pct(10), Name ~ pct(20))
-  
-tbl_hr_rockfrsz
-```
+For detailed assessment, one may optionally continue to add detail by recording volumetric abundance, lithology and shape for each of the three rock fragment size classes given in @tbl-hr-rocksz. The three additional gravel size subdivisions in @tbl-hr-gvquals may also be used. Picking and sieving from a known volume of soil will likely be required for sufficient accuracy when making detailed assessments.
 
 ```{r}
 #| label: tbl-hr-rockfrshp
@@ -242,8 +218,8 @@ tbl_hr_rockfrsz
 dat_hr_rockfrshp <-
   tribble(~Code, ~Name, ~Description,
          'R', 'Rounded',   'Rock fragments considerably smoothed by transport processes',
-         'A', 'Angular', 'Rock fragments with little smoothing by transport processes',
-         'M', 'Mixed', 'Both rounded and angular fragments mixed together') 
+         'A', 'Angular',   'Rock fragments with little smoothing by transport processes',
+         'M',   'Mixed',   'Both rounded and angular fragments mixed together') 
 
 tbl_hr_rockfrshp <- gt(dat_hr_rockfrshp) |>
   tab_options(
@@ -265,7 +241,7 @@ tbl_hr_rockfrshp
 
 Biologically-derived coarse materials can alter the soil's water holding capacity and other parameters just as rock fragments can, although in general they can themselves hold more water. They will also break down faster.
 
-Where present in significant amounts, for rapid assessment record total percentage of natural non-rock fragments. For routine assessment record percentage abundance by type for small, medium and large sizes (@tbl-hr-rockfrsz) using @tbl-hr-nonrock.
+Where present in significant amounts (> 5% by volume), record each type present and estimate volume and median fragment size in centimetres.
 
 ```{r}
 #| label: tbl-hr-nonrock
@@ -273,11 +249,11 @@ Where present in significant amounts, for rapid assessment record total percenta
 
 dat_hr_nonrock <-
   tribble(~Code, ~Name, ~Description,
-         'S', 'Shell',    'Seashells or chitinous material',
-         'B', 'Bone',     'Skeletal fragments',
-         'T', 'Timber',   'Dead wood from trees and shrubs, coarse roots',
-         'C', 'Charcoal', 'Burnt organic materials',
-         'G', 'Gum',      'Kauri gum')
+         'Sh', 'Shell',    'Seashells or chitinous material',
+         'Bo', 'Bone',     'Skeletal fragments',
+         'Ti', 'Timber',   'Dead wood from trees and shrubs, coarse roots',
+         'Ch', 'Charcoal', 'Burnt organic materials',
+         'Gu', 'Gum',      'Kauri gum')
 
 tbl_hr_nonrock <- gt(dat_hr_nonrock) |>
   tab_options(
@@ -300,9 +276,15 @@ tbl_hr_nonrock
 
 Artefacts can both function like rock fragments and signify strong human influence on the soil profile.
 
-Where present in significant amounts, for rapid assessment record total percentage of artefacts. For routine assessment record percentage abundance by type for small, medium and large sizes (@tbl-hr-rockfrsz) using @tbl-hr-artefacts.
+Where present in significant amounts, for rapid assessment simply record total volumetric percentage of artefacts per horizon. Confirm absence as [0%]{.ceg}. For routine assessment, record each type present using @tbl-hr-artefacts and estimate percentage volume and median fragment size in centimetres.
 
-Where further details are required, describe the materials present in free-text notes.
+Example: [Ra 5% 6-10 cm]{.ceg} for a horizon containing some chert flake tools.
+
+For detailed assessment, for each fragment type, append any or all of the origin (@tbl-hr-aorg), fixation (@tbl-hr-afix), shape (@tbl-hr-ashp), and degradation (@tbl-hr-adeg) codes supplied below. Colour may also be described using common terms. Additional free-text notes and photos may also be useful. 
+
+Example: [Pl 10% 2-3 cm A SF F D]{.ceg} for a horizon containing some broken down remnants of horticultural film.
+
+Artefact fragments smaller than 2 mm and non-solid soil contaminants are beyond the scope of this handbook.
 
 ```{r}
 #| label: tbl-hr-artefacts
@@ -311,17 +293,20 @@ Where further details are required, describe the materials present in free-text 
 dat_hr_artefs <-
   tribble(~Code, ~Name, ~Description,
          'As', 'Asphalt',  'Asphalt and other bitumen-containing materials',
+         'Ba', 'Bone - altered', 'Human-altered bone fragments',
          'Br', 'Brick',    'Fired clay building materials, usually unglazed',
          'Cr', 'Ceramic',  'Fired clay objects, usually glazed',
          'Ce', 'Concrete', 'Concrete materials, cements',
          'Gl', 'Glass',    'Fragments from windows, containers, etc',
          'Pl', 'Plastics', 'Artificial polymers (non-textile)',
+         'Ra', 'Rock - altered', 'Human-altered rock fragments',
+         'Sa', 'Shell - altered', 'Human-altered shells',
+         'Ta', 'Timber - altered', 'Human-altered timber',
          'Tn', 'Textiles - natural', 'Fabrics and carpets made from e.g. wool',
          'Tx', 'Textiles - artificial', 'Fabrics derived from or dominated by plastics',
          'Mt', 'Metals', 'Refined ore products',
-         'Ms', 'Mine Spoil', 'Materials leftover from ore processing activities',
+         'Ms', 'Mine Spoil', 'Materials leftover from ore processing activities, excluding overburden',
          'Ws', 'Wastes', 'Other domestic or commercial rubbish')
-         # still working on this - could split into wastes vs e.g. items of arch. interest)
 
 tbl_hr_artefs <- gt(dat_hr_artefs) |>
   tab_options(
@@ -340,21 +325,17 @@ tbl_hr_artefs
 
 ```
 
-### Plastics {#sec-hr-plas}
-
-More specific and detailed assessment of macroplastics may be desired for certain applications. The following optional schema is adapted from @weber2022. For the size fractions in @tbl-hr-rockfrsz, one may describe abundance by volume plus any or all of the origin, fixation, shape, and degradation codes supplied below. Colour may also be described using common terms. Smaller plastic fragments (microplastics) may require sampling and laboratory analysis.
-
 ```{r}
 #| label: tbl-hr-aorg
-#| tbl-cap: "Plastic fragment origin"
+#| tbl-cap: "Artefact origin (adapted from @weber2022)"
 
 dat_hr_aorg <-
   tribble(~Code, ~Name, ~Description,
-         'N', 'Not verifiable', 'Designation not possible / uncertain',    
-         'C', 'Consumer', 'Consumer-products (everyday-products) like PET-bottles, SUP bags, packages, signs etc.', 
-         'A', 'Agricultural', 'Agricultural products like mulch film, silage film, straw bale nets, tire wear etc.',
+         'N', 'Not verifiable', 'Designation not possible / uncertain',
+         'C', 'Consumer', 'Consumer-products (everyday-products) like tools, decorative items, etc', 
+         'A', 'Agricultural', 'Agricultural products like straw bale nets, wire etc',
          'I', 'Industrial', 'Industrial products like broken pieces of industrial equipment, industrial waste',
-         'B', 'Construction', 'All plastic materials which were placed in soil for construction and supply purposes (e.g., power cables, geomembranes)')
+         'B', 'Construction', 'All materials which were placed in soil for construction and supply purposes (e.g., pipes, power cables, geomembranes)')
 
 tbl_hr_aorg <- gt(dat_hr_aorg) |>
   tab_options(
@@ -375,14 +356,14 @@ tbl_hr_aorg
 
 ```{r}
 #| label: tbl-hr-afix
-#| tbl-cap: "Plastic fragment fixation"
+#| tbl-cap: "Fragment fixation (adapted from @weber2022)"
 
 dat_hr_afix <-
   tribble(~Code, ~Name, ~Description,
-         'NF', 'None',    'Plastic pieces are not included in soil aggregates (no soil aggregates or loose plastic)',
-         'SF', 'Solely',   'Single plastic pieces are in cooperated into soil aggregates, but others are loose',
-         'MF', 'Moderate', 'The majority of plastic pieces is in cooperated into soil aggregates, but single are loose',
-         'CF', 'Complete', 'All plastic pieces are in cooperated into soil aggregates')
+         'NF', 'None',    'Artefacts are not included in soil aggregates, or soil is apedal',
+         'SF', 'Solely',   'Some artefacts are incorporated into soil aggregates, but most are loose',
+         'MF', 'Moderate', 'The majority of artefacts are incorporated into soil aggregates, but some pieces are loose',
+         'CF', 'Complete', 'All artefacts are incorporated into soil aggregates')
 
 tbl_hr_afix <- gt(dat_hr_afix) |>
   tab_options(
@@ -403,7 +384,7 @@ tbl_hr_afix
 
 ```{r}
 #| label: tbl-hr-ashp
-#| tbl-cap: "Plastic fragment shape"
+#| tbl-cap: "Artefact shape (adapted from @weber2022)"
 
 dat_hr_ashp <-
   tribble(~Code, ~Name, ~Description,
@@ -433,15 +414,15 @@ tbl_hr_ashp
 
 ```{r}
 #| label: tbl-hr-adeg
-#| tbl-cap: "Plastic fragment degradation"
+#| tbl-cap: "Artefact degradation (adapted from @weber2022)"
 
 dat_hr_adeg <-
   tribble(~Code, ~Name, ~Description,
          'N', 'Not verifiable', 'Designation not possible / uncertain',    
-         'F', 'Fresh', 'Fresh plastic pieces with bright colours, unaffected shape, without signs of deterioration (cracks, broken edges, rough surfaces)', 
-         'I', 'Incipient alteration', 'Plastic pieces with incipient deterioration surface such as first cracks, broken edges or roughened/grooved surfaces',
-         'D', 'Degraded', 'Plastic pieces with clear indications of ageing such as pale colours or yellowing (UV light), strong fragmentation, frayed edges',
-         'S', 'Strongly degraded', 'Plastic pieces with strong degraded surfaces, faded colours, soft surface, frayed areas or edges')
+         'F', 'Fresh', 'Fresh artefacts with bright colours, unaffected shape, without signs of deterioration (cracks, broken edges, rough surfaces)', 
+         'I', 'Incipient alteration', 'Artefacts with incipient deterioration surface such as first cracks, broken edges or roughened/grooved surfaces',
+         'D', 'Degraded', 'Artefacts with clear indications of ageing such as pale colours or obvious discolouration, strong fragmentation, frayed edges',
+         'S', 'Strongly degraded', 'Artefacts with strongly degraded surfaces, faded colours, soft surface, frayed areas or edges')
 
 tbl_hr_adeg <- gt(dat_hr_adeg) |>
   tab_options(
