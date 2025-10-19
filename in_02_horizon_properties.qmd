@@ -1,6 +1,5 @@
 # Horizon properties {#sec-in-hprops}
 
-
 ```{r}
 library(dplyr)
 library(tibble)
@@ -50,7 +49,7 @@ tbl_in_size
 
 ### Size classes for rock fragments
 
-The following classification may be applied to directly measured size data for rock fragments, or used when assessing rock fragment composition in detail (@sec-rockfrag). 
+The following classification may be applied to directly measured size data for rock fragments, or used when assessing rock fragment composition in detail (@sec-rockfrag).
 
 ```{r}
 #| label: tbl-in-rockfrsz
@@ -93,17 +92,19 @@ The following images can help accurately estimate the size of soil features.
 
 ### Abundance classes for roots {#sec-in-abrts}
 
+See @sec-root-abund for assessment methodology.
+
 ```{r}
 #| label: tbl-hr-rtab
-#| tbl-cap: "Plant root abundance classes"
+#| tbl-cap: "Plant root abundance classes (adapted from @internationalorganizationforstandardizationa)"
 
 dat_hr_rtab <-
-  tribble(~Code,      ~Name,  ~Description,
-              0,     'None',          '0%',
-              1,      'Few',   '> 0 - 5%',
-              2,   'Common',  '> 5 - 25%',
-              3,     'Many',  '> 25 - 50%',
-              4, 'Abundant',       '> 50%')
+  tribble(~Code,      ~Name,   ~Desc1, ~Desc2,
+              0,     'None',      '0',    '0',
+              1,      'Few',   '1–20',  '1-4',
+              2,   'Common',  '21–50',  '5–8',
+              3,     'Many', '51–200', '9–16',
+              4, 'Abundant',   '>200',  '>16')
 
 tbl_hr_rtab <- gt(dat_hr_rtab) |>
   tab_options(
@@ -116,6 +117,8 @@ tbl_hr_rtab <- gt(dat_hr_rtab) |>
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
+  cols_label(Desc1 = md('Roots per 100 cm^2^'),
+             Desc2 = 'Roots per 50 cm transect') |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
 tbl_hr_rtab
@@ -211,4 +214,3 @@ The reasoning behind this rule of thumb is that the lack of topsoil development 
 ::: {#nte-anoxia .callout-note appearance="minimal" collapse="true" title="Wet vs wet-and-anoxic soils"}
 Soils that are persistently wet may also become anoxic. This is more common in low-permeability soils, where slow percolation allows enough time for oxygen to be consumed entirely. <!--- add more --->
 :::
-

@@ -32,7 +32,7 @@ Soil horizon architecture involves describing the nature and the physical arrang
 
 ## Structure {#sec-hr-stru}
 
-Structure refers to the physical arrangement of the fine-earth fraction (mineral materials \< 2 mm). The type of structure present in a horizon and the extent of its development is determined by the fine-earth texture (@sec-he-eatxt) mineralogy, chemistry, the action of soil biota and land use history. Well-developed structural units are commonly referred to as 'peds' and can be identified by observing any or all of the following:
+Structure refers to the physical arrangement of the fine-earth fraction (mineral materials \< 2 mm). The type of structure present in a horizon and the extent of its development is determined by the fine-earth texture (@sec-hr-eatxt), mineralogy, chemistry, the action of soil biota, weathering, and land use history. Well-developed structural units are commonly referred to as 'peds' and can be identified by observing any or all of the following:
 
 -   repeating, regular units of similar shape and size
 -   small gaps or planes of physical weakness between units
@@ -195,7 +195,7 @@ For example, [P S PR 80 ± 10]{.ceg} breaking to [P M BL 20 ± 2]{.ceg}.
 
 ## Fragments {#sec-frag}
 
-Fragments are mineral or non‑mineral components > 2 mm within a soil horizon. They provide information about soil development, particularly mode of emplacement (@sec-pr-orig). They also reduce the soil’s water‑holding capacity and, when large and abundant enough, can restrict land use and management practices. 
+Fragments are mineral or non‑mineral components \> 2 mm within a soil horizon. They provide information about soil development, particularly mode of emplacement (@sec-pr-orig). They also reduce the soil’s water‑holding capacity and, when large and abundant enough, can restrict land use and management practices.
 
 For very rapid assessment, estimate total fragment abundance (rocks and non-rock materials as well as any artefacts) as an integer percentage of the whole horizon volume. Where fragments are absent, always record [0%]{.ceg} as confirmation.
 
@@ -241,7 +241,7 @@ tbl_hr_rockfrshp
 
 Biologically-derived coarse materials can alter the soil's water holding capacity and other parameters just as rock fragments can, although in general they can themselves hold more water. They will also break down faster.
 
-Where present in significant amounts (> 5% by volume), record each type present and estimate volume and median fragment size in centimetres.
+Where present in significant amounts (\> 5% by volume), record each type present and estimate volume and median fragment size in centimetres.
 
 ```{r}
 #| label: tbl-hr-nonrock
@@ -280,7 +280,7 @@ Where present in significant amounts, for rapid assessment simply record total v
 
 Example: [Ra 5% 6-10 cm]{.ceg} for a horizon containing some chert flake tools.
 
-For detailed assessment, for each fragment type, append any or all of the origin (@tbl-hr-aorg), fixation (@tbl-hr-afix), shape (@tbl-hr-ashp), and degradation (@tbl-hr-adeg) codes supplied below. Colour may also be described using common terms. Additional free-text notes and photos may also be useful. 
+For detailed assessment, for each fragment type, append any or all of the origin (@tbl-hr-aorg), fixation (@tbl-hr-afix), shape (@tbl-hr-ashp), and degradation (@tbl-hr-adeg) codes supplied below. Colour may also be described using common terms. Additional free-text notes and photos may also be useful.
 
 Example: [Pl 10% 2-3 cm A SF F D]{.ceg} for a horizon containing some broken down remnants of horticultural film.
 
@@ -443,27 +443,34 @@ tbl_hr_adeg
 
 ## Roots {#sec-root}
 
-Plant roots affect water infiltration and help define the functional horizon topsoil (see @sec-in-fh-ts). Their position in the soil profile can also provide information about ped development, particle packing, and the presence of pans. Note that this section does not apply to peats.
+Plant roots affect water infiltration, bind and rework the soil as they grow, and exert strong local control over soil chemistry. Their position in the soil profile can provide information about ped development, particle packing, and the presence of pans. Accurate measurement of root volumes *in situ* is technically challenging [@measurin2012; @freschet2021], requiring extensive sampling to account for spatial, temporal and interspecies variability. This may be necessary for accurate assessment of total soil composition. The majority of the root mass, particularly fine roots of herbaceous species and grasses, will be found in the topsoil. For soil classification, presence of roots and their relative position within the soil are key characteristics.
+
+Note that this section applies to the live root mass only.
 
 ### Root abundance {#sec-root-abund}
 
-Measure abundance by estimating the volumetric abundance of live roots in the visible soil horizon. For roots \< 2 mm it may be more practical to sample a cube \~100 mm on a side. When augering for rapid assessment, also use a spade to sample the topsoil.
+Estimation of root volume from cross-sectional analyses is not accurate, and so the following method, reproduced from @internationalorganizationforstandardizationa must be considered at best a relative assessment of root abundance.
 
-For rapid assessment, estimate the volume of the whole root mass as integer %, confirming 0 if no roots are observed.
+Abundance is communicated as a count per square decimetre (100 cm^2^), undertaken on a pit or exposure face. For very thin horizons, a 50 cm horizontal linear transect at the horizon midpoint may be used instead. Multiple split-open cores may also be examined provided the minimum 100 cm^2^ area can be examined.
 
-For example: [25%]{.ceg} for a healthy pasture topsoil.
+For rapid assessment, report the total number of roots. For routine assessment, report counts separately for the size classes in @tbl-hr-rsz. Always confirm absence of roots by recording a [0]{.ceg}.
 
-For detailed assessment, provide separate estimates for the root size classes in @tbl-hr-rsz. Record as whole percentages, confirming [0%]{.ceg} where no roots are observable in a given size range. The data may be classified using @tbl-hr-rtab.
+E.g. [V 30, F 5, M 5, C 0]{.ceg} for a mixture of very fine, fine and medium roots.
+
+With adequate size data, count per area can be converted to an areal percentage, e.g. 10 roots with diameter 5 mm in a 10 x 10 cm space gives a total area of $\pi × 0.25^{2} × 10 = {2\ cm^{2}}$, or 2%.
+
+The count data may be classified using @tbl-hr-rtab.
 
 ```{r}
 #| label: tbl-hr-rsz
-#| tbl-cap: "Plant root size classes for detailed assessment"
+#| tbl-cap: "Plant root size classes (adapted from @internationalorganizationforstandardizationa)"
 
 dat_hr_rsz <-
   tribble(~Code,    ~Name,  ~Description,
-            'F',   'Fine',         '< 2',
-            'M', 'Medium',      '2 - 10',
-            'C', 'Coarse',        '> 10')
+            'V', 'Very Fine', '<0.5',
+            'F',   'Fine',         '≥0.5–<2.0',
+            'M', 'Medium',      '≥2.0–<5.0',
+            'C', 'Coarse',        '≥5.0')
 
 tbl_hr_rsz <- gt(dat_hr_rsz) |>
   tab_options(
@@ -483,22 +490,22 @@ tbl_hr_rsz
 
 ```
 
-For example: [F 5%, M 0%, C 2%]{.ceg} for a subsoil in a forested area.
-
 ### Root position {#sec-root-pos}
 
-Where abundance is \> 0%, record how roots are distributed within the horizon using the codes in @tbl-hr-rpos. Position may not be reliably observable outside of pits or exposures, in which case record [U]{.ceg}.
+Where roots are present in a horizon, record how the roots are spatially distributed using the codes in @tbl-hr-rpos. For rapid assessment, record the dominant position of all roots. For routine assessment, split by size. Root position cannot be reliably observed in augered samples, or in cores where structural units are known to be larger than the core diameter.
+
+E.g. [F B, C T]{.ceg} for a soil where fine roots are confined to voids but coarse roots are not.
 
 ```{r}
 #| label: tbl-hr-rpos
-#| tbl-cap: "Plant root position codes"
+#| tbl-cap: "Plant root position"
 
 dat_hr_rpos <-
   tribble(~Code,        ~Name,  ~Description,
-            'W',     'Within', 'Roots are primarily located within peds.',
+            'W',     'Within', 'Roots are primarily located within peds',
             'B',    'Between', 'Roots are primarily located between peds, within fissures or along bedding planes',
-            'T', 'Throughout', 'Roots are spread throughout the soil mass.',
-            'U',    'Unknown', 'Sampling method did not allow reliable observation.')
+            'T', 'Throughout', 'Roots are evenly distributed within and between peds',
+            'U',    'Unknown', 'Sampling method did not allow reliable observation')
 
 tbl_hr_rpos <- gt(dat_hr_rpos) |>
   tab_options(
@@ -519,7 +526,7 @@ tbl_hr_rpos
 
 ### Other parameters {#sec-root-other}
 
-Notes about particular plant species contributing to the root mass and spatial organisation beyond the positional classes above (e.g. presence of mats) may prove useful in certain contexts. No coding system is provided for these.
+Information about particular plant species contributing to the root mass and spatial organisation beyond the positional classes above (e.g. presence of mats) may prove useful in certain contexts. No coding system is provided for these; record as free-text notes.
 
 ## Voids {#sec-void}
 
