@@ -38,7 +38,7 @@ Structure refers to the physical arrangement of the fine-earth fraction (mineral
 -   small gaps or planes of physical weakness between units
 -   outer surfaces that have a distinct appearance when compared to the ped interior.
 
-Peds can range in size from \< 1 mm to \> 1 m and sometimes 'nest', where larger units break down into smaller units. Given their potential size range, the method of profile exposure determines whether structures can be reliably observed and what maximum unit size will be detectable.
+Peds can range in size from \<1 mm to \>1 m and sometimes 'nest', where larger units break down into smaller units. Given their potential size range, the method of profile exposure determines whether structures can be reliably observed and what maximum unit size will be detectable.
 
 ### Method: Assessing structure in the field
 
@@ -83,7 +83,7 @@ tbl_hr_form
 
 ### Structure development {#sec-hr-stru-pedality}
 
-Degree of structural development provides information about permeability, in concert with texture and firmness.
+Degree of structural development (also frequently referred to as 'pedality' or 'aggregation') provides information about permeability, in concert with texture and firmness.
 
 For rapid assessment, record degree of overall structural development once per horizon using @tbl-hr-pedality. For routine or detailed assessment, record degree of development for each nested structural unit observed (if more than one is seen; see @sec-hr-stru-nest).
 
@@ -93,8 +93,8 @@ For rapid assessment, record degree of overall structural development once per h
 
 dat_hr_pedality <-
   tribble(~p, ~Code, ~Name,  ~Description,
-          'Apedal',  'G', 'Single grain', 'Material is structureless and incoherent, with more than 85% by weight of discrete primary particles ranging in size from sand to very coarse gravel.',
-          'Apedal', 'V', 'Massive', 'Material is structureless but coherent, with no fissures at spacings of less than 200 mm',
+          'Apedal',  'G', 'Single grain', 'Material is structureless or has <15% identifiable structural units, is uncemented and loosely packed, and falls apart into single grains when disturbed',
+          'Apedal', 'V', 'Massive', 'Material is structureless or has <15% identifiable structural units, is uncemented and packed closely enough to hold together until substantially disturbed, and has no fissures spaced closer than 200 mm',
          'Pedal', 'W', 'Weak', 'Material where 15–25% of the material comprises coherent structural units',
           'Pedal', 'M', 'Moderate', 'Material where 25–75% of the material comprises coherent structural units',
           'Pedal', 'S', 'Strong', 'Material where >75% of the material comprises coherent structural units')
@@ -528,13 +528,19 @@ tbl_hr_rpos
 
 Information about particular plant species contributing to the root mass and spatial organisation beyond the positional classes above (e.g. presence of mats) may prove useful in certain contexts. No coding system is provided for these; record as free-text notes.
 
-## Voids {#sec-void}
+## Voids and pores {#sec-voidpore}
 
-Horizon voids exclude open surface cracks, which are noted in @sec-pr-crack and fine pores, which are described below. Filled voids are described in @sec-pr-inf.
+Voids and pores are an integral part of soil structure, forming the spaces that occur between and within the aggregates described in @sec-hr-stru. They may contain air, water, or both, and play a key role in aeration, drainage, and root penetration. They are also habitat for soil meso- and microfauna. Horizon voids exclude open surface cracks, which are noted in @sec-pr-crack, and fine pores, which are described in @sec-pore. Infill features, where voids have previously been created but are no longer empty of solid material, are described in @sec-pr-inf. Voids and pores range in size from many centimetres down to nano-scale gaps in clay minerals. Only the larger end of the scale can be reasonably assessed in the field. As with measurement of roots, void space is most accurately determined in the laboratory.
 
-For rapid assessment, report the percentage of the horizon volume occupied by void space.
+### Voids {#sec-void}
 
-For detailed assessment, identify void types using @tbl-hr-voidtype and estimate the percentage of each type seen. Additionally, classify their connectivity using @tbl-hr-voidcon. Note that void connectivity may vary with soil water status.
+Voids comprise pores \>2 mm wide. Dimensions of large, isolated voids like burrows can be measured directly and volume calculated. Areal percentage of smaller inter-ped spaces can be assessed across a cut face using the abundance charts in @sec-in-abundpics or by counting void openings. Use a minimum area of 100 cm^2^ for this assessment.
+
+For rapid assessment, estimate the areal percentage of the horizon volume occupied by void space. Always confirm absence of voids by recording a [0]{.ceg}.
+
+For detailed assessment, identify void types using @tbl-hr-voidtype and estimate the percentage of each type seen. Optionally, add connectivity using @tbl-hr-voidcon. Note that void connectivity may vary with soil water status.
+
+Example: [10% IT C]{.ceg} for the void space in a strongly pedal, polyhedral topsoil.
 
 ```{r}
 #| label: tbl-hr-voidtype
@@ -593,15 +599,13 @@ tbl_hr_voidcon <- gt(dat_hr_voidcon) |>
 tbl_hr_voidcon
 ```
 
-Example: [10% IT C]{.ceg} for the void space in a strongly pedal, polyhedral topsoil.
+### Pores {#sec-pore}
 
-## Pores {#sec-pore}
+Pores are open voids \<2 mm in diameter. Macropores are ≥0.75 mm, and micropores are \<0.75 mm. This division is based on the diameter above which pores are regarded as biologically generated. Pores can be observed on freshly broken ped faces or broken faces of a block cut from an apedal massive horizon, but will not be observable in apedal single-grain materials. Cut surfaces in moist or wet soils may smear, obscuring pore openings.
 
-Pores are open voids \< 2 mm in diameter. Macropores are ≥ 0.075 mm, and micropores are \< 0.075 mm. This division is based on the size of pores that will conduct water at a potential of -0.4 kPa.
+For routine assessment, note presence or absence of any pores visible without magnification. Ideally, make observations from at least 2-5 small samples from within a horizon.
 
-For rapid assessment, note presence or absence of pores visible without magnification.
-
-For detailed assessment, estimate the percentage volume of macropores and micropores separately. This will require the use of a magnifier.
+For detailed assessment, count the number of macropores and micropores separately over a minimum area of 100 cm^2^. This may necessitate sampling several peds or small blocks from the target horizon. Counting micropores will require the use of a magnifier.
 
 [size example diagram here]{.diags}
 
@@ -611,9 +615,9 @@ Horizons that have experienced limited weathering may exhibit geogenic features 
 
 ### Bedding {#sec-reg-bed}
 
-Sedimentary deposits may comprise multiple thin layers of alternating materials. These can be partly or fully consolidated, and may have been compressed, folded and/or faulted. Where layers of subsolum material have been identified (@sec-pr-wdeg) and bedding is apparent within the layer, measure the median angle of the bedding off horizontal and note the dominant lithologies (@sec-pm-lith) involved. Optionally, add a thickness range for the bedding in centimetres.
+Transported soil parent materials may comprise multiple thin layers of alternating texture or lithology. These layers can be unconsolidated (e.g. lamellae or cross-bedding in aeolian and fluvial sediments) partly or fully consolidated, and may subsequently have been compressed, folded and/or faulted. Where layers of subsolum material have been identified (@sec-pr-wdeg) and bedding is apparent within a layer, measure the median angle of the bedding off horizontal and note the degree of consolidation. For unconsolidated sediments, record the texture groups involved using @tbl-hr-earthgrps. If the bedding is consolidated, record the dominant lithologies (@sec-pm-lith) involved. Optionally, add a thickness range for the bedding in centimetres.
 
-E.g. [25°, Sm/Ss, 10-30 cm]{.ceg} for thin, very firm marine sediments.
+E.g. [25°, Sm/Ss, 10-30 cm]{.ceg} for thin, very firm marine sediments, or [2°, C/S, 0.1-0.5 cm]{.ceg} for clay-sand lamellae.
 
 ### Fractures {#sec-reg-fra}
 
