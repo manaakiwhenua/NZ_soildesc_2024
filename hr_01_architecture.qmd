@@ -93,9 +93,9 @@ For rapid assessment, record degree of overall structural development once per h
 
 dat_hr_pedality <-
   tribble(~p, ~Code, ~Name,  ~Description,
-          'Apedal',  'G', 'Single grain', 'Material is structureless or has <15% identifiable structural units, is uncemented and loosely packed, and falls apart into single grains when disturbed',
-          'Apedal', 'V', 'Massive', 'Material is structureless or has <15% identifiable structural units, is uncemented and packed closely enough to hold together until substantially disturbed, and has no fissures spaced closer than 200 mm',
-         'Pedal', 'W', 'Weak', 'Material where 15–25% of the material comprises coherent structural units',
+          'Apedal',  'G', 'Single grain', 'Material is structureless or has <15% identifiable structural units, is uncemented and falls apart into single grains when disturbed',
+          'Apedal', 'V', 'Massive', 'Material is structureless or has <15% identifiable structural units, is uncemented and holds together until substantially disturbed, and has no fissures spaced closer than 200 mm',
+          'Pedal', 'W', 'Weak', 'Material where 15–25% of the material comprises coherent structural units',
           'Pedal', 'M', 'Moderate', 'Material where 25–75% of the material comprises coherent structural units',
           'Pedal', 'S', 'Strong', 'Material where >75% of the material comprises coherent structural units')
 
@@ -443,7 +443,7 @@ tbl_hr_adeg
 
 ## Roots {#sec-root}
 
-Plant roots affect water infiltration, bind and rework the soil as they grow, and exert strong local control over soil chemistry. Their position in the soil profile can provide information about ped development, particle packing, and the presence of pans. Accurate measurement of root volumes *in situ* is technically challenging [@measurin2012; @freschet2021], requiring extensive sampling to account for spatial, temporal and interspecies variability. This may be necessary for accurate assessment of total soil composition. The majority of the root mass, particularly fine roots of herbaceous species and grasses, will be found in the topsoil. For soil classification, presence of roots and their relative position within the soil are key characteristics.
+Plant roots affect water infiltration, bind and rework the soil as they grow, and exert strong local control over soil chemistry. Their position in the soil profile can provide information about ped development, particle packing, and the presence of pans. Accurate measurement of root volumes *in situ* is technically challenging [@measurin2012; @freschet2021], requiring extensive sampling to account for spatial, temporal and interspecies variability. Such sampling may be necessary for accurate assessment of total soil composition. The majority of the root mass, particularly fine roots of herbaceous species and grasses, will be found in the topsoil. For soil classification, presence of roots and their relative position within the soil are key characteristics.
 
 Note that this section applies to the live root mass only.
 
@@ -609,7 +609,7 @@ For detailed assessment, count the number of macropores and micropores separatel
 
 [size example diagram here]{.diags}
 
-## Substrate-specific Features {#sec-reg}
+## Substrate-specific features {#sec-reg}
 
 Horizons that have experienced limited weathering may exhibit geogenic features that relate to their parent material and its mode of emplacement. These can affect water movement, slope stability and plant growth [@wysocki2005; @juilleret2016].
 
@@ -650,4 +650,4 @@ tbl_hr_fractyp <- gt(dat_hr_fractyp) |>
 tbl_hr_fractyp
 ```
 
-[diagrams or photos - one for each type]{.ceg}
+[diagrams or photos - one for each type]{.diags}
