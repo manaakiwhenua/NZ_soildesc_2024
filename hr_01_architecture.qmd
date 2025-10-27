@@ -40,15 +40,6 @@ Structure refers to the physical arrangement of the fine-earth fraction (mineral
 
 Peds can range in size from \<1 mm to \>1 m and sometimes 'nest', where larger units break down into smaller units. Given their potential size range, the method of profile exposure determines whether structures can be reliably observed and what maximum unit size will be detectable.
 
-### Method: Assessing structure in the field
-
--   To assess the structure in an [E]{.ceg} or [P2]{.ceg} type profile (@tbl-pr-gear), insert a spade horizontally near the base of the horizon and push down on the handle, levering out a section of soil. Drop the spade blade with the soil, approximately 0.3 m onto a hard surface, e.g., the blade of another spade. Remove major roots that bind the mass together and again note the attributes of the newly produced solids. Note that this procedure will not necessarily disaggregate very moist or wet soils.
--   Structure may also be observed *in situ* by using a small hand tool to gently pick back the profile face. See @sec-dig. Structure of hard layers may need to be assessed in place, or by careful removal of individual units, and will usually require an [E]{.ceg} or [P2]{.ceg} type profile.
--   For smaller exposures ([P1]{.ceg}, [C1]{.ceg}, [C2]{.ceg}), remove a handful of soil from the extracted horizon and carefully disaggregate the soil mass to segregate all peds. Do not destroy peds to create fragments, or disaggregate existing apedal material. Note the attributes of the solids as instructed below. When coring, also use a spade to extract a block of adjacent surface material so that at least the topmost horizon can be assessed in detail.
--   Assessing structure is generally impossible for [A]{.ceg} augered profiles, as the extraction method destroys it. However, the surface horizon should still be extracted with a spade and assessed if possible.
-
-Direct measurement of peds will help estimate size. Weighing, or filling volumetric containers, may help estimate abundance.
-
 ### Structure origin {#sec-str-origin}
 
 Structural development can be controlled by different processes depending on vertical position within the profile and land use history [@anderson2024]. Record the dominant mode of origin for the structural units observed in each horizon using the options in @tbl-hr-form.
@@ -83,9 +74,9 @@ tbl_hr_form
 
 ### Structure development {#sec-hr-stru-pedality}
 
-Degree of structural development (also frequently referred to as 'pedality' or 'aggregation') provides information about permeability, in concert with texture and firmness.
+Degree of structural development (also frequently referred to as, 'grade', 'pedality' or 'aggregation') refers to how distinctive ped appearance is and how much of the soil within a horizon is organised into peds. Developed ped structure can suggest information about mineralogy, biological activity, and soil age. Structural development also provides information about permeability, in concert with texture and firmness.
 
-For rapid assessment, record degree of overall structural development once per horizon using @tbl-hr-pedality. For routine or detailed assessment, record degree of development for each nested structural unit observed (if more than one is seen; see @sec-hr-stru-nest).
+For rapid assessment, record degree of overall structural development once per horizon using @tbl-hr-pedality. For routine or detailed assessment, record degree of development for each type of structural unit observed (if more than one is seen; see also @sec-hr-stru-nest).
 
 ```{r}
 #| label: tbl-hr-pedality
@@ -122,88 +113,117 @@ tbl_hr_pedality
 
 ### Structure shape {#sec-hr-stru-shp}
 
-Where distinct structural units can be identified (development types [W]{.ceg}, [M]{.ceg}, [S]{.ceg}), record their dominant shape using @tbl-hr-pedshp.
+Structural units take on a range of distinctive shapes depending on their mineralogy, profile position, organic matter content, and the hydrological and climatic regime. Briefly, four major classes can be recognised, each with a few subtypes:
 
-+------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| Code       | Name           | Description                                                                                                                            | Orientation                 |
-+:===========+:===============+:=======================================================================================================================================+:============================+
-| [AB]{.ceg} | Angular blocky | -   bounded by relatively flat smooth, roughly equal faces                                                                             | None                        |
-|            |                | -   number of faces variable                                                                                                           |                             |
-|            |                | -   most vertices angular                                                                                                              |                             |
-|            |                | -   usually much accommodation to the faces of surrounding aggregates                                                                  |                             |
-+------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| [BL]{.ceg} | Blocky         | -   bounded by undulating rough faces                                                                                                  | None                        |
-|            |                | -   number of faces variable                                                                                                           |                             |
-|            |                | -   many vertices rounded                                                                                                              |                             |
-|            |                | -   limited accommodation to the faces of surrounding aggregates                                                                       |                             |
-+------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| [PH]{.ceg} | Polyhedral     | -   bounded by relatively flat smooth, unequal faces                                                                                   | None                        |
-|            |                | -   more than six faces; most vertices angular                                                                                         |                             |
-|            |                | -   usually much accommodation to the faces of surrounding aggregates                                                                  |                             |
-|            |                | -   re-entrant angles between adjoining faces - peds 'lock' together                                                                   |                             |
-+------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| [SR]{.ceg} | Spheroidal     | -   bounded by curved or very irregular faces;                                                                                         | None                        |
-|            |                | -   limited accommodation to the faces of surrounding aggregates                                                                       |                             |
-|            |                | -   sometimes with many visible pores                                                                                                  |                             |
-+------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| [LT]{.ceg} | Lenticular     | -   bounded by curved faces                                                                                                            | Horizontal or shallow angle |
-|            |                | -   overlapping, lens-shaped aggregates generally parallel to the soil surface that are thick at the centre and taper toward the edges |                             |
-|            |                | -   usually much accommodation to the faces of surrounding aggregates                                                                  |                             |
-+------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| [PM]{.ceg} | Prismatic      | -   bounded by relatively flat faces                                                                                                   | Vertical                    |
-|            |                | -   vertically elongated units with angular vertices and flat tops                                                                     |                             |
-|            |                | -   much accommodation to the faces of surrounding aggregates                                                                          |                             |
-+------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| [CO]{.ceg} | Columnar       | -   bounded by relatively flat faces;                                                                                                  | Vertical                    |
-|            |                | -   vertically elongated units with angular to rounded vertices and rounded (domed) tops                                               |                             |
-+------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| [PL]{.ceg} | Platy          | -   bounded by relatively flat horizontal faces                                                                                        | Horizontal                  |
-|            |                | -   much accommodation to the faces of surrounding aggregates                                                                          |                             |
-+------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| [WL]{.ceg} | Wedge-like     | -   bounded by flat faces                                                                                                              | Horizontal                  |
-|            |                | -   interlocking wedges or lenses that terminate in pronounced angular vertices                                                        |                             |
-|            |                | -   ends of vertices may be missing                                                                                                    |                             |
-|            |                | -   much accommodation to the faces of surrounding aggregates                                                                          |                             |
-+------------+----------------+----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+-   **Blocky:** Blocky peds are roughly cubic (having six faces) and pack relatively closely together, but still have defined interped spaces. Blocky peds are most common in the upper subsoil but can be found in any part of the solum.
+    -   **Angular blocky:** Angular blocky peds have sharp corners and flat faces, so can pack closely together.
+    -   **Subangular blocky:** Subangular blocky peds have slightly rounded corners and more irregular faces, while still being recognisably rectangular.
+-   **Rounded:** Rounded peds have more than six faces and sometimes pack relatively loosely, creating a large proportion of irregular macrovoid space. Rounded peds are most commonly observed in surface horizons.
+    -   **Polyhedral:** Polyhedral peds have a rounded shape with more than six faces and angular edges. Their surfaces are irregular, with small divots that align with protrusions in neighbouring peds. As such, they fit together relatively closely, a characteristic sometimes described as 'accommodation to surrounding peds'. Polyhedral peds can be observed throughout the solum.
+    -   **Granular:** Granular peds are rounded but lack sharp edges or the divots that allow close packing, and can be very porous. They are most common in near-surface horizons with high organic matter, and can sometimes be held in a net of fine roots.
+    -   **Cast:** Cast peds are created by soil fauna, comprising a mix of excreted soil and biological material like mucous or saliva. They are smooth and rounded or ovate and can be observed scattered through surface horizons or down channels extending into subsoil layers. Most are made by earthworms, but beetles and other insects can also create casts.
+-   **Platelike:** Platelike peds are wider than they are tall and develop roughly horizontally or in parallel to the soil surface. Layers of platelike structures overlap each other, creating a convoluted path for water or roots moving downwards.
+    -   **Platy:** Platy structures are flat-faced and sharp-edged, like angular blocky structures, but are usually very thin. Platy structures can be pedogenic, emerging from freeze-thaw processes, geogenic, reflecting the structure left by rock weathering in place, or anthropogenic, reflecting compaction from heavy machinery use.
+    -   **Lenticular:** Lenticular structures have thicker middles and curved surfaces that come to a point along their outer edge. Lenticular structures emerge from shrink-swell clay activity and often have striated faces (@sec-hr-stress).
+    -   **Wedgelike:** Wedge structures are related to lenticular structures and appear like a lenticular shape that has been cut in half vertically through its thickest part.
+-   **Prismlike:** Prismlike peds are taller than they are wide and have relatively flat faces that fit together closely. They are confined to subsoils and would only be observable near the surface if erosion has recently removed the topsoil.
+    -   **Prismatic:** Prismatic peds have a flat top surface with sharp edges.
+    -   **Columnar:** Columnar peds have a rounded, or domed, top surface, creating an irregular horizon boundary with the overlying material.
 
-: Structural shapes and identifying characteristics (adapted from @milne1995, @iussworkinggroupwrb2022, and @ncst2024) {#tbl-hr-pedshp .striped cols-width=\[10,20,50,20\]}
+Where distinct structural units can be identified in a horizon (development types [W]{.ceg}, [M]{.ceg}, [S]{.ceg}), record their dominant shape using @tbl-hr-pedshp.
 
-[add diagrams]{.diags}
+```{r}
+#| label: tbl-hr-pedshp
+#| tbl-cap: "Structural shapes (adapted from @milne1995, @iussworkinggroupwrb2022, and @ncst2024)"
 
-::: {#nte-nut .callout-note collapse="true" title="Shorthand terms for structural units" appearance="minimal"}
-Some pedogenic structural terms that don't seem to fit into the above schema are still in common use.
+dat_hr_pedshp <-
+  tribble(~Group,     ~Code, ~Name,              ~Diagram,
+          'Blocky',    'AB', 'Angular blocky',       '*to be added*',
+          'Blocky',    'SB', 'Subangular blocky',    '*to be added*',
+          'Rounded',   'PH', 'Polyhedral',           '*to be added*',
+          'Rounded',   'GR', 'Granular',             '*to be added*',
+          'Rounded',   'CA', 'Cast',                 '*to be added*',
+          'Platelike', 'PL', 'Platy',                '*to be added*',
+          'Platelike', 'LE', 'Lenticular',           '*to be added*',
+          'Platelike', 'WE', 'Wedgelike',            '*to be added*',
+          'Prismlike', 'PR', 'Prismatic',            '*to be added*',
+          'Prismlike', 'CO', 'Columnar',             '*to be added*') 
 
--   Crumb structure: a very fine structure seen in many silty to loamy horizons. The appearance is as of breadcrumbs, with 0.5–2 mm rounded peds loosely to firmly packed, depending on depth and drainage. Larger weak subangular blocky structures in well-drained allophanic soils almost always break down into moderately or strongly developed crumb structure.
--   Nut structure: a larger version of crumb, usually on the order of 5–20 mm in diameter, often encased in a network of grass roots. Nut structures are more common in topsoils but can also occur in well-drained loamy subsoils.
+tbl_hr_pedshp <- gt(group_by(dat_hr_pedshp, Group)) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%',
+    row_group.as_column = TRUE
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 2)) |>
+  tab_style(style = list(cell_text(weight = 'bold',
+                                   align  = 'center',
+                                   v_align = 'middle')),
+            locations = cells_row_groups()) |>
+  fmt_markdown(columns = 4) |>
+  cols_width(Group ~pct(20), Code ~pct(10), Name ~ pct(30))
+  
+tbl_hr_pedshp
+```
 
-Both structures are more correctly described as type [P]{.ceg} with [SR]{.ceg} shape. 'Crumbs' have a size range of about 1 ± 0.5 mm and 'nuts' are about 15 ± 10 mm. Their use as a shorthand description is convenient, but the terms should not be used in databases because they conflate size and shape in a way that the modern schemas seek to avoid.
+::: {#nte-nut .callout-note collapse="true" title="Older terms for structural units" appearance="minimal"}
+Some structural terms that don't seem to fit into @tbl-hr-pedshp can be found in older soils literature. These terms should no longer be used because they conflate size and shape in a way that modern schemas seek to avoid.
 
-Similarly, the terms 'clod' and 'fragment', previously used to signify tillage-induced structures greater and less than 100 mm in length respectively, also conflate size and shape. These should more correctly be described as type [A]{.ceg} structures with (usually) [BL]{.ceg} or [PH]{.ceg} shape.
+-   *Crumb:* a very fine structure seen in many silty to loamy horizons. The appearance is as of breadcrumbs, with 0.5–2 mm rounded peds loosely to firmly packed, depending on depth and drainage. Larger weak subangular blocky structures in well-drained allophanic soils almost always break down into moderately or strongly developed crumb structure. Crumb should be described as type [P]{.ceg} with [GR]{.ceg} shape.
+-   *Nut:* a larger version of crumb, usually 5–20 mm in diameter, often encased in a network of grass roots. Nut structures are more common in topsoils but can also occur in well-drained loamy subsoils. Nut should be described as type [P]{.ceg} with [GR]{.ceg} or [PR]{.ceg} shape.
+-   *Clod:* a tillage-induced structure \> 100 mm in length. Clods should be described as type [A]{.ceg} structures with [SB]{.ceg} or [PH]{.ceg} shape.
+-   *Fragment:* a tillage-induced structure \< 100 mm in length. Fragments should be described as type [A]{.ceg} structures with [SB]{.ceg} or [PH]{.ceg} shape.
+
+Ped strength (@sec-cn-stra) can assist in identifying tillage-induced structures, as they can be compacted and firmer than pedogenic structural units.
 :::
 
 ### Structure size {#sec-hr-stru-size}
 
-Record the median length of the structural units observed, along their longest axis. Record in mm with a range estimate, e.g. [25 ± 2 mm]{.ceg}.
+Record the median length of the structural units observed, along their shortest axis. Record in millimetres with a range estimate, e.g. [25 ± 2 mm]{.ceg}. Options for classifying the recorded measurements may be found in @sec-in-solsz.
 
-For rapid assessment, rather than recording a numeric value, the dominant size may be noted using the NZSC Functional Horizon convention (@tbl-in-fhstr): [C]{.ceg} for Coarse, [F]{.ceg} for Fine.
+For rapid assessment, rather than recording a numeric value, the dominant size may be noted as [C]{.ceg} for Coarse when over 20 mm in size, and [F]{.ceg} for Fine when \<20 mm.
 
-#### Nesting units {#sec-hr-stru-nest}
+#### Associated structures {#sec-hr-stru-assc}
 
-Structural units are commonly nested, with large structures breaking down to smaller ones that may also be a different type and shape. For highly detailed descriptions, multiple sets of nesting peds may be described in terms of their origin, development, shape and size.
+Many horizons only have one major structure, but multiple structural units may also coexist. For instance, casts may be interspersed among polyhedral, granular or blocky peds in a surface horizon, or a saprolith layer (@sec-pr-wdeg) might have remnant geogenic bedding among more heavily weathered, apedal-massive material. In such cases, record the structures separately. Where the horizon is partly apedal, estimate the volume of apedal material.
 
-For example, [P S PR 80 ± 10]{.ceg} breaking to [P M BL 20 ± 2]{.ceg}.
+Example: [G M PL 20 ± 3]{.ceg} with [V 35%]{.ceg}
+
+#### Nested structures {#sec-hr-stru-nest}
+
+Well-developed peds may be nested, with large structures breaking down to smaller ones that may also be a different type and shape. For highly detailed descriptions, multiple sets of nesting peds may be described in terms of their origin, development, shape and size.
+
+For example, [P S PR 80 ± 10]{.ceg} breaking to [P M AB 20 ± 2]{.ceg}.
+
+### Method: Assessing structure in the field
+
+-   To assess the structure in an [E]{.ceg} or [P2]{.ceg} type profile (@tbl-pr-gear), insert a spade horizontally near the base of the horizon and push down on the handle, levering out a section of soil. Drop the spade blade with the soil, approximately 0.3 m onto a hard surface, e.g., the blade of another spade. Remove major roots that bind the mass together and again note the attributes of the newly produced solids. Note that this procedure will not necessarily disaggregate very moist or wet soils.
+-   Structure may also be observed *in situ* by using a small hand tool to gently pick back the profile face. See @sec-dig. Structure of hard layers may need to be assessed in place, or by careful removal of individual units, and will usually require an [E]{.ceg} or [P2]{.ceg} type profile.
+-   For smaller exposures ([P1]{.ceg}, [C1]{.ceg}, [C2]{.ceg}), remove a handful of soil from the extracted horizon and carefully use your fingers to disaggregate the soil mass to segregate all peds. Do not destroy peds to create fragments, or disaggregate existing apedal material. When coring, also use a spade to extract a block of adjacent surface material so that at least the topmost horizon can be assessed in detail.
+-   Assessing structure is generally impossible for [A]{.ceg} augered profiles, as the extraction method destroys it. The surface horizon should still be extracted with a spade and assessed if possible.
+
+Direct measurement of peds will help estimate size. Weighing, or filling volumetric containers, may help estimate abundance.
+
+::: {#nte-stro .callout-note collapse="true" title="Structure in organic horizons" appearance="minimal"}
+Organic soil materials cannot be described in terms of the structural parameters in this section. Their architecture is flexible and determined largely by water content, species of origin and degree of decomposition, and are effectively all apedal-massive. The physical nature of organic soil materials is otherwise largely inferred from their textural characteristics (@sec-hr-ortxt). However, drained peats and peaty mineral soils may have some recognisable structural development.
+:::
 
 ## Fragments {#sec-frag}
 
-Fragments are mineral or non‑mineral components \> 2 mm within a soil horizon. They provide information about soil development, particularly mode of emplacement (@sec-pr-orig). They also reduce the soil’s water‑holding capacity and, when large and abundant enough, can restrict land use and management practices.
+Fragments are mineral or non‑mineral components \>2 mm within a soil horizon. They provide information about soil development, particularly mode of emplacement (@sec-pr-orig). They also reduce the soil’s water‑holding capacity and, when large and abundant enough, can restrict land use and management practices.
 
 For very rapid assessment, estimate total fragment abundance (rocks and non-rock materials as well as any artefacts) as an integer percentage of the whole horizon volume. Where fragments are absent, always record [0%]{.ceg} as confirmation.
 
 ### Rock fragments {#sec-rockfrag}
 
-Rock fragments are soil mineral particles \> 2 mm. For rapid assessment, use the texture class code modifiers provided for rock fragments in @sec-hr-rftex, and confirm absence by recording an abundance of [0%]{.ceg}.
+Rock fragments are soil mineral particles \>2 mm. For rapid assessment, use the texture class code modifiers provided for rock fragments in @sec-hr-rftex, and confirm absence by recording an abundance of [0%]{.ceg}.
 
-Example: [SL(G)]{.ceg} for a sandy loam soil with 5-35% gravels (size range 2-20 mm).
+Example: [SL(G)]{.ceg} for a sandy loam soil with 5–35% gravels (size range 2–20 mm).
 
 For routine assessment, append an estimate of rock fragment abundance as integer percentage of the whole horizon volume, as well as dominant lithology class using @tbl-ss-pm and shape using @tbl-hr-rockfrshp.
 
@@ -578,8 +598,8 @@ tbl_hr_voidtype
 
 dat_hr_voidcon <-
   tribble(~Code, ~Name, ~Description,
-          'I', 'Isolated', 'Voids are not connected to each other, and may only reach up to the soil surface',
-          'P', 'Partly connected', 'Voids are sometimes connected to each other within the horizon, or continue into neighbouring horizons',
+          'I', 'Isolated', 'Void spaces are closed off from each other',
+          'P', 'Partly connected', 'Void spaces are sometimes connected to each other within the horizon, or continue into neighbouring horizons',
           'C', 'Continuous',  'Void spaces are well connected and form a continuous network')
 
 tbl_hr_voidcon <- gt(dat_hr_voidcon) |>
@@ -601,7 +621,7 @@ tbl_hr_voidcon
 
 ### Pores {#sec-pore}
 
-Pores are open voids \<2 mm in diameter. Macropores are ≥0.75 mm, and micropores are \<0.75 mm. This division is based on the diameter above which pores are regarded as biologically generated. Pores can be observed on freshly broken ped faces or broken faces of a block cut from an apedal massive horizon, but will not be observable in apedal single-grain materials. Cut surfaces in moist or wet soils may smear, obscuring pore openings.
+Pores are open voids \<2 mm in diameter. Macropores are ≥0.75 mm, and micropores are \<0.75 mm. This division is based on the diameter above which pores are regarded as generated by soil fauna. Pores can be observed on freshly broken ped faces or broken faces of a block cut from an apedal massive horizon, but will not be observable in loose, apedal single-grain materials. Cut surfaces in moist or wet soils may smear, obscuring pore openings.
 
 For routine assessment, note presence or absence of any pores visible without magnification. Ideally, make observations from at least 2-5 small samples from within a horizon.
 
