@@ -4,14 +4,63 @@
 library(dplyr)
 library(tibble)
 library(gt)
+library(purrr)
+library(stringr)
 ```
 
-Consistence is a general term for the field-assessed behaviour of soil materials in response to applied stress over a range of soil-water states from wet to dry. The consistence properties described are strength, failure, fluidity, penetration resistance, packing, sensitivity, induration, plasticity, stickiness, dilatancy, and dry coherence.
+Consistence is a general term for the field-assessed behaviour of soil materials in response to applied physical stress over a range of soil-water states from wet to dry. The consistence properties described are strength, failure, fluidity, penetration resistance, packing, sensitivity, induration, plasticity, stickiness, dilatancy, and dry coherence.
 
-Consistency tests should be performed down-profile, with at least one sample tested per horizon. Samples should be taken from the mid-point of each horizon. Additional samples in transition zones may also be of interest. Within each horizon, the consistency tests that can and should be undertaken will depend on the cohesion (@sec-dn-prep) of the soil materials in that horizon.
+Consistency tests should be performed down-profile, with at least one sample tested per horizon. Samples should be taken from the mid-point of each horizon. Additional samples in transition zones may also be of interest. Within each horizon, the consistency tests that can and should be undertaken will depend on the cohesion (@sec-dn-prep) of the soil materials in that horizon. @tbl-cn-ct illustrates which tests are appropriate for different soil materials.
+
+```{r}
+#| label: tbl-cn-ct
+#| tbl-cap: "Consistence tests for different kinds of soil material"
+
+dat_cn_ct <-
+  tribble(~Test, ~grav, ~ncoh, ~coh, ~org, ~mstat,
+          '[Strength - unconfined mass](#sec-cn-stru)', 'If test cube can be formed', 'No', 'Yes', 'Yes', 'Any',
+          '[Strength - soil peds](#sec-cn-stra)', 'No', 'No', 'If pedal', 'No', 'Any',
+          '[Strength - remoulded](#sec-sn-strr)', 'No', 'No', 'Yes', 'No', 'Moist or Wet',
+          '[Strength - at plastic limit](#sec-sn-strp)', 'No', 'No', 'Yes', 'No', 'Moist or Wet',
+          '[Sensitivity](#sec-sn-sens)', 'No', 'No', 'Yes', 'No', 'Moist or Wet',
+          '[Plasticity](#sec-cn-pla)', 'Yes', 'No', 'Yes', 'No', 'Wet',
+          '[Stickiness](#sec-cn-sti)', 'Yes', 'Yes', 'Yes', 'Yes', 'Wet',
+          '[Dilatency](#sec-cn-dil)', 'No', 'Yes', 'Yes', 'No', 'Moist to Wet',
+          '[Penetration resistance](#sec-cn-pres)', 'Yes', 'Yes', 'Yes', 'Yes', 'Any',
+          '[Particle packing - excavation](#sec-cn-pack)', 'Yes', 'No', 'No', 'No', 'Non-saturated',
+          'Particle packing - blade insertion', 'No', 'Yes', 'Yes', 'Yes', 'Non-saturated',
+          '[Mode of failure](#sec-cn-fail)', 'No', 'No', 'Yes', 'Yes', 'Any',
+          '[Fluidity](#sec-cn-flu)', 'No', 'No', 'Yes', 'Yes', 'Wet or Saturated',
+          '[Induration](#sec-cn-ind)', 'No', 'No', 'No', 'No', 'Any'
+          )
+
+tbl_cn_ct <- gt(dat_cn_ct) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(style = 'italic',
+                                   color = 'grey80')),
+            locations = purrr::map( c('grav', 'ncoh', 'coh', 'org') ,
+                     \(x){cells_body(
+                       columns = x,
+                       rows = stringr::str_detect(!!sym(x),"No")
+                     )})) |>
+  fmt_markdown(columns = 1) |>
+  cols_label(grav = 'Mineral, rock fragments ≥ 15%', 
+             ncoh = 'Mineral, non-cohesive, rock fragments < 15%',
+             coh  = 'Mineral, cohesive, rock fragments < 15%',
+             org  = 'Organic',
+             mstat = 'Moisture status') |>
+  cols_width(Test ~pct(20))
+
+tbl_cn_ct
+```
 
 ::: {#nte-consnzsc .callout-note appearance="minimal" collapse="true" title="Consistence tests and the New Zealand Soil Classification (NZSC)"}
-For classifying using the NZSC, particular tests down to or at a certain depth may be required to progress through the Key to Soil Orders. At the soil order level, these are:
+For classifying using the New Zaland Soil Classification, particular tests down to or at a certain depth may be required to progress through the Key to Soil Orders. At the soil order level, these are:
 
 -   **Gley Soils:** must not have any moderately or very fluid (@sec-cn-flu) layers within 30 cm of the soil surface. Unconfined soil strength (@sec-cn-stru) and cementation (@sec-cn-ind) tests may be required to confirm absence of an underlying fragipan.
 -   **Ultic Soils:** need an assessment of soil strength (@sec-cn-stru) in the B horizon under moist conditions. May need assessment of failure mode (@sec-cn-fail) over a range of moisture conditions to rule out oxidic or cutanoxidic horizons. May need assessment of sensitivity (@sec-cn-sens) and stickiness (@sec-cn-sti) to rule out allophanic soil materials.
@@ -170,7 +219,9 @@ In soils with an unconfined strength class of [4]{.ceg} firm or greater, sensiti
 2.  Pinch and press the sample to create a lateral, 'shear' force, moving the finger forward and down over the thumb.
 3.  Assess the sample behaviour against @tbl-cn-sens.
 
+::: {.callout-warning appearance="minimal"}
 Note that this test is not analogous to the shear vane test of @newzealandgeotechnicalsociety2005 and cannot be used as a substitute.
+:::
 
 ```{r}
 #| label: tbl-cn-sens
@@ -286,7 +337,7 @@ tbl_cn_stik
 
 ## Dilatancy {#sec-cn-dil}
 
-dilatancy occurs due to volume change during shearing and is used as a criterion for the distinguishing non-cohesive from cohesive soil materials.
+Dilatancy occurs due to volume change during shearing and is used as a criterion for the distinguishing non-cohesive from cohesive soil materials.
 
 -   Test soil at a moist to wet state.
 -   Perform the test on 3-4 cm^3^ of soil.
@@ -300,7 +351,7 @@ dilatancy occurs due to volume change during shearing and is used as a criterion
 
 A dilatant reaction is shown by a shiny surface caused by water extrusion, and by a dull surface when the palm of the hand is folded to partly remould the sample, causing water to be drawn into the sample. dilatant samples will also lose their ball shape, flattening down. Record dilatant behaviour as a binary, [true/false]{.ceg}.
 
-## Penetration resistance
+## Penetration resistance {#sec-cn-pres}
 
 Penetration resistance is the capacity of the soil, in its natural confined state, to resist penetration by rigid objects. This property is commonly related to strength by empirical means (@tbl-cn-penr).
 
@@ -310,6 +361,10 @@ Penetration resistance is the capacity of the soil, in its natural confined stat
 
 1.  Expose a soil profile.
 2.  Assess ease of penetrating a vertical face using @tbl-cn-penr.
+
+::: {#nte-ppen .callout-note appearance="minimal" title="Use of pocket penetrometers"}
+Pocket-sized penetrometers with a 6 mm flat tip are often recommended for assessing penetration resistance of cohesive materials in the field. These devices can usually measure no more than 400-1000 kPa and so may not be adequate for measurements in hard soils.
+:::
 
 ```{r}
 #| label: tbl-cn-penr
@@ -341,7 +396,7 @@ tbl_cn_penr <- gt(dat_cn_penr) |>
 tbl_cn_penr
 ```
 
-## Particle Packing
+## Particle Packing {#sec-sn-pack}
 
 Particle packing assesses the stability of a gravelly soil.
 
@@ -380,6 +435,10 @@ tbl_cn_fail <- gt(dat_cn_fail) |>
 
 tbl_cn_fail
 ```
+
+::: {#nte-singbl .callout-note appearance="minimal" title="Use of the Singleton Blade"}
+The Singleton blade was a device invented in the 1980s by the New Zealand pedologist Peter Singleton to improve on packing density assessment methods available at the time. The device was thin, flexible piece of metal that was inserted into the pit face. A pocket penetrometer was then used to push the end of the blade sideways until it reached 45° or fell out. The penetrometer reading was empirically correlated to packing density. Mention of this device can be found in many New Zealand soil publications from \~1980-2000 [@griffiths1999] but has not been made commercially available and is now rarely used.
+:::
 
 ## Mode of failure {#sec-cn-fail}
 
