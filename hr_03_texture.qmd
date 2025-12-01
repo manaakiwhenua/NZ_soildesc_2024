@@ -3,9 +3,7 @@
 ```{r}
 library(tidyverse) 
 library(gt)
-library(ggtern) # NB not compatible with ggplot2 v. 4 at 2025-09 - stick to 3.5.2
-library(extrafont)
-loadfonts(quiet = TRUE)
+library(ggtern) 
 ```
 
 A great deal of soil physical and chemical behaviour is dependant on the particle size distribution within the solid fraction - the relative dominance of particular sizes, as well as the total size range present. This includes both mineral and organic matter. In the field, particle size distribution is estimated on a per-horizon basis using a combination of visual examination and hand manipulation under moist conditions.
@@ -106,7 +104,7 @@ nz_tri <-
   geom_polygon(aes(group = NAME, fill = GROUP),
                colour = 'grey50', alpha = 0.7) +
   geom_text(data = nztt_labels, aes(label = cat_texture_code), 
-            colour = 'grey30') +
+            colour = 'grey30', position = 'identity') +
   scale_fill_manual(values = texgrpcols) +
   theme_showarrows() +
   theme_nomask() +
@@ -115,7 +113,7 @@ nz_tri <-
         panel.background = element_rect(fill = NA),
         tern.panel.grid.ontop = FALSE,
         panel.grid = element_line(colour = 'grey90'),
-        text = element_text(family = "Ebrima"),
+        text = element_text(family = "Arial"),
         legend.key = element_blank(),
         tern.axis.title.show = FALSE,
         legend.position = 'bottom')
