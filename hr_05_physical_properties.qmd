@@ -10,7 +10,7 @@ library(stringr)
 
 ## Background {#sec-cons-bg}
 
-Consistence is a general term for the field-assessed behaviour of soil materials in response to applied physical stress over a range of soil-water states from wet to dry. The consistence properties described are strength, failure, fluidity, penetration resistance, packing, sensitivity, induration, plasticity, stickiness, dilatancy, and dry coherence.
+Consistence is a general term for the field-assessed behaviour of soil materials in response to applied physical stress over a range of soil-water states from wet to dry. The consistence properties described for mineral soil materials are strength, failure, fluidity, penetration resistance, packing, sensitivity, induration, plasticity, stickiness, dilatancy, and dry coherence. For organic materials, rubbed fibre content is relevant.
 
 ### Soil-water content {#sec-cons-bg-swc}
 
@@ -41,7 +41,8 @@ dat_cn_ct <-
           'Particle packing - blade insertion', 'No', 'Yes', 'Yes', 'Yes', 'Non-saturated',
           '[Mode of failure](#sec-cn-fail)', 'No', 'No', 'Yes', 'Yes', 'Any',
           '[Fluidity](#sec-cn-flu)', 'No', 'No', 'Yes', 'Yes', 'Wet or Saturated',
-          '[Induration](#sec-cn-ind)', 'No', 'No', 'No', 'No', 'Any'
+          '[Induration](#sec-cn-ind)', 'No', 'No', 'No', 'No', 'Any',
+          '[Rubbed fibre](#sec-cn-fib)', 'No', 'If organic', 'If organic', 'Yes', 'Wet or Saturated'
           )
 
 tbl_cn_ct <- gt(dat_cn_ct) |>
@@ -82,6 +83,9 @@ For classifying using the New Zealand Soil Classification, particular tests down
 -   **Granular Soils:** May need assessment of ped strength (@sec-cn-stra), soil strength (@sec-cn-stru), and failure mode (@sec-cn-fail) over a range of moisture conditions to confirm presence of a cutanoxidic horizon. Stickiness (@sec-cn-sti) and plasticity (@sec-cn-pla) may also be helpful.
 -   **Pallic Soils:** may require a negative cementation test (@sec-cn-ind) to help identify any fragipans. May require assessment of failure mode (@sec-cn-fail) to help confirm Brittle-B horizon presence. May require ped strength assessment in the B horizon.
 -   **Recent Soils:** must not have any moderately or very fluid (@sec-cn-flu) layers within 30 cm of the soil surface.
+
+Strength, fluidity, stickiness, mode of failure, and rubbed fibre content tests are also common diagnostic features at the group and subgroup level in the NZSC.
+
 :::
 
 ## Cohesion {#sec-dn-prep}
@@ -559,6 +563,51 @@ dat_cn_ind <-
           3, 'Weakly indurated', 'strength class of 5-6',
           4, 'Strongly indurated', 'strength class of 7',
           5, 'Very strongly indurated', 'strength class of >7; does not break when struck by a sharp blow with a hammer.')
+
+tbl_cn_ind <- gt(dat_cn_ind) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20))
+
+tbl_cn_ind
+```
+
+
+## Rubbed fibre content {#sec-cn-fib}
+
+Rubbed fibre content is an indicator of the degree of organic decomposition and can be used to help determine whether organic material qualifies as fibric, mesic or humic (@sec-tex-orgmod, @sec-hor-o).
+
+- This test can be performed on any sample with an appreciable amount of visible and decomposing organic matter. Live plant roots should be removed before performing the test.
+- This test can be performed on auger-extracted samples. However, exercise caution when extracting samples from below the water table as they may easily become cross-contaminated by overlying material.
+- Perform the test on \~100 cm^3^ of soil (a small handful)
+- Perform the test on wet materials.
+
+*Procedure*
+
+1. Extract the sample and squeeze to remove excess water
+2. Rub the wet sample 10 times between thumb and forefinger, or knead a ball of sample ten times firmly in the palm of the hand.
+3. Examine the proportion of visible plant fibres.
+
+Note that larger pieces of rotting solid or soft timber (e.g. buried branches) should also be included in the total proportion of fibrous material.
+
+```{r}
+#| label: tbl-cn-fib
+#| tbl-cap: "Fibric organic material classes"
+
+dat_cn_ind <-
+  tribble(~Code, ~Name, ~Description,
+          1, 'None',     'No appreciable fibre',
+          2, 'Minor',    'Fibrous material < 15%',
+          3, 'Moderate', 'Fibrous material 15-75%',
+          4, 'Major',    'Fibrous material > 75%')
 
 tbl_cn_ind <- gt(dat_cn_ind) |>
    tab_options(
