@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -53,14 +53,15 @@ div.csl-indent {
 <link href="./ap_02_field_recording.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -106,7 +107,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -349,7 +350,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_01_horizon_names.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Horizon names</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Horizon notation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -569,7 +570,7 @@ Important&nbsp;C.1: Excavation safety
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Coring safety
+<span class="screen-reader-only">Important</span>Coring safety
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -597,7 +598,7 @@ Exercise these options with caution and patience to avoid plugging up the tube. 
 <li>Refill the core hole as far as possible. Use a spade to collapse the top of the hole and recreate a firm surface. This is especially important in paddocks containing livestock.</li>
 </ol>
 <div id="tip-effcore" class="callout callout-style-simple callout-tip no-icon callout-titled" title="Effective coring">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -639,7 +640,7 @@ Tip&nbsp;C.1: Effective coring
 <h2 data-number="C.2" class="anchored" data-anchor-id="sec-samp"><span class="header-section-number">C.2</span> Sampling the profile</h2>
 <p>Profiles are sampled for laboratory analysis to quantify and extend data recorded in the field. Undisturbed samples are required for soil physical analyses, and require specific equipment.</p>
 <div id="tip-dig" class="callout callout-style-simple callout-tip no-icon callout-titled" title="Timing of soil sampling">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -663,18 +664,18 @@ Tip&nbsp;C.2: Timing of soil sampling
 <li>Aim to sample continuously and sequentially down the exposed profile face, widening or deepening the sampled zone as needed to extract sufficient volume from thinner horizons.</li>
 <li>Aim to take at least one sample from each horizon; otherwise, subdivide thicker horizons and sample in 10–30&nbsp;cm vertical increments.</li>
 <li>Avoid sampling across thinner horizon boundaries, adjusting to avoid wavy or irregular transition zones. Transition zones &gt;5&nbsp;cm thick may be sampled separately if desired.</li>
-<li>Where large infill features are present, these may be avoided in favour of sampling the material that comprises the majority of the horizon. However, there is no need to attempt to separate intermixed materials in a transitional horizon (see <a href="in_01_horizon_names.html#sec-hor-tran" class="quarto-xref"><span>Section 20.1.2.7</span></a>).</li>
+<li>Where large infill features are present, these may be avoided in favour of sampling the material that comprises the majority of the horizon. However, there is no need to attempt to separate intermixed materials in a transitional horizon (see <a href="in_01_horizon_names.html#sec-hor-tran" class="quarto-xref"><span>Section 20.1.2.5</span></a>).</li>
 <li>Samples should be collected into polythene bags or sealed containers with clear labels including the site identifier, depth increment, and date. Samples should be stored in a rigid, insulated container to prevent damage or exposure to temperature extremes.</li>
 <li>Communicate any specific soil features relevant to sample processing and analyses to the laboratory, e.g.&nbsp;the presence of allophanic soil materials, rock fragments, or pedogenic features like carbonate nodules.</li>
 </ul>
 <p>Similar sampling procedures can be completed using relatively undisturbed cores (<a href="#sec-dig-core" class="quarto-xref"><span>Section C.1.4</span></a>) but multiple cores may be required to gather enough sample volume from each horizon.</p>
 <div class="callout callout-style-simple callout-tip no-icon callout-titled" title="Minimal sampling">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Minimal sampling
+<span class="screen-reader-only">Tip</span>Minimal sampling
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -951,13 +952,14 @@ WorkSafe New Zealand 2017. Excavation safety. [Internet]. <a href="https://www.w
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

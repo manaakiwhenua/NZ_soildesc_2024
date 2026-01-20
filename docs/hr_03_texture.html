@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -53,14 +53,15 @@ div.csl-indent {
 <link href="./hr_02_colour.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -106,7 +107,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -349,7 +350,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_01_horizon_names.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Horizon names</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Horizon notation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -480,7 +481,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">October 18, 2025</p>
+      <p class="date-modified">January 20, 2026</p>
     </div>
   </div>
     
@@ -494,7 +495,7 @@ window.Quarto = {
 <p>A great deal of soil physical and chemical behaviour is dependant on the particle size distribution within the solid fraction - the relative dominance of particular sizes, as well as the total size range present. This includes both mineral and organic matter. In the field, particle size distribution is estimated on a per-horizon basis using a combination of visual examination and hand manipulation under moist conditions.</p>
 <p>The true particle size distribution is continuous, and open-ended. For ease of communication, particle size distribution is divided into set ranges, the broadest of which are the fine earth (&lt;&nbsp;2&nbsp;mm) and coarse mineral (≥&nbsp;2&nbsp;mm, ‘rock fragments’) fractions. Within the fine-earth fraction, three fractions are defined - sand (&lt;2.0–≥0.06&nbsp;mm), silt (&lt;0.06–≥0.002&nbsp;mm) and clay (&lt;0.002&nbsp;mm). Organic matter is treated slightly differently, in that it can’t be separated easily from the soil mass in the field, and its particle size is less important than other characteristics (see <a href="#sec-hr-ortxt" class="quarto-xref"><span>Section 15.1.3</span></a>). Field estimates of particle size distribution are commonly referred to as ‘soil texture’.</p>
 <div id="nte-psz" class="callout callout-style-simple callout-note no-icon callout-titled" title="Particle size boundaries in New Zealand">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -510,7 +511,7 @@ Note&nbsp;15.1: Particle size boundaries in New Zealand
 </div>
 </div>
 <div id="nte-psb" class="callout callout-style-simple callout-note no-icon callout-titled" title="Particle size fraction boundaries globally">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -530,23 +531,23 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
 </figcaption>
 <div aria-describedby="tbl-hr-texcompar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="bcvcjdfryj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bcvcjdfryj table {
+<div id="ydnvstcjwg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ydnvstcjwg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bcvcjdfryj thead, #bcvcjdfryj tbody, #bcvcjdfryj tfoot, #bcvcjdfryj tr, #bcvcjdfryj td, #bcvcjdfryj th {
+#ydnvstcjwg thead, #ydnvstcjwg tbody, #ydnvstcjwg tfoot, #ydnvstcjwg tr, #ydnvstcjwg td, #ydnvstcjwg th {
   border-style: none;
 }
 
-#bcvcjdfryj p {
+#ydnvstcjwg p {
   margin: 0;
   padding: 0;
 }
 
-#bcvcjdfryj .gt_table {
+#ydnvstcjwg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -572,12 +573,12 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   border-left-color: #D3D3D3;
 }
 
-#bcvcjdfryj .gt_caption {
+#ydnvstcjwg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bcvcjdfryj .gt_title {
+#ydnvstcjwg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -589,7 +590,7 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   border-bottom-width: 0;
 }
 
-#bcvcjdfryj .gt_subtitle {
+#ydnvstcjwg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -601,7 +602,7 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   border-top-width: 0;
 }
 
-#bcvcjdfryj .gt_heading {
+#ydnvstcjwg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -613,13 +614,13 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   border-right-color: #D3D3D3;
 }
 
-#bcvcjdfryj .gt_bottom_border {
+#ydnvstcjwg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bcvcjdfryj .gt_col_headings {
+#ydnvstcjwg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -634,7 +635,7 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   border-right-color: #D3D3D3;
 }
 
-#bcvcjdfryj .gt_col_heading {
+#ydnvstcjwg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -654,7 +655,7 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   overflow-x: hidden;
 }
 
-#bcvcjdfryj .gt_column_spanner_outer {
+#ydnvstcjwg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -666,15 +667,15 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   padding-right: 4px;
 }
 
-#bcvcjdfryj .gt_column_spanner_outer:first-child {
+#ydnvstcjwg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bcvcjdfryj .gt_column_spanner_outer:last-child {
+#ydnvstcjwg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bcvcjdfryj .gt_column_spanner {
+#ydnvstcjwg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -686,11 +687,11 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   width: 100%;
 }
 
-#bcvcjdfryj .gt_spanner_row {
+#ydnvstcjwg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bcvcjdfryj .gt_group_heading {
+#ydnvstcjwg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -716,7 +717,7 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   text-align: left;
 }
 
-#bcvcjdfryj .gt_empty_group_heading {
+#ydnvstcjwg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -731,15 +732,15 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   vertical-align: middle;
 }
 
-#bcvcjdfryj .gt_from_md > :first-child {
+#ydnvstcjwg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bcvcjdfryj .gt_from_md > :last-child {
+#ydnvstcjwg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bcvcjdfryj .gt_row {
+#ydnvstcjwg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -758,7 +759,7 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   overflow-x: hidden;
 }
 
-#bcvcjdfryj .gt_stub {
+#ydnvstcjwg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -771,7 +772,7 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   padding-right: 5px;
 }
 
-#bcvcjdfryj .gt_stub_row_group {
+#ydnvstcjwg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -785,15 +786,15 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   vertical-align: top;
 }
 
-#bcvcjdfryj .gt_row_group_first td {
+#ydnvstcjwg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bcvcjdfryj .gt_row_group_first th {
+#ydnvstcjwg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bcvcjdfryj .gt_summary_row {
+#ydnvstcjwg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -803,16 +804,16 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   padding-right: 5px;
 }
 
-#bcvcjdfryj .gt_first_summary_row {
+#ydnvstcjwg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bcvcjdfryj .gt_first_summary_row.thick {
+#ydnvstcjwg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bcvcjdfryj .gt_last_summary_row {
+#ydnvstcjwg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -822,7 +823,7 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   border-bottom-color: #D3D3D3;
 }
 
-#bcvcjdfryj .gt_grand_summary_row {
+#ydnvstcjwg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -832,7 +833,7 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   padding-right: 5px;
 }
 
-#bcvcjdfryj .gt_first_grand_summary_row {
+#ydnvstcjwg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -842,7 +843,7 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   border-top-color: #D3D3D3;
 }
 
-#bcvcjdfryj .gt_last_grand_summary_row_top {
+#ydnvstcjwg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -852,11 +853,11 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   border-bottom-color: #D3D3D3;
 }
 
-#bcvcjdfryj .gt_striped {
+#ydnvstcjwg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bcvcjdfryj .gt_table_body {
+#ydnvstcjwg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -865,7 +866,7 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   border-bottom-color: #D3D3D3;
 }
 
-#bcvcjdfryj .gt_footnotes {
+#ydnvstcjwg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -879,7 +880,7 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   border-right-color: #D3D3D3;
 }
 
-#bcvcjdfryj .gt_footnote {
+#ydnvstcjwg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -888,7 +889,7 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   padding-right: 5px;
 }
 
-#bcvcjdfryj .gt_sourcenotes {
+#ydnvstcjwg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -902,7 +903,7 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   border-right-color: #D3D3D3;
 }
 
-#bcvcjdfryj .gt_sourcenote {
+#ydnvstcjwg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -910,77 +911,77 @@ Table&nbsp;15.1: Size fraction limits: New Zealand and elsewhere
   padding-right: 5px;
 }
 
-#bcvcjdfryj .gt_left {
+#ydnvstcjwg .gt_left {
   text-align: left;
 }
 
-#bcvcjdfryj .gt_center {
+#ydnvstcjwg .gt_center {
   text-align: center;
 }
 
-#bcvcjdfryj .gt_right {
+#ydnvstcjwg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bcvcjdfryj .gt_font_normal {
+#ydnvstcjwg .gt_font_normal {
   font-weight: normal;
 }
 
-#bcvcjdfryj .gt_font_bold {
+#ydnvstcjwg .gt_font_bold {
   font-weight: bold;
 }
 
-#bcvcjdfryj .gt_font_italic {
+#ydnvstcjwg .gt_font_italic {
   font-style: italic;
 }
 
-#bcvcjdfryj .gt_super {
+#ydnvstcjwg .gt_super {
   font-size: 65%;
 }
 
-#bcvcjdfryj .gt_footnote_marks {
+#ydnvstcjwg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bcvcjdfryj .gt_asterisk {
+#ydnvstcjwg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bcvcjdfryj .gt_indent_1 {
+#ydnvstcjwg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bcvcjdfryj .gt_indent_2 {
+#ydnvstcjwg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bcvcjdfryj .gt_indent_3 {
+#ydnvstcjwg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bcvcjdfryj .gt_indent_4 {
+#ydnvstcjwg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bcvcjdfryj .gt_indent_5 {
+#ydnvstcjwg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bcvcjdfryj .katex-display {
+#ydnvstcjwg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bcvcjdfryj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ydnvstcjwg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell no-stripe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell no-stripe caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 40%">
 <col>
@@ -1048,23 +1049,23 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
 </figcaption>
 <div aria-describedby="tbl-hr-earthgrps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="pdmxykoeay" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pdmxykoeay table {
+<div id="rdwvunaexx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rdwvunaexx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pdmxykoeay thead, #pdmxykoeay tbody, #pdmxykoeay tfoot, #pdmxykoeay tr, #pdmxykoeay td, #pdmxykoeay th {
+#rdwvunaexx thead, #rdwvunaexx tbody, #rdwvunaexx tfoot, #rdwvunaexx tr, #rdwvunaexx td, #rdwvunaexx th {
   border-style: none;
 }
 
-#pdmxykoeay p {
+#rdwvunaexx p {
   margin: 0;
   padding: 0;
 }
 
-#pdmxykoeay .gt_table {
+#rdwvunaexx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1090,12 +1091,12 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   border-left-color: #D3D3D3;
 }
 
-#pdmxykoeay .gt_caption {
+#rdwvunaexx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pdmxykoeay .gt_title {
+#rdwvunaexx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1107,7 +1108,7 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   border-bottom-width: 0;
 }
 
-#pdmxykoeay .gt_subtitle {
+#rdwvunaexx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1119,7 +1120,7 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   border-top-width: 0;
 }
 
-#pdmxykoeay .gt_heading {
+#rdwvunaexx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1131,13 +1132,13 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   border-right-color: #D3D3D3;
 }
 
-#pdmxykoeay .gt_bottom_border {
+#rdwvunaexx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pdmxykoeay .gt_col_headings {
+#rdwvunaexx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1152,7 +1153,7 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   border-right-color: #D3D3D3;
 }
 
-#pdmxykoeay .gt_col_heading {
+#rdwvunaexx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1172,7 +1173,7 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   overflow-x: hidden;
 }
 
-#pdmxykoeay .gt_column_spanner_outer {
+#rdwvunaexx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1184,15 +1185,15 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   padding-right: 4px;
 }
 
-#pdmxykoeay .gt_column_spanner_outer:first-child {
+#rdwvunaexx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pdmxykoeay .gt_column_spanner_outer:last-child {
+#rdwvunaexx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pdmxykoeay .gt_column_spanner {
+#rdwvunaexx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1204,11 +1205,11 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   width: 100%;
 }
 
-#pdmxykoeay .gt_spanner_row {
+#rdwvunaexx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pdmxykoeay .gt_group_heading {
+#rdwvunaexx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1234,7 +1235,7 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   text-align: left;
 }
 
-#pdmxykoeay .gt_empty_group_heading {
+#rdwvunaexx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1249,15 +1250,15 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   vertical-align: middle;
 }
 
-#pdmxykoeay .gt_from_md > :first-child {
+#rdwvunaexx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pdmxykoeay .gt_from_md > :last-child {
+#rdwvunaexx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pdmxykoeay .gt_row {
+#rdwvunaexx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1276,7 +1277,7 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   overflow-x: hidden;
 }
 
-#pdmxykoeay .gt_stub {
+#rdwvunaexx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1289,7 +1290,7 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   padding-right: 5px;
 }
 
-#pdmxykoeay .gt_stub_row_group {
+#rdwvunaexx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1303,15 +1304,15 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   vertical-align: top;
 }
 
-#pdmxykoeay .gt_row_group_first td {
+#rdwvunaexx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pdmxykoeay .gt_row_group_first th {
+#rdwvunaexx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pdmxykoeay .gt_summary_row {
+#rdwvunaexx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1321,16 +1322,16 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   padding-right: 5px;
 }
 
-#pdmxykoeay .gt_first_summary_row {
+#rdwvunaexx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pdmxykoeay .gt_first_summary_row.thick {
+#rdwvunaexx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pdmxykoeay .gt_last_summary_row {
+#rdwvunaexx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1340,7 +1341,7 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   border-bottom-color: #D3D3D3;
 }
 
-#pdmxykoeay .gt_grand_summary_row {
+#rdwvunaexx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1350,7 +1351,7 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   padding-right: 5px;
 }
 
-#pdmxykoeay .gt_first_grand_summary_row {
+#rdwvunaexx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1360,7 +1361,7 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   border-top-color: #D3D3D3;
 }
 
-#pdmxykoeay .gt_last_grand_summary_row_top {
+#rdwvunaexx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1370,11 +1371,11 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   border-bottom-color: #D3D3D3;
 }
 
-#pdmxykoeay .gt_striped {
+#rdwvunaexx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pdmxykoeay .gt_table_body {
+#rdwvunaexx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1383,7 +1384,7 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   border-bottom-color: #D3D3D3;
 }
 
-#pdmxykoeay .gt_footnotes {
+#rdwvunaexx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1397,7 +1398,7 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   border-right-color: #D3D3D3;
 }
 
-#pdmxykoeay .gt_footnote {
+#rdwvunaexx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1406,7 +1407,7 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   padding-right: 5px;
 }
 
-#pdmxykoeay .gt_sourcenotes {
+#rdwvunaexx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1420,7 +1421,7 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   border-right-color: #D3D3D3;
 }
 
-#pdmxykoeay .gt_sourcenote {
+#rdwvunaexx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1428,77 +1429,77 @@ Table&nbsp;15.2: Major divisions of the fine earth mineral fraction
   padding-right: 5px;
 }
 
-#pdmxykoeay .gt_left {
+#rdwvunaexx .gt_left {
   text-align: left;
 }
 
-#pdmxykoeay .gt_center {
+#rdwvunaexx .gt_center {
   text-align: center;
 }
 
-#pdmxykoeay .gt_right {
+#rdwvunaexx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pdmxykoeay .gt_font_normal {
+#rdwvunaexx .gt_font_normal {
   font-weight: normal;
 }
 
-#pdmxykoeay .gt_font_bold {
+#rdwvunaexx .gt_font_bold {
   font-weight: bold;
 }
 
-#pdmxykoeay .gt_font_italic {
+#rdwvunaexx .gt_font_italic {
   font-style: italic;
 }
 
-#pdmxykoeay .gt_super {
+#rdwvunaexx .gt_super {
   font-size: 65%;
 }
 
-#pdmxykoeay .gt_footnote_marks {
+#rdwvunaexx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pdmxykoeay .gt_asterisk {
+#rdwvunaexx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pdmxykoeay .gt_indent_1 {
+#rdwvunaexx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pdmxykoeay .gt_indent_2 {
+#rdwvunaexx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pdmxykoeay .gt_indent_3 {
+#rdwvunaexx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pdmxykoeay .gt_indent_4 {
+#rdwvunaexx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pdmxykoeay .gt_indent_5 {
+#rdwvunaexx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pdmxykoeay .katex-display {
+#rdwvunaexx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pdmxykoeay div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rdwvunaexx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -1563,23 +1564,23 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
 </figcaption>
 <div aria-describedby="tbl-texture-tri-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="jtbpoxvvvr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jtbpoxvvvr table {
+<div id="ngjzaquhpw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ngjzaquhpw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jtbpoxvvvr thead, #jtbpoxvvvr tbody, #jtbpoxvvvr tfoot, #jtbpoxvvvr tr, #jtbpoxvvvr td, #jtbpoxvvvr th {
+#ngjzaquhpw thead, #ngjzaquhpw tbody, #ngjzaquhpw tfoot, #ngjzaquhpw tr, #ngjzaquhpw td, #ngjzaquhpw th {
   border-style: none;
 }
 
-#jtbpoxvvvr p {
+#ngjzaquhpw p {
   margin: 0;
   padding: 0;
 }
 
-#jtbpoxvvvr .gt_table {
+#ngjzaquhpw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1605,12 +1606,12 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   border-left-color: #D3D3D3;
 }
 
-#jtbpoxvvvr .gt_caption {
+#ngjzaquhpw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jtbpoxvvvr .gt_title {
+#ngjzaquhpw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1622,7 +1623,7 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   border-bottom-width: 0;
 }
 
-#jtbpoxvvvr .gt_subtitle {
+#ngjzaquhpw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1634,7 +1635,7 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   border-top-width: 0;
 }
 
-#jtbpoxvvvr .gt_heading {
+#ngjzaquhpw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1646,13 +1647,13 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   border-right-color: #D3D3D3;
 }
 
-#jtbpoxvvvr .gt_bottom_border {
+#ngjzaquhpw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jtbpoxvvvr .gt_col_headings {
+#ngjzaquhpw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1667,7 +1668,7 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   border-right-color: #D3D3D3;
 }
 
-#jtbpoxvvvr .gt_col_heading {
+#ngjzaquhpw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1687,7 +1688,7 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   overflow-x: hidden;
 }
 
-#jtbpoxvvvr .gt_column_spanner_outer {
+#ngjzaquhpw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1699,15 +1700,15 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   padding-right: 4px;
 }
 
-#jtbpoxvvvr .gt_column_spanner_outer:first-child {
+#ngjzaquhpw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jtbpoxvvvr .gt_column_spanner_outer:last-child {
+#ngjzaquhpw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jtbpoxvvvr .gt_column_spanner {
+#ngjzaquhpw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1719,11 +1720,11 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   width: 100%;
 }
 
-#jtbpoxvvvr .gt_spanner_row {
+#ngjzaquhpw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jtbpoxvvvr .gt_group_heading {
+#ngjzaquhpw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1749,7 +1750,7 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   text-align: left;
 }
 
-#jtbpoxvvvr .gt_empty_group_heading {
+#ngjzaquhpw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1764,15 +1765,15 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   vertical-align: middle;
 }
 
-#jtbpoxvvvr .gt_from_md > :first-child {
+#ngjzaquhpw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jtbpoxvvvr .gt_from_md > :last-child {
+#ngjzaquhpw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jtbpoxvvvr .gt_row {
+#ngjzaquhpw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1791,7 +1792,7 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   overflow-x: hidden;
 }
 
-#jtbpoxvvvr .gt_stub {
+#ngjzaquhpw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1804,7 +1805,7 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   padding-right: 5px;
 }
 
-#jtbpoxvvvr .gt_stub_row_group {
+#ngjzaquhpw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1818,15 +1819,15 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   vertical-align: top;
 }
 
-#jtbpoxvvvr .gt_row_group_first td {
+#ngjzaquhpw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jtbpoxvvvr .gt_row_group_first th {
+#ngjzaquhpw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jtbpoxvvvr .gt_summary_row {
+#ngjzaquhpw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1836,16 +1837,16 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   padding-right: 5px;
 }
 
-#jtbpoxvvvr .gt_first_summary_row {
+#ngjzaquhpw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jtbpoxvvvr .gt_first_summary_row.thick {
+#ngjzaquhpw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jtbpoxvvvr .gt_last_summary_row {
+#ngjzaquhpw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1855,7 +1856,7 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   border-bottom-color: #D3D3D3;
 }
 
-#jtbpoxvvvr .gt_grand_summary_row {
+#ngjzaquhpw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1865,7 +1866,7 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   padding-right: 5px;
 }
 
-#jtbpoxvvvr .gt_first_grand_summary_row {
+#ngjzaquhpw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1875,7 +1876,7 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   border-top-color: #D3D3D3;
 }
 
-#jtbpoxvvvr .gt_last_grand_summary_row_top {
+#ngjzaquhpw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1885,11 +1886,11 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   border-bottom-color: #D3D3D3;
 }
 
-#jtbpoxvvvr .gt_striped {
+#ngjzaquhpw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jtbpoxvvvr .gt_table_body {
+#ngjzaquhpw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1898,7 +1899,7 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   border-bottom-color: #D3D3D3;
 }
 
-#jtbpoxvvvr .gt_footnotes {
+#ngjzaquhpw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1912,7 +1913,7 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   border-right-color: #D3D3D3;
 }
 
-#jtbpoxvvvr .gt_footnote {
+#ngjzaquhpw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1921,7 +1922,7 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   padding-right: 5px;
 }
 
-#jtbpoxvvvr .gt_sourcenotes {
+#ngjzaquhpw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1935,7 +1936,7 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   border-right-color: #D3D3D3;
 }
 
-#jtbpoxvvvr .gt_sourcenote {
+#ngjzaquhpw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1943,77 +1944,77 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
   padding-right: 5px;
 }
 
-#jtbpoxvvvr .gt_left {
+#ngjzaquhpw .gt_left {
   text-align: left;
 }
 
-#jtbpoxvvvr .gt_center {
+#ngjzaquhpw .gt_center {
   text-align: center;
 }
 
-#jtbpoxvvvr .gt_right {
+#ngjzaquhpw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jtbpoxvvvr .gt_font_normal {
+#ngjzaquhpw .gt_font_normal {
   font-weight: normal;
 }
 
-#jtbpoxvvvr .gt_font_bold {
+#ngjzaquhpw .gt_font_bold {
   font-weight: bold;
 }
 
-#jtbpoxvvvr .gt_font_italic {
+#ngjzaquhpw .gt_font_italic {
   font-style: italic;
 }
 
-#jtbpoxvvvr .gt_super {
+#ngjzaquhpw .gt_super {
   font-size: 65%;
 }
 
-#jtbpoxvvvr .gt_footnote_marks {
+#ngjzaquhpw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jtbpoxvvvr .gt_asterisk {
+#ngjzaquhpw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jtbpoxvvvr .gt_indent_1 {
+#ngjzaquhpw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jtbpoxvvvr .gt_indent_2 {
+#ngjzaquhpw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jtbpoxvvvr .gt_indent_3 {
+#ngjzaquhpw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jtbpoxvvvr .gt_indent_4 {
+#ngjzaquhpw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jtbpoxvvvr .gt_indent_5 {
+#ngjzaquhpw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jtbpoxvvvr .katex-display {
+#ngjzaquhpw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jtbpoxvvvr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ngjzaquhpw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell no-stripe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell no-stripe caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col>
 <col style="width: 10%">
@@ -2124,7 +2125,7 @@ Table&nbsp;15.3: New Zealand Texture Triangle class names and compositional limi
 </div>
 </div>
 <div id="nte-nztri" class="callout callout-style-simple callout-note no-icon callout-titled" title="Soil texture triangles">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2151,23 +2152,23 @@ Table&nbsp;15.4: Sand fraction modifiers
 </figcaption>
 <div aria-describedby="tbl-hr-sandquals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="koevfxyggf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#koevfxyggf table {
+<div id="whmvhugfvn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#whmvhugfvn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#koevfxyggf thead, #koevfxyggf tbody, #koevfxyggf tfoot, #koevfxyggf tr, #koevfxyggf td, #koevfxyggf th {
+#whmvhugfvn thead, #whmvhugfvn tbody, #whmvhugfvn tfoot, #whmvhugfvn tr, #whmvhugfvn td, #whmvhugfvn th {
   border-style: none;
 }
 
-#koevfxyggf p {
+#whmvhugfvn p {
   margin: 0;
   padding: 0;
 }
 
-#koevfxyggf .gt_table {
+#whmvhugfvn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2193,12 +2194,12 @@ Table&nbsp;15.4: Sand fraction modifiers
   border-left-color: #D3D3D3;
 }
 
-#koevfxyggf .gt_caption {
+#whmvhugfvn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#koevfxyggf .gt_title {
+#whmvhugfvn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2210,7 +2211,7 @@ Table&nbsp;15.4: Sand fraction modifiers
   border-bottom-width: 0;
 }
 
-#koevfxyggf .gt_subtitle {
+#whmvhugfvn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2222,7 +2223,7 @@ Table&nbsp;15.4: Sand fraction modifiers
   border-top-width: 0;
 }
 
-#koevfxyggf .gt_heading {
+#whmvhugfvn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2234,13 +2235,13 @@ Table&nbsp;15.4: Sand fraction modifiers
   border-right-color: #D3D3D3;
 }
 
-#koevfxyggf .gt_bottom_border {
+#whmvhugfvn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#koevfxyggf .gt_col_headings {
+#whmvhugfvn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2255,7 +2256,7 @@ Table&nbsp;15.4: Sand fraction modifiers
   border-right-color: #D3D3D3;
 }
 
-#koevfxyggf .gt_col_heading {
+#whmvhugfvn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2275,7 +2276,7 @@ Table&nbsp;15.4: Sand fraction modifiers
   overflow-x: hidden;
 }
 
-#koevfxyggf .gt_column_spanner_outer {
+#whmvhugfvn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2287,15 +2288,15 @@ Table&nbsp;15.4: Sand fraction modifiers
   padding-right: 4px;
 }
 
-#koevfxyggf .gt_column_spanner_outer:first-child {
+#whmvhugfvn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#koevfxyggf .gt_column_spanner_outer:last-child {
+#whmvhugfvn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#koevfxyggf .gt_column_spanner {
+#whmvhugfvn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2307,11 +2308,11 @@ Table&nbsp;15.4: Sand fraction modifiers
   width: 100%;
 }
 
-#koevfxyggf .gt_spanner_row {
+#whmvhugfvn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#koevfxyggf .gt_group_heading {
+#whmvhugfvn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2337,7 +2338,7 @@ Table&nbsp;15.4: Sand fraction modifiers
   text-align: left;
 }
 
-#koevfxyggf .gt_empty_group_heading {
+#whmvhugfvn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2352,15 +2353,15 @@ Table&nbsp;15.4: Sand fraction modifiers
   vertical-align: middle;
 }
 
-#koevfxyggf .gt_from_md > :first-child {
+#whmvhugfvn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#koevfxyggf .gt_from_md > :last-child {
+#whmvhugfvn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#koevfxyggf .gt_row {
+#whmvhugfvn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2379,7 +2380,7 @@ Table&nbsp;15.4: Sand fraction modifiers
   overflow-x: hidden;
 }
 
-#koevfxyggf .gt_stub {
+#whmvhugfvn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2392,7 +2393,7 @@ Table&nbsp;15.4: Sand fraction modifiers
   padding-right: 5px;
 }
 
-#koevfxyggf .gt_stub_row_group {
+#whmvhugfvn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2406,15 +2407,15 @@ Table&nbsp;15.4: Sand fraction modifiers
   vertical-align: top;
 }
 
-#koevfxyggf .gt_row_group_first td {
+#whmvhugfvn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#koevfxyggf .gt_row_group_first th {
+#whmvhugfvn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#koevfxyggf .gt_summary_row {
+#whmvhugfvn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2424,16 +2425,16 @@ Table&nbsp;15.4: Sand fraction modifiers
   padding-right: 5px;
 }
 
-#koevfxyggf .gt_first_summary_row {
+#whmvhugfvn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#koevfxyggf .gt_first_summary_row.thick {
+#whmvhugfvn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#koevfxyggf .gt_last_summary_row {
+#whmvhugfvn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2443,7 +2444,7 @@ Table&nbsp;15.4: Sand fraction modifiers
   border-bottom-color: #D3D3D3;
 }
 
-#koevfxyggf .gt_grand_summary_row {
+#whmvhugfvn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2453,7 +2454,7 @@ Table&nbsp;15.4: Sand fraction modifiers
   padding-right: 5px;
 }
 
-#koevfxyggf .gt_first_grand_summary_row {
+#whmvhugfvn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2463,7 +2464,7 @@ Table&nbsp;15.4: Sand fraction modifiers
   border-top-color: #D3D3D3;
 }
 
-#koevfxyggf .gt_last_grand_summary_row_top {
+#whmvhugfvn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2473,11 +2474,11 @@ Table&nbsp;15.4: Sand fraction modifiers
   border-bottom-color: #D3D3D3;
 }
 
-#koevfxyggf .gt_striped {
+#whmvhugfvn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#koevfxyggf .gt_table_body {
+#whmvhugfvn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2486,7 +2487,7 @@ Table&nbsp;15.4: Sand fraction modifiers
   border-bottom-color: #D3D3D3;
 }
 
-#koevfxyggf .gt_footnotes {
+#whmvhugfvn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2500,7 +2501,7 @@ Table&nbsp;15.4: Sand fraction modifiers
   border-right-color: #D3D3D3;
 }
 
-#koevfxyggf .gt_footnote {
+#whmvhugfvn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2509,7 +2510,7 @@ Table&nbsp;15.4: Sand fraction modifiers
   padding-right: 5px;
 }
 
-#koevfxyggf .gt_sourcenotes {
+#whmvhugfvn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2523,7 +2524,7 @@ Table&nbsp;15.4: Sand fraction modifiers
   border-right-color: #D3D3D3;
 }
 
-#koevfxyggf .gt_sourcenote {
+#whmvhugfvn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2531,77 +2532,77 @@ Table&nbsp;15.4: Sand fraction modifiers
   padding-right: 5px;
 }
 
-#koevfxyggf .gt_left {
+#whmvhugfvn .gt_left {
   text-align: left;
 }
 
-#koevfxyggf .gt_center {
+#whmvhugfvn .gt_center {
   text-align: center;
 }
 
-#koevfxyggf .gt_right {
+#whmvhugfvn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#koevfxyggf .gt_font_normal {
+#whmvhugfvn .gt_font_normal {
   font-weight: normal;
 }
 
-#koevfxyggf .gt_font_bold {
+#whmvhugfvn .gt_font_bold {
   font-weight: bold;
 }
 
-#koevfxyggf .gt_font_italic {
+#whmvhugfvn .gt_font_italic {
   font-style: italic;
 }
 
-#koevfxyggf .gt_super {
+#whmvhugfvn .gt_super {
   font-size: 65%;
 }
 
-#koevfxyggf .gt_footnote_marks {
+#whmvhugfvn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#koevfxyggf .gt_asterisk {
+#whmvhugfvn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#koevfxyggf .gt_indent_1 {
+#whmvhugfvn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#koevfxyggf .gt_indent_2 {
+#whmvhugfvn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#koevfxyggf .gt_indent_3 {
+#whmvhugfvn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#koevfxyggf .gt_indent_4 {
+#whmvhugfvn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#koevfxyggf .gt_indent_5 {
+#whmvhugfvn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#koevfxyggf .katex-display {
+#whmvhugfvn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#koevfxyggf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#whmvhugfvn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -2653,23 +2654,23 @@ Table&nbsp;15.5: Rock fragment size fractions
 </figcaption>
 <div aria-describedby="tbl-hr-rocksz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="biaejhydqw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#biaejhydqw table {
+<div id="hayvkkzjfi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hayvkkzjfi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#biaejhydqw thead, #biaejhydqw tbody, #biaejhydqw tfoot, #biaejhydqw tr, #biaejhydqw td, #biaejhydqw th {
+#hayvkkzjfi thead, #hayvkkzjfi tbody, #hayvkkzjfi tfoot, #hayvkkzjfi tr, #hayvkkzjfi td, #hayvkkzjfi th {
   border-style: none;
 }
 
-#biaejhydqw p {
+#hayvkkzjfi p {
   margin: 0;
   padding: 0;
 }
 
-#biaejhydqw .gt_table {
+#hayvkkzjfi .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2695,12 +2696,12 @@ Table&nbsp;15.5: Rock fragment size fractions
   border-left-color: #D3D3D3;
 }
 
-#biaejhydqw .gt_caption {
+#hayvkkzjfi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#biaejhydqw .gt_title {
+#hayvkkzjfi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2712,7 +2713,7 @@ Table&nbsp;15.5: Rock fragment size fractions
   border-bottom-width: 0;
 }
 
-#biaejhydqw .gt_subtitle {
+#hayvkkzjfi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2724,7 +2725,7 @@ Table&nbsp;15.5: Rock fragment size fractions
   border-top-width: 0;
 }
 
-#biaejhydqw .gt_heading {
+#hayvkkzjfi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2736,13 +2737,13 @@ Table&nbsp;15.5: Rock fragment size fractions
   border-right-color: #D3D3D3;
 }
 
-#biaejhydqw .gt_bottom_border {
+#hayvkkzjfi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#biaejhydqw .gt_col_headings {
+#hayvkkzjfi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2757,7 +2758,7 @@ Table&nbsp;15.5: Rock fragment size fractions
   border-right-color: #D3D3D3;
 }
 
-#biaejhydqw .gt_col_heading {
+#hayvkkzjfi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2777,7 +2778,7 @@ Table&nbsp;15.5: Rock fragment size fractions
   overflow-x: hidden;
 }
 
-#biaejhydqw .gt_column_spanner_outer {
+#hayvkkzjfi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2789,15 +2790,15 @@ Table&nbsp;15.5: Rock fragment size fractions
   padding-right: 4px;
 }
 
-#biaejhydqw .gt_column_spanner_outer:first-child {
+#hayvkkzjfi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#biaejhydqw .gt_column_spanner_outer:last-child {
+#hayvkkzjfi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#biaejhydqw .gt_column_spanner {
+#hayvkkzjfi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2809,11 +2810,11 @@ Table&nbsp;15.5: Rock fragment size fractions
   width: 100%;
 }
 
-#biaejhydqw .gt_spanner_row {
+#hayvkkzjfi .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#biaejhydqw .gt_group_heading {
+#hayvkkzjfi .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2839,7 +2840,7 @@ Table&nbsp;15.5: Rock fragment size fractions
   text-align: left;
 }
 
-#biaejhydqw .gt_empty_group_heading {
+#hayvkkzjfi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2854,15 +2855,15 @@ Table&nbsp;15.5: Rock fragment size fractions
   vertical-align: middle;
 }
 
-#biaejhydqw .gt_from_md > :first-child {
+#hayvkkzjfi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#biaejhydqw .gt_from_md > :last-child {
+#hayvkkzjfi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#biaejhydqw .gt_row {
+#hayvkkzjfi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2881,7 +2882,7 @@ Table&nbsp;15.5: Rock fragment size fractions
   overflow-x: hidden;
 }
 
-#biaejhydqw .gt_stub {
+#hayvkkzjfi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2894,7 +2895,7 @@ Table&nbsp;15.5: Rock fragment size fractions
   padding-right: 5px;
 }
 
-#biaejhydqw .gt_stub_row_group {
+#hayvkkzjfi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2908,15 +2909,15 @@ Table&nbsp;15.5: Rock fragment size fractions
   vertical-align: top;
 }
 
-#biaejhydqw .gt_row_group_first td {
+#hayvkkzjfi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#biaejhydqw .gt_row_group_first th {
+#hayvkkzjfi .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#biaejhydqw .gt_summary_row {
+#hayvkkzjfi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2926,16 +2927,16 @@ Table&nbsp;15.5: Rock fragment size fractions
   padding-right: 5px;
 }
 
-#biaejhydqw .gt_first_summary_row {
+#hayvkkzjfi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#biaejhydqw .gt_first_summary_row.thick {
+#hayvkkzjfi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#biaejhydqw .gt_last_summary_row {
+#hayvkkzjfi .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2945,7 +2946,7 @@ Table&nbsp;15.5: Rock fragment size fractions
   border-bottom-color: #D3D3D3;
 }
 
-#biaejhydqw .gt_grand_summary_row {
+#hayvkkzjfi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2955,7 +2956,7 @@ Table&nbsp;15.5: Rock fragment size fractions
   padding-right: 5px;
 }
 
-#biaejhydqw .gt_first_grand_summary_row {
+#hayvkkzjfi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2965,7 +2966,7 @@ Table&nbsp;15.5: Rock fragment size fractions
   border-top-color: #D3D3D3;
 }
 
-#biaejhydqw .gt_last_grand_summary_row_top {
+#hayvkkzjfi .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2975,11 +2976,11 @@ Table&nbsp;15.5: Rock fragment size fractions
   border-bottom-color: #D3D3D3;
 }
 
-#biaejhydqw .gt_striped {
+#hayvkkzjfi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#biaejhydqw .gt_table_body {
+#hayvkkzjfi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2988,7 +2989,7 @@ Table&nbsp;15.5: Rock fragment size fractions
   border-bottom-color: #D3D3D3;
 }
 
-#biaejhydqw .gt_footnotes {
+#hayvkkzjfi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3002,7 +3003,7 @@ Table&nbsp;15.5: Rock fragment size fractions
   border-right-color: #D3D3D3;
 }
 
-#biaejhydqw .gt_footnote {
+#hayvkkzjfi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3011,7 +3012,7 @@ Table&nbsp;15.5: Rock fragment size fractions
   padding-right: 5px;
 }
 
-#biaejhydqw .gt_sourcenotes {
+#hayvkkzjfi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3025,7 +3026,7 @@ Table&nbsp;15.5: Rock fragment size fractions
   border-right-color: #D3D3D3;
 }
 
-#biaejhydqw .gt_sourcenote {
+#hayvkkzjfi .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3033,77 +3034,77 @@ Table&nbsp;15.5: Rock fragment size fractions
   padding-right: 5px;
 }
 
-#biaejhydqw .gt_left {
+#hayvkkzjfi .gt_left {
   text-align: left;
 }
 
-#biaejhydqw .gt_center {
+#hayvkkzjfi .gt_center {
   text-align: center;
 }
 
-#biaejhydqw .gt_right {
+#hayvkkzjfi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#biaejhydqw .gt_font_normal {
+#hayvkkzjfi .gt_font_normal {
   font-weight: normal;
 }
 
-#biaejhydqw .gt_font_bold {
+#hayvkkzjfi .gt_font_bold {
   font-weight: bold;
 }
 
-#biaejhydqw .gt_font_italic {
+#hayvkkzjfi .gt_font_italic {
   font-style: italic;
 }
 
-#biaejhydqw .gt_super {
+#hayvkkzjfi .gt_super {
   font-size: 65%;
 }
 
-#biaejhydqw .gt_footnote_marks {
+#hayvkkzjfi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#biaejhydqw .gt_asterisk {
+#hayvkkzjfi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#biaejhydqw .gt_indent_1 {
+#hayvkkzjfi .gt_indent_1 {
   text-indent: 5px;
 }
 
-#biaejhydqw .gt_indent_2 {
+#hayvkkzjfi .gt_indent_2 {
   text-indent: 10px;
 }
 
-#biaejhydqw .gt_indent_3 {
+#hayvkkzjfi .gt_indent_3 {
   text-indent: 15px;
 }
 
-#biaejhydqw .gt_indent_4 {
+#hayvkkzjfi .gt_indent_4 {
   text-indent: 20px;
 }
 
-#biaejhydqw .gt_indent_5 {
+#hayvkkzjfi .gt_indent_5 {
   text-indent: 25px;
 }
 
-#biaejhydqw .katex-display {
+#hayvkkzjfi .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#biaejhydqw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hayvkkzjfi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -3149,23 +3150,23 @@ Table&nbsp;15.6: Rock fragment code rules
 </figcaption>
 <div aria-describedby="tbl-hr-cftex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="mrbqpogbhv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mrbqpogbhv table {
+<div id="qpvemlaiog" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qpvemlaiog table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mrbqpogbhv thead, #mrbqpogbhv tbody, #mrbqpogbhv tfoot, #mrbqpogbhv tr, #mrbqpogbhv td, #mrbqpogbhv th {
+#qpvemlaiog thead, #qpvemlaiog tbody, #qpvemlaiog tfoot, #qpvemlaiog tr, #qpvemlaiog td, #qpvemlaiog th {
   border-style: none;
 }
 
-#mrbqpogbhv p {
+#qpvemlaiog p {
   margin: 0;
   padding: 0;
 }
 
-#mrbqpogbhv .gt_table {
+#qpvemlaiog .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3191,12 +3192,12 @@ Table&nbsp;15.6: Rock fragment code rules
   border-left-color: #D3D3D3;
 }
 
-#mrbqpogbhv .gt_caption {
+#qpvemlaiog .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mrbqpogbhv .gt_title {
+#qpvemlaiog .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -3208,7 +3209,7 @@ Table&nbsp;15.6: Rock fragment code rules
   border-bottom-width: 0;
 }
 
-#mrbqpogbhv .gt_subtitle {
+#qpvemlaiog .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3220,7 +3221,7 @@ Table&nbsp;15.6: Rock fragment code rules
   border-top-width: 0;
 }
 
-#mrbqpogbhv .gt_heading {
+#qpvemlaiog .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3232,13 +3233,13 @@ Table&nbsp;15.6: Rock fragment code rules
   border-right-color: #D3D3D3;
 }
 
-#mrbqpogbhv .gt_bottom_border {
+#qpvemlaiog .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mrbqpogbhv .gt_col_headings {
+#qpvemlaiog .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3253,7 +3254,7 @@ Table&nbsp;15.6: Rock fragment code rules
   border-right-color: #D3D3D3;
 }
 
-#mrbqpogbhv .gt_col_heading {
+#qpvemlaiog .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3273,7 +3274,7 @@ Table&nbsp;15.6: Rock fragment code rules
   overflow-x: hidden;
 }
 
-#mrbqpogbhv .gt_column_spanner_outer {
+#qpvemlaiog .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3285,15 +3286,15 @@ Table&nbsp;15.6: Rock fragment code rules
   padding-right: 4px;
 }
 
-#mrbqpogbhv .gt_column_spanner_outer:first-child {
+#qpvemlaiog .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mrbqpogbhv .gt_column_spanner_outer:last-child {
+#qpvemlaiog .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mrbqpogbhv .gt_column_spanner {
+#qpvemlaiog .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3305,11 +3306,11 @@ Table&nbsp;15.6: Rock fragment code rules
   width: 100%;
 }
 
-#mrbqpogbhv .gt_spanner_row {
+#qpvemlaiog .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mrbqpogbhv .gt_group_heading {
+#qpvemlaiog .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3335,7 +3336,7 @@ Table&nbsp;15.6: Rock fragment code rules
   text-align: left;
 }
 
-#mrbqpogbhv .gt_empty_group_heading {
+#qpvemlaiog .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3350,15 +3351,15 @@ Table&nbsp;15.6: Rock fragment code rules
   vertical-align: middle;
 }
 
-#mrbqpogbhv .gt_from_md > :first-child {
+#qpvemlaiog .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mrbqpogbhv .gt_from_md > :last-child {
+#qpvemlaiog .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mrbqpogbhv .gt_row {
+#qpvemlaiog .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3377,7 +3378,7 @@ Table&nbsp;15.6: Rock fragment code rules
   overflow-x: hidden;
 }
 
-#mrbqpogbhv .gt_stub {
+#qpvemlaiog .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3390,7 +3391,7 @@ Table&nbsp;15.6: Rock fragment code rules
   padding-right: 5px;
 }
 
-#mrbqpogbhv .gt_stub_row_group {
+#qpvemlaiog .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3404,15 +3405,15 @@ Table&nbsp;15.6: Rock fragment code rules
   vertical-align: top;
 }
 
-#mrbqpogbhv .gt_row_group_first td {
+#qpvemlaiog .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mrbqpogbhv .gt_row_group_first th {
+#qpvemlaiog .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mrbqpogbhv .gt_summary_row {
+#qpvemlaiog .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3422,16 +3423,16 @@ Table&nbsp;15.6: Rock fragment code rules
   padding-right: 5px;
 }
 
-#mrbqpogbhv .gt_first_summary_row {
+#qpvemlaiog .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mrbqpogbhv .gt_first_summary_row.thick {
+#qpvemlaiog .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mrbqpogbhv .gt_last_summary_row {
+#qpvemlaiog .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3441,7 +3442,7 @@ Table&nbsp;15.6: Rock fragment code rules
   border-bottom-color: #D3D3D3;
 }
 
-#mrbqpogbhv .gt_grand_summary_row {
+#qpvemlaiog .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3451,7 +3452,7 @@ Table&nbsp;15.6: Rock fragment code rules
   padding-right: 5px;
 }
 
-#mrbqpogbhv .gt_first_grand_summary_row {
+#qpvemlaiog .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3461,7 +3462,7 @@ Table&nbsp;15.6: Rock fragment code rules
   border-top-color: #D3D3D3;
 }
 
-#mrbqpogbhv .gt_last_grand_summary_row_top {
+#qpvemlaiog .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3471,11 +3472,11 @@ Table&nbsp;15.6: Rock fragment code rules
   border-bottom-color: #D3D3D3;
 }
 
-#mrbqpogbhv .gt_striped {
+#qpvemlaiog .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mrbqpogbhv .gt_table_body {
+#qpvemlaiog .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3484,7 +3485,7 @@ Table&nbsp;15.6: Rock fragment code rules
   border-bottom-color: #D3D3D3;
 }
 
-#mrbqpogbhv .gt_footnotes {
+#qpvemlaiog .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3498,7 +3499,7 @@ Table&nbsp;15.6: Rock fragment code rules
   border-right-color: #D3D3D3;
 }
 
-#mrbqpogbhv .gt_footnote {
+#qpvemlaiog .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3507,7 +3508,7 @@ Table&nbsp;15.6: Rock fragment code rules
   padding-right: 5px;
 }
 
-#mrbqpogbhv .gt_sourcenotes {
+#qpvemlaiog .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3521,7 +3522,7 @@ Table&nbsp;15.6: Rock fragment code rules
   border-right-color: #D3D3D3;
 }
 
-#mrbqpogbhv .gt_sourcenote {
+#qpvemlaiog .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3529,77 +3530,77 @@ Table&nbsp;15.6: Rock fragment code rules
   padding-right: 5px;
 }
 
-#mrbqpogbhv .gt_left {
+#qpvemlaiog .gt_left {
   text-align: left;
 }
 
-#mrbqpogbhv .gt_center {
+#qpvemlaiog .gt_center {
   text-align: center;
 }
 
-#mrbqpogbhv .gt_right {
+#qpvemlaiog .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mrbqpogbhv .gt_font_normal {
+#qpvemlaiog .gt_font_normal {
   font-weight: normal;
 }
 
-#mrbqpogbhv .gt_font_bold {
+#qpvemlaiog .gt_font_bold {
   font-weight: bold;
 }
 
-#mrbqpogbhv .gt_font_italic {
+#qpvemlaiog .gt_font_italic {
   font-style: italic;
 }
 
-#mrbqpogbhv .gt_super {
+#qpvemlaiog .gt_super {
   font-size: 65%;
 }
 
-#mrbqpogbhv .gt_footnote_marks {
+#qpvemlaiog .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mrbqpogbhv .gt_asterisk {
+#qpvemlaiog .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mrbqpogbhv .gt_indent_1 {
+#qpvemlaiog .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mrbqpogbhv .gt_indent_2 {
+#qpvemlaiog .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mrbqpogbhv .gt_indent_3 {
+#qpvemlaiog .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mrbqpogbhv .gt_indent_4 {
+#qpvemlaiog .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mrbqpogbhv .gt_indent_5 {
+#qpvemlaiog .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mrbqpogbhv .katex-display {
+#qpvemlaiog .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mrbqpogbhv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qpvemlaiog div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 15%">
 <col style="width: 25%">
@@ -3648,14 +3649,14 @@ Table&nbsp;15.6: Rock fragment code rules
 </figure>
 </div>
 </div>
-<p>There is no set upper limit for the ‘Bouldery’ class, but in practice rocks larger than the profile are either recorded as (effectively) the bedrock (see <a href="pr_00_intro.html#sec-pr-rsa" class="quarto-xref"><span>Section 10.2.8.1</span></a>, <a href="in_01_horizon_names.html#sec-hor-r" class="quarto-xref"><span>Section 20.1.2.6</span></a>) or as surface features (see <a href="pr_01_surface.html#sec-pr-surfcov" class="quarto-xref"><span>Section 11.3</span></a>) depending on their position.</p>
+<p>There is no upper size limit for the ‘Bouldery’ class, but in practice rocks larger than the profile are either recorded as (effectively) the bedrock (see <a href="pr_00_intro.html#sec-pr-rsa" class="quarto-xref"><span>Section 10.2.8.1</span></a>, <a href="in_01_horizon_names.html#sec-hzn-convp" class="quarto-xref"><span>Section 20.1.1</span></a>) or as surface features (see <a href="pr_01_surface.html#sec-pr-surfcov" class="quarto-xref"><span>Section 11.3</span></a>) depending on their position.</p>
 <p>If a horizon has &gt;&nbsp;70% rock fragments and &gt;&nbsp;5% fine earth, mineral texture codes can still be appended as a suffix, e.g.&nbsp;<span class="ceg">G(ZL)</span> for a gravel with some interstitial silt loam.</p>
 <p>When recording texture for a mixed fine-earth/organic horizon containing rock fragments, record the rock fragment modifier before the organic modifier, separated by a comma, e.g.&nbsp;<span class="ceg">SL(G, H)</span> for a sandy loam with gravel and humus, or <span class="ceg">(G, H)SL</span> for a gravelly, humic sandy loam.</p>
 <p>For poorly sorted horizons where a single fraction does not dominate the particle size distribution of rock fragments, choose the largest rock fragment code for recording. Determine abundance from the total percentage of rock fragments. For example, in a silt loam horizon with 15% gravel, 15% cobble and 10% boulder, use <span class="ceg">(C)ZL</span> (total rock fragments 40%, largest co-dominant fraction cobble).</p>
 <p>The rock fragment component of soils is sometimes referred to as the ‘soil skeleton’, and horizons with &gt;35% rock fragments are sometimes called ‘skeletal’. This nomenclature can be modified with reference to the fine-earth fraction texture group, e.g.&nbsp;‘sandy-skeletal’.</p>
 <p>Conventions for describing rock fragment abundance, size, shape, lithology and distribution are outlined in <a href="hr_01_architecture.html#sec-rockfrag" class="quarto-xref"><span>Section 13.2.1</span></a>.</p>
 <div id="nte-rockvis" class="callout callout-style-simple callout-note no-icon callout-titled" title="Visually estimating rock fragments">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3686,23 +3687,23 @@ Table&nbsp;15.7: Gravel fraction modifiers
 </figcaption>
 <div aria-describedby="tbl-hr-gvquals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="xtguyixvjb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xtguyixvjb table {
+<div id="ubwshansuo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ubwshansuo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xtguyixvjb thead, #xtguyixvjb tbody, #xtguyixvjb tfoot, #xtguyixvjb tr, #xtguyixvjb td, #xtguyixvjb th {
+#ubwshansuo thead, #ubwshansuo tbody, #ubwshansuo tfoot, #ubwshansuo tr, #ubwshansuo td, #ubwshansuo th {
   border-style: none;
 }
 
-#xtguyixvjb p {
+#ubwshansuo p {
   margin: 0;
   padding: 0;
 }
 
-#xtguyixvjb .gt_table {
+#ubwshansuo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3728,12 +3729,12 @@ Table&nbsp;15.7: Gravel fraction modifiers
   border-left-color: #D3D3D3;
 }
 
-#xtguyixvjb .gt_caption {
+#ubwshansuo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xtguyixvjb .gt_title {
+#ubwshansuo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -3745,7 +3746,7 @@ Table&nbsp;15.7: Gravel fraction modifiers
   border-bottom-width: 0;
 }
 
-#xtguyixvjb .gt_subtitle {
+#ubwshansuo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3757,7 +3758,7 @@ Table&nbsp;15.7: Gravel fraction modifiers
   border-top-width: 0;
 }
 
-#xtguyixvjb .gt_heading {
+#ubwshansuo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3769,13 +3770,13 @@ Table&nbsp;15.7: Gravel fraction modifiers
   border-right-color: #D3D3D3;
 }
 
-#xtguyixvjb .gt_bottom_border {
+#ubwshansuo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xtguyixvjb .gt_col_headings {
+#ubwshansuo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3790,7 +3791,7 @@ Table&nbsp;15.7: Gravel fraction modifiers
   border-right-color: #D3D3D3;
 }
 
-#xtguyixvjb .gt_col_heading {
+#ubwshansuo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3810,7 +3811,7 @@ Table&nbsp;15.7: Gravel fraction modifiers
   overflow-x: hidden;
 }
 
-#xtguyixvjb .gt_column_spanner_outer {
+#ubwshansuo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3822,15 +3823,15 @@ Table&nbsp;15.7: Gravel fraction modifiers
   padding-right: 4px;
 }
 
-#xtguyixvjb .gt_column_spanner_outer:first-child {
+#ubwshansuo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xtguyixvjb .gt_column_spanner_outer:last-child {
+#ubwshansuo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xtguyixvjb .gt_column_spanner {
+#ubwshansuo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3842,11 +3843,11 @@ Table&nbsp;15.7: Gravel fraction modifiers
   width: 100%;
 }
 
-#xtguyixvjb .gt_spanner_row {
+#ubwshansuo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xtguyixvjb .gt_group_heading {
+#ubwshansuo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3872,7 +3873,7 @@ Table&nbsp;15.7: Gravel fraction modifiers
   text-align: left;
 }
 
-#xtguyixvjb .gt_empty_group_heading {
+#ubwshansuo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3887,15 +3888,15 @@ Table&nbsp;15.7: Gravel fraction modifiers
   vertical-align: middle;
 }
 
-#xtguyixvjb .gt_from_md > :first-child {
+#ubwshansuo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xtguyixvjb .gt_from_md > :last-child {
+#ubwshansuo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xtguyixvjb .gt_row {
+#ubwshansuo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3914,7 +3915,7 @@ Table&nbsp;15.7: Gravel fraction modifiers
   overflow-x: hidden;
 }
 
-#xtguyixvjb .gt_stub {
+#ubwshansuo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3927,7 +3928,7 @@ Table&nbsp;15.7: Gravel fraction modifiers
   padding-right: 5px;
 }
 
-#xtguyixvjb .gt_stub_row_group {
+#ubwshansuo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3941,15 +3942,15 @@ Table&nbsp;15.7: Gravel fraction modifiers
   vertical-align: top;
 }
 
-#xtguyixvjb .gt_row_group_first td {
+#ubwshansuo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xtguyixvjb .gt_row_group_first th {
+#ubwshansuo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xtguyixvjb .gt_summary_row {
+#ubwshansuo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3959,16 +3960,16 @@ Table&nbsp;15.7: Gravel fraction modifiers
   padding-right: 5px;
 }
 
-#xtguyixvjb .gt_first_summary_row {
+#ubwshansuo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xtguyixvjb .gt_first_summary_row.thick {
+#ubwshansuo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xtguyixvjb .gt_last_summary_row {
+#ubwshansuo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3978,7 +3979,7 @@ Table&nbsp;15.7: Gravel fraction modifiers
   border-bottom-color: #D3D3D3;
 }
 
-#xtguyixvjb .gt_grand_summary_row {
+#ubwshansuo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3988,7 +3989,7 @@ Table&nbsp;15.7: Gravel fraction modifiers
   padding-right: 5px;
 }
 
-#xtguyixvjb .gt_first_grand_summary_row {
+#ubwshansuo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3998,7 +3999,7 @@ Table&nbsp;15.7: Gravel fraction modifiers
   border-top-color: #D3D3D3;
 }
 
-#xtguyixvjb .gt_last_grand_summary_row_top {
+#ubwshansuo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4008,11 +4009,11 @@ Table&nbsp;15.7: Gravel fraction modifiers
   border-bottom-color: #D3D3D3;
 }
 
-#xtguyixvjb .gt_striped {
+#ubwshansuo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xtguyixvjb .gt_table_body {
+#ubwshansuo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4021,7 +4022,7 @@ Table&nbsp;15.7: Gravel fraction modifiers
   border-bottom-color: #D3D3D3;
 }
 
-#xtguyixvjb .gt_footnotes {
+#ubwshansuo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4035,7 +4036,7 @@ Table&nbsp;15.7: Gravel fraction modifiers
   border-right-color: #D3D3D3;
 }
 
-#xtguyixvjb .gt_footnote {
+#ubwshansuo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4044,7 +4045,7 @@ Table&nbsp;15.7: Gravel fraction modifiers
   padding-right: 5px;
 }
 
-#xtguyixvjb .gt_sourcenotes {
+#ubwshansuo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4058,7 +4059,7 @@ Table&nbsp;15.7: Gravel fraction modifiers
   border-right-color: #D3D3D3;
 }
 
-#xtguyixvjb .gt_sourcenote {
+#ubwshansuo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4066,77 +4067,77 @@ Table&nbsp;15.7: Gravel fraction modifiers
   padding-right: 5px;
 }
 
-#xtguyixvjb .gt_left {
+#ubwshansuo .gt_left {
   text-align: left;
 }
 
-#xtguyixvjb .gt_center {
+#ubwshansuo .gt_center {
   text-align: center;
 }
 
-#xtguyixvjb .gt_right {
+#ubwshansuo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xtguyixvjb .gt_font_normal {
+#ubwshansuo .gt_font_normal {
   font-weight: normal;
 }
 
-#xtguyixvjb .gt_font_bold {
+#ubwshansuo .gt_font_bold {
   font-weight: bold;
 }
 
-#xtguyixvjb .gt_font_italic {
+#ubwshansuo .gt_font_italic {
   font-style: italic;
 }
 
-#xtguyixvjb .gt_super {
+#ubwshansuo .gt_super {
   font-size: 65%;
 }
 
-#xtguyixvjb .gt_footnote_marks {
+#ubwshansuo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xtguyixvjb .gt_asterisk {
+#ubwshansuo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xtguyixvjb .gt_indent_1 {
+#ubwshansuo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xtguyixvjb .gt_indent_2 {
+#ubwshansuo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xtguyixvjb .gt_indent_3 {
+#ubwshansuo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xtguyixvjb .gt_indent_4 {
+#ubwshansuo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xtguyixvjb .gt_indent_5 {
+#ubwshansuo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xtguyixvjb .katex-display {
+#ubwshansuo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xtguyixvjb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ubwshansuo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -4188,23 +4189,23 @@ Table&nbsp;15.8: Organic matter types
 </figcaption>
 <div aria-describedby="tbl-hr-omtyp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="vehswmjfex" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vehswmjfex table {
+<div id="uiturtbcig" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uiturtbcig table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vehswmjfex thead, #vehswmjfex tbody, #vehswmjfex tfoot, #vehswmjfex tr, #vehswmjfex td, #vehswmjfex th {
+#uiturtbcig thead, #uiturtbcig tbody, #uiturtbcig tfoot, #uiturtbcig tr, #uiturtbcig td, #uiturtbcig th {
   border-style: none;
 }
 
-#vehswmjfex p {
+#uiturtbcig p {
   margin: 0;
   padding: 0;
 }
 
-#vehswmjfex .gt_table {
+#uiturtbcig .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4230,12 +4231,12 @@ Table&nbsp;15.8: Organic matter types
   border-left-color: #D3D3D3;
 }
 
-#vehswmjfex .gt_caption {
+#uiturtbcig .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vehswmjfex .gt_title {
+#uiturtbcig .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -4247,7 +4248,7 @@ Table&nbsp;15.8: Organic matter types
   border-bottom-width: 0;
 }
 
-#vehswmjfex .gt_subtitle {
+#uiturtbcig .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4259,7 +4260,7 @@ Table&nbsp;15.8: Organic matter types
   border-top-width: 0;
 }
 
-#vehswmjfex .gt_heading {
+#uiturtbcig .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4271,13 +4272,13 @@ Table&nbsp;15.8: Organic matter types
   border-right-color: #D3D3D3;
 }
 
-#vehswmjfex .gt_bottom_border {
+#uiturtbcig .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vehswmjfex .gt_col_headings {
+#uiturtbcig .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4292,7 +4293,7 @@ Table&nbsp;15.8: Organic matter types
   border-right-color: #D3D3D3;
 }
 
-#vehswmjfex .gt_col_heading {
+#uiturtbcig .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4312,7 +4313,7 @@ Table&nbsp;15.8: Organic matter types
   overflow-x: hidden;
 }
 
-#vehswmjfex .gt_column_spanner_outer {
+#uiturtbcig .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4324,15 +4325,15 @@ Table&nbsp;15.8: Organic matter types
   padding-right: 4px;
 }
 
-#vehswmjfex .gt_column_spanner_outer:first-child {
+#uiturtbcig .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vehswmjfex .gt_column_spanner_outer:last-child {
+#uiturtbcig .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vehswmjfex .gt_column_spanner {
+#uiturtbcig .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4344,11 +4345,11 @@ Table&nbsp;15.8: Organic matter types
   width: 100%;
 }
 
-#vehswmjfex .gt_spanner_row {
+#uiturtbcig .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vehswmjfex .gt_group_heading {
+#uiturtbcig .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4374,7 +4375,7 @@ Table&nbsp;15.8: Organic matter types
   text-align: left;
 }
 
-#vehswmjfex .gt_empty_group_heading {
+#uiturtbcig .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4389,15 +4390,15 @@ Table&nbsp;15.8: Organic matter types
   vertical-align: middle;
 }
 
-#vehswmjfex .gt_from_md > :first-child {
+#uiturtbcig .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vehswmjfex .gt_from_md > :last-child {
+#uiturtbcig .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vehswmjfex .gt_row {
+#uiturtbcig .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4416,7 +4417,7 @@ Table&nbsp;15.8: Organic matter types
   overflow-x: hidden;
 }
 
-#vehswmjfex .gt_stub {
+#uiturtbcig .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4429,7 +4430,7 @@ Table&nbsp;15.8: Organic matter types
   padding-right: 5px;
 }
 
-#vehswmjfex .gt_stub_row_group {
+#uiturtbcig .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4443,15 +4444,15 @@ Table&nbsp;15.8: Organic matter types
   vertical-align: top;
 }
 
-#vehswmjfex .gt_row_group_first td {
+#uiturtbcig .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vehswmjfex .gt_row_group_first th {
+#uiturtbcig .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vehswmjfex .gt_summary_row {
+#uiturtbcig .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4461,16 +4462,16 @@ Table&nbsp;15.8: Organic matter types
   padding-right: 5px;
 }
 
-#vehswmjfex .gt_first_summary_row {
+#uiturtbcig .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vehswmjfex .gt_first_summary_row.thick {
+#uiturtbcig .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vehswmjfex .gt_last_summary_row {
+#uiturtbcig .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4480,7 +4481,7 @@ Table&nbsp;15.8: Organic matter types
   border-bottom-color: #D3D3D3;
 }
 
-#vehswmjfex .gt_grand_summary_row {
+#uiturtbcig .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4490,7 +4491,7 @@ Table&nbsp;15.8: Organic matter types
   padding-right: 5px;
 }
 
-#vehswmjfex .gt_first_grand_summary_row {
+#uiturtbcig .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4500,7 +4501,7 @@ Table&nbsp;15.8: Organic matter types
   border-top-color: #D3D3D3;
 }
 
-#vehswmjfex .gt_last_grand_summary_row_top {
+#uiturtbcig .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4510,11 +4511,11 @@ Table&nbsp;15.8: Organic matter types
   border-bottom-color: #D3D3D3;
 }
 
-#vehswmjfex .gt_striped {
+#uiturtbcig .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vehswmjfex .gt_table_body {
+#uiturtbcig .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4523,7 +4524,7 @@ Table&nbsp;15.8: Organic matter types
   border-bottom-color: #D3D3D3;
 }
 
-#vehswmjfex .gt_footnotes {
+#uiturtbcig .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4537,7 +4538,7 @@ Table&nbsp;15.8: Organic matter types
   border-right-color: #D3D3D3;
 }
 
-#vehswmjfex .gt_footnote {
+#uiturtbcig .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4546,7 +4547,7 @@ Table&nbsp;15.8: Organic matter types
   padding-right: 5px;
 }
 
-#vehswmjfex .gt_sourcenotes {
+#uiturtbcig .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4560,7 +4561,7 @@ Table&nbsp;15.8: Organic matter types
   border-right-color: #D3D3D3;
 }
 
-#vehswmjfex .gt_sourcenote {
+#uiturtbcig .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4568,77 +4569,77 @@ Table&nbsp;15.8: Organic matter types
   padding-right: 5px;
 }
 
-#vehswmjfex .gt_left {
+#uiturtbcig .gt_left {
   text-align: left;
 }
 
-#vehswmjfex .gt_center {
+#uiturtbcig .gt_center {
   text-align: center;
 }
 
-#vehswmjfex .gt_right {
+#uiturtbcig .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vehswmjfex .gt_font_normal {
+#uiturtbcig .gt_font_normal {
   font-weight: normal;
 }
 
-#vehswmjfex .gt_font_bold {
+#uiturtbcig .gt_font_bold {
   font-weight: bold;
 }
 
-#vehswmjfex .gt_font_italic {
+#uiturtbcig .gt_font_italic {
   font-style: italic;
 }
 
-#vehswmjfex .gt_super {
+#uiturtbcig .gt_super {
   font-size: 65%;
 }
 
-#vehswmjfex .gt_footnote_marks {
+#uiturtbcig .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vehswmjfex .gt_asterisk {
+#uiturtbcig .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vehswmjfex .gt_indent_1 {
+#uiturtbcig .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vehswmjfex .gt_indent_2 {
+#uiturtbcig .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vehswmjfex .gt_indent_3 {
+#uiturtbcig .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vehswmjfex .gt_indent_4 {
+#uiturtbcig .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vehswmjfex .gt_indent_5 {
+#uiturtbcig .gt_indent_5 {
   text-indent: 25px;
 }
 
-#vehswmjfex .katex-display {
+#uiturtbcig .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#vehswmjfex div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#uiturtbcig div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -4679,23 +4680,23 @@ Table&nbsp;15.9: Organic code rules
 </figcaption>
 <div aria-describedby="tbl-hr-omtex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="nffedvwxpi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nffedvwxpi table {
+<div id="gqkqxjxwvm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gqkqxjxwvm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nffedvwxpi thead, #nffedvwxpi tbody, #nffedvwxpi tfoot, #nffedvwxpi tr, #nffedvwxpi td, #nffedvwxpi th {
+#gqkqxjxwvm thead, #gqkqxjxwvm tbody, #gqkqxjxwvm tfoot, #gqkqxjxwvm tr, #gqkqxjxwvm td, #gqkqxjxwvm th {
   border-style: none;
 }
 
-#nffedvwxpi p {
+#gqkqxjxwvm p {
   margin: 0;
   padding: 0;
 }
 
-#nffedvwxpi .gt_table {
+#gqkqxjxwvm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4721,12 +4722,12 @@ Table&nbsp;15.9: Organic code rules
   border-left-color: #D3D3D3;
 }
 
-#nffedvwxpi .gt_caption {
+#gqkqxjxwvm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nffedvwxpi .gt_title {
+#gqkqxjxwvm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -4738,7 +4739,7 @@ Table&nbsp;15.9: Organic code rules
   border-bottom-width: 0;
 }
 
-#nffedvwxpi .gt_subtitle {
+#gqkqxjxwvm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4750,7 +4751,7 @@ Table&nbsp;15.9: Organic code rules
   border-top-width: 0;
 }
 
-#nffedvwxpi .gt_heading {
+#gqkqxjxwvm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4762,13 +4763,13 @@ Table&nbsp;15.9: Organic code rules
   border-right-color: #D3D3D3;
 }
 
-#nffedvwxpi .gt_bottom_border {
+#gqkqxjxwvm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nffedvwxpi .gt_col_headings {
+#gqkqxjxwvm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4783,7 +4784,7 @@ Table&nbsp;15.9: Organic code rules
   border-right-color: #D3D3D3;
 }
 
-#nffedvwxpi .gt_col_heading {
+#gqkqxjxwvm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4803,7 +4804,7 @@ Table&nbsp;15.9: Organic code rules
   overflow-x: hidden;
 }
 
-#nffedvwxpi .gt_column_spanner_outer {
+#gqkqxjxwvm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4815,15 +4816,15 @@ Table&nbsp;15.9: Organic code rules
   padding-right: 4px;
 }
 
-#nffedvwxpi .gt_column_spanner_outer:first-child {
+#gqkqxjxwvm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nffedvwxpi .gt_column_spanner_outer:last-child {
+#gqkqxjxwvm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nffedvwxpi .gt_column_spanner {
+#gqkqxjxwvm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4835,11 +4836,11 @@ Table&nbsp;15.9: Organic code rules
   width: 100%;
 }
 
-#nffedvwxpi .gt_spanner_row {
+#gqkqxjxwvm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nffedvwxpi .gt_group_heading {
+#gqkqxjxwvm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4865,7 +4866,7 @@ Table&nbsp;15.9: Organic code rules
   text-align: left;
 }
 
-#nffedvwxpi .gt_empty_group_heading {
+#gqkqxjxwvm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4880,15 +4881,15 @@ Table&nbsp;15.9: Organic code rules
   vertical-align: middle;
 }
 
-#nffedvwxpi .gt_from_md > :first-child {
+#gqkqxjxwvm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nffedvwxpi .gt_from_md > :last-child {
+#gqkqxjxwvm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nffedvwxpi .gt_row {
+#gqkqxjxwvm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4907,7 +4908,7 @@ Table&nbsp;15.9: Organic code rules
   overflow-x: hidden;
 }
 
-#nffedvwxpi .gt_stub {
+#gqkqxjxwvm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4920,7 +4921,7 @@ Table&nbsp;15.9: Organic code rules
   padding-right: 5px;
 }
 
-#nffedvwxpi .gt_stub_row_group {
+#gqkqxjxwvm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4934,15 +4935,15 @@ Table&nbsp;15.9: Organic code rules
   vertical-align: top;
 }
 
-#nffedvwxpi .gt_row_group_first td {
+#gqkqxjxwvm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nffedvwxpi .gt_row_group_first th {
+#gqkqxjxwvm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nffedvwxpi .gt_summary_row {
+#gqkqxjxwvm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4952,16 +4953,16 @@ Table&nbsp;15.9: Organic code rules
   padding-right: 5px;
 }
 
-#nffedvwxpi .gt_first_summary_row {
+#gqkqxjxwvm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nffedvwxpi .gt_first_summary_row.thick {
+#gqkqxjxwvm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nffedvwxpi .gt_last_summary_row {
+#gqkqxjxwvm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4971,7 +4972,7 @@ Table&nbsp;15.9: Organic code rules
   border-bottom-color: #D3D3D3;
 }
 
-#nffedvwxpi .gt_grand_summary_row {
+#gqkqxjxwvm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4981,7 +4982,7 @@ Table&nbsp;15.9: Organic code rules
   padding-right: 5px;
 }
 
-#nffedvwxpi .gt_first_grand_summary_row {
+#gqkqxjxwvm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4991,7 +4992,7 @@ Table&nbsp;15.9: Organic code rules
   border-top-color: #D3D3D3;
 }
 
-#nffedvwxpi .gt_last_grand_summary_row_top {
+#gqkqxjxwvm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5001,11 +5002,11 @@ Table&nbsp;15.9: Organic code rules
   border-bottom-color: #D3D3D3;
 }
 
-#nffedvwxpi .gt_striped {
+#gqkqxjxwvm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nffedvwxpi .gt_table_body {
+#gqkqxjxwvm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5014,7 +5015,7 @@ Table&nbsp;15.9: Organic code rules
   border-bottom-color: #D3D3D3;
 }
 
-#nffedvwxpi .gt_footnotes {
+#gqkqxjxwvm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5028,7 +5029,7 @@ Table&nbsp;15.9: Organic code rules
   border-right-color: #D3D3D3;
 }
 
-#nffedvwxpi .gt_footnote {
+#gqkqxjxwvm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5037,7 +5038,7 @@ Table&nbsp;15.9: Organic code rules
   padding-right: 5px;
 }
 
-#nffedvwxpi .gt_sourcenotes {
+#gqkqxjxwvm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5051,7 +5052,7 @@ Table&nbsp;15.9: Organic code rules
   border-right-color: #D3D3D3;
 }
 
-#nffedvwxpi .gt_sourcenote {
+#gqkqxjxwvm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5059,77 +5060,77 @@ Table&nbsp;15.9: Organic code rules
   padding-right: 5px;
 }
 
-#nffedvwxpi .gt_left {
+#gqkqxjxwvm .gt_left {
   text-align: left;
 }
 
-#nffedvwxpi .gt_center {
+#gqkqxjxwvm .gt_center {
   text-align: center;
 }
 
-#nffedvwxpi .gt_right {
+#gqkqxjxwvm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nffedvwxpi .gt_font_normal {
+#gqkqxjxwvm .gt_font_normal {
   font-weight: normal;
 }
 
-#nffedvwxpi .gt_font_bold {
+#gqkqxjxwvm .gt_font_bold {
   font-weight: bold;
 }
 
-#nffedvwxpi .gt_font_italic {
+#gqkqxjxwvm .gt_font_italic {
   font-style: italic;
 }
 
-#nffedvwxpi .gt_super {
+#gqkqxjxwvm .gt_super {
   font-size: 65%;
 }
 
-#nffedvwxpi .gt_footnote_marks {
+#gqkqxjxwvm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nffedvwxpi .gt_asterisk {
+#gqkqxjxwvm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nffedvwxpi .gt_indent_1 {
+#gqkqxjxwvm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nffedvwxpi .gt_indent_2 {
+#gqkqxjxwvm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nffedvwxpi .gt_indent_3 {
+#gqkqxjxwvm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nffedvwxpi .gt_indent_4 {
+#gqkqxjxwvm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nffedvwxpi .gt_indent_5 {
+#gqkqxjxwvm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nffedvwxpi .katex-display {
+#gqkqxjxwvm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nffedvwxpi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#gqkqxjxwvm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 15%">
 <col style="width: 25%">
@@ -5181,7 +5182,7 @@ Table&nbsp;15.9: Organic code rules
 <p>If a horizon has ≥&nbsp;50% organic material and &gt;&nbsp;5% mineral material, mineral codes can still be appended as a suffix, e.g.&nbsp;<span class="ceg">H(ZL)</span> for a forest litter layer containing some fine mineral material, or <span class="ceg">P(G)</span> for a peat with some volcanic lapilli present.</p>
 <p>More precise field estimates of organic matter content within the ranges in <a href="#tbl-hr-cftex" class="quarto-xref">Table&nbsp;<span>15.6</span></a> are unlikely to be accurate; direct measurement of SOC paired with bulk density is preferred.</p>
 <div id="nte-ocom" class="callout callout-style-simple callout-note no-icon callout-titled" title="Soil organic matter and soil organic carbon">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -5208,23 +5209,23 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
 </figcaption>
 <div aria-describedby="tbl-hr-omdec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ernrlahnwf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ernrlahnwf table {
+<div id="dmnrzmqcrk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dmnrzmqcrk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ernrlahnwf thead, #ernrlahnwf tbody, #ernrlahnwf tfoot, #ernrlahnwf tr, #ernrlahnwf td, #ernrlahnwf th {
+#dmnrzmqcrk thead, #dmnrzmqcrk tbody, #dmnrzmqcrk tfoot, #dmnrzmqcrk tr, #dmnrzmqcrk td, #dmnrzmqcrk th {
   border-style: none;
 }
 
-#ernrlahnwf p {
+#dmnrzmqcrk p {
   margin: 0;
   padding: 0;
 }
 
-#ernrlahnwf .gt_table {
+#dmnrzmqcrk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5250,12 +5251,12 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   border-left-color: #D3D3D3;
 }
 
-#ernrlahnwf .gt_caption {
+#dmnrzmqcrk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ernrlahnwf .gt_title {
+#dmnrzmqcrk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -5267,7 +5268,7 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   border-bottom-width: 0;
 }
 
-#ernrlahnwf .gt_subtitle {
+#dmnrzmqcrk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5279,7 +5280,7 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   border-top-width: 0;
 }
 
-#ernrlahnwf .gt_heading {
+#dmnrzmqcrk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5291,13 +5292,13 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   border-right-color: #D3D3D3;
 }
 
-#ernrlahnwf .gt_bottom_border {
+#dmnrzmqcrk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ernrlahnwf .gt_col_headings {
+#dmnrzmqcrk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5312,7 +5313,7 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   border-right-color: #D3D3D3;
 }
 
-#ernrlahnwf .gt_col_heading {
+#dmnrzmqcrk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5332,7 +5333,7 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   overflow-x: hidden;
 }
 
-#ernrlahnwf .gt_column_spanner_outer {
+#dmnrzmqcrk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5344,15 +5345,15 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   padding-right: 4px;
 }
 
-#ernrlahnwf .gt_column_spanner_outer:first-child {
+#dmnrzmqcrk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ernrlahnwf .gt_column_spanner_outer:last-child {
+#dmnrzmqcrk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ernrlahnwf .gt_column_spanner {
+#dmnrzmqcrk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5364,11 +5365,11 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   width: 100%;
 }
 
-#ernrlahnwf .gt_spanner_row {
+#dmnrzmqcrk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ernrlahnwf .gt_group_heading {
+#dmnrzmqcrk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5394,7 +5395,7 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   text-align: left;
 }
 
-#ernrlahnwf .gt_empty_group_heading {
+#dmnrzmqcrk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5409,15 +5410,15 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   vertical-align: middle;
 }
 
-#ernrlahnwf .gt_from_md > :first-child {
+#dmnrzmqcrk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ernrlahnwf .gt_from_md > :last-child {
+#dmnrzmqcrk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ernrlahnwf .gt_row {
+#dmnrzmqcrk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5436,7 +5437,7 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   overflow-x: hidden;
 }
 
-#ernrlahnwf .gt_stub {
+#dmnrzmqcrk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5449,7 +5450,7 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   padding-right: 5px;
 }
 
-#ernrlahnwf .gt_stub_row_group {
+#dmnrzmqcrk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5463,15 +5464,15 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   vertical-align: top;
 }
 
-#ernrlahnwf .gt_row_group_first td {
+#dmnrzmqcrk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ernrlahnwf .gt_row_group_first th {
+#dmnrzmqcrk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ernrlahnwf .gt_summary_row {
+#dmnrzmqcrk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5481,16 +5482,16 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   padding-right: 5px;
 }
 
-#ernrlahnwf .gt_first_summary_row {
+#dmnrzmqcrk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ernrlahnwf .gt_first_summary_row.thick {
+#dmnrzmqcrk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ernrlahnwf .gt_last_summary_row {
+#dmnrzmqcrk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5500,7 +5501,7 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   border-bottom-color: #D3D3D3;
 }
 
-#ernrlahnwf .gt_grand_summary_row {
+#dmnrzmqcrk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5510,7 +5511,7 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   padding-right: 5px;
 }
 
-#ernrlahnwf .gt_first_grand_summary_row {
+#dmnrzmqcrk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5520,7 +5521,7 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   border-top-color: #D3D3D3;
 }
 
-#ernrlahnwf .gt_last_grand_summary_row_top {
+#dmnrzmqcrk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5530,11 +5531,11 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   border-bottom-color: #D3D3D3;
 }
 
-#ernrlahnwf .gt_striped {
+#dmnrzmqcrk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ernrlahnwf .gt_table_body {
+#dmnrzmqcrk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5543,7 +5544,7 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   border-bottom-color: #D3D3D3;
 }
 
-#ernrlahnwf .gt_footnotes {
+#dmnrzmqcrk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5557,7 +5558,7 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   border-right-color: #D3D3D3;
 }
 
-#ernrlahnwf .gt_footnote {
+#dmnrzmqcrk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5566,7 +5567,7 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   padding-right: 5px;
 }
 
-#ernrlahnwf .gt_sourcenotes {
+#dmnrzmqcrk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5580,7 +5581,7 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   border-right-color: #D3D3D3;
 }
 
-#ernrlahnwf .gt_sourcenote {
+#dmnrzmqcrk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5588,77 +5589,77 @@ Table&nbsp;15.10: Organic matter modifiers - decomposition
   padding-right: 5px;
 }
 
-#ernrlahnwf .gt_left {
+#dmnrzmqcrk .gt_left {
   text-align: left;
 }
 
-#ernrlahnwf .gt_center {
+#dmnrzmqcrk .gt_center {
   text-align: center;
 }
 
-#ernrlahnwf .gt_right {
+#dmnrzmqcrk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ernrlahnwf .gt_font_normal {
+#dmnrzmqcrk .gt_font_normal {
   font-weight: normal;
 }
 
-#ernrlahnwf .gt_font_bold {
+#dmnrzmqcrk .gt_font_bold {
   font-weight: bold;
 }
 
-#ernrlahnwf .gt_font_italic {
+#dmnrzmqcrk .gt_font_italic {
   font-style: italic;
 }
 
-#ernrlahnwf .gt_super {
+#dmnrzmqcrk .gt_super {
   font-size: 65%;
 }
 
-#ernrlahnwf .gt_footnote_marks {
+#dmnrzmqcrk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ernrlahnwf .gt_asterisk {
+#dmnrzmqcrk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ernrlahnwf .gt_indent_1 {
+#dmnrzmqcrk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ernrlahnwf .gt_indent_2 {
+#dmnrzmqcrk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ernrlahnwf .gt_indent_3 {
+#dmnrzmqcrk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ernrlahnwf .gt_indent_4 {
+#dmnrzmqcrk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ernrlahnwf .gt_indent_5 {
+#dmnrzmqcrk .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ernrlahnwf .katex-display {
+#dmnrzmqcrk .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ernrlahnwf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dmnrzmqcrk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -5704,23 +5705,23 @@ Table&nbsp;15.11: Organic matter modifiers - origin
 </figcaption>
 <div aria-describedby="tbl-hr-omo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="iharoemjom" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#iharoemjom table {
+<div id="vujjybargb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vujjybargb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#iharoemjom thead, #iharoemjom tbody, #iharoemjom tfoot, #iharoemjom tr, #iharoemjom td, #iharoemjom th {
+#vujjybargb thead, #vujjybargb tbody, #vujjybargb tfoot, #vujjybargb tr, #vujjybargb td, #vujjybargb th {
   border-style: none;
 }
 
-#iharoemjom p {
+#vujjybargb p {
   margin: 0;
   padding: 0;
 }
 
-#iharoemjom .gt_table {
+#vujjybargb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5746,12 +5747,12 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   border-left-color: #D3D3D3;
 }
 
-#iharoemjom .gt_caption {
+#vujjybargb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#iharoemjom .gt_title {
+#vujjybargb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -5763,7 +5764,7 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   border-bottom-width: 0;
 }
 
-#iharoemjom .gt_subtitle {
+#vujjybargb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5775,7 +5776,7 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   border-top-width: 0;
 }
 
-#iharoemjom .gt_heading {
+#vujjybargb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5787,13 +5788,13 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   border-right-color: #D3D3D3;
 }
 
-#iharoemjom .gt_bottom_border {
+#vujjybargb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iharoemjom .gt_col_headings {
+#vujjybargb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5808,7 +5809,7 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   border-right-color: #D3D3D3;
 }
 
-#iharoemjom .gt_col_heading {
+#vujjybargb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5828,7 +5829,7 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   overflow-x: hidden;
 }
 
-#iharoemjom .gt_column_spanner_outer {
+#vujjybargb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5840,15 +5841,15 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   padding-right: 4px;
 }
 
-#iharoemjom .gt_column_spanner_outer:first-child {
+#vujjybargb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iharoemjom .gt_column_spanner_outer:last-child {
+#vujjybargb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iharoemjom .gt_column_spanner {
+#vujjybargb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5860,11 +5861,11 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   width: 100%;
 }
 
-#iharoemjom .gt_spanner_row {
+#vujjybargb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#iharoemjom .gt_group_heading {
+#vujjybargb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5890,7 +5891,7 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   text-align: left;
 }
 
-#iharoemjom .gt_empty_group_heading {
+#vujjybargb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5905,15 +5906,15 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   vertical-align: middle;
 }
 
-#iharoemjom .gt_from_md > :first-child {
+#vujjybargb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iharoemjom .gt_from_md > :last-child {
+#vujjybargb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iharoemjom .gt_row {
+#vujjybargb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5932,7 +5933,7 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   overflow-x: hidden;
 }
 
-#iharoemjom .gt_stub {
+#vujjybargb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5945,7 +5946,7 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   padding-right: 5px;
 }
 
-#iharoemjom .gt_stub_row_group {
+#vujjybargb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5959,15 +5960,15 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   vertical-align: top;
 }
 
-#iharoemjom .gt_row_group_first td {
+#vujjybargb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#iharoemjom .gt_row_group_first th {
+#vujjybargb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#iharoemjom .gt_summary_row {
+#vujjybargb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5977,16 +5978,16 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   padding-right: 5px;
 }
 
-#iharoemjom .gt_first_summary_row {
+#vujjybargb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#iharoemjom .gt_first_summary_row.thick {
+#vujjybargb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#iharoemjom .gt_last_summary_row {
+#vujjybargb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5996,7 +5997,7 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   border-bottom-color: #D3D3D3;
 }
 
-#iharoemjom .gt_grand_summary_row {
+#vujjybargb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6006,7 +6007,7 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   padding-right: 5px;
 }
 
-#iharoemjom .gt_first_grand_summary_row {
+#vujjybargb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6016,7 +6017,7 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   border-top-color: #D3D3D3;
 }
 
-#iharoemjom .gt_last_grand_summary_row_top {
+#vujjybargb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6026,11 +6027,11 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   border-bottom-color: #D3D3D3;
 }
 
-#iharoemjom .gt_striped {
+#vujjybargb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iharoemjom .gt_table_body {
+#vujjybargb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6039,7 +6040,7 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   border-bottom-color: #D3D3D3;
 }
 
-#iharoemjom .gt_footnotes {
+#vujjybargb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6053,7 +6054,7 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   border-right-color: #D3D3D3;
 }
 
-#iharoemjom .gt_footnote {
+#vujjybargb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6062,7 +6063,7 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   padding-right: 5px;
 }
 
-#iharoemjom .gt_sourcenotes {
+#vujjybargb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6076,7 +6077,7 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   border-right-color: #D3D3D3;
 }
 
-#iharoemjom .gt_sourcenote {
+#vujjybargb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6084,77 +6085,77 @@ Table&nbsp;15.11: Organic matter modifiers - origin
   padding-right: 5px;
 }
 
-#iharoemjom .gt_left {
+#vujjybargb .gt_left {
   text-align: left;
 }
 
-#iharoemjom .gt_center {
+#vujjybargb .gt_center {
   text-align: center;
 }
 
-#iharoemjom .gt_right {
+#vujjybargb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iharoemjom .gt_font_normal {
+#vujjybargb .gt_font_normal {
   font-weight: normal;
 }
 
-#iharoemjom .gt_font_bold {
+#vujjybargb .gt_font_bold {
   font-weight: bold;
 }
 
-#iharoemjom .gt_font_italic {
+#vujjybargb .gt_font_italic {
   font-style: italic;
 }
 
-#iharoemjom .gt_super {
+#vujjybargb .gt_super {
   font-size: 65%;
 }
 
-#iharoemjom .gt_footnote_marks {
+#vujjybargb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#iharoemjom .gt_asterisk {
+#vujjybargb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#iharoemjom .gt_indent_1 {
+#vujjybargb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#iharoemjom .gt_indent_2 {
+#vujjybargb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#iharoemjom .gt_indent_3 {
+#vujjybargb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#iharoemjom .gt_indent_4 {
+#vujjybargb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#iharoemjom .gt_indent_5 {
+#vujjybargb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#iharoemjom .katex-display {
+#vujjybargb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#iharoemjom div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vujjybargb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -6198,7 +6199,7 @@ Table&nbsp;15.11: Organic matter modifiers - origin
 </div>
 </div>
 <div id="nte-vpost" class="callout callout-style-simple callout-note no-icon callout-titled" title="Use of the von Post scale">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -6238,23 +6239,23 @@ Table&nbsp;15.12: Texture class characteristics
 </figcaption>
 <div aria-describedby="tbl-hr-texchar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="zjysibigig" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zjysibigig table {
+<div id="apvtqxiwrd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#apvtqxiwrd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zjysibigig thead, #zjysibigig tbody, #zjysibigig tfoot, #zjysibigig tr, #zjysibigig td, #zjysibigig th {
+#apvtqxiwrd thead, #apvtqxiwrd tbody, #apvtqxiwrd tfoot, #apvtqxiwrd tr, #apvtqxiwrd td, #apvtqxiwrd th {
   border-style: none;
 }
 
-#zjysibigig p {
+#apvtqxiwrd p {
   margin: 0;
   padding: 0;
 }
 
-#zjysibigig .gt_table {
+#apvtqxiwrd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -6280,12 +6281,12 @@ Table&nbsp;15.12: Texture class characteristics
   border-left-color: #D3D3D3;
 }
 
-#zjysibigig .gt_caption {
+#apvtqxiwrd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zjysibigig .gt_title {
+#apvtqxiwrd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -6297,7 +6298,7 @@ Table&nbsp;15.12: Texture class characteristics
   border-bottom-width: 0;
 }
 
-#zjysibigig .gt_subtitle {
+#apvtqxiwrd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6309,7 +6310,7 @@ Table&nbsp;15.12: Texture class characteristics
   border-top-width: 0;
 }
 
-#zjysibigig .gt_heading {
+#apvtqxiwrd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -6321,13 +6322,13 @@ Table&nbsp;15.12: Texture class characteristics
   border-right-color: #D3D3D3;
 }
 
-#zjysibigig .gt_bottom_border {
+#apvtqxiwrd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zjysibigig .gt_col_headings {
+#apvtqxiwrd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6342,7 +6343,7 @@ Table&nbsp;15.12: Texture class characteristics
   border-right-color: #D3D3D3;
 }
 
-#zjysibigig .gt_col_heading {
+#apvtqxiwrd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6362,7 +6363,7 @@ Table&nbsp;15.12: Texture class characteristics
   overflow-x: hidden;
 }
 
-#zjysibigig .gt_column_spanner_outer {
+#apvtqxiwrd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6374,15 +6375,15 @@ Table&nbsp;15.12: Texture class characteristics
   padding-right: 4px;
 }
 
-#zjysibigig .gt_column_spanner_outer:first-child {
+#apvtqxiwrd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zjysibigig .gt_column_spanner_outer:last-child {
+#apvtqxiwrd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zjysibigig .gt_column_spanner {
+#apvtqxiwrd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6394,11 +6395,11 @@ Table&nbsp;15.12: Texture class characteristics
   width: 100%;
 }
 
-#zjysibigig .gt_spanner_row {
+#apvtqxiwrd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zjysibigig .gt_group_heading {
+#apvtqxiwrd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6424,7 +6425,7 @@ Table&nbsp;15.12: Texture class characteristics
   text-align: left;
 }
 
-#zjysibigig .gt_empty_group_heading {
+#apvtqxiwrd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6439,15 +6440,15 @@ Table&nbsp;15.12: Texture class characteristics
   vertical-align: middle;
 }
 
-#zjysibigig .gt_from_md > :first-child {
+#apvtqxiwrd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zjysibigig .gt_from_md > :last-child {
+#apvtqxiwrd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zjysibigig .gt_row {
+#apvtqxiwrd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6466,7 +6467,7 @@ Table&nbsp;15.12: Texture class characteristics
   overflow-x: hidden;
 }
 
-#zjysibigig .gt_stub {
+#apvtqxiwrd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6479,7 +6480,7 @@ Table&nbsp;15.12: Texture class characteristics
   padding-right: 5px;
 }
 
-#zjysibigig .gt_stub_row_group {
+#apvtqxiwrd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6493,15 +6494,15 @@ Table&nbsp;15.12: Texture class characteristics
   vertical-align: top;
 }
 
-#zjysibigig .gt_row_group_first td {
+#apvtqxiwrd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zjysibigig .gt_row_group_first th {
+#apvtqxiwrd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zjysibigig .gt_summary_row {
+#apvtqxiwrd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6511,16 +6512,16 @@ Table&nbsp;15.12: Texture class characteristics
   padding-right: 5px;
 }
 
-#zjysibigig .gt_first_summary_row {
+#apvtqxiwrd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zjysibigig .gt_first_summary_row.thick {
+#apvtqxiwrd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zjysibigig .gt_last_summary_row {
+#apvtqxiwrd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6530,7 +6531,7 @@ Table&nbsp;15.12: Texture class characteristics
   border-bottom-color: #D3D3D3;
 }
 
-#zjysibigig .gt_grand_summary_row {
+#apvtqxiwrd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6540,7 +6541,7 @@ Table&nbsp;15.12: Texture class characteristics
   padding-right: 5px;
 }
 
-#zjysibigig .gt_first_grand_summary_row {
+#apvtqxiwrd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6550,7 +6551,7 @@ Table&nbsp;15.12: Texture class characteristics
   border-top-color: #D3D3D3;
 }
 
-#zjysibigig .gt_last_grand_summary_row_top {
+#apvtqxiwrd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6560,11 +6561,11 @@ Table&nbsp;15.12: Texture class characteristics
   border-bottom-color: #D3D3D3;
 }
 
-#zjysibigig .gt_striped {
+#apvtqxiwrd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zjysibigig .gt_table_body {
+#apvtqxiwrd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6573,7 +6574,7 @@ Table&nbsp;15.12: Texture class characteristics
   border-bottom-color: #D3D3D3;
 }
 
-#zjysibigig .gt_footnotes {
+#apvtqxiwrd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6587,7 +6588,7 @@ Table&nbsp;15.12: Texture class characteristics
   border-right-color: #D3D3D3;
 }
 
-#zjysibigig .gt_footnote {
+#apvtqxiwrd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6596,7 +6597,7 @@ Table&nbsp;15.12: Texture class characteristics
   padding-right: 5px;
 }
 
-#zjysibigig .gt_sourcenotes {
+#apvtqxiwrd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6610,7 +6611,7 @@ Table&nbsp;15.12: Texture class characteristics
   border-right-color: #D3D3D3;
 }
 
-#zjysibigig .gt_sourcenote {
+#apvtqxiwrd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6618,77 +6619,77 @@ Table&nbsp;15.12: Texture class characteristics
   padding-right: 5px;
 }
 
-#zjysibigig .gt_left {
+#apvtqxiwrd .gt_left {
   text-align: left;
 }
 
-#zjysibigig .gt_center {
+#apvtqxiwrd .gt_center {
   text-align: center;
 }
 
-#zjysibigig .gt_right {
+#apvtqxiwrd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zjysibigig .gt_font_normal {
+#apvtqxiwrd .gt_font_normal {
   font-weight: normal;
 }
 
-#zjysibigig .gt_font_bold {
+#apvtqxiwrd .gt_font_bold {
   font-weight: bold;
 }
 
-#zjysibigig .gt_font_italic {
+#apvtqxiwrd .gt_font_italic {
   font-style: italic;
 }
 
-#zjysibigig .gt_super {
+#apvtqxiwrd .gt_super {
   font-size: 65%;
 }
 
-#zjysibigig .gt_footnote_marks {
+#apvtqxiwrd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zjysibigig .gt_asterisk {
+#apvtqxiwrd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zjysibigig .gt_indent_1 {
+#apvtqxiwrd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zjysibigig .gt_indent_2 {
+#apvtqxiwrd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zjysibigig .gt_indent_3 {
+#apvtqxiwrd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zjysibigig .gt_indent_4 {
+#apvtqxiwrd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zjysibigig .gt_indent_5 {
+#apvtqxiwrd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zjysibigig .katex-display {
+#apvtqxiwrd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zjysibigig div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#apvtqxiwrd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 10%">
@@ -6773,7 +6774,7 @@ Table&nbsp;15.12: Texture class characteristics
 </div>
 </div>
 <div id="wrn-tex" class="callout callout-style-simple callout-warning no-icon callout-titled" title="Caveats for hand texturing">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -6815,7 +6816,7 @@ Warning&nbsp;15.1: Caveats for hand texturing
 <p>Numerical estimates of particle size distribution for the fine earth fraction may be desired, particularly where it is known that laboratory particle size measurements will not be available. Record field estimates of clay and sand content derived from hand texturing to the nearest 1%, and work silt out by difference. It is recommended to add a separate error estimate (±&nbsp;x%) as an expression of confidence.</p>
 <p>Example: <span class="ceg">KLS, 70&nbsp;±&nbsp;5%&nbsp;sand, 3%&nbsp;clay</span> for a coarse loamy sand.</p>
 <div id="nte-fvl" class="callout callout-style-simple callout-note no-icon callout-titled" title="Comparing field and laboratory assessment of texture">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -6863,23 +6864,23 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
 </figcaption>
 <div aria-describedby="tbl-hr-txab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="emvcgpeeam" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#emvcgpeeam table {
+<div id="hjeprlmbmn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hjeprlmbmn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#emvcgpeeam thead, #emvcgpeeam tbody, #emvcgpeeam tfoot, #emvcgpeeam tr, #emvcgpeeam td, #emvcgpeeam th {
+#hjeprlmbmn thead, #hjeprlmbmn tbody, #hjeprlmbmn tfoot, #hjeprlmbmn tr, #hjeprlmbmn td, #hjeprlmbmn th {
   border-style: none;
 }
 
-#emvcgpeeam p {
+#hjeprlmbmn p {
   margin: 0;
   padding: 0;
 }
 
-#emvcgpeeam .gt_table {
+#hjeprlmbmn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -6905,12 +6906,12 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   border-left-color: #D3D3D3;
 }
 
-#emvcgpeeam .gt_caption {
+#hjeprlmbmn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#emvcgpeeam .gt_title {
+#hjeprlmbmn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -6922,7 +6923,7 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   border-bottom-width: 0;
 }
 
-#emvcgpeeam .gt_subtitle {
+#hjeprlmbmn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6934,7 +6935,7 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   border-top-width: 0;
 }
 
-#emvcgpeeam .gt_heading {
+#hjeprlmbmn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -6946,13 +6947,13 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   border-right-color: #D3D3D3;
 }
 
-#emvcgpeeam .gt_bottom_border {
+#hjeprlmbmn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#emvcgpeeam .gt_col_headings {
+#hjeprlmbmn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6967,7 +6968,7 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   border-right-color: #D3D3D3;
 }
 
-#emvcgpeeam .gt_col_heading {
+#hjeprlmbmn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6987,7 +6988,7 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   overflow-x: hidden;
 }
 
-#emvcgpeeam .gt_column_spanner_outer {
+#hjeprlmbmn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6999,15 +7000,15 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   padding-right: 4px;
 }
 
-#emvcgpeeam .gt_column_spanner_outer:first-child {
+#hjeprlmbmn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#emvcgpeeam .gt_column_spanner_outer:last-child {
+#hjeprlmbmn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#emvcgpeeam .gt_column_spanner {
+#hjeprlmbmn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -7019,11 +7020,11 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   width: 100%;
 }
 
-#emvcgpeeam .gt_spanner_row {
+#hjeprlmbmn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#emvcgpeeam .gt_group_heading {
+#hjeprlmbmn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7049,7 +7050,7 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   text-align: left;
 }
 
-#emvcgpeeam .gt_empty_group_heading {
+#hjeprlmbmn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -7064,15 +7065,15 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   vertical-align: middle;
 }
 
-#emvcgpeeam .gt_from_md > :first-child {
+#hjeprlmbmn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#emvcgpeeam .gt_from_md > :last-child {
+#hjeprlmbmn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#emvcgpeeam .gt_row {
+#hjeprlmbmn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7091,7 +7092,7 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   overflow-x: hidden;
 }
 
-#emvcgpeeam .gt_stub {
+#hjeprlmbmn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7104,7 +7105,7 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   padding-right: 5px;
 }
 
-#emvcgpeeam .gt_stub_row_group {
+#hjeprlmbmn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7118,15 +7119,15 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   vertical-align: top;
 }
 
-#emvcgpeeam .gt_row_group_first td {
+#hjeprlmbmn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#emvcgpeeam .gt_row_group_first th {
+#hjeprlmbmn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#emvcgpeeam .gt_summary_row {
+#hjeprlmbmn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7136,16 +7137,16 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   padding-right: 5px;
 }
 
-#emvcgpeeam .gt_first_summary_row {
+#hjeprlmbmn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#emvcgpeeam .gt_first_summary_row.thick {
+#hjeprlmbmn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#emvcgpeeam .gt_last_summary_row {
+#hjeprlmbmn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7155,7 +7156,7 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   border-bottom-color: #D3D3D3;
 }
 
-#emvcgpeeam .gt_grand_summary_row {
+#hjeprlmbmn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7165,7 +7166,7 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   padding-right: 5px;
 }
 
-#emvcgpeeam .gt_first_grand_summary_row {
+#hjeprlmbmn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7175,7 +7176,7 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   border-top-color: #D3D3D3;
 }
 
-#emvcgpeeam .gt_last_grand_summary_row_top {
+#hjeprlmbmn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7185,11 +7186,11 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   border-bottom-color: #D3D3D3;
 }
 
-#emvcgpeeam .gt_striped {
+#hjeprlmbmn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#emvcgpeeam .gt_table_body {
+#hjeprlmbmn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7198,7 +7199,7 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   border-bottom-color: #D3D3D3;
 }
 
-#emvcgpeeam .gt_footnotes {
+#hjeprlmbmn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7212,7 +7213,7 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   border-right-color: #D3D3D3;
 }
 
-#emvcgpeeam .gt_footnote {
+#hjeprlmbmn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -7221,7 +7222,7 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   padding-right: 5px;
 }
 
-#emvcgpeeam .gt_sourcenotes {
+#hjeprlmbmn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7235,7 +7236,7 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   border-right-color: #D3D3D3;
 }
 
-#emvcgpeeam .gt_sourcenote {
+#hjeprlmbmn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -7243,77 +7244,77 @@ Table&nbsp;15.13: Describing relative abundance of particle size ranges (adapted
   padding-right: 5px;
 }
 
-#emvcgpeeam .gt_left {
+#hjeprlmbmn .gt_left {
   text-align: left;
 }
 
-#emvcgpeeam .gt_center {
+#hjeprlmbmn .gt_center {
   text-align: center;
 }
 
-#emvcgpeeam .gt_right {
+#hjeprlmbmn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#emvcgpeeam .gt_font_normal {
+#hjeprlmbmn .gt_font_normal {
   font-weight: normal;
 }
 
-#emvcgpeeam .gt_font_bold {
+#hjeprlmbmn .gt_font_bold {
   font-weight: bold;
 }
 
-#emvcgpeeam .gt_font_italic {
+#hjeprlmbmn .gt_font_italic {
   font-style: italic;
 }
 
-#emvcgpeeam .gt_super {
+#hjeprlmbmn .gt_super {
   font-size: 65%;
 }
 
-#emvcgpeeam .gt_footnote_marks {
+#hjeprlmbmn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#emvcgpeeam .gt_asterisk {
+#hjeprlmbmn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#emvcgpeeam .gt_indent_1 {
+#hjeprlmbmn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#emvcgpeeam .gt_indent_2 {
+#hjeprlmbmn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#emvcgpeeam .gt_indent_3 {
+#hjeprlmbmn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#emvcgpeeam .gt_indent_4 {
+#hjeprlmbmn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#emvcgpeeam .gt_indent_5 {
+#hjeprlmbmn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#emvcgpeeam .katex-display {
+#hjeprlmbmn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#emvcgpeeam div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hjeprlmbmn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -7481,13 +7482,14 @@ Whittington P, Koiter A, Watts D, Brewer A, Golubev V 2021. Bulk density, partic
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

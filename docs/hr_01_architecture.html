@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -53,14 +53,15 @@ div.csl-indent {
 <link href="./pr_02_layers.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,7 +104,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -346,7 +347,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_01_horizon_names.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Horizon names</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Horizon notation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -494,7 +495,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">October 27, 2025</p>
+      <p class="date-modified">January 20, 2026</p>
     </div>
   </div>
     
@@ -556,23 +557,23 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
 </figcaption>
 <div aria-describedby="tbl-hr-form-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="etcttfnwxk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#etcttfnwxk table {
+<div id="deopyggtjm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#deopyggtjm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#etcttfnwxk thead, #etcttfnwxk tbody, #etcttfnwxk tfoot, #etcttfnwxk tr, #etcttfnwxk td, #etcttfnwxk th {
+#deopyggtjm thead, #deopyggtjm tbody, #deopyggtjm tfoot, #deopyggtjm tr, #deopyggtjm td, #deopyggtjm th {
   border-style: none;
 }
 
-#etcttfnwxk p {
+#deopyggtjm p {
   margin: 0;
   padding: 0;
 }
 
-#etcttfnwxk .gt_table {
+#deopyggtjm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -598,12 +599,12 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   border-left-color: #D3D3D3;
 }
 
-#etcttfnwxk .gt_caption {
+#deopyggtjm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#etcttfnwxk .gt_title {
+#deopyggtjm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -615,7 +616,7 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   border-bottom-width: 0;
 }
 
-#etcttfnwxk .gt_subtitle {
+#deopyggtjm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -627,7 +628,7 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   border-top-width: 0;
 }
 
-#etcttfnwxk .gt_heading {
+#deopyggtjm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -639,13 +640,13 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   border-right-color: #D3D3D3;
 }
 
-#etcttfnwxk .gt_bottom_border {
+#deopyggtjm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#etcttfnwxk .gt_col_headings {
+#deopyggtjm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -660,7 +661,7 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   border-right-color: #D3D3D3;
 }
 
-#etcttfnwxk .gt_col_heading {
+#deopyggtjm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -680,7 +681,7 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   overflow-x: hidden;
 }
 
-#etcttfnwxk .gt_column_spanner_outer {
+#deopyggtjm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -692,15 +693,15 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   padding-right: 4px;
 }
 
-#etcttfnwxk .gt_column_spanner_outer:first-child {
+#deopyggtjm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#etcttfnwxk .gt_column_spanner_outer:last-child {
+#deopyggtjm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#etcttfnwxk .gt_column_spanner {
+#deopyggtjm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -712,11 +713,11 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   width: 100%;
 }
 
-#etcttfnwxk .gt_spanner_row {
+#deopyggtjm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#etcttfnwxk .gt_group_heading {
+#deopyggtjm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -742,7 +743,7 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   text-align: left;
 }
 
-#etcttfnwxk .gt_empty_group_heading {
+#deopyggtjm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -757,15 +758,15 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   vertical-align: middle;
 }
 
-#etcttfnwxk .gt_from_md > :first-child {
+#deopyggtjm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#etcttfnwxk .gt_from_md > :last-child {
+#deopyggtjm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#etcttfnwxk .gt_row {
+#deopyggtjm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -784,7 +785,7 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   overflow-x: hidden;
 }
 
-#etcttfnwxk .gt_stub {
+#deopyggtjm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -797,7 +798,7 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   padding-right: 5px;
 }
 
-#etcttfnwxk .gt_stub_row_group {
+#deopyggtjm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -811,15 +812,15 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   vertical-align: top;
 }
 
-#etcttfnwxk .gt_row_group_first td {
+#deopyggtjm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#etcttfnwxk .gt_row_group_first th {
+#deopyggtjm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#etcttfnwxk .gt_summary_row {
+#deopyggtjm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -829,16 +830,16 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   padding-right: 5px;
 }
 
-#etcttfnwxk .gt_first_summary_row {
+#deopyggtjm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#etcttfnwxk .gt_first_summary_row.thick {
+#deopyggtjm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#etcttfnwxk .gt_last_summary_row {
+#deopyggtjm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -848,7 +849,7 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   border-bottom-color: #D3D3D3;
 }
 
-#etcttfnwxk .gt_grand_summary_row {
+#deopyggtjm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -858,7 +859,7 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   padding-right: 5px;
 }
 
-#etcttfnwxk .gt_first_grand_summary_row {
+#deopyggtjm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -868,7 +869,7 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   border-top-color: #D3D3D3;
 }
 
-#etcttfnwxk .gt_last_grand_summary_row_top {
+#deopyggtjm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -878,11 +879,11 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   border-bottom-color: #D3D3D3;
 }
 
-#etcttfnwxk .gt_striped {
+#deopyggtjm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#etcttfnwxk .gt_table_body {
+#deopyggtjm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -891,7 +892,7 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   border-bottom-color: #D3D3D3;
 }
 
-#etcttfnwxk .gt_footnotes {
+#deopyggtjm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -905,7 +906,7 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   border-right-color: #D3D3D3;
 }
 
-#etcttfnwxk .gt_footnote {
+#deopyggtjm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -914,7 +915,7 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   padding-right: 5px;
 }
 
-#etcttfnwxk .gt_sourcenotes {
+#deopyggtjm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -928,7 +929,7 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   border-right-color: #D3D3D3;
 }
 
-#etcttfnwxk .gt_sourcenote {
+#deopyggtjm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -936,77 +937,77 @@ Table&nbsp;13.1: Type of structural development (adapted from <span class="citat
   padding-right: 5px;
 }
 
-#etcttfnwxk .gt_left {
+#deopyggtjm .gt_left {
   text-align: left;
 }
 
-#etcttfnwxk .gt_center {
+#deopyggtjm .gt_center {
   text-align: center;
 }
 
-#etcttfnwxk .gt_right {
+#deopyggtjm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#etcttfnwxk .gt_font_normal {
+#deopyggtjm .gt_font_normal {
   font-weight: normal;
 }
 
-#etcttfnwxk .gt_font_bold {
+#deopyggtjm .gt_font_bold {
   font-weight: bold;
 }
 
-#etcttfnwxk .gt_font_italic {
+#deopyggtjm .gt_font_italic {
   font-style: italic;
 }
 
-#etcttfnwxk .gt_super {
+#deopyggtjm .gt_super {
   font-size: 65%;
 }
 
-#etcttfnwxk .gt_footnote_marks {
+#deopyggtjm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#etcttfnwxk .gt_asterisk {
+#deopyggtjm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#etcttfnwxk .gt_indent_1 {
+#deopyggtjm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#etcttfnwxk .gt_indent_2 {
+#deopyggtjm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#etcttfnwxk .gt_indent_3 {
+#deopyggtjm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#etcttfnwxk .gt_indent_4 {
+#deopyggtjm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#etcttfnwxk .gt_indent_5 {
+#deopyggtjm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#etcttfnwxk .katex-display {
+#deopyggtjm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#etcttfnwxk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#deopyggtjm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -1062,23 +1063,23 @@ Table&nbsp;13.2: Degree of structural development
 </figcaption>
 <div aria-describedby="tbl-hr-pedality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ydhjhoyfim" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ydhjhoyfim table {
+<div id="esudjuokak" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#esudjuokak table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ydhjhoyfim thead, #ydhjhoyfim tbody, #ydhjhoyfim tfoot, #ydhjhoyfim tr, #ydhjhoyfim td, #ydhjhoyfim th {
+#esudjuokak thead, #esudjuokak tbody, #esudjuokak tfoot, #esudjuokak tr, #esudjuokak td, #esudjuokak th {
   border-style: none;
 }
 
-#ydhjhoyfim p {
+#esudjuokak p {
   margin: 0;
   padding: 0;
 }
 
-#ydhjhoyfim .gt_table {
+#esudjuokak .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1104,12 +1105,12 @@ Table&nbsp;13.2: Degree of structural development
   border-left-color: #D3D3D3;
 }
 
-#ydhjhoyfim .gt_caption {
+#esudjuokak .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ydhjhoyfim .gt_title {
+#esudjuokak .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1121,7 +1122,7 @@ Table&nbsp;13.2: Degree of structural development
   border-bottom-width: 0;
 }
 
-#ydhjhoyfim .gt_subtitle {
+#esudjuokak .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1133,7 +1134,7 @@ Table&nbsp;13.2: Degree of structural development
   border-top-width: 0;
 }
 
-#ydhjhoyfim .gt_heading {
+#esudjuokak .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1145,13 +1146,13 @@ Table&nbsp;13.2: Degree of structural development
   border-right-color: #D3D3D3;
 }
 
-#ydhjhoyfim .gt_bottom_border {
+#esudjuokak .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ydhjhoyfim .gt_col_headings {
+#esudjuokak .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1166,7 +1167,7 @@ Table&nbsp;13.2: Degree of structural development
   border-right-color: #D3D3D3;
 }
 
-#ydhjhoyfim .gt_col_heading {
+#esudjuokak .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1186,7 +1187,7 @@ Table&nbsp;13.2: Degree of structural development
   overflow-x: hidden;
 }
 
-#ydhjhoyfim .gt_column_spanner_outer {
+#esudjuokak .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1198,15 +1199,15 @@ Table&nbsp;13.2: Degree of structural development
   padding-right: 4px;
 }
 
-#ydhjhoyfim .gt_column_spanner_outer:first-child {
+#esudjuokak .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ydhjhoyfim .gt_column_spanner_outer:last-child {
+#esudjuokak .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ydhjhoyfim .gt_column_spanner {
+#esudjuokak .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1218,11 +1219,11 @@ Table&nbsp;13.2: Degree of structural development
   width: 100%;
 }
 
-#ydhjhoyfim .gt_spanner_row {
+#esudjuokak .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ydhjhoyfim .gt_group_heading {
+#esudjuokak .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1248,7 +1249,7 @@ Table&nbsp;13.2: Degree of structural development
   text-align: left;
 }
 
-#ydhjhoyfim .gt_empty_group_heading {
+#esudjuokak .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1263,15 +1264,15 @@ Table&nbsp;13.2: Degree of structural development
   vertical-align: middle;
 }
 
-#ydhjhoyfim .gt_from_md > :first-child {
+#esudjuokak .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ydhjhoyfim .gt_from_md > :last-child {
+#esudjuokak .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ydhjhoyfim .gt_row {
+#esudjuokak .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1290,7 +1291,7 @@ Table&nbsp;13.2: Degree of structural development
   overflow-x: hidden;
 }
 
-#ydhjhoyfim .gt_stub {
+#esudjuokak .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1303,7 +1304,7 @@ Table&nbsp;13.2: Degree of structural development
   padding-right: 5px;
 }
 
-#ydhjhoyfim .gt_stub_row_group {
+#esudjuokak .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1317,15 +1318,15 @@ Table&nbsp;13.2: Degree of structural development
   vertical-align: top;
 }
 
-#ydhjhoyfim .gt_row_group_first td {
+#esudjuokak .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ydhjhoyfim .gt_row_group_first th {
+#esudjuokak .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ydhjhoyfim .gt_summary_row {
+#esudjuokak .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1335,16 +1336,16 @@ Table&nbsp;13.2: Degree of structural development
   padding-right: 5px;
 }
 
-#ydhjhoyfim .gt_first_summary_row {
+#esudjuokak .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ydhjhoyfim .gt_first_summary_row.thick {
+#esudjuokak .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ydhjhoyfim .gt_last_summary_row {
+#esudjuokak .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1354,7 +1355,7 @@ Table&nbsp;13.2: Degree of structural development
   border-bottom-color: #D3D3D3;
 }
 
-#ydhjhoyfim .gt_grand_summary_row {
+#esudjuokak .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1364,7 +1365,7 @@ Table&nbsp;13.2: Degree of structural development
   padding-right: 5px;
 }
 
-#ydhjhoyfim .gt_first_grand_summary_row {
+#esudjuokak .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1374,7 +1375,7 @@ Table&nbsp;13.2: Degree of structural development
   border-top-color: #D3D3D3;
 }
 
-#ydhjhoyfim .gt_last_grand_summary_row_top {
+#esudjuokak .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1384,11 +1385,11 @@ Table&nbsp;13.2: Degree of structural development
   border-bottom-color: #D3D3D3;
 }
 
-#ydhjhoyfim .gt_striped {
+#esudjuokak .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ydhjhoyfim .gt_table_body {
+#esudjuokak .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1397,7 +1398,7 @@ Table&nbsp;13.2: Degree of structural development
   border-bottom-color: #D3D3D3;
 }
 
-#ydhjhoyfim .gt_footnotes {
+#esudjuokak .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1411,7 +1412,7 @@ Table&nbsp;13.2: Degree of structural development
   border-right-color: #D3D3D3;
 }
 
-#ydhjhoyfim .gt_footnote {
+#esudjuokak .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1420,7 +1421,7 @@ Table&nbsp;13.2: Degree of structural development
   padding-right: 5px;
 }
 
-#ydhjhoyfim .gt_sourcenotes {
+#esudjuokak .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1434,7 +1435,7 @@ Table&nbsp;13.2: Degree of structural development
   border-right-color: #D3D3D3;
 }
 
-#ydhjhoyfim .gt_sourcenote {
+#esudjuokak .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1442,77 +1443,77 @@ Table&nbsp;13.2: Degree of structural development
   padding-right: 5px;
 }
 
-#ydhjhoyfim .gt_left {
+#esudjuokak .gt_left {
   text-align: left;
 }
 
-#ydhjhoyfim .gt_center {
+#esudjuokak .gt_center {
   text-align: center;
 }
 
-#ydhjhoyfim .gt_right {
+#esudjuokak .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ydhjhoyfim .gt_font_normal {
+#esudjuokak .gt_font_normal {
   font-weight: normal;
 }
 
-#ydhjhoyfim .gt_font_bold {
+#esudjuokak .gt_font_bold {
   font-weight: bold;
 }
 
-#ydhjhoyfim .gt_font_italic {
+#esudjuokak .gt_font_italic {
   font-style: italic;
 }
 
-#ydhjhoyfim .gt_super {
+#esudjuokak .gt_super {
   font-size: 65%;
 }
 
-#ydhjhoyfim .gt_footnote_marks {
+#esudjuokak .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ydhjhoyfim .gt_asterisk {
+#esudjuokak .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ydhjhoyfim .gt_indent_1 {
+#esudjuokak .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ydhjhoyfim .gt_indent_2 {
+#esudjuokak .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ydhjhoyfim .gt_indent_3 {
+#esudjuokak .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ydhjhoyfim .gt_indent_4 {
+#esudjuokak .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ydhjhoyfim .gt_indent_5 {
+#esudjuokak .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ydhjhoyfim .katex-display {
+#esudjuokak .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ydhjhoyfim div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#esudjuokak div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 15%">
 <col style="width: 10%">
@@ -1601,23 +1602,23 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
 </figcaption>
 <div aria-describedby="tbl-hr-pedshp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="rwciomshdu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rwciomshdu table {
+<div id="qyitilnfgn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qyitilnfgn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rwciomshdu thead, #rwciomshdu tbody, #rwciomshdu tfoot, #rwciomshdu tr, #rwciomshdu td, #rwciomshdu th {
+#qyitilnfgn thead, #qyitilnfgn tbody, #qyitilnfgn tfoot, #qyitilnfgn tr, #qyitilnfgn td, #qyitilnfgn th {
   border-style: none;
 }
 
-#rwciomshdu p {
+#qyitilnfgn p {
   margin: 0;
   padding: 0;
 }
 
-#rwciomshdu .gt_table {
+#qyitilnfgn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1643,12 +1644,12 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   border-left-color: #D3D3D3;
 }
 
-#rwciomshdu .gt_caption {
+#qyitilnfgn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rwciomshdu .gt_title {
+#qyitilnfgn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1660,7 +1661,7 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   border-bottom-width: 0;
 }
 
-#rwciomshdu .gt_subtitle {
+#qyitilnfgn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1672,7 +1673,7 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   border-top-width: 0;
 }
 
-#rwciomshdu .gt_heading {
+#qyitilnfgn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1684,13 +1685,13 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   border-right-color: #D3D3D3;
 }
 
-#rwciomshdu .gt_bottom_border {
+#qyitilnfgn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rwciomshdu .gt_col_headings {
+#qyitilnfgn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1705,7 +1706,7 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   border-right-color: #D3D3D3;
 }
 
-#rwciomshdu .gt_col_heading {
+#qyitilnfgn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1725,7 +1726,7 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   overflow-x: hidden;
 }
 
-#rwciomshdu .gt_column_spanner_outer {
+#qyitilnfgn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1737,15 +1738,15 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   padding-right: 4px;
 }
 
-#rwciomshdu .gt_column_spanner_outer:first-child {
+#qyitilnfgn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rwciomshdu .gt_column_spanner_outer:last-child {
+#qyitilnfgn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rwciomshdu .gt_column_spanner {
+#qyitilnfgn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1757,11 +1758,11 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   width: 100%;
 }
 
-#rwciomshdu .gt_spanner_row {
+#qyitilnfgn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rwciomshdu .gt_group_heading {
+#qyitilnfgn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1787,7 +1788,7 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   text-align: left;
 }
 
-#rwciomshdu .gt_empty_group_heading {
+#qyitilnfgn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1802,15 +1803,15 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   vertical-align: middle;
 }
 
-#rwciomshdu .gt_from_md > :first-child {
+#qyitilnfgn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rwciomshdu .gt_from_md > :last-child {
+#qyitilnfgn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rwciomshdu .gt_row {
+#qyitilnfgn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1829,7 +1830,7 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   overflow-x: hidden;
 }
 
-#rwciomshdu .gt_stub {
+#qyitilnfgn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1842,7 +1843,7 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   padding-right: 5px;
 }
 
-#rwciomshdu .gt_stub_row_group {
+#qyitilnfgn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1856,15 +1857,15 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   vertical-align: top;
 }
 
-#rwciomshdu .gt_row_group_first td {
+#qyitilnfgn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rwciomshdu .gt_row_group_first th {
+#qyitilnfgn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rwciomshdu .gt_summary_row {
+#qyitilnfgn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1874,16 +1875,16 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   padding-right: 5px;
 }
 
-#rwciomshdu .gt_first_summary_row {
+#qyitilnfgn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rwciomshdu .gt_first_summary_row.thick {
+#qyitilnfgn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rwciomshdu .gt_last_summary_row {
+#qyitilnfgn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1893,7 +1894,7 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   border-bottom-color: #D3D3D3;
 }
 
-#rwciomshdu .gt_grand_summary_row {
+#qyitilnfgn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1903,7 +1904,7 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   padding-right: 5px;
 }
 
-#rwciomshdu .gt_first_grand_summary_row {
+#qyitilnfgn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1913,7 +1914,7 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   border-top-color: #D3D3D3;
 }
 
-#rwciomshdu .gt_last_grand_summary_row_top {
+#qyitilnfgn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1923,11 +1924,11 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   border-bottom-color: #D3D3D3;
 }
 
-#rwciomshdu .gt_striped {
+#qyitilnfgn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rwciomshdu .gt_table_body {
+#qyitilnfgn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1936,7 +1937,7 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   border-bottom-color: #D3D3D3;
 }
 
-#rwciomshdu .gt_footnotes {
+#qyitilnfgn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1950,7 +1951,7 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   border-right-color: #D3D3D3;
 }
 
-#rwciomshdu .gt_footnote {
+#qyitilnfgn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1959,7 +1960,7 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   padding-right: 5px;
 }
 
-#rwciomshdu .gt_sourcenotes {
+#qyitilnfgn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1973,7 +1974,7 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   border-right-color: #D3D3D3;
 }
 
-#rwciomshdu .gt_sourcenote {
+#qyitilnfgn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1981,77 +1982,77 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
   padding-right: 5px;
 }
 
-#rwciomshdu .gt_left {
+#qyitilnfgn .gt_left {
   text-align: left;
 }
 
-#rwciomshdu .gt_center {
+#qyitilnfgn .gt_center {
   text-align: center;
 }
 
-#rwciomshdu .gt_right {
+#qyitilnfgn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rwciomshdu .gt_font_normal {
+#qyitilnfgn .gt_font_normal {
   font-weight: normal;
 }
 
-#rwciomshdu .gt_font_bold {
+#qyitilnfgn .gt_font_bold {
   font-weight: bold;
 }
 
-#rwciomshdu .gt_font_italic {
+#qyitilnfgn .gt_font_italic {
   font-style: italic;
 }
 
-#rwciomshdu .gt_super {
+#qyitilnfgn .gt_super {
   font-size: 65%;
 }
 
-#rwciomshdu .gt_footnote_marks {
+#qyitilnfgn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rwciomshdu .gt_asterisk {
+#qyitilnfgn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rwciomshdu .gt_indent_1 {
+#qyitilnfgn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rwciomshdu .gt_indent_2 {
+#qyitilnfgn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rwciomshdu .gt_indent_3 {
+#qyitilnfgn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rwciomshdu .gt_indent_4 {
+#qyitilnfgn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rwciomshdu .gt_indent_5 {
+#qyitilnfgn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rwciomshdu .katex-display {
+#qyitilnfgn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rwciomshdu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qyitilnfgn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 20%">
 <col style="width: 10%">
@@ -2131,7 +2132,7 @@ Table&nbsp;13.3: Structural shapes (adapted from <span class="citation" data-cit
 </div>
 </div>
 <div id="nte-nut" class="callout callout-style-simple callout-note no-icon callout-titled" title="Older terms for structural units">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2179,7 +2180,7 @@ Note&nbsp;13.1: Older terms for structural units
 </ul>
 <p>Direct measurement of peds will help estimate size. Weighing, or filling volumetric containers, may help estimate abundance.</p>
 <div id="nte-stro" class="callout callout-style-simple callout-note no-icon callout-titled" title="Structure in organic horizons">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2215,23 +2216,23 @@ Table&nbsp;13.4: Coarse fragment shape classes
 </figcaption>
 <div aria-describedby="tbl-hr-rockfrshp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="uevkkczslj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uevkkczslj table {
+<div id="kgllvtjfne" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kgllvtjfne table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uevkkczslj thead, #uevkkczslj tbody, #uevkkczslj tfoot, #uevkkczslj tr, #uevkkczslj td, #uevkkczslj th {
+#kgllvtjfne thead, #kgllvtjfne tbody, #kgllvtjfne tfoot, #kgllvtjfne tr, #kgllvtjfne td, #kgllvtjfne th {
   border-style: none;
 }
 
-#uevkkczslj p {
+#kgllvtjfne p {
   margin: 0;
   padding: 0;
 }
 
-#uevkkczslj .gt_table {
+#kgllvtjfne .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2257,12 +2258,12 @@ Table&nbsp;13.4: Coarse fragment shape classes
   border-left-color: #D3D3D3;
 }
 
-#uevkkczslj .gt_caption {
+#kgllvtjfne .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uevkkczslj .gt_title {
+#kgllvtjfne .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2274,7 +2275,7 @@ Table&nbsp;13.4: Coarse fragment shape classes
   border-bottom-width: 0;
 }
 
-#uevkkczslj .gt_subtitle {
+#kgllvtjfne .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2286,7 +2287,7 @@ Table&nbsp;13.4: Coarse fragment shape classes
   border-top-width: 0;
 }
 
-#uevkkczslj .gt_heading {
+#kgllvtjfne .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2298,13 +2299,13 @@ Table&nbsp;13.4: Coarse fragment shape classes
   border-right-color: #D3D3D3;
 }
 
-#uevkkczslj .gt_bottom_border {
+#kgllvtjfne .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uevkkczslj .gt_col_headings {
+#kgllvtjfne .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2319,7 +2320,7 @@ Table&nbsp;13.4: Coarse fragment shape classes
   border-right-color: #D3D3D3;
 }
 
-#uevkkczslj .gt_col_heading {
+#kgllvtjfne .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2339,7 +2340,7 @@ Table&nbsp;13.4: Coarse fragment shape classes
   overflow-x: hidden;
 }
 
-#uevkkczslj .gt_column_spanner_outer {
+#kgllvtjfne .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2351,15 +2352,15 @@ Table&nbsp;13.4: Coarse fragment shape classes
   padding-right: 4px;
 }
 
-#uevkkczslj .gt_column_spanner_outer:first-child {
+#kgllvtjfne .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uevkkczslj .gt_column_spanner_outer:last-child {
+#kgllvtjfne .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uevkkczslj .gt_column_spanner {
+#kgllvtjfne .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2371,11 +2372,11 @@ Table&nbsp;13.4: Coarse fragment shape classes
   width: 100%;
 }
 
-#uevkkczslj .gt_spanner_row {
+#kgllvtjfne .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uevkkczslj .gt_group_heading {
+#kgllvtjfne .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2401,7 +2402,7 @@ Table&nbsp;13.4: Coarse fragment shape classes
   text-align: left;
 }
 
-#uevkkczslj .gt_empty_group_heading {
+#kgllvtjfne .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2416,15 +2417,15 @@ Table&nbsp;13.4: Coarse fragment shape classes
   vertical-align: middle;
 }
 
-#uevkkczslj .gt_from_md > :first-child {
+#kgllvtjfne .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uevkkczslj .gt_from_md > :last-child {
+#kgllvtjfne .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uevkkczslj .gt_row {
+#kgllvtjfne .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2443,7 +2444,7 @@ Table&nbsp;13.4: Coarse fragment shape classes
   overflow-x: hidden;
 }
 
-#uevkkczslj .gt_stub {
+#kgllvtjfne .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2456,7 +2457,7 @@ Table&nbsp;13.4: Coarse fragment shape classes
   padding-right: 5px;
 }
 
-#uevkkczslj .gt_stub_row_group {
+#kgllvtjfne .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2470,15 +2471,15 @@ Table&nbsp;13.4: Coarse fragment shape classes
   vertical-align: top;
 }
 
-#uevkkczslj .gt_row_group_first td {
+#kgllvtjfne .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uevkkczslj .gt_row_group_first th {
+#kgllvtjfne .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uevkkczslj .gt_summary_row {
+#kgllvtjfne .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2488,16 +2489,16 @@ Table&nbsp;13.4: Coarse fragment shape classes
   padding-right: 5px;
 }
 
-#uevkkczslj .gt_first_summary_row {
+#kgllvtjfne .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uevkkczslj .gt_first_summary_row.thick {
+#kgllvtjfne .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uevkkczslj .gt_last_summary_row {
+#kgllvtjfne .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2507,7 +2508,7 @@ Table&nbsp;13.4: Coarse fragment shape classes
   border-bottom-color: #D3D3D3;
 }
 
-#uevkkczslj .gt_grand_summary_row {
+#kgllvtjfne .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2517,7 +2518,7 @@ Table&nbsp;13.4: Coarse fragment shape classes
   padding-right: 5px;
 }
 
-#uevkkczslj .gt_first_grand_summary_row {
+#kgllvtjfne .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2527,7 +2528,7 @@ Table&nbsp;13.4: Coarse fragment shape classes
   border-top-color: #D3D3D3;
 }
 
-#uevkkczslj .gt_last_grand_summary_row_top {
+#kgllvtjfne .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2537,11 +2538,11 @@ Table&nbsp;13.4: Coarse fragment shape classes
   border-bottom-color: #D3D3D3;
 }
 
-#uevkkczslj .gt_striped {
+#kgllvtjfne .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uevkkczslj .gt_table_body {
+#kgllvtjfne .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2550,7 +2551,7 @@ Table&nbsp;13.4: Coarse fragment shape classes
   border-bottom-color: #D3D3D3;
 }
 
-#uevkkczslj .gt_footnotes {
+#kgllvtjfne .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2564,7 +2565,7 @@ Table&nbsp;13.4: Coarse fragment shape classes
   border-right-color: #D3D3D3;
 }
 
-#uevkkczslj .gt_footnote {
+#kgllvtjfne .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2573,7 +2574,7 @@ Table&nbsp;13.4: Coarse fragment shape classes
   padding-right: 5px;
 }
 
-#uevkkczslj .gt_sourcenotes {
+#kgllvtjfne .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2587,7 +2588,7 @@ Table&nbsp;13.4: Coarse fragment shape classes
   border-right-color: #D3D3D3;
 }
 
-#uevkkczslj .gt_sourcenote {
+#kgllvtjfne .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2595,77 +2596,77 @@ Table&nbsp;13.4: Coarse fragment shape classes
   padding-right: 5px;
 }
 
-#uevkkczslj .gt_left {
+#kgllvtjfne .gt_left {
   text-align: left;
 }
 
-#uevkkczslj .gt_center {
+#kgllvtjfne .gt_center {
   text-align: center;
 }
 
-#uevkkczslj .gt_right {
+#kgllvtjfne .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uevkkczslj .gt_font_normal {
+#kgllvtjfne .gt_font_normal {
   font-weight: normal;
 }
 
-#uevkkczslj .gt_font_bold {
+#kgllvtjfne .gt_font_bold {
   font-weight: bold;
 }
 
-#uevkkczslj .gt_font_italic {
+#kgllvtjfne .gt_font_italic {
   font-style: italic;
 }
 
-#uevkkczslj .gt_super {
+#kgllvtjfne .gt_super {
   font-size: 65%;
 }
 
-#uevkkczslj .gt_footnote_marks {
+#kgllvtjfne .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uevkkczslj .gt_asterisk {
+#kgllvtjfne .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uevkkczslj .gt_indent_1 {
+#kgllvtjfne .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uevkkczslj .gt_indent_2 {
+#kgllvtjfne .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uevkkczslj .gt_indent_3 {
+#kgllvtjfne .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uevkkczslj .gt_indent_4 {
+#kgllvtjfne .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uevkkczslj .gt_indent_5 {
+#kgllvtjfne .gt_indent_5 {
   text-indent: 25px;
 }
 
-#uevkkczslj .katex-display {
+#kgllvtjfne .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#uevkkczslj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#kgllvtjfne div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -2716,23 +2717,23 @@ Table&nbsp;13.5: Non-rock fragment types
 </figcaption>
 <div aria-describedby="tbl-hr-nonrock-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="yagoscbaeo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yagoscbaeo table {
+<div id="wvjapmdtab" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wvjapmdtab table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yagoscbaeo thead, #yagoscbaeo tbody, #yagoscbaeo tfoot, #yagoscbaeo tr, #yagoscbaeo td, #yagoscbaeo th {
+#wvjapmdtab thead, #wvjapmdtab tbody, #wvjapmdtab tfoot, #wvjapmdtab tr, #wvjapmdtab td, #wvjapmdtab th {
   border-style: none;
 }
 
-#yagoscbaeo p {
+#wvjapmdtab p {
   margin: 0;
   padding: 0;
 }
 
-#yagoscbaeo .gt_table {
+#wvjapmdtab .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2758,12 +2759,12 @@ Table&nbsp;13.5: Non-rock fragment types
   border-left-color: #D3D3D3;
 }
 
-#yagoscbaeo .gt_caption {
+#wvjapmdtab .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yagoscbaeo .gt_title {
+#wvjapmdtab .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2775,7 +2776,7 @@ Table&nbsp;13.5: Non-rock fragment types
   border-bottom-width: 0;
 }
 
-#yagoscbaeo .gt_subtitle {
+#wvjapmdtab .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2787,7 +2788,7 @@ Table&nbsp;13.5: Non-rock fragment types
   border-top-width: 0;
 }
 
-#yagoscbaeo .gt_heading {
+#wvjapmdtab .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2799,13 +2800,13 @@ Table&nbsp;13.5: Non-rock fragment types
   border-right-color: #D3D3D3;
 }
 
-#yagoscbaeo .gt_bottom_border {
+#wvjapmdtab .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yagoscbaeo .gt_col_headings {
+#wvjapmdtab .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2820,7 +2821,7 @@ Table&nbsp;13.5: Non-rock fragment types
   border-right-color: #D3D3D3;
 }
 
-#yagoscbaeo .gt_col_heading {
+#wvjapmdtab .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2840,7 +2841,7 @@ Table&nbsp;13.5: Non-rock fragment types
   overflow-x: hidden;
 }
 
-#yagoscbaeo .gt_column_spanner_outer {
+#wvjapmdtab .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2852,15 +2853,15 @@ Table&nbsp;13.5: Non-rock fragment types
   padding-right: 4px;
 }
 
-#yagoscbaeo .gt_column_spanner_outer:first-child {
+#wvjapmdtab .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yagoscbaeo .gt_column_spanner_outer:last-child {
+#wvjapmdtab .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yagoscbaeo .gt_column_spanner {
+#wvjapmdtab .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2872,11 +2873,11 @@ Table&nbsp;13.5: Non-rock fragment types
   width: 100%;
 }
 
-#yagoscbaeo .gt_spanner_row {
+#wvjapmdtab .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yagoscbaeo .gt_group_heading {
+#wvjapmdtab .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2902,7 +2903,7 @@ Table&nbsp;13.5: Non-rock fragment types
   text-align: left;
 }
 
-#yagoscbaeo .gt_empty_group_heading {
+#wvjapmdtab .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2917,15 +2918,15 @@ Table&nbsp;13.5: Non-rock fragment types
   vertical-align: middle;
 }
 
-#yagoscbaeo .gt_from_md > :first-child {
+#wvjapmdtab .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yagoscbaeo .gt_from_md > :last-child {
+#wvjapmdtab .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yagoscbaeo .gt_row {
+#wvjapmdtab .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2944,7 +2945,7 @@ Table&nbsp;13.5: Non-rock fragment types
   overflow-x: hidden;
 }
 
-#yagoscbaeo .gt_stub {
+#wvjapmdtab .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2957,7 +2958,7 @@ Table&nbsp;13.5: Non-rock fragment types
   padding-right: 5px;
 }
 
-#yagoscbaeo .gt_stub_row_group {
+#wvjapmdtab .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2971,15 +2972,15 @@ Table&nbsp;13.5: Non-rock fragment types
   vertical-align: top;
 }
 
-#yagoscbaeo .gt_row_group_first td {
+#wvjapmdtab .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yagoscbaeo .gt_row_group_first th {
+#wvjapmdtab .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yagoscbaeo .gt_summary_row {
+#wvjapmdtab .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2989,16 +2990,16 @@ Table&nbsp;13.5: Non-rock fragment types
   padding-right: 5px;
 }
 
-#yagoscbaeo .gt_first_summary_row {
+#wvjapmdtab .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yagoscbaeo .gt_first_summary_row.thick {
+#wvjapmdtab .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yagoscbaeo .gt_last_summary_row {
+#wvjapmdtab .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3008,7 +3009,7 @@ Table&nbsp;13.5: Non-rock fragment types
   border-bottom-color: #D3D3D3;
 }
 
-#yagoscbaeo .gt_grand_summary_row {
+#wvjapmdtab .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3018,7 +3019,7 @@ Table&nbsp;13.5: Non-rock fragment types
   padding-right: 5px;
 }
 
-#yagoscbaeo .gt_first_grand_summary_row {
+#wvjapmdtab .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3028,7 +3029,7 @@ Table&nbsp;13.5: Non-rock fragment types
   border-top-color: #D3D3D3;
 }
 
-#yagoscbaeo .gt_last_grand_summary_row_top {
+#wvjapmdtab .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3038,11 +3039,11 @@ Table&nbsp;13.5: Non-rock fragment types
   border-bottom-color: #D3D3D3;
 }
 
-#yagoscbaeo .gt_striped {
+#wvjapmdtab .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yagoscbaeo .gt_table_body {
+#wvjapmdtab .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3051,7 +3052,7 @@ Table&nbsp;13.5: Non-rock fragment types
   border-bottom-color: #D3D3D3;
 }
 
-#yagoscbaeo .gt_footnotes {
+#wvjapmdtab .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3065,7 +3066,7 @@ Table&nbsp;13.5: Non-rock fragment types
   border-right-color: #D3D3D3;
 }
 
-#yagoscbaeo .gt_footnote {
+#wvjapmdtab .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3074,7 +3075,7 @@ Table&nbsp;13.5: Non-rock fragment types
   padding-right: 5px;
 }
 
-#yagoscbaeo .gt_sourcenotes {
+#wvjapmdtab .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3088,7 +3089,7 @@ Table&nbsp;13.5: Non-rock fragment types
   border-right-color: #D3D3D3;
 }
 
-#yagoscbaeo .gt_sourcenote {
+#wvjapmdtab .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3096,77 +3097,77 @@ Table&nbsp;13.5: Non-rock fragment types
   padding-right: 5px;
 }
 
-#yagoscbaeo .gt_left {
+#wvjapmdtab .gt_left {
   text-align: left;
 }
 
-#yagoscbaeo .gt_center {
+#wvjapmdtab .gt_center {
   text-align: center;
 }
 
-#yagoscbaeo .gt_right {
+#wvjapmdtab .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yagoscbaeo .gt_font_normal {
+#wvjapmdtab .gt_font_normal {
   font-weight: normal;
 }
 
-#yagoscbaeo .gt_font_bold {
+#wvjapmdtab .gt_font_bold {
   font-weight: bold;
 }
 
-#yagoscbaeo .gt_font_italic {
+#wvjapmdtab .gt_font_italic {
   font-style: italic;
 }
 
-#yagoscbaeo .gt_super {
+#wvjapmdtab .gt_super {
   font-size: 65%;
 }
 
-#yagoscbaeo .gt_footnote_marks {
+#wvjapmdtab .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yagoscbaeo .gt_asterisk {
+#wvjapmdtab .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yagoscbaeo .gt_indent_1 {
+#wvjapmdtab .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yagoscbaeo .gt_indent_2 {
+#wvjapmdtab .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yagoscbaeo .gt_indent_3 {
+#wvjapmdtab .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yagoscbaeo .gt_indent_4 {
+#wvjapmdtab .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yagoscbaeo .gt_indent_5 {
+#wvjapmdtab .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yagoscbaeo .katex-display {
+#wvjapmdtab .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yagoscbaeo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wvjapmdtab div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -3231,23 +3232,23 @@ Table&nbsp;13.6: Artefact types
 </figcaption>
 <div aria-describedby="tbl-hr-artefacts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="sjqnibitwe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#sjqnibitwe table {
+<div id="olbjpafaqp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#olbjpafaqp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#sjqnibitwe thead, #sjqnibitwe tbody, #sjqnibitwe tfoot, #sjqnibitwe tr, #sjqnibitwe td, #sjqnibitwe th {
+#olbjpafaqp thead, #olbjpafaqp tbody, #olbjpafaqp tfoot, #olbjpafaqp tr, #olbjpafaqp td, #olbjpafaqp th {
   border-style: none;
 }
 
-#sjqnibitwe p {
+#olbjpafaqp p {
   margin: 0;
   padding: 0;
 }
 
-#sjqnibitwe .gt_table {
+#olbjpafaqp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3273,12 +3274,12 @@ Table&nbsp;13.6: Artefact types
   border-left-color: #D3D3D3;
 }
 
-#sjqnibitwe .gt_caption {
+#olbjpafaqp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#sjqnibitwe .gt_title {
+#olbjpafaqp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -3290,7 +3291,7 @@ Table&nbsp;13.6: Artefact types
   border-bottom-width: 0;
 }
 
-#sjqnibitwe .gt_subtitle {
+#olbjpafaqp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3302,7 +3303,7 @@ Table&nbsp;13.6: Artefact types
   border-top-width: 0;
 }
 
-#sjqnibitwe .gt_heading {
+#olbjpafaqp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3314,13 +3315,13 @@ Table&nbsp;13.6: Artefact types
   border-right-color: #D3D3D3;
 }
 
-#sjqnibitwe .gt_bottom_border {
+#olbjpafaqp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sjqnibitwe .gt_col_headings {
+#olbjpafaqp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3335,7 +3336,7 @@ Table&nbsp;13.6: Artefact types
   border-right-color: #D3D3D3;
 }
 
-#sjqnibitwe .gt_col_heading {
+#olbjpafaqp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3355,7 +3356,7 @@ Table&nbsp;13.6: Artefact types
   overflow-x: hidden;
 }
 
-#sjqnibitwe .gt_column_spanner_outer {
+#olbjpafaqp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3367,15 +3368,15 @@ Table&nbsp;13.6: Artefact types
   padding-right: 4px;
 }
 
-#sjqnibitwe .gt_column_spanner_outer:first-child {
+#olbjpafaqp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sjqnibitwe .gt_column_spanner_outer:last-child {
+#olbjpafaqp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sjqnibitwe .gt_column_spanner {
+#olbjpafaqp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3387,11 +3388,11 @@ Table&nbsp;13.6: Artefact types
   width: 100%;
 }
 
-#sjqnibitwe .gt_spanner_row {
+#olbjpafaqp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#sjqnibitwe .gt_group_heading {
+#olbjpafaqp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3417,7 +3418,7 @@ Table&nbsp;13.6: Artefact types
   text-align: left;
 }
 
-#sjqnibitwe .gt_empty_group_heading {
+#olbjpafaqp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3432,15 +3433,15 @@ Table&nbsp;13.6: Artefact types
   vertical-align: middle;
 }
 
-#sjqnibitwe .gt_from_md > :first-child {
+#olbjpafaqp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sjqnibitwe .gt_from_md > :last-child {
+#olbjpafaqp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sjqnibitwe .gt_row {
+#olbjpafaqp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3459,7 +3460,7 @@ Table&nbsp;13.6: Artefact types
   overflow-x: hidden;
 }
 
-#sjqnibitwe .gt_stub {
+#olbjpafaqp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3472,7 +3473,7 @@ Table&nbsp;13.6: Artefact types
   padding-right: 5px;
 }
 
-#sjqnibitwe .gt_stub_row_group {
+#olbjpafaqp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3486,15 +3487,15 @@ Table&nbsp;13.6: Artefact types
   vertical-align: top;
 }
 
-#sjqnibitwe .gt_row_group_first td {
+#olbjpafaqp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#sjqnibitwe .gt_row_group_first th {
+#olbjpafaqp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#sjqnibitwe .gt_summary_row {
+#olbjpafaqp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3504,16 +3505,16 @@ Table&nbsp;13.6: Artefact types
   padding-right: 5px;
 }
 
-#sjqnibitwe .gt_first_summary_row {
+#olbjpafaqp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#sjqnibitwe .gt_first_summary_row.thick {
+#olbjpafaqp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#sjqnibitwe .gt_last_summary_row {
+#olbjpafaqp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3523,7 +3524,7 @@ Table&nbsp;13.6: Artefact types
   border-bottom-color: #D3D3D3;
 }
 
-#sjqnibitwe .gt_grand_summary_row {
+#olbjpafaqp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3533,7 +3534,7 @@ Table&nbsp;13.6: Artefact types
   padding-right: 5px;
 }
 
-#sjqnibitwe .gt_first_grand_summary_row {
+#olbjpafaqp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3543,7 +3544,7 @@ Table&nbsp;13.6: Artefact types
   border-top-color: #D3D3D3;
 }
 
-#sjqnibitwe .gt_last_grand_summary_row_top {
+#olbjpafaqp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3553,11 +3554,11 @@ Table&nbsp;13.6: Artefact types
   border-bottom-color: #D3D3D3;
 }
 
-#sjqnibitwe .gt_striped {
+#olbjpafaqp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sjqnibitwe .gt_table_body {
+#olbjpafaqp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3566,7 +3567,7 @@ Table&nbsp;13.6: Artefact types
   border-bottom-color: #D3D3D3;
 }
 
-#sjqnibitwe .gt_footnotes {
+#olbjpafaqp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3580,7 +3581,7 @@ Table&nbsp;13.6: Artefact types
   border-right-color: #D3D3D3;
 }
 
-#sjqnibitwe .gt_footnote {
+#olbjpafaqp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3589,7 +3590,7 @@ Table&nbsp;13.6: Artefact types
   padding-right: 5px;
 }
 
-#sjqnibitwe .gt_sourcenotes {
+#olbjpafaqp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3603,7 +3604,7 @@ Table&nbsp;13.6: Artefact types
   border-right-color: #D3D3D3;
 }
 
-#sjqnibitwe .gt_sourcenote {
+#olbjpafaqp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3611,77 +3612,77 @@ Table&nbsp;13.6: Artefact types
   padding-right: 5px;
 }
 
-#sjqnibitwe .gt_left {
+#olbjpafaqp .gt_left {
   text-align: left;
 }
 
-#sjqnibitwe .gt_center {
+#olbjpafaqp .gt_center {
   text-align: center;
 }
 
-#sjqnibitwe .gt_right {
+#olbjpafaqp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sjqnibitwe .gt_font_normal {
+#olbjpafaqp .gt_font_normal {
   font-weight: normal;
 }
 
-#sjqnibitwe .gt_font_bold {
+#olbjpafaqp .gt_font_bold {
   font-weight: bold;
 }
 
-#sjqnibitwe .gt_font_italic {
+#olbjpafaqp .gt_font_italic {
   font-style: italic;
 }
 
-#sjqnibitwe .gt_super {
+#olbjpafaqp .gt_super {
   font-size: 65%;
 }
 
-#sjqnibitwe .gt_footnote_marks {
+#olbjpafaqp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#sjqnibitwe .gt_asterisk {
+#olbjpafaqp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#sjqnibitwe .gt_indent_1 {
+#olbjpafaqp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#sjqnibitwe .gt_indent_2 {
+#olbjpafaqp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#sjqnibitwe .gt_indent_3 {
+#olbjpafaqp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#sjqnibitwe .gt_indent_4 {
+#olbjpafaqp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#sjqnibitwe .gt_indent_5 {
+#olbjpafaqp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#sjqnibitwe .katex-display {
+#olbjpafaqp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#sjqnibitwe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#olbjpafaqp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -3787,23 +3788,23 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
 </figcaption>
 <div aria-describedby="tbl-hr-aorg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="qrjpsdeabm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qrjpsdeabm table {
+<div id="hcjpslbwvk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hcjpslbwvk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qrjpsdeabm thead, #qrjpsdeabm tbody, #qrjpsdeabm tfoot, #qrjpsdeabm tr, #qrjpsdeabm td, #qrjpsdeabm th {
+#hcjpslbwvk thead, #hcjpslbwvk tbody, #hcjpslbwvk tfoot, #hcjpslbwvk tr, #hcjpslbwvk td, #hcjpslbwvk th {
   border-style: none;
 }
 
-#qrjpsdeabm p {
+#hcjpslbwvk p {
   margin: 0;
   padding: 0;
 }
 
-#qrjpsdeabm .gt_table {
+#hcjpslbwvk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3829,12 +3830,12 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   border-left-color: #D3D3D3;
 }
 
-#qrjpsdeabm .gt_caption {
+#hcjpslbwvk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qrjpsdeabm .gt_title {
+#hcjpslbwvk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -3846,7 +3847,7 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   border-bottom-width: 0;
 }
 
-#qrjpsdeabm .gt_subtitle {
+#hcjpslbwvk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3858,7 +3859,7 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   border-top-width: 0;
 }
 
-#qrjpsdeabm .gt_heading {
+#hcjpslbwvk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3870,13 +3871,13 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   border-right-color: #D3D3D3;
 }
 
-#qrjpsdeabm .gt_bottom_border {
+#hcjpslbwvk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qrjpsdeabm .gt_col_headings {
+#hcjpslbwvk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3891,7 +3892,7 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   border-right-color: #D3D3D3;
 }
 
-#qrjpsdeabm .gt_col_heading {
+#hcjpslbwvk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3911,7 +3912,7 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   overflow-x: hidden;
 }
 
-#qrjpsdeabm .gt_column_spanner_outer {
+#hcjpslbwvk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3923,15 +3924,15 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   padding-right: 4px;
 }
 
-#qrjpsdeabm .gt_column_spanner_outer:first-child {
+#hcjpslbwvk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qrjpsdeabm .gt_column_spanner_outer:last-child {
+#hcjpslbwvk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qrjpsdeabm .gt_column_spanner {
+#hcjpslbwvk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3943,11 +3944,11 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   width: 100%;
 }
 
-#qrjpsdeabm .gt_spanner_row {
+#hcjpslbwvk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qrjpsdeabm .gt_group_heading {
+#hcjpslbwvk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3973,7 +3974,7 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   text-align: left;
 }
 
-#qrjpsdeabm .gt_empty_group_heading {
+#hcjpslbwvk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3988,15 +3989,15 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   vertical-align: middle;
 }
 
-#qrjpsdeabm .gt_from_md > :first-child {
+#hcjpslbwvk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qrjpsdeabm .gt_from_md > :last-child {
+#hcjpslbwvk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qrjpsdeabm .gt_row {
+#hcjpslbwvk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4015,7 +4016,7 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   overflow-x: hidden;
 }
 
-#qrjpsdeabm .gt_stub {
+#hcjpslbwvk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4028,7 +4029,7 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   padding-right: 5px;
 }
 
-#qrjpsdeabm .gt_stub_row_group {
+#hcjpslbwvk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4042,15 +4043,15 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   vertical-align: top;
 }
 
-#qrjpsdeabm .gt_row_group_first td {
+#hcjpslbwvk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qrjpsdeabm .gt_row_group_first th {
+#hcjpslbwvk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qrjpsdeabm .gt_summary_row {
+#hcjpslbwvk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4060,16 +4061,16 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   padding-right: 5px;
 }
 
-#qrjpsdeabm .gt_first_summary_row {
+#hcjpslbwvk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qrjpsdeabm .gt_first_summary_row.thick {
+#hcjpslbwvk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qrjpsdeabm .gt_last_summary_row {
+#hcjpslbwvk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4079,7 +4080,7 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   border-bottom-color: #D3D3D3;
 }
 
-#qrjpsdeabm .gt_grand_summary_row {
+#hcjpslbwvk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4089,7 +4090,7 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   padding-right: 5px;
 }
 
-#qrjpsdeabm .gt_first_grand_summary_row {
+#hcjpslbwvk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4099,7 +4100,7 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   border-top-color: #D3D3D3;
 }
 
-#qrjpsdeabm .gt_last_grand_summary_row_top {
+#hcjpslbwvk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4109,11 +4110,11 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   border-bottom-color: #D3D3D3;
 }
 
-#qrjpsdeabm .gt_striped {
+#hcjpslbwvk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qrjpsdeabm .gt_table_body {
+#hcjpslbwvk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4122,7 +4123,7 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   border-bottom-color: #D3D3D3;
 }
 
-#qrjpsdeabm .gt_footnotes {
+#hcjpslbwvk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4136,7 +4137,7 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   border-right-color: #D3D3D3;
 }
 
-#qrjpsdeabm .gt_footnote {
+#hcjpslbwvk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4145,7 +4146,7 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   padding-right: 5px;
 }
 
-#qrjpsdeabm .gt_sourcenotes {
+#hcjpslbwvk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4159,7 +4160,7 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   border-right-color: #D3D3D3;
 }
 
-#qrjpsdeabm .gt_sourcenote {
+#hcjpslbwvk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4167,77 +4168,77 @@ Table&nbsp;13.7: Artefact origin (adapted from <span class="citation" data-cites
   padding-right: 5px;
 }
 
-#qrjpsdeabm .gt_left {
+#hcjpslbwvk .gt_left {
   text-align: left;
 }
 
-#qrjpsdeabm .gt_center {
+#hcjpslbwvk .gt_center {
   text-align: center;
 }
 
-#qrjpsdeabm .gt_right {
+#hcjpslbwvk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qrjpsdeabm .gt_font_normal {
+#hcjpslbwvk .gt_font_normal {
   font-weight: normal;
 }
 
-#qrjpsdeabm .gt_font_bold {
+#hcjpslbwvk .gt_font_bold {
   font-weight: bold;
 }
 
-#qrjpsdeabm .gt_font_italic {
+#hcjpslbwvk .gt_font_italic {
   font-style: italic;
 }
 
-#qrjpsdeabm .gt_super {
+#hcjpslbwvk .gt_super {
   font-size: 65%;
 }
 
-#qrjpsdeabm .gt_footnote_marks {
+#hcjpslbwvk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qrjpsdeabm .gt_asterisk {
+#hcjpslbwvk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qrjpsdeabm .gt_indent_1 {
+#hcjpslbwvk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qrjpsdeabm .gt_indent_2 {
+#hcjpslbwvk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qrjpsdeabm .gt_indent_3 {
+#hcjpslbwvk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qrjpsdeabm .gt_indent_4 {
+#hcjpslbwvk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qrjpsdeabm .gt_indent_5 {
+#hcjpslbwvk .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qrjpsdeabm .katex-display {
+#hcjpslbwvk .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qrjpsdeabm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hcjpslbwvk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -4293,23 +4294,23 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
 </figcaption>
 <div aria-describedby="tbl-hr-afix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="rsnrygfpvw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rsnrygfpvw table {
+<div id="hxdwpbyseh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hxdwpbyseh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rsnrygfpvw thead, #rsnrygfpvw tbody, #rsnrygfpvw tfoot, #rsnrygfpvw tr, #rsnrygfpvw td, #rsnrygfpvw th {
+#hxdwpbyseh thead, #hxdwpbyseh tbody, #hxdwpbyseh tfoot, #hxdwpbyseh tr, #hxdwpbyseh td, #hxdwpbyseh th {
   border-style: none;
 }
 
-#rsnrygfpvw p {
+#hxdwpbyseh p {
   margin: 0;
   padding: 0;
 }
 
-#rsnrygfpvw .gt_table {
+#hxdwpbyseh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4335,12 +4336,12 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   border-left-color: #D3D3D3;
 }
 
-#rsnrygfpvw .gt_caption {
+#hxdwpbyseh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rsnrygfpvw .gt_title {
+#hxdwpbyseh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -4352,7 +4353,7 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   border-bottom-width: 0;
 }
 
-#rsnrygfpvw .gt_subtitle {
+#hxdwpbyseh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4364,7 +4365,7 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   border-top-width: 0;
 }
 
-#rsnrygfpvw .gt_heading {
+#hxdwpbyseh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4376,13 +4377,13 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   border-right-color: #D3D3D3;
 }
 
-#rsnrygfpvw .gt_bottom_border {
+#hxdwpbyseh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rsnrygfpvw .gt_col_headings {
+#hxdwpbyseh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4397,7 +4398,7 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   border-right-color: #D3D3D3;
 }
 
-#rsnrygfpvw .gt_col_heading {
+#hxdwpbyseh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4417,7 +4418,7 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   overflow-x: hidden;
 }
 
-#rsnrygfpvw .gt_column_spanner_outer {
+#hxdwpbyseh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4429,15 +4430,15 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   padding-right: 4px;
 }
 
-#rsnrygfpvw .gt_column_spanner_outer:first-child {
+#hxdwpbyseh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rsnrygfpvw .gt_column_spanner_outer:last-child {
+#hxdwpbyseh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rsnrygfpvw .gt_column_spanner {
+#hxdwpbyseh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4449,11 +4450,11 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   width: 100%;
 }
 
-#rsnrygfpvw .gt_spanner_row {
+#hxdwpbyseh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rsnrygfpvw .gt_group_heading {
+#hxdwpbyseh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4479,7 +4480,7 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   text-align: left;
 }
 
-#rsnrygfpvw .gt_empty_group_heading {
+#hxdwpbyseh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4494,15 +4495,15 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   vertical-align: middle;
 }
 
-#rsnrygfpvw .gt_from_md > :first-child {
+#hxdwpbyseh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rsnrygfpvw .gt_from_md > :last-child {
+#hxdwpbyseh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rsnrygfpvw .gt_row {
+#hxdwpbyseh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4521,7 +4522,7 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   overflow-x: hidden;
 }
 
-#rsnrygfpvw .gt_stub {
+#hxdwpbyseh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4534,7 +4535,7 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   padding-right: 5px;
 }
 
-#rsnrygfpvw .gt_stub_row_group {
+#hxdwpbyseh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4548,15 +4549,15 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   vertical-align: top;
 }
 
-#rsnrygfpvw .gt_row_group_first td {
+#hxdwpbyseh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rsnrygfpvw .gt_row_group_first th {
+#hxdwpbyseh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rsnrygfpvw .gt_summary_row {
+#hxdwpbyseh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4566,16 +4567,16 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   padding-right: 5px;
 }
 
-#rsnrygfpvw .gt_first_summary_row {
+#hxdwpbyseh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rsnrygfpvw .gt_first_summary_row.thick {
+#hxdwpbyseh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rsnrygfpvw .gt_last_summary_row {
+#hxdwpbyseh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4585,7 +4586,7 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   border-bottom-color: #D3D3D3;
 }
 
-#rsnrygfpvw .gt_grand_summary_row {
+#hxdwpbyseh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4595,7 +4596,7 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   padding-right: 5px;
 }
 
-#rsnrygfpvw .gt_first_grand_summary_row {
+#hxdwpbyseh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4605,7 +4606,7 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   border-top-color: #D3D3D3;
 }
 
-#rsnrygfpvw .gt_last_grand_summary_row_top {
+#hxdwpbyseh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4615,11 +4616,11 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   border-bottom-color: #D3D3D3;
 }
 
-#rsnrygfpvw .gt_striped {
+#hxdwpbyseh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rsnrygfpvw .gt_table_body {
+#hxdwpbyseh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4628,7 +4629,7 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   border-bottom-color: #D3D3D3;
 }
 
-#rsnrygfpvw .gt_footnotes {
+#hxdwpbyseh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4642,7 +4643,7 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   border-right-color: #D3D3D3;
 }
 
-#rsnrygfpvw .gt_footnote {
+#hxdwpbyseh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4651,7 +4652,7 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   padding-right: 5px;
 }
 
-#rsnrygfpvw .gt_sourcenotes {
+#hxdwpbyseh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4665,7 +4666,7 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   border-right-color: #D3D3D3;
 }
 
-#rsnrygfpvw .gt_sourcenote {
+#hxdwpbyseh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4673,77 +4674,77 @@ Table&nbsp;13.8: Fragment fixation (adapted from <span class="citation" data-cit
   padding-right: 5px;
 }
 
-#rsnrygfpvw .gt_left {
+#hxdwpbyseh .gt_left {
   text-align: left;
 }
 
-#rsnrygfpvw .gt_center {
+#hxdwpbyseh .gt_center {
   text-align: center;
 }
 
-#rsnrygfpvw .gt_right {
+#hxdwpbyseh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rsnrygfpvw .gt_font_normal {
+#hxdwpbyseh .gt_font_normal {
   font-weight: normal;
 }
 
-#rsnrygfpvw .gt_font_bold {
+#hxdwpbyseh .gt_font_bold {
   font-weight: bold;
 }
 
-#rsnrygfpvw .gt_font_italic {
+#hxdwpbyseh .gt_font_italic {
   font-style: italic;
 }
 
-#rsnrygfpvw .gt_super {
+#hxdwpbyseh .gt_super {
   font-size: 65%;
 }
 
-#rsnrygfpvw .gt_footnote_marks {
+#hxdwpbyseh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rsnrygfpvw .gt_asterisk {
+#hxdwpbyseh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rsnrygfpvw .gt_indent_1 {
+#hxdwpbyseh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rsnrygfpvw .gt_indent_2 {
+#hxdwpbyseh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rsnrygfpvw .gt_indent_3 {
+#hxdwpbyseh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rsnrygfpvw .gt_indent_4 {
+#hxdwpbyseh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rsnrygfpvw .gt_indent_5 {
+#hxdwpbyseh .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rsnrygfpvw .katex-display {
+#hxdwpbyseh .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rsnrygfpvw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hxdwpbyseh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -4794,23 +4795,23 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
 </figcaption>
 <div aria-describedby="tbl-hr-ashp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="qscripokwu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qscripokwu table {
+<div id="rxruybmknd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rxruybmknd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qscripokwu thead, #qscripokwu tbody, #qscripokwu tfoot, #qscripokwu tr, #qscripokwu td, #qscripokwu th {
+#rxruybmknd thead, #rxruybmknd tbody, #rxruybmknd tfoot, #rxruybmknd tr, #rxruybmknd td, #rxruybmknd th {
   border-style: none;
 }
 
-#qscripokwu p {
+#rxruybmknd p {
   margin: 0;
   padding: 0;
 }
 
-#qscripokwu .gt_table {
+#rxruybmknd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4836,12 +4837,12 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   border-left-color: #D3D3D3;
 }
 
-#qscripokwu .gt_caption {
+#rxruybmknd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qscripokwu .gt_title {
+#rxruybmknd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -4853,7 +4854,7 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   border-bottom-width: 0;
 }
 
-#qscripokwu .gt_subtitle {
+#rxruybmknd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4865,7 +4866,7 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   border-top-width: 0;
 }
 
-#qscripokwu .gt_heading {
+#rxruybmknd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4877,13 +4878,13 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   border-right-color: #D3D3D3;
 }
 
-#qscripokwu .gt_bottom_border {
+#rxruybmknd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qscripokwu .gt_col_headings {
+#rxruybmknd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4898,7 +4899,7 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   border-right-color: #D3D3D3;
 }
 
-#qscripokwu .gt_col_heading {
+#rxruybmknd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4918,7 +4919,7 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   overflow-x: hidden;
 }
 
-#qscripokwu .gt_column_spanner_outer {
+#rxruybmknd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4930,15 +4931,15 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   padding-right: 4px;
 }
 
-#qscripokwu .gt_column_spanner_outer:first-child {
+#rxruybmknd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qscripokwu .gt_column_spanner_outer:last-child {
+#rxruybmknd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qscripokwu .gt_column_spanner {
+#rxruybmknd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4950,11 +4951,11 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   width: 100%;
 }
 
-#qscripokwu .gt_spanner_row {
+#rxruybmknd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qscripokwu .gt_group_heading {
+#rxruybmknd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4980,7 +4981,7 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   text-align: left;
 }
 
-#qscripokwu .gt_empty_group_heading {
+#rxruybmknd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4995,15 +4996,15 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   vertical-align: middle;
 }
 
-#qscripokwu .gt_from_md > :first-child {
+#rxruybmknd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qscripokwu .gt_from_md > :last-child {
+#rxruybmknd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qscripokwu .gt_row {
+#rxruybmknd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5022,7 +5023,7 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   overflow-x: hidden;
 }
 
-#qscripokwu .gt_stub {
+#rxruybmknd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5035,7 +5036,7 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   padding-right: 5px;
 }
 
-#qscripokwu .gt_stub_row_group {
+#rxruybmknd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5049,15 +5050,15 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   vertical-align: top;
 }
 
-#qscripokwu .gt_row_group_first td {
+#rxruybmknd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qscripokwu .gt_row_group_first th {
+#rxruybmknd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qscripokwu .gt_summary_row {
+#rxruybmknd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5067,16 +5068,16 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   padding-right: 5px;
 }
 
-#qscripokwu .gt_first_summary_row {
+#rxruybmknd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qscripokwu .gt_first_summary_row.thick {
+#rxruybmknd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qscripokwu .gt_last_summary_row {
+#rxruybmknd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5086,7 +5087,7 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   border-bottom-color: #D3D3D3;
 }
 
-#qscripokwu .gt_grand_summary_row {
+#rxruybmknd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5096,7 +5097,7 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   padding-right: 5px;
 }
 
-#qscripokwu .gt_first_grand_summary_row {
+#rxruybmknd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5106,7 +5107,7 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   border-top-color: #D3D3D3;
 }
 
-#qscripokwu .gt_last_grand_summary_row_top {
+#rxruybmknd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5116,11 +5117,11 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   border-bottom-color: #D3D3D3;
 }
 
-#qscripokwu .gt_striped {
+#rxruybmknd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qscripokwu .gt_table_body {
+#rxruybmknd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5129,7 +5130,7 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   border-bottom-color: #D3D3D3;
 }
 
-#qscripokwu .gt_footnotes {
+#rxruybmknd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5143,7 +5144,7 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   border-right-color: #D3D3D3;
 }
 
-#qscripokwu .gt_footnote {
+#rxruybmknd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5152,7 +5153,7 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   padding-right: 5px;
 }
 
-#qscripokwu .gt_sourcenotes {
+#rxruybmknd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5166,7 +5167,7 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   border-right-color: #D3D3D3;
 }
 
-#qscripokwu .gt_sourcenote {
+#rxruybmknd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5174,77 +5175,77 @@ Table&nbsp;13.9: Artefact shape (adapted from <span class="citation" data-cites=
   padding-right: 5px;
 }
 
-#qscripokwu .gt_left {
+#rxruybmknd .gt_left {
   text-align: left;
 }
 
-#qscripokwu .gt_center {
+#rxruybmknd .gt_center {
   text-align: center;
 }
 
-#qscripokwu .gt_right {
+#rxruybmknd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qscripokwu .gt_font_normal {
+#rxruybmknd .gt_font_normal {
   font-weight: normal;
 }
 
-#qscripokwu .gt_font_bold {
+#rxruybmknd .gt_font_bold {
   font-weight: bold;
 }
 
-#qscripokwu .gt_font_italic {
+#rxruybmknd .gt_font_italic {
   font-style: italic;
 }
 
-#qscripokwu .gt_super {
+#rxruybmknd .gt_super {
   font-size: 65%;
 }
 
-#qscripokwu .gt_footnote_marks {
+#rxruybmknd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qscripokwu .gt_asterisk {
+#rxruybmknd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qscripokwu .gt_indent_1 {
+#rxruybmknd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qscripokwu .gt_indent_2 {
+#rxruybmknd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qscripokwu .gt_indent_3 {
+#rxruybmknd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qscripokwu .gt_indent_4 {
+#rxruybmknd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qscripokwu .gt_indent_5 {
+#rxruybmknd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qscripokwu .katex-display {
+#rxruybmknd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qscripokwu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rxruybmknd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -5305,23 +5306,23 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
 </figcaption>
 <div aria-describedby="tbl-hr-adeg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="jmcbaczkur" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jmcbaczkur table {
+<div id="frcpbqbilb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#frcpbqbilb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jmcbaczkur thead, #jmcbaczkur tbody, #jmcbaczkur tfoot, #jmcbaczkur tr, #jmcbaczkur td, #jmcbaczkur th {
+#frcpbqbilb thead, #frcpbqbilb tbody, #frcpbqbilb tfoot, #frcpbqbilb tr, #frcpbqbilb td, #frcpbqbilb th {
   border-style: none;
 }
 
-#jmcbaczkur p {
+#frcpbqbilb p {
   margin: 0;
   padding: 0;
 }
 
-#jmcbaczkur .gt_table {
+#frcpbqbilb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5347,12 +5348,12 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   border-left-color: #D3D3D3;
 }
 
-#jmcbaczkur .gt_caption {
+#frcpbqbilb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jmcbaczkur .gt_title {
+#frcpbqbilb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -5364,7 +5365,7 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   border-bottom-width: 0;
 }
 
-#jmcbaczkur .gt_subtitle {
+#frcpbqbilb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5376,7 +5377,7 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   border-top-width: 0;
 }
 
-#jmcbaczkur .gt_heading {
+#frcpbqbilb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5388,13 +5389,13 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   border-right-color: #D3D3D3;
 }
 
-#jmcbaczkur .gt_bottom_border {
+#frcpbqbilb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jmcbaczkur .gt_col_headings {
+#frcpbqbilb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5409,7 +5410,7 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   border-right-color: #D3D3D3;
 }
 
-#jmcbaczkur .gt_col_heading {
+#frcpbqbilb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5429,7 +5430,7 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   overflow-x: hidden;
 }
 
-#jmcbaczkur .gt_column_spanner_outer {
+#frcpbqbilb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5441,15 +5442,15 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   padding-right: 4px;
 }
 
-#jmcbaczkur .gt_column_spanner_outer:first-child {
+#frcpbqbilb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jmcbaczkur .gt_column_spanner_outer:last-child {
+#frcpbqbilb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jmcbaczkur .gt_column_spanner {
+#frcpbqbilb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5461,11 +5462,11 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   width: 100%;
 }
 
-#jmcbaczkur .gt_spanner_row {
+#frcpbqbilb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jmcbaczkur .gt_group_heading {
+#frcpbqbilb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5491,7 +5492,7 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   text-align: left;
 }
 
-#jmcbaczkur .gt_empty_group_heading {
+#frcpbqbilb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5506,15 +5507,15 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   vertical-align: middle;
 }
 
-#jmcbaczkur .gt_from_md > :first-child {
+#frcpbqbilb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jmcbaczkur .gt_from_md > :last-child {
+#frcpbqbilb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jmcbaczkur .gt_row {
+#frcpbqbilb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5533,7 +5534,7 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   overflow-x: hidden;
 }
 
-#jmcbaczkur .gt_stub {
+#frcpbqbilb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5546,7 +5547,7 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   padding-right: 5px;
 }
 
-#jmcbaczkur .gt_stub_row_group {
+#frcpbqbilb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5560,15 +5561,15 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   vertical-align: top;
 }
 
-#jmcbaczkur .gt_row_group_first td {
+#frcpbqbilb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jmcbaczkur .gt_row_group_first th {
+#frcpbqbilb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jmcbaczkur .gt_summary_row {
+#frcpbqbilb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5578,16 +5579,16 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   padding-right: 5px;
 }
 
-#jmcbaczkur .gt_first_summary_row {
+#frcpbqbilb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jmcbaczkur .gt_first_summary_row.thick {
+#frcpbqbilb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jmcbaczkur .gt_last_summary_row {
+#frcpbqbilb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5597,7 +5598,7 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   border-bottom-color: #D3D3D3;
 }
 
-#jmcbaczkur .gt_grand_summary_row {
+#frcpbqbilb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5607,7 +5608,7 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   padding-right: 5px;
 }
 
-#jmcbaczkur .gt_first_grand_summary_row {
+#frcpbqbilb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5617,7 +5618,7 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   border-top-color: #D3D3D3;
 }
 
-#jmcbaczkur .gt_last_grand_summary_row_top {
+#frcpbqbilb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5627,11 +5628,11 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   border-bottom-color: #D3D3D3;
 }
 
-#jmcbaczkur .gt_striped {
+#frcpbqbilb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jmcbaczkur .gt_table_body {
+#frcpbqbilb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5640,7 +5641,7 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   border-bottom-color: #D3D3D3;
 }
 
-#jmcbaczkur .gt_footnotes {
+#frcpbqbilb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5654,7 +5655,7 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   border-right-color: #D3D3D3;
 }
 
-#jmcbaczkur .gt_footnote {
+#frcpbqbilb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5663,7 +5664,7 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   padding-right: 5px;
 }
 
-#jmcbaczkur .gt_sourcenotes {
+#frcpbqbilb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5677,7 +5678,7 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   border-right-color: #D3D3D3;
 }
 
-#jmcbaczkur .gt_sourcenote {
+#frcpbqbilb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5685,77 +5686,77 @@ Table&nbsp;13.10: Artefact degradation (adapted from <span class="citation" data
   padding-right: 5px;
 }
 
-#jmcbaczkur .gt_left {
+#frcpbqbilb .gt_left {
   text-align: left;
 }
 
-#jmcbaczkur .gt_center {
+#frcpbqbilb .gt_center {
   text-align: center;
 }
 
-#jmcbaczkur .gt_right {
+#frcpbqbilb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jmcbaczkur .gt_font_normal {
+#frcpbqbilb .gt_font_normal {
   font-weight: normal;
 }
 
-#jmcbaczkur .gt_font_bold {
+#frcpbqbilb .gt_font_bold {
   font-weight: bold;
 }
 
-#jmcbaczkur .gt_font_italic {
+#frcpbqbilb .gt_font_italic {
   font-style: italic;
 }
 
-#jmcbaczkur .gt_super {
+#frcpbqbilb .gt_super {
   font-size: 65%;
 }
 
-#jmcbaczkur .gt_footnote_marks {
+#frcpbqbilb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jmcbaczkur .gt_asterisk {
+#frcpbqbilb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jmcbaczkur .gt_indent_1 {
+#frcpbqbilb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jmcbaczkur .gt_indent_2 {
+#frcpbqbilb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jmcbaczkur .gt_indent_3 {
+#frcpbqbilb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jmcbaczkur .gt_indent_4 {
+#frcpbqbilb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jmcbaczkur .gt_indent_5 {
+#frcpbqbilb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jmcbaczkur .katex-display {
+#frcpbqbilb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jmcbaczkur div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#frcpbqbilb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -5825,23 +5826,23 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
 </figcaption>
 <div aria-describedby="tbl-hr-rsz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="dfeqtlieia" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dfeqtlieia table {
+<div id="qsmcdwldww" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qsmcdwldww table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dfeqtlieia thead, #dfeqtlieia tbody, #dfeqtlieia tfoot, #dfeqtlieia tr, #dfeqtlieia td, #dfeqtlieia th {
+#qsmcdwldww thead, #qsmcdwldww tbody, #qsmcdwldww tfoot, #qsmcdwldww tr, #qsmcdwldww td, #qsmcdwldww th {
   border-style: none;
 }
 
-#dfeqtlieia p {
+#qsmcdwldww p {
   margin: 0;
   padding: 0;
 }
 
-#dfeqtlieia .gt_table {
+#qsmcdwldww .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5867,12 +5868,12 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   border-left-color: #D3D3D3;
 }
 
-#dfeqtlieia .gt_caption {
+#qsmcdwldww .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dfeqtlieia .gt_title {
+#qsmcdwldww .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -5884,7 +5885,7 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   border-bottom-width: 0;
 }
 
-#dfeqtlieia .gt_subtitle {
+#qsmcdwldww .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5896,7 +5897,7 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   border-top-width: 0;
 }
 
-#dfeqtlieia .gt_heading {
+#qsmcdwldww .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5908,13 +5909,13 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   border-right-color: #D3D3D3;
 }
 
-#dfeqtlieia .gt_bottom_border {
+#qsmcdwldww .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dfeqtlieia .gt_col_headings {
+#qsmcdwldww .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5929,7 +5930,7 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   border-right-color: #D3D3D3;
 }
 
-#dfeqtlieia .gt_col_heading {
+#qsmcdwldww .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5949,7 +5950,7 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   overflow-x: hidden;
 }
 
-#dfeqtlieia .gt_column_spanner_outer {
+#qsmcdwldww .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5961,15 +5962,15 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   padding-right: 4px;
 }
 
-#dfeqtlieia .gt_column_spanner_outer:first-child {
+#qsmcdwldww .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dfeqtlieia .gt_column_spanner_outer:last-child {
+#qsmcdwldww .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dfeqtlieia .gt_column_spanner {
+#qsmcdwldww .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5981,11 +5982,11 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   width: 100%;
 }
 
-#dfeqtlieia .gt_spanner_row {
+#qsmcdwldww .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dfeqtlieia .gt_group_heading {
+#qsmcdwldww .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6011,7 +6012,7 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   text-align: left;
 }
 
-#dfeqtlieia .gt_empty_group_heading {
+#qsmcdwldww .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6026,15 +6027,15 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   vertical-align: middle;
 }
 
-#dfeqtlieia .gt_from_md > :first-child {
+#qsmcdwldww .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dfeqtlieia .gt_from_md > :last-child {
+#qsmcdwldww .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dfeqtlieia .gt_row {
+#qsmcdwldww .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6053,7 +6054,7 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   overflow-x: hidden;
 }
 
-#dfeqtlieia .gt_stub {
+#qsmcdwldww .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6066,7 +6067,7 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   padding-right: 5px;
 }
 
-#dfeqtlieia .gt_stub_row_group {
+#qsmcdwldww .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6080,15 +6081,15 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   vertical-align: top;
 }
 
-#dfeqtlieia .gt_row_group_first td {
+#qsmcdwldww .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dfeqtlieia .gt_row_group_first th {
+#qsmcdwldww .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dfeqtlieia .gt_summary_row {
+#qsmcdwldww .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6098,16 +6099,16 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   padding-right: 5px;
 }
 
-#dfeqtlieia .gt_first_summary_row {
+#qsmcdwldww .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dfeqtlieia .gt_first_summary_row.thick {
+#qsmcdwldww .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dfeqtlieia .gt_last_summary_row {
+#qsmcdwldww .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6117,7 +6118,7 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   border-bottom-color: #D3D3D3;
 }
 
-#dfeqtlieia .gt_grand_summary_row {
+#qsmcdwldww .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6127,7 +6128,7 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   padding-right: 5px;
 }
 
-#dfeqtlieia .gt_first_grand_summary_row {
+#qsmcdwldww .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6137,7 +6138,7 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   border-top-color: #D3D3D3;
 }
 
-#dfeqtlieia .gt_last_grand_summary_row_top {
+#qsmcdwldww .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6147,11 +6148,11 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   border-bottom-color: #D3D3D3;
 }
 
-#dfeqtlieia .gt_striped {
+#qsmcdwldww .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dfeqtlieia .gt_table_body {
+#qsmcdwldww .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6160,7 +6161,7 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   border-bottom-color: #D3D3D3;
 }
 
-#dfeqtlieia .gt_footnotes {
+#qsmcdwldww .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6174,7 +6175,7 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   border-right-color: #D3D3D3;
 }
 
-#dfeqtlieia .gt_footnote {
+#qsmcdwldww .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6183,7 +6184,7 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   padding-right: 5px;
 }
 
-#dfeqtlieia .gt_sourcenotes {
+#qsmcdwldww .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6197,7 +6198,7 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   border-right-color: #D3D3D3;
 }
 
-#dfeqtlieia .gt_sourcenote {
+#qsmcdwldww .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6205,77 +6206,77 @@ Table&nbsp;13.11: Plant root size classes (adapted from <span class="citation" d
   padding-right: 5px;
 }
 
-#dfeqtlieia .gt_left {
+#qsmcdwldww .gt_left {
   text-align: left;
 }
 
-#dfeqtlieia .gt_center {
+#qsmcdwldww .gt_center {
   text-align: center;
 }
 
-#dfeqtlieia .gt_right {
+#qsmcdwldww .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dfeqtlieia .gt_font_normal {
+#qsmcdwldww .gt_font_normal {
   font-weight: normal;
 }
 
-#dfeqtlieia .gt_font_bold {
+#qsmcdwldww .gt_font_bold {
   font-weight: bold;
 }
 
-#dfeqtlieia .gt_font_italic {
+#qsmcdwldww .gt_font_italic {
   font-style: italic;
 }
 
-#dfeqtlieia .gt_super {
+#qsmcdwldww .gt_super {
   font-size: 65%;
 }
 
-#dfeqtlieia .gt_footnote_marks {
+#qsmcdwldww .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dfeqtlieia .gt_asterisk {
+#qsmcdwldww .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dfeqtlieia .gt_indent_1 {
+#qsmcdwldww .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dfeqtlieia .gt_indent_2 {
+#qsmcdwldww .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dfeqtlieia .gt_indent_3 {
+#qsmcdwldww .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dfeqtlieia .gt_indent_4 {
+#qsmcdwldww .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dfeqtlieia .gt_indent_5 {
+#qsmcdwldww .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dfeqtlieia .katex-display {
+#qsmcdwldww .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dfeqtlieia div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qsmcdwldww div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -6331,23 +6332,23 @@ Table&nbsp;13.12: Plant root position
 </figcaption>
 <div aria-describedby="tbl-hr-rpos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ubmqfqpuyc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ubmqfqpuyc table {
+<div id="ybhygbgefa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ybhygbgefa table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ubmqfqpuyc thead, #ubmqfqpuyc tbody, #ubmqfqpuyc tfoot, #ubmqfqpuyc tr, #ubmqfqpuyc td, #ubmqfqpuyc th {
+#ybhygbgefa thead, #ybhygbgefa tbody, #ybhygbgefa tfoot, #ybhygbgefa tr, #ybhygbgefa td, #ybhygbgefa th {
   border-style: none;
 }
 
-#ubmqfqpuyc p {
+#ybhygbgefa p {
   margin: 0;
   padding: 0;
 }
 
-#ubmqfqpuyc .gt_table {
+#ybhygbgefa .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -6373,12 +6374,12 @@ Table&nbsp;13.12: Plant root position
   border-left-color: #D3D3D3;
 }
 
-#ubmqfqpuyc .gt_caption {
+#ybhygbgefa .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ubmqfqpuyc .gt_title {
+#ybhygbgefa .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -6390,7 +6391,7 @@ Table&nbsp;13.12: Plant root position
   border-bottom-width: 0;
 }
 
-#ubmqfqpuyc .gt_subtitle {
+#ybhygbgefa .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6402,7 +6403,7 @@ Table&nbsp;13.12: Plant root position
   border-top-width: 0;
 }
 
-#ubmqfqpuyc .gt_heading {
+#ybhygbgefa .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -6414,13 +6415,13 @@ Table&nbsp;13.12: Plant root position
   border-right-color: #D3D3D3;
 }
 
-#ubmqfqpuyc .gt_bottom_border {
+#ybhygbgefa .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ubmqfqpuyc .gt_col_headings {
+#ybhygbgefa .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6435,7 +6436,7 @@ Table&nbsp;13.12: Plant root position
   border-right-color: #D3D3D3;
 }
 
-#ubmqfqpuyc .gt_col_heading {
+#ybhygbgefa .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6455,7 +6456,7 @@ Table&nbsp;13.12: Plant root position
   overflow-x: hidden;
 }
 
-#ubmqfqpuyc .gt_column_spanner_outer {
+#ybhygbgefa .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6467,15 +6468,15 @@ Table&nbsp;13.12: Plant root position
   padding-right: 4px;
 }
 
-#ubmqfqpuyc .gt_column_spanner_outer:first-child {
+#ybhygbgefa .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ubmqfqpuyc .gt_column_spanner_outer:last-child {
+#ybhygbgefa .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ubmqfqpuyc .gt_column_spanner {
+#ybhygbgefa .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6487,11 +6488,11 @@ Table&nbsp;13.12: Plant root position
   width: 100%;
 }
 
-#ubmqfqpuyc .gt_spanner_row {
+#ybhygbgefa .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ubmqfqpuyc .gt_group_heading {
+#ybhygbgefa .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6517,7 +6518,7 @@ Table&nbsp;13.12: Plant root position
   text-align: left;
 }
 
-#ubmqfqpuyc .gt_empty_group_heading {
+#ybhygbgefa .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6532,15 +6533,15 @@ Table&nbsp;13.12: Plant root position
   vertical-align: middle;
 }
 
-#ubmqfqpuyc .gt_from_md > :first-child {
+#ybhygbgefa .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ubmqfqpuyc .gt_from_md > :last-child {
+#ybhygbgefa .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ubmqfqpuyc .gt_row {
+#ybhygbgefa .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6559,7 +6560,7 @@ Table&nbsp;13.12: Plant root position
   overflow-x: hidden;
 }
 
-#ubmqfqpuyc .gt_stub {
+#ybhygbgefa .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6572,7 +6573,7 @@ Table&nbsp;13.12: Plant root position
   padding-right: 5px;
 }
 
-#ubmqfqpuyc .gt_stub_row_group {
+#ybhygbgefa .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6586,15 +6587,15 @@ Table&nbsp;13.12: Plant root position
   vertical-align: top;
 }
 
-#ubmqfqpuyc .gt_row_group_first td {
+#ybhygbgefa .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ubmqfqpuyc .gt_row_group_first th {
+#ybhygbgefa .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ubmqfqpuyc .gt_summary_row {
+#ybhygbgefa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6604,16 +6605,16 @@ Table&nbsp;13.12: Plant root position
   padding-right: 5px;
 }
 
-#ubmqfqpuyc .gt_first_summary_row {
+#ybhygbgefa .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ubmqfqpuyc .gt_first_summary_row.thick {
+#ybhygbgefa .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ubmqfqpuyc .gt_last_summary_row {
+#ybhygbgefa .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6623,7 +6624,7 @@ Table&nbsp;13.12: Plant root position
   border-bottom-color: #D3D3D3;
 }
 
-#ubmqfqpuyc .gt_grand_summary_row {
+#ybhygbgefa .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6633,7 +6634,7 @@ Table&nbsp;13.12: Plant root position
   padding-right: 5px;
 }
 
-#ubmqfqpuyc .gt_first_grand_summary_row {
+#ybhygbgefa .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6643,7 +6644,7 @@ Table&nbsp;13.12: Plant root position
   border-top-color: #D3D3D3;
 }
 
-#ubmqfqpuyc .gt_last_grand_summary_row_top {
+#ybhygbgefa .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6653,11 +6654,11 @@ Table&nbsp;13.12: Plant root position
   border-bottom-color: #D3D3D3;
 }
 
-#ubmqfqpuyc .gt_striped {
+#ybhygbgefa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ubmqfqpuyc .gt_table_body {
+#ybhygbgefa .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6666,7 +6667,7 @@ Table&nbsp;13.12: Plant root position
   border-bottom-color: #D3D3D3;
 }
 
-#ubmqfqpuyc .gt_footnotes {
+#ybhygbgefa .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6680,7 +6681,7 @@ Table&nbsp;13.12: Plant root position
   border-right-color: #D3D3D3;
 }
 
-#ubmqfqpuyc .gt_footnote {
+#ybhygbgefa .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6689,7 +6690,7 @@ Table&nbsp;13.12: Plant root position
   padding-right: 5px;
 }
 
-#ubmqfqpuyc .gt_sourcenotes {
+#ybhygbgefa .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6703,7 +6704,7 @@ Table&nbsp;13.12: Plant root position
   border-right-color: #D3D3D3;
 }
 
-#ubmqfqpuyc .gt_sourcenote {
+#ybhygbgefa .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6711,77 +6712,77 @@ Table&nbsp;13.12: Plant root position
   padding-right: 5px;
 }
 
-#ubmqfqpuyc .gt_left {
+#ybhygbgefa .gt_left {
   text-align: left;
 }
 
-#ubmqfqpuyc .gt_center {
+#ybhygbgefa .gt_center {
   text-align: center;
 }
 
-#ubmqfqpuyc .gt_right {
+#ybhygbgefa .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ubmqfqpuyc .gt_font_normal {
+#ybhygbgefa .gt_font_normal {
   font-weight: normal;
 }
 
-#ubmqfqpuyc .gt_font_bold {
+#ybhygbgefa .gt_font_bold {
   font-weight: bold;
 }
 
-#ubmqfqpuyc .gt_font_italic {
+#ybhygbgefa .gt_font_italic {
   font-style: italic;
 }
 
-#ubmqfqpuyc .gt_super {
+#ybhygbgefa .gt_super {
   font-size: 65%;
 }
 
-#ubmqfqpuyc .gt_footnote_marks {
+#ybhygbgefa .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ubmqfqpuyc .gt_asterisk {
+#ybhygbgefa .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ubmqfqpuyc .gt_indent_1 {
+#ybhygbgefa .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ubmqfqpuyc .gt_indent_2 {
+#ybhygbgefa .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ubmqfqpuyc .gt_indent_3 {
+#ybhygbgefa .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ubmqfqpuyc .gt_indent_4 {
+#ybhygbgefa .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ubmqfqpuyc .gt_indent_5 {
+#ybhygbgefa .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ubmqfqpuyc .katex-display {
+#ybhygbgefa .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ubmqfqpuyc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ybhygbgefa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -6847,23 +6848,23 @@ Table&nbsp;13.13: Type of soil void
 </figcaption>
 <div aria-describedby="tbl-hr-voidtype-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="lisckhstyf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lisckhstyf table {
+<div id="nseejyjefr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nseejyjefr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#lisckhstyf thead, #lisckhstyf tbody, #lisckhstyf tfoot, #lisckhstyf tr, #lisckhstyf td, #lisckhstyf th {
+#nseejyjefr thead, #nseejyjefr tbody, #nseejyjefr tfoot, #nseejyjefr tr, #nseejyjefr td, #nseejyjefr th {
   border-style: none;
 }
 
-#lisckhstyf p {
+#nseejyjefr p {
   margin: 0;
   padding: 0;
 }
 
-#lisckhstyf .gt_table {
+#nseejyjefr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -6889,12 +6890,12 @@ Table&nbsp;13.13: Type of soil void
   border-left-color: #D3D3D3;
 }
 
-#lisckhstyf .gt_caption {
+#nseejyjefr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#lisckhstyf .gt_title {
+#nseejyjefr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -6906,7 +6907,7 @@ Table&nbsp;13.13: Type of soil void
   border-bottom-width: 0;
 }
 
-#lisckhstyf .gt_subtitle {
+#nseejyjefr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6918,7 +6919,7 @@ Table&nbsp;13.13: Type of soil void
   border-top-width: 0;
 }
 
-#lisckhstyf .gt_heading {
+#nseejyjefr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -6930,13 +6931,13 @@ Table&nbsp;13.13: Type of soil void
   border-right-color: #D3D3D3;
 }
 
-#lisckhstyf .gt_bottom_border {
+#nseejyjefr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lisckhstyf .gt_col_headings {
+#nseejyjefr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6951,7 +6952,7 @@ Table&nbsp;13.13: Type of soil void
   border-right-color: #D3D3D3;
 }
 
-#lisckhstyf .gt_col_heading {
+#nseejyjefr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6971,7 +6972,7 @@ Table&nbsp;13.13: Type of soil void
   overflow-x: hidden;
 }
 
-#lisckhstyf .gt_column_spanner_outer {
+#nseejyjefr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6983,15 +6984,15 @@ Table&nbsp;13.13: Type of soil void
   padding-right: 4px;
 }
 
-#lisckhstyf .gt_column_spanner_outer:first-child {
+#nseejyjefr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lisckhstyf .gt_column_spanner_outer:last-child {
+#nseejyjefr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lisckhstyf .gt_column_spanner {
+#nseejyjefr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -7003,11 +7004,11 @@ Table&nbsp;13.13: Type of soil void
   width: 100%;
 }
 
-#lisckhstyf .gt_spanner_row {
+#nseejyjefr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#lisckhstyf .gt_group_heading {
+#nseejyjefr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7033,7 +7034,7 @@ Table&nbsp;13.13: Type of soil void
   text-align: left;
 }
 
-#lisckhstyf .gt_empty_group_heading {
+#nseejyjefr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -7048,15 +7049,15 @@ Table&nbsp;13.13: Type of soil void
   vertical-align: middle;
 }
 
-#lisckhstyf .gt_from_md > :first-child {
+#nseejyjefr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lisckhstyf .gt_from_md > :last-child {
+#nseejyjefr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lisckhstyf .gt_row {
+#nseejyjefr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7075,7 +7076,7 @@ Table&nbsp;13.13: Type of soil void
   overflow-x: hidden;
 }
 
-#lisckhstyf .gt_stub {
+#nseejyjefr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7088,7 +7089,7 @@ Table&nbsp;13.13: Type of soil void
   padding-right: 5px;
 }
 
-#lisckhstyf .gt_stub_row_group {
+#nseejyjefr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7102,15 +7103,15 @@ Table&nbsp;13.13: Type of soil void
   vertical-align: top;
 }
 
-#lisckhstyf .gt_row_group_first td {
+#nseejyjefr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#lisckhstyf .gt_row_group_first th {
+#nseejyjefr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#lisckhstyf .gt_summary_row {
+#nseejyjefr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7120,16 +7121,16 @@ Table&nbsp;13.13: Type of soil void
   padding-right: 5px;
 }
 
-#lisckhstyf .gt_first_summary_row {
+#nseejyjefr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#lisckhstyf .gt_first_summary_row.thick {
+#nseejyjefr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#lisckhstyf .gt_last_summary_row {
+#nseejyjefr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7139,7 +7140,7 @@ Table&nbsp;13.13: Type of soil void
   border-bottom-color: #D3D3D3;
 }
 
-#lisckhstyf .gt_grand_summary_row {
+#nseejyjefr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7149,7 +7150,7 @@ Table&nbsp;13.13: Type of soil void
   padding-right: 5px;
 }
 
-#lisckhstyf .gt_first_grand_summary_row {
+#nseejyjefr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7159,7 +7160,7 @@ Table&nbsp;13.13: Type of soil void
   border-top-color: #D3D3D3;
 }
 
-#lisckhstyf .gt_last_grand_summary_row_top {
+#nseejyjefr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7169,11 +7170,11 @@ Table&nbsp;13.13: Type of soil void
   border-bottom-color: #D3D3D3;
 }
 
-#lisckhstyf .gt_striped {
+#nseejyjefr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lisckhstyf .gt_table_body {
+#nseejyjefr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7182,7 +7183,7 @@ Table&nbsp;13.13: Type of soil void
   border-bottom-color: #D3D3D3;
 }
 
-#lisckhstyf .gt_footnotes {
+#nseejyjefr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7196,7 +7197,7 @@ Table&nbsp;13.13: Type of soil void
   border-right-color: #D3D3D3;
 }
 
-#lisckhstyf .gt_footnote {
+#nseejyjefr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -7205,7 +7206,7 @@ Table&nbsp;13.13: Type of soil void
   padding-right: 5px;
 }
 
-#lisckhstyf .gt_sourcenotes {
+#nseejyjefr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7219,7 +7220,7 @@ Table&nbsp;13.13: Type of soil void
   border-right-color: #D3D3D3;
 }
 
-#lisckhstyf .gt_sourcenote {
+#nseejyjefr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -7227,77 +7228,77 @@ Table&nbsp;13.13: Type of soil void
   padding-right: 5px;
 }
 
-#lisckhstyf .gt_left {
+#nseejyjefr .gt_left {
   text-align: left;
 }
 
-#lisckhstyf .gt_center {
+#nseejyjefr .gt_center {
   text-align: center;
 }
 
-#lisckhstyf .gt_right {
+#nseejyjefr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lisckhstyf .gt_font_normal {
+#nseejyjefr .gt_font_normal {
   font-weight: normal;
 }
 
-#lisckhstyf .gt_font_bold {
+#nseejyjefr .gt_font_bold {
   font-weight: bold;
 }
 
-#lisckhstyf .gt_font_italic {
+#nseejyjefr .gt_font_italic {
   font-style: italic;
 }
 
-#lisckhstyf .gt_super {
+#nseejyjefr .gt_super {
   font-size: 65%;
 }
 
-#lisckhstyf .gt_footnote_marks {
+#nseejyjefr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#lisckhstyf .gt_asterisk {
+#nseejyjefr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#lisckhstyf .gt_indent_1 {
+#nseejyjefr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#lisckhstyf .gt_indent_2 {
+#nseejyjefr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#lisckhstyf .gt_indent_3 {
+#nseejyjefr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#lisckhstyf .gt_indent_4 {
+#nseejyjefr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#lisckhstyf .gt_indent_5 {
+#nseejyjefr .gt_indent_5 {
   text-indent: 25px;
 }
 
-#lisckhstyf .katex-display {
+#nseejyjefr .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#lisckhstyf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nseejyjefr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -7353,23 +7354,23 @@ Table&nbsp;13.14: Connectivity of soil voids
 </figcaption>
 <div aria-describedby="tbl-hr-voidcon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="kyomnvbbmr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kyomnvbbmr table {
+<div id="utdjpvpink" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#utdjpvpink table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kyomnvbbmr thead, #kyomnvbbmr tbody, #kyomnvbbmr tfoot, #kyomnvbbmr tr, #kyomnvbbmr td, #kyomnvbbmr th {
+#utdjpvpink thead, #utdjpvpink tbody, #utdjpvpink tfoot, #utdjpvpink tr, #utdjpvpink td, #utdjpvpink th {
   border-style: none;
 }
 
-#kyomnvbbmr p {
+#utdjpvpink p {
   margin: 0;
   padding: 0;
 }
 
-#kyomnvbbmr .gt_table {
+#utdjpvpink .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -7395,12 +7396,12 @@ Table&nbsp;13.14: Connectivity of soil voids
   border-left-color: #D3D3D3;
 }
 
-#kyomnvbbmr .gt_caption {
+#utdjpvpink .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kyomnvbbmr .gt_title {
+#utdjpvpink .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -7412,7 +7413,7 @@ Table&nbsp;13.14: Connectivity of soil voids
   border-bottom-width: 0;
 }
 
-#kyomnvbbmr .gt_subtitle {
+#utdjpvpink .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -7424,7 +7425,7 @@ Table&nbsp;13.14: Connectivity of soil voids
   border-top-width: 0;
 }
 
-#kyomnvbbmr .gt_heading {
+#utdjpvpink .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -7436,13 +7437,13 @@ Table&nbsp;13.14: Connectivity of soil voids
   border-right-color: #D3D3D3;
 }
 
-#kyomnvbbmr .gt_bottom_border {
+#utdjpvpink .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kyomnvbbmr .gt_col_headings {
+#utdjpvpink .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7457,7 +7458,7 @@ Table&nbsp;13.14: Connectivity of soil voids
   border-right-color: #D3D3D3;
 }
 
-#kyomnvbbmr .gt_col_heading {
+#utdjpvpink .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7477,7 +7478,7 @@ Table&nbsp;13.14: Connectivity of soil voids
   overflow-x: hidden;
 }
 
-#kyomnvbbmr .gt_column_spanner_outer {
+#utdjpvpink .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7489,15 +7490,15 @@ Table&nbsp;13.14: Connectivity of soil voids
   padding-right: 4px;
 }
 
-#kyomnvbbmr .gt_column_spanner_outer:first-child {
+#utdjpvpink .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kyomnvbbmr .gt_column_spanner_outer:last-child {
+#utdjpvpink .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kyomnvbbmr .gt_column_spanner {
+#utdjpvpink .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -7509,11 +7510,11 @@ Table&nbsp;13.14: Connectivity of soil voids
   width: 100%;
 }
 
-#kyomnvbbmr .gt_spanner_row {
+#utdjpvpink .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kyomnvbbmr .gt_group_heading {
+#utdjpvpink .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7539,7 +7540,7 @@ Table&nbsp;13.14: Connectivity of soil voids
   text-align: left;
 }
 
-#kyomnvbbmr .gt_empty_group_heading {
+#utdjpvpink .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -7554,15 +7555,15 @@ Table&nbsp;13.14: Connectivity of soil voids
   vertical-align: middle;
 }
 
-#kyomnvbbmr .gt_from_md > :first-child {
+#utdjpvpink .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kyomnvbbmr .gt_from_md > :last-child {
+#utdjpvpink .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kyomnvbbmr .gt_row {
+#utdjpvpink .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7581,7 +7582,7 @@ Table&nbsp;13.14: Connectivity of soil voids
   overflow-x: hidden;
 }
 
-#kyomnvbbmr .gt_stub {
+#utdjpvpink .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7594,7 +7595,7 @@ Table&nbsp;13.14: Connectivity of soil voids
   padding-right: 5px;
 }
 
-#kyomnvbbmr .gt_stub_row_group {
+#utdjpvpink .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7608,15 +7609,15 @@ Table&nbsp;13.14: Connectivity of soil voids
   vertical-align: top;
 }
 
-#kyomnvbbmr .gt_row_group_first td {
+#utdjpvpink .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kyomnvbbmr .gt_row_group_first th {
+#utdjpvpink .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kyomnvbbmr .gt_summary_row {
+#utdjpvpink .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7626,16 +7627,16 @@ Table&nbsp;13.14: Connectivity of soil voids
   padding-right: 5px;
 }
 
-#kyomnvbbmr .gt_first_summary_row {
+#utdjpvpink .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kyomnvbbmr .gt_first_summary_row.thick {
+#utdjpvpink .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kyomnvbbmr .gt_last_summary_row {
+#utdjpvpink .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7645,7 +7646,7 @@ Table&nbsp;13.14: Connectivity of soil voids
   border-bottom-color: #D3D3D3;
 }
 
-#kyomnvbbmr .gt_grand_summary_row {
+#utdjpvpink .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7655,7 +7656,7 @@ Table&nbsp;13.14: Connectivity of soil voids
   padding-right: 5px;
 }
 
-#kyomnvbbmr .gt_first_grand_summary_row {
+#utdjpvpink .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7665,7 +7666,7 @@ Table&nbsp;13.14: Connectivity of soil voids
   border-top-color: #D3D3D3;
 }
 
-#kyomnvbbmr .gt_last_grand_summary_row_top {
+#utdjpvpink .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7675,11 +7676,11 @@ Table&nbsp;13.14: Connectivity of soil voids
   border-bottom-color: #D3D3D3;
 }
 
-#kyomnvbbmr .gt_striped {
+#utdjpvpink .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kyomnvbbmr .gt_table_body {
+#utdjpvpink .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7688,7 +7689,7 @@ Table&nbsp;13.14: Connectivity of soil voids
   border-bottom-color: #D3D3D3;
 }
 
-#kyomnvbbmr .gt_footnotes {
+#utdjpvpink .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7702,7 +7703,7 @@ Table&nbsp;13.14: Connectivity of soil voids
   border-right-color: #D3D3D3;
 }
 
-#kyomnvbbmr .gt_footnote {
+#utdjpvpink .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -7711,7 +7712,7 @@ Table&nbsp;13.14: Connectivity of soil voids
   padding-right: 5px;
 }
 
-#kyomnvbbmr .gt_sourcenotes {
+#utdjpvpink .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7725,7 +7726,7 @@ Table&nbsp;13.14: Connectivity of soil voids
   border-right-color: #D3D3D3;
 }
 
-#kyomnvbbmr .gt_sourcenote {
+#utdjpvpink .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -7733,77 +7734,77 @@ Table&nbsp;13.14: Connectivity of soil voids
   padding-right: 5px;
 }
 
-#kyomnvbbmr .gt_left {
+#utdjpvpink .gt_left {
   text-align: left;
 }
 
-#kyomnvbbmr .gt_center {
+#utdjpvpink .gt_center {
   text-align: center;
 }
 
-#kyomnvbbmr .gt_right {
+#utdjpvpink .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kyomnvbbmr .gt_font_normal {
+#utdjpvpink .gt_font_normal {
   font-weight: normal;
 }
 
-#kyomnvbbmr .gt_font_bold {
+#utdjpvpink .gt_font_bold {
   font-weight: bold;
 }
 
-#kyomnvbbmr .gt_font_italic {
+#utdjpvpink .gt_font_italic {
   font-style: italic;
 }
 
-#kyomnvbbmr .gt_super {
+#utdjpvpink .gt_super {
   font-size: 65%;
 }
 
-#kyomnvbbmr .gt_footnote_marks {
+#utdjpvpink .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kyomnvbbmr .gt_asterisk {
+#utdjpvpink .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kyomnvbbmr .gt_indent_1 {
+#utdjpvpink .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kyomnvbbmr .gt_indent_2 {
+#utdjpvpink .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kyomnvbbmr .gt_indent_3 {
+#utdjpvpink .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kyomnvbbmr .gt_indent_4 {
+#utdjpvpink .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kyomnvbbmr .gt_indent_5 {
+#utdjpvpink .gt_indent_5 {
   text-indent: 25px;
 }
 
-#kyomnvbbmr .katex-display {
+#utdjpvpink .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#kyomnvbbmr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#utdjpvpink div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -7869,23 +7870,23 @@ Table&nbsp;13.15: Fracture types
 </figcaption>
 <div aria-describedby="tbl-hr-fractyp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="pagfmxkcba" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pagfmxkcba table {
+<div id="dazhufcmtu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dazhufcmtu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pagfmxkcba thead, #pagfmxkcba tbody, #pagfmxkcba tfoot, #pagfmxkcba tr, #pagfmxkcba td, #pagfmxkcba th {
+#dazhufcmtu thead, #dazhufcmtu tbody, #dazhufcmtu tfoot, #dazhufcmtu tr, #dazhufcmtu td, #dazhufcmtu th {
   border-style: none;
 }
 
-#pagfmxkcba p {
+#dazhufcmtu p {
   margin: 0;
   padding: 0;
 }
 
-#pagfmxkcba .gt_table {
+#dazhufcmtu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -7911,12 +7912,12 @@ Table&nbsp;13.15: Fracture types
   border-left-color: #D3D3D3;
 }
 
-#pagfmxkcba .gt_caption {
+#dazhufcmtu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pagfmxkcba .gt_title {
+#dazhufcmtu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -7928,7 +7929,7 @@ Table&nbsp;13.15: Fracture types
   border-bottom-width: 0;
 }
 
-#pagfmxkcba .gt_subtitle {
+#dazhufcmtu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -7940,7 +7941,7 @@ Table&nbsp;13.15: Fracture types
   border-top-width: 0;
 }
 
-#pagfmxkcba .gt_heading {
+#dazhufcmtu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -7952,13 +7953,13 @@ Table&nbsp;13.15: Fracture types
   border-right-color: #D3D3D3;
 }
 
-#pagfmxkcba .gt_bottom_border {
+#dazhufcmtu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pagfmxkcba .gt_col_headings {
+#dazhufcmtu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7973,7 +7974,7 @@ Table&nbsp;13.15: Fracture types
   border-right-color: #D3D3D3;
 }
 
-#pagfmxkcba .gt_col_heading {
+#dazhufcmtu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7993,7 +7994,7 @@ Table&nbsp;13.15: Fracture types
   overflow-x: hidden;
 }
 
-#pagfmxkcba .gt_column_spanner_outer {
+#dazhufcmtu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -8005,15 +8006,15 @@ Table&nbsp;13.15: Fracture types
   padding-right: 4px;
 }
 
-#pagfmxkcba .gt_column_spanner_outer:first-child {
+#dazhufcmtu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pagfmxkcba .gt_column_spanner_outer:last-child {
+#dazhufcmtu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pagfmxkcba .gt_column_spanner {
+#dazhufcmtu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -8025,11 +8026,11 @@ Table&nbsp;13.15: Fracture types
   width: 100%;
 }
 
-#pagfmxkcba .gt_spanner_row {
+#dazhufcmtu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pagfmxkcba .gt_group_heading {
+#dazhufcmtu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -8055,7 +8056,7 @@ Table&nbsp;13.15: Fracture types
   text-align: left;
 }
 
-#pagfmxkcba .gt_empty_group_heading {
+#dazhufcmtu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -8070,15 +8071,15 @@ Table&nbsp;13.15: Fracture types
   vertical-align: middle;
 }
 
-#pagfmxkcba .gt_from_md > :first-child {
+#dazhufcmtu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pagfmxkcba .gt_from_md > :last-child {
+#dazhufcmtu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pagfmxkcba .gt_row {
+#dazhufcmtu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -8097,7 +8098,7 @@ Table&nbsp;13.15: Fracture types
   overflow-x: hidden;
 }
 
-#pagfmxkcba .gt_stub {
+#dazhufcmtu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -8110,7 +8111,7 @@ Table&nbsp;13.15: Fracture types
   padding-right: 5px;
 }
 
-#pagfmxkcba .gt_stub_row_group {
+#dazhufcmtu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -8124,15 +8125,15 @@ Table&nbsp;13.15: Fracture types
   vertical-align: top;
 }
 
-#pagfmxkcba .gt_row_group_first td {
+#dazhufcmtu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pagfmxkcba .gt_row_group_first th {
+#dazhufcmtu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pagfmxkcba .gt_summary_row {
+#dazhufcmtu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -8142,16 +8143,16 @@ Table&nbsp;13.15: Fracture types
   padding-right: 5px;
 }
 
-#pagfmxkcba .gt_first_summary_row {
+#dazhufcmtu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pagfmxkcba .gt_first_summary_row.thick {
+#dazhufcmtu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pagfmxkcba .gt_last_summary_row {
+#dazhufcmtu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -8161,7 +8162,7 @@ Table&nbsp;13.15: Fracture types
   border-bottom-color: #D3D3D3;
 }
 
-#pagfmxkcba .gt_grand_summary_row {
+#dazhufcmtu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -8171,7 +8172,7 @@ Table&nbsp;13.15: Fracture types
   padding-right: 5px;
 }
 
-#pagfmxkcba .gt_first_grand_summary_row {
+#dazhufcmtu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -8181,7 +8182,7 @@ Table&nbsp;13.15: Fracture types
   border-top-color: #D3D3D3;
 }
 
-#pagfmxkcba .gt_last_grand_summary_row_top {
+#dazhufcmtu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -8191,11 +8192,11 @@ Table&nbsp;13.15: Fracture types
   border-bottom-color: #D3D3D3;
 }
 
-#pagfmxkcba .gt_striped {
+#dazhufcmtu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pagfmxkcba .gt_table_body {
+#dazhufcmtu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -8204,7 +8205,7 @@ Table&nbsp;13.15: Fracture types
   border-bottom-color: #D3D3D3;
 }
 
-#pagfmxkcba .gt_footnotes {
+#dazhufcmtu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -8218,7 +8219,7 @@ Table&nbsp;13.15: Fracture types
   border-right-color: #D3D3D3;
 }
 
-#pagfmxkcba .gt_footnote {
+#dazhufcmtu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -8227,7 +8228,7 @@ Table&nbsp;13.15: Fracture types
   padding-right: 5px;
 }
 
-#pagfmxkcba .gt_sourcenotes {
+#dazhufcmtu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -8241,7 +8242,7 @@ Table&nbsp;13.15: Fracture types
   border-right-color: #D3D3D3;
 }
 
-#pagfmxkcba .gt_sourcenote {
+#dazhufcmtu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -8249,77 +8250,77 @@ Table&nbsp;13.15: Fracture types
   padding-right: 5px;
 }
 
-#pagfmxkcba .gt_left {
+#dazhufcmtu .gt_left {
   text-align: left;
 }
 
-#pagfmxkcba .gt_center {
+#dazhufcmtu .gt_center {
   text-align: center;
 }
 
-#pagfmxkcba .gt_right {
+#dazhufcmtu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pagfmxkcba .gt_font_normal {
+#dazhufcmtu .gt_font_normal {
   font-weight: normal;
 }
 
-#pagfmxkcba .gt_font_bold {
+#dazhufcmtu .gt_font_bold {
   font-weight: bold;
 }
 
-#pagfmxkcba .gt_font_italic {
+#dazhufcmtu .gt_font_italic {
   font-style: italic;
 }
 
-#pagfmxkcba .gt_super {
+#dazhufcmtu .gt_super {
   font-size: 65%;
 }
 
-#pagfmxkcba .gt_footnote_marks {
+#dazhufcmtu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pagfmxkcba .gt_asterisk {
+#dazhufcmtu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pagfmxkcba .gt_indent_1 {
+#dazhufcmtu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pagfmxkcba .gt_indent_2 {
+#dazhufcmtu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pagfmxkcba .gt_indent_3 {
+#dazhufcmtu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pagfmxkcba .gt_indent_4 {
+#dazhufcmtu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pagfmxkcba .gt_indent_5 {
+#dazhufcmtu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pagfmxkcba .katex-display {
+#dazhufcmtu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pagfmxkcba div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dazhufcmtu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -8447,13 +8448,14 @@ Wysocki DA, Schoeneberger PJ, LaGarry HE 2005. Soil surveys: A window to the sub
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

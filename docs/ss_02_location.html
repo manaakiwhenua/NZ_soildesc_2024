@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -53,14 +53,15 @@ div.csl-indent {
 <link href="./ss_00_intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -320,7 +321,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_01_horizon_names.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Horizon names</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Horizon notation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -470,7 +471,7 @@ div.csl-indent {
 <p>Locations are recorded using a coordinate reference system (CRS), which defines a grid over the land surface. Geographic coordinate systems use angular coordinates (degrees latitude and longitude) and model the earth as a sphere or ellipsoid. Projected coordinate systems, per the name, project all or part of the earth’s surface onto a flat plane by various methods, allowing use of linear coordinates (e.g.&nbsp;meters). Different types of projection have different strengths and weaknesses around preservation of distance and direction accuracy. Elevation can also be determined from a global model, or a locally calibrated one.</p>
 <p>In New Zealand, the official projected coordinate reference system is New Zealand Transverse Mercator (EPSG:2193). Elevation is defined with reference to the New Zealand Vertical Datum 2016 (EPSG:1169). For more information on these systems, see <span class="citation" data-cites="linz2025a">LINZ (<a href="references.html#ref-linz2025a" role="doc-biblioref">2025a</a>)</span>.</p>
 <div id="nte-proj" class="callout callout-style-simple callout-note no-icon callout-titled" title="EPSG codes">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -501,7 +502,7 @@ Figure&nbsp;3.1: Example location: <span class="ceg">1586090E, 5405722N (462 m)<
 </div>
 </div>
 <div id="wrn-wgs84" class="callout callout-style-simple callout-warning no-icon callout-titled" title="Use of WGS84">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -518,7 +519,7 @@ Warning&nbsp;3.1: Use of WGS84
 </div>
 </div>
 <div id="wrn-altgeo" class="callout callout-style-simple callout-warning no-icon callout-titled" title="Alternate geocoding systems">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -538,7 +539,7 @@ Warning&nbsp;3.2: Alternate geocoding systems
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="sec-loc-err"><span class="header-section-number">3.1.2</span> Expected error</h3>
 <p>Expected error can be automatically reported by equipment, or estimated. When estimating horizontal error, record in metres with a maximum precision of 0.01 (1&nbsp;cm) e.g.&nbsp;<span class="ceg">±&nbsp;5.12&nbsp;m</span>. Record estimated vertical elevation error separately in the same units, as it will differ.</p>
 <div id="nte-locrev" class="callout callout-style-simple callout-note no-icon callout-titled" title="Revising locations">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -566,23 +567,23 @@ Table&nbsp;3.1: Location data sources
 </figcaption>
 <div aria-describedby="tbl-ss-locsrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbtedurjyx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tbtedurjyx table {
+<div id="uogsqsoeyj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uogsqsoeyj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tbtedurjyx thead, #tbtedurjyx tbody, #tbtedurjyx tfoot, #tbtedurjyx tr, #tbtedurjyx td, #tbtedurjyx th {
+#uogsqsoeyj thead, #uogsqsoeyj tbody, #uogsqsoeyj tfoot, #uogsqsoeyj tr, #uogsqsoeyj td, #uogsqsoeyj th {
   border-style: none;
 }
 
-#tbtedurjyx p {
+#uogsqsoeyj p {
   margin: 0;
   padding: 0;
 }
 
-#tbtedurjyx .gt_table {
+#uogsqsoeyj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -608,12 +609,12 @@ Table&nbsp;3.1: Location data sources
   border-left-color: #D3D3D3;
 }
 
-#tbtedurjyx .gt_caption {
+#uogsqsoeyj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tbtedurjyx .gt_title {
+#uogsqsoeyj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -625,7 +626,7 @@ Table&nbsp;3.1: Location data sources
   border-bottom-width: 0;
 }
 
-#tbtedurjyx .gt_subtitle {
+#uogsqsoeyj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -637,7 +638,7 @@ Table&nbsp;3.1: Location data sources
   border-top-width: 0;
 }
 
-#tbtedurjyx .gt_heading {
+#uogsqsoeyj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -649,13 +650,13 @@ Table&nbsp;3.1: Location data sources
   border-right-color: #D3D3D3;
 }
 
-#tbtedurjyx .gt_bottom_border {
+#uogsqsoeyj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tbtedurjyx .gt_col_headings {
+#uogsqsoeyj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -670,7 +671,7 @@ Table&nbsp;3.1: Location data sources
   border-right-color: #D3D3D3;
 }
 
-#tbtedurjyx .gt_col_heading {
+#uogsqsoeyj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -690,7 +691,7 @@ Table&nbsp;3.1: Location data sources
   overflow-x: hidden;
 }
 
-#tbtedurjyx .gt_column_spanner_outer {
+#uogsqsoeyj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -702,15 +703,15 @@ Table&nbsp;3.1: Location data sources
   padding-right: 4px;
 }
 
-#tbtedurjyx .gt_column_spanner_outer:first-child {
+#uogsqsoeyj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tbtedurjyx .gt_column_spanner_outer:last-child {
+#uogsqsoeyj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tbtedurjyx .gt_column_spanner {
+#uogsqsoeyj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -722,11 +723,11 @@ Table&nbsp;3.1: Location data sources
   width: 100%;
 }
 
-#tbtedurjyx .gt_spanner_row {
+#uogsqsoeyj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tbtedurjyx .gt_group_heading {
+#uogsqsoeyj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -752,7 +753,7 @@ Table&nbsp;3.1: Location data sources
   text-align: left;
 }
 
-#tbtedurjyx .gt_empty_group_heading {
+#uogsqsoeyj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -767,15 +768,15 @@ Table&nbsp;3.1: Location data sources
   vertical-align: middle;
 }
 
-#tbtedurjyx .gt_from_md > :first-child {
+#uogsqsoeyj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tbtedurjyx .gt_from_md > :last-child {
+#uogsqsoeyj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tbtedurjyx .gt_row {
+#uogsqsoeyj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -794,7 +795,7 @@ Table&nbsp;3.1: Location data sources
   overflow-x: hidden;
 }
 
-#tbtedurjyx .gt_stub {
+#uogsqsoeyj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -807,7 +808,7 @@ Table&nbsp;3.1: Location data sources
   padding-right: 5px;
 }
 
-#tbtedurjyx .gt_stub_row_group {
+#uogsqsoeyj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -821,15 +822,15 @@ Table&nbsp;3.1: Location data sources
   vertical-align: top;
 }
 
-#tbtedurjyx .gt_row_group_first td {
+#uogsqsoeyj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tbtedurjyx .gt_row_group_first th {
+#uogsqsoeyj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tbtedurjyx .gt_summary_row {
+#uogsqsoeyj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -839,16 +840,16 @@ Table&nbsp;3.1: Location data sources
   padding-right: 5px;
 }
 
-#tbtedurjyx .gt_first_summary_row {
+#uogsqsoeyj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tbtedurjyx .gt_first_summary_row.thick {
+#uogsqsoeyj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tbtedurjyx .gt_last_summary_row {
+#uogsqsoeyj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -858,7 +859,7 @@ Table&nbsp;3.1: Location data sources
   border-bottom-color: #D3D3D3;
 }
 
-#tbtedurjyx .gt_grand_summary_row {
+#uogsqsoeyj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -868,7 +869,7 @@ Table&nbsp;3.1: Location data sources
   padding-right: 5px;
 }
 
-#tbtedurjyx .gt_first_grand_summary_row {
+#uogsqsoeyj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -878,7 +879,7 @@ Table&nbsp;3.1: Location data sources
   border-top-color: #D3D3D3;
 }
 
-#tbtedurjyx .gt_last_grand_summary_row_top {
+#uogsqsoeyj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -888,11 +889,11 @@ Table&nbsp;3.1: Location data sources
   border-bottom-color: #D3D3D3;
 }
 
-#tbtedurjyx .gt_striped {
+#uogsqsoeyj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tbtedurjyx .gt_table_body {
+#uogsqsoeyj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -901,7 +902,7 @@ Table&nbsp;3.1: Location data sources
   border-bottom-color: #D3D3D3;
 }
 
-#tbtedurjyx .gt_footnotes {
+#uogsqsoeyj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -915,7 +916,7 @@ Table&nbsp;3.1: Location data sources
   border-right-color: #D3D3D3;
 }
 
-#tbtedurjyx .gt_footnote {
+#uogsqsoeyj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -924,7 +925,7 @@ Table&nbsp;3.1: Location data sources
   padding-right: 5px;
 }
 
-#tbtedurjyx .gt_sourcenotes {
+#uogsqsoeyj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -938,7 +939,7 @@ Table&nbsp;3.1: Location data sources
   border-right-color: #D3D3D3;
 }
 
-#tbtedurjyx .gt_sourcenote {
+#uogsqsoeyj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -946,77 +947,77 @@ Table&nbsp;3.1: Location data sources
   padding-right: 5px;
 }
 
-#tbtedurjyx .gt_left {
+#uogsqsoeyj .gt_left {
   text-align: left;
 }
 
-#tbtedurjyx .gt_center {
+#uogsqsoeyj .gt_center {
   text-align: center;
 }
 
-#tbtedurjyx .gt_right {
+#uogsqsoeyj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tbtedurjyx .gt_font_normal {
+#uogsqsoeyj .gt_font_normal {
   font-weight: normal;
 }
 
-#tbtedurjyx .gt_font_bold {
+#uogsqsoeyj .gt_font_bold {
   font-weight: bold;
 }
 
-#tbtedurjyx .gt_font_italic {
+#uogsqsoeyj .gt_font_italic {
   font-style: italic;
 }
 
-#tbtedurjyx .gt_super {
+#uogsqsoeyj .gt_super {
   font-size: 65%;
 }
 
-#tbtedurjyx .gt_footnote_marks {
+#uogsqsoeyj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tbtedurjyx .gt_asterisk {
+#uogsqsoeyj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tbtedurjyx .gt_indent_1 {
+#uogsqsoeyj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tbtedurjyx .gt_indent_2 {
+#uogsqsoeyj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tbtedurjyx .gt_indent_3 {
+#uogsqsoeyj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tbtedurjyx .gt_indent_4 {
+#uogsqsoeyj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tbtedurjyx .gt_indent_5 {
+#uogsqsoeyj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tbtedurjyx .katex-display {
+#uogsqsoeyj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tbtedurjyx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#uogsqsoeyj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 20%">
@@ -1065,7 +1066,7 @@ Table&nbsp;3.1: Location data sources
 </div>
 </div>
 <div id="tip-gnss" class="callout callout-style-simple callout-tip no-icon callout-titled" title="GNSS types">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1084,7 +1085,7 @@ Tip&nbsp;3.1: GNSS types
 </div>
 </div>
 <div id="nte-locman" class="callout callout-style-simple callout-note no-icon callout-titled" title="Manual locations">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1108,23 +1109,23 @@ Table&nbsp;3.2: Elevation data sources
 </figcaption>
 <div aria-describedby="tbl-ss-elevsrc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="cjpaxzcdtx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cjpaxzcdtx table {
+<div id="saaqyrtyxg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#saaqyrtyxg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cjpaxzcdtx thead, #cjpaxzcdtx tbody, #cjpaxzcdtx tfoot, #cjpaxzcdtx tr, #cjpaxzcdtx td, #cjpaxzcdtx th {
+#saaqyrtyxg thead, #saaqyrtyxg tbody, #saaqyrtyxg tfoot, #saaqyrtyxg tr, #saaqyrtyxg td, #saaqyrtyxg th {
   border-style: none;
 }
 
-#cjpaxzcdtx p {
+#saaqyrtyxg p {
   margin: 0;
   padding: 0;
 }
 
-#cjpaxzcdtx .gt_table {
+#saaqyrtyxg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1150,12 +1151,12 @@ Table&nbsp;3.2: Elevation data sources
   border-left-color: #D3D3D3;
 }
 
-#cjpaxzcdtx .gt_caption {
+#saaqyrtyxg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cjpaxzcdtx .gt_title {
+#saaqyrtyxg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1167,7 +1168,7 @@ Table&nbsp;3.2: Elevation data sources
   border-bottom-width: 0;
 }
 
-#cjpaxzcdtx .gt_subtitle {
+#saaqyrtyxg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1179,7 +1180,7 @@ Table&nbsp;3.2: Elevation data sources
   border-top-width: 0;
 }
 
-#cjpaxzcdtx .gt_heading {
+#saaqyrtyxg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1191,13 +1192,13 @@ Table&nbsp;3.2: Elevation data sources
   border-right-color: #D3D3D3;
 }
 
-#cjpaxzcdtx .gt_bottom_border {
+#saaqyrtyxg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cjpaxzcdtx .gt_col_headings {
+#saaqyrtyxg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1212,7 +1213,7 @@ Table&nbsp;3.2: Elevation data sources
   border-right-color: #D3D3D3;
 }
 
-#cjpaxzcdtx .gt_col_heading {
+#saaqyrtyxg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1232,7 +1233,7 @@ Table&nbsp;3.2: Elevation data sources
   overflow-x: hidden;
 }
 
-#cjpaxzcdtx .gt_column_spanner_outer {
+#saaqyrtyxg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1244,15 +1245,15 @@ Table&nbsp;3.2: Elevation data sources
   padding-right: 4px;
 }
 
-#cjpaxzcdtx .gt_column_spanner_outer:first-child {
+#saaqyrtyxg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cjpaxzcdtx .gt_column_spanner_outer:last-child {
+#saaqyrtyxg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cjpaxzcdtx .gt_column_spanner {
+#saaqyrtyxg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1264,11 +1265,11 @@ Table&nbsp;3.2: Elevation data sources
   width: 100%;
 }
 
-#cjpaxzcdtx .gt_spanner_row {
+#saaqyrtyxg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cjpaxzcdtx .gt_group_heading {
+#saaqyrtyxg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1294,7 +1295,7 @@ Table&nbsp;3.2: Elevation data sources
   text-align: left;
 }
 
-#cjpaxzcdtx .gt_empty_group_heading {
+#saaqyrtyxg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1309,15 +1310,15 @@ Table&nbsp;3.2: Elevation data sources
   vertical-align: middle;
 }
 
-#cjpaxzcdtx .gt_from_md > :first-child {
+#saaqyrtyxg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cjpaxzcdtx .gt_from_md > :last-child {
+#saaqyrtyxg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cjpaxzcdtx .gt_row {
+#saaqyrtyxg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1336,7 +1337,7 @@ Table&nbsp;3.2: Elevation data sources
   overflow-x: hidden;
 }
 
-#cjpaxzcdtx .gt_stub {
+#saaqyrtyxg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1349,7 +1350,7 @@ Table&nbsp;3.2: Elevation data sources
   padding-right: 5px;
 }
 
-#cjpaxzcdtx .gt_stub_row_group {
+#saaqyrtyxg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1363,15 +1364,15 @@ Table&nbsp;3.2: Elevation data sources
   vertical-align: top;
 }
 
-#cjpaxzcdtx .gt_row_group_first td {
+#saaqyrtyxg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cjpaxzcdtx .gt_row_group_first th {
+#saaqyrtyxg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cjpaxzcdtx .gt_summary_row {
+#saaqyrtyxg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1381,16 +1382,16 @@ Table&nbsp;3.2: Elevation data sources
   padding-right: 5px;
 }
 
-#cjpaxzcdtx .gt_first_summary_row {
+#saaqyrtyxg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cjpaxzcdtx .gt_first_summary_row.thick {
+#saaqyrtyxg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cjpaxzcdtx .gt_last_summary_row {
+#saaqyrtyxg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1400,7 +1401,7 @@ Table&nbsp;3.2: Elevation data sources
   border-bottom-color: #D3D3D3;
 }
 
-#cjpaxzcdtx .gt_grand_summary_row {
+#saaqyrtyxg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1410,7 +1411,7 @@ Table&nbsp;3.2: Elevation data sources
   padding-right: 5px;
 }
 
-#cjpaxzcdtx .gt_first_grand_summary_row {
+#saaqyrtyxg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1420,7 +1421,7 @@ Table&nbsp;3.2: Elevation data sources
   border-top-color: #D3D3D3;
 }
 
-#cjpaxzcdtx .gt_last_grand_summary_row_top {
+#saaqyrtyxg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1430,11 +1431,11 @@ Table&nbsp;3.2: Elevation data sources
   border-bottom-color: #D3D3D3;
 }
 
-#cjpaxzcdtx .gt_striped {
+#saaqyrtyxg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cjpaxzcdtx .gt_table_body {
+#saaqyrtyxg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1443,7 +1444,7 @@ Table&nbsp;3.2: Elevation data sources
   border-bottom-color: #D3D3D3;
 }
 
-#cjpaxzcdtx .gt_footnotes {
+#saaqyrtyxg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1457,7 +1458,7 @@ Table&nbsp;3.2: Elevation data sources
   border-right-color: #D3D3D3;
 }
 
-#cjpaxzcdtx .gt_footnote {
+#saaqyrtyxg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1466,7 +1467,7 @@ Table&nbsp;3.2: Elevation data sources
   padding-right: 5px;
 }
 
-#cjpaxzcdtx .gt_sourcenotes {
+#saaqyrtyxg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1480,7 +1481,7 @@ Table&nbsp;3.2: Elevation data sources
   border-right-color: #D3D3D3;
 }
 
-#cjpaxzcdtx .gt_sourcenote {
+#saaqyrtyxg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1488,77 +1489,77 @@ Table&nbsp;3.2: Elevation data sources
   padding-right: 5px;
 }
 
-#cjpaxzcdtx .gt_left {
+#saaqyrtyxg .gt_left {
   text-align: left;
 }
 
-#cjpaxzcdtx .gt_center {
+#saaqyrtyxg .gt_center {
   text-align: center;
 }
 
-#cjpaxzcdtx .gt_right {
+#saaqyrtyxg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cjpaxzcdtx .gt_font_normal {
+#saaqyrtyxg .gt_font_normal {
   font-weight: normal;
 }
 
-#cjpaxzcdtx .gt_font_bold {
+#saaqyrtyxg .gt_font_bold {
   font-weight: bold;
 }
 
-#cjpaxzcdtx .gt_font_italic {
+#saaqyrtyxg .gt_font_italic {
   font-style: italic;
 }
 
-#cjpaxzcdtx .gt_super {
+#saaqyrtyxg .gt_super {
   font-size: 65%;
 }
 
-#cjpaxzcdtx .gt_footnote_marks {
+#saaqyrtyxg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cjpaxzcdtx .gt_asterisk {
+#saaqyrtyxg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cjpaxzcdtx .gt_indent_1 {
+#saaqyrtyxg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cjpaxzcdtx .gt_indent_2 {
+#saaqyrtyxg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cjpaxzcdtx .gt_indent_3 {
+#saaqyrtyxg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cjpaxzcdtx .gt_indent_4 {
+#saaqyrtyxg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cjpaxzcdtx .gt_indent_5 {
+#saaqyrtyxg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#cjpaxzcdtx .katex-display {
+#saaqyrtyxg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#cjpaxzcdtx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#saaqyrtyxg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col>
@@ -1605,7 +1606,7 @@ Table&nbsp;3.2: Elevation data sources
 <p>Where the <span class="ceg">A</span> code is used, the time and location of the most recent altimeter calibration should be noted. Handheld altimeters can be expected to be accurate to within ±&nbsp;3&nbsp;m.</p>
 <p><span class="ceg">E</span> estimated elevations might include interpolation from a contour map with interval of &gt;&nbsp;20&nbsp;m, or a ‘best guess’.</p>
 <div id="nte-dems" class="callout callout-style-simple callout-note no-icon callout-titled" title="DEMs and location">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1636,7 +1637,7 @@ Note&nbsp;3.4: DEMs and location
 <p>Elevation above the nearest down-slope drainage (open/flowing water, swampy ground, or a closed depression) is useful for landscape interpretations. The data can also be used to group profile descriptions, for instance when identifying sets of related terraces along river systems. The drainage feature to record against must be identified by tracing a path down-slope from the observation point, and may be far from the point of observation. As such, it will normally be more efficient to estimate this parameter after fieldwork using elevation and imagery data.</p>
 <p>Record relative elevation in metres, with a precision of no more than 0.01 (1&nbsp;cm), e.g.&nbsp;<span class="ceg">25.53&nbsp;m</span>.</p>
 <div id="nte-rem" class="callout callout-style-simple callout-note no-icon callout-titled" title="Relative elevation models">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1743,13 +1744,14 @@ Uuemaa E, Ahi S, Montibeller B, Muru M, Kmoch A 2020. Vertical accuracy of freel
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

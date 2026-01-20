@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -53,14 +53,15 @@ div.csl-indent {
 <link href="./in_02_horizon_properties.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,7 +104,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -346,7 +347,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_01_horizon_names.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Horizon names</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Horizon notation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -499,23 +500,23 @@ Table&nbsp;22.1: LUC Slope Classes
 </figcaption>
 <div aria-describedby="tbl-in-slpluc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="eqnnlzrlzb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#eqnnlzrlzb table {
+<div id="wzqsplwmnp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wzqsplwmnp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#eqnnlzrlzb thead, #eqnnlzrlzb tbody, #eqnnlzrlzb tfoot, #eqnnlzrlzb tr, #eqnnlzrlzb td, #eqnnlzrlzb th {
+#wzqsplwmnp thead, #wzqsplwmnp tbody, #wzqsplwmnp tfoot, #wzqsplwmnp tr, #wzqsplwmnp td, #wzqsplwmnp th {
   border-style: none;
 }
 
-#eqnnlzrlzb p {
+#wzqsplwmnp p {
   margin: 0;
   padding: 0;
 }
 
-#eqnnlzrlzb .gt_table {
+#wzqsplwmnp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -541,12 +542,12 @@ Table&nbsp;22.1: LUC Slope Classes
   border-left-color: #D3D3D3;
 }
 
-#eqnnlzrlzb .gt_caption {
+#wzqsplwmnp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#eqnnlzrlzb .gt_title {
+#wzqsplwmnp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -558,7 +559,7 @@ Table&nbsp;22.1: LUC Slope Classes
   border-bottom-width: 0;
 }
 
-#eqnnlzrlzb .gt_subtitle {
+#wzqsplwmnp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -570,7 +571,7 @@ Table&nbsp;22.1: LUC Slope Classes
   border-top-width: 0;
 }
 
-#eqnnlzrlzb .gt_heading {
+#wzqsplwmnp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -582,13 +583,13 @@ Table&nbsp;22.1: LUC Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#eqnnlzrlzb .gt_bottom_border {
+#wzqsplwmnp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#eqnnlzrlzb .gt_col_headings {
+#wzqsplwmnp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -603,7 +604,7 @@ Table&nbsp;22.1: LUC Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#eqnnlzrlzb .gt_col_heading {
+#wzqsplwmnp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -623,7 +624,7 @@ Table&nbsp;22.1: LUC Slope Classes
   overflow-x: hidden;
 }
 
-#eqnnlzrlzb .gt_column_spanner_outer {
+#wzqsplwmnp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -635,15 +636,15 @@ Table&nbsp;22.1: LUC Slope Classes
   padding-right: 4px;
 }
 
-#eqnnlzrlzb .gt_column_spanner_outer:first-child {
+#wzqsplwmnp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#eqnnlzrlzb .gt_column_spanner_outer:last-child {
+#wzqsplwmnp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#eqnnlzrlzb .gt_column_spanner {
+#wzqsplwmnp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -655,11 +656,11 @@ Table&nbsp;22.1: LUC Slope Classes
   width: 100%;
 }
 
-#eqnnlzrlzb .gt_spanner_row {
+#wzqsplwmnp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#eqnnlzrlzb .gt_group_heading {
+#wzqsplwmnp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -685,7 +686,7 @@ Table&nbsp;22.1: LUC Slope Classes
   text-align: left;
 }
 
-#eqnnlzrlzb .gt_empty_group_heading {
+#wzqsplwmnp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -700,15 +701,15 @@ Table&nbsp;22.1: LUC Slope Classes
   vertical-align: middle;
 }
 
-#eqnnlzrlzb .gt_from_md > :first-child {
+#wzqsplwmnp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#eqnnlzrlzb .gt_from_md > :last-child {
+#wzqsplwmnp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#eqnnlzrlzb .gt_row {
+#wzqsplwmnp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -727,7 +728,7 @@ Table&nbsp;22.1: LUC Slope Classes
   overflow-x: hidden;
 }
 
-#eqnnlzrlzb .gt_stub {
+#wzqsplwmnp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -740,7 +741,7 @@ Table&nbsp;22.1: LUC Slope Classes
   padding-right: 5px;
 }
 
-#eqnnlzrlzb .gt_stub_row_group {
+#wzqsplwmnp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -754,15 +755,15 @@ Table&nbsp;22.1: LUC Slope Classes
   vertical-align: top;
 }
 
-#eqnnlzrlzb .gt_row_group_first td {
+#wzqsplwmnp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#eqnnlzrlzb .gt_row_group_first th {
+#wzqsplwmnp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#eqnnlzrlzb .gt_summary_row {
+#wzqsplwmnp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -772,16 +773,16 @@ Table&nbsp;22.1: LUC Slope Classes
   padding-right: 5px;
 }
 
-#eqnnlzrlzb .gt_first_summary_row {
+#wzqsplwmnp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#eqnnlzrlzb .gt_first_summary_row.thick {
+#wzqsplwmnp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#eqnnlzrlzb .gt_last_summary_row {
+#wzqsplwmnp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -791,7 +792,7 @@ Table&nbsp;22.1: LUC Slope Classes
   border-bottom-color: #D3D3D3;
 }
 
-#eqnnlzrlzb .gt_grand_summary_row {
+#wzqsplwmnp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -801,7 +802,7 @@ Table&nbsp;22.1: LUC Slope Classes
   padding-right: 5px;
 }
 
-#eqnnlzrlzb .gt_first_grand_summary_row {
+#wzqsplwmnp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -811,7 +812,7 @@ Table&nbsp;22.1: LUC Slope Classes
   border-top-color: #D3D3D3;
 }
 
-#eqnnlzrlzb .gt_last_grand_summary_row_top {
+#wzqsplwmnp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -821,11 +822,11 @@ Table&nbsp;22.1: LUC Slope Classes
   border-bottom-color: #D3D3D3;
 }
 
-#eqnnlzrlzb .gt_striped {
+#wzqsplwmnp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#eqnnlzrlzb .gt_table_body {
+#wzqsplwmnp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -834,7 +835,7 @@ Table&nbsp;22.1: LUC Slope Classes
   border-bottom-color: #D3D3D3;
 }
 
-#eqnnlzrlzb .gt_footnotes {
+#wzqsplwmnp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -848,7 +849,7 @@ Table&nbsp;22.1: LUC Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#eqnnlzrlzb .gt_footnote {
+#wzqsplwmnp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -857,7 +858,7 @@ Table&nbsp;22.1: LUC Slope Classes
   padding-right: 5px;
 }
 
-#eqnnlzrlzb .gt_sourcenotes {
+#wzqsplwmnp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -871,7 +872,7 @@ Table&nbsp;22.1: LUC Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#eqnnlzrlzb .gt_sourcenote {
+#wzqsplwmnp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -879,77 +880,77 @@ Table&nbsp;22.1: LUC Slope Classes
   padding-right: 5px;
 }
 
-#eqnnlzrlzb .gt_left {
+#wzqsplwmnp .gt_left {
   text-align: left;
 }
 
-#eqnnlzrlzb .gt_center {
+#wzqsplwmnp .gt_center {
   text-align: center;
 }
 
-#eqnnlzrlzb .gt_right {
+#wzqsplwmnp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#eqnnlzrlzb .gt_font_normal {
+#wzqsplwmnp .gt_font_normal {
   font-weight: normal;
 }
 
-#eqnnlzrlzb .gt_font_bold {
+#wzqsplwmnp .gt_font_bold {
   font-weight: bold;
 }
 
-#eqnnlzrlzb .gt_font_italic {
+#wzqsplwmnp .gt_font_italic {
   font-style: italic;
 }
 
-#eqnnlzrlzb .gt_super {
+#wzqsplwmnp .gt_super {
   font-size: 65%;
 }
 
-#eqnnlzrlzb .gt_footnote_marks {
+#wzqsplwmnp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#eqnnlzrlzb .gt_asterisk {
+#wzqsplwmnp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#eqnnlzrlzb .gt_indent_1 {
+#wzqsplwmnp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#eqnnlzrlzb .gt_indent_2 {
+#wzqsplwmnp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#eqnnlzrlzb .gt_indent_3 {
+#wzqsplwmnp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#eqnnlzrlzb .gt_indent_4 {
+#wzqsplwmnp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#eqnnlzrlzb .gt_indent_5 {
+#wzqsplwmnp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#eqnnlzrlzb .katex-display {
+#wzqsplwmnp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#eqnnlzrlzb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wzqsplwmnp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 30%">
@@ -962,7 +963,7 @@ Table&nbsp;22.1: LUC Slope Classes
 </thead>
 <tbody class="gt_table_body">
 <tr class="gt_group_heading_row odd">
-<td colspan="2" id="Wheelable" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Wheelable</td>
+<th colspan="2" id="Wheelable" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Wheelable</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="w  Code" style="text-align: center; color: #FF0000; font-weight: bold;">A</td>
@@ -977,7 +978,7 @@ Table&nbsp;22.1: LUC Slope Classes
 <td class="gt_row gt_left" headers="w  Limits">8&nbsp;-&nbsp;15</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="2" id="Hilly" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Hilly</td>
+<th colspan="2" id="Hilly" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Hilly</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="h  Code" style="text-align: center; color: #FF0000; font-weight: bold;">D</td>
@@ -988,7 +989,7 @@ Table&nbsp;22.1: LUC Slope Classes
 <td class="gt_row gt_left" headers="h  Limits">21&nbsp;-&nbsp;25</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="2" id="Steep" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Steep</td>
+<th colspan="2" id="Steep" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Steep</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left" headers="s  Code" style="text-align: center; color: #FF0000; font-weight: bold;">F</td>
@@ -1008,7 +1009,7 @@ Table&nbsp;22.1: LUC Slope Classes
 </div>
 </div>
 <div id="tip-slplim" class="callout callout-style-simple callout-tip callout-titled" title="LUC slope limits">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1035,23 +1036,23 @@ Table&nbsp;22.2: Natural-log Slope Classes
 </figcaption>
 <div aria-describedby="tbl-in-slpaus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="rblzzwlncp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rblzzwlncp table {
+<div id="icvvdgnekd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#icvvdgnekd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rblzzwlncp thead, #rblzzwlncp tbody, #rblzzwlncp tfoot, #rblzzwlncp tr, #rblzzwlncp td, #rblzzwlncp th {
+#icvvdgnekd thead, #icvvdgnekd tbody, #icvvdgnekd tfoot, #icvvdgnekd tr, #icvvdgnekd td, #icvvdgnekd th {
   border-style: none;
 }
 
-#rblzzwlncp p {
+#icvvdgnekd p {
   margin: 0;
   padding: 0;
 }
 
-#rblzzwlncp .gt_table {
+#icvvdgnekd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1077,12 +1078,12 @@ Table&nbsp;22.2: Natural-log Slope Classes
   border-left-color: #D3D3D3;
 }
 
-#rblzzwlncp .gt_caption {
+#icvvdgnekd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rblzzwlncp .gt_title {
+#icvvdgnekd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1094,7 +1095,7 @@ Table&nbsp;22.2: Natural-log Slope Classes
   border-bottom-width: 0;
 }
 
-#rblzzwlncp .gt_subtitle {
+#icvvdgnekd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1106,7 +1107,7 @@ Table&nbsp;22.2: Natural-log Slope Classes
   border-top-width: 0;
 }
 
-#rblzzwlncp .gt_heading {
+#icvvdgnekd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1118,13 +1119,13 @@ Table&nbsp;22.2: Natural-log Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#rblzzwlncp .gt_bottom_border {
+#icvvdgnekd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rblzzwlncp .gt_col_headings {
+#icvvdgnekd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1139,7 +1140,7 @@ Table&nbsp;22.2: Natural-log Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#rblzzwlncp .gt_col_heading {
+#icvvdgnekd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1159,7 +1160,7 @@ Table&nbsp;22.2: Natural-log Slope Classes
   overflow-x: hidden;
 }
 
-#rblzzwlncp .gt_column_spanner_outer {
+#icvvdgnekd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1171,15 +1172,15 @@ Table&nbsp;22.2: Natural-log Slope Classes
   padding-right: 4px;
 }
 
-#rblzzwlncp .gt_column_spanner_outer:first-child {
+#icvvdgnekd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rblzzwlncp .gt_column_spanner_outer:last-child {
+#icvvdgnekd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rblzzwlncp .gt_column_spanner {
+#icvvdgnekd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1191,11 +1192,11 @@ Table&nbsp;22.2: Natural-log Slope Classes
   width: 100%;
 }
 
-#rblzzwlncp .gt_spanner_row {
+#icvvdgnekd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rblzzwlncp .gt_group_heading {
+#icvvdgnekd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1221,7 +1222,7 @@ Table&nbsp;22.2: Natural-log Slope Classes
   text-align: left;
 }
 
-#rblzzwlncp .gt_empty_group_heading {
+#icvvdgnekd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1236,15 +1237,15 @@ Table&nbsp;22.2: Natural-log Slope Classes
   vertical-align: middle;
 }
 
-#rblzzwlncp .gt_from_md > :first-child {
+#icvvdgnekd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rblzzwlncp .gt_from_md > :last-child {
+#icvvdgnekd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rblzzwlncp .gt_row {
+#icvvdgnekd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1263,7 +1264,7 @@ Table&nbsp;22.2: Natural-log Slope Classes
   overflow-x: hidden;
 }
 
-#rblzzwlncp .gt_stub {
+#icvvdgnekd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1276,7 +1277,7 @@ Table&nbsp;22.2: Natural-log Slope Classes
   padding-right: 5px;
 }
 
-#rblzzwlncp .gt_stub_row_group {
+#icvvdgnekd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1290,15 +1291,15 @@ Table&nbsp;22.2: Natural-log Slope Classes
   vertical-align: top;
 }
 
-#rblzzwlncp .gt_row_group_first td {
+#icvvdgnekd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rblzzwlncp .gt_row_group_first th {
+#icvvdgnekd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rblzzwlncp .gt_summary_row {
+#icvvdgnekd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1308,16 +1309,16 @@ Table&nbsp;22.2: Natural-log Slope Classes
   padding-right: 5px;
 }
 
-#rblzzwlncp .gt_first_summary_row {
+#icvvdgnekd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rblzzwlncp .gt_first_summary_row.thick {
+#icvvdgnekd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rblzzwlncp .gt_last_summary_row {
+#icvvdgnekd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1327,7 +1328,7 @@ Table&nbsp;22.2: Natural-log Slope Classes
   border-bottom-color: #D3D3D3;
 }
 
-#rblzzwlncp .gt_grand_summary_row {
+#icvvdgnekd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1337,7 +1338,7 @@ Table&nbsp;22.2: Natural-log Slope Classes
   padding-right: 5px;
 }
 
-#rblzzwlncp .gt_first_grand_summary_row {
+#icvvdgnekd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1347,7 +1348,7 @@ Table&nbsp;22.2: Natural-log Slope Classes
   border-top-color: #D3D3D3;
 }
 
-#rblzzwlncp .gt_last_grand_summary_row_top {
+#icvvdgnekd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1357,11 +1358,11 @@ Table&nbsp;22.2: Natural-log Slope Classes
   border-bottom-color: #D3D3D3;
 }
 
-#rblzzwlncp .gt_striped {
+#icvvdgnekd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rblzzwlncp .gt_table_body {
+#icvvdgnekd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1370,7 +1371,7 @@ Table&nbsp;22.2: Natural-log Slope Classes
   border-bottom-color: #D3D3D3;
 }
 
-#rblzzwlncp .gt_footnotes {
+#icvvdgnekd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1384,7 +1385,7 @@ Table&nbsp;22.2: Natural-log Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#rblzzwlncp .gt_footnote {
+#icvvdgnekd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1393,7 +1394,7 @@ Table&nbsp;22.2: Natural-log Slope Classes
   padding-right: 5px;
 }
 
-#rblzzwlncp .gt_sourcenotes {
+#icvvdgnekd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1407,7 +1408,7 @@ Table&nbsp;22.2: Natural-log Slope Classes
   border-right-color: #D3D3D3;
 }
 
-#rblzzwlncp .gt_sourcenote {
+#icvvdgnekd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1415,77 +1416,77 @@ Table&nbsp;22.2: Natural-log Slope Classes
   padding-right: 5px;
 }
 
-#rblzzwlncp .gt_left {
+#icvvdgnekd .gt_left {
   text-align: left;
 }
 
-#rblzzwlncp .gt_center {
+#icvvdgnekd .gt_center {
   text-align: center;
 }
 
-#rblzzwlncp .gt_right {
+#icvvdgnekd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rblzzwlncp .gt_font_normal {
+#icvvdgnekd .gt_font_normal {
   font-weight: normal;
 }
 
-#rblzzwlncp .gt_font_bold {
+#icvvdgnekd .gt_font_bold {
   font-weight: bold;
 }
 
-#rblzzwlncp .gt_font_italic {
+#icvvdgnekd .gt_font_italic {
   font-style: italic;
 }
 
-#rblzzwlncp .gt_super {
+#icvvdgnekd .gt_super {
   font-size: 65%;
 }
 
-#rblzzwlncp .gt_footnote_marks {
+#icvvdgnekd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rblzzwlncp .gt_asterisk {
+#icvvdgnekd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rblzzwlncp .gt_indent_1 {
+#icvvdgnekd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rblzzwlncp .gt_indent_2 {
+#icvvdgnekd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rblzzwlncp .gt_indent_3 {
+#icvvdgnekd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rblzzwlncp .gt_indent_4 {
+#icvvdgnekd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rblzzwlncp .gt_indent_5 {
+#icvvdgnekd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rblzzwlncp .katex-display {
+#icvvdgnekd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rblzzwlncp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#icvvdgnekd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col>
@@ -1559,7 +1560,7 @@ Table&nbsp;22.2: Natural-log Slope Classes
 </div>
 </div>
 <div id="tip-slpaus" class="callout callout-style-simple callout-tip no-icon callout-titled" title="Additional class splits">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1586,23 +1587,23 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
 </figcaption>
 <div aria-describedby="tbl-in-slpfao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="baxbeaufqg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#baxbeaufqg table {
+<div id="xfcqlbmcwe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xfcqlbmcwe table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#baxbeaufqg thead, #baxbeaufqg tbody, #baxbeaufqg tfoot, #baxbeaufqg tr, #baxbeaufqg td, #baxbeaufqg th {
+#xfcqlbmcwe thead, #xfcqlbmcwe tbody, #xfcqlbmcwe tfoot, #xfcqlbmcwe tr, #xfcqlbmcwe td, #xfcqlbmcwe th {
   border-style: none;
 }
 
-#baxbeaufqg p {
+#xfcqlbmcwe p {
   margin: 0;
   padding: 0;
 }
 
-#baxbeaufqg .gt_table {
+#xfcqlbmcwe .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1628,12 +1629,12 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   border-left-color: #D3D3D3;
 }
 
-#baxbeaufqg .gt_caption {
+#xfcqlbmcwe .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#baxbeaufqg .gt_title {
+#xfcqlbmcwe .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1645,7 +1646,7 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   border-bottom-width: 0;
 }
 
-#baxbeaufqg .gt_subtitle {
+#xfcqlbmcwe .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1657,7 +1658,7 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   border-top-width: 0;
 }
 
-#baxbeaufqg .gt_heading {
+#xfcqlbmcwe .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1669,13 +1670,13 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   border-right-color: #D3D3D3;
 }
 
-#baxbeaufqg .gt_bottom_border {
+#xfcqlbmcwe .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#baxbeaufqg .gt_col_headings {
+#xfcqlbmcwe .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1690,7 +1691,7 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   border-right-color: #D3D3D3;
 }
 
-#baxbeaufqg .gt_col_heading {
+#xfcqlbmcwe .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1710,7 +1711,7 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   overflow-x: hidden;
 }
 
-#baxbeaufqg .gt_column_spanner_outer {
+#xfcqlbmcwe .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1722,15 +1723,15 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   padding-right: 4px;
 }
 
-#baxbeaufqg .gt_column_spanner_outer:first-child {
+#xfcqlbmcwe .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#baxbeaufqg .gt_column_spanner_outer:last-child {
+#xfcqlbmcwe .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#baxbeaufqg .gt_column_spanner {
+#xfcqlbmcwe .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1742,11 +1743,11 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   width: 100%;
 }
 
-#baxbeaufqg .gt_spanner_row {
+#xfcqlbmcwe .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#baxbeaufqg .gt_group_heading {
+#xfcqlbmcwe .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1772,7 +1773,7 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   text-align: left;
 }
 
-#baxbeaufqg .gt_empty_group_heading {
+#xfcqlbmcwe .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1787,15 +1788,15 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   vertical-align: middle;
 }
 
-#baxbeaufqg .gt_from_md > :first-child {
+#xfcqlbmcwe .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#baxbeaufqg .gt_from_md > :last-child {
+#xfcqlbmcwe .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#baxbeaufqg .gt_row {
+#xfcqlbmcwe .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1814,7 +1815,7 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   overflow-x: hidden;
 }
 
-#baxbeaufqg .gt_stub {
+#xfcqlbmcwe .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1827,7 +1828,7 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   padding-right: 5px;
 }
 
-#baxbeaufqg .gt_stub_row_group {
+#xfcqlbmcwe .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1841,15 +1842,15 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   vertical-align: top;
 }
 
-#baxbeaufqg .gt_row_group_first td {
+#xfcqlbmcwe .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#baxbeaufqg .gt_row_group_first th {
+#xfcqlbmcwe .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#baxbeaufqg .gt_summary_row {
+#xfcqlbmcwe .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1859,16 +1860,16 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   padding-right: 5px;
 }
 
-#baxbeaufqg .gt_first_summary_row {
+#xfcqlbmcwe .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#baxbeaufqg .gt_first_summary_row.thick {
+#xfcqlbmcwe .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#baxbeaufqg .gt_last_summary_row {
+#xfcqlbmcwe .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1878,7 +1879,7 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   border-bottom-color: #D3D3D3;
 }
 
-#baxbeaufqg .gt_grand_summary_row {
+#xfcqlbmcwe .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1888,7 +1889,7 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   padding-right: 5px;
 }
 
-#baxbeaufqg .gt_first_grand_summary_row {
+#xfcqlbmcwe .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1898,7 +1899,7 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   border-top-color: #D3D3D3;
 }
 
-#baxbeaufqg .gt_last_grand_summary_row_top {
+#xfcqlbmcwe .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1908,11 +1909,11 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   border-bottom-color: #D3D3D3;
 }
 
-#baxbeaufqg .gt_striped {
+#xfcqlbmcwe .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#baxbeaufqg .gt_table_body {
+#xfcqlbmcwe .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1921,7 +1922,7 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   border-bottom-color: #D3D3D3;
 }
 
-#baxbeaufqg .gt_footnotes {
+#xfcqlbmcwe .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1935,7 +1936,7 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   border-right-color: #D3D3D3;
 }
 
-#baxbeaufqg .gt_footnote {
+#xfcqlbmcwe .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1944,7 +1945,7 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   padding-right: 5px;
 }
 
-#baxbeaufqg .gt_sourcenotes {
+#xfcqlbmcwe .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1958,7 +1959,7 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   border-right-color: #D3D3D3;
 }
 
-#baxbeaufqg .gt_sourcenote {
+#xfcqlbmcwe .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1966,77 +1967,77 @@ Table&nbsp;22.3: FAO Slope Classes <span class="citation" data-cites="un-fao2006
   padding-right: 5px;
 }
 
-#baxbeaufqg .gt_left {
+#xfcqlbmcwe .gt_left {
   text-align: left;
 }
 
-#baxbeaufqg .gt_center {
+#xfcqlbmcwe .gt_center {
   text-align: center;
 }
 
-#baxbeaufqg .gt_right {
+#xfcqlbmcwe .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#baxbeaufqg .gt_font_normal {
+#xfcqlbmcwe .gt_font_normal {
   font-weight: normal;
 }
 
-#baxbeaufqg .gt_font_bold {
+#xfcqlbmcwe .gt_font_bold {
   font-weight: bold;
 }
 
-#baxbeaufqg .gt_font_italic {
+#xfcqlbmcwe .gt_font_italic {
   font-style: italic;
 }
 
-#baxbeaufqg .gt_super {
+#xfcqlbmcwe .gt_super {
   font-size: 65%;
 }
 
-#baxbeaufqg .gt_footnote_marks {
+#xfcqlbmcwe .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#baxbeaufqg .gt_asterisk {
+#xfcqlbmcwe .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#baxbeaufqg .gt_indent_1 {
+#xfcqlbmcwe .gt_indent_1 {
   text-indent: 5px;
 }
 
-#baxbeaufqg .gt_indent_2 {
+#xfcqlbmcwe .gt_indent_2 {
   text-indent: 10px;
 }
 
-#baxbeaufqg .gt_indent_3 {
+#xfcqlbmcwe .gt_indent_3 {
   text-indent: 15px;
 }
 
-#baxbeaufqg .gt_indent_4 {
+#xfcqlbmcwe .gt_indent_4 {
   text-indent: 20px;
 }
 
-#baxbeaufqg .gt_indent_5 {
+#xfcqlbmcwe .gt_indent_5 {
   text-indent: 25px;
 }
 
-#baxbeaufqg .katex-display {
+#xfcqlbmcwe .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#baxbeaufqg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xfcqlbmcwe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col>
@@ -2145,23 +2146,23 @@ Table&nbsp;22.4: Relief classification
 </figcaption>
 <div aria-describedby="tbl-in-relief-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="trwdziiduq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#trwdziiduq table {
+<div id="wandtumqia" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wandtumqia table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#trwdziiduq thead, #trwdziiduq tbody, #trwdziiduq tfoot, #trwdziiduq tr, #trwdziiduq td, #trwdziiduq th {
+#wandtumqia thead, #wandtumqia tbody, #wandtumqia tfoot, #wandtumqia tr, #wandtumqia td, #wandtumqia th {
   border-style: none;
 }
 
-#trwdziiduq p {
+#wandtumqia p {
   margin: 0;
   padding: 0;
 }
 
-#trwdziiduq .gt_table {
+#wandtumqia .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2187,12 +2188,12 @@ Table&nbsp;22.4: Relief classification
   border-left-color: #D3D3D3;
 }
 
-#trwdziiduq .gt_caption {
+#wandtumqia .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#trwdziiduq .gt_title {
+#wandtumqia .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2204,7 +2205,7 @@ Table&nbsp;22.4: Relief classification
   border-bottom-width: 0;
 }
 
-#trwdziiduq .gt_subtitle {
+#wandtumqia .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2216,7 +2217,7 @@ Table&nbsp;22.4: Relief classification
   border-top-width: 0;
 }
 
-#trwdziiduq .gt_heading {
+#wandtumqia .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2228,13 +2229,13 @@ Table&nbsp;22.4: Relief classification
   border-right-color: #D3D3D3;
 }
 
-#trwdziiduq .gt_bottom_border {
+#wandtumqia .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#trwdziiduq .gt_col_headings {
+#wandtumqia .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2249,7 +2250,7 @@ Table&nbsp;22.4: Relief classification
   border-right-color: #D3D3D3;
 }
 
-#trwdziiduq .gt_col_heading {
+#wandtumqia .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2269,7 +2270,7 @@ Table&nbsp;22.4: Relief classification
   overflow-x: hidden;
 }
 
-#trwdziiduq .gt_column_spanner_outer {
+#wandtumqia .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2281,15 +2282,15 @@ Table&nbsp;22.4: Relief classification
   padding-right: 4px;
 }
 
-#trwdziiduq .gt_column_spanner_outer:first-child {
+#wandtumqia .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#trwdziiduq .gt_column_spanner_outer:last-child {
+#wandtumqia .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#trwdziiduq .gt_column_spanner {
+#wandtumqia .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2301,11 +2302,11 @@ Table&nbsp;22.4: Relief classification
   width: 100%;
 }
 
-#trwdziiduq .gt_spanner_row {
+#wandtumqia .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#trwdziiduq .gt_group_heading {
+#wandtumqia .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2331,7 +2332,7 @@ Table&nbsp;22.4: Relief classification
   text-align: left;
 }
 
-#trwdziiduq .gt_empty_group_heading {
+#wandtumqia .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2346,15 +2347,15 @@ Table&nbsp;22.4: Relief classification
   vertical-align: middle;
 }
 
-#trwdziiduq .gt_from_md > :first-child {
+#wandtumqia .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#trwdziiduq .gt_from_md > :last-child {
+#wandtumqia .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#trwdziiduq .gt_row {
+#wandtumqia .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2373,7 +2374,7 @@ Table&nbsp;22.4: Relief classification
   overflow-x: hidden;
 }
 
-#trwdziiduq .gt_stub {
+#wandtumqia .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2386,7 +2387,7 @@ Table&nbsp;22.4: Relief classification
   padding-right: 5px;
 }
 
-#trwdziiduq .gt_stub_row_group {
+#wandtumqia .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2400,15 +2401,15 @@ Table&nbsp;22.4: Relief classification
   vertical-align: top;
 }
 
-#trwdziiduq .gt_row_group_first td {
+#wandtumqia .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#trwdziiduq .gt_row_group_first th {
+#wandtumqia .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#trwdziiduq .gt_summary_row {
+#wandtumqia .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2418,16 +2419,16 @@ Table&nbsp;22.4: Relief classification
   padding-right: 5px;
 }
 
-#trwdziiduq .gt_first_summary_row {
+#wandtumqia .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#trwdziiduq .gt_first_summary_row.thick {
+#wandtumqia .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#trwdziiduq .gt_last_summary_row {
+#wandtumqia .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2437,7 +2438,7 @@ Table&nbsp;22.4: Relief classification
   border-bottom-color: #D3D3D3;
 }
 
-#trwdziiduq .gt_grand_summary_row {
+#wandtumqia .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2447,7 +2448,7 @@ Table&nbsp;22.4: Relief classification
   padding-right: 5px;
 }
 
-#trwdziiduq .gt_first_grand_summary_row {
+#wandtumqia .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2457,7 +2458,7 @@ Table&nbsp;22.4: Relief classification
   border-top-color: #D3D3D3;
 }
 
-#trwdziiduq .gt_last_grand_summary_row_top {
+#wandtumqia .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2467,11 +2468,11 @@ Table&nbsp;22.4: Relief classification
   border-bottom-color: #D3D3D3;
 }
 
-#trwdziiduq .gt_striped {
+#wandtumqia .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#trwdziiduq .gt_table_body {
+#wandtumqia .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2480,7 +2481,7 @@ Table&nbsp;22.4: Relief classification
   border-bottom-color: #D3D3D3;
 }
 
-#trwdziiduq .gt_footnotes {
+#wandtumqia .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2494,7 +2495,7 @@ Table&nbsp;22.4: Relief classification
   border-right-color: #D3D3D3;
 }
 
-#trwdziiduq .gt_footnote {
+#wandtumqia .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2503,7 +2504,7 @@ Table&nbsp;22.4: Relief classification
   padding-right: 5px;
 }
 
-#trwdziiduq .gt_sourcenotes {
+#wandtumqia .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2517,7 +2518,7 @@ Table&nbsp;22.4: Relief classification
   border-right-color: #D3D3D3;
 }
 
-#trwdziiduq .gt_sourcenote {
+#wandtumqia .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2525,77 +2526,77 @@ Table&nbsp;22.4: Relief classification
   padding-right: 5px;
 }
 
-#trwdziiduq .gt_left {
+#wandtumqia .gt_left {
   text-align: left;
 }
 
-#trwdziiduq .gt_center {
+#wandtumqia .gt_center {
   text-align: center;
 }
 
-#trwdziiduq .gt_right {
+#wandtumqia .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#trwdziiduq .gt_font_normal {
+#wandtumqia .gt_font_normal {
   font-weight: normal;
 }
 
-#trwdziiduq .gt_font_bold {
+#wandtumqia .gt_font_bold {
   font-weight: bold;
 }
 
-#trwdziiduq .gt_font_italic {
+#wandtumqia .gt_font_italic {
   font-style: italic;
 }
 
-#trwdziiduq .gt_super {
+#wandtumqia .gt_super {
   font-size: 65%;
 }
 
-#trwdziiduq .gt_footnote_marks {
+#wandtumqia .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#trwdziiduq .gt_asterisk {
+#wandtumqia .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#trwdziiduq .gt_indent_1 {
+#wandtumqia .gt_indent_1 {
   text-indent: 5px;
 }
 
-#trwdziiduq .gt_indent_2 {
+#wandtumqia .gt_indent_2 {
   text-indent: 10px;
 }
 
-#trwdziiduq .gt_indent_3 {
+#wandtumqia .gt_indent_3 {
   text-indent: 15px;
 }
 
-#trwdziiduq .gt_indent_4 {
+#wandtumqia .gt_indent_4 {
   text-indent: 20px;
 }
 
-#trwdziiduq .gt_indent_5 {
+#wandtumqia .gt_indent_5 {
   text-indent: 25px;
 }
 
-#trwdziiduq .katex-display {
+#wandtumqia .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#trwdziiduq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wandtumqia div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 10%">
 <col>
@@ -2738,13 +2739,14 @@ UN-FAO 2006. Guidelines for soil description. [Internet]. 4th ed. Rome, Italy: U
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

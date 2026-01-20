@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -53,14 +53,15 @@ div.csl-indent {
 <link href="./in_06_nzsc_familysibling.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -317,7 +318,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_01_horizon_names.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Horizon names</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Horizon notation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -486,6 +487,10 @@ Land)</span>. CATENA [Internet]. 39(2):79–93. <a href="https://doi.org/10.1016
 <div id="ref-bigham1993" class="csl-entry" role="listitem">
 Bigham JM, Ciolkosz EJ 1993. Soil color. Madison, USA: Soil Science
 Society of America.
+</div>
+<div id="ref-bockheim2013" class="csl-entry" role="listitem">
+Bockheim JG, Hartemink AE 2013. Classification and distribution of soils
+with lamellae in the USA. Geoderma [Internet]. 206:92–100. <a href="https://doi.org/10.1016/j.geoderma.2013.04.014">https://doi.org/10.1016/j.geoderma.2013.04.014</a>
 </div>
 <div id="ref-brabyn1998" class="csl-entry" role="listitem">
 Brabyn L 1998. <span>GIS</span> analysis of macro landform. In:
@@ -898,6 +903,10 @@ Raupach M, Tucker BM 1959. The field determination of soil reaction.
 Journal of the Australian Institute of Agricultural Science.
 25(2):129–133.
 </div>
+<div id="ref-rawling2000" class="csl-entry" role="listitem">
+Rawling JE 2000. A review of lamellae. Geomorphology [Internet].
+35(1-2):1–9. <a href="https://doi.org/10.1016/S0169-555X(00)00015-5">https://doi.org/10.1016/S0169-555X(00)00015-5</a>
+</div>
 <div id="ref-rayment2011" class="csl-entry" role="listitem">
 Rayment GE, Lyons DJ 2011. Soil chemical methods: australasia.
 [Internet]. Collingwood, Victoria: CSIRO Publishing. <a href="http://www.publish.csiro.au/book/6418">http://www.publish.csiro.au/book/6418</a>
@@ -1131,13 +1140,14 @@ models. Photogrammetric engineering and remote sensing [Internet].
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
