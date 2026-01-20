@@ -82,7 +82,7 @@ Use a GNSS (Global Navigation Satellite System) with an expected horizontal accu
 #| label: tbl-ss-locsrc
 #| tbl-cap: "Location data sources"
 
-dat_ss_elevsrc <-
+dat_ss_locsrc <-
   tribble(~Code, ~Name, ~Description,
           'GS', 'Single-band GNSS', 'Satellite based location, single band',
           'GM', 'Multi-band GNSS', 'Satellite based location, multiple band',
@@ -90,7 +90,7 @@ dat_ss_elevsrc <-
           'LM', 'Multi-sensor', 'Combined GNSS and other location data',
           'NO', 'None', 'Location determined manually.')
 
-tbl_ss_elevsrc <- gt(dat_ss_elevsrc) |>
+tbl_ss_locsrc <- gt(dat_ss_locsrc) |>
    tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
@@ -103,7 +103,7 @@ tbl_ss_elevsrc <- gt(dat_ss_elevsrc) |>
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
 
-tbl_ss_elevsrc
+tbl_ss_locsrc
 
 ```
 
