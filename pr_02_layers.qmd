@@ -363,7 +363,7 @@ dat_ss_pmo <-
           'Pt', 'Peat', 'Plant material decomposing under saturated conditions',
           'Uk', 'Unknown', 'Origin cannot be determined with certainty.'
           ) %>% 
-  mutate(Type = c(rep('Depositional', 12), rep('Residual', 4), 
+  mutate(Type = c(rep('Transported', 12), rep('Residual', 4), 
                   rep('Organic', 2), 'Other'))
 
 tbl_ss_pmo <- gt(group_by(dat_ss_pmo, Type)) |>
