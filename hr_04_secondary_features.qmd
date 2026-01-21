@@ -6,11 +6,11 @@ library(tibble)
 library(gt)
 ```
 
-Secondary soil features are bodies formed within the soil through pedogenic (natural soil-forming) processes. They contain a higher amount of a particular substance (or association of substances) and thus contrast with the surrounding material. Many of these features create barriers to water movement or alter chemistry in a way that affects both soil biota and plant root growth.
+Secondary soil features are bodies formed within the soil through pedogenic (natural soil-forming) processes. They contain a higher amount of a particular substance (or association of substances) and thus contrast with the surrounding material. Many of these features create barriers to water movement or alter chemistry in a way that affects soil organisms and plant root growth.
 
 ## Concentrations {#sec-hr-conc}
 
-Concentrations are secondary features that are not associated with specific surfaces within the soil. Some concentrations contrast sharply with the surrounding material due to differences in colour, hardness, or composition, while others may be more subtle.
+Concentrations are secondary features that are not associated with specific surfaces within the soil - i.e. they do not form coatings on peds or void spaces but rather permeate the soil mass (compare with @sec-hr-coat). Some concentrations contrast sharply with the surrounding soil material due to differences in colour, hardness, or composition, while others may be more subtle.
 
 For rapid assessment, record concentration form and abundance percentage using @tbl-hr-concform.
 
@@ -27,8 +27,8 @@ dat_hr_concform <-
           'CC', 'Concretion', 'Hard concentrations with a layered internal structure, usually rounded',
           'NO', 'Nodule', 'Hard concentrations with no internal structure, usually irregular',
           'CT', 'Crystal', 'A mineral arranged as interlocking or twinned macroscopic crystals or as a single macroscopic crystal, e.g., gypsum.',
-          'SS', 'Soft masses', 'A non-cemented concentration that can seldom be removed from the soil as a discrete unit',
-          'LM', 'Lamellae', 'A thin band of uncemented material with sharp upper and lower boundaries, horizontally oriented or running parallel to the land surface')
+          'SS', 'Soft mass', 'A non-cemented concentration that can seldom be removed from the soil as a discrete unit',
+          'LM', 'Lamellae', 'A thin band of uncemented material with sharp upper and lower boundaries')
 
 tbl_hr_concform <- gt(dat_hr_concform) |>
    tab_options(
@@ -46,10 +46,6 @@ tbl_hr_concform <- gt(dat_hr_concform) |>
 tbl_hr_concform
 ```
 
-::: {#nte-laml .callout-note appearance="minimal" collapse="true" title="Describing lamellae"}
-Lamellae are technically separate horizons, however where multiple similar lamellae occur within a larger band of material that has consistent composition they may be described as concentrations for the sake of brevity (e.g. [LM L]{.ceg} for a series of thin clay bands observed in a larger sandy layer). If a single lamella is evident between two contrasting horizons, e.g. at the base of an E horizon, then it must be described as a separate horizon rather than as a concentration. For more detailed discussion of lamellae, see @rawling2000; @bockheim2013.
-:::
-
 ```{r}
 #| label: tbl-hr-conctype
 #| tbl-cap: "Concentration types (adapted from @ncst2024)"
@@ -66,7 +62,7 @@ dat_hr_conctype <-
           'Y',  'Gypseous', 'Dominated by calcium sulfate (gypsum, CaSO~4~)',
           'Z',  'Salty', 'Dominated by salts more soluble than Calcium carbonate or calcium sulfate',
           'S',  'Sulfurous', 'Dominated by sulfur-bearing minerals, e.g. jarosite in acid sulfate soils',
-          'O',  'Organic', 'Organic texture in a low-organics matrix',
+          'O',  'Organic', 'Organic texture in a low-organic or mineral matrix',
           'UK', 'Unknown', 'Composition cannot be reliably determined'
           )
 
@@ -86,6 +82,14 @@ tbl_hr_conctype <- gt(dat_hr_conctype) |>
 
 tbl_hr_conctype
 ```
+
+::: {#nte-lamn .callout-note appearance="minimal" collapse="true" title="Lamellae and Lamina"}
+Lamellae are thin bands of concentrated but uncemented soil materials, formed by pedological processes. Lamellae are usually of a finer texture than their surrounds and may also have relatively high levels of other weathering products like iron precipitates or organic matter. While their formation mechanisms are still not fully understood, presence of lamellae in a profile can signify absence of some processes (e.g. bioturbation) and presence of others (e.g. seasonal freeze/thaw activity). Lamellae usually occur horizontally or parallel to the land surface at a scale of several meters, but can exhibit a wavy character at the sub-meter scale.
+
+Lamellae may technically qualify as distinct soil horizons. If a single lamella is evident between two contrasting horizons, then it must be described as a separate horizon rather than as a concentration. Where lamellae occur within a larger band of soil material that has consistent composition, they may be described as concentrations (e.g. [LM L 10% 3-5 mm]{.ceg} for a series of thin clay bands observed in a larger sandy layer). For more detailed discussion of lamellae, see @dijkerman1967, @rawling2000, and @bockheim2013.
+
+By contrast, lamina are thin bands of unconsolidated material with contrasting texture that have been emplaced by water, wind, or pyroclastic activity and have yet to be significantly disturbed by profile development. These geogenic layers are primary rather than secondary profile features and are described using terminology from @sec-reg-bed. No minimum or maximum thickness requirements are specified for lamina due to lack of data, but anecdotally they tend to be less than 5 cm thick.
+:::
 
 ## Coatings {#sec-hr-coat}
 
@@ -144,9 +148,9 @@ Pans can be described in detail in terms of type, thickness, continuity, structu
 dat_hr_pantype <-
   tribble(~Code, ~Name, ~Description, ~Horizon,
           'C', 'Cultivation pan', 'Pan comprising compressed soil, induced by cultivation (e.g. use of heavy farm machinery)', NA,
-          'D', 'Densipan', 'Silty layers with a very high bulk density and extremely slow permeability', '\\*d (E horizons only)',
+          'D', 'Densipan', 'Silty layers with a very high bulk density and extremely slow permeability', 'Ed',
           'H', 'Humus-pan', 'Cemented by aluminium and organic matter. Common in some Podzol Soils; sometimes known as \'coffee rock\'', 'Bhm',
-          'F', 'Iron pan', 'Interlocking nodules of Fe(/Mn) precipitates (bog iron), often at a texture contrast boundary', NA,
+          'F', 'Iron pan', 'Interlocking nodules of Fe(/Mn) precipitates (\'bog iron\'), often at a texture contrast boundary', NA,
           'K', 'Calcareous pan', 'Created by the precipitation of calcium carbonate (CaCO~3~)', '\\*km (B or BC horizons)',
           'O', 'Ortstein pan', 'Pan cemented by iron and organic matter. Common in some Podzol Soils', 'Bsm',
           'P', 'Placic', 'A very thin (< 10 mm), dark, iron-dominated pan with sharp boundaries', 'Bfm',
