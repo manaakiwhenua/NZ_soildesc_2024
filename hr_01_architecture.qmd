@@ -229,11 +229,15 @@ For routine assessment, append an estimate of rock fragment abundance as integer
 
 Example: [SL(G) 15% Hs R]{.ceg} for a sandy loam soil with 15% rounded greywacke gravels.
 
-For detailed assessment, one may optionally continue to add detail by recording volumetric abundance, lithology and shape for each of the three rock fragment size classes given in @tbl-hr-rocksz. The three additional gravel size subdivisions in @tbl-hr-gvquals may also be used. Picking and sieving from a known volume of soil will likely be required for sufficient accuracy when making detailed assessments.
+For detailed assessment, one may optionally continue to add detail by recording volumetric abundance, lithology, shape and weathering status for each of the three rock fragment size classes given in @tbl-hr-rocksz. The three additional gravel size subdivisions in @tbl-hr-gvquals may also be used. Picking and sieving from a known volume of soil will likely be required for sufficient accuracy when making detailed assessments.
+
+#### Rock fragment shape {#sec-rockfrag-shp}
+
+Rock fragment shape is partially determined by lithology and stratigraphy, and otherwise by the effects of chemical and particularly physical weathering. Abrasion during transport, freeze/thaw processes, and relief of overburden pressure can contribute to rounding.
 
 ```{r}
 #| label: tbl-hr-rockfrshp
-#| tbl-cap: "Coarse fragment shape classes"
+#| tbl-cap: "Rock fragment shape classes"
 
 dat_hr_rockfrshp <-
   tribble(~Code, ~Name, ~Description,
@@ -257,6 +261,39 @@ tbl_hr_rockfrshp <- gt(dat_hr_rockfrshp) |>
 tbl_hr_rockfrshp
 ```
 
+#### Rock fragment weathering {#sec-rockfrag-wth}
+
+Weathering status of rock fragments in the soil profile may need to be checked in relation to fresh rock from nearby exposures, where available. This weathering schema may also be applied to substrate rock masses when determining the weathering status of the horizon as a whole (@sec-pr-wdeg).
+
+```{r}
+#| label: tbl-hr-rockfrwth
+#| tbl-cap: "Rock fragment weathering status (adapted from @newzealandgeotechnicalsociety2005)"
+
+dat_hr_rockfrwth <-
+  tribble(~Code, ~Name, ~Description,
+          1, 'Fresh', 'Rock fragments show no discolouration, loss of strength, or any other effects due to chemical weathering. Fragments may still be rounded from transport',
+          2, 'Slightly weathered', 'Rock fragments are not significantly weaker than when unweathered, but may be discoloured along defects, some of which may have been opened slightly',
+          3, 'Moderately weathered', 'Rock fragments are significantly weaker than fresh rock of similar lithology and may be broken by hammer or spade. Fragments may be discoloured both along defects and on surfaces. Discolouration will penetrate slightly into the rock material. ',
+          4, 'Highly weathered', 'Most of the original rock fragment\'s strength is lost and the fragment may be broken by hand. Decomposition adjacent to defects and at the surface of clasts penetrates deeply into the rock material.',
+          5, 'Completely weathered', 'Original rock strength is lost and the rock mass changed to a soil. Former presence of rock is only evident from \'ghost rock\' structures preserved in the soil matrix.'
+  )
+
+tbl_hr_rockfrwth <- gt(dat_hr_rockfrwth) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_rockfrwth
+```
+
 ### Natural fragments {#sec-hr-nonrock}
 
 Biologically-derived coarse materials can alter the soil's water holding capacity and other parameters just as rock fragments can, although in general they can themselves hold more water. They will also break down faster.
@@ -273,7 +310,7 @@ dat_hr_nonrock <-
          'Bo', 'Bone',     'Skeletal fragments',
          'Ti', 'Timber',   'Dead wood from trees and shrubs, coarse roots',
          'Ch', 'Charcoal', 'Burnt organic materials',
-         'Gu', 'Gum',      'Kauri gum')
+         'Gu', 'Gum',      'Solidified plant exudates (e.g. Kauri gum)')
 
 tbl_hr_nonrock <- gt(dat_hr_nonrock) |>
   tab_options(
@@ -323,7 +360,7 @@ dat_hr_artefs <-
          'Sa', 'Shell - altered', 'Human-altered shells',
          'Ta', 'Timber - altered', 'Human-altered timber',
          'Tn', 'Textiles - natural', 'Fabrics and carpets made from e.g. wool',
-         'Tx', 'Textiles - artificial', 'Fabrics derived from or dominated by plastics',
+         'Tx', 'Textiles - artificial', 'Fabrics and carpets derived from or dominated by plastics',
          'Mt', 'Metals', 'Refined ore products',
          'Ms', 'Mine Spoil', 'Materials leftover from ore processing activities, excluding overburden',
          'Ws', 'Wastes', 'Other domestic or commercial rubbish')
