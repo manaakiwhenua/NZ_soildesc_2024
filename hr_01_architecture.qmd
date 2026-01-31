@@ -225,27 +225,61 @@ Rock fragments are soil mineral particles \>2 mm. For rapid assessment, use the
 
 Example: [SL(G)]{.ceg} for a sandy loam soil with 5–35% gravels (size range 2–20 mm).
 
-For routine assessment, append an estimate of rock fragment abundance as integer percentage of the whole horizon volume, as well as dominant lithology class using @tbl-ss-pm and shape using @tbl-hr-rockfrshp.
+For routine assessment, append an estimate of rock fragment abundance as integer percentage of the whole horizon volume, as well as dominant lithology class using @tbl-ss-pm and shape using @tbl-hr-rockfrfrm, @tbl-hr-rockfrrnd and @tbl-hr-rockfrrgh.
 
-Example: [SL(G) 15% Hs R]{.ceg} for a sandy loam soil with 15% rounded greywacke gravels.
+Example: [SL(G) 15% Hs CRS]{.ceg} for a sandy loam soil with 15% compact, rounded, smooth greywacke gravels.
 
 For detailed assessment, one may optionally continue to add detail by recording volumetric abundance, lithology, shape and weathering status for each of the three rock fragment size classes given in @tbl-hr-rocksz. The three additional gravel size subdivisions in @tbl-hr-gvquals may also be used. Picking and sieving from a known volume of soil will likely be required for sufficient accuracy when making detailed assessments.
 
 #### Rock fragment shape {#sec-rockfrag-shp}
 
-Rock fragment shape is partially determined by lithology and stratigraphy, and otherwise by the effects of chemical and particularly physical weathering. Abrasion during transport, freeze/thaw processes, and relief of overburden pressure can contribute to rounding.
+Rock fragment shape is partly determined by parent rock lithology and stratigraphy, and otherwise by the effects of chemical and particularly physical weathering. Abrasion during transport, freeze/thaw processes, and relief of overburden pressure can contribute to rounding-off of corners and can smooth or roughen outer surfaces. Fragment shape affects how individual particles move and at a broader scale, affects processes like slope stability. Rock fragment shape is a function of form, roundedness, and roughness.
+
+The ratios between the three side lengths of the smallest box that can contain a rock fragment are used to classify its form. Various indices can be built from these three measurements [@blott2008; @angelidakis2022], but overall they coalesce into four major classes as shown in @fig-hr-rockfrm and @tbl-hr-rockfrfrm.
+
+![Rock fragment form classification, adapted from \@angelidakis2022. With a, b, c representing the long, intermediate, and short dimensions of a box containing a rock fragment, ratios c/b and b/a together define the range of possible shapes.](data/shape_form_plot.png){#fig-hr-rockfrm fig-align="center" width="85%"}
 
 ```{r}
-#| label: tbl-hr-rockfrshp
-#| tbl-cap: "Rock fragment shape classes"
+#| label: tbl-hr-rockfrfrm
+#| tbl-cap: "Rock fragment form classes"
 
-dat_hr_rockfrshp <-
+dat_hr_rockfrfrm <-
+  tribble(~Code, ~Name, ~Description, ~Ratio,
+          'C', 'Compact',   'Rock fragments where all dimensions are similar to each other.', 'b/a and c/b >~2/3',
+          'E', 'Elongated', 'Rock fragments where the two shorter dimensions are similar, and notably smaller than the longest dimension', 'b/a <2/3, c/b usually >2/3',
+          'B', 'Bladed',    'Rock fragments where all dimensions differ from each other', 'b/a and c/b <~2/3',
+          'F', 'Flat',      'Rock fragments where the two longer dimensions are similar, and notably larger than the shortest dimension', 'b/a usually >2/3, c/b <2/3') 
+
+tbl_hr_rockfrfrm <- gt(dat_hr_rockfrfrm) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20), Ratio ~pct(20))
+  
+tbl_hr_rockfrfrm
+```
+
+Roundedness refers specifically to how sharp any corners or edges present on the form might be. Precise measurement is not possible in the field, but the proportion of flat faces and visible edges and corners can be used to make a quick assessment, along with the ease of rolling the fragment in the hand or along a surface.
+
+```{r}
+#| label: tbl-hr-rockfrrnd
+#| tbl-cap: "Rock fragment roundedness classes"
+
+dat_hr_rockfrrnd <-
   tribble(~Code, ~Name, ~Description,
-         'R', 'Rounded',   'Rock fragments considerably smoothed by transport processes',
-         'A', 'Angular',   'Rock fragments with little smoothing by transport processes',
-         'M',   'Mixed',   'Both rounded and angular fragments mixed together') 
+          'A', 'Angular',     'Rock fragments with clear, well-defined corners separated by flat outer faces.',
+          'S', 'Sub-angular', 'Rock fragments with visible but blunt corners and edges. Outer faces my be flat, concave or convex.',
+          'U', 'Sub-rounded', 'Rock fragments with poorly defined but appreciable corners and edges. Faces will be discernible but usually not flat.',
+          'R', 'Rounded',     'Rock fragments with no discernible flat faces, edges or corners.') 
 
-tbl_hr_rockfrshp <- gt(dat_hr_rockfrshp) |>
+tbl_hr_rockfrrnd <- gt(dat_hr_rockfrrnd) |>
   tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
@@ -258,12 +292,41 @@ tbl_hr_rockfrshp <- gt(dat_hr_rockfrshp) |>
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10), Name ~ pct(20))
   
-tbl_hr_rockfrshp
+tbl_hr_rockfrrnd
+```
+
+Finally, roughness represents how many smaller-scale deviations are present on the outer surfaces, and their size relative to the overall fragment. Again, precise quantification is not a field task, but can be quickly assessed with reference to visual appearance and hand-feel.
+
+```{r}
+#| label: tbl-hr-rockfrrgh
+#| tbl-cap: "Rock fragment roughness classes"
+
+dat_hr_rockfrrgh <-
+  tribble(~Code, ~Name, ~Description,
+          'S', 'Smooth',    'Surfaces are smooth to touch and appear solid and continuous.',
+          'R', 'Rough',     'Surfaces appear smooth but feel rough or abrasive. Small, shallow pits may intrude into the surface, embedded crystals or grains may protrude slightly.',
+          'B', 'Bumpy',     'Surfaces have visible divots and/or protrusions that make the fragment appear uneven from a short distance.',
+          'I', 'Irregular', 'Surfaces have pronounced divots, protrusions, or large holes that make it difficult to assess overall form.') 
+
+tbl_hr_rockfrrgh <- gt(dat_hr_rockfrrgh) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_rockfrrgh
 ```
 
 #### Rock fragment weathering {#sec-rockfrag-wth}
 
-Weathering status of rock fragments in the soil profile may need to be checked in relation to fresh rock from nearby exposures, where available. This weathering schema may also be applied to substrate rock masses when determining the weathering status of the horizon as a whole (@sec-pr-wdeg).
+Weathering status of rock fragments provides some information on profile age and stability, and is used in the NZSC. Weathering status may need to be assessed in relation to fresh rock from nearby exposures, where available. The weathering schema in @tbl-hr-rockfrwth may also be applied to substrate rock masses when determining the weathering status of the horizon as a whole (@sec-pr-wdeg).
 
 ```{r}
 #| label: tbl-hr-rockfrwth
