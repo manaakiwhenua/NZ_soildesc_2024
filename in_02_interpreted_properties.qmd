@@ -1,0 +1,187 @@
+# Interpreted properties {#sec-in-hprops}
+
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+```
+
+## Horizon drainage {#sec-in-hdrng}
+
+Soil drainage is an assessment of how fast water leaves a soil profile relative to supply. This characteristic can be controlled by morphological characteristics that occur in a range of combinations.
+
+Drainage should first be assessed on a per-horizon basis. These interpretations may then be summarised a profile level (see @sec-in-pdrng). @tbl-in-hdrng below highlights the common characteristics associated with each horizon drainage class.
+
+```{r}
+#| label: tbl-in-hdrng
+#| tbl-cap: "Horizon-level drainage characteristics"
+
+dat_in_hdrng <-
+  tribble(~Code, ~Name, ~HNames, ~sws, ~mcol, ~secfts,
+          'VP', 'Very poor', 'O*, *r', 'Saturated or wet', 'Low-chroma', 'Few to none',  
+          'PO', 'Poor', '*r, *g', 'Wet', 'Low-chroma', 'Few to none, mottles more often on ped surfaces than internals',
+          'IP', 'Imperfect', '*(g)', 'Wet to Moist', 'Low-chroma patterns on brighter matrix', 'Fe and/or Mn-rich segregations, nodules and pans',
+          'MW', 'Moderately Well', '*(f)', 'Wet to Dry', 'Colour patterns but no low chroma colours', 'Mottles more often in ped interiors' ,
+          'WE', 'Well', 'No redox suffixes', 'Moist to Dry', 'No low chroma colours',  'Few to none')
+
+tbl_in_hdrng <- gt(dat_in_hdrng) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  tab_style(style = list(cell_text(weight = 'bold')),
+            locations = cells_body(columns = 2)) |>
+  cols_label(HNames = 'Horizon Names',
+             sws    = 'Typical Moisture',
+             secfts  = 'Redox concentrations',
+             mcol   = 'Main colours') |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+
+tbl_in_hdrng
+```
+
+### Classifying topsoil drainage
+
+Morphological features associated with drainage status can be hard to observe accurately in [A]{.ceg} horizons, mostly due to their darker colour. *When otherwise in doubt*, a well developed [A]{.ceg} horizon should be assigned a drainage class one better than the horizon below it (usually a [B]{.ceg}, [E]{.ceg}, or [C]{.ceg} horizon). A poorly developed [A]{.ceg} horizon should receive the same class assignment as the horizon below. Use the 'distinct topsoil' NZSC diagnostic criteria to identify well developed [A]{.ceg} horizons.
+
+The reasoning behind this rule of thumb is that the lack of topsoil development may be partially explained by lack of contrast in the drainage regime between the topsoil and the layer below.
+
+<!-- example diagram here --->
+
+
+## Profile Drainage {#sec-in-pdrng}
+
+The drainage status of the profile as a whole is determined using horizon depths and per-horizon drainage ratings completed according to @sec-in-hdrng.
+
+Workers classifying drainage for NZSC Sibling construction have no need to subdivide within the profile ratings in @tbl-in-pdrng. For other types of work e.g. agricultural suitability assessment, it may be useful to recognise subgroups – e.g. for a deep-rooted, wetness-intolerant crop, there is a difference between an imperfectly drained profile that is at its *worst* imperfectly drained in the top 1 m, and one that has poor drainage below 60 cm.
+
+```{r}
+#| label: tbl-in-pdrng
+#| tbl-cap: "Profile drainage rules"
+
+dat_in_pdrng <-
+  tribble(   
+    ~Code,      ~Name,              ~Description,
+    'VP', 'Very Poor', 'Profiles with very poorly drained horizons starting <10cm from the land surface',
+    'PO',    'Poor', 'Profiles with poorly drained horizons starting <30cm from the land surface',
+    'IP',  'Imperfect', 'Profiles with poorly drained horizons starting 30-60cm from the land surface, *or*
+    Profiles with imperfectly drained horizons starting <30cm from the land surface',
+    'MW', 'Moderately Well', 'Profiles with moderately well-drained horizons starting <90 cm from the surface, *or*
+    Profiles with poorly-drained horizons starting 60-90cm from the surface, *or*
+    Profiles with imperfectly drained horizons starting 30-90cm from the surface', 
+    'WE', 'Well', 'All horizons starting within 90cm of the surface are well-drained.'  )
+
+tbl_in_pdrng <- gt(dat_in_pdrng) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  fmt_markdown(columns = 3)
+
+tbl_in_pdrng
+
+```
+
+#### Natural vs Artificial drainage {#sec-in-pdrng-alt}
+
+Profile drainage is often modified by human activity. Many of these modifications require ongoing maintenance. Use the codes in @tbl-in-natdrng to signify the degree of drainage modification.
+
+```{r}
+#| label: tbl-in-natdrng
+#| tbl-cap: "Profile drainage modification level"
+
+dat_in_natdrng <-
+  tribble(~Code, ~Name, ~Description, 
+         'N', 'Natural', 'No evidence of human impacts on the local drainage regime', 
+         'M', 'Minor', 'Drainage regime passively altered by e.g. conversion to or from forest; or ambiguous evidence of any human impacts beyond clearing',
+         'A', 'Major', 'Clear evidence of directed human alteration to the drainage regime e.g. drain or dam construction adjacent to site, flow diversions, infill, levelling or contouring works')
+
+tbl_in_natdrng <- gt(dat_in_natdrng) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_in_natdrng
+
+```
+
+## Rooting depth {#sec-in-rdpth}
+
+A soil's estimated rooting depth is an interpretation relevant largely to agricultural land uses. The system presented below is sufficient for identifying major barriers to optimal growth of common crop and pasture species. More precise estimates can be made for specific species (and even specific varieties) given detailed knowledge of their preferences and tolerances.
+
+Barriers to root growth include physical properties (soil firmness, presence of bedrock or a pan), chemical properties (pH, salinity, macro and micro-nutrient levels, presence of pollutants), and hydrological (excessive wetness or dryness). The depth to the most shallow barrier defines the overall rooting depth, but where multiple barriers are present in a profile, all of them should be noted. Not all barriers are relevant to every plant, e.g. some have a preference for wetter or drier conditions.
+
+Rooting depth barriers can be identified most clearly by the behaviour of living roots in the profile. Absence of roots where vegetation is present at the surface may indicate a barrier. Roots may also grow downwards until encountering a barrier and then turn to grow horizontally. Where roots are not absent from a horizon, their distribution within the soil may change, e.g., becoming confined to inter-ped spaces where peds are very firm. Significant barriers may also affect the character of vegetation at the surface, causing e.g., stunting or discoloured leaves.
+
+Where rooting behaviour appears to be impaired, evidence of a likely cause may be inferred from the profile description, particularly:
+
+-   Field tests for pH, salinity or reducing conditions (@sec-chem)
+-   Strength, penetration resistance and induration tests (@sec-cons)
+-   Structural characteristics, particularly the absence of peds (@sec-hr-stru)
+-   Relative abundance of rock fragments, where excess rock might be a physical barrier and also limit water retention and movement (@sec-frag)
+-   Soil texture, where high clay content may cause waterlogging or high sand content may limit water retention (@sec-tex)
+-   Identification of pans blocking root growth, or concentrations that may suggest a chemical issue (@sec-secondary)
+
+These features must coincide with the zone where root behaviour changes or roots disappear to be relevant. Where no obvious in-profile features are present but impeded root growth is still observable, laboratory testing may be required to investigate the cause.
+
+Record rooting depth information as type using @tbl-in-rbarr and depth encountered in cm, e.g. [Br 30 cm]{.ceg} for a shallow profile over bedrock. Rooting depths should usually coincide with a horizon boundary.
+
+```{r}
+#| label: tbl-in-rbarr
+#| tbl-cap: "Types of rooting barrier"
+
+dat_in_rbarr <-
+  tribble(~Code, ~Name, ~Description, 
+           'Ac', 'Acid',           'pH below 5.5',
+           'Ak', 'Alkaline',       'pH above 8.0',
+           'Na', 'Saline',         'EC above 0.6 dS/cm',
+           'Ax', 'Anoxic',         'Presence of reduced iron, or a very poor horizon drainage rating',  
+           'Tx', 'Toxic',          'Presence of a human-made pollutant at levels impacting plant growth',
+           'Px', 'Pathogen',       'Presence of a root pathogen or pest species affecting roots',
+           'Nx', 'Nutrient',       'Lack of a macro- or micro-nutrient required for plant growth',
+           'Fm', 'Firm',           'Unconfined soil strength firm or greater',
+           'Pp', 'Physical pan',   'Presence of a well-developed densipan or fragipan, or a compacted layer caused by cultivation, livestock trampling, or machinery traffic',
+           'Pc', 'Chemical pan',   'Presence of a well-developed chemical pan e.g. duripan, iron-pan, calcrete',
+           'Sk', 'Sandy',          'Soil texture is coarse sandy or sandy-skeletal with loose packing',
+           'Cl', 'Clayey',         'Soil texture is clayey and structure is apedal massive',
+           'Rk', 'Profile rock',   'Rock fragments occupy over 35% of the horizon by volume, either in the soil or in regolithic material',
+           'Ak', 'Artefact',       'A buried layer of anthropogenic origin is present (e.g. geofabric)',
+           'Bf', 'Fractured substrate', 'Saprolithic, paralithic or lithic material with notable cracking is present',
+           'Bm', 'Massive substrate',   'Paralithic or lithic material with no or mininimal cracking is present')
+
+tbl_in_rbarr <- gt(dat_in_rbarr) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_in_rbarr
+
+```

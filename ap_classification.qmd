@@ -1,4 +1,4 @@
-# Soil setting properties {#sec-in-setting}
+# Classifying numeric measures {#sec-ap-class}
 
 ```{r}
 library(dplyr)
@@ -6,13 +6,17 @@ library(tibble)
 library(gt)
 ```
 
-Many of the parameters described in Soil Setting are inherently categorical. Classifying the numeric measurements as well can be useful for efficient communication. However, in the absence of inherent groupings in these data, class boundaries need to be chosen carefully.
+## Setting and site {#sec-in-setting}
 
-## Slope classification {#sec-slopeclass}
+Many of the parameters described in Soil Setting are inherently categorical. Classifying the numeric measurements as well can be useful for efficient communication. However, in the absence of inherent groupings in these data, class boundaries need to be chosen carefully. 
 
-### Land Use Capability slope classes {#sec-slopeclass-luc}
+### Slope classification {#sec-slopeclass}
 
-The most commonly-used slope classification in New Zealand is the one associated with the Land Use Capability (LUC) framework. These classes were formulated primarily to support pastoral agriculture, and the class boundaries focus on slope as an activity limiter, rather than an inherent landscape property. This means that the classification can potentially underperform in landscapes where natural slopes are close to the class boundaries. This is acknowledged in the Land Use Capabilty (LUC) Handbook [@lynn2009] by the inclusion of various options for modifying slope class.
+For most New Zealand soils communication, the Land Use Capability slope classes @sec-slopeclass-luc are preferred because they are familiar to a wide audience. Other systems are included here as they may be more appropriate for specific applications.
+
+#### Land Use Capability slope classes {#sec-slopeclass-luc}
+
+The most commonly-used slope classification in New Zealand is the one associated with the Land Use Capability (LUC) framework. These classes were formulated primarily to support pastoral agriculture, and the class boundaries focus on slope as an activity limiter, rather than an inherent landscape property. This means that the classification can potentially underperform in landscapes where natural slopes are close to the class boundaries. This is acknowledged in the Land Use Capability (LUC) Handbook [@lynn2009] by the inclusion of various options for modifying slope class.
 
 The class boundaries are reproduced from Table 26 of the LUC Handbook in @tbl-in-slpluc. Some generalised groupings are also included - these are discussed in Appendix 1 of the LUC Handbook but are not explicitly defined.
 
@@ -54,17 +58,17 @@ tbl_in_slpluc <- gt(dat_in_slpluc) |>
 tbl_in_slpluc
 ```
 
-::: {.content-visible when-format='docx'}
-delete me 
+::: {.content-visible when-format="docx"}
+delete me
 :::
 
 ::: {#tip-slplim .callout-tip appearance="simple" collapse="true" title="LUC slope limits"}
 Note that the LUC Handbook does not provide fully closed limits for slope classes. For consistency, slope class A should be considered to be 0 - ≤4, B as \>4 - ≤8, etc.
 :::
 
-### Natural Log classifications {#sec-slopeclass-log}
+#### Natural Log classifications {#sec-slopeclass-log}
 
-Work by Speight [@speight1971] promotes the use of slope classes with natural-log derived limits on the basis that they come closest to a universal set of 'characteristic slopes'. The limits proposed are shown in @tbl-in-slpaus. These classes are commonly used in Australian soil survey, and focus more on splitting up low-slope areas of the landscape. As such, these may be more useful for interpreting low-relief landscapes than the LUC slope classes.
+Work by @speight1971 promotes the use of slope classes with natural-log derived limits on the basis that they come closest to a universal set of 'characteristic slopes'. The limits proposed are shown in @tbl-in-slpaus. These classes are commonly used in Australian soil survey, and focus more on splitting up low-slope areas of the landscape. As such, these may be more useful for interpreting low-relief landscapes than the LUC slope classes.
 
 ```{r}
 #| label: tbl-in-slpaus
@@ -99,15 +103,15 @@ tbl_in_slpaus <- gt(dat_in_slpaus) |>
 tbl_in_slpaus
 ```
 
-::: {.content-visible when-format='docx'}
-delete me 
+::: {.content-visible when-format="docx"}
+delete me
 :::
 
 ::: {#tip-slpaus .callout-tip appearance="minimal" collapse="true" title="Additional class splits"}
 The Australian Soil and Land Survey Field Handbook [@ncst2024] notes that in certain circumstances it may be useful to split the classes [VG]{.ceg}, [GE]{.ceg} and [MO]{.ceg}, at 1.8% (1.0°), 5.6% (3.2°), and 18% (10.2°) respectively. The document does not, however, elucidate those circumstances.
 :::
 
-### UN-FAO Classification
+#### UN-FAO Classification
 
 The following classification was offered by the UN-FAO *Guidelines for Soil Description* [@un-fao2006]. The classes are highly discriminatory on low slopes, but lump most steeper slopes into only two categories. As such they may be of most use in irrigation planning.
 
@@ -146,11 +150,11 @@ tbl_in_slpfao <- gt(dat_in_slpfao) |>
 tbl_in_slpfao
 ```
 
-### Data-driven classifications {#sec-slopeclass-dat}
+#### Data-driven classifications {#sec-slopeclass-dat}
 
 Where high-precision DEMs are available and the areal limits of landscapes are identified, data-driven slope classification is possible. This cannot be done universally; since the classification is an expression of local geomorphology, the area of interest must first be carefully delineated before proceeding. Classes defined in this way may be very useful in accurately defining landforms, but hard to convert to practical use.
 
-## Aspect classification {#sec-aspectclass}
+### Aspect classification {#sec-aspectclass}
 
 The broadest aspect classification available divides the landscape into flat/sunny/shady (\@tbl-aspcl-ssh). In New Zealand, 'sunny' is roughly 'north-facing'.
 
@@ -158,7 +162,7 @@ For more detail, aspect data can be classified by cardinal compass direction, in
 
 [compass rose image goes here, similar to [the WRB's one](https://obrl-soil.github.io/wrbsoil2022/annex-01-field-guide.html#sec-a1-823-as)]{.diags}
 
-## Relief classification {#sec-reliefclass}
+### Relief classification {#sec-reliefclass}
 
 The following classification system is used globally, and developed over many years [see e.g., @hammond1954; @löffler1977; @brabyn1998; @speightLandform2024].
 
@@ -194,3 +198,170 @@ tbl_in_relief <- gt(dat_in_relief) |>
 
 tbl_in_relief
 ```
+
+## Profile
+
+Classifying numeric profile data may be done for cross-compatibility with older data, or for summarised communiations. 
+
+```{r}
+library(dplyr)
+library(tibble)
+library(gt)
+```
+
+### Size classes {#sec-in-size}
+
+#### Size classes for solid soil components {#sec-in-solsz}
+
+The following size classification may be applied to size data gathered for peds and other solid soil components.
+
+```{r}
+#| label: tbl-in-size
+#| tbl-cap: "Size classification for soil materials"
+
+dat_in_size <-
+  tribble(~Code, ~Name, ~Description,
+          1, 'Microfine', '< 1',
+          2, 'Extremely fine', '1 - 2',
+          3, 'Very fine', '2 - 6',
+          4, 'Fine', '6 - 10',
+          5, 'Medium', '10 - 20',
+          6, 'Coarse', '20 - 60',
+          7, 'Very Coarse', '60 - 100',
+          8, 'Extremely coarse', '100 - 200',
+          9, 'Gross', '> 200'
+  )
+
+tbl_in_size <- gt(dat_in_size) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_label(Description = 'Size range (mm)') |>
+  cols_width(Code ~pct(10), Name ~ pct(30))
+  
+tbl_in_size
+
+```
+
+#### Size classes for rock fragments
+
+The following classification may be applied to directly measured size data for rock fragments, or used when assessing rock fragment composition in detail (@sec-rockfrag).
+
+```{r}
+#| label: tbl-in-rockfrsz
+#| tbl-cap: "Rock fragment size classes"
+
+dat_in_rockfrsz <-
+  tribble(~Code, ~Name, ~Description,
+         1, 'Fine gravel',    '2 - 6',
+         2, 'Medium gravel',  '6 - 20',
+         3, 'Coarse gravel',  '20 - 60',
+         4, 'Cobbles',        '60 - 200',
+         5, 'Stones',         '200 - 600',
+         6, 'Boulders',       '600 - 2000', 
+         7, 'Large boulders', '>2000') 
+
+tbl_in_rockfrsz <- gt(dat_in_rockfrsz) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_label(Description = 'Size range (mm)') |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_in_rockfrsz
+```
+
+#### Estimating size classes {#sec-in-sizepics}
+
+The following images can help accurately estimate the size of soil features.
+
+[images go here]{.diags}
+
+### Abundance classes {#sec-in-abund}
+
+#### Abundance classes for roots {#sec-in-abrts}
+
+See @sec-root-abund for assessment methodology.
+
+```{r}
+#| label: tbl-hr-rtab
+#| tbl-cap: "Plant root abundance classes (adapted from @internationalorganizationforstandardizationa)"
+
+dat_hr_rtab <-
+  tribble(~Code,      ~Name,   ~Desc1, ~Desc2,
+              0,     'None',      '0',    '0',
+              1,      'Few',   '1–20',  '1-4',
+              2,   'Common',  '21–50',  '5–8',
+              3,     'Many', '51–200', '9–16',
+              4, 'Abundant',   '>200',  '>16')
+
+tbl_hr_rtab <- gt(dat_hr_rtab) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_label(Desc1 = md('Roots per 100 cm^2^'),
+             Desc2 = 'Roots per 50 cm transect') |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_rtab
+
+```
+
+#### Abundance classes for other soil components {#sec-in-abgen}
+
+```{r}
+#| label: tbl-in-abgen
+#| tbl-cap: "General abundance classes"
+
+dat_in_abgen <-
+  tribble(~Code,      ~Name,  ~Description,
+              0,     'None',          '0%',
+              1, 'Very Few',    '> 0 - 2%',
+              2,      'Few',    '> 2 - 10',
+              3,   'Common',  '> 10 - 35%',
+              4,     'Many',  '> 35 - 50%',
+              5, 'Abundant',  '> 50 - 75%',
+              6,  'Dominant',      '> 75%' )
+
+tbl_in_abgen <- gt(dat_in_abgen) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_in_abgen
+```
+
+#### Estimating abundance classes {#sec-in-abundpics}
+
+The following images can help accurately estimate percentage abundance of soil features by area.
+
+[images go here]{.diags}
