@@ -1,4 +1,6 @@
-# Interpreted properties {#sec-in-hprops}
+# Profile behaviour {#sec-in-hprops}
+
+Soil profile descriptions can be used to identify behavioural characteristics of a soil that are relevant to ecosystem composition and to productivity.
 
 ```{r}
 library(dplyr)
@@ -6,9 +8,11 @@ library(tibble)
 library(gt)
 ```
 
-## Horizon drainage {#sec-in-hdrng}
+## Drainage {#sec-in-drng}
 
 Soil drainage is an assessment of how fast water leaves a soil profile relative to supply. This characteristic can be controlled by morphological characteristics that occur in a range of combinations.
+
+### Horizon drainage {#sec-in-hdrng}
 
 Drainage should first be assessed on a per-horizon basis. These interpretations may then be summarised a profile level (see @sec-in-pdrng). @tbl-in-hdrng below highlights the common characteristics associated with each horizon drainage class.
 
@@ -46,7 +50,7 @@ tbl_in_hdrng <- gt(dat_in_hdrng) |>
 tbl_in_hdrng
 ```
 
-### Classifying topsoil drainage
+#### Classifying topsoil drainage {3sec-in-tsdrng}
 
 Morphological features associated with drainage status can be hard to observe accurately in [A]{.ceg} horizons, mostly due to their darker colour. *When otherwise in doubt*, a well developed [A]{.ceg} horizon should be assigned a drainage class one better than the horizon below it (usually a [B]{.ceg}, [E]{.ceg}, or [C]{.ceg} horizon). A poorly developed [A]{.ceg} horizon should receive the same class assignment as the horizon below. Use the 'distinct topsoil' NZSC diagnostic criteria to identify well developed [A]{.ceg} horizons.
 
@@ -54,8 +58,7 @@ The reasoning behind this rule of thumb is that the lack of topsoil development 
 
 <!-- example diagram here --->
 
-
-## Profile Drainage {#sec-in-pdrng}
+### Profile Drainage {#sec-in-pdrng}
 
 The drainage status of the profile as a whole is determined using horizon depths and per-horizon drainage ratings completed according to @sec-in-hdrng.
 
@@ -94,7 +97,7 @@ tbl_in_pdrng
 
 ```
 
-#### Natural vs Artificial drainage {#sec-in-pdrng-alt}
+##### Natural vs Artificial drainage {#sec-in-pdrng-alt}
 
 Profile drainage is often modified by human activity. Many of these modifications require ongoing maintenance. Use the codes in @tbl-in-natdrng to signify the degree of drainage modification.
 
