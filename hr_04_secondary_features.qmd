@@ -133,13 +133,13 @@ tbl_hr_coattype
 
 ## Pans {#sec-pan}
 
-Pans form when particular chemical compounds precipitate out of the soil solution and cement a layer of mineral particles (perhaps as a further accumulation and joining together of coatings and/or concentrations), or when particular particle size distributions and/or shape range become very tightly packed. Many pans are diagnostic layers in the New Zealand Soil Classification, because they can form a barrier to plant root growth or water movement.
+Pans form when particular chemical compounds precipitate out of the soil solution and cement a layer of mineral particles (perhaps as a further accumulation and joining together of coatings and/or concentrations), or when particular particle size distributions and/or shape range become very tightly packed. Many pans are diagnostic in the *New Zealand Soil Classification*, because they can form a barrier to plant root growth or water movement.
 
-For rapid assessment, only record pans that are strongly developed enough to be classification-relevant. A classification-relevant pan is one that is developed enough to meet all of the relevant diagnostic requirements listed in the New Zealand Soil Classification. Record the pan type using @tbl-hr-pantype.
+For rapid assessment, only record pans that are strongly developed enough to be classification-relevant. A classification-relevant pan is one that is developed enough to meet all of the relevant diagnostic requirements listed in the *New Zealand Soil Classification*. Record the pan type using @tbl-hr-pantype.
 
 Many (but not all) pans have dedicated conventional horizon names. The full definitions of those horizons are available in @sec-hnms.
 
-Pans can be described in detail in terms of type, thickness, continuity, structure, strength and cementation. Pans comprise distinct horizons, so their thickness is defined using horizon boundaries. Their strength and cementation are assessed using @tbl-cn-str and @tbl-cn-ind. Codes for type, continuity and structure are given below in @tbl-hr-pantype, @tbl-hr-pancont, and @tbl-hr-panstr. Note that continuity can only be observed in large pits or exposures.
+Pans can optionally be described in detail in terms of type, thickness, continuity, structure, strength and cementation. Pans comprise distinct horizons, so their thickness is defined using horizon boundaries. Their strength and cementation are assessed using @tbl-cn-str and @tbl-cn-ind. Codes for type, continuity and structure are given below in @tbl-hr-pantype, @tbl-hr-pancont, and @tbl-hr-panstr. Note that continuity can only be observed in large pits or exposures.
 
 ```{r}
 #| label: tbl-hr-pantype
@@ -173,7 +173,7 @@ tbl_hr_pantype <- gt(dat_hr_pantype) |>
   fmt_markdown(columns = c(3, 4)) |>
   sub_missing(columns = 4, missing_text = '') |>
   cols_width(Code ~pct(10), Name ~pct(20), Horizon ~pct(20)) |>
-  tab_footnote(footnote = md("Full identification criteria for pans with horizon notations are avaialble in @sec-hnms."))
+  tab_footnote(footnote = md("Full identification criteria for pans with horizon notations are available in @sec-hnms."))
 
 tbl_hr_pantype
 ```

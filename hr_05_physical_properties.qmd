@@ -60,9 +60,9 @@ tbl_cn_ct <- gt(dat_cn_ct) |>
                        rows = stringr::str_detect(!!sym(x),"No")
                      )})) |>
   fmt_markdown(columns = 1) |>
-  cols_label(grav = 'Mineral, rock fragments ≥ 15%', 
-             ncoh = 'Mineral, non-cohesive, rock fragments < 15%',
-             coh  = 'Mineral, cohesive, rock fragments < 15%',
+  cols_label(grav = 'Mineral, rock fragments ≥15%', 
+             ncoh = 'Mineral, non-cohesive, rock fragments <15%',
+             coh  = 'Mineral, cohesive, rock fragments <15%',
              org  = 'Organic',
              mstat = 'Moisture status') |>
   cols_width(Test ~pct(20))
@@ -85,7 +85,6 @@ For classifying using the New Zealand Soil Classification, particular tests down
 -   **Recent Soils:** must not have any moderately or very fluid (@sec-cn-flu) layers within 30 cm of the soil surface.
 
 Strength, fluidity, stickiness, mode of failure, and rubbed fibre content tests are also common diagnostic features at the group and subgroup level in the NZSC.
-
 :::
 
 ## Cohesion {#sec-dn-prep}
@@ -138,13 +137,13 @@ Each of the tests in this section are evaluated against @tbl-cn-str.
 
 dat_cn_str <-
   tribble(~Code, ~Name, ~Failure_cond, ~amt_force_n,
-          1, 'Very Weak', 'Very gentle force between straight thumb and forefinger', '< 8',
-          2, 'Weak', 'Gentle force between straight thumb and forefinger', '8-20',
-          3, 'Slightly firm', 'Moderate force between straight thumb and forefinger', '20-40',
-          4, 'Firm', 'Strong/maximum force between straight thumb and forefinger', '40-75',
-          5, 'Very firm', 'Cannot crush between locked hands of an average person. Can crush with gentle force underfoot', '75-150',
-          6, 'Hard', 'Full body weight (~80 kg) applied slowly', '150-800',
-          7, 'Very hard', 'Withstands full body weight', '> 800'
+          1, 'Very Weak', 'Very gentle force between straight thumb and forefinger', '<8',
+          2, 'Weak', 'Gentle force between straight thumb and forefinger', '8–20',
+          3, 'Slightly firm', 'Moderate force between straight thumb and forefinger', '20–40',
+          4, 'Firm', 'Strong/maximum force between straight thumb and forefinger', '40–75',
+          5, 'Very firm', 'Cannot crush between locked hands of an average person. Can crush with gentle force underfoot', '75–150',
+          6, 'Hard', 'Full body weight (~80 kg) applied slowly', '150–800',
+          7, 'Very hard', 'Withstands full body weight', '>800'
           )
 
 tbl_cn_str <- gt(dat_cn_str) |>
@@ -177,8 +176,8 @@ Unconfined soil strength describes how strongly soil material resists crushing w
 
 1.  Perform the test on a minimally disturbed 30 mm cube.
 2.  Hold the cube between the thumb and forefinger. Both digits must be straight and fully extended.
-3.  Pinch down. If the cube can be crushed, rate the difficulty using categories [1-4]{.ceg} in @tbl-cn-str.
-4.  If the cube cannot be crushed by hand, attempt to crush it slowly underfoot, against a hard surface. Rate the difficulty using categories [5-7]{.ceg} in @tbl-cn-str.
+3.  Pinch down. If the cube can be crushed, rate the difficulty using categories [1]{.ceg}–[4]{.ceg} in @tbl-cn-str.
+4.  If the cube cannot be crushed by hand, attempt to crush it slowly underfoot, against a hard surface. Rate the difficulty using categories [5]{.ceg}–[7]{.ceg} in @tbl-cn-str.
 
 ### Unconfined aggregate strength {#sec-cn-stra}
 
@@ -192,7 +191,7 @@ Unconfined aggregate strength describes the physical integrity of soil aggregate
 
 1.  Perform the test on an extracted ped.
 2.  Hold the ped between the thumb and forefinger. Both digits must be straight and fully extended.
-3.  Pinch down. If the ped can be crushed, rate the difficulty using categories [1]{.ceg}[–]{.ceg}[4]{.ceg} in @tbl-cn-str.
+3.  Pinch down. If the ped can be crushed, rate the difficulty using categories [1–4]{.ceg} in @tbl-cn-str.
 4.  If the ped cannot be crushed by hand, attempt to crush it slowly underfoot, against a hard surface. Rate the difficulty using categories [5–7]{.ceg} in @tbl-cn-str.
 
 ### Remoulded soil strength {#sec-cn-strr}
@@ -232,7 +231,7 @@ dat_cn_fail <-
            'N', 'Not determinable', 'Soil is either too dry or too wet to reliably test',
            'V', 'Very friable', 'Test specimen cannot be formed, or crumbles under very slight stress on crushing within the hand, into aggregates predominantly <2 mm in size. In most instances the test specimen is difficult to obtain.',
           'F', 'Friable', 'Test sample cannot be formed, or crumbles under very slight stress on crushing within the hand, into aggregates predominantly >2 mm in size, or crumbles under slight stress on crushing within the hand into aggregates predominantly <2 mm in size.',
-          'B', 'Brittle', 'Under slowly increasing pressure between the extended thumb and forefinger, a test specimen retains its size and shape with few or no cracks until it fractures abruptly into aggregates predominantly > 2 mm in size.',
+          'B', 'Brittle', 'Under slowly increasing pressure between the extended thumb and forefinger, a test specimen retains its size and shape with few or no cracks until it fractures abruptly into aggregates predominantly >2 mm in size.',
           'S', 'Semi-deformable', 'Under increasing pressure between the extended thumb and forefinger the test specimen as a whole is perceptibly compressed in the direction along which pressure is exerted, but cracks develop and the specimen ruptures before it has been compressed to half its original thickness. Before rupture, parts crumble and fall away if the specimen is shaken while held between the thumb and forefinger.',
           'D', 'Deformable', 'Under slowly increasing pressure between the extended thumb and forefinger, the test specimen can be compressed to at least half its original thickness without the appearance of cracks and without rupture.')
 
@@ -308,7 +307,7 @@ Penetration resistance is the capacity of the soil, in its natural confined stat
 2.  Assess ease of penetrating a vertical face using @tbl-cn-penr.
 
 ::: {#nte-ppen .callout-note appearance="minimal" collapse="true" title="Use of pocket penetrometers"}
-Pocket-sized penetrometers with a 6 mm flat tip are often recommended for assessing penetration resistance of cohesive materials in the field. These devices can usually measure no more than 400-1000 kPa and so may not be adequate for measurements of hard materials.
+Pocket-sized penetrometers with a 6 mm flat tip are often recommended for assessing penetration resistance of cohesive materials in the field. These devices can usually measure no more than 400–1000 kPa and so may not be adequate for measurements of hard materials.
 
 If a pocket penetrometer is used, take at least 10 readings from across the target horizon and record a median and range for resistance. The soil material being measured must be at or near field capacity when measured for the readings to be valid.
 :::
@@ -319,13 +318,13 @@ If a pocket penetrometer is used, take at least 10 readings from across the targ
 
 dat_cn_penr <-
   tribble(~Code, ~Name, ~Description, ~kpa,
-          1, 'Extremely low', 'Easily penetrated by fist', '0-500',
-          2, 'Very low', 'Easily penetrated by thumb', '500 - 1000',
-          3, 'Low', 'Readily indented by thumb but penetrated with considerable effort. Imprinted by finger with some effort.', '1000 - 1500',
-          4, 'Moderate', 'Readily indented by thumbnail', '1500-2200',
-          5, 'High', 'Barely imprinted by thumb or forefinger', '2200 - 3000',
-          6, 'Very high', 'Indented by thumbnail. No imprint by thumb or finger', '3100 - 4000',
-          7, 'Extremely high', 'Barely indented by thumbnail', '> 4000')
+          1, 'Extremely low', 'Easily penetrated by fist', '0–500',
+          2, 'Very low', 'Easily penetrated by thumb', '500–1000',
+          3, 'Low', 'Readily indented by thumb but penetrated with considerable effort. Imprinted by finger with some effort.', '1000–1500',
+          4, 'Moderate', 'Readily indented by thumbnail', '1500–2200',
+          5, 'High', 'Barely imprinted by thumb or forefinger', '2200–3000',
+          6, 'Very high', 'Indented by thumbnail. No imprint by thumb or finger', '3100–4000',
+          7, 'Extremely high', 'Barely indented by thumbnail', '>4000')
 
 tbl_cn_penr <- gt(dat_cn_penr) |>
    tab_options(
@@ -368,7 +367,7 @@ Note that this test is not analogous to the shear vane test of @newzealandgeotec
 
 dat_cn_sens <-
   tribble(~Code, ~Name, ~rel_loss, ~Description,
-          1, 'Non-sensitive', '0-1', 'the sample does not smear under shear force, and may soften only slightly',
+          1, 'Non-sensitive', '0–1', 'the sample does not smear under shear force, and may soften only slightly',
           2, 'Weakly sensitive', '2', 'the sample smears and skids under moderate shear force (20-40 kPa)',
           3, 'Moderately sensitive', '3', 'the sample suddenly turns fluid under moderate shear force (20-40 kPa) and the fingers skid. Some free water is evident on fingers after shearing',
           4, 'Very sensitive', '>3', 'the soil suddenly turns fluid and slippery under only gentle shear force (<20 kPa). Free water is easily seen on the fingers after shearing')
@@ -543,7 +542,7 @@ Induration is the degree to which soil particles are held together by some combi
 
 -   Sponge (\~50 mm diameter, flat)
 -   Deionised (DI) water
--   Sample container at least 40-50 mm deep
+-   Sample container at least 40–50 mm deep
 
 *Procedure*
 
@@ -559,8 +558,8 @@ Induration is the degree to which soil particles are held together by some combi
 dat_cn_ind <-
   tribble(~Code, ~Name, ~Description,
           1, 'Non-indurated', 'Sample slakes within one hour',
-          2, 'Very weakly indurated', 'Has not slaked, strength class of 2-4',
-          3, 'Weakly indurated', 'strength class of 5-6',
+          2, 'Very weakly indurated', 'Has not slaked, strength class of 2–4',
+          3, 'Weakly indurated', 'strength class of 5–6',
           4, 'Strongly indurated', 'strength class of 7',
           5, 'Very strongly indurated', 'strength class of >7; does not break when struck by a sharp blow with a hammer.')
 
@@ -580,21 +579,20 @@ tbl_cn_ind <- gt(dat_cn_ind) |>
 tbl_cn_ind
 ```
 
-
 ## Rubbed fibre content {#sec-cn-fib}
 
 Rubbed fibre content is an indicator of the degree of organic decomposition and can be used to help determine whether organic material qualifies as fibric, mesic or humic (@sec-tex-orgmod, @sec-hor-o).
 
-- This test can be performed on any sample with an appreciable amount of visible and decomposing organic matter. Live plant roots should be removed before performing the test.
-- This test can be performed on auger-extracted samples. However, exercise caution when extracting samples from below the water table as they may easily become cross-contaminated by overlying material.
-- Perform the test on \~100 cm^3^ of soil (a small handful)
-- Perform the test on wet materials.
+-   This test can be performed on any sample with an appreciable amount of visible and decomposing organic matter. Live plant roots should be removed before performing the test.
+-   This test can be performed on auger-extracted samples. However, exercise caution when extracting samples from below the water table as they may easily become cross-contaminated by overlying material.
+-   Perform the test on \~100 cm^3^ of soil (a small handful)
+-   Perform the test on wet materials.
 
 *Procedure*
 
-1. Extract the sample and squeeze to remove excess water
-2. Rub the wet sample 10 times between thumb and forefinger, or knead a ball of sample ten times firmly in the palm of the hand.
-3. Examine the proportion of visible plant fibres.
+1.  Extract the sample and squeeze to remove excess water
+2.  Rub the wet sample 10 times between thumb and forefinger, or knead a ball of sample ten times firmly in the palm of the hand.
+3.  Examine the proportion of visible plant fibres.
 
 Note that larger pieces of rotting solid or soft timber (e.g. buried branches) should also be included in the total proportion of fibrous material.
 
@@ -605,9 +603,9 @@ Note that larger pieces of rotting solid or soft timber (e.g. buried branches) s
 dat_cn_ind <-
   tribble(~Code, ~Name, ~Description,
           1, 'None',     'No appreciable fibre',
-          2, 'Minor',    'Fibrous material < 15%',
-          3, 'Moderate', 'Fibrous material 15-75%',
-          4, 'Major',    'Fibrous material > 75%')
+          2, 'Minor',    'Fibrous material <15%',
+          3, 'Moderate', 'Fibrous material 15–75%',
+          4, 'Major',    'Fibrous material >75%')
 
 tbl_cn_ind <- gt(dat_cn_ind) |>
    tab_options(
