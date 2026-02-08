@@ -4,11 +4,13 @@ Classifying a profile according to the first three levels of the NZSC [@hewitt20
 
 1.  Identify diagnostic features
 2.  Follow the Key to Soil Orders
-3.  Follow the Keys to Group and Subgroup
+3.  Follow the Keys to Group and Subgroup.
 
-## Identifying Diagnostic features
+To extend the classification to levels 4 and 5, the profile form must be identified, key features summarised, and a functional horizon sequence assigned [@webb2011]. This section highlights the elements of the *Soil Description Handbook* that may be required to complete these tasks.
 
-The descriptive parameters that help define the NZSC Diagnostic features are outlined in @tbl-nzsc-diags; see [-@hewitt2024] for the full definitions. Any or all of the listed parameters may be required for a confident diagnosis.
+## Identifying Diagnostic features {#sec-in-nzscdiags}
+
+The descriptive parameters that help define the NZSC Diagnostic features are outlined in @tbl-nzsc-diags; see @hewitt2024 for the full definitions. Any or all of the listed parameters may be required for a confident identification.
 
 +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Diagnostic feature              | Identification requirements                                                                                                                                                                                                                                                                                                     |
@@ -18,7 +20,7 @@ The descriptive parameters that help define the NZSC Diagnostic features are out
 | Argillic horizon                | -   [Horizon thickness](pr_02_layers.qmd#sec-pr-depths)                                                                                                                                                                                                                                                                         |
 |                                 | -   [Horizon boundary distinctness](pr_02_layers.qmd#sec-pr-bdydist)                                                                                                                                                                                                                                                            |
 |                                 | -   [Texture](hr_03_texture.html#sec-tex-rec) (relative to overlying horizon)                                                                                                                                                                                                                                                   |
-|                                 | -   [Coatings](hr_04_secondary_features.html#sec-hr-coat) *or* lamellae                                                                                                                                                                                                                                                         |
+|                                 | -   [Coatings](hr_04_secondary_features.html#sec-hr-coat) or [concentrations](hr_04_secondary_features.qmd#sec-hr-conc) (lamellae)                                                                                                                                                                                              |
 +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Brittle-B horizon               | -   [Structure](hr_01_architecture.html#sec-hr-stru)                                                                                                                                                                                                                                                                            |
 |                                 | -   [Roots](hr_01_architecture.html#sec-root)                                                                                                                                                                                                                                                                                   |
@@ -157,7 +159,7 @@ The descriptive parameters that help define the NZSC Diagnostic features are out
 |                                 | -   [Matrix colour](hr_02_colour.html#sec-col-matrix)                                                                                                                                                                                                                                                                           |
 |                                 | -   [Colour patterns](hr_02_colour.html#sec-col-patt)                                                                                                                                                                                                                                                                           |
 +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Features**                    |                                                                                                                                                                                                                                                                                                                                 |
+| **Soil features**               |                                                                                                                                                                                                                                                                                                                                 |
 +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Fluvial features                | -   [Horizon thickness](pr_02_layers.qmd#sec-pr-depths)                                                                                                                                                                                                                                                                         |
 |                                 | -   [Horizon boundary distinctness](pr_02_layers.qmd#sec-pr-bdydist)                                                                                                                                                                                                                                                            |
@@ -187,64 +189,218 @@ The descriptive parameters that help define the NZSC Diagnostic features are out
 
 : Description requirements for NZSC Diagnostic Features [@hewitt2024] {#tbl-nzsc-diags .striped .hover tbl-colwidths="\[40, 60\]"}
 
-## Following the Key to Orders
+## Following the Key to Orders {#sec-in-nzsc1}
 
-In addition to the diagnostics above, successful navigation of the Key may require documentation of the following:
+In addition to the diagnostics above, successful navigation of the Key may require documentation of the parameters listed in @tbl-nzsc-key:
 
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Order            | Requirement                                                                                                                    |
-+:=================+:===============================================================================================================================+
-| Anthropic Soils  | Evidence of profile truncation or filling (compare site with surrounding landform(s))                                          |
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Organic Soils    |                                                                                                                                |
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Gley Soils       | -   [Buried horizons](in_01_horizon_names.html#sec-hzn-bur)                                                                    |
-|                  | -   Consistence: [Fluidity](hr_05_physical_properties.html#sec-cn-flu)                                                         |
-|                  | -   Field test: [Reducing conditions](hr_06_chemical_properties.html#sec-ft-rdx)                                               |
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Ultic Soils      | -   [Structure](hr_01_architecture.html#sec-hr-stru)                                                                           |
-|                  | -   [Matrix colour](hr_02_colour.html#sec-col-matrix)                                                                          |
-|                  | -   [Texture](hr_03_texture.html#sec-tex-rec)                                                                                  |
-|                  | -   [Clay content](https://manaakiwhenua.github.io/NZ_soildesc_2024/hr_03_texture.html#sec-tex-pse) (relative to silt)         |
-|                  | -   Field test: [pH](hr_06_chemical_properties.html#sec-ft-phf)                                                                |
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Podzols          | Field test: [pH](hr_06_chemical_properties.html#sec-ft-phf)                                                                    |
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Allophanic Soils |                                                                                                                                |
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Pumice Soils     |                                                                                                                                |
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Melanic Soils    | -   [Lithology](ss_04_parent_material.html#sec-pm-lith)                                                                        |
-|                  | -   [Surface cracking](pr_01_surface.html#sec-pr-crack)                                                                        |
-|                  | -   [Structure](hr_01_architecture.html#sec-hr-stru)                                                                           |
-|                  | -   [Rock fragments](hr_01_architecture.html#sec-rockfrag)                                                                     |
-|                  | -   [Matrix colour](hr_02_colour.html#sec-col-matrix)                                                                          |
-|                  | -   [Texture](hr_03_texture.html#sec-tex-rec)                                                                                  |
-|                  | -   Degree of weathering                                                                                                       |
-|                  | -   Consistence: [Stickiness](hr_05_physical_properties.html#sec-cn-sti)                                                       |
-|                  | -   Field test: [Calcium carbonate](hr_06_chemical_properties.html#sec-ft-ca), [pH](hr_06_chemical_properties.html#sec-ft-phf) |
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Semiarid Soils   | Field test: [Calcium carbonate](hr_06_chemical_properties.html#sec-ft-ca), [pH](hr_06_chemical_properties.html#sec-ft-phf)     |
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Oxidic Soils     |                                                                                                                                |
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Granular Soils   | -   [Structure](hr_01_architecture.html#sec-hr-stru)                                                                           |
-|                  | -   [Rock fragments](hr_01_architecture.html#sec-rockfrag)                                                                     |
-|                  | -   [Texture](hr_03_texture.html#sec-tex-rec)                                                                                  |
-|                  | -   Degree of weathering                                                                                                       |
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Pallic Soils     | -   [Matrix colour](hr_02_colour.html#sec-col-matrix)                                                                          |
-|                  | -   Field test: [Dispersion](hr_06_chemical_properties.html#sec-ft-slak)                                                       |
-|                  | -   Field test: [NaF](hr_06_chemical_properties.html#sec-ft-naf) (negative)                                                    |
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Brown Soils      | -   [Matrix colour](hr_02_colour.html#sec-col-matrix)                                                                          |
-|                  | -   [Texture](hr_03_texture.html#sec-tex-rec)                                                                                  |
-|                  | -   Field test: [NaF](hr_06_chemical_properties.html#sec-ft-naf) (no more than moderate)                                       |
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Recent Soils     | -   [Structure](hr_01_architecture.html#sec-hr-stru)                                                                           |
-|                  | -   Consistence: [Fluidity](hr_05_physical_properties.html#sec-cn-flu)                                                         |
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Raw Soils        |                                                                                                                                |
-+------------------+--------------------------------------------------------------------------------------------------------------------------------+
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Order            | Requirement                                                                                                                                                                                            |
++:=================+:=======================================================================================================================================================================================================+
+| Organic Soils    | -   Layers: [Horizon thickness](pr_02_layers.qmd#sec-pr-depths)                                                                                                                                        |
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Gley Soils       | -   Layers: [Horizon thickness](pr_02_layers.qmd#sec-pr-depths)                                                                                                                                        |
+|                  | -   Texture: [Texture class](hr_03_texture.qmd#sec-hr-eatxt) (of unconsolidated substrate)                                                                                                             |
+|                  | -   Consistence: [Fluidity](hr_05_physical_properties.html#sec-cn-flu)                                                                                                                                 |
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Ultic Soils      | -   Architecture: [Structure](hr_01_architecture.html#sec-hr-stru)                                                                                                                                     |
+|                  | -   Colour: [Matrix value](hr_02_colour.qmd#sec-col-matrix) (upper B horizon)                                                                                                                          |
+|                  | -   Texture: [Texture group and class](hr_03_texture.qmd#sec-hr-eatxt), [clay content](https://manaakiwhenua.github.io/NZ_soildesc_2024/hr_03_texture.html#sec-tex-pse) (relative to silt)             |
+|                  | -   Secondary features: [Coatings](hr_04_secondary_features.qmd#sec-hr-coat)                                                                                                                           |
+|                  | -   Consistence: [Unconfined strength](hr_05_physical_properties.qmd#sec-cn-stru) under moist conditions                                                                                               |
+|                  | -   Field test: [pH](hr_06_chemical_properties.html#sec-ft-phf)                                                                                                                                        |
+|                  | -   Total depth of soil materials                                                                                                                                                                      |
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Podzol Soils     | Field test: [pH](hr_06_chemical_properties.html#sec-ft-phf)                                                                                                                                            |
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Allophanic Soils | -   Layers: [Horizon thickness](pr_02_layers.qmd#sec-pr-depths)                                                                                                                                        |
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Pumice Soils     | -   Layers: [Horizon thickness and lower depths](pr_02_layers.qmd#sec-pr-depths)                                                                                                                       |
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Melanic Soils    | -   [Lithology](ss_04_parent_material.html#sec-pm-lith) (fine and coarse mineral fractions)                                                                                                            |
+|                  | -   Site surface: [Surface cracking](pr_01_surface.html#sec-pr-crack)                                                                                                                                  |
+|                  | -   Architecture: [Structure](hr_01_architecture.html#sec-hr-stru), [rock fragment content](hr_01_architecture.html#sec-rockfrag) and [degree of weathering](hr_01_architecture.qmd#sec-rockfrag-wth)  |
+|                  | -   Colour: [Matrix value](hr_02_colour.html#sec-col-matrix) (A horizon, upper B horizon)                                                                                                              |
+|                  | -   Texture: [Texture class](hr_03_texture.html#sec-tex-rec)                                                                                                                                           |
+|                  | -   Consistence: [Stickiness](hr_05_physical_properties.html#sec-cn-sti)                                                                                                                               |
+|                  | -   Field test: [Calcium carbonate](hr_06_chemical_properties.html#sec-ft-ca), [pH](hr_06_chemical_properties.html#sec-ft-phf)                                                                         |
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Semiarid Soils   | -   Texture: [Texture class](hr_03_texture.html#sec-tex-rec)                                                                                                                                           |
+|                  | -   Field test: [Calcium carbonate](hr_06_chemical_properties.html#sec-ft-ca), [pH](hr_06_chemical_properties.html#sec-ft-phf)                                                                         |
+|                  | -   Laboratory data: Phosphate retention (low)                                                                                                                                                         |
+|                  | -   Layers: [Horizon thickness](pr_02_layers.qmd#sec-pr-depths)                                                                                                                                        |
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Oxidic Soils     | -   Layers: [Horizon lower depth](pr_02_layers.qmd#sec-pr-depths)                                                                                                                                      |
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Granular Soils   | -   Architecture: [Structure](hr_01_architecture.html#sec-hr-stru), [rock fragment content](hr_01_architecture.html#sec-rockfrag) and [degree of weathering](hr_01_architecture.qmd#sec-rockfrag-wth)  |
+|                  | -   Texture: [Texture group](hr_03_texture.html#sec-tex-rec)                                                                                                                                           |
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Pallic Soils     | -   Architecture: [Structure](hr_01_architecture.html#sec-hr-stru)                                                                                                                                     |
+|                  | -   Colour: [Matrix colour](hr_02_colour.html#sec-col-matrix) (below the A horizon)                                                                                                                    |
+|                  | -   Secondary features: [Coatings](hr_04_secondary_features.qmd#sec-hr-coat)                                                                                                                           |
+|                  | -   Field test: [Dispersion](hr_06_chemical_properties.html#sec-ft-slak)                                                                                                                               |
+|                  | -   Laboratory data: Phosphate retention (low)                                                                                                                                                         |
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Brown Soils      | -   Colour: [Matrix colour](hr_02_colour.html#sec-col-matrix) (below the A horizon)                                                                                                                    |
+|                  | -   Texture: [Texture group](hr_03_texture.html#sec-tex-rec)                                                                                                                                           |
+|                  | -   Field test: [NaF](hr_06_chemical_properties.html#sec-ft-naf) (at least moderate)                                                                                                                   |
+|                  | -   Laboratory data: Phosphate retention (at least moderate)                                                                                                                                           |
+|                  | -   Layers: [Horizon lower depth](pr_02_layers.qmd#sec-pr-depths)                                                                                                                                      |
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Anthropic Soils  | Evidence of profile truncation or filling (compare site with surrounding landform(s))                                                                                                                  |
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Recent Soils     | -   [Structure](hr_01_architecture.html#sec-hr-stru)                                                                                                                                                   |
+|                  | -   Consistence: [Fluidity](hr_05_physical_properties.html#sec-cn-flu)                                                                                                                                 |
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Raw Soils        |                                                                                                                                                                                                        |
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 : Additional description requirements for NZSC Key to Orders [@hewitt2024] {#tbl-nzsc-key .striped .hover tbl-colwidths="\[40, 60\]"}
+
+## Completing the classification to Subgroup level {#sec-in-nzsc23}
+
+At the Group and Subgroup levels of the classification, requirements become more uniform. For example, the majority of Orders need pH data to identify acidic subgroups. Additional requirements are listed in @tbl-nzsc-gsg below.
+
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Order            | Requirement                                                                                                                                                                                           |
++:=================+:======================================================================================================================================================================================================+
+| Organic Soils    | -   Texture: Organic matter [decomposition state](hr_03_texture.qmd#sec-tex-orgmod)                                                                                                                   |
+|                  | -   Field test: [pH](hr_06_chemical_properties.html#sec-ft-phf)                                                                                                                                       |
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Gley Soils       | -   Texture: [Texture group](hr_03_texture.qmd#sec-hr-eatxt)                                                                                                                                          |
+|                  | -   Architecture: [Structure](hr_01_architecture.qmd#sec-hr-stru), [rock fragment content](hr_01_architecture.qmd#sec-rockfrag)                                                                       |
+|                  | -   Secondary features: [Concentrations](hr_04_secondary_features.qmd#sec-hr-conc), [coatings](hr_04_secondary_features.qmd#sec-hr-coat)                                                              |
+|                  | -   Consistence: [Stickiness](hr_05_physical_properties.qmd#sec-cn-sti)                                                                                                                               |
+|                  | -   Field test: [pH](hr_06_chemical_properties.html#sec-ft-phf)                                                                                                                                       |
+|                  | -   [Buried horizons](in_01_horizon_names.html#sec-hzn-bur)                                                                                                                                           |
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Ultic Soils      | -   Architecture: [Rock fragment content](hr_01_architecture.qmd#sec-rockfrag) and [lithology](ss_04_parent_material.qmd#sec-pm-lith)                                                                 |
+|                  | -   [Matrix colour](hr_02_colour.qmd#sec-col-matrix)                                                                                                                                                  |
+|                  | -   Secondary features: [Coatings](hr_04_secondary_features.qmd#sec-hr-coat)                                                                                                                          |
+|                  | -   Field test: [pH](hr_06_chemical_properties.html#sec-ft-phf)                                                                                                                                       |
+|                  | -   Laboratory data: Exchangeable cations                                                                                                                                                             |
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Podzol Soils     | -   Architecture: [Structure](hr_01_architecture.qmd#sec-hr-stru)                                                                                                                                     |
+|                  | -   Texture: [Texture class](hr_03_texture.qmd#sec-hr-eatxt)                                                                                                                                          |
+|                  | -   Consistence: [Unconfined strength](hr_05_physical_properties.qmd#sec-cn-stru), [penetration resistance](hr_05_physical_properties.qmd#sec-cn-pres)                                                |
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Allophanic Soils |                                                                                                                                                                                                       |
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Pumice Soils     | -   Architecture: [Roots](hr_01_architecture.qmd#sec-root), [rock fragment content](hr_01_architecture.qmd#sec-rockfrag) and [lithology](ss_04_parent_material.qmd#sec-pm-lith)                       |
+|                  | -   [Matrix colour](hr_02_colour.qmd#sec-col-matrix)                                                                                                                                                  |
+|                  | -   Consistence: [Unconfined strength](hr_05_physical_properties.qmd#sec-cn-stru), [packing](hr_05_physical_properties.qmd#sec-sn-pack), [mode of failure](hr_05_physical_properties.qmd#sec-cn-fail) |
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Melanic Soils    | -   Laboratory data: Exchangeable cations, phosphate retention                                                                                                                                        |
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Semiarid Soils   | -   [Matrix colour](hr_02_colour.qmd#sec-col-matrix)                                                                                                                                                  |
+|                  | -   Architecture: [Structure](hr_01_architecture.qmd#sec-hr-stru), [rock fragment content](hr_01_architecture.qmd#sec-rockfrag) and [degree of weathering](hr_01_architecture.qmd#sec-rockfrag-wth)   |
+|                  | -   Field test: [pH](hr_06_chemical_properties.html#sec-ft-phf)                                                                                                                                       |
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Oxidic Soils     | -   Texture: [Texture class](hr_03_texture.qmd#sec-hr-eatxt)                                                                                                                                          |
+|                  | -   Architecture: [Rock fragment content](hr_01_architecture.qmd#sec-rockfrag)                                                                                                                        |
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Granular Soils   | -   Field test: [pH](hr_06_chemical_properties.html#sec-ft-phf)                                                                                                                                       |
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Pallic Soils     | -   Architecture: [Structure](hr_01_architecture.qmd#sec-hr-stru), [rock fragment content](hr_01_architecture.qmd#sec-rockfrag) and [degree of weathering](hr_01_architecture.qmd#sec-rockfrag-wth)   |
+|                  | -   Secondary features: [Induration](hr_05_physical_properties.qmd#sec-cn-ind)                                                                                                                        |
+|                  | -   Field test: [pH](hr_06_chemical_properties.html#sec-ft-phf)                                                                                                                                       |
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Brown Soils      | -   Architecture: [Structure](hr_01_architecture.qmd#sec-hr-stru), [rock fragment content](hr_01_architecture.qmd#sec-rockfrag) and [degree of weathering](hr_01_architecture.qmd#sec-rockfrag-wth)   |
+|                  | -   Secondary features: [Induration](hr_05_physical_properties.qmd#sec-cn-ind)                                                                                                                        |
+|                  | -   Field test: [pH](hr_06_chemical_properties.html#sec-ft-phf)                                                                                                                                       |
+|                  | -   Laboratory data: Bulk density, exchangeable cations                                                                                                                                               |
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Anthropic Soils  | -   Land use history (Truncated and Mixed Groups)                                                                                                                                                     |
+|                  | -   Laboratory data: Bulk density (Compacted Subgroup)                                                                                                                                                |
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Recent Soils     | -   Architecture: [Rock fragment content](hr_01_architecture.qmd#sec-rockfrag) and [lithology](ss_04_parent_material.qmd#sec-pm-lith)                                                                 |
+|                  | -   Texture: [Texture class](hr_03_texture.qmd#sec-hr-eatxt)                                                                                                                                          |
+|                  | -   Field test: [pH](hr_06_chemical_properties.html#sec-ft-phf)                                                                                                                                       |
+|                  | -   Soil temperature (mean annual)                                                                                                                                                                    |
+|                  | -   Evidence of past burial events (e.g. flood deposition)                                                                                                                                            |
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Raw Soils        | -   Architecture: [Rock fragment content](hr_01_architecture.qmd#sec-rockfrag) and [lithology](ss_04_parent_material.qmd#sec-pm-lith)                                                                 |
+|                  | -   Texture: [Texture class](hr_03_texture.qmd#sec-hr-eatxt)                                                                                                                                          |
+|                  | -   Consistence: [Fluidity](hr_05_physical_properties.qmd#sec-cn-flu)                                                                                                                                 |
+|                  | -   Soil temperature (mean annual)                                                                                                                                                                    |
+|                  | -   [Surface water](pr_01_surface.qmd#sec-pr-surfw)                                                                                                                                                   |
+|                  | -   [Parent material origin](pr_02_layers.qmd#sec-pr-orig)                                                                                                                                            |
++------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+: Additional potential description requirements for NZSC Groups and Subgroups, by Order [@hewitt2024] {#tbl-nzsc-gsg .striped .hover tbl-colwidths="\[40, 60\]"}
+
+## Completing the classification to Sibling level {#sec-in-nzscfamsib}
+
+Detailed requirements for classifying the Family and Sibling are contained in @webb2011.
+
+### Family requirements {#sec-in-nzscfam}
+
++-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| Parameter                               | Requirements                                                                                                               |
++:========================================+:===========================================================================================================================+
+| Soil Profile Material                   | -   [Rock fragment content](hr_01_architecture.qmd#sec-rockfrag) (either texture code or percentage estimate)              |
+|                                         | -   [Rock fragment roundedness](hr_01_architecture.qmd#sec-rockfrag-shp)                                                   |
+|                                         | -   Depth to [regolithic or saprolithic material](pr_02_layers.qmd#sec-pr-wdeg), if encountered                            |
+|                                         | -   Depth to lithic or paralithic contact, if encountered                                                                  |
+|                                         | -   Thickness of organic soil material, if encountered                                                                     |
++-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| Rock class of profile stone and bedrock | -   [Lithology](ss_04_parent_material.qmd#sec-pm-lith) of rock fragments (if encountered)                                  |
+|                                         | -   [Lithology](ss_04_parent_material.qmd#sec-pm-lith) of substrate non-soil materials (if encountered)                    |
++-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| Rock class of fines                     | Originating [lithology](ss_04_parent_material.qmd#sec-pm-lith) of soil materials \<2 mm                                    |
++-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| Texture group class                     | [Texture class](hr_03_texture.qmd#sec-hr-eatxt) of all horizons to 60 cm depth or the limit of soil material, if shallower |
++-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| Permeability class                      | [Profile permeability](in_02_interpreted_properties.qmd#sec-in-pperm) class                                                |
++-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+
+: Parameters required to identify the NZSC Family {#tbl-nzsc-famid .striped .hover tbl-colwidths="\[40, 60\]"}
+
+### Sibling requirements {#sec-in-nzscsib}
+
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter                          | Requirements                                                                                                                                              |
++:===================================+:==========================================================================================================================================================+
+| Soil depth (easily diggable depth) | -   [Horizon thicknesses](pr_02_layers.qmd#sec-pr-depths)                                                                                                 |
+|                                    | -   [Rock fragment content](hr_01_architecture.qmd#sec-rockfrag) per horizon                                                                              |
+|                                    | -   Secondary features: [Pans](hr_04_secondary_features.qmd#sec-pan)                                                                                      |
+|                                    | -   Consistence: [Unconfined strength](hr_05_physical_properties.qmd#sec-cn-stru) under field conditions                                                  |
+|                                    | -   Substrate: [Paralithic or lithic material](pr_02_layers.qmd#sec-pr-wdeg)                                                                              |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Topsoil stoniness                  | [Rock fragment content](hr_01_architecture.qmd#sec-rockfrag) as percentage volume within the top 20 cm of the profile                                     |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Texture class                      | [Texture class](hr_03_texture.qmd#sec-hr-eatxt) of all horizons to 100 cm from the soil surface or to the limit of soil material, if shallower            |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Drainage                           | [Profile drainage](in_02_interpreted_properties.qmd#sec-in-pdrng) class                                                                                   |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Rooting barriers                   | Presence of any [rooting depth restrictions](in_02_interpreted_properties.qmd#sec-in-rdpth) within 100 cm of the soil surface, type and depth encountered |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+: Parameters required to identify the NZSC Sibling {#tbl-nzsc-sibid .striped .hover tbl-colwidths="\[40, 60\]"}
+
+### Functional horizon requirements {#sec-in-nzscfh}
+
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter         | Requirements                                                                                                                                                 |
++:==================+:=============================================================================================================================================================+
+| Horizon notation  | Presence of any [A, O, or L horizons](in_01_horizon_names.qmd#sec-hzn-convp) (for identification of topsoil)                                                 |
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Texture           | -   [Texture group](hr_03_texture.qmd#sec-hr-eatxt)                                                                                                          |
+|                   | -   [Pan](hr_04_secondary_features.qmd#sec-pan) types, if present                                                                                            |
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Firmness          | [Unconfined strength](hr_05_physical_properties.qmd#sec-cn-stru) under field conditions                                                                      |
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Tephric materials | -   [Parent material origin](pr_02_layers.qmd#sec-pr-orig) (specifically Tephra)                                                                             |
+|                   | -   Originating [lithology](ss_04_parent_material.qmd#sec-pm-lith) of soil materials \<2 mm                                                                  |
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Stone content     | [Rock fragment content](hr_01_architecture.qmd#sec-rockfrag) (either from texture code or percentage estimate)                                               |
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Structure         | -   Structure [degree of development](hr_01_architecture.qmd#sec-hr-stru-pedality) (where units are of pedogenic origin)                                     |
+|                   | -   If horizon is pedal, ped [shape](hr_01_architecture.qmd#sec-hr-stru-shp) and [size](hr_01_architecture.qmd#sec-hr-stru-size)                             |
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Consistence       | -   For [cohesive](hr_05_physical_properties.qmd#sec-dn-prep) soils, [unconfined strength](hr_05_physical_properties.qmd#sec-cn-stru) under field conditions |
+|                   | -   For [non-cohesive](hr_05_physical_properties.qmd#sec-dn-prep) soils, [particle packing](hr_05_physical_properties.qmd#sec-sn-pack)                       |
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Permeability      | [Horizon permeability](in_02_interpreted_properties.qmd#sec-in-hperm) class                                                                                  |
++-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+: Parameters required to identify NZSC Functional Horizons {#tbl-nzsc-fhid .striped .hover tbl-colwidths="\[40, 60\]"}
