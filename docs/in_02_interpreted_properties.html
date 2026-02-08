@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>21&nbsp; Interpreted properties – Soil Description Handbook</title>
+<title>20&nbsp; Profile behaviour – Soil Description Handbook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,7 +49,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./in_05_nzsc_toplevel.html" rel="next">
+<link href="./in_05_nzsc_reqs.html" rel="next">
 <link href="./in_01_horizon_names.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -70,6 +89,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="neutral">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -84,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./in_00_intro.html">Soil interpretations</a></li><li class="breadcrumb-item"><a href="./in_02_interpreted_properties.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Interpreted properties</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./in_01_horizon_names.html">Soil interpretations</a></li><li class="breadcrumb-item"><a href="./in_02_interpreted_properties.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Profile behaviour</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -292,32 +315,20 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./in_00_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Interpretations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./in_01_horizon_names.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Horizon notation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Horizon notation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./in_02_interpreted_properties.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Interpreted properties</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Profile behaviour</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./in_05_nzsc_toplevel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">The New Zealand Soil Classification</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./in_06_nzsc_familysibling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">NZSC Family and Sibling</span></span></a>
+  <a href="./in_05_nzsc_reqs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">The New Zealand Soil Classification</span></span></a>
   </div>
 </li>
       </ul>
@@ -397,21 +408,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-in-hdrng" id="toc-sec-in-hdrng" class="nav-link active" data-scroll-target="#sec-in-hdrng"><span class="header-section-number">21.1</span> Horizon drainage</a>
+  <li><a href="#sec-in-drng" id="toc-sec-in-drng" class="nav-link active" data-scroll-target="#sec-in-drng"><span class="header-section-number">20.1</span> Drainage</a>
   <ul class="collapse">
-  <li><a href="#classifying-topsoil-drainage" id="toc-classifying-topsoil-drainage" class="nav-link" data-scroll-target="#classifying-topsoil-drainage"><span class="header-section-number">21.1.1</span> Classifying topsoil drainage</a></li>
+  <li><a href="#sec-in-hdrng" id="toc-sec-in-hdrng" class="nav-link" data-scroll-target="#sec-in-hdrng"><span class="header-section-number">20.1.1</span> Horizon drainage</a></li>
+  <li><a href="#sec-in-pdrng" id="toc-sec-in-pdrng" class="nav-link" data-scroll-target="#sec-in-pdrng"><span class="header-section-number">20.1.2</span> Profile Drainage</a></li>
   </ul></li>
-  <li><a href="#sec-in-pdrng" id="toc-sec-in-pdrng" class="nav-link" data-scroll-target="#sec-in-pdrng"><span class="header-section-number">21.2</span> Profile Drainage</a></li>
-  <li><a href="#sec-in-rdpth" id="toc-sec-in-rdpth" class="nav-link" data-scroll-target="#sec-in-rdpth"><span class="header-section-number">21.3</span> Rooting depth</a></li>
+  <li><a href="#sec-in-perm" id="toc-sec-in-perm" class="nav-link" data-scroll-target="#sec-in-perm"><span class="header-section-number">20.2</span> Permeability</a>
+  <ul class="collapse">
+  <li><a href="#sec-in-hperm" id="toc-sec-in-hperm" class="nav-link" data-scroll-target="#sec-in-hperm"><span class="header-section-number">20.2.1</span> Horizon permeability</a></li>
+  <li><a href="#sec-in-pperm" id="toc-sec-in-pperm" class="nav-link" data-scroll-target="#sec-in-pperm"><span class="header-section-number">20.2.2</span> Profile permeability</a></li>
+  </ul></li>
+  <li><a href="#sec-in-rdpth" id="toc-sec-in-rdpth" class="nav-link" data-scroll-target="#sec-in-rdpth"><span class="header-section-number">20.3</span> Rooting depth restrictions</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./in_00_intro.html">Soil interpretations</a></li><li class="breadcrumb-item"><a href="./in_02_interpreted_properties.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Interpreted properties</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./in_01_horizon_names.html">Soil interpretations</a></li><li class="breadcrumb-item"><a href="./in_02_interpreted_properties.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Profile behaviour</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-in-hprops" class="quarto-section-identifier"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Interpreted properties</span></span></h1>
+<h1 class="title"><span id="sec-in-hprops" class="quarto-section-identifier"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Profile behaviour</span></span></h1>
 </div>
 
 
@@ -423,7 +439,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 2, 2026</p>
+      <p class="date-modified">February 8, 2026</p>
     </div>
   </div>
     
@@ -434,35 +450,38 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="sec-in-hdrng" class="level2" data-number="21.1">
-<h2 data-number="21.1" class="anchored" data-anchor-id="sec-in-hdrng"><span class="header-section-number">21.1</span> Horizon drainage</h2>
+<p>Soil profile descriptions can be used to identify behavioural characteristics of a soil that are relevant to ecosystem composition and to productivity.</p>
+<section id="sec-in-drng" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="sec-in-drng"><span class="header-section-number">20.1</span> Drainage</h2>
 <p>Soil drainage is an assessment of how fast water leaves a soil profile relative to supply. This characteristic can be controlled by morphological characteristics that occur in a range of combinations.</p>
-<p>Drainage should first be assessed on a per-horizon basis. These interpretations may then be summarised a profile level (see <a href="in_06_nzsc_familysibling.html#sec-in-pdrng" class="quarto-xref"><span>Section 23.2.4</span></a>). <a href="#tbl-in-hdrng" class="quarto-xref">Table&nbsp;<span>21.1</span></a> below highlights the common characteristics associated with each horizon drainage class.</p>
+<section id="sec-in-hdrng" class="level3" data-number="20.1.1">
+<h3 data-number="20.1.1" class="anchored" data-anchor-id="sec-in-hdrng"><span class="header-section-number">20.1.1</span> Horizon drainage</h3>
+<p>Drainage should first be assessed on a per-horizon basis. These interpretations may then be summarised a profile level (see <a href="#sec-in-pdrng" class="quarto-xref"><span>Section 20.1.2</span></a>). <a href="#tbl-in-hdrng" class="quarto-xref">Table&nbsp;<span>20.1</span></a> below highlights the common characteristics associated with each horizon drainage class.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-in-hdrng" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-in-hdrng-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;21.1: Horizon-level drainage characteristics
+Table&nbsp;20.1: Horizon-level drainage characteristics
 </figcaption>
 <div aria-describedby="tbl-in-hdrng-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="uxrkqiktri" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uxrkqiktri table {
+<div id="ngqbsmzaiw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ngqbsmzaiw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uxrkqiktri thead, #uxrkqiktri tbody, #uxrkqiktri tfoot, #uxrkqiktri tr, #uxrkqiktri td, #uxrkqiktri th {
+#ngqbsmzaiw thead, #ngqbsmzaiw tbody, #ngqbsmzaiw tfoot, #ngqbsmzaiw tr, #ngqbsmzaiw td, #ngqbsmzaiw th {
   border-style: none;
 }
 
-#uxrkqiktri p {
+#ngqbsmzaiw p {
   margin: 0;
   padding: 0;
 }
 
-#uxrkqiktri .gt_table {
+#ngqbsmzaiw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -488,12 +507,12 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   border-left-color: #D3D3D3;
 }
 
-#uxrkqiktri .gt_caption {
+#ngqbsmzaiw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uxrkqiktri .gt_title {
+#ngqbsmzaiw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -505,7 +524,7 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   border-bottom-width: 0;
 }
 
-#uxrkqiktri .gt_subtitle {
+#ngqbsmzaiw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -517,7 +536,7 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   border-top-width: 0;
 }
 
-#uxrkqiktri .gt_heading {
+#ngqbsmzaiw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -529,13 +548,13 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   border-right-color: #D3D3D3;
 }
 
-#uxrkqiktri .gt_bottom_border {
+#ngqbsmzaiw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uxrkqiktri .gt_col_headings {
+#ngqbsmzaiw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -550,7 +569,7 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   border-right-color: #D3D3D3;
 }
 
-#uxrkqiktri .gt_col_heading {
+#ngqbsmzaiw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -570,7 +589,7 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   overflow-x: hidden;
 }
 
-#uxrkqiktri .gt_column_spanner_outer {
+#ngqbsmzaiw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -582,15 +601,15 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   padding-right: 4px;
 }
 
-#uxrkqiktri .gt_column_spanner_outer:first-child {
+#ngqbsmzaiw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uxrkqiktri .gt_column_spanner_outer:last-child {
+#ngqbsmzaiw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uxrkqiktri .gt_column_spanner {
+#ngqbsmzaiw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -602,11 +621,11 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   width: 100%;
 }
 
-#uxrkqiktri .gt_spanner_row {
+#ngqbsmzaiw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uxrkqiktri .gt_group_heading {
+#ngqbsmzaiw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -632,7 +651,7 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   text-align: left;
 }
 
-#uxrkqiktri .gt_empty_group_heading {
+#ngqbsmzaiw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -647,15 +666,15 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   vertical-align: middle;
 }
 
-#uxrkqiktri .gt_from_md > :first-child {
+#ngqbsmzaiw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uxrkqiktri .gt_from_md > :last-child {
+#ngqbsmzaiw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uxrkqiktri .gt_row {
+#ngqbsmzaiw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -674,7 +693,7 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   overflow-x: hidden;
 }
 
-#uxrkqiktri .gt_stub {
+#ngqbsmzaiw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -687,7 +706,7 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   padding-right: 5px;
 }
 
-#uxrkqiktri .gt_stub_row_group {
+#ngqbsmzaiw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -701,15 +720,15 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   vertical-align: top;
 }
 
-#uxrkqiktri .gt_row_group_first td {
+#ngqbsmzaiw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uxrkqiktri .gt_row_group_first th {
+#ngqbsmzaiw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uxrkqiktri .gt_summary_row {
+#ngqbsmzaiw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -719,16 +738,16 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   padding-right: 5px;
 }
 
-#uxrkqiktri .gt_first_summary_row {
+#ngqbsmzaiw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uxrkqiktri .gt_first_summary_row.thick {
+#ngqbsmzaiw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uxrkqiktri .gt_last_summary_row {
+#ngqbsmzaiw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -738,7 +757,7 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   border-bottom-color: #D3D3D3;
 }
 
-#uxrkqiktri .gt_grand_summary_row {
+#ngqbsmzaiw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -748,7 +767,7 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   padding-right: 5px;
 }
 
-#uxrkqiktri .gt_first_grand_summary_row {
+#ngqbsmzaiw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -758,7 +777,7 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   border-top-color: #D3D3D3;
 }
 
-#uxrkqiktri .gt_last_grand_summary_row_top {
+#ngqbsmzaiw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -768,11 +787,11 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   border-bottom-color: #D3D3D3;
 }
 
-#uxrkqiktri .gt_striped {
+#ngqbsmzaiw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uxrkqiktri .gt_table_body {
+#ngqbsmzaiw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -781,7 +800,7 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   border-bottom-color: #D3D3D3;
 }
 
-#uxrkqiktri .gt_footnotes {
+#ngqbsmzaiw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -795,7 +814,7 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   border-right-color: #D3D3D3;
 }
 
-#uxrkqiktri .gt_footnote {
+#ngqbsmzaiw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -804,7 +823,7 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   padding-right: 5px;
 }
 
-#uxrkqiktri .gt_sourcenotes {
+#ngqbsmzaiw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -818,7 +837,7 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   border-right-color: #D3D3D3;
 }
 
-#uxrkqiktri .gt_sourcenote {
+#ngqbsmzaiw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -826,72 +845,72 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
   padding-right: 5px;
 }
 
-#uxrkqiktri .gt_left {
+#ngqbsmzaiw .gt_left {
   text-align: left;
 }
 
-#uxrkqiktri .gt_center {
+#ngqbsmzaiw .gt_center {
   text-align: center;
 }
 
-#uxrkqiktri .gt_right {
+#ngqbsmzaiw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uxrkqiktri .gt_font_normal {
+#ngqbsmzaiw .gt_font_normal {
   font-weight: normal;
 }
 
-#uxrkqiktri .gt_font_bold {
+#ngqbsmzaiw .gt_font_bold {
   font-weight: bold;
 }
 
-#uxrkqiktri .gt_font_italic {
+#ngqbsmzaiw .gt_font_italic {
   font-style: italic;
 }
 
-#uxrkqiktri .gt_super {
+#ngqbsmzaiw .gt_super {
   font-size: 65%;
 }
 
-#uxrkqiktri .gt_footnote_marks {
+#ngqbsmzaiw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uxrkqiktri .gt_asterisk {
+#ngqbsmzaiw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uxrkqiktri .gt_indent_1 {
+#ngqbsmzaiw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uxrkqiktri .gt_indent_2 {
+#ngqbsmzaiw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uxrkqiktri .gt_indent_3 {
+#ngqbsmzaiw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uxrkqiktri .gt_indent_4 {
+#ngqbsmzaiw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uxrkqiktri .gt_indent_5 {
+#ngqbsmzaiw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#uxrkqiktri .katex-display {
+#ngqbsmzaiw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#uxrkqiktri div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ngqbsmzaiw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -965,42 +984,42 @@ Table&nbsp;21.1: Horizon-level drainage characteristics
 </figure>
 </div>
 </div>
-<section id="classifying-topsoil-drainage" class="level3" data-number="21.1.1">
-<h3 data-number="21.1.1" class="anchored" data-anchor-id="classifying-topsoil-drainage"><span class="header-section-number">21.1.1</span> Classifying topsoil drainage</h3>
+<section id="sec-in-tsdrng" class="level4" data-number="20.1.1.1">
+<h4 data-number="20.1.1.1" class="anchored" data-anchor-id="sec-in-tsdrng"><span class="header-section-number">20.1.1.1</span> Classifying topsoil drainage</h4>
 <p>Morphological features associated with drainage status can be hard to observe accurately in <span class="ceg">A</span> horizons, mostly due to their darker colour. <em>When otherwise in doubt</em>, a well developed <span class="ceg">A</span> horizon should be assigned a drainage class one better than the horizon below it (usually a <span class="ceg">B</span>, <span class="ceg">E</span>, or <span class="ceg">C</span> horizon). A poorly developed <span class="ceg">A</span> horizon should receive the same class assignment as the horizon below. Use the ‘distinct topsoil’ NZSC diagnostic criteria to identify well developed <span class="ceg">A</span> horizons.</p>
 <p>The reasoning behind this rule of thumb is that the lack of topsoil development may be partially explained by lack of contrast in the drainage regime between the topsoil and the layer below.</p>
 <!-- example diagram here --->
 </section>
 </section>
-<section id="sec-in-pdrng" class="level2" data-number="21.2">
-<h2 data-number="21.2" class="anchored" data-anchor-id="sec-in-pdrng"><span class="header-section-number">21.2</span> Profile Drainage</h2>
-<p>The drainage status of the profile as a whole is determined using horizon depths and per-horizon drainage ratings completed according to <a href="#sec-in-hdrng" class="quarto-xref"><span>Section 21.1</span></a>.</p>
-<p>Workers classifying drainage for NZSC Sibling construction have no need to subdivide within the profile ratings in <a href="#tbl-in-pdrng" class="quarto-xref">Table&nbsp;<span>21.2</span></a>. For other types of work e.g.&nbsp;agricultural suitability assessment, it may be useful to recognise subgroups – e.g.&nbsp;for a deep-rooted, wetness-intolerant crop, there is a difference between an imperfectly drained profile that is at its <em>worst</em> imperfectly drained in the top 1&nbsp;m, and one that has poor drainage below 60&nbsp;cm.</p>
+<section id="sec-in-pdrng" class="level3" data-number="20.1.2">
+<h3 data-number="20.1.2" class="anchored" data-anchor-id="sec-in-pdrng"><span class="header-section-number">20.1.2</span> Profile Drainage</h3>
+<p>The drainage status of the profile as a whole is determined using horizon depths and per-horizon drainage ratings completed according to <a href="#sec-in-hdrng" class="quarto-xref"><span>Section 20.1.1</span></a>.</p>
+<p>Workers classifying drainage for NZSC Sibling construction have no need to subdivide within the profile ratings in <a href="#tbl-in-pdrng" class="quarto-xref">Table&nbsp;<span>20.2</span></a>. For other types of work e.g.&nbsp;agricultural suitability assessment, it may be useful to recognise subgroups – e.g.&nbsp;for a deep-rooted, wetness-intolerant crop, there is a difference between an imperfectly drained profile that is at its <em>worst</em> imperfectly drained in the top 1&nbsp;m, and one that has poor drainage below 60&nbsp;cm.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-in-pdrng" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-in-pdrng-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;21.2: Profile drainage rules
+Table&nbsp;20.2: Profile drainage rules
 </figcaption>
 <div aria-describedby="tbl-in-pdrng-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="gnjanxferr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gnjanxferr table {
+<div id="zjnlbrvwts" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zjnlbrvwts table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gnjanxferr thead, #gnjanxferr tbody, #gnjanxferr tfoot, #gnjanxferr tr, #gnjanxferr td, #gnjanxferr th {
+#zjnlbrvwts thead, #zjnlbrvwts tbody, #zjnlbrvwts tfoot, #zjnlbrvwts tr, #zjnlbrvwts td, #zjnlbrvwts th {
   border-style: none;
 }
 
-#gnjanxferr p {
+#zjnlbrvwts p {
   margin: 0;
   padding: 0;
 }
 
-#gnjanxferr .gt_table {
+#zjnlbrvwts .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1026,12 +1045,12 @@ Table&nbsp;21.2: Profile drainage rules
   border-left-color: #D3D3D3;
 }
 
-#gnjanxferr .gt_caption {
+#zjnlbrvwts .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gnjanxferr .gt_title {
+#zjnlbrvwts .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1043,7 +1062,7 @@ Table&nbsp;21.2: Profile drainage rules
   border-bottom-width: 0;
 }
 
-#gnjanxferr .gt_subtitle {
+#zjnlbrvwts .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1055,7 +1074,7 @@ Table&nbsp;21.2: Profile drainage rules
   border-top-width: 0;
 }
 
-#gnjanxferr .gt_heading {
+#zjnlbrvwts .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1067,13 +1086,13 @@ Table&nbsp;21.2: Profile drainage rules
   border-right-color: #D3D3D3;
 }
 
-#gnjanxferr .gt_bottom_border {
+#zjnlbrvwts .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gnjanxferr .gt_col_headings {
+#zjnlbrvwts .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1088,7 +1107,7 @@ Table&nbsp;21.2: Profile drainage rules
   border-right-color: #D3D3D3;
 }
 
-#gnjanxferr .gt_col_heading {
+#zjnlbrvwts .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1108,7 +1127,7 @@ Table&nbsp;21.2: Profile drainage rules
   overflow-x: hidden;
 }
 
-#gnjanxferr .gt_column_spanner_outer {
+#zjnlbrvwts .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1120,15 +1139,15 @@ Table&nbsp;21.2: Profile drainage rules
   padding-right: 4px;
 }
 
-#gnjanxferr .gt_column_spanner_outer:first-child {
+#zjnlbrvwts .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gnjanxferr .gt_column_spanner_outer:last-child {
+#zjnlbrvwts .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gnjanxferr .gt_column_spanner {
+#zjnlbrvwts .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1140,11 +1159,11 @@ Table&nbsp;21.2: Profile drainage rules
   width: 100%;
 }
 
-#gnjanxferr .gt_spanner_row {
+#zjnlbrvwts .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gnjanxferr .gt_group_heading {
+#zjnlbrvwts .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1170,7 +1189,7 @@ Table&nbsp;21.2: Profile drainage rules
   text-align: left;
 }
 
-#gnjanxferr .gt_empty_group_heading {
+#zjnlbrvwts .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1185,15 +1204,15 @@ Table&nbsp;21.2: Profile drainage rules
   vertical-align: middle;
 }
 
-#gnjanxferr .gt_from_md > :first-child {
+#zjnlbrvwts .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gnjanxferr .gt_from_md > :last-child {
+#zjnlbrvwts .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gnjanxferr .gt_row {
+#zjnlbrvwts .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1212,7 +1231,7 @@ Table&nbsp;21.2: Profile drainage rules
   overflow-x: hidden;
 }
 
-#gnjanxferr .gt_stub {
+#zjnlbrvwts .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1225,7 +1244,7 @@ Table&nbsp;21.2: Profile drainage rules
   padding-right: 5px;
 }
 
-#gnjanxferr .gt_stub_row_group {
+#zjnlbrvwts .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1239,15 +1258,15 @@ Table&nbsp;21.2: Profile drainage rules
   vertical-align: top;
 }
 
-#gnjanxferr .gt_row_group_first td {
+#zjnlbrvwts .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gnjanxferr .gt_row_group_first th {
+#zjnlbrvwts .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gnjanxferr .gt_summary_row {
+#zjnlbrvwts .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1257,16 +1276,16 @@ Table&nbsp;21.2: Profile drainage rules
   padding-right: 5px;
 }
 
-#gnjanxferr .gt_first_summary_row {
+#zjnlbrvwts .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gnjanxferr .gt_first_summary_row.thick {
+#zjnlbrvwts .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gnjanxferr .gt_last_summary_row {
+#zjnlbrvwts .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1276,7 +1295,7 @@ Table&nbsp;21.2: Profile drainage rules
   border-bottom-color: #D3D3D3;
 }
 
-#gnjanxferr .gt_grand_summary_row {
+#zjnlbrvwts .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1286,7 +1305,7 @@ Table&nbsp;21.2: Profile drainage rules
   padding-right: 5px;
 }
 
-#gnjanxferr .gt_first_grand_summary_row {
+#zjnlbrvwts .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1296,7 +1315,7 @@ Table&nbsp;21.2: Profile drainage rules
   border-top-color: #D3D3D3;
 }
 
-#gnjanxferr .gt_last_grand_summary_row_top {
+#zjnlbrvwts .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1306,11 +1325,11 @@ Table&nbsp;21.2: Profile drainage rules
   border-bottom-color: #D3D3D3;
 }
 
-#gnjanxferr .gt_striped {
+#zjnlbrvwts .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gnjanxferr .gt_table_body {
+#zjnlbrvwts .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1319,7 +1338,7 @@ Table&nbsp;21.2: Profile drainage rules
   border-bottom-color: #D3D3D3;
 }
 
-#gnjanxferr .gt_footnotes {
+#zjnlbrvwts .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1333,7 +1352,7 @@ Table&nbsp;21.2: Profile drainage rules
   border-right-color: #D3D3D3;
 }
 
-#gnjanxferr .gt_footnote {
+#zjnlbrvwts .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1342,7 +1361,7 @@ Table&nbsp;21.2: Profile drainage rules
   padding-right: 5px;
 }
 
-#gnjanxferr .gt_sourcenotes {
+#zjnlbrvwts .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1356,7 +1375,7 @@ Table&nbsp;21.2: Profile drainage rules
   border-right-color: #D3D3D3;
 }
 
-#gnjanxferr .gt_sourcenote {
+#zjnlbrvwts .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1364,72 +1383,72 @@ Table&nbsp;21.2: Profile drainage rules
   padding-right: 5px;
 }
 
-#gnjanxferr .gt_left {
+#zjnlbrvwts .gt_left {
   text-align: left;
 }
 
-#gnjanxferr .gt_center {
+#zjnlbrvwts .gt_center {
   text-align: center;
 }
 
-#gnjanxferr .gt_right {
+#zjnlbrvwts .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gnjanxferr .gt_font_normal {
+#zjnlbrvwts .gt_font_normal {
   font-weight: normal;
 }
 
-#gnjanxferr .gt_font_bold {
+#zjnlbrvwts .gt_font_bold {
   font-weight: bold;
 }
 
-#gnjanxferr .gt_font_italic {
+#zjnlbrvwts .gt_font_italic {
   font-style: italic;
 }
 
-#gnjanxferr .gt_super {
+#zjnlbrvwts .gt_super {
   font-size: 65%;
 }
 
-#gnjanxferr .gt_footnote_marks {
+#zjnlbrvwts .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gnjanxferr .gt_asterisk {
+#zjnlbrvwts .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gnjanxferr .gt_indent_1 {
+#zjnlbrvwts .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gnjanxferr .gt_indent_2 {
+#zjnlbrvwts .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gnjanxferr .gt_indent_3 {
+#zjnlbrvwts .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gnjanxferr .gt_indent_4 {
+#zjnlbrvwts .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gnjanxferr .gt_indent_5 {
+#zjnlbrvwts .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gnjanxferr .katex-display {
+#zjnlbrvwts .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gnjanxferr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zjnlbrvwts div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1477,34 +1496,34 @@ Table&nbsp;21.2: Profile drainage rules
 </figure>
 </div>
 </div>
-<section id="sec-in-pdrng-alt" class="level4" data-number="21.2.0.1">
-<h4 data-number="21.2.0.1" class="anchored" data-anchor-id="sec-in-pdrng-alt"><span class="header-section-number">21.2.0.1</span> Natural vs Artificial drainage</h4>
-<p>Profile drainage is often modified by human activity. Many of these modifications require ongoing maintenance. Use the codes in <a href="#tbl-in-natdrng" class="quarto-xref">Table&nbsp;<span>21.3</span></a> to signify the degree of drainage modification.</p>
+<section id="sec-in-pdrng-alt" class="level5" data-number="20.1.2.0.1">
+<h5 data-number="20.1.2.0.1" class="anchored" data-anchor-id="sec-in-pdrng-alt"><span class="header-section-number">20.1.2.0.1</span> Natural vs Artificial drainage</h5>
+<p>Profile drainage is often modified by human activity. Many of these modifications require ongoing maintenance. Use the codes in <a href="#tbl-in-natdrng" class="quarto-xref">Table&nbsp;<span>20.3</span></a> to signify the degree of drainage modification.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-in-natdrng" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-in-natdrng-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;21.3: Profile drainage modification level
+Table&nbsp;20.3: Profile drainage modification level
 </figcaption>
 <div aria-describedby="tbl-in-natdrng-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="dstqutayfb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dstqutayfb table {
+<div id="ioogmymbaz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ioogmymbaz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dstqutayfb thead, #dstqutayfb tbody, #dstqutayfb tfoot, #dstqutayfb tr, #dstqutayfb td, #dstqutayfb th {
+#ioogmymbaz thead, #ioogmymbaz tbody, #ioogmymbaz tfoot, #ioogmymbaz tr, #ioogmymbaz td, #ioogmymbaz th {
   border-style: none;
 }
 
-#dstqutayfb p {
+#ioogmymbaz p {
   margin: 0;
   padding: 0;
 }
 
-#dstqutayfb .gt_table {
+#ioogmymbaz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1530,12 +1549,12 @@ Table&nbsp;21.3: Profile drainage modification level
   border-left-color: #D3D3D3;
 }
 
-#dstqutayfb .gt_caption {
+#ioogmymbaz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dstqutayfb .gt_title {
+#ioogmymbaz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1547,7 +1566,7 @@ Table&nbsp;21.3: Profile drainage modification level
   border-bottom-width: 0;
 }
 
-#dstqutayfb .gt_subtitle {
+#ioogmymbaz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1559,7 +1578,7 @@ Table&nbsp;21.3: Profile drainage modification level
   border-top-width: 0;
 }
 
-#dstqutayfb .gt_heading {
+#ioogmymbaz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1571,13 +1590,13 @@ Table&nbsp;21.3: Profile drainage modification level
   border-right-color: #D3D3D3;
 }
 
-#dstqutayfb .gt_bottom_border {
+#ioogmymbaz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dstqutayfb .gt_col_headings {
+#ioogmymbaz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1592,7 +1611,7 @@ Table&nbsp;21.3: Profile drainage modification level
   border-right-color: #D3D3D3;
 }
 
-#dstqutayfb .gt_col_heading {
+#ioogmymbaz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1612,7 +1631,7 @@ Table&nbsp;21.3: Profile drainage modification level
   overflow-x: hidden;
 }
 
-#dstqutayfb .gt_column_spanner_outer {
+#ioogmymbaz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1624,15 +1643,15 @@ Table&nbsp;21.3: Profile drainage modification level
   padding-right: 4px;
 }
 
-#dstqutayfb .gt_column_spanner_outer:first-child {
+#ioogmymbaz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dstqutayfb .gt_column_spanner_outer:last-child {
+#ioogmymbaz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dstqutayfb .gt_column_spanner {
+#ioogmymbaz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1644,11 +1663,11 @@ Table&nbsp;21.3: Profile drainage modification level
   width: 100%;
 }
 
-#dstqutayfb .gt_spanner_row {
+#ioogmymbaz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dstqutayfb .gt_group_heading {
+#ioogmymbaz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1674,7 +1693,7 @@ Table&nbsp;21.3: Profile drainage modification level
   text-align: left;
 }
 
-#dstqutayfb .gt_empty_group_heading {
+#ioogmymbaz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1689,15 +1708,15 @@ Table&nbsp;21.3: Profile drainage modification level
   vertical-align: middle;
 }
 
-#dstqutayfb .gt_from_md > :first-child {
+#ioogmymbaz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dstqutayfb .gt_from_md > :last-child {
+#ioogmymbaz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dstqutayfb .gt_row {
+#ioogmymbaz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1716,7 +1735,7 @@ Table&nbsp;21.3: Profile drainage modification level
   overflow-x: hidden;
 }
 
-#dstqutayfb .gt_stub {
+#ioogmymbaz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1729,7 +1748,7 @@ Table&nbsp;21.3: Profile drainage modification level
   padding-right: 5px;
 }
 
-#dstqutayfb .gt_stub_row_group {
+#ioogmymbaz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1743,15 +1762,15 @@ Table&nbsp;21.3: Profile drainage modification level
   vertical-align: top;
 }
 
-#dstqutayfb .gt_row_group_first td {
+#ioogmymbaz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dstqutayfb .gt_row_group_first th {
+#ioogmymbaz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dstqutayfb .gt_summary_row {
+#ioogmymbaz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1761,16 +1780,16 @@ Table&nbsp;21.3: Profile drainage modification level
   padding-right: 5px;
 }
 
-#dstqutayfb .gt_first_summary_row {
+#ioogmymbaz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dstqutayfb .gt_first_summary_row.thick {
+#ioogmymbaz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dstqutayfb .gt_last_summary_row {
+#ioogmymbaz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1780,7 +1799,7 @@ Table&nbsp;21.3: Profile drainage modification level
   border-bottom-color: #D3D3D3;
 }
 
-#dstqutayfb .gt_grand_summary_row {
+#ioogmymbaz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1790,7 +1809,7 @@ Table&nbsp;21.3: Profile drainage modification level
   padding-right: 5px;
 }
 
-#dstqutayfb .gt_first_grand_summary_row {
+#ioogmymbaz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1800,7 +1819,7 @@ Table&nbsp;21.3: Profile drainage modification level
   border-top-color: #D3D3D3;
 }
 
-#dstqutayfb .gt_last_grand_summary_row_top {
+#ioogmymbaz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1810,11 +1829,11 @@ Table&nbsp;21.3: Profile drainage modification level
   border-bottom-color: #D3D3D3;
 }
 
-#dstqutayfb .gt_striped {
+#ioogmymbaz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dstqutayfb .gt_table_body {
+#ioogmymbaz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1823,7 +1842,7 @@ Table&nbsp;21.3: Profile drainage modification level
   border-bottom-color: #D3D3D3;
 }
 
-#dstqutayfb .gt_footnotes {
+#ioogmymbaz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1837,7 +1856,7 @@ Table&nbsp;21.3: Profile drainage modification level
   border-right-color: #D3D3D3;
 }
 
-#dstqutayfb .gt_footnote {
+#ioogmymbaz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1846,7 +1865,7 @@ Table&nbsp;21.3: Profile drainage modification level
   padding-right: 5px;
 }
 
-#dstqutayfb .gt_sourcenotes {
+#ioogmymbaz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1860,7 +1879,7 @@ Table&nbsp;21.3: Profile drainage modification level
   border-right-color: #D3D3D3;
 }
 
-#dstqutayfb .gt_sourcenote {
+#ioogmymbaz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1868,72 +1887,72 @@ Table&nbsp;21.3: Profile drainage modification level
   padding-right: 5px;
 }
 
-#dstqutayfb .gt_left {
+#ioogmymbaz .gt_left {
   text-align: left;
 }
 
-#dstqutayfb .gt_center {
+#ioogmymbaz .gt_center {
   text-align: center;
 }
 
-#dstqutayfb .gt_right {
+#ioogmymbaz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dstqutayfb .gt_font_normal {
+#ioogmymbaz .gt_font_normal {
   font-weight: normal;
 }
 
-#dstqutayfb .gt_font_bold {
+#ioogmymbaz .gt_font_bold {
   font-weight: bold;
 }
 
-#dstqutayfb .gt_font_italic {
+#ioogmymbaz .gt_font_italic {
   font-style: italic;
 }
 
-#dstqutayfb .gt_super {
+#ioogmymbaz .gt_super {
   font-size: 65%;
 }
 
-#dstqutayfb .gt_footnote_marks {
+#ioogmymbaz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dstqutayfb .gt_asterisk {
+#ioogmymbaz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dstqutayfb .gt_indent_1 {
+#ioogmymbaz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dstqutayfb .gt_indent_2 {
+#ioogmymbaz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dstqutayfb .gt_indent_3 {
+#ioogmymbaz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dstqutayfb .gt_indent_4 {
+#ioogmymbaz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dstqutayfb .gt_indent_5 {
+#ioogmymbaz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dstqutayfb .katex-display {
+#ioogmymbaz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dstqutayfb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ioogmymbaz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1978,47 +1997,128 @@ Table&nbsp;21.3: Profile drainage modification level
 </div>
 </section>
 </section>
-<section id="sec-in-rdpth" class="level2" data-number="21.3">
-<h2 data-number="21.3" class="anchored" data-anchor-id="sec-in-rdpth"><span class="header-section-number">21.3</span> Rooting depth</h2>
-<p>A soil’s estimated rooting depth is an interpretation relevant largely to agricultural land uses. The system presented below is sufficient for identifying major barriers to optimal growth of common crop and pasture species. More precise estimates can be made for specific species (and even specific varieties) given detailed knowledge of their preferences and tolerances.</p>
-<p>Barriers to root growth include physical properties (soil firmness, presence of bedrock or a pan), chemical properties (pH, salinity, macro and micro-nutrient levels, presence of pollutants), and hydrological (excessive wetness or dryness). The depth to the most shallow barrier defines the overall rooting depth, but where multiple barriers are present in a profile, all of them should be noted. Not all barriers are relevant to every plant, e.g.&nbsp;some have a preference for wetter or drier conditions.</p>
-<p>Rooting depth barriers can be identified most clearly by the behaviour of living roots in the profile. Absence of roots where vegetation is present at the surface may indicate a barrier. Roots may also grow downwards until encountering a barrier and then turn to grow horizontally. Where roots are not absent from a horizon, their distribution within the soil may change, e.g., becoming confined to inter-ped spaces where peds are very firm. Significant barriers may also affect the character of vegetation at the surface, causing e.g., stunting or discoloured leaves.</p>
-<p>Where rooting behaviour appears to be impaired, evidence of a likely cause may be inferred from the profile description, particularly:</p>
-<ul>
-<li>Field tests for pH, salinity or reducing conditions (<a href="hr_06_chemical_properties.html" class="quarto-xref"><span>Chapter 18</span></a>)</li>
-<li>Strength, penetration resistance and induration tests (<a href="hr_05_physical_properties.html" class="quarto-xref"><span>Chapter 17</span></a>)</li>
-<li>Structural characteristics, particularly the absence of peds (<a href="hr_01_architecture.html#sec-hr-stru" class="quarto-xref"><span>Section 13.1</span></a>)</li>
-<li>Relative abundance of rock fragments, where excess rock might be a physical barrier and also limit water retention and movement (<a href="hr_01_architecture.html#sec-frag" class="quarto-xref"><span>Section 13.2</span></a>)</li>
-<li>Soil texture, where high clay content may cause waterlogging or high sand content may limit water retention (<a href="hr_03_texture.html" class="quarto-xref"><span>Chapter 15</span></a>)</li>
-<li>Identification of pans blocking root growth, or concentrations that may suggest a chemical issue (<a href="hr_04_secondary_features.html" class="quarto-xref"><span>Chapter 16</span></a>)</li>
-</ul>
-<p>These features must coincide with the zone where root behaviour changes or roots disappear to be relevant. Where no obvious in-profile features are present but impeded root growth is still observable, laboratory testing may be required to investigate the cause.</p>
-<p>Record rooting depth information as type using <a href="#tbl-in-rbarr" class="quarto-xref">Table&nbsp;<span>21.4</span></a> and depth encountered in cm, e.g.&nbsp;<span class="ceg">Br 30&nbsp;cm</span> for a shallow profile over bedrock. Rooting depths should usually coincide with a horizon boundary.</p>
-<div class="cell" data-layout-align="center">
-<div id="tbl-in-rbarr" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+</section>
+<section id="sec-in-perm" class="level2" data-number="20.2">
+<h2 data-number="20.2" class="anchored" data-anchor-id="sec-in-perm"><span class="header-section-number">20.2</span> Permeability</h2>
+<p>Permeability is the measured or estimated rate at which water moves through the soil under ‘free-draining’ conditions - i.e., in the absence of barriers and in an unsaturated state. Like drainage, permeability is assessed first on a per-horizon basis before the profile as a whole is considered.</p>
+<p>Permeability can be measured directly, and while this data is always preferred, the measurement process is time-consuming and labour intensive. As a result, a great deal of research effort has been directed towards developing reliable estimates of permeability for New Zealand soils based on soil morphology <span class="citation" data-cites="griffiths1991 webb2011">(<a href="references.html#ref-griffiths1991" role="doc-biblioref">Griffiths 1991</a>; <a href="references.html#ref-webb2011" role="doc-biblioref">Webb and Lilburne 2011</a>)</span>. This section describes a method of permeability estimation based on that work.</p>
+<section id="sec-in-hperm" class="level3" data-number="20.2.1">
+<h3 data-number="20.2.1" class="anchored" data-anchor-id="sec-in-hperm"><span class="header-section-number">20.2.1</span> Horizon permeability</h3>
+<p>For each horizon, in the absence of direct measurements, use texture group, structure, stone content, organic matter content and unconfined strength at field condition to rate permeability using the charcteristics described in <a href="#tbl-in-hznperm" class="quarto-xref">Table&nbsp;<span>20.4</span></a>.</p>
+<p>Note that for each permeability class, topsoil horizons and soils with tephric parent materials are generally considered to be one class more permeable than described (e.g., a clayey topsoil horizon with &lt;20&nbsp;mm peds would be assigned moderate permeability rather than moderately slow).</p>
+<div id="tbl-in-hznperm" class="striped quarto-float quarto-figure quarto-figure-center anchored" cols="width=[10,20,20,50]">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-in-rbarr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;21.4: Types of rooting barrier
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-in-hznperm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;20.4: Horizon-level permeability classes
 </figcaption>
-<div aria-describedby="tbl-in-rbarr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-in-hznperm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 10%">
+<col style="width: 9%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Permeability</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="ceg">xs</span></td>
+<td style="text-align: left;">Extremely slow</td>
+<td style="text-align: left;">&lt;0.1&nbsp;mm/h</td>
+<td style="text-align: left;"><ul>
+<li>Impermeable horizons e.g.&nbsp;cemented pans, bedrock</li>
+<li>Fluid horizons</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="ceg">s</span></td>
+<td style="text-align: left;">Slow</td>
+<td style="text-align: left;">≥0.1–&lt;4&nbsp;mm/h</td>
+<td style="text-align: left;"><ul>
+<li>Clayey horizons with apedal massive or coarse structure (&gt;20&nbsp;mm peds)</li>
+<li>Silty or loamy horizons with apedal massive or coarse structure and firm unconfined strength under field-moist conditions</li>
+<li>Skeletal horizons (&gt;35% rock fragments) with dense packing</li>
+<li>Clayey peats</li>
+<li>Placic horizons</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="ceg">ms</span></td>
+<td style="text-align: left;">Moderately slow</td>
+<td style="text-align: left;">≥4–&lt;18&nbsp;mm/h</td>
+<td style="text-align: left;"><ul>
+<li>Clayey horizons with fine structure (&lt;20&nbsp;mm peds)</li>
+<li>Silty or loamy horizons with fine structure and firm unconfined strength</li>
+<li>Silty or loamy horizons with apedal massive or coarse structure and slightly firm unconfined strength</li>
+<li>Sandy horizons with firm unconfined strength</li>
+<li>Loamy or sandy peats</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="ceg">m</span></td>
+<td style="text-align: left;">Moderate</td>
+<td style="text-align: left;">≥18–&lt;72&nbsp;mm/h</td>
+<td style="text-align: left;"><ul>
+<li>Clayey, silty or loamy horizons with weak unconfined strength</li>
+<li>Loamy horizons with fine structure and slightly firm strength</li>
+<li>Clayey-, silty- or loamy-skeletal horizons with loose packing</li>
+<li>Sandy-skeletal horizons with compact packing</li>
+<li>Sandy horizons with slightly firm strength</li>
+<li>Peaty horizons</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="ceg">r</span></td>
+<td style="text-align: left;">Rapid</td>
+<td style="text-align: left;">≥72&nbsp;mm/h</td>
+<td style="text-align: left;"><ul>
+<li>Fragmental stony horizons</li>
+<li>Sandy-skeletal horizons with loose packing</li>
+<li>Sandy horizons with weak or very weak unconfined strength</li>
+<li>Humose horizons</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-in-pperm" class="level3" data-number="20.2.2">
+<h3 data-number="20.2.2" class="anchored" data-anchor-id="sec-in-pperm"><span class="header-section-number">20.2.2</span> Profile permeability</h3>
+<p>Summarising permeability at a profile level involves identifying the layer with the slowest permeability, and then identifying any significant deviations from that rating within the profile. First, simplify the horizon ratings according to <a href="#tbl-in-famperm" class="quarto-xref">Table&nbsp;<span>20.5</span></a> then follow <a href="#fig-in-famperm" class="quarto-xref">Figure&nbsp;<span>20.1</span></a> to determine the profile permeability.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-in-famperm" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-in-famperm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;20.5: Profile-level permeability classes
+</figcaption>
+<div aria-describedby="tbl-in-famperm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="qfzuuqzbcp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qfzuuqzbcp table {
+<div id="tofsjsjbao" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tofsjsjbao table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qfzuuqzbcp thead, #qfzuuqzbcp tbody, #qfzuuqzbcp tfoot, #qfzuuqzbcp tr, #qfzuuqzbcp td, #qfzuuqzbcp th {
+#tofsjsjbao thead, #tofsjsjbao tbody, #tofsjsjbao tfoot, #tofsjsjbao tr, #tofsjsjbao td, #tofsjsjbao th {
   border-style: none;
 }
 
-#qfzuuqzbcp p {
+#tofsjsjbao p {
   margin: 0;
   padding: 0;
 }
 
-#qfzuuqzbcp .gt_table {
+#tofsjsjbao .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2044,12 +2144,12 @@ Table&nbsp;21.4: Types of rooting barrier
   border-left-color: #D3D3D3;
 }
 
-#qfzuuqzbcp .gt_caption {
+#tofsjsjbao .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qfzuuqzbcp .gt_title {
+#tofsjsjbao .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2061,7 +2161,7 @@ Table&nbsp;21.4: Types of rooting barrier
   border-bottom-width: 0;
 }
 
-#qfzuuqzbcp .gt_subtitle {
+#tofsjsjbao .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2073,7 +2173,7 @@ Table&nbsp;21.4: Types of rooting barrier
   border-top-width: 0;
 }
 
-#qfzuuqzbcp .gt_heading {
+#tofsjsjbao .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2085,13 +2185,13 @@ Table&nbsp;21.4: Types of rooting barrier
   border-right-color: #D3D3D3;
 }
 
-#qfzuuqzbcp .gt_bottom_border {
+#tofsjsjbao .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qfzuuqzbcp .gt_col_headings {
+#tofsjsjbao .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2106,7 +2206,7 @@ Table&nbsp;21.4: Types of rooting barrier
   border-right-color: #D3D3D3;
 }
 
-#qfzuuqzbcp .gt_col_heading {
+#tofsjsjbao .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2126,7 +2226,7 @@ Table&nbsp;21.4: Types of rooting barrier
   overflow-x: hidden;
 }
 
-#qfzuuqzbcp .gt_column_spanner_outer {
+#tofsjsjbao .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2138,15 +2238,15 @@ Table&nbsp;21.4: Types of rooting barrier
   padding-right: 4px;
 }
 
-#qfzuuqzbcp .gt_column_spanner_outer:first-child {
+#tofsjsjbao .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qfzuuqzbcp .gt_column_spanner_outer:last-child {
+#tofsjsjbao .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qfzuuqzbcp .gt_column_spanner {
+#tofsjsjbao .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2158,11 +2258,11 @@ Table&nbsp;21.4: Types of rooting barrier
   width: 100%;
 }
 
-#qfzuuqzbcp .gt_spanner_row {
+#tofsjsjbao .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qfzuuqzbcp .gt_group_heading {
+#tofsjsjbao .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2188,7 +2288,7 @@ Table&nbsp;21.4: Types of rooting barrier
   text-align: left;
 }
 
-#qfzuuqzbcp .gt_empty_group_heading {
+#tofsjsjbao .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2203,15 +2303,15 @@ Table&nbsp;21.4: Types of rooting barrier
   vertical-align: middle;
 }
 
-#qfzuuqzbcp .gt_from_md > :first-child {
+#tofsjsjbao .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qfzuuqzbcp .gt_from_md > :last-child {
+#tofsjsjbao .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qfzuuqzbcp .gt_row {
+#tofsjsjbao .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2230,7 +2330,7 @@ Table&nbsp;21.4: Types of rooting barrier
   overflow-x: hidden;
 }
 
-#qfzuuqzbcp .gt_stub {
+#tofsjsjbao .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2243,7 +2343,7 @@ Table&nbsp;21.4: Types of rooting barrier
   padding-right: 5px;
 }
 
-#qfzuuqzbcp .gt_stub_row_group {
+#tofsjsjbao .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2257,15 +2357,15 @@ Table&nbsp;21.4: Types of rooting barrier
   vertical-align: top;
 }
 
-#qfzuuqzbcp .gt_row_group_first td {
+#tofsjsjbao .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qfzuuqzbcp .gt_row_group_first th {
+#tofsjsjbao .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qfzuuqzbcp .gt_summary_row {
+#tofsjsjbao .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2275,16 +2375,16 @@ Table&nbsp;21.4: Types of rooting barrier
   padding-right: 5px;
 }
 
-#qfzuuqzbcp .gt_first_summary_row {
+#tofsjsjbao .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qfzuuqzbcp .gt_first_summary_row.thick {
+#tofsjsjbao .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qfzuuqzbcp .gt_last_summary_row {
+#tofsjsjbao .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2294,7 +2394,7 @@ Table&nbsp;21.4: Types of rooting barrier
   border-bottom-color: #D3D3D3;
 }
 
-#qfzuuqzbcp .gt_grand_summary_row {
+#tofsjsjbao .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2304,7 +2404,7 @@ Table&nbsp;21.4: Types of rooting barrier
   padding-right: 5px;
 }
 
-#qfzuuqzbcp .gt_first_grand_summary_row {
+#tofsjsjbao .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2314,7 +2414,7 @@ Table&nbsp;21.4: Types of rooting barrier
   border-top-color: #D3D3D3;
 }
 
-#qfzuuqzbcp .gt_last_grand_summary_row_top {
+#tofsjsjbao .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2324,11 +2424,11 @@ Table&nbsp;21.4: Types of rooting barrier
   border-bottom-color: #D3D3D3;
 }
 
-#qfzuuqzbcp .gt_striped {
+#tofsjsjbao .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qfzuuqzbcp .gt_table_body {
+#tofsjsjbao .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2337,7 +2437,7 @@ Table&nbsp;21.4: Types of rooting barrier
   border-bottom-color: #D3D3D3;
 }
 
-#qfzuuqzbcp .gt_footnotes {
+#tofsjsjbao .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2351,7 +2451,7 @@ Table&nbsp;21.4: Types of rooting barrier
   border-right-color: #D3D3D3;
 }
 
-#qfzuuqzbcp .gt_footnote {
+#tofsjsjbao .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2360,7 +2460,7 @@ Table&nbsp;21.4: Types of rooting barrier
   padding-right: 5px;
 }
 
-#qfzuuqzbcp .gt_sourcenotes {
+#tofsjsjbao .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2374,7 +2474,7 @@ Table&nbsp;21.4: Types of rooting barrier
   border-right-color: #D3D3D3;
 }
 
-#qfzuuqzbcp .gt_sourcenote {
+#tofsjsjbao .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2382,72 +2482,614 @@ Table&nbsp;21.4: Types of rooting barrier
   padding-right: 5px;
 }
 
-#qfzuuqzbcp .gt_left {
+#tofsjsjbao .gt_left {
   text-align: left;
 }
 
-#qfzuuqzbcp .gt_center {
+#tofsjsjbao .gt_center {
   text-align: center;
 }
 
-#qfzuuqzbcp .gt_right {
+#tofsjsjbao .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qfzuuqzbcp .gt_font_normal {
+#tofsjsjbao .gt_font_normal {
   font-weight: normal;
 }
 
-#qfzuuqzbcp .gt_font_bold {
+#tofsjsjbao .gt_font_bold {
   font-weight: bold;
 }
 
-#qfzuuqzbcp .gt_font_italic {
+#tofsjsjbao .gt_font_italic {
   font-style: italic;
 }
 
-#qfzuuqzbcp .gt_super {
+#tofsjsjbao .gt_super {
   font-size: 65%;
 }
 
-#qfzuuqzbcp .gt_footnote_marks {
+#tofsjsjbao .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qfzuuqzbcp .gt_asterisk {
+#tofsjsjbao .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qfzuuqzbcp .gt_indent_1 {
+#tofsjsjbao .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qfzuuqzbcp .gt_indent_2 {
+#tofsjsjbao .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qfzuuqzbcp .gt_indent_3 {
+#tofsjsjbao .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qfzuuqzbcp .gt_indent_4 {
+#tofsjsjbao .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qfzuuqzbcp .gt_indent_5 {
+#tofsjsjbao .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qfzuuqzbcp .katex-display {
+#tofsjsjbao .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qfzuuqzbcp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#tofsjsjbao div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col>
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Code</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+<th id="Hzn" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Horizon permeability class</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">s</td>
+<td class="gt_row gt_left" headers="Name">Slow</td>
+<td class="gt_row gt_left" headers="Description">&lt;4&nbsp;mm/hr</td>
+<td class="gt_row gt_left" headers="Hzn">Extremely slow, slow</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">m</td>
+<td class="gt_row gt_left" headers="Name">Moderate</td>
+<td class="gt_row gt_left" headers="Description">≥4–&lt;72 mm/hr</td>
+<td class="gt_row gt_left" headers="Hzn">Moderately slow, moderate</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">r</td>
+<td class="gt_row gt_left" headers="Name">Rapid</td>
+<td class="gt_row gt_left" headers="Description">≥72 mm/hr</td>
+<td class="gt_row gt_left" headers="Hzn">Rapid</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-in-famperm" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-in-famperm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-in-famperm">%%{ init: { 'flowchart': { 'curve': 'natural' } } }%%
+graph TD
+  A["Identify the uppermost horizon with the slowest permeability, or rock above 100&nbsp;cm. This is Horizon X."]--&gt;B["Does Horizon X have &gt;30&nbsp;cm of contrasting permeability above?"]
+  B---&gt;|Yes|C("Use **m/s**, **r/s**, or **r/m**")
+  B--&gt; |No|D["Does the profile have a horizon ≥20&nbsp;cm thick below Horizon X with a different permeability class?"]
+  D--&gt;|Yes|E("Use **s/m**, **s/r** or **m/r**")
+  D--&gt;|No|F("Use **s**, **m**, or **r**")
+  
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-in-famperm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;20.1: Profile permeability class flowchart
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-in-rdpth" class="level2" data-number="20.3">
+<h2 data-number="20.3" class="anchored" data-anchor-id="sec-in-rdpth"><span class="header-section-number">20.3</span> Rooting depth restrictions</h2>
+<p>Some soils contain barriers to plant root growth that can affect some or all species, depending on the natural size of their root systems and their tolerance for particular conditions. Such barriers can include physical properties (soil firmness, buried rock or concrete), chemical properties (pH, salinity, macro and micro-nutrient levels, presence of pollutants), biological properties (pathogens, pests) and hydrological properties (excessive wetness or dryness).</p>
+<p>Rooting depth barriers can be identified most clearly by the behaviour of living roots in the profile. Absence of roots beyond a certain depth where vegetation is present at the surface may indicate a barrier, assuming the species present normally have a deep-rooting growth habit. Roots may also be observed to grow downwards until encountering a barrier and then turn to grow horizontally, sometimes forming subsurface mats. Root density may decrease suddenly at a horizon boundary without disappearing entirely, perhaps becoming sparse and confined to voids. Significant barriers may also affect the character of vegetation at the surface, causing e.g., stunted growth.</p>
+<p>Where rooting behaviour appears to be impaired, evidence of a likely cause may be inferred from the profile description, particularly:</p>
+<ul>
+<li>Field tests for pH, salinity or reducing conditions (<a href="hr_06_chemical_properties.html" class="quarto-xref"><span>Chapter 18</span></a>)</li>
+<li>Strength, penetration resistance and induration tests (<a href="hr_05_physical_properties.html" class="quarto-xref"><span>Chapter 17</span></a>)</li>
+<li>Structural characteristics, particularly the absence of peds or inter-ped spaces (<a href="hr_01_architecture.html#sec-hr-stru" class="quarto-xref"><span>Section 13.1</span></a>)</li>
+<li>Relative abundance of rock fragments, where excess rock might be a physical barrier and also limit water retention and movement (<a href="hr_01_architecture.html#sec-frag" class="quarto-xref"><span>Section 13.2</span></a>)</li>
+<li>Soil texture, where high clay content may cause waterlogging or high sand content may limit water retention (<a href="hr_03_texture.html" class="quarto-xref"><span>Chapter 15</span></a>)</li>
+<li>Identification of pans blocking root growth, or concentrations that may suggest a chemical issue (<a href="hr_04_secondary_features.html" class="quarto-xref"><span>Chapter 16</span></a>)</li>
+</ul>
+<p>Where these features are observed, to be considered as a potential rooting depth barrier their occurrence must usually coincide with the zone where root behaviour changes, or roots disappear. Only a few barriers (e.g.&nbsp;bedrock) can be considered definite regardless of whether any roots are actually present in the profile. Where no obvious restricting features are present but impeded root growth is still observable, laboratory testing may be required to investigate the cause.</p>
+<p>Record rooting barrier information as type using <a href="#tbl-in-rbarr" class="quarto-xref">Table&nbsp;<span>20.6</span></a> and depth encountered in cm, e.g.&nbsp;<span class="ceg">Br 30&nbsp;cm</span> for a shallow profile over bedrock. Rooting depths should usually coincide with a horizon boundary.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-in-rbarr" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-in-rbarr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;20.6: Types of rooting barrier
+</figcaption>
+<div aria-describedby="tbl-in-rbarr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="lpvqsinshn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lpvqsinshn table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lpvqsinshn thead, #lpvqsinshn tbody, #lpvqsinshn tfoot, #lpvqsinshn tr, #lpvqsinshn td, #lpvqsinshn th {
+  border-style: none;
+}
+
+#lpvqsinshn p {
+  margin: 0;
+  padding: 0;
+}
+
+#lpvqsinshn .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 85%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lpvqsinshn .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#lpvqsinshn .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lpvqsinshn .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lpvqsinshn .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lpvqsinshn .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lpvqsinshn .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lpvqsinshn .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lpvqsinshn .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lpvqsinshn .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lpvqsinshn .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lpvqsinshn .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lpvqsinshn .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#lpvqsinshn .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#lpvqsinshn .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lpvqsinshn .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lpvqsinshn .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lpvqsinshn .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lpvqsinshn .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lpvqsinshn .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lpvqsinshn .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lpvqsinshn .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#lpvqsinshn .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lpvqsinshn .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lpvqsinshn .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lpvqsinshn .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lpvqsinshn .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lpvqsinshn .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lpvqsinshn .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lpvqsinshn .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lpvqsinshn .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lpvqsinshn .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lpvqsinshn .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lpvqsinshn .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lpvqsinshn .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lpvqsinshn .gt_left {
+  text-align: left;
+}
+
+#lpvqsinshn .gt_center {
+  text-align: center;
+}
+
+#lpvqsinshn .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lpvqsinshn .gt_font_normal {
+  font-weight: normal;
+}
+
+#lpvqsinshn .gt_font_bold {
+  font-weight: bold;
+}
+
+#lpvqsinshn .gt_font_italic {
+  font-style: italic;
+}
+
+#lpvqsinshn .gt_super {
+  font-size: 65%;
+}
+
+#lpvqsinshn .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#lpvqsinshn .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lpvqsinshn .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lpvqsinshn .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lpvqsinshn .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lpvqsinshn .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lpvqsinshn .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#lpvqsinshn .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#lpvqsinshn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2492,56 +3134,51 @@ Table&nbsp;21.4: Types of rooting barrier
 <td class="gt_row gt_left" headers="Description">Presence of a human-made pollutant at levels impacting plant growth</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">Px</td>
-<td class="gt_row gt_left" headers="Name">Pathogen</td>
-<td class="gt_row gt_left" headers="Description">Presence of a root pathogen or pest species affecting roots</td>
-</tr>
-<tr class="odd">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">Nx</td>
 <td class="gt_row gt_left" headers="Name">Nutrient</td>
 <td class="gt_row gt_left" headers="Description">Lack of a macro- or micro-nutrient required for plant growth</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">Fm</td>
 <td class="gt_row gt_left" headers="Name">Firm</td>
 <td class="gt_row gt_left" headers="Description">Unconfined soil strength firm or greater</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">Pp</td>
 <td class="gt_row gt_left" headers="Name">Physical pan</td>
 <td class="gt_row gt_left" headers="Description">Presence of a well-developed densipan or fragipan, or a compacted layer caused by cultivation, livestock trampling, or machinery traffic</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">Pc</td>
 <td class="gt_row gt_left" headers="Name">Chemical pan</td>
 <td class="gt_row gt_left" headers="Description">Presence of a well-developed chemical pan e.g. duripan, iron-pan, calcrete</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">Sk</td>
 <td class="gt_row gt_left" headers="Name">Sandy</td>
 <td class="gt_row gt_left" headers="Description">Soil texture is coarse sandy or sandy-skeletal with loose packing</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">Cl</td>
 <td class="gt_row gt_left" headers="Name">Clayey</td>
 <td class="gt_row gt_left" headers="Description">Soil texture is clayey and structure is apedal massive</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">Rk</td>
 <td class="gt_row gt_left" headers="Name">Profile rock</td>
 <td class="gt_row gt_left" headers="Description">Rock fragments occupy over 35% of the horizon by volume, either in the soil or in regolithic material</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">Ak</td>
 <td class="gt_row gt_left" headers="Name">Artefact</td>
 <td class="gt_row gt_left" headers="Description">A buried layer of anthropogenic origin is present (e.g. geofabric)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">Bf</td>
 <td class="gt_row gt_left" headers="Name">Fractured substrate</td>
 <td class="gt_row gt_left" headers="Description">Saprolithic, paralithic or lithic material with notable cracking is present</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">Bm</td>
 <td class="gt_row gt_left" headers="Name">Massive substrate</td>
 <td class="gt_row gt_left" headers="Description">Paralithic or lithic material with no or mininimal cracking is present</td>
@@ -2555,8 +3192,38 @@ Table&nbsp;21.4: Types of rooting barrier
 </figure>
 </div>
 </div>
+<div id="nte-biorb" class="callout callout-style-simple callout-note no-icon callout-titled" title="Biologcial impedances to root growth">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;20.1: Biologcial impedances to root growth
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Biological soil features may act as restrictions on plant root growth. Examples include pathogens, root-eating pest species, and allelopathic pressures from other plant species and/or soil organisms. These are not presently included in the list of root barriers in <a href="#tbl-in-rbarr" class="quarto-xref">Table&nbsp;<span>20.6</span></a>, for several reasons:</p>
+<ul>
+<li>Ability to reliably identify these factors during field soil survey is currently limited.</li>
+<li>Where present, these factors are more likely to be a whole-of-profile feature than one that appears at a particular depth.</li>
+<li>These factors may only affect certain species or genera.</li>
+</ul>
+<p>Nonetheless, if a biological root growth impedance is known to occur at a location where a soil profile is being described, it should be recorded as a free-text note. Samples taken from the profile may require careful handling, e.g.&nbsp;to avoid spreading a pathogen, and field equipment and clothing may require decontamination.</p>
+</div>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-griffiths1991" class="csl-entry" role="listitem">
+Griffiths E 1991. Assessing soil permeability class from soil morphology. [Internet]. Havelock North, New Zealand. <a href="https://doi.org/10.7931/6G9W-AG26">https://doi.org/10.7931/6G9W-AG26</a>
+</div>
+<div id="ref-webb2011" class="csl-entry" role="listitem">
+Webb TH, Lilburne LR 2011. Criteria for defining the soil family and soil sibling : The fourth and fifth categories of the <span>New Zealand Soil Classification</span>. [Internet]. 2nd ed. Christchurch, New Zealand: Manaaki Whenua Press. <a href="https://doi.org/10.7931/DL1-LRSS-3-2011">https://doi.org/10.7931/DL1-LRSS-3-2011</a>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -2963,12 +3630,12 @@ Table&nbsp;21.4: Types of rooting barrier
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./in_01_horizon_names.html" class="pagination-link" aria-label="Horizon notation">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Horizon notation</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Horizon notation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./in_05_nzsc_toplevel.html" class="pagination-link" aria-label="The New Zealand Soil Classification">
-        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">The New Zealand Soil Classification</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./in_05_nzsc_reqs.html" class="pagination-link" aria-label="The New Zealand Soil Classification">
+        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">The New Zealand Soil Classification</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
