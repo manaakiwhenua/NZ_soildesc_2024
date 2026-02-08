@@ -50,7 +50,7 @@ tbl_in_hdrng <- gt(dat_in_hdrng) |>
 tbl_in_hdrng
 ```
 
-#### Classifying topsoil drainage {3sec-in-tsdrng}
+#### Classifying topsoil drainage {#sec-in-tsdrng}
 
 Morphological features associated with drainage status can be hard to observe accurately in [A]{.ceg} horizons, mostly due to their darker colour. *When otherwise in doubt*, a well developed [A]{.ceg} horizon should be assigned a drainage class one better than the horizon below it (usually a [B]{.ceg}, [E]{.ceg}, or [C]{.ceg} horizon). A poorly developed [A]{.ceg} horizon should receive the same class assignment as the horizon below. Use the 'distinct topsoil' NZSC diagnostic criteria to identify well developed [A]{.ceg} horizons.
 
@@ -128,26 +128,115 @@ tbl_in_natdrng
 
 ```
 
-## Rooting depth {#sec-in-rdpth}
+## Permeability {#sec-in-perm}
 
-A soil's estimated rooting depth is an interpretation relevant largely to agricultural land uses. The system presented below is sufficient for identifying major barriers to optimal growth of common crop and pasture species. More precise estimates can be made for specific species (and even specific varieties) given detailed knowledge of their preferences and tolerances.
+Permeability is the measured or estimated rate at which water moves through the soil under 'free-draining' conditions - i.e., in the absence of barriers and in an unsaturated state. Like drainage, permeability is assessed first on a per-horizon basis before the profile as a whole is considered.
 
-Barriers to root growth include physical properties (soil firmness, presence of bedrock or a pan), chemical properties (pH, salinity, macro and micro-nutrient levels, presence of pollutants), and hydrological (excessive wetness or dryness). The depth to the most shallow barrier defines the overall rooting depth, but where multiple barriers are present in a profile, all of them should be noted. Not all barriers are relevant to every plant, e.g. some have a preference for wetter or drier conditions.
+Permeability can be measured directly, and while this data is always preferred, the measurement process is time-consuming and labour intensive. As a result, a great deal of research effort has been directed towards developing reliable estimates of permeability for New Zealand soils based on soil morphology [@griffiths1991; @webb2011]. This section describes a method of permeability estimation based on that work.
 
-Rooting depth barriers can be identified most clearly by the behaviour of living roots in the profile. Absence of roots where vegetation is present at the surface may indicate a barrier. Roots may also grow downwards until encountering a barrier and then turn to grow horizontally. Where roots are not absent from a horizon, their distribution within the soil may change, e.g., becoming confined to inter-ped spaces where peds are very firm. Significant barriers may also affect the character of vegetation at the surface, causing e.g., stunting or discoloured leaves.
+### Horizon permeability {#sec-in-hperm}
+
+For each horizon, in the absence of direct measurements, use texture group, structure, stone content, organic matter content and unconfined strength at field condition to rate permeability using the charcteristics described in @tbl-in-hznperm.
+
+Note that for each permeability class, topsoil horizons and soils with tephric parent materials are generally considered to be one class more permeable than described (e.g., a clayey topsoil horizon with \<20 mm peds would be assigned moderate permeability rather than moderately slow).
+
++------------+-----------------+---------------+-------------------------------------------------------------------------------------------------------------------------------+
+| Code       | Name            | Permeability  | Description                                                                                                                   |
++:==========:+:================+:==============+:==============================================================================================================================+
+| [xs]{.ceg} | Extremely slow  | \<0.1 mm/h    | -   Impermeable horizons e.g. cemented pans, bedrock                                                                          |
+|            |                 |               | -   Fluid horizons                                                                                                            |
++------------+-----------------+---------------+-------------------------------------------------------------------------------------------------------------------------------+
+| [s]{.ceg}  | Slow            | ≥0.1–\<4 mm/h | -   Clayey horizons with apedal massive or coarse structure (\>20 mm peds)                                                    |
+|            |                 |               | -   Silty or loamy horizons with apedal massive or coarse structure and firm unconfined strength under field-moist conditions |
+|            |                 |               | -   Skeletal horizons (\>35% rock fragments) with dense packing                                                               |
+|            |                 |               | -   Clayey peats                                                                                                              |
+|            |                 |               | -   Placic horizons                                                                                                           |
++------------+-----------------+---------------+-------------------------------------------------------------------------------------------------------------------------------+
+| [ms]{.ceg} | Moderately slow | ≥4–\<18 mm/h  | -   Clayey horizons with fine structure (\<20 mm peds)                                                                        |
+|            |                 |               | -   Silty or loamy horizons with fine structure and firm unconfined strength                                                  |
+|            |                 |               | -   Silty or loamy horizons with apedal massive or coarse structure and slightly firm unconfined strength                     |
+|            |                 |               | -   Sandy horizons with firm unconfined strength                                                                              |
+|            |                 |               | -   Loamy or sandy peats                                                                                                      |
++------------+-----------------+---------------+-------------------------------------------------------------------------------------------------------------------------------+
+| [m]{.ceg}  | Moderate        | ≥18–\<72 mm/h | -   Clayey, silty or loamy horizons with weak unconfined strength                                                             |
+|            |                 |               | -   Loamy horizons with fine structure and slightly firm strength                                                             |
+|            |                 |               | -   Clayey-, silty- or loamy-skeletal horizons with loose packing                                                             |
+|            |                 |               | -   Sandy-skeletal horizons with compact packing                                                                              |
+|            |                 |               | -   Sandy horizons with slightly firm strength                                                                                |
+|            |                 |               | -   Peaty horizons                                                                                                            |
++------------+-----------------+---------------+-------------------------------------------------------------------------------------------------------------------------------+
+| [r]{.ceg}  | Rapid           | ≥72 mm/h      | -   Fragmental stony horizons                                                                                                 |
+|            |                 |               | -   Sandy-skeletal horizons with loose packing                                                                                |
+|            |                 |               | -   Sandy horizons with weak or very weak unconfined strength                                                                 |
+|            |                 |               | -   Humose horizons                                                                                                           |
++------------+-----------------+---------------+-------------------------------------------------------------------------------------------------------------------------------+
+
+: Horizon-level permeability classes {#tbl-in-hznperm .striped cols=width=\[10,20,20,50\]}
+
+### Profile permeability {#sec-in-pperm}
+
+Summarising permeability at a profile level involves identifying the layer with the slowest permeability, and then identifying any significant deviations from that rating within the profile. First, simplify the horizon ratings according to @tbl-in-famperm then follow @fig-in-famperm to determine the profile permeability.
+
+```{r}
+#| label: tbl-in-famperm
+#| tbl-cap: "Profile-level permeability classes"
+
+dat_in_sibdepth <-
+  tribble(~Code, ~Name, ~Description, ~Hzn,
+         's', 'Slow',     '<4 mm/hr', 'Extremely slow, slow',
+         'm', 'Moderate', '≥4–<72 mm/hr', 'Moderately slow, moderate',
+         'r', 'Rapid',    '≥72 mm/hr', 'Rapid')
+
+tbl_in_sibdepth <- gt(dat_in_sibdepth) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_label(Hzn = 'Horizon permeability class') |>
+  cols_width(Code ~pct(10), Name ~ pct(20), Hzn ~pct(40))
+  
+tbl_in_sibdepth
+
+```
+
+```{mermaid}
+%%| label: fig-in-famperm
+%%| fig-cap: "Profile permeability class flowchart"
+
+%%{ init: { 'flowchart': { 'curve': 'natural' } } }%%
+graph TD
+  A["Identify the uppermost horizon with the slowest permeability, or rock above 100 cm. This is Horizon X."]-->B["Does Horizon X have >30 cm of contrasting permeability above?"]
+  B--->|Yes|C("Use **m/s**, **r/s**, or **r/m**")
+  B--> |No|D["Does the profile have a horizon ≥20 cm thick below Horizon X with a different permeability class?"]
+  D-->|Yes|E("Use **s/m**, **s/r** or **m/r**")
+  D-->|No|F("Use **s**, **m**, or **r**")
+  
+```
+
+## Rooting depth restrictions {#sec-in-rdpth}
+
+Some soils contain barriers to plant root growth that can affect some or all species, depending on the natural size of their root systems and their tolerance for particular conditions. Such barriers can include physical properties (soil firmness, buried rock or concrete), chemical properties (pH, salinity, macro and micro-nutrient levels, presence of pollutants), biological properties (pathogens, pests) and hydrological properties (excessive wetness or dryness).
+
+Rooting depth barriers can be identified most clearly by the behaviour of living roots in the profile. Absence of roots beyond a certain depth where vegetation is present at the surface may indicate a barrier, assuming the species present normally have a deep-rooting growth habit. Roots may also be observed to grow downwards until encountering a barrier and then turn to grow horizontally, sometimes forming subsurface mats. Root density may decrease suddenly at a horizon boundary without disappearing entirely, perhaps becoming sparse and confined to voids. Significant barriers may also affect the character of vegetation at the surface, causing e.g., stunted growth.
 
 Where rooting behaviour appears to be impaired, evidence of a likely cause may be inferred from the profile description, particularly:
 
 -   Field tests for pH, salinity or reducing conditions (@sec-chem)
 -   Strength, penetration resistance and induration tests (@sec-cons)
--   Structural characteristics, particularly the absence of peds (@sec-hr-stru)
+-   Structural characteristics, particularly the absence of peds or inter-ped spaces (@sec-hr-stru)
 -   Relative abundance of rock fragments, where excess rock might be a physical barrier and also limit water retention and movement (@sec-frag)
 -   Soil texture, where high clay content may cause waterlogging or high sand content may limit water retention (@sec-tex)
 -   Identification of pans blocking root growth, or concentrations that may suggest a chemical issue (@sec-secondary)
 
-These features must coincide with the zone where root behaviour changes or roots disappear to be relevant. Where no obvious in-profile features are present but impeded root growth is still observable, laboratory testing may be required to investigate the cause.
+Where these features are observed, to be considered as a potential rooting depth barrier their occurrence must usually coincide with the zone where root behaviour changes, or roots disappear. Only a few barriers (e.g. bedrock) can be considered definite regardless of whether any roots are actually present in the profile. Where no obvious restricting features are present but impeded root growth is still observable, laboratory testing may be required to investigate the cause.
 
-Record rooting depth information as type using @tbl-in-rbarr and depth encountered in cm, e.g. [Br 30 cm]{.ceg} for a shallow profile over bedrock. Rooting depths should usually coincide with a horizon boundary.
+Record rooting barrier information as type using @tbl-in-rbarr and depth encountered in cm, e.g. [Br 30 cm]{.ceg} for a shallow profile over bedrock. Rooting depths should usually coincide with a horizon boundary.
 
 ```{r}
 #| label: tbl-in-rbarr
@@ -155,20 +244,19 @@ Record rooting depth information as type using @tbl-in-rbarr and depth encounter
 
 dat_in_rbarr <-
   tribble(~Code, ~Name, ~Description, 
-           'Ac', 'Acid',           'pH below 5.5',
-           'Ak', 'Alkaline',       'pH above 8.0',
-           'Na', 'Saline',         'EC above 0.6 dS/cm',
-           'Ax', 'Anoxic',         'Presence of reduced iron, or a very poor horizon drainage rating',  
-           'Tx', 'Toxic',          'Presence of a human-made pollutant at levels impacting plant growth',
-           'Px', 'Pathogen',       'Presence of a root pathogen or pest species affecting roots',
-           'Nx', 'Nutrient',       'Lack of a macro- or micro-nutrient required for plant growth',
-           'Fm', 'Firm',           'Unconfined soil strength firm or greater',
-           'Pp', 'Physical pan',   'Presence of a well-developed densipan or fragipan, or a compacted layer caused by cultivation, livestock trampling, or machinery traffic',
-           'Pc', 'Chemical pan',   'Presence of a well-developed chemical pan e.g. duripan, iron-pan, calcrete',
-           'Sk', 'Sandy',          'Soil texture is coarse sandy or sandy-skeletal with loose packing',
-           'Cl', 'Clayey',         'Soil texture is clayey and structure is apedal massive',
-           'Rk', 'Profile rock',   'Rock fragments occupy over 35% of the horizon by volume, either in the soil or in regolithic material',
-           'Ak', 'Artefact',       'A buried layer of anthropogenic origin is present (e.g. geofabric)',
+           'Ac', 'Acid',                'pH below 5.5',
+           'Ak', 'Alkaline',            'pH above 8.0',
+           'Na', 'Saline',              'EC above 0.6 dS/cm',
+           'Ax', 'Anoxic',              'Presence of reduced iron, or a very poor horizon drainage rating',  
+           'Tx', 'Toxic',               'Presence of a human-made pollutant at levels impacting plant growth',
+           'Nx', 'Nutrient',            'Lack of a macro- or micro-nutrient required for plant growth',
+           'Fm', 'Firm',                'Unconfined soil strength firm or greater',
+           'Pp', 'Physical pan',        'Presence of a well-developed densipan or fragipan, or a compacted layer caused by cultivation, livestock trampling, or machinery traffic',     
+           'Pc', 'Chemical pan',        'Presence of a well-developed chemical pan e.g. duripan, iron-pan, calcrete',
+           'Sk', 'Sandy',               'Soil texture is coarse sandy or sandy-skeletal with loose packing',
+           'Cl', 'Clayey',              'Soil texture is clayey and structure is apedal massive',
+           'Rk', 'Profile rock',        'Rock fragments occupy over 35% of the horizon by volume, either in the soil or in regolithic material',
+           'Ak', 'Artefact',            'A buried layer of anthropogenic origin is present (e.g. geofabric)',
            'Bf', 'Fractured substrate', 'Saprolithic, paralithic or lithic material with notable cracking is present',
            'Bm', 'Massive substrate',   'Paralithic or lithic material with no or mininimal cracking is present')
 
@@ -188,3 +276,13 @@ tbl_in_rbarr <- gt(dat_in_rbarr) |>
 tbl_in_rbarr
 
 ```
+
+::: {#nte-biorb .callout-note appearance="minimal" collapse="true" title="Biologcial impedances to root growth"}
+Biological soil features may act as restrictions on plant root growth. Examples include pathogens, root-eating pest species, and allelopathic pressures from other plant species and/or soil organisms. These are not presently included in the list of root barriers in @tbl-in-rbarr, for several reasons:
+
+-   Ability to reliably identify these factors during field soil survey is currently limited.
+-   Where present, these factors are more likely to be a whole-of-profile feature than one that appears at a particular depth.
+-   These factors may only affect certain species or genera.
+
+Nonetheless, if a biological root growth impedance is known to occur at a location where a soil profile is being described, it should be recorded as a free-text note. Samples taken from the profile may require careful handling, e.g. to avoid spreading a pathogen, and field equipment and clothing may require decontamination.
+:::
