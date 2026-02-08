@@ -11,8 +11,8 @@ format:
 -   The structure of the book has been updated and how has four major sections: Soil setting, Soil Profile, Soil Horizons, and Soil Interpretations.
 -   Inherently numeric properties are now recorded as numbers; either single measurements, median-plus-range, or low-high range as appropriate. Options for classifying numeric parameters for ease of communication are presented in the Soil Interpretations section.\
     **Rationale:** Numeric data recorded as ranges in the field has limited re-use potential (in that it can't be combined with the same data recorded against other classifications or as numbers) and the ranges have an inherently limited resolution. Many numeric soils parameters have no inherent natural breaks, but patterns in their distribution can emerge in specific landscapes or over certain scales of examination. Recording such data to classes reduces the odds of ever revealing those patterns clearly.
--   No parameters connected to the NZSC have been substantially changed
--   Horizon name protocols remain the same
+-   Parameters required for the *New Zealand Soil CLassifciation* (NZSC) have been updated where needed in alignment with the simultaneous review of that document
+-   Horizon name protocols remain substantially the same, with some updates to bring the schema into alignment with the NZSC
 
 ## Soil Setting (formerly 'Site Data')
 
@@ -55,11 +55,16 @@ This section has been loosely structured around the major soil forming factors.
 -   **ADD** a requirement to record the maximum depth of observation (or calculate it from horizon depth data)
 -   **ADD** a code list for recording the reason a soil profile did not reach 100 cm
 -   **ADD** a code list for recording recent site disturbances that have the capacity to impact the soil profile description.
+-   **ADD** a 'site setting' subsection, summarising the minimum required data points from the 'soil setting' chapters that should be recorded.
 
 ### Soil surface
 
 -   **ADD** site-specific slope and aspect recording instructions. These are not optional, unlike slope and aspect at the broader landform and landscape levels. (@sec-pr-slope, @sec-pr-aspect)
 -   **ADD** an assessment of surface cover types, recorded as a compositional set (types observed must add to 100%, see @sec-pr-surfcov). This includes surface stone and outcrop.
+-   **ADD** an optional code list for recording recent disturbances to the soil surface.
+-   **ADD** an optional code list for recording presence and state of surface water (@sec-pr-surfw)
+-   **ADD** an optional code list for recording open surface cracks (@sec-pr-crack)
+    -   **ADD** optional code lists for recording natural and anthropogenic microrelief (@sec–pr-micror)
 -   **REMOVE** reference to 'fresh' or 'aged' samples [@milne1995, p. 35]; soil descriptions should only be carried out on fresh soil materials.
 -   **UPDATE** Separate Erosion/Deposition into two sets of three-part descriptive codes to allow easier recording of distinct processes affecting the surface (@sec-pr-erosion, @sec-pr-deposition). Rapid noting of erosion and deposition can be made using site disturbance codes; these are optional extras that allow a little more detail to be communicated.
     -   **UPDATE** gravity-driven erosion codes for international compatibility
@@ -74,60 +79,65 @@ This section has been loosely structured around the major soil forming factors.
 -   **CHANGE** boundary shape by making 'occluded' its own option rather than a modifier placed on the other four categories. It is also renamed to 'discontinuous'. This improves international compatibility (@sec-pr-bdyshp)
 -   **CHANGE** boundary width code 'D - Distinct' to 'C - Clear' to avoid duplicate short codes (D is also used for Diffuse).
 -   **ADD** a clear statement about when to switch from recording a diffuse horizon transition to defining a new horizon. 30 cm is the proposed cutoff. (@sec-pr-bdydist)
+-   **ADD** a section about how to record infill features (@sec-pr-inf)
 -   **REMOVE** Table 3 'soil water state and soil water potential' in favour of using the soil water status codes in Table 4. Applying Table 3 correctly requires a tensiometer and/or laboratory data. The schema in Table 4 aligns more closely with international soil water status description requirements.
+-   **ADD** a section on how to record parent materials on a per-horizon basis, including lithology, weathering state, and origin @sec-pr-pm. Note that the existing weathering status schema from Milne has been retained for describing the weathering status of profile rock fragments specifically (see @se-rockfrag-wth) and replaced here with the schema of @juilleret2016, slightly modified. The parent material origin code list has been developed from the schema in @webb2011.
 
 ## Soil horizons
-
-### Soil horizon description
-
--   **ADD** an option to record parent material origin on each horizon, using the NZSC Family Profile Material Origin codes. Modifiers are presented for subtypes of Anthropic materials. This practice is recommended as it helps when classifying Anthropic soils, provides a shorthand option for highlighting the NZSC diagnostic Fluvial Features, and adds valuable context to horizon descriptions.
 
 ### Soil architecture
 
 This section comprises a considerable revision of the 'Macrofabric' section of @milne1995. Components are more clearly separated and options for both rapid and detailed assessment are given.
 
--   **UPDATE** structure grade to describe a clear gradient of progressively stronger development (Single-grain –\> Massive –\> Weak –\> Moderate –\> Strong).
--   **ADD** structural type after the proposal of @anderson2024 to distinguish between pedogenic, geogenic, and human-induced structural units. This is optional; not recording it assumes all structures are pedogenic.\
+-   **UPDATE** structure grade to describe a clear gradient of progressively stronger development (Single-grain –\> Massive –\> Weak –\> Moderate –\> Strong). Clearly define apedal/pedal in text.
+-   **ADD** structure origin after the proposal of @anderson2024 to distinguish between pedogenic, geogenic, and human-induced structural units. This is optional; not recording it assumes all structures are pedogenic.\
     **Rationale:** adding this parameter allows more effective description of C and R horizon structural characteristics, and more clearly highlights human effects on structure e.g. tillage and compaction.
 -   **ADD** structural unit shape 'angular blocky'. Consistent with international standards; useful for the extremely squared-off peds that can be observed in, e.g., Pumice soils.
 -   **REMOVE** structural unit shape 'tabular'. Exists in no other system, appears to be a synonym for platy.
 -   **REMOVE** structural unit shape 'cylindrical'. Exists in no other system
--   **REMOVE** structural unit shape 'cast'. Casts are now described separately in @sec-hr-bio.
 -   **REMOVE** Figure 8 and 9 flowcharts - redundant
 -   **REMOVE** shape options 'botryoidal' and 'stellate' as their utility is unclear
 -   **REMOVE** the requirement to measure inclination of all soil macrofabric components
 -   Parts of the former Appendix 6 'Procedures for describing macrofacbric' have been moved into this section, providing clear instructions on how to assess structure.
--   **CHANGE** Switch from counting roots per square unit area to estimating volumetric percentage in a horizon or sample. Counting individual roots is impractical at both very small and very large size ranges. Estimating volumetric percentage of the horizon brings roots into alignment with abundance assessment of other soil components (textures, stone, artefacts, voids), allowing total soil compositional data to be calculated.
+-   **UPDATE** detailed description options for rock fragment shape to align with modern standards (@sec-rockfrag-shp)
+-   **UPDATE** root recording to align with the schema in ISO 25177:2019, focusing on counts per 10 sq cm. Counts may be split by size if desired. Root position in the profile should also be recorded.
 -   **UPDATE** list of void types to provide simpler options. Rename Krotovina to Tunnel to reduce jargon.
 -   **UPDATE** Clearly separate the description of large voids from small pores.
 -   **MOVE** description of structural unit surface features, concentrations, and infilled voids to 'Secondary Features'.
--   **ADD** optional detailed description terms for plastics.
+-   **ADD** optional detailed description terms for artefacts.
+-   **ADD** description options for substrate geogenic features - bedding planes and rock fracture patterns.
 
 ### Soil colour
 
 -   **ADD** clear instructions for accurately recording colour in the field, as well as notes about colour vision acuity and the use of technology like colour sensors and cameras
 -   **ADD** a direct statement about the definition of the matrix colour, as it differs from most other systems which choose based on areal dominance alone.
 -   **ADD** codes for colour pattern type. NB Patterns from mixing by mechanical or biological means are not distinguished as the presence of such disturbances is recorded in several other ways (site disturbance, horizon names, secondary features)
+-   **ADD** an optional short-code list for simplified colour recording. This may be applied to patterns and even other soil solids if desired but cannot be used for recording matrix colour(s).
 
 ### Soil texture
 
+-   **CHANGE** the recording system to allow texture classes that describe the fine earth, gravel and organic matter content together. The system aligns with NZSC requirements and also with the way texture is recorded in geotechnical work. The boundaries of the fine-earth texture classes and groups remain unchanged, as do the component particle size limits.
 -   **ADD** commentary clarifying the differences between hand texture and laboratory particle size analysis
 -   **ADD** a table of clay/silt/sand ranges for the NZ texture triangle
 -   **UPDATE** the triangle diagram for better visual clarity
 -   **ADD** an option for rapid texture assessment, compatible with S-Map and the NZSC
 -   **UPDATE** description options for organic materials
+-   **UPDATE** description options for rock fragments in a texture context (more detailed description is also possible using @sec-rockfrag
+-   **REMOVE** the von Post scale for organic matter decomposition
 
 ### Secondary features
 
 -   **ADD** options for detailed descriptions of pans
 -   **UPDATE** description of concentrations to allow rapid or detailed assessment
 -   **UPDATE** code lists for concentrations, pans, coatings and pressure features to separate the various concepts more clearly and provide rapid and detailed assessment options for both.
+-   **ADD** a note about distinguishing pedogenic lamellae and geogenic lamina as well as when and how to describe them in a profile
+-   **ADD** a subsection on cryofeatures. No new code lists or criteria are defined at this point due to lack of available profile data, but the section points to other parts of the standard that may be used to highlight cryofeatures in a profile morphology description. These align with the new NZSC appendix on Cryic Soils.
 
 ### Consistence tests
 
 -   **ADD** infobox discussing which tests may be required when classifying against the NZSC
 -   Consistence tests have been re-written with clear, step by step instructions. The evaluation criteria are unchanged, except for the following:
--   **REMOVE** reference to the use of handheld penetrometers and Singleton blades, as these are no longer common practice
+-   **REMOVE** reference to the use of handheld penetrometers and Singleton blades, as these are no longer common practice. Notes about their origin and previous use are retained to give context to legacy literature.
 
 ### Field tests
 
@@ -137,30 +147,26 @@ This section comprises a considerable revision of the 'Macrofabric' section of @
 
 ## Soil Interpretations
 
-### Horizon names
+### Horizon notation
 
--   Horizon naming conventions are largely unchanged, but the way in which they are introduced has been.
--   **REMOVE** 'L' horizon name for fresh leaf litter, as it is otherwise excluded from soil profile description (e.g. moved to one side when measuring depths). Its presence at a site can still be noted using the surface cover codes (@sec-pr-surfcov).
--   **ADD** functional horizon definitions
+-   Horizon naming conventions are largely unchanged, but the structure of the section has been rearranged and some wording updates have been made to many definitions to align them better with the NZSC
+-   **CHANGE** 'L' horizon name from describing fresh leaf litter to describing organic horizons developing under largely unsaturated conditions (this replaces both F and H). This allows a parallel set of horizons to those used for peats (Lf, Lh, Lm) and aligns more closely with the texture code system. The former F horizon would now be recorded as 'Lm' and H as 'Lh'. 'Lf' is effectively a new option for organic material that is no longer fresh but still little-decomposed, most likely due to having a high fibre and/or lignin content (e.g. palm fronds). Fresh litter presence at a site is now noted using the surface cover codes (@sec-pr-surfcov).
+-   **ADD** example profile descriptions demonstrating the use of lithological discontinuity codes and the buried horizon prefix.
+-   **ADD** a prefix 'e' for signifying Anthropic horizons. Guidance for use is in @sec-hzn-an.
+-   **REMOVE** horizon Cu - 'u' considered redundant.
+-   **CHANGE** 'e' suffix to 'u' for Fluid horizons and remove reference to 'unripe' concept
 
-### Horizon properties
+### Profile behaviour
 
 This is a new section, containing the former Appendices 1 and 2 (reformatted for clarity), as well as:
 
--   **ADD** assessment of horizon-level drainage class
--   **ADD** root barriers - while they're for base properties in S-Map rather than siblings, they do affect allowable family and sibling classes.
-
-### Soil setting properties
-
--   This is a new section. Classification options for numeric landscape parameters are presented here.
+-   **ADD** assessment of horizon-level drainage class to underpin profile-level summaries and allow more detailed drainage data to be recorded
+-   **ADD** instructions for assessing permeability on a per horizon and per profile level. This system is aligned with permeability as it is defined in @webb2011 for the soil Family
+-   **ADD** instrutions for identifying and recording rooting depth restrictions. This system is aligned with root barriers as they are used in S-Map but includes some more specific options
 
 ### The New Zealand Soil Classification
 
--   This is a new section, connecting parts of the description standard to where they might be needed to support a soil classification. Only the Diagnostic features and the Key to Orders are examined at present.
-
-### NZSC Family and sibling
-
--   This is a new section, presenting the content of @webb2011 updated to how it is currently used in S-Map
+-   This is a new section, connecting parts of the description standard to where they might be needed to support a soil classification. Features required to classify the soil are listed and cross-linked down to Sibling level.
 
 ## Appendices
 
@@ -170,7 +176,8 @@ This is a new section, containing the former Appendices 1 and 2 (reformatted for
 -   **NEW** Appendix B - recording data in the field. Some general commentary about paper and computers.
     -   **New** advice on taking effective field photographs
     -   **New** example data sheets (previously in the back of the document)
--   **NEW** Appendix C - sampling guidance. Some parts of Appendix 9 have been moved in here. Canvassing input from a wider range of workers during the review process before building prescriptive protocols.
+-   **NEW** Appendix C - sampling guidance. Some parts of Appendix 9 have been moved in here. Guidance for exposing the profile and setting it up for description using different equipment is included, along with common sampling protocols for profiles and surface bulks. A sampling layout design for monitoring is included which aligns with the method currently used for .
 -   **NEW** Appendix D - data model. Diagrams of how the data points in the document fit together in a relational database model; clear indications of must-have and nice-to-have parameters.
--   **NEW** Appendix E - correlations. Shows how the standard can be worked in with other land assessment systems used in NZ.
--   **NEW** Appendix F - Glossary. This will remain unpopulated until we decide how to deliver the unified soils glossary being built as part of the NZSC update.
+-   **NEW** Appendix E - Classifying numeric measures. Contains classification schema that are commonly applied to various numeric parameters (slope, aspect, relief, abundance, size)
+-   **NEW** Appendix F - correlations. Shows how the standard can be worked in with other land assessment systems used in NZ.
+-   **NEW** Appendix G - Land provinces. Contains the extended definitions of provinces listed in @sec-gmph-prov.
