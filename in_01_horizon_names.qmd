@@ -1,3 +1,9 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
 # Horizon notation {#sec-hnms}
 
 ```{r}
@@ -6,38 +12,35 @@ library(tibble)
 library(gt)
 ```
 
-## Pedological horizons {#sec-hzn-conv}
+Pedological horizon notations operate as a shorthand for describing the full profile, making it easier to compare and contrast groups of profiles, and easier to classify them. Horizons are given a particular designation according to their position in the profile and according to soil properties that reflect the kind and degree of pedogenic alteration of the parent material. As designations are made in the field, they are defined mainly by morphological properties that differentiate horizons from those above or below, or from a presumed parent material. Laboratory data may be needed to confirm identification, especially in marginal cases.
 
-Pedological horizon names operate as a shorthand for describing the full profile, making it easier to compare and contrast groups of profiles, and easier to classify them. Such horizons are given a particular designation according to their position in the profile and according to soil properties that reflect the kind and degree of pedogenic alteration of the parent material. As designations are made in the field, they are defined mainly by morphological properties that differentiate horizons from those above or below, or from a presumed parent material. Laboratory data may be needed to confirm identification, especially in marginal cases.
+The current scheme for New Zealand reported here was developed largely from the system used in England and Wales [@avery1980] by Clayden and Hewitt [-@clayden2015], and is broadly similar to those used overseas (e.g. WRB [-@iussworkinggroupwrb2022], Soil Taxonomy [-@soilsurveystaff2022]). However, note that significant differences in suffix use exist between all of these systems as they have become adapted to regional conditions.
 
-The current scheme for New Zealand reported here was developed largely from the system used in England and Wales [@avery1980], by Clayden and Hewitt [-@clayden2015], and is broadly similar to those used overseas (e.g. WRB [-@iussworkinggroupwrb2022], Soil Taxonomy [-@soilsurveystaff2022]). However, note that significant differences in suffix use exist between all of these systems as they have become adapted to regional conditions.
+## Primary designations {#sec-hzn-convp}
 
-### Primary divisions {#sec-hzn-convp}
-
-Codes for primary divisions (previously known as master horizons) can be used by themselves for rapid assessment, or where criteria for more detailed nomenclature is not met. Always capitalised, they may be divided in to three organic horizons (F, H, O) and five mineral horizons (A, E, B, C, R) as per @tbl-hr-horprime.
+Codes for primary horizons designations (previously known as master horizons) can be used by themselves for rapid assessment, or where criteria for more detailed nomenclature is not met. Always capitalised, they may be divided in to two organic horizons (L, O) and five mineral horizons (A, E, B, C, R) as per @tbl-hr-horprime.
 
 ::: {#nte-lhzn .callout-note appearance="minimal" collapse="true" title="L Horizons"}
-Note that while the 'L' horizon was previously available to describe fresh leaf litter, such materials are now not considered part of the profile description and so this designation has been removed. Litter presence is described as part of surface cover assessment (@sec-pr-surfcov).
+Note that while the 'L' horizon was previously used to describe fresh leaf litter, such materials are now not considered part of the profile description and so this designation has been removed. Litter presence is described as part of surface cover assessment (@sec-pr-surfcov). The 'L' horizon now unites the former F and H horizons.
 :::
 
 ```{r}
 #| label: tbl-hr-horprime
-#| tbl-cap: "Primary horizon divisions"
+#| tbl-cap: "Primary horizon designations"
 
 dat_hr_horprime <-
   tribble(~Code, ~Name, ~Description,
-          'F', 'Fibric', 'Partly decomposed litter deposited or accumulated at the surface and not saturated with water for more than 30 consecutive days at a time.',
-          'H', 'Humic', 'Well-decomposed litter deposited or accumulated at the surface and not saturated with water for more than 30 consecutive days at a time. Original plant structures cannot be seen.',
+          'L', 'Litter', 'Organic horizon accumulated under dry conditions. It is saturated with water for no more than 30 consecutive days in most years.',
           'O', 'Peat', 'Organic horizon accumulated under wet conditions. It is saturated with water for at least 30 consecutive days in most years, or has been artificially drained.',
           'A', 'Surface', 'Mineral horizon formed at the surface, or below an organic horizon. It is characterised by incorporation of humified organic matter, or properties resulting from disturbance by cultivation. The organic matter has been incorporated by biological activity, shrink-swell behaviour, or by mixing through cultivation, rather than by translocation.',
-          'E', 'Eluviated', "Subsurface mineral horizon that contains less organic matter and/or iron and/or clay than the horizon immediately below, as a result of downward or lateral movement. It is identified by having all of the following: 
+          'E', 'Eluviated', "Subsurface mineral horizon that contains less organic matter and/or iron and/or clay than the horizon immediately below, as a result of downward or lateral movement. It is identified by having ALL of the following: 
 
 1.  A moist colour value of 4 or more, or a dry colour value of 5 or more, with or without silty or sandy coatings observable in a dry specimen.
-2.  Higher colour value or lower chroma and less well developed pedality than an underlying B horizon.
+2.  Higher colour value or lower chroma combined with less well developed pedality and/or coarser texture than an underlying B horizon.
 3.  Less organic matter and higher colour value than an overlying H, O or A horizon.
           
 The colour of the horizon can be that of uncoated sand and silt grains but E horizons are also recognised where coats of iron oxides or other minerals mask the colour of the primary particles." ,
-          'B', 'Subsoil', "Subsurface mineral horizon having little to no remnant geological structure or fine stratification in unconsolidated materials, characterised by one or more of the following:
+          'B', 'Subsoil', "Subsurface mineral horizon having little to no remnant geological structure in residual materials or fine stratification in transported materials, characterised by one or more of the following:
 
 1.  Illuvial concentration of silicate clay, iron, manganese, aluminium or organic matter, alone or in some combination. 
 2.  Coatings of sesquioxides that give the horizon a lower colour value, a higher chroma, or redder hue than the horizons above and below, without apparent illuviation of iron.
@@ -47,7 +50,7 @@ The colour of the horizon can be that of uncoated sand and silt grains but E hor
 A B horizon is differentiated from adjacent horizons by moist and dry colour and/or pedality and normally underlies an A or E horizon.",
           'C', 'Weathering substrate', 'Unconsolidated or weakly consolidated mineral horizon that is little affected by pedogenic processes and lacks properties of A, E or B horizons. The material may be either like or unlike that from which the solum presumably formed. A C horizon may have been modified by development of low-chroma colour and/or colour patterns caused by wetting and drying cycles, or accumulation of carbonates or more soluble salts. 
           
-Some highly weathered regolithic or saprolithic materials are designated C rather than CR if the material does not meet the requirements of A, E or B horizons.',
+Some highly weathered regolithic or saprolithic materials (see @sec-pr-wdeg) are designated C rather than CR if the material does not meet the requirements of A, E or B horizons.',
           'R', 'Rock', 'Hard or very hard bedrock that is impracticable to dig with a spade. The rock may exhibit limited signs of weathering such as cracks, but these are generally too few and too small for significant root development. However, trees and shrubs do root into fissures in R horizons. R horizons may qualify as paralithic or lithic material.'
           )
 
@@ -71,21 +74,52 @@ tbl_hr_horprime
 
 ```
 
-### Secondary Divisions {#sec-hzn-convs}
+## Secondary designations {#sec-hzn-convs}
 
-Note that C and R horizons have no secondary divisions.
+Note that C and R horizons have no secondary designations.
 
-#### O horizons {#sec-hor-o}
+### L horizons {#sec-hor-l}
+
+```{r}
+#| label: tbl-hr-hortwolit
+#| tbl-cap: "Secondary L horizon designations"
+
+dat_hr_hortwolit <-
+  tribble(~Code, ~Name, ~Description,
+          'Lf', 'Fibric litter' , 'L horizon that consists mainly of plant remains that are no longer fresh but remain readily identifiable in terms of botanical origin, e.g., lightly decomposed leaves, fronds, or twigs.',
+          'Lm', 'Mesic litter', 'L horizon that consists mainly of partially decomposed organic matter, where fragments of recognisable plant tissues may be identified but whole plant parts are no longer observable',
+          'Lh', 'Humic litter', 'L horizon that consists mainly of strongly decomposed organic matter with few or no identifiable plant remains other than resistant woody fragments >20 mm that cannot be reduced to fibres by crushing and shredding between the fingers.')
+
+tbl_hr_hortwolit <- gt(dat_hr_hortwolit) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  tab_style(style = "vertical-align:top",
+            locations = cells_body(columns = c(1, 2))) |>
+  cols_width(Code ~pct(10), Name ~pct(20))
+
+tbl_hr_hortwolit
+      
+```
+
+### O horizons {#sec-hor-o}
 
 ```{r}
 #| label: tbl-hr-hortwoorg
-#| tbl-cap: "Secondary O horizon divisions"
+#| tbl-cap: "Secondary O horizon designations"
 
 dat_hr_hortwoorg <-
   tribble(~Code, ~Name, ~Description,
           'Of', 'Fibric peat' , 'O horizon that consists mainly of well-preserved plant remains that are readily identifiable in terms of botanical origin, with at least 75% fibre content by volume after rubbing.',
           'Om', 'Mesic peat', 'O horizon that consists mainly of partially decomposed plant remains, intermediate in fibre content between Of and Oh.',
-          'Oh', 'Humic peat', 'O horizon that consists mainly of strongly decomposed plant remains, with less than 15% fibre content after rubbing. Plant species cannot be directly identified. It is distinguished from a mineral soil horizon by its deformable failure and capacity for shrinkage of 30% or more.')
+          'Oh', 'Humic peat', 'O horizon that consists mainly of strongly decomposed organic matter with few or no identifiable plant remains other than resistant woody fragments >20 mm that cannot be reduced to fibres by crushing and shredding between the fingers. The fibre content is less than 15% after rubbing. It is distinguished from a mineral soil horizon by its deformable failure and capacity for shrinkage on drying of 30% or more.')
 
 tbl_hr_hortwoorg <- gt(dat_hr_hortwoorg) |>
    tab_options(
@@ -108,11 +142,11 @@ tbl_hr_hortwoorg
 
 -   Add the [p]{.ceg} suffix wherever the [O]{.ceg} horizon is affected by cultivation e.g. [Ohp]{.ceg}.
 
-#### A Horizons {#sec-hor-a}
+### A Horizons {#sec-hor-a}
 
 ```{r}
 #| label: tbl-hr-hortwoa
-#| tbl-cap: "Secondary A horizon divisions"
+#| tbl-cap: "Secondary A horizon designations"
 
 dat_hr_hortwoa <-
   tribble(~Code, ~Name, ~Description,
@@ -138,11 +172,11 @@ tbl_hr_hortwoa <- gt(dat_hr_hortwoa) |>
 tbl_hr_hortwoa
 ```
 
-#### E horizons {#sec-hor-e}
+### E horizons {#sec-hor-e}
 
 ```{r}
 #| label: tbl-hr-hortwoe
-#| tbl-cap: "Secondary E horizon divisions"
+#| tbl-cap: "Secondary E horizon designations"
 
 dat_hr_hortwoe <-
   tribble(~Code, ~Name, ~Description,
@@ -156,8 +190,10 @@ It is not saturated with water for prolonged periods and usually overlies a Bh o
           
 1. Either
 
-  a. Unconfined strength is hard or very hard (strength class 6+) at soil moisture states from moist to dry, or
-  b. Soil penetration resistance exceeds 4000 kPa (penetration resistance class 7+) at soil moisture states from moist to dry; and
+    a. Unconfined strength is hard or very hard (strength class 6+) at soil moisture states from moist to dry, or
+    
+    b. Soil penetration resistance exceeds 4000 kPa (penetration resistance class 7+) at soil moisture states from moist to dry; and
+  
 2. Moist and dry samples slake in water within ten minutes.
 
 Densipans occur in soils with felsic parent materials. The strength is due to a close-fit arrangement of sand and silt-sized quartz particles.',
@@ -187,29 +223,29 @@ tbl_hr_hortwoe <- gt(dat_hr_hortwoe) |>
 tbl_hr_hortwoe
 ```
 
-#### B Horizons {#sec-hor-b}
+### B Horizons {#sec-hor-b}
 
 ```{r}
 #| label: tbl-hr-hortwob
-#| tbl-cap: "Secondary B horizon divisions"
+#| tbl-cap: "Secondary B horizon designations"
 
 dat_hr_hortwob <-
   tribble(~Code, ~Name, ~Description,
-          'Bfm', 'Placic' , "Sharply defined, cemented, pan-like B horizon usually less then 10 mm thick but the same designation may be given to horizons up to 25 mm thick. It is black to reddish brown or dark red in colour, and a black upper part can often be distinguished from a reddish brown lower part. It lies roughly parallel to the soil surface but is commonly wavy or convolute. A Bfm horizon usually occurs as a single pan but in places it can be bifurcated. It forms a barrier to most roots and restricts water movement.",
+          'Bfm', 'Placic' , "Sharply defined, cemented, pan-like B horizon usually less then 10 mm thick but the same designation may be given to horizons up to 25 mm thick. It is black to reddish brown or dark red in colour, and a black upper part can often be distinguished from a reddish brown lower part. It lies roughly parallel to the soil surface but is commonly wavy or convolute. A Bfm horizon usually occurs as a single pan but in places it can split into two or more layers. It forms a barrier to most roots and restricts water movement.",
 'Bh', 'Humose', 'Dark-coloured B horizon of podzolised soils enriched in organic matter, associated with aluminium, or iron and aluminium, as a result of illuviation.
 
-It has a moist value and chroma of 3 or less, or a value of 4 if chroma is 2, dominant in the matrix, and contains 1% or more organic carbon. The fabric has sand- or silt- size pellet-like aggregates, coats on mineral grains, or both. In some horizons (including humus-pans, **Bhm**), coatings have coalesced to fill pores and cement the horizon.',
-'Bo', 'Ochreous', "A strongly weathered B horizon formed in mixed crystalline iron and aluminium oxides and kaolin minerals, with low activity clay properties. It must meet all the following requirements:
+It has a moist value and chroma of 3 or less, or a value of 4 if chroma is 2, dominant in the matrix, and contains 1% or more organic carbon. The fabric has sand- or silt- size pellet-like aggregates, coats on mineral grains, or both. In some horizons (including humus-pans, **Bhm**), these coatings have coalesced to fill pores and cement the horizon.',
+'Bo', 'Oxidic', "A strongly weathered B horizon formed in mixed crystalline iron and aluminium oxides and kaolin subgroup minerals, with low activity clay properties. It must meet all the following requirements:
 
-1.  Weak or very weak primary ped and soil strength at moist to dry soil water states.
-2. Unconfined failure is friable or very friable over very moist to dry soil water states. Materials fail to predominantly 3 mm or smaller microaggregates comprising silt- and sand-sized polyhedra and spheroids.
-3. Primary peds slake rapidly in water to stable microaggregates (3 mm or smaller) which show no dispersion or slight dispersion.
+1.  Weak or very weak primary ped and soil strength as determined by the unconfined strength test over moist to dry soil water states.
+2. Unconfined failure is friable or very friable over very moist to dry soil water states. Materials fail to predominantly 3 mm or smaller peds comprising silt- and sand-sized polyhedra and granules.
+3. Primary peds slake in water to stable microaggregates (3 mm or smaller) which show no dispersion or only slight dispersion.
 4. Non-reactive or very weakly reactive to the reactive aluminium test.
 5. Materials are at most slightly sticky and slightly plastic.
 
-Bo horizons are clayey with measured clay contents commonly exceeding 60%. Measured clay % is usually larger than in overlying A horizons, but clay increase is not a defining criterion due to the difficulties of clay measurement in materials that are frequently difficult to disperse.
+**Bo** horizons are clayey, with measured clay contents commonly exceeding 60%. Measured clay percentage is usually larger than in overlying A horizons, but clay increase is not a defining criterion because of the problem of quantifying clay contents in materials that are frequently difficult to disperse.
 
-Clay coatings are either absent or only present at frequencies of about 1%. The Bo horizon has low activity clay accessory properties with ECEC and CEC less than 12 and 16 cmolc/kg clay respectively.",
+Clay coatings are either visually absent or only present at frequencies of about 1%. The Bo horizon has low activity clay accessory properties with ECEC and CEC less than 12 and 16 cmolc/kg clay respectively.",
 'Bs', 'Sesquioxides', "Ochreous B horizon of podzolised soils containing illuvial aluminium, iron, or both, that is closely associated, or complexed, with illuvial organic matter. The aluminium and iron is apparently mainly present as minerals with short-range order (especially allophane and ferrihydrite), though some aluminium is often present as aluminium-humus.
 
 The designation Bs should be used for B horizons that:
@@ -222,19 +258,21 @@ It is not possible to define the morphology of a Bs horizon such that it can be 
 
 Characteristic features of **Bs** horizons are:   
 
-1.  Reddest hue and highest chroma at the top of the horizon.
+1. Reddest hue and highest chroma at the top of the horizon.
 2. Earthy apedal fabric with fine spheroids, or weakly developed blocks or polyhedrons.
 3. Very weak or moderately weak soil strength when moist or dry.
 4. A greasy or smeary feel when very moist.
 5. Low plasticity in relation to clay content.
-6. Sand- or silt-size pellet-like aggregates, sesquioxidic coats on mineral grains or both.",
+6. Sand- or silt-size pellet-like aggregates, sesquioxidic coats on mineral grains or both.
+
+In some horizons (including ortstein-pans, **Bsm**), coatings have coalesced to fill pores and cement the horizon.",
 'Bt', 'Argillic', "An argillic horizon is a clay-enriched horizon.  It has one of the following:
 
 1.  Clay coatings occur that have a waxy lustre when dry and sufficient thickness to envelop fine sand grains. Coatings occur either on peds (10% or more of the ped surfaces), or in pores (in more than one-third of the observed tubular pores) or as bridges between sand grains (in more than half of the horizon); *or*
 2.  The horizon includes at least 15% by cross-sectional area of clay-enriched lamellae (clay bands); *or*
 3.  It contains sufficiently more clay than the overlying horizon, as detected by hand texturing (5% or more), excluding any differences which result from a lithological discontinuity, and *either*
 
-    a.  it is overlain by an eluvial horizon and the upper boundary of texture contrast is abrupt or sharp, or 
+    a.  it is overlain by an eluvial (E) horizon and the upper boundary of texture contrast is abrupt or sharp, or 
     
     b.  clay coatings occur on ped or pore surfaces.",
 'Bw', 'Weathered', "B horizon that shows evidence of alteration under well aerated conditions and does not qualify as Bh, Bs or Bt.
@@ -270,7 +308,7 @@ tbl_hr_hortwob <- gt(dat_hr_hortwob) |>
 tbl_hr_hortwob
 ```
 
-#### Transitional Horizons {#sec-hor-tran}
+### Transitional horizons {#sec-hor-tran}
 
 Two main kinds of transitional horizons are distinguished by specific conventions.
 
@@ -289,7 +327,7 @@ dat_hr_hortwoc <-
           'AB', 'A horizon transitional in character between an A and a B horizon, usually below a A horizon. It is distinguished from a B horizon by any or all of: having a darker colour due to relatively elevated organic matter, having less-developed structural units, having a structure closer in character to the overlying A horizon. An AB horizon may also lack secondary features expressed lower in the B horizon, or show weaker development of same.',
           'BC', "A horizon transitional in character between a B and a C horizon, usually below a B horizon. It is distinguished from a B horizon in similar material by lacking some required characteristic of colour, pedality or degree of weathering. It differs from a C horizon by having some B horizon feature, albeit weakly expressed.
 Note that a BC horizon can be identified in a profile without needing to first identify an overlying B (e.g. a horizon sequence of A-BC-C down-profile).",
-          'CR', "A weakly consolidated C horizon that is sufficiently dense and coherent to form a significant barrier to roots. Soft rocks (with a hardness on Moh's scale of < 3) such as shale and siltstone, and some exceptionally dense glacial tills are included. The material can be dug with difficulty with a spade when moist.
+          'CR', "A weakly consolidated C horizon that is sufficiently dense and coherent to form a significant barrier to roots. Soft rocks (with a hardness on Moh's scale of < 3) such as shale and siltstone, and some exceptionally dense glacial tills and pyroclastic deposits are included. The material can be dug with difficulty with a spade when moist.
 
 The concept of the CR horizon is similar to that of the material underlying a paralithic contact, but without the restrictive requirement for the spacing of cracks.")
 
@@ -311,13 +349,12 @@ tbl_hr_hortwoc <- gt(dat_hr_hortwoc) |>
 tbl_hr_hortwoc
 ```
 
-### Redox suffixes {#sec-hor-redox}
+## Redox suffixes {#sec-hor-redox}
 
-Redox suffixes are used to signify the drainage status of a horizon, as evidenced by the degree of development of redoxic soil features (redoxic mottles and concentrations, as well as gleying). The following suffixes can be added to most [E]{.ceg}, [B]{.ceg}, or [C]{.ceg} horizons to signify the degree to which they have been affected by water saturation and reducing conditions, e.g. [Bg]{.ceg}. Some exceptions exist:
+Redox suffixes are used to signify the drainage status of a horizon, as evidenced by the degree of development of redoxic soil features (redoxic mottles and concentrations, as well as gleying). The following suffixes can be added to most primary horizon designations to signify the degree to which they have been affected by redox processes, e.g. [Bg]{.ceg}. Some exceptions exist:
 
--   [g]{.ceg} and [r]{.ceg} suffixes cannot be used with [Ew]{.ceg} or [Bw]{.ceg} horizons, which are defined by their development under well-aerated conditions.
--   [g]{.ceg} and [r]{.ceg} suffixes cannot be used with [Cu]{.ceg}, as it is partly defined by a lack of reducing conditions.
--   The [g]{.ceg} suffix may be added to [A]{.ceg} horizons, in cases where ≥ 2% redox segregations occur. *Note:* As [A]{.ceg} horizons are expected to generally be dark and/or low-chroma from elevated organic matter, the [other redox modifiers](#sec-hor-redox) available in deeper horizons may not be applied.
+-   [g]{.ceg} and [r]{.ceg} suffixes cannot be used with [Ea]{.ceg}, [Ew]{.ceg} or [Bw]{.ceg} horizons, which are defined by their development under well-aerated conditions.
+-   The [g]{.ceg} suffix may be added to [A]{.ceg} horizons, in cases where ≥ 2% redox segregations occur. *Note:* As [A]{.ceg} horizons are expected to generally be dark and/or low-chroma from elevated organic matter, the other redox suffixes may not be applied.
 
 Per below, low-chroma colours have:
 
@@ -331,12 +368,12 @@ See @nte-lowch for more detail.
 #| tbl-cap: "Redox suffixes"
 
 dat_hr_hortwor <-
-  tribble(~Code, ~Name, ~Description,
-          '*no code*', 'Unaffected' , "< 2% redox segregations, no low-chroma colours",
-          '(f)', 'Slightly reduced', '≥ 2% redox segregations, no low-chroma colours',
-          '(g)', 'Reduced', '≥ 2% redox segregations, matrix and/or ped faces have < 50% low-chroma colours',
-          'g' , 'Very reduced', '≥ 2% redox segregations, matrix has 50-85% low chroma colours, and/or ped faces have > 50% low-chroma colours',
-          'r', 'Completely reduced', 'Matrix has > 85% low-chroma colours.')
+  tribble(~Code, ~Name, ~Description, ~usewith,
+          '*no code*', 'Unaffected' , "< 2% redox segregations, no low-chroma colours", 'Any',
+          '(f)', 'Slightly reduced', '≥ 2% redox segregations, no low-chroma colours', 'B, C',
+          '(g)', 'Reduced', '≥ 2% redox segregations, matrix and/or ped faces have < 50% low-chroma colours', 'E (alone), B, C',
+          'g' , 'Very reduced', '≥ 2% redox segregations, matrix has 50-85% low chroma colours, and/or ped faces have > 50% low-chroma colours', 'A, E (alone), B, C',
+          'r', 'Completely reduced', 'Matrix has > 85% low-chroma colours.', 'E (alone), B, C')
 
 tbl_hr_hortwor <- gt(dat_hr_hortwor) |>
    tab_options(
@@ -351,13 +388,16 @@ tbl_hr_hortwor <- gt(dat_hr_hortwor) |>
             locations = cells_body(columns = 1, rows = 2:5)) |>
   tab_style(style = "vertical-align:top",
             locations = cells_body(columns = c(1, 2))) |>
+  tab_style(style = list(cell_text(weight = 'bold')),
+            locations = cells_body(columns = 4)) |>
   fmt_markdown(columns = 1, rows = 1) |>
-  cols_width(Code ~pct(10), Name ~pct(20))
+  cols_label(usewith = 'Used with') |>
+  cols_width(Code ~pct(10), Name ~pct(20), usewith ~pct(20))
 
 tbl_hr_hortwor
 ```
 
-### Other suffixes {#sec-hor-other}
+## Other suffixes {#sec-hor-other}
 
 One or more of these suffixes may be added to the designations defined above to provide more specific information about a horizon. For example, a [Bg]{.ceg} horizon containing more than 5% by volume of concretions is designated [Bgc]{.ceg}.
 
@@ -366,9 +406,9 @@ One or more of these suffixes may be added to the designations defined above to 
 #| tbl-cap: "Other suffixes"
 
 dat_hr_horother <-
-  tribble(~Code, ~Name, ~Description,
-          'c', 'Concretionary', 'To denote that the horizon contains \\> 5% by volume of concretions - spherical bodies with concentric internal fabric. The suffix should be used in combination with other letters to indicate the nature of the concretionary material.',
-'e', 'Fluid', 'To a horizon that has a moderately or very fluid fluidity class.',
+  tribble(~Code, ~Name, ~Description, ~usewith,
+          'c', 'Concretionary', 'To denote that the horizon contains \\>5% by volume of concretions - spherical bodies with concentric internal fabric. The suffix should be used in combination with other letters to indicate the nature of the concretionary material.', 'A, E, B, C',
+'e', 'Fluid', 'To a horizon that has a moderately or very fluid fluidity class.', 'A, E, B, C',
 '(h)', 'Cutanic', 'To denote a horizon with cutanic horizon properties. Such horizons have dark coloured coats on ped faces, in pores and on rock fragments. 
 
 A cutanic horizon meets both of the following criteria:
@@ -376,34 +416,32 @@ A cutanic horizon meets both of the following criteria:
 1. The coatings do not have a waxy lustre when dry or are not sufficiently thick to envelop fine sand grains. Silt coatings are excluded. (Silt coatings have similar colour to the matrix, or have higher value and/or lower chroma than the matrix. On drying they may be thick enough to meet argillic horizon requirements, and have flow-like surfaces, but they have a matt rather than a waxy lustre.); and
 2. The coatings have moist colour values of 4 or less, or value 5 and chroma 3 or less.
 
-In coarse textured, apedal horizons, the translocated material can penetrate the matrix to the extent that patches of the whole horizon have the colour given above. In such cases the horizon can only be distinguished from a **Bh** of a podzolised soil by its relationship to adjacent horizons, or by a negative reaction to the sodium fluoride test, except for soil in volcaniclastic materials. 
+In coarse textured, apedal horizons, the translocated material can penetrate the matrix to the extent that patches of the whole horizon have the colour given above. In such cases the horizon can only be distinguished from a **Bh** of a podzolised soil by its relationship to adjacent horizons, or by a negative reaction to the sodium fluoride test, except for soil in volcaniclastic or pyroclastic materials. 
 
-The suffix is used with **Bs**, **Bt**, **Bw** and **BC** horizons and also with **Ea**, **Eg** and **Er** horizons below humose or peaty surface layers.',
-'i', 'Nodular', 'To denote that the horizon contains \\> 15% by volume of nodules, subrounded or irregular segregations of iron or aluminium oxyhydroxides with some kaolin.',
-'j', 'Jarositic', 'To denote the presence of straw-coloured jarosite, most commonly in **\\*g** or **\\*r** horizons.',
-'k', 'Calcareous', 'To denote an accumulation of fine-earth carbonate, CaCO~3~, usually detectable using field testing with HCl. The carbonate may be primary (inherited from soil parent materials) or secondary (precipitated from the soil solution). Coarse primary carbonate particles may or may not also be present but do not by themselves contribute to the definition of a calcareous horizon.',
-'m', 'Cemented', 'To denote a continuously cemented horizon that is strong enough to resist root penetration. A continuously cemented horizon is one in which the primary mineral particles are chemically bound together by precipitated secondary minerals (e.g. silica, carbonate, metal oxides, or ice). A cemented horizon is at least weakly indurated and has no (or no closely-spaced) cracks, pores or soft spots that could allow root penetration. Where the agent cementing the horizon can be identified with confidence, the \'m\' suffix is combined with the appropriate modifier e.g. qm for a duripan.',
-'n', 'Sodic', 'To denote a significant accumulation of exchangeable sodium. Sodic soil materials have an exchangeable sodium percentage (ESP) of ≥ 6% and an uncemented dry sample will exhibit moderate to complete dispersion. Natural sodicity is most common in B horizons.',
-'q', 'Silicic', 'To denote an accumulation of secondary silica. Silica accumulations are cemented, pale, and do not react to 10% HCl. They may exist as nodules, patches, hard coatings, or most often as continuous pans, called duripans.',
-'v', 'Variegated', 'To denote a horizon with mottles or variegated colour pattern due to differential weathering of mineral components and not attributable to reduction and segregation of iron caused by saturation with water.',
-'x', 'Fragipan', 'To denote a horizon with fragipan properties, usually **BCxg**, **BCx(g)** or **BCx**.
-
-A fragipan must fulfill **all** of the following requirements: 
+The suffix is used with **Bs**, **Bt**, **Bw** and **BC** horizons and also with **Ea**, **Eg** and **Er** horizons below humose or peaty surface layers.', 'B, C',
+'i', 'Nodular', 'To denote that the horizon contains \\>5% by volume of nodules, subrounded or irregular segregations of iron or aluminium oxyhydroxides with some kaolin.', 'A, E, B, C',
+'j', 'Jarositic', 'To denote the presence of straw-coloured jarosite, most commonly in **\\*g** or **\\*r** horizons.', 'A, E, B, C',
+'k', 'Calcareous', 'To denote an accumulation of fine-earth carbonate, CaCO~3~, usually detectable using field testing with HCl. The carbonate may be primary (inherited from soil parent materials) or secondary (precipitated from the soil solution). Coarse primary carbonate particles may or may not also be present but do not by themselves contribute to the definition of a calcareous horizon.', 'B, BC, C',
+'m', 'Cemented', 'To denote a continuously cemented horizon that is strong enough to resist root penetration. A continuously cemented horizon is one in which the primary mineral particles are chemically bound together by precipitated secondary minerals (e.g. silica, carbonate, metal oxides, or ice). A cemented horizon is at least weakly indurated and has no (or no closely-spaced) cracks, pores or soft spots that could allow root penetration. Where the agent cementing the horizon can be identified with confidence, the \'m\' suffix is combined with the appropriate modifier e.g. qm for a duripan.', 'B, BC, C',
+'n', 'Sodic', 'To denote a significant accumulation of exchangeable sodium. Sodic soil materials have an exchangeable sodium percentage (ESP) of ≥6% and an uncemented dry sample will exhibit moderate to complete dispersion. Natural sodicity is most common in B horizons.', 'B, BC, C',
+'q', 'Silicic', 'To denote an accumulation of secondary silica. Silica accumulations are cemented, pale, and do not react to 10% HCl. They may exist as nodules, patches, hard coatings, or most often as continuous pans, called duripans.', 'B, BC, C',
+'v', 'Variegated', 'To denote a horizon with mottles or variegated colour pattern due to differential weathering of mineral components and not attributable to reduction and segregation of iron caused by saturation with water.', 'BC, C',
+'x', 'Fragipan', 'To denote a non-cemented horizon that has high bulk density (usually ≥1.5 Mg/m3) with high strength when dry. A fragipan must fulfill **all** of the following requirements: 
 
 1. An air-dried sample slakes when fully immersed in water. 
-2. It has brittle failure when moist. The horizon may contain rock fragments, but the fine earth must be sufficiently coherent to allow brittle fracture. 
-3. It has at least slightly firm moist soil strength.
+2. It has brittle failure when moist. The horizon may contain rock fragments, but the fine earth must be sufficiently coherent to allow brittle failure. 
+3. It has at least slightly firm moist unconfined soil strength.
 4. Either 
-  a. Extremely coarse or gross prismatic peds: the prisms have apedal-massive interiors, or break to secondary peds with horizontal dimensions of 100 mm or more, and the prism faces are defined by colours of chroma 3 or less, *or* 
-  b. The horizon is apedal-massive throughout, or has extremely coarse or gross prismatic peds, and the moist soil strength is very firm. 
-5. If roots are present, they are confined predominantly to planar voids between prisms or to worm galleries.
-6. Moist penetration resistance measured by a 6.5 mm flat-tipped penetrometer is 3100 kPa or more. 
+  a. prismatic peds with a size of >100 mm: the prisms have apedal-massive interiors, or break to secondary peds with horizontal dimensions of 100 mm or more, and the prism faces are defined by colours of chroma 3 or less, *or* 
+  b. The horizon is apedal massive throughout, or has prismatic peds with a size of >100 mm, and the moist, unconfined soil strength is very firm. 
+5. If roots are present, they are confined predominantly to planar voids between prisms or to worm burrows.
+6. Penetration resistance under moist conditions is 3100 kPa or more. 
 7. It does not occur within an **E** horizon. 
 
-A fragipan usually has clay coatings on fissures or in pores between fissures.', 
-'(x)', 'Brittle', ' To denote a horizon that meets some but not all of the requirements of a fragipan, e.g. **Bw(x)**.',
-'y', 'Gypsic', 'To denote an accumulation of gypsum, CaSO~4~.',
-'z', 'Salty', 'To denote an accumulation of salts more soluble than gypsum.')
+A fragipan usually has clay coatings on fissures or in pores between fissures, but an additional \'t\' suffix is considered redundant where these are observed.', 'B, BC, C',
+'(x)', 'Brittle', ' To denote a horizon that meets some but not all of the requirements of a fragipan, e.g. **Bw(x)**.', 'B, BC, C',
+'y', 'Gypsic', 'To denote an accumulation of gypsum, CaSO~4~.', 'B, BC, C',
+'z', 'Salty', 'To denote an accumulation of salts more soluble than gypsum.','A, B, BC, C')
 
 tbl_hr_horother <- gt(dat_hr_horother) |>
    tab_options(
@@ -418,17 +456,20 @@ tbl_hr_horother <- gt(dat_hr_horother) |>
             locations = cells_body(columns = 1)) |>
   tab_style(style = "vertical-align:top",
             locations = cells_body(columns = c(1, 2))) |>
+  tab_style(style = list(cell_text(weight = 'bold')),
+            locations = cells_body(columns = 4)) |>
   fmt_markdown(columns = 3) |>
-  cols_width(Code ~pct(10), Name ~pct(20))
+  cols_label(usewith = 'Used with') |>
+  cols_width(Code ~pct(10), Name ~pct(20), usewith ~pct(20))
 
 tbl_hr_horother
 ```
 
-### Numbering similar horizons {#sec-hzn-num}
+## Numbering similar horizons {#sec-hzn-num}
 
 If multiple horizons with the same name but minor differences in morphology are evident in a profile, distinguish each horizon by appending them with a number, in the order in which they are encountered down the profile. The horizon names must otherwise be identical, e.g. **Bt1**, **Bt2**, **Btg1**, **Btg2** is correct, but **Bt1**, **Bt2**, **Btg3**, **Btg4** is not. This convention can, however, cross lithological discontinuities, e.g. **Bw1**, **Bw2**, **2Bw3**, **2Bw4**. The convention can also be interrupted, e.g. **Ah1**, **Bt**, **bAh2**. The numerical suffix must always be placed last in the name.
 
-### Lithological discontinuities {#sec-hzn-discont}
+## Lithological discontinuities {#sec-hzn-discont}
 
 A numbered prefix may be used to group horizons within lithological or stratigraphic zones separated by discontinuities. Such discontinuities are identified by a significant difference between adjacent horizons in the particle-size distribution or in mineralogy, that cannot be attributed to pedogenic processes. The main purpose of recognising lithological differences is to draw attention to inherited layering that can significantly influence physical properties, particularly permeability, as well as providing insight into the landscape and land-use history that can be represented by a multilayered profile.
 
@@ -444,7 +485,7 @@ Horizons comprising the uppermost parent material layer are not specifically des
 
 : Example of a soil profile developed in alluvial deposits with multiple discontinuities related to past depositional events. The sharp horizon boundaries and textural shifts signify stratigraphic discontinuities, and the second deposit contains two horizons with relatively similar character only distinguished by a change in drainage status and a minor increase in gravel content. {#tbl-litheg tbl-colwidths="\[25,25,30,20\]"}
 
-### Buried horizons {#sec-hzn-bur}
+## Buried horizons {#sec-hzn-bur}
 
 Pedogenic horizons that have been buried by deposition of additional material and little modified subsequently are called buried horizons and denoted by the prefix 'b'. A buried horizon is obviously not in the same deposit as overlying horizons. Some buried horizons, however, are formed in material that is lithologically similar to the overlying deposit. The symbol is not used in Organic Soils or to separate an organic layer from a mineral layer.
 
@@ -462,3 +503,9 @@ The notation for a buried **Ah** horizon in material similar to the overlying de
 | Non-indurated rock | **b**C | \- | ZL(G) 25% gravel |
 
 : Example of a soil profile developed on a lower hillslope, preserving a soil that developed in residual materials and was subsequently buried by a landslip. A lithological discontinuity has not been applied at the change in parent material origin class in this instance, as the material transported from uphill is fundamentally similar in character {#tbl-bureg tbl-colwidths="\[25,25,30,20\]"}
+
+## Anthropogenic horizons
+
+Horizons formed in anthropogenic soil materials may be denoted by the prefix 'e' (e.g., [eAp]{.ceg}). This may include deliberately manufactured soils (e.g. for sports fields or mine rehabilitation), or natural soils that have a significant component of anthropogenic modification (e.g. backyard soils, kūmara fields). The remaining horizons of a truncated profile should not receive this designation, nor should agricultural topsoils that have only been subject to low-impact and reversible practices like tillage or fertilisation.
+
+Given that most anthropogenic soils in New Zealand will be <~800 years old, it is considered unlikely at present that the 'e' prefix will be valid when applied to subsoil horizons that require long periods of time to form e.g. [Bo]{.ceg}.
