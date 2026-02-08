@@ -137,7 +137,7 @@ Pans form when particular chemical compounds precipitate out of the soil solutio
 
 For rapid assessment, only record pans that are strongly developed enough to be classification-relevant. A classification-relevant pan is one that is developed enough to meet all of the relevant diagnostic requirements listed in the New Zealand Soil Classification. Record the pan type using @tbl-hr-pantype.
 
-Many (but not all) pans have dedicated conventional horizon names. The full definitions of those horizons are available in @sec-hzn-conv.
+Many (but not all) pans have dedicated conventional horizon names. The full definitions of those horizons are available in @sec-hnms.
 
 Pans can be described in detail in terms of type, thickness, continuity, structure, strength and cementation. Pans comprise distinct horizons, so their thickness is defined using horizon boundaries. Their strength and cementation are assessed using @tbl-cn-str and @tbl-cn-ind. Codes for type, continuity and structure are given below in @tbl-hr-pantype, @tbl-hr-pancont, and @tbl-hr-panstr. Note that continuity can only be observed in large pits or exposures.
 
@@ -154,8 +154,8 @@ dat_hr_pantype <-
           'K', 'Calcareous pan', 'Created by the precipitation of calcium carbonate (CaCO~3~)', '\\*km (B or BC horizons)',
           'O', 'Ortstein pan', 'Pan cemented by iron and organic matter. Common in some Podzol Soils', 'Bsm',
           'P', 'Placic', 'A very thin (< 10 mm), dark, iron-dominated pan with sharp boundaries', 'Bfm',
-          'Q', 'Silica pan', 'Created by the precipitation of silica (SiO~2~)', '\\*qm (not A horizons)',
-          'X', 'Fragipan', 'An unstructured, uncemented but high-density, erosion-resistant layer common in many Pallic Soils', '\\*x (B or BC horizons)',
+          'Q', 'Silica pan', 'Created by the precipitation of silica (SiO~2~), also known as a duripan', '\\*qm (not A horizons)',
+          'X', 'Fragipan', 'An uncemented but high-density, erosion-resistant layer common in many Pallic Soils', '\\*x (B or BC horizons)',
           'UK', 'Unknown', 'Pan origin cannot be clearly determined', NA
           )
 
@@ -172,7 +172,8 @@ tbl_hr_pantype <- gt(dat_hr_pantype) |>
             locations = cells_body(columns = 1)) |>
   fmt_markdown(columns = c(3, 4)) |>
   sub_missing(columns = 4, missing_text = '') |>
-  cols_width(Code ~pct(10), Name ~pct(20), Horizon ~pct(20))
+  cols_width(Code ~pct(10), Name ~pct(20), Horizon ~pct(20)) |>
+  tab_footnote(footnote = md("Full identification criteria for pans with horizon notations are avaialble in @sec-hnms."))
 
 tbl_hr_pantype
 ```
