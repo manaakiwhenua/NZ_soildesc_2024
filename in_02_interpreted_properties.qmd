@@ -22,11 +22,11 @@ Drainage should first be assessed on a per-horizon basis. These interpretations 
 
 dat_in_hdrng <-
   tribble(~Code, ~Name, ~HNames, ~sws, ~mcol, ~secfts,
-          'VP', 'Very poor', 'O*, *r', 'Saturated or wet', 'Low-chroma', 'Few to none',  
-          'PO', 'Poor', '*r, *g', 'Wet', 'Low-chroma', 'Few to none, mottles more often on ped surfaces than internals',
-          'IP', 'Imperfect', '*(g)', 'Wet to Moist', 'Low-chroma patterns on brighter matrix', 'Fe and/or Mn-rich segregations, nodules and pans',
-          'MW', 'Moderately Well', '*(f)', 'Wet to Dry', 'Colour patterns but no low chroma colours', 'Mottles more often in ped interiors' ,
-          'WE', 'Well', 'No redox suffixes', 'Moist to Dry', 'No low chroma colours',  'Few to none')
+          'v', 'Very poor', 'O*, *r', 'Saturated or wet', 'Low-chroma', 'Few to none',  
+          'p', 'Poor', '*r, *g', 'Wet', 'Low-chroma', 'Few to none, mottles more often on ped surfaces than internals',
+          'i', 'Imperfect', '*(g)', 'Wet to Moist', 'Low-chroma patterns on brighter matrix', 'Fe and/or Mn-rich segregations, nodules and pans',
+          'm', 'Moderately Well', '*(f)', 'Wet to Dry', 'Colour patterns but no low chroma colours', 'Mottles more often in ped interiors' ,
+          'w', 'Well', 'No redox suffixes', 'Moist to Dry', 'No low chroma colours',  'Few to none')
 
 tbl_in_hdrng <- gt(dat_in_hdrng) |>
    tab_options(
@@ -40,7 +40,7 @@ tbl_in_hdrng <- gt(dat_in_hdrng) |>
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
   tab_style(style = list(cell_text(weight = 'bold')),
-            locations = cells_body(columns = 2)) |>
+            locations = cells_body(columns = 3)) |>
   cols_label(HNames = 'Horizon Names',
              sws    = 'Typical Moisture',
              secfts  = 'Redox concentrations',
@@ -60,7 +60,7 @@ The reasoning behind this rule of thumb is that the lack of topsoil development 
 
 ### Profile Drainage {#sec-in-pdrng}
 
-The drainage status of the profile as a whole is determined using horizon depths and per-horizon drainage ratings completed according to @sec-in-hdrng.
+The drainage status of the profile as a whole is determined using horizon depths and per-horizon drainage ratings completed according to @sec-in-hdrng. Note that 'perch-gley profiles', where a zone of impeded drainage rests above a low-permeability layer that appears less affected by redox processes, are treated the same as any other soil profile. The depth to the shallowest zone of impeded drainage is used to determine the profile drainage class.
 
 Workers classifying drainage for NZSC Sibling construction have no need to subdivide within the profile ratings in @tbl-in-pdrng. For other types of work e.g. agricultural suitability assessment, it may be useful to recognise subgroups – e.g. for a deep-rooted, wetness-intolerant crop, there is a difference between an imperfectly drained profile that is at its *worst* imperfectly drained in the top 1 m, and one that has poor drainage below 60 cm.
 
@@ -71,14 +71,14 @@ Workers classifying drainage for NZSC Sibling construction have no need to subdi
 dat_in_pdrng <-
   tribble(   
     ~Code,      ~Name,              ~Description,
-    'VP', 'Very Poor', 'Profiles with very poorly drained horizons starting <10cm from the land surface',
-    'PO',    'Poor', 'Profiles with poorly drained horizons starting <30cm from the land surface',
-    'IP',  'Imperfect', 'Profiles with poorly drained horizons starting 30-60cm from the land surface, *or*
-    Profiles with imperfectly drained horizons starting <30cm from the land surface',
-    'MW', 'Moderately Well', 'Profiles with moderately well-drained horizons starting <90 cm from the surface, *or*
-    Profiles with poorly-drained horizons starting 60-90cm from the surface, *or*
-    Profiles with imperfectly drained horizons starting 30-90cm from the surface', 
-    'WE', 'Well', 'All horizons starting within 90cm of the surface are well-drained.'  )
+    'VP', 'Very Poor', 'Profiles with very poorly drained horizons starting <10 cm from the land surface',
+    'PO',    'Poor', 'Profiles with poorly drained horizons starting <30 cm from the land surface',
+    'IP',  'Imperfect', 'Profiles with poorly drained horizons starting 30–60 cm from the land surface, *or*
+    Profiles with imperfectly drained horizons starting <30 cm from the land surface',
+    'MW', 'Moderately Well', 'Profiles with moderately well-drained horizons starting <90 cm from the surface, *or*
+    Profiles with poorly-drained horizons starting 60–90 cm from the surface, *or*
+    Profiles with imperfectly drained horizons starting 30–90 cm from the surface', 
+    'WE', 'Well', 'All horizons starting within 90 cm of the surface are well-drained.'  )
 
 tbl_in_pdrng <- gt(dat_in_pdrng) |>
   tab_options(
@@ -96,6 +96,12 @@ tbl_in_pdrng <- gt(dat_in_pdrng) |>
 tbl_in_pdrng
 
 ```
+
+::: {#nte-nzscdrng .callout-note appearance="minimal" collapse="true" title="Drainage and the NZSC"}
+In the *New Zealand Soil Classification*, horizons with moderately well or imperfect drainage qualify for the diagnostic 'redox-mottled horizon'. Horizons with poor or very poor drainage qualify for the diagnostic 'reductimorphic horizon'.
+
+When summarised to the whole-of-profile drainage class, it follows that profiles with overall imperfect drainage are usually considered to have a 'Mottled Profile Form', and soils with poor or very poor drainage have a 'Gley Profile Form'.
+:::
 
 ##### Natural vs Artificial drainage {#sec-in-pdrng-alt}
 
@@ -132,7 +138,7 @@ tbl_in_natdrng
 
 Permeability is the measured or estimated rate at which water moves through the soil under 'free-draining' conditions - i.e., in the absence of barriers and in an unsaturated state. Like drainage, permeability is assessed first on a per-horizon basis before the profile as a whole is considered.
 
-Permeability can be measured directly, and while this data is always preferred, the measurement process is time-consuming and labour intensive. As a result, a great deal of research effort has been directed towards developing reliable estimates of permeability for New Zealand soils based on soil morphology [@griffiths1991; @webb2011]. This section describes a method of permeability estimation based on that work.
+Permeability can be measured directly, and while this data is always preferred, the measurement process is time-consuming and labour intensive. As a result, a great deal of research effort has been directed towards developing reliable estimates of permeability for New Zealand soils based on soil morphology [@mclaughlinRecentAlluvialSoil1989; @griffiths1991; @webb2011]. This section describes a method of permeability estimation based on that work.
 
 ### Horizon permeability {#sec-in-hperm}
 
@@ -183,9 +189,9 @@ Summarising permeability at a profile level involves identifying the layer with 
 
 dat_in_sibdepth <-
   tribble(~Code, ~Name, ~Description, ~Hzn,
-         's', 'Slow',     '<4 mm/hr', 'Extremely slow, slow',
-         'm', 'Moderate', '≥4–<72 mm/hr', 'Moderately slow, moderate',
-         'r', 'Rapid',    '≥72 mm/hr', 'Rapid')
+         'SL', 'Slow',     '<4 mm/hr', 'Extremely slow, slow',
+         'MO', 'Moderate', '≥4–<72 mm/hr', 'Moderately slow, moderate',
+         'RA', 'Rapid',    '≥72 mm/hr', 'Rapid')
 
 tbl_in_sibdepth <- gt(dat_in_sibdepth) |>
   tab_options(
