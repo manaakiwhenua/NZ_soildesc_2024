@@ -398,16 +398,17 @@ Where the microrelief pattern is larger than the profile being examined, note th
 
 ```{r}
 #| label: tbl-pr-micreltype
-#| tbl-cap: "Drivers of natural microrelief (adapted from @ncst2024 and @iussworkinggroupwrb2022)"
+#| tbl-cap: "Drivers of microrelief (adapted from @ncst2024 and @iussworkinggroupwrb2022)"
 
 dat_pr_micreltype <-
   tribble(~Code, ~Name, ~Description,
-          'N', 'None',      'Site surface is naturally smooth, or level', 
+          'N', 'None',      'Site surface is naturally smooth or level', 
           'G', 'Soil',      'Induced by shrink-swell clay activity e.g. gilgai',
           'B', 'Biotic',    'Induced by plant or animal activity e.g. forest dimples from treethrow',
           'C', 'Climatic',  'Induced by temperature extremes or wind and water e.g. frost heave, sand ripples',
           'T', 'Terrain',   'Induced by mass movement effects on slopes',
-          'S', 'Substrate', 'Induced by changes to the substrate e.g. small karst features')
+          'S', 'Substrate', 'Induced by changes to the substrate e.g. small karst features',
+          'A', 'Anthropogenic', 'Induced by deliberate human activity')
 
 tbl_pr_micreltype <- gt(dat_pr_micreltype) |>
    tab_options(
@@ -460,7 +461,7 @@ tbl_pr_micrelfrm
 
 Small-scale human alterations to the soil surface are common in agricultural and urban areas (both current and former). Microrelief can be both removed and created by these activities. 
 
-If the alteration is relatively recent, a surface disturbance code (e.g. [MC]{.ceg}) from @tbl-ss-eventp can be used. Otherwise, record the dominant anthropogenic microrelief type using the codes in @tbl-pr-amicreltype. For detailed descriptions of anthropogenic microrelief, record the average height and spacing of repeating elements in centimetres.
+If the alteration is relatively recent, a surface disturbance code (e.g. [MC]{.ceg}) from @tbl-ss-eventp can be used. Otherwise, record the dominant anthropogenic microrelief type using the codes in @tbl-pr-amicreltype. The driver (@tbl-pr-micreltype) in all cases will be [A]{.ceg}. For detailed descriptions of anthropogenic microrelief, record the average height and spacing of repeating elements in centimetres.
 
 ```{r}
 #| label: tbl-pr-amicreltype
@@ -468,7 +469,6 @@ If the alteration is relatively recent, a surface disturbance code (e.g. [MC]{.c
 
 dat_pr_amicreltype <-
   tribble(~Code, ~Name, ~Description,
-          'N', 'None',                'Site surface is not significantly altered by humans', 
           'C', 'Smoothed',            'Site surface has been smoothed, contoured, rock-picked, infilled or levelled, beyond normal tillage effects',
           'B', 'Raised Beds',         'Elevated areas have been created and maintained for specific crops, e.g. rows for vegetables or puke (mounds) for kūmara',
           'H', 'Hump and hollow',     'Broad, alternating surface drains and ridges constructed across a surface, usually for pasture production',
