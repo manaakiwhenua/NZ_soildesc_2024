@@ -144,8 +144,8 @@ Open subsurface voids should be described as per @sec-void, and open surface cra
 dat_hr_infl <-
   tribble(~Code, ~Name, ~Description,
           'C', 'Crack',  'Infilled surface crack caused by shrink-swell clay movement',
-          'T', 'Tunnel', 'Infilled animal burrow > 20 mm diameter',
-          'B', 'Burrow', 'Infilled animal burrow <= 20 mm diameter', 
+          'T', 'Tunnel', 'Infilled animal burrow ≧20 mm diameter',
+          'B', 'Burrow', 'Infilled animal burrow <20 mm diameter', 
 
           'R', 'Root',   'Infilled root channel',
           'D', 'Drain',  'Infilled mole drain or similar deep-tillage feature')
@@ -278,7 +278,11 @@ Information about the lithology, origin and weathering degree of the soil parent
 
 ### Lithology {#sec-pr-lith}
 
-The lithology of the fine earth (mineral particles \<2 mm) and of rock fragments (if present) are noted separately for each soil horizon. Where subsolum layers are observed, their lithology is also noted. Use the codes in @tbl-ss-pm.
+For rapid assessment, lithology is recorded at the landform level (@sec-ss-pm).
+
+For routine assessment, the lithology of the fine earth (mineral particles \<2 mm) and of rock fragments (if present) are noted separately for each soil horizon. Where subsolum layers are observed, their lithology is also noted. Use the codes in @tbl-ss-pm and record only the dominant lithologies present.
+
+For detailed assessment, a more complete list of lithologies may be defined, along with relative abundance as percentage by volume.
 
 Example: [An, Hs]{.ceg} for a mix of eroded sedimentary rocks and volcanic ash.
 

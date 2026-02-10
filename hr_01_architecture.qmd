@@ -221,7 +221,7 @@ For very rapid assessment, estimate total fragment abundance (rocks and non-rock
 
 ### Rock fragments {#sec-rockfrag}
 
-Rock fragments are soil mineral particles \>2 mm. For rapid assessment, use the texture class code modifiers provided for rock fragments in @sec-hr-rftex, and confirm absence by recording an abundance of [0%]{.ceg}.
+Rock fragments are soil mineral particles \>2 mm. For rapid assessment, use the texture class code modifiers provided for rock fragments in @sec-hr-rftex, or confirm absence by recording an abundance of [0%]{.ceg}.
 
 Example: [SL(G)]{.ceg} for a sandy loam soil with 5–35% gravels (size range 2–20 mm).
 
@@ -237,7 +237,7 @@ Rock fragment shape is partly determined by parent rock lithology and stratigrap
 
 The ratios between the three side lengths of the smallest box that can contain a rock fragment are used to classify its form. Various indices can be built from these three measurements [@blott2008; @angelidakis2022], but overall they coalesce into four major classes as shown in @fig-hr-rockfrm and @tbl-hr-rockfrfrm.
 
-![Rock fragment form classification, adapted from \@angelidakis2022. With a, b, c representing the long, intermediate, and short dimensions of a box containing a rock fragment, ratios c/b and b/a together define the range of possible shapes.](data/shape_form_plot.png){#fig-hr-rockfrm fig-align="center" width="85%"}
+![Rock fragment form classification, adapted from @angelidakis2022. With a, b, c representing the long, intermediate, and short dimensions of a box containing a rock fragment, ratios c/b and b/a together define the range of possible shapes.](data/shape_form_plot.png){#fig-hr-rockfrm fig-align="center" width="85%"}
 
 ```{r}
 #| label: tbl-hr-rockfrfrm
@@ -274,10 +274,10 @@ Roundedness refers specifically to how sharp any corners or edges present on the
 
 dat_hr_rockfrrnd <-
   tribble(~Code, ~Name, ~Description,
-          'A', 'Angular',     'Rock fragments with clear, well-defined corners separated by flat outer faces.',
+          'A', 'Angular', 'Rock fragments with clear, well-defined corners separated by flat and sometimes concave outer faces.',
           'S', 'Sub-angular', 'Rock fragments with visible but blunt corners and edges. Outer faces my be flat, concave or convex.',
           'U', 'Sub-rounded', 'Rock fragments with poorly defined but appreciable corners and edges. Faces will be discernible but usually not flat.',
-          'R', 'Rounded',     'Rock fragments with no discernible flat faces, edges or corners.') 
+          'R', 'Rounded', 'Rock fragments with no discernible flat faces, edges or corners.') 
 
 tbl_hr_rockfrrnd <- gt(dat_hr_rockfrrnd) |>
   tab_options(
@@ -326,7 +326,7 @@ tbl_hr_rockfrrgh
 
 #### Rock fragment weathering {#sec-rockfrag-wth}
 
-Weathering status of rock fragments provides some information on profile age and stability, and is used in the NZSC. Weathering status may need to be assessed in relation to fresh rock from nearby exposures, where available. The weathering schema in @tbl-hr-rockfrwth may also be applied to substrate rock masses when determining the weathering status of the horizon as a whole (@sec-pr-wdeg).
+Weathering status of rock fragments provides some information on profile age and stability, and is used in the NZSC. Weathering status may need to be assessed in relation to fresh rock from nearby exposures, where available. The weathering schema in @tbl-hr-rockfrwth may also be applied to subsolum rock masses when determining the weathering status of the horizon as a whole (@sec-pr-wdeg).
 
 ```{r}
 #| label: tbl-hr-rockfrwth
@@ -361,7 +361,11 @@ tbl_hr_rockfrwth
 
 Biologically-derived coarse materials can alter the soil's water holding capacity and other parameters just as rock fragments can, although in general they can themselves hold more water. They will also break down faster.
 
-Where present in significant amounts (\> 5% by volume), record each type present and estimate volume and median fragment size in centimetres.
+Where present in significant amounts, for rapid assessment simply record total volumetric percentage of natural fragments per horizon. Confirm absence as [0%]{.ceg}. For routine assessment, record each type present using @tbl-hr-nonrock and estimate percentage volume and median fragment size in centimetres.
+
+E.g., [Sh 10% 5 cm]{.ceg} for a horizon containing some oyster shell fragments.
+
+For detailed assessment, additionally record size range (median, min, max) and any other notes about the nature of the material (e.g species of origin) in free text form.
 
 ```{r}
 #| label: tbl-hr-nonrock
@@ -400,9 +404,9 @@ Where present in significant amounts, for rapid assessment simply record total v
 
 Example: [Ra 5% 6-10 cm]{.ceg} for a horizon containing some chert flake tools.
 
-For detailed assessment, for each fragment type, append any or all of the origin (@tbl-hr-aorg), fixation (@tbl-hr-afix), shape (@tbl-hr-ashp), and degradation (@tbl-hr-adeg) codes supplied below. Colour may also be described using common terms. Additional free-text notes and photos may also be useful.
+For detailed assessment, for each fragment type, additionally record size range (median, min, max) and append any or all of the origin (@tbl-hr-aorg), fixation (@tbl-hr-afix), shape (@tbl-hr-ashp), and degradation (@tbl-hr-adeg) codes supplied below. Colour may also be described using common terms. Additional free-text notes and photos may also be useful.
 
-Example: [Pl 10% 2-3 cm A SF F D]{.ceg} for a horizon containing some broken down remnants of horticultural film.
+Example: [Pl 10% 2 cm (1-6 cm) A SF F D]{.ceg} for a horizon containing some broken down remnants of horticultural film.
 
 Artefact fragments smaller than 2 mm and non-solid soil contaminants are beyond the scope of this handbook.
 
@@ -586,11 +590,11 @@ The count data may be classified using @tbl-hr-rtab.
 #| tbl-cap: "Plant root size classes (adapted from @internationalorganizationforstandardizationa)"
 
 dat_hr_rsz <-
-  tribble(~Code,    ~Name,  ~Description,
-            'V', 'Very Fine', '<0.5',
-            'F',   'Fine',         '≥0.5–<2.0',
-            'M', 'Medium',      '≥2.0–<5.0',
-            'C', 'Coarse',        '≥5.0')
+  tribble(~Code,       ~Name,  ~Description,
+            'V', 'Very Fine',        '<0.5',
+            'F',      'Fine',   '≥0.5–<2.0',
+            'M',    'Medium',   '≥2.0–<5.0',
+            'C',    'Coarse',        '≥5.0')
 
 tbl_hr_rsz <- gt(dat_hr_rsz) |>
   tab_options(
@@ -729,19 +733,27 @@ For detailed assessment, count the number of macropores and micropores separatel
 
 [size example diagram here]{.diags}
 
-## Substrate-specific features {#sec-reg}
+## Subsolum-specific features {#sec-reg}
 
 Horizons that have experienced limited weathering may exhibit geogenic features that relate to their parent material and its mode of emplacement. These can affect water movement, slope stability and plant growth [@wysocki2005; @juilleret2016].
 
+### Lithology {#sec-reg-lith}
+
+Lithology is recorded using @tbl-ss-pm. Recording requirements are outlined in @sec-pr-lith.
+
 ### Bedding {#sec-reg-bed}
 
-Transported soil parent materials may comprise multiple thin layers of alternating texture or lithology. These layers can be unconsolidated (e.g. lamina or cross-bedding in aeolian and fluvial sediments), partly or fully consolidated, and may subsequently have been compressed, folded and/or faulted. Where layers of subsolum material have been identified (@sec-pr-wdeg) and bedding is apparent within a layer, measure the median angle of the bedding off horizontal and note the degree of consolidation. For unconsolidated sediments, record the texture groups involved using @tbl-hr-earthgrps. If the bedding is consolidated, record the dominant lithologies (@sec-pm-lith) involved. Optionally, add a thickness range for the bedding in centimetres.
+Transported soil parent materials may comprise multiple thin layers of alternating texture or lithology. These layers can be unconsolidated (e.g. lamina or cross-bedding in aeolian and fluvial sediments), partly or fully consolidated, and may subsequently have been compressed, folded and/or faulted. Where layers of subsolum material have been identified (@sec-pr-wdeg) and bedding is apparent within a layer, measure the median angle of the bedding off horizontal. Optionally, add a thickness range for the bedding in centimetres.
 
-E.g. [25°, Sm/Ss, 10-30 cm]{.ceg} for thin, very firm marine sediments, or [2°, C/S, 0.1-0.5 cm]{.ceg} for clay-sand lamina.
+E.g., [25° 10-30 cm]{.ceg} for thin, very firm marine sediments.
 
 ### Fractures {#sec-reg-fra}
 
-Rock at the base of the profile may be significantly fractured by tectonic and weathering processes. Where lithic or paralithic layers (@sec-pr-wdeg) have been identified and fractures are apparent, note fracture type using @tbl-hr-fractyp, modal angle off horizontal in degrees, and median spacing in centimetres. For single fractures, record spacing as [0 cm]{.ceg}.
+Rock at the base of the profile may be significantly fractured by tectonic and weathering processes. Where lithic or paralithic layers (@sec-pr-wdeg) have been identified and fractures are apparent, note fracture type using @tbl-hr-fractyp, orientation using @tbl-hr-fracotyp, and median spacing in centimetres. 
+
+E.g., [F S 0]{.ceg} For a single fault showing vertical displacement.
+
+For single fractures, record spacing as [0 cm]{.ceg}.
 
 ```{r}
 #| label: tbl-hr-fractyp
@@ -768,6 +780,33 @@ tbl_hr_fractyp <- gt(dat_hr_fractyp) |>
   sub_missing(missing_text = '')
 
 tbl_hr_fractyp
+```
+
+```{r}
+#| label: tbl-hr-fracotyp
+#| tbl-cap: "Fracture orientation types"
+
+dat_hr_fracotyp <-
+  tribble(~Code, ~Name, ~Description,
+          'S', 'Shallow', 'Fractures are oriented roughly horizontally or parallel to the land surface',
+          'T', 'Steep', 'Fractures are oriented roughly vertically or perpendicular to the land surface.',
+          'M', 'Mixed', 'Fractures do not have a single dominant orientation.')
+
+tbl_hr_fracotyp <- gt(dat_hr_fracotyp) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
+  sub_missing(missing_text = '')
+
+tbl_hr_fracotyp
 ```
 
 [diagrams or photos - one for each type]{.diags}
