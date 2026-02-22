@@ -14,7 +14,7 @@ Geomorphology limits the range of soils than can occur at specific locations on 
 Provinces identify major geomorphic zones in New Zealand, expressive of large-scale lithological associations, tectonic regime, and climate. @tbl-ss-lftp lists their names and @fig-ss-lftp shows their general distribution. Full definitions of the provinces are in @sec-ap-prov.
 
 |   | Northern Provinces |   | Southern Provinces |   | Offshore Provinces |
-|:---|:---|:---|:---|:---|:---|
+|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
 | [NN]{.ceg} | [Northland hills and dunes](ap_province.qmd#sec-ap-prov-nn) | [SI]{.ceg} | [South Island axial mountains](ap_province.qmd#sec-ap-prov-si) | [OT]{.ceg} | [Stewart Island](ap_province.qmd#sec-ap-prov-ot) |
 | [NL]{.ceg} | [Waikato to Bay of Plenty plains and volcanics](ap_province.qmd#sec-ap-prov-nl) | [SR]{.ceg} | [Front Ranges and inland basins](ap_province.qmd#sec-ap-prov-sr) | [OC]{.ceg} | [Chatham Islands](ap_province.qmd#sec-ap-prov-oc) |
 | [NW]{.ceg} | [Waikato sedimentary hills](ap_province.qmd#sec-ap-prov-nw) | [SO]{.ceg} | [Otago basin and range](ap_province.qmd#sec-ap-prov-so) | [OS]{.ceg} | [Subantarctic Islands](ap_province.qmd#sec-ap-prov-os) |
@@ -191,7 +191,7 @@ Where available landforms are unsatisfactory or a more detailed parameterisation
 
 Record the characteristic slope of the major part of the landform as median and range in whole degrees, e.g. [5° (4-6)]{.ceg} for a low-angle fan. Slope classes may be applied to the recorded data; some options are presented in @sec-slopeclass.
 
-#### Orientation
+#### Orientation {#sec-gmph-lfmori}
 
 For simpler sloping landforms, record orientation as the characteristic aspect of the major part of the landform. Record median and range in whole degrees, e.g. [315 (300-330)]{.ceg} for a roughly northwest direction. For complex landforms with a range of aspects, record the orientation of the landform's longest axis, looking downslope (e.g. the direction in which a valley bottom is descending). Some landforms may not have an identifiable orientation (e.g. cones, saddles), in which case record [NA]{.ceg}.
 
@@ -310,22 +310,20 @@ The following terrain parameters may be useful in particular contexts.
 
 Slope length is used in assessments of erosion vulnerability. Length is measured from the point at which a slope becomes steep enough to lose soil to erosion processes (see @sec-pr-erosion), to where it levels out enough to receive soils (or to a drainage channel). This is usually impractical to measure in the field, but can be determined computationally given an appropriately detailed DEM. Alternatively, the slope length can be manually traced in GIS.
 
-### Mesoscale topographic index {#sec-gmph-mti}
+### Exposure {#sec-gmph-exp}
 
-The Mesoscale Topographic Index (MTI, @hurst2022, p. 15) is a measure of how sheltered or exposed a location is within a landscape. To measure in the field, use a compass and clinometer to measure angle to the horizon at the 8 cardinal compass bearings. Record positive values if looking up and negative when looking down. The average of the eight values defines the index, with high values signifying a sheltered area and low values signifying exposure.
+The degree to which a location is exposed or sheltered by the surrounding topography can be measured at multiple scales and may be useful in studies of soil water behaviour and when completing agricultural suitability assessments.
 
-::: {#tip-automti .callout-tip collapse="true" appearance="minimal" title="Automating the MTI"}
+The Mesoscale Topographic Index (MTI, @hurst2022) is a measure of how sheltered or exposed a location is within a landscape. To measure in the field, use a compass and clinometer to measure angle to the horizon at the 8 cardinal compass bearings. Record positive values if looking up and negative when looking down. The average of the eight values defines the index, with high values signifying a sheltered area and low values signifying exposure.
+
+Terrain shape index (TSI, @hurst2022) is a localised version of MTI, where slope angles are measured at cardinal compass points 20 m from the point of observation, rather than to the horizon. This measures exposure at the site scale of observation. Average exposure at the scale of the landform can be built from multiple TSI measurements taken across the landform.
+
+For both measures, shelter from trees is usually excluded from the assessment - on-ground measurements are taken to the land surface, whose position is estimated if the horizon is obscured.
+
+::: {#tip-automti .callout-tip collapse="true" appearance="minimal" title="Automating exposure measurements"}
 The closest automated equivalents of the MTI appear to be the 'Morphometric Protection Index' (MPI) as implemented in SAGA-GIS [@yokoyama2002; @conrad2015], and the 'intensity' output of the 'Geomorphons' module as implemented in GRASS-GIS [@jasiewicz2013; @grassdevelopmentteam2023]. In the case of geomorphon intensity, the output also reports the mean relative elevation in meters of the 8 defining points rather than their average angles above or below the central point.
-:::
 
-::: {#wrn-automti .callout-warning collapse="true" appearance="minimal" title="Field vs Computer MTI"}
-Field and computer-based measurement of MTI may differ slightly. The in-field version measures against magnetic north rather than 'map north', which will vary with spatial data projection.
-:::
+Field and computer-based measurement of MTI may differ slightly. The in-field version measures against magnetic north rather than 'map north', which will vary with spatial data projection. Calculations can also be made from a Digital Surface Model (DSM, a surface that includes e.g., trees and buildings) or the more usual Digital Terrain Model (DTM).
 
-### Terrain shape index {#sec-gmph-tsi}
-
-Terrain shape index (TSI, @hurst2022, p. 15) is a localised version of MTI, where slope angles are measured at cardinal compass points 20 m from the point of observation, rather than to the horizon.
-
-::: {#tip-tsi .callout-tip collapse="true" appearance="minimal" title="Automating the TSI"}
 The TSI can also be calculated using the automated tools mentioned above, but will require a DEM with high vertical accuracy and cell size no more than 10 m.
 :::
