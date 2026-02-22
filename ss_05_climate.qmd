@@ -1,4 +1,4 @@
-# Climate and Weather
+# Climate and weather
 
 ```{r}
 library(dplyr)
@@ -8,136 +8,74 @@ library(gt)
 
 ## Climate {#sec-clim}
 
-Climate parameters affect soil development directly (e.g. freeze-thaw cycles) and indirectly (e.g. by their influence on vegetation community composition and structure).
+Climate parameters affect soil development directly (e.g. freeze-thaw cycles, erosive rainfall) and indirectly (e.g. by their influence on vegetation community composition and structure). This section outlines how climate is measured and described, and highlights data sources relevant to New Zealand soils.
+
+Climate parameters are not recorded in the field as they are constructed from time series data and cannot be observed during a soil profile description.
 
 ### Global {#sec-clim-global}
 
-The Köppen-Geiger climate classification [@köppen1936] is the most well-known and accepted global system, and has been periodically updated [e.g. @kottek2006; @beck2018; @beck2023]. Current maps and projections under various climate change scenarios are available from <https://www.gloh2o.org/koppen/>.
+A comprehensive national-scale account of New Zealand's climate can be found in @macara2018.
 
-In and around New Zealand, the Köppen regions that currently occur are listed in @tbl-ss-koppenz.
+The Köppen-Geiger climate classification [@köppen1936] is the most well-known and accepted global system for summarising climate information, and has been periodically updated [e.g. @kottek2006; @beck2018; @beck2023]. Current maps and projections under various climate change scenarios are available from <https://www.gloh2o.org/koppen/>.
 
-```{r}
-#| label: tbl-ss-koppenz
-#| tbl-cap: "Köppen climate regions of New Zealand and its neighbours"
+In New Zealand, the Köppen regions that currently occur can be seen in @fig-kop.
 
-dat_ss_koppenz <-
-  tribble(~Code, ~Name, ~Locations,
-          'Af', 'Tropical, rainforest', 'Pacific Islands e.g. Tonga, Samoa',
-          'Am' , 'Tropical, monsoon', 'Northwest coast of Fijian islands',
-          'Bsk', 'Arid, steppe, cold', 'Central Otago, Melbourne, Northwest Victoria',
-          'Cfa', 'Temperate, no dry season, hot summer', 'Coastal New South Wales and southern Queensland',
-          'Cfb', 'Temperate, no dry season, warm summer', 'Majority of New Zealand; Chatham Islands; coastal southeastern Australia; Tasmania',
-          'Cfc', 'Temperate, no dry season, cold summer', 'Small areas of North Island e.g. upper Ruahines; lower mountains in South Island e.g. Peel Range, Nelson',
-          'Dfb', 'Cold, no dry season, warm summer', 'Sheltered pockets in the Southern Alps',
-          'Dfc', 'Cold, no dry season, cold summer', 'Lower slopes of major volcanoes and the Southern Alps',
-          'ET', 'Polar, tundra', 'Upper slopes of major volcanoes and the Southern Alps',
-          'EF', 'Polar, frost', 'Antarctica')
-
-tbl_ss_koppenz <- gt(dat_ss_koppenz) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10))
-
-tbl_ss_koppenz
-```
-
-![Köppen-Geiger climate regions for New Zealand](data/NZ_Koppen.png){#fig-kop .lightbox width="65%"}
-
-Since most work programs will take place within one zone, regional climate rarely needs to be noted in the field.
-
-Where a study area appears to deviate from a regional map, the extent and nature of the deviation should be discussed in project reporting.
+![Köppen-Geiger climate regions for New Zealand under recent (1991-2020) conditions. Region definitions appearing on the map are as follows: *Bsk*: Arid, steppe, cold; *Csb*: Temperate, dry and warm summer; *Cfb*: Temperate, no dry season, warm summer; *Cfc**:*** Temperate, no dry season, cold summer; *Dfb*: Cold, no dry season, warm summer; *Dfc*: Cold, no dry season, cold summer; *ET*: Polar, tundra; *EF*: Polar, frost.](data/NZ_Koppen.png){#fig-kop .lightbox width="65%"}
 
 ### Regional {#sec-clim-region}
 
-Various climate classifications specific to New Zealand have been produced [@robertson1956; @garr1991; @sturman1999].
+Regional climate classifications are particularly useful when developing an understanding of an area new to the surveyor, and when comparing data from disparate environments. Various climate classifications specific to New Zealand have been produced in the past [e.g., @robertson1956; @garr1991; @sturman1999], with the most widely known to New Zealand soil scientists being the classification embedded in the Land Environments of New Zealand [LENZ, see @leathwick2002; @leathwick2003].
 
-NIWA have more recently published a useful [regional summary classification](https://niwa.co.nz/climate-and-weather/overview-new-zealands-climate), although it is not accompanied by spatial data. The classification is briefly reproduced in @tbl-ss-climnz below. As with the global classifications, these don't need to be recorded in the field.
+NIWA (now part of Earth Sciences New Zealand) have more recently published a set of [Regional Climatologies](https://niwa.co.nz/climate-and-weather/regional-climatologies), aligned to each of New Zealand's regional council boundaries. These do not comprise a true regional classification, but they contain consistent reporting of prevailing conditions within each regional council area, including discussion of within-region variability.
 
-More detailed discussions of each region's climate are published in NIWA's [Regional Climatologies](https://niwa.co.nz/climate-and-weather/regional-climatologies).
+### Local
 
-```{r}
-#| label: tbl-ss-climnz
-#| tbl-cap: "NIWA climate regions of New Zealand"
+Earth Sciences New Zealand publish short and long-term climate data statistics for over 1200 specific recording stations [@earthsciencesnewzealandClimateStationStatistics2025; @earthsciencesnewzealandClimateStationNormals2025]. Local records of climatic conditions are also commonly kept by individual landholders, and should be sought out as needed.
 
-dat_ss_climnz <-
-  tribble(~Code, ~Name, ~Locations,
-          'NiN', 'Northern New Zealand', 'Auckland, Tauranga, and regions north',
-          'NiC', 'Central North Island', 'Hamilton, Taupō, Rotorua',
-          'NiW', 'South-West North Island', 'New Plymouth, Wanganui, Palmerston North, Wellington',
-          'NiE', 'Eastern North Island', 'Gisborne, Napier, Masterton',
-          'SiN', 'Northern South Island', 'Nelson, Blenheim',
-          'SiW', 'Western South Island', 'Westport, Hokitika, Milford Sound',
-          'SiE', 'Eastern South Island', 'Kaikoura, Christchurch, Timaru',
-          'SiI', 'Inland South Island', 'Lake Tekapo, Queenstown, Alexandra, Manapouri',
-          'SiM', 'Mountainous South Island', 'Mount Cook and other alpine areas',
-          'SiS', 'Southern New Zealand', 'Dunedin, Invercargill',
-          'Chi', 'Chatham Islands', 'Chatham Islands',
-          'Ant', 'Antarctica', 'Scott Base')
+## Key parameters {#sec-clim-meas}
 
-tbl_ss_climnz <- gt(dat_ss_climnz) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10))
+Some climatic parameters are more directly related to soils than others, mainly through their influence on vegetation community and evapotranspiration. The following subsections comprise a brief discussion of commonly available climate parameters as they pertain to soil occurrence and development in New Zealand.
 
-tbl_ss_climnz
-```
-
-## Specific measurements {#sec-clim-meas}
-
-Some climate parameters are more directly related to soils than others, mainly through their influence on vegetation community and evapotranspiration. Spatial estimates of these parameters have been published in the NZ Environmental Data Stack [@mccarthy2021], available from the [MWLR Datastore](https://datastore.landcareresearch.co.nz/gl/dataset/nzenvds). Estimates can also be constructed from local records, where these are available.
+Spatial estimates of many of the parameters described below were made at 100 m resolution for LENZ and have been republished in the New Zealand Environmental Data Stack [@mccarthy2021]. However, these maps were based on a relatively small set of observations that covered the period 1950-1980, so their utility is limited [@srinivasan2024]. Newer versions of these datasets covering the period 1991-2020 are available from Earth Sciences New Zealand [@earthsciencesnewzealandRegionalClimatologyGridded2025], although their spatial resolution is lower, at 500 m. Summary figures from specific recording stations are available from the NIWA regional climatology documents discussed in @sec-clim-region.
 
 ### Rainfall {#sec-clim-rfall}
 
 Soil moisture availability strongly influences chemical weathering in soils [@dixon2016], and in many parts of the landscape the main source of soil moisture is rainfall.
 
--   Total annual rainfall: Some soils are unlikely to form outside a particular total annual rainfall range, e.g. Allophanic soils are uncommon where total annual rainfall is less than 1000 mm [@hewitt2010].
--   Rainfall seasonality: Calculated as the mean of monthly rainfall totals, divided by their standard deviation. More pronounced seasonality implies stronger soil wetting and drying cycles, which in turn influences weathering processes.
--   An alternate measurement of seasonality involves calculating the ratio of rainfall in the warmest versus the coolest three months. In New Zealand this is usually (Dec + Jan + Feb)/(June + Jul + Aug).
+-   Total annual rainfall: some soils are unlikely to form outside a particular total annual rainfall range, e.g. Allophanic Soils are uncommon where total annual rainfall is less than 1000 mm [@hewitt2025].
+-   Rainfall seasonality: calculated as the mean of monthly rainfall totals, divided by their standard deviation. More pronounced seasonality implies stronger soil wetting and drying cycles, which in turn influences weathering processes. An alternate measurement of seasonality involves calculating the ratio of rainfall in the warmest versus the coolest three months. In New Zealand this is usually (December+ January + February)/(June + July + August).
 
 ### Temperature {#sec-clim-temp}
 
--   Mean annual temperature: The mean temperature recorded year-round.
--   Mean summer temperature: The mean temperature recorded over the warmest quarter of the year. In New Zealand, this is usually December-January-February. Mean summer temperature was a key parameter used by @singers2014 to classify NZ terrestrial ecosystems.
--   Growing Degree Days (GDD): GDD measures the total number of °C above a set minimum temperature (usually 5, 10, or 16°C). Average daily temperature (max - min/2) is used in the calculation, and where temperature is below the set minimum, 0 is recorded. Plant species have specific GDD requirements that help determine their distribution.
--   Frost Days (FD): Frost days are days where the temperature drops below 0 °C, measured 1.2 m above the land surface.
+-   Soil temperature: soil temperatures vary from atmospheric temperatures, changing more slowly and also varying by depth. Land cover and geothermal heat sources can also affect soil temperature. While not a key feature of the New Zealand soil classification [@hewitt2025], other systems like Soil Taxonomy [@soilsurveystaff2022] require knowledge of the soil temperature regime.
+-   Mean annual temperature: the mean atmospheric temperature recorded year-round. Relevant for agricultural suitability assessments.
+-   Mean summer temperature: the mean temperature recorded over the warmest quarter of the year. In New Zealand, this is usually December-January-February. Mean summer temperature was a key parameter used by @singers2014 to classify NZ terrestrial ecosystems.
+-   Growing Degree Days (GDD): GDD measures the total number of degrees Celsius above a set minimum temperature (usually 5, 10, or 16°C). Average daily temperature (maximum - minimum/2) is used in the calculation, and where temperature is below the set minimum, 0 is recorded. Plant species have specific GDD requirements that help determine their distribution and preferred growing conditions.
+-   Frost Days (FD): frost days are days where the temperature drops below 0 °C, measured 1.2 m above the land surface. Many plant species are vulnerable to frost, particularly as juveniles.
 
-### Insolation {#sec-clim-insol}
+### Water balance
 
-The amount of solar energy received by a site, modified by terrain and cloud cover, can strongly affect plant growth and soil weathering rates.
+Data on evapotranspiration rate, relative humidity, and soil moisture deficit (or excess) are relevant to ecological studies and agricultural suitability assessments. Only soil moisture deficit may directly relate to soil profile characteristics (e.g. drainage behaviour) but available data is too low-resolution to be applied at individual sites.
 
-### Prevailing winds {#sec-clim-wind}
+### Light {#sec-clim-insol}
 
-The prevailing wind direction, its usual strength and seasonality all affect evapotranspiration rates and even the physical development of growing plants.
+The amount of solar energy received by a site, modified by terrain, day length and cloud cover, can strongly affect plant growth, evapotranspiration, and soil weathering rates. Incoming solar radiation, total annual and monthly sunshine hour data surfaces are available from @earthsciencesnewzealandRegionalClimatologyGridded2025, and theoretical maximums under fine weather conditions can be calculated in GIS software with the aid of a digital elevation model.
+
+### Wind {#sec-clim-wind}
+
+The prevailing wind direction, its usual strength and seasonality all affect evapotranspiration rates and even the physical development of growing plants. Prevailing wind can also influence aeolian sediment supply (loess or sand) and depositional or erosional pattern. Particularly when conducting agricultural suitability assessments, it may be important to note the most common directions of prevailing winds, their strength, seasonality and the degree to which each landform assessed is sheltered. Wind shelter can be interpreted from measurements of exposure (@sec-gmph-exp) and landform orientation (@sec-gmph-lfmori) in relation to prevailing wind direction.
 
 ## Weather {#sec-weath}
 
-Contemporary weather conditions have not necessarily had a strong influence on soil formation, except perhaps in young and/or rapidly developing soils. These parameters are more relevant for agricultural suitability assessment and for interpreting soil profile descriptions.
+Although contemporary weather conditions usually have little influence on soil formation, except in young or rapidly developing soils, they remain relevant for agricultural suitability assessment and for interpreting soil profile descriptions in the context of site conditions at the time of observation. Information about recent New Zealand weather conditions can be found on the NIWA website at <https://niwa.co.nz/climate-and-weather/daily-climate-maps>. Recording weather conditions during a soil profile description is optional but useful for later interpretation of the profile data.
 
 ### Current weather {#sec-weath-now}
 
-Record the weather at the time of observation using the codes in @tbl-ss-weatherc, plus temperature in degrees Celsius. These are not always essential, but can affect colour recording and some field tests.
-
-e.g. [SU 21]{.ceg} for a perfect day in the field.
+Weather at the time of observation can be recorded using the codes in @tbl-ss-weatherc.
 
 ```{r}
 #| label: tbl-ss-weatherc
-#| tbl-cap: "Current weather conditions, Schoeneberger et al. [-@schoeneberger2012], 1-1"
+#| tbl-cap: "Current weather conditions, based on [@schoeneberger2012, section 1-1]"
 
 dat_ss_weatherc <-
   tribble(~Code, ~Name,
@@ -166,7 +104,7 @@ tbl_ss_weatherc
 
 ### Recent rainfall {#sec-weath-rrain}
 
-Record recent rainfall using the codes in @tbl-ss-weatherp. This is optional, but can provide valuable context when recording surface cover (@sec-pr-surfcov), the presence of surface water at a site (@sec-pr-surfw), detailed erosion/deposition descriptions (@sec-pr-erosion, @sec-pr-deposition) and soil moisture status (@sec-pr-sws).
+Recent rainfall at the time of observation can be recorded using the codes in @tbl-ss-weatherp. Knowing about recent rainfall can provide valuable context when recording surface cover (@sec-pr-surfcov), the presence of surface water at a site (@sec-pr-surfw), detailed erosion/deposition descriptions (@sec-pr-erosion, @sec-pr-deposition) and soil moisture status (@sec-pr-sws). Heavy rain is defined as rainfall \>100 mm in 24 hours. Excessive rainfall is less strictly defined, but will generally exceed 100 mm in only a few hours.
 
 ```{r}
 #| label: tbl-ss-weatherp
