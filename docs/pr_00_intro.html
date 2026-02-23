@@ -90,6 +90,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -201,7 +230,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ss_05_climate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Climate and Weather</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Climate and weather</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -445,7 +474,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 10, 2026</p>
+      <p class="date-modified">February 22, 2026</p>
     </div>
   </div>
     
@@ -576,23 +605,23 @@ Table&nbsp;10.1: Site purpose
 </figcaption>
 <div aria-describedby="tbl-ss-reason-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="jgtujchkch" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jgtujchkch table {
+<div id="trkelefuho" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#trkelefuho table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jgtujchkch thead, #jgtujchkch tbody, #jgtujchkch tfoot, #jgtujchkch tr, #jgtujchkch td, #jgtujchkch th {
+#trkelefuho thead, #trkelefuho tbody, #trkelefuho tfoot, #trkelefuho tr, #trkelefuho td, #trkelefuho th {
   border-style: none;
 }
 
-#jgtujchkch p {
+#trkelefuho p {
   margin: 0;
   padding: 0;
 }
 
-#jgtujchkch .gt_table {
+#trkelefuho .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -618,12 +647,12 @@ Table&nbsp;10.1: Site purpose
   border-left-color: #D3D3D3;
 }
 
-#jgtujchkch .gt_caption {
+#trkelefuho .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jgtujchkch .gt_title {
+#trkelefuho .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -635,7 +664,7 @@ Table&nbsp;10.1: Site purpose
   border-bottom-width: 0;
 }
 
-#jgtujchkch .gt_subtitle {
+#trkelefuho .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -647,7 +676,7 @@ Table&nbsp;10.1: Site purpose
   border-top-width: 0;
 }
 
-#jgtujchkch .gt_heading {
+#trkelefuho .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -659,13 +688,13 @@ Table&nbsp;10.1: Site purpose
   border-right-color: #D3D3D3;
 }
 
-#jgtujchkch .gt_bottom_border {
+#trkelefuho .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jgtujchkch .gt_col_headings {
+#trkelefuho .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -680,7 +709,7 @@ Table&nbsp;10.1: Site purpose
   border-right-color: #D3D3D3;
 }
 
-#jgtujchkch .gt_col_heading {
+#trkelefuho .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -700,7 +729,7 @@ Table&nbsp;10.1: Site purpose
   overflow-x: hidden;
 }
 
-#jgtujchkch .gt_column_spanner_outer {
+#trkelefuho .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -712,15 +741,15 @@ Table&nbsp;10.1: Site purpose
   padding-right: 4px;
 }
 
-#jgtujchkch .gt_column_spanner_outer:first-child {
+#trkelefuho .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jgtujchkch .gt_column_spanner_outer:last-child {
+#trkelefuho .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jgtujchkch .gt_column_spanner {
+#trkelefuho .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -732,11 +761,11 @@ Table&nbsp;10.1: Site purpose
   width: 100%;
 }
 
-#jgtujchkch .gt_spanner_row {
+#trkelefuho .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jgtujchkch .gt_group_heading {
+#trkelefuho .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -762,7 +791,7 @@ Table&nbsp;10.1: Site purpose
   text-align: left;
 }
 
-#jgtujchkch .gt_empty_group_heading {
+#trkelefuho .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -777,15 +806,15 @@ Table&nbsp;10.1: Site purpose
   vertical-align: middle;
 }
 
-#jgtujchkch .gt_from_md > :first-child {
+#trkelefuho .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jgtujchkch .gt_from_md > :last-child {
+#trkelefuho .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jgtujchkch .gt_row {
+#trkelefuho .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -804,7 +833,7 @@ Table&nbsp;10.1: Site purpose
   overflow-x: hidden;
 }
 
-#jgtujchkch .gt_stub {
+#trkelefuho .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -817,7 +846,7 @@ Table&nbsp;10.1: Site purpose
   padding-right: 5px;
 }
 
-#jgtujchkch .gt_stub_row_group {
+#trkelefuho .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -831,15 +860,15 @@ Table&nbsp;10.1: Site purpose
   vertical-align: top;
 }
 
-#jgtujchkch .gt_row_group_first td {
+#trkelefuho .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jgtujchkch .gt_row_group_first th {
+#trkelefuho .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jgtujchkch .gt_summary_row {
+#trkelefuho .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -849,16 +878,16 @@ Table&nbsp;10.1: Site purpose
   padding-right: 5px;
 }
 
-#jgtujchkch .gt_first_summary_row {
+#trkelefuho .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jgtujchkch .gt_first_summary_row.thick {
+#trkelefuho .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jgtujchkch .gt_last_summary_row {
+#trkelefuho .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -868,7 +897,7 @@ Table&nbsp;10.1: Site purpose
   border-bottom-color: #D3D3D3;
 }
 
-#jgtujchkch .gt_grand_summary_row {
+#trkelefuho .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -878,7 +907,7 @@ Table&nbsp;10.1: Site purpose
   padding-right: 5px;
 }
 
-#jgtujchkch .gt_first_grand_summary_row {
+#trkelefuho .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -888,7 +917,7 @@ Table&nbsp;10.1: Site purpose
   border-top-color: #D3D3D3;
 }
 
-#jgtujchkch .gt_last_grand_summary_row_top {
+#trkelefuho .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -898,11 +927,11 @@ Table&nbsp;10.1: Site purpose
   border-bottom-color: #D3D3D3;
 }
 
-#jgtujchkch .gt_striped {
+#trkelefuho .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jgtujchkch .gt_table_body {
+#trkelefuho .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -911,7 +940,7 @@ Table&nbsp;10.1: Site purpose
   border-bottom-color: #D3D3D3;
 }
 
-#jgtujchkch .gt_footnotes {
+#trkelefuho .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -925,7 +954,7 @@ Table&nbsp;10.1: Site purpose
   border-right-color: #D3D3D3;
 }
 
-#jgtujchkch .gt_footnote {
+#trkelefuho .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -934,7 +963,7 @@ Table&nbsp;10.1: Site purpose
   padding-right: 5px;
 }
 
-#jgtujchkch .gt_sourcenotes {
+#trkelefuho .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -948,7 +977,7 @@ Table&nbsp;10.1: Site purpose
   border-right-color: #D3D3D3;
 }
 
-#jgtujchkch .gt_sourcenote {
+#trkelefuho .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -956,72 +985,72 @@ Table&nbsp;10.1: Site purpose
   padding-right: 5px;
 }
 
-#jgtujchkch .gt_left {
+#trkelefuho .gt_left {
   text-align: left;
 }
 
-#jgtujchkch .gt_center {
+#trkelefuho .gt_center {
   text-align: center;
 }
 
-#jgtujchkch .gt_right {
+#trkelefuho .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jgtujchkch .gt_font_normal {
+#trkelefuho .gt_font_normal {
   font-weight: normal;
 }
 
-#jgtujchkch .gt_font_bold {
+#trkelefuho .gt_font_bold {
   font-weight: bold;
 }
 
-#jgtujchkch .gt_font_italic {
+#trkelefuho .gt_font_italic {
   font-style: italic;
 }
 
-#jgtujchkch .gt_super {
+#trkelefuho .gt_super {
   font-size: 65%;
 }
 
-#jgtujchkch .gt_footnote_marks {
+#trkelefuho .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jgtujchkch .gt_asterisk {
+#trkelefuho .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jgtujchkch .gt_indent_1 {
+#trkelefuho .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jgtujchkch .gt_indent_2 {
+#trkelefuho .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jgtujchkch .gt_indent_3 {
+#trkelefuho .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jgtujchkch .gt_indent_4 {
+#trkelefuho .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jgtujchkch .gt_indent_5 {
+#trkelefuho .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jgtujchkch .katex-display {
+#trkelefuho .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jgtujchkch div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#trkelefuho div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1092,23 +1121,23 @@ Table&nbsp;10.2: Spatial sampling strategies
 </figcaption>
 <div aria-describedby="tbl-ss-sampstrat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="wepnxxwoau" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wepnxxwoau table {
+<div id="vqlzownnaz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vqlzownnaz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wepnxxwoau thead, #wepnxxwoau tbody, #wepnxxwoau tfoot, #wepnxxwoau tr, #wepnxxwoau td, #wepnxxwoau th {
+#vqlzownnaz thead, #vqlzownnaz tbody, #vqlzownnaz tfoot, #vqlzownnaz tr, #vqlzownnaz td, #vqlzownnaz th {
   border-style: none;
 }
 
-#wepnxxwoau p {
+#vqlzownnaz p {
   margin: 0;
   padding: 0;
 }
 
-#wepnxxwoau .gt_table {
+#vqlzownnaz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1134,12 +1163,12 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-left-color: #D3D3D3;
 }
 
-#wepnxxwoau .gt_caption {
+#vqlzownnaz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wepnxxwoau .gt_title {
+#vqlzownnaz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1151,7 +1180,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-bottom-width: 0;
 }
 
-#wepnxxwoau .gt_subtitle {
+#vqlzownnaz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1163,7 +1192,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-top-width: 0;
 }
 
-#wepnxxwoau .gt_heading {
+#vqlzownnaz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1175,13 +1204,13 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-right-color: #D3D3D3;
 }
 
-#wepnxxwoau .gt_bottom_border {
+#vqlzownnaz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wepnxxwoau .gt_col_headings {
+#vqlzownnaz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1196,7 +1225,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-right-color: #D3D3D3;
 }
 
-#wepnxxwoau .gt_col_heading {
+#vqlzownnaz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1216,7 +1245,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   overflow-x: hidden;
 }
 
-#wepnxxwoau .gt_column_spanner_outer {
+#vqlzownnaz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1228,15 +1257,15 @@ Table&nbsp;10.2: Spatial sampling strategies
   padding-right: 4px;
 }
 
-#wepnxxwoau .gt_column_spanner_outer:first-child {
+#vqlzownnaz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wepnxxwoau .gt_column_spanner_outer:last-child {
+#vqlzownnaz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wepnxxwoau .gt_column_spanner {
+#vqlzownnaz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1248,11 +1277,11 @@ Table&nbsp;10.2: Spatial sampling strategies
   width: 100%;
 }
 
-#wepnxxwoau .gt_spanner_row {
+#vqlzownnaz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wepnxxwoau .gt_group_heading {
+#vqlzownnaz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1278,7 +1307,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   text-align: left;
 }
 
-#wepnxxwoau .gt_empty_group_heading {
+#vqlzownnaz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1293,15 +1322,15 @@ Table&nbsp;10.2: Spatial sampling strategies
   vertical-align: middle;
 }
 
-#wepnxxwoau .gt_from_md > :first-child {
+#vqlzownnaz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wepnxxwoau .gt_from_md > :last-child {
+#vqlzownnaz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wepnxxwoau .gt_row {
+#vqlzownnaz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1320,7 +1349,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   overflow-x: hidden;
 }
 
-#wepnxxwoau .gt_stub {
+#vqlzownnaz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1333,7 +1362,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   padding-right: 5px;
 }
 
-#wepnxxwoau .gt_stub_row_group {
+#vqlzownnaz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1347,15 +1376,15 @@ Table&nbsp;10.2: Spatial sampling strategies
   vertical-align: top;
 }
 
-#wepnxxwoau .gt_row_group_first td {
+#vqlzownnaz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wepnxxwoau .gt_row_group_first th {
+#vqlzownnaz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wepnxxwoau .gt_summary_row {
+#vqlzownnaz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1365,16 +1394,16 @@ Table&nbsp;10.2: Spatial sampling strategies
   padding-right: 5px;
 }
 
-#wepnxxwoau .gt_first_summary_row {
+#vqlzownnaz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wepnxxwoau .gt_first_summary_row.thick {
+#vqlzownnaz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wepnxxwoau .gt_last_summary_row {
+#vqlzownnaz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1384,7 +1413,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-bottom-color: #D3D3D3;
 }
 
-#wepnxxwoau .gt_grand_summary_row {
+#vqlzownnaz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1394,7 +1423,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   padding-right: 5px;
 }
 
-#wepnxxwoau .gt_first_grand_summary_row {
+#vqlzownnaz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1404,7 +1433,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-top-color: #D3D3D3;
 }
 
-#wepnxxwoau .gt_last_grand_summary_row_top {
+#vqlzownnaz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1414,11 +1443,11 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-bottom-color: #D3D3D3;
 }
 
-#wepnxxwoau .gt_striped {
+#vqlzownnaz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wepnxxwoau .gt_table_body {
+#vqlzownnaz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1427,7 +1456,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-bottom-color: #D3D3D3;
 }
 
-#wepnxxwoau .gt_footnotes {
+#vqlzownnaz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1441,7 +1470,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-right-color: #D3D3D3;
 }
 
-#wepnxxwoau .gt_footnote {
+#vqlzownnaz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1450,7 +1479,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   padding-right: 5px;
 }
 
-#wepnxxwoau .gt_sourcenotes {
+#vqlzownnaz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1464,7 +1493,7 @@ Table&nbsp;10.2: Spatial sampling strategies
   border-right-color: #D3D3D3;
 }
 
-#wepnxxwoau .gt_sourcenote {
+#vqlzownnaz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1472,72 +1501,72 @@ Table&nbsp;10.2: Spatial sampling strategies
   padding-right: 5px;
 }
 
-#wepnxxwoau .gt_left {
+#vqlzownnaz .gt_left {
   text-align: left;
 }
 
-#wepnxxwoau .gt_center {
+#vqlzownnaz .gt_center {
   text-align: center;
 }
 
-#wepnxxwoau .gt_right {
+#vqlzownnaz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wepnxxwoau .gt_font_normal {
+#vqlzownnaz .gt_font_normal {
   font-weight: normal;
 }
 
-#wepnxxwoau .gt_font_bold {
+#vqlzownnaz .gt_font_bold {
   font-weight: bold;
 }
 
-#wepnxxwoau .gt_font_italic {
+#vqlzownnaz .gt_font_italic {
   font-style: italic;
 }
 
-#wepnxxwoau .gt_super {
+#vqlzownnaz .gt_super {
   font-size: 65%;
 }
 
-#wepnxxwoau .gt_footnote_marks {
+#vqlzownnaz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wepnxxwoau .gt_asterisk {
+#vqlzownnaz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wepnxxwoau .gt_indent_1 {
+#vqlzownnaz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wepnxxwoau .gt_indent_2 {
+#vqlzownnaz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wepnxxwoau .gt_indent_3 {
+#vqlzownnaz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wepnxxwoau .gt_indent_4 {
+#vqlzownnaz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wepnxxwoau .gt_indent_5 {
+#vqlzownnaz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wepnxxwoau .katex-display {
+#vqlzownnaz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wepnxxwoau div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vqlzownnaz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1626,23 +1655,23 @@ Table&nbsp;10.3: Method of profile exposure
 </figcaption>
 <div aria-describedby="tbl-pr-gear-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="wclqmcrnup" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wclqmcrnup table {
+<div id="pxmcikmwoh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pxmcikmwoh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wclqmcrnup thead, #wclqmcrnup tbody, #wclqmcrnup tfoot, #wclqmcrnup tr, #wclqmcrnup td, #wclqmcrnup th {
+#pxmcikmwoh thead, #pxmcikmwoh tbody, #pxmcikmwoh tfoot, #pxmcikmwoh tr, #pxmcikmwoh td, #pxmcikmwoh th {
   border-style: none;
 }
 
-#wclqmcrnup p {
+#pxmcikmwoh p {
   margin: 0;
   padding: 0;
 }
 
-#wclqmcrnup .gt_table {
+#pxmcikmwoh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1668,12 +1697,12 @@ Table&nbsp;10.3: Method of profile exposure
   border-left-color: #D3D3D3;
 }
 
-#wclqmcrnup .gt_caption {
+#pxmcikmwoh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wclqmcrnup .gt_title {
+#pxmcikmwoh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1685,7 +1714,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-bottom-width: 0;
 }
 
-#wclqmcrnup .gt_subtitle {
+#pxmcikmwoh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1697,7 +1726,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-top-width: 0;
 }
 
-#wclqmcrnup .gt_heading {
+#pxmcikmwoh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1709,13 +1738,13 @@ Table&nbsp;10.3: Method of profile exposure
   border-right-color: #D3D3D3;
 }
 
-#wclqmcrnup .gt_bottom_border {
+#pxmcikmwoh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wclqmcrnup .gt_col_headings {
+#pxmcikmwoh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1730,7 +1759,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-right-color: #D3D3D3;
 }
 
-#wclqmcrnup .gt_col_heading {
+#pxmcikmwoh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1750,7 +1779,7 @@ Table&nbsp;10.3: Method of profile exposure
   overflow-x: hidden;
 }
 
-#wclqmcrnup .gt_column_spanner_outer {
+#pxmcikmwoh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1762,15 +1791,15 @@ Table&nbsp;10.3: Method of profile exposure
   padding-right: 4px;
 }
 
-#wclqmcrnup .gt_column_spanner_outer:first-child {
+#pxmcikmwoh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wclqmcrnup .gt_column_spanner_outer:last-child {
+#pxmcikmwoh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wclqmcrnup .gt_column_spanner {
+#pxmcikmwoh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1782,11 +1811,11 @@ Table&nbsp;10.3: Method of profile exposure
   width: 100%;
 }
 
-#wclqmcrnup .gt_spanner_row {
+#pxmcikmwoh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wclqmcrnup .gt_group_heading {
+#pxmcikmwoh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1812,7 +1841,7 @@ Table&nbsp;10.3: Method of profile exposure
   text-align: left;
 }
 
-#wclqmcrnup .gt_empty_group_heading {
+#pxmcikmwoh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1827,15 +1856,15 @@ Table&nbsp;10.3: Method of profile exposure
   vertical-align: middle;
 }
 
-#wclqmcrnup .gt_from_md > :first-child {
+#pxmcikmwoh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wclqmcrnup .gt_from_md > :last-child {
+#pxmcikmwoh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wclqmcrnup .gt_row {
+#pxmcikmwoh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1854,7 +1883,7 @@ Table&nbsp;10.3: Method of profile exposure
   overflow-x: hidden;
 }
 
-#wclqmcrnup .gt_stub {
+#pxmcikmwoh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1867,7 +1896,7 @@ Table&nbsp;10.3: Method of profile exposure
   padding-right: 5px;
 }
 
-#wclqmcrnup .gt_stub_row_group {
+#pxmcikmwoh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1881,15 +1910,15 @@ Table&nbsp;10.3: Method of profile exposure
   vertical-align: top;
 }
 
-#wclqmcrnup .gt_row_group_first td {
+#pxmcikmwoh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wclqmcrnup .gt_row_group_first th {
+#pxmcikmwoh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wclqmcrnup .gt_summary_row {
+#pxmcikmwoh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1899,16 +1928,16 @@ Table&nbsp;10.3: Method of profile exposure
   padding-right: 5px;
 }
 
-#wclqmcrnup .gt_first_summary_row {
+#pxmcikmwoh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wclqmcrnup .gt_first_summary_row.thick {
+#pxmcikmwoh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wclqmcrnup .gt_last_summary_row {
+#pxmcikmwoh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1918,7 +1947,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-bottom-color: #D3D3D3;
 }
 
-#wclqmcrnup .gt_grand_summary_row {
+#pxmcikmwoh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1928,7 +1957,7 @@ Table&nbsp;10.3: Method of profile exposure
   padding-right: 5px;
 }
 
-#wclqmcrnup .gt_first_grand_summary_row {
+#pxmcikmwoh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1938,7 +1967,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-top-color: #D3D3D3;
 }
 
-#wclqmcrnup .gt_last_grand_summary_row_top {
+#pxmcikmwoh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1948,11 +1977,11 @@ Table&nbsp;10.3: Method of profile exposure
   border-bottom-color: #D3D3D3;
 }
 
-#wclqmcrnup .gt_striped {
+#pxmcikmwoh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wclqmcrnup .gt_table_body {
+#pxmcikmwoh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1961,7 +1990,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-bottom-color: #D3D3D3;
 }
 
-#wclqmcrnup .gt_footnotes {
+#pxmcikmwoh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1975,7 +2004,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-right-color: #D3D3D3;
 }
 
-#wclqmcrnup .gt_footnote {
+#pxmcikmwoh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1984,7 +2013,7 @@ Table&nbsp;10.3: Method of profile exposure
   padding-right: 5px;
 }
 
-#wclqmcrnup .gt_sourcenotes {
+#pxmcikmwoh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1998,7 +2027,7 @@ Table&nbsp;10.3: Method of profile exposure
   border-right-color: #D3D3D3;
 }
 
-#wclqmcrnup .gt_sourcenote {
+#pxmcikmwoh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2006,72 +2035,72 @@ Table&nbsp;10.3: Method of profile exposure
   padding-right: 5px;
 }
 
-#wclqmcrnup .gt_left {
+#pxmcikmwoh .gt_left {
   text-align: left;
 }
 
-#wclqmcrnup .gt_center {
+#pxmcikmwoh .gt_center {
   text-align: center;
 }
 
-#wclqmcrnup .gt_right {
+#pxmcikmwoh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wclqmcrnup .gt_font_normal {
+#pxmcikmwoh .gt_font_normal {
   font-weight: normal;
 }
 
-#wclqmcrnup .gt_font_bold {
+#pxmcikmwoh .gt_font_bold {
   font-weight: bold;
 }
 
-#wclqmcrnup .gt_font_italic {
+#pxmcikmwoh .gt_font_italic {
   font-style: italic;
 }
 
-#wclqmcrnup .gt_super {
+#pxmcikmwoh .gt_super {
   font-size: 65%;
 }
 
-#wclqmcrnup .gt_footnote_marks {
+#pxmcikmwoh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wclqmcrnup .gt_asterisk {
+#pxmcikmwoh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wclqmcrnup .gt_indent_1 {
+#pxmcikmwoh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wclqmcrnup .gt_indent_2 {
+#pxmcikmwoh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wclqmcrnup .gt_indent_3 {
+#pxmcikmwoh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wclqmcrnup .gt_indent_4 {
+#pxmcikmwoh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wclqmcrnup .gt_indent_5 {
+#pxmcikmwoh .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wclqmcrnup .katex-display {
+#pxmcikmwoh .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wclqmcrnup div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pxmcikmwoh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2152,23 +2181,23 @@ Table&nbsp;10.4: Stoppage reason
 </figcaption>
 <div aria-describedby="tbl-ss-stoppage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="oulkfnpkhw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#oulkfnpkhw table {
+<div id="zrlkvsulig" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zrlkvsulig table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#oulkfnpkhw thead, #oulkfnpkhw tbody, #oulkfnpkhw tfoot, #oulkfnpkhw tr, #oulkfnpkhw td, #oulkfnpkhw th {
+#zrlkvsulig thead, #zrlkvsulig tbody, #zrlkvsulig tfoot, #zrlkvsulig tr, #zrlkvsulig td, #zrlkvsulig th {
   border-style: none;
 }
 
-#oulkfnpkhw p {
+#zrlkvsulig p {
   margin: 0;
   padding: 0;
 }
 
-#oulkfnpkhw .gt_table {
+#zrlkvsulig .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2194,12 +2223,12 @@ Table&nbsp;10.4: Stoppage reason
   border-left-color: #D3D3D3;
 }
 
-#oulkfnpkhw .gt_caption {
+#zrlkvsulig .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#oulkfnpkhw .gt_title {
+#zrlkvsulig .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2211,7 +2240,7 @@ Table&nbsp;10.4: Stoppage reason
   border-bottom-width: 0;
 }
 
-#oulkfnpkhw .gt_subtitle {
+#zrlkvsulig .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2223,7 +2252,7 @@ Table&nbsp;10.4: Stoppage reason
   border-top-width: 0;
 }
 
-#oulkfnpkhw .gt_heading {
+#zrlkvsulig .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2235,13 +2264,13 @@ Table&nbsp;10.4: Stoppage reason
   border-right-color: #D3D3D3;
 }
 
-#oulkfnpkhw .gt_bottom_border {
+#zrlkvsulig .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#oulkfnpkhw .gt_col_headings {
+#zrlkvsulig .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2256,7 +2285,7 @@ Table&nbsp;10.4: Stoppage reason
   border-right-color: #D3D3D3;
 }
 
-#oulkfnpkhw .gt_col_heading {
+#zrlkvsulig .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2276,7 +2305,7 @@ Table&nbsp;10.4: Stoppage reason
   overflow-x: hidden;
 }
 
-#oulkfnpkhw .gt_column_spanner_outer {
+#zrlkvsulig .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2288,15 +2317,15 @@ Table&nbsp;10.4: Stoppage reason
   padding-right: 4px;
 }
 
-#oulkfnpkhw .gt_column_spanner_outer:first-child {
+#zrlkvsulig .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#oulkfnpkhw .gt_column_spanner_outer:last-child {
+#zrlkvsulig .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#oulkfnpkhw .gt_column_spanner {
+#zrlkvsulig .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2308,11 +2337,11 @@ Table&nbsp;10.4: Stoppage reason
   width: 100%;
 }
 
-#oulkfnpkhw .gt_spanner_row {
+#zrlkvsulig .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#oulkfnpkhw .gt_group_heading {
+#zrlkvsulig .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2338,7 +2367,7 @@ Table&nbsp;10.4: Stoppage reason
   text-align: left;
 }
 
-#oulkfnpkhw .gt_empty_group_heading {
+#zrlkvsulig .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2353,15 +2382,15 @@ Table&nbsp;10.4: Stoppage reason
   vertical-align: middle;
 }
 
-#oulkfnpkhw .gt_from_md > :first-child {
+#zrlkvsulig .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#oulkfnpkhw .gt_from_md > :last-child {
+#zrlkvsulig .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#oulkfnpkhw .gt_row {
+#zrlkvsulig .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2380,7 +2409,7 @@ Table&nbsp;10.4: Stoppage reason
   overflow-x: hidden;
 }
 
-#oulkfnpkhw .gt_stub {
+#zrlkvsulig .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2393,7 +2422,7 @@ Table&nbsp;10.4: Stoppage reason
   padding-right: 5px;
 }
 
-#oulkfnpkhw .gt_stub_row_group {
+#zrlkvsulig .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2407,15 +2436,15 @@ Table&nbsp;10.4: Stoppage reason
   vertical-align: top;
 }
 
-#oulkfnpkhw .gt_row_group_first td {
+#zrlkvsulig .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#oulkfnpkhw .gt_row_group_first th {
+#zrlkvsulig .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#oulkfnpkhw .gt_summary_row {
+#zrlkvsulig .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2425,16 +2454,16 @@ Table&nbsp;10.4: Stoppage reason
   padding-right: 5px;
 }
 
-#oulkfnpkhw .gt_first_summary_row {
+#zrlkvsulig .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#oulkfnpkhw .gt_first_summary_row.thick {
+#zrlkvsulig .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#oulkfnpkhw .gt_last_summary_row {
+#zrlkvsulig .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2444,7 +2473,7 @@ Table&nbsp;10.4: Stoppage reason
   border-bottom-color: #D3D3D3;
 }
 
-#oulkfnpkhw .gt_grand_summary_row {
+#zrlkvsulig .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2454,7 +2483,7 @@ Table&nbsp;10.4: Stoppage reason
   padding-right: 5px;
 }
 
-#oulkfnpkhw .gt_first_grand_summary_row {
+#zrlkvsulig .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2464,7 +2493,7 @@ Table&nbsp;10.4: Stoppage reason
   border-top-color: #D3D3D3;
 }
 
-#oulkfnpkhw .gt_last_grand_summary_row_top {
+#zrlkvsulig .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2474,11 +2503,11 @@ Table&nbsp;10.4: Stoppage reason
   border-bottom-color: #D3D3D3;
 }
 
-#oulkfnpkhw .gt_striped {
+#zrlkvsulig .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#oulkfnpkhw .gt_table_body {
+#zrlkvsulig .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2487,7 +2516,7 @@ Table&nbsp;10.4: Stoppage reason
   border-bottom-color: #D3D3D3;
 }
 
-#oulkfnpkhw .gt_footnotes {
+#zrlkvsulig .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2501,7 +2530,7 @@ Table&nbsp;10.4: Stoppage reason
   border-right-color: #D3D3D3;
 }
 
-#oulkfnpkhw .gt_footnote {
+#zrlkvsulig .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2510,7 +2539,7 @@ Table&nbsp;10.4: Stoppage reason
   padding-right: 5px;
 }
 
-#oulkfnpkhw .gt_sourcenotes {
+#zrlkvsulig .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2524,7 +2553,7 @@ Table&nbsp;10.4: Stoppage reason
   border-right-color: #D3D3D3;
 }
 
-#oulkfnpkhw .gt_sourcenote {
+#zrlkvsulig .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2532,72 +2561,72 @@ Table&nbsp;10.4: Stoppage reason
   padding-right: 5px;
 }
 
-#oulkfnpkhw .gt_left {
+#zrlkvsulig .gt_left {
   text-align: left;
 }
 
-#oulkfnpkhw .gt_center {
+#zrlkvsulig .gt_center {
   text-align: center;
 }
 
-#oulkfnpkhw .gt_right {
+#zrlkvsulig .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#oulkfnpkhw .gt_font_normal {
+#zrlkvsulig .gt_font_normal {
   font-weight: normal;
 }
 
-#oulkfnpkhw .gt_font_bold {
+#zrlkvsulig .gt_font_bold {
   font-weight: bold;
 }
 
-#oulkfnpkhw .gt_font_italic {
+#zrlkvsulig .gt_font_italic {
   font-style: italic;
 }
 
-#oulkfnpkhw .gt_super {
+#zrlkvsulig .gt_super {
   font-size: 65%;
 }
 
-#oulkfnpkhw .gt_footnote_marks {
+#zrlkvsulig .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#oulkfnpkhw .gt_asterisk {
+#zrlkvsulig .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#oulkfnpkhw .gt_indent_1 {
+#zrlkvsulig .gt_indent_1 {
   text-indent: 5px;
 }
 
-#oulkfnpkhw .gt_indent_2 {
+#zrlkvsulig .gt_indent_2 {
   text-indent: 10px;
 }
 
-#oulkfnpkhw .gt_indent_3 {
+#zrlkvsulig .gt_indent_3 {
   text-indent: 15px;
 }
 
-#oulkfnpkhw .gt_indent_4 {
+#zrlkvsulig .gt_indent_4 {
   text-indent: 20px;
 }
 
-#oulkfnpkhw .gt_indent_5 {
+#zrlkvsulig .gt_indent_5 {
   text-indent: 25px;
 }
 
-#oulkfnpkhw .katex-display {
+#zrlkvsulig .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#oulkfnpkhw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zrlkvsulig div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2661,7 +2690,7 @@ Table&nbsp;10.4: Stoppage reason
 <section id="sec-ss-set" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="sec-ss-set"><span class="header-section-number">10.3</span> Site setting</h2>
 <p>With the reference data established, the next task is to describe the site’s location in relation to its setting. As noted in earlier chapters, some of these parameters can be recorded remotely or after fieldwork, with reference to site notes and photographs.</p>
-<p>The following requirements comprise a minimum dataset for any soil profile description. Data is gathered at the landform scale with any site-scale deviations noted. More specific measurements are taken at the site scale when observing the land surface (<a href="pr_01_surface.html" class="quarto-xref"><span>Chapter 11</span></a>).</p>
+<p>The following requirements comprise a minimum dataset for any soil profile description. Data is gathered at the site scale. Further measurements are taken when observing the land surface (<a href="pr_01_surface.html" class="quarto-xref"><span>Chapter 11</span></a>).</p>
 <section id="sec-ss-recloc" class="level3" data-number="10.3.1">
 <h3 data-number="10.3.1" class="anchored" data-anchor-id="sec-ss-recloc"><span class="header-section-number">10.3.1</span> Location</h3>
 <p>Location coordinates are captured as reference data (<a href="#sec-ref-loc" class="quarto-xref"><span>Section 10.2.3</span></a>). Additionally, record elevation in meters, and note the sensor or data source used to obtain location and elevation data using <a href="ss_02_location.html#tbl-ss-locsrc" class="quarto-xref">Table&nbsp;<span>3.1</span></a> and <a href="ss_02_location.html#tbl-ss-elevsrc" class="quarto-xref">Table&nbsp;<span>3.2</span></a> respectively. If the equipment in use does not estimate expected error automatically, estimate it manually.</p>
@@ -2680,21 +2709,23 @@ Table&nbsp;10.4: Stoppage reason
 </section>
 <section id="sec-ss-clw" class="level3" data-number="10.3.4">
 <h3 data-number="10.3.4" class="anchored" data-anchor-id="sec-ss-clw"><span class="header-section-number">10.3.4</span> Climate and weather</h3>
-<p>Record the current weather using an option from <a href="ss_05_climate.html#tbl-ss-weatherc" class="quarto-xref">Table&nbsp;<span>6.3</span></a>, and optionally note recent rainfall using <a href="ss_05_climate.html#tbl-ss-weatherp" class="quarto-xref">Table&nbsp;<span>6.4</span></a>.</p>
+<p>Optionally, record the current weather using an option from <a href="ss_05_climate.html#tbl-ss-weatherc" class="quarto-xref">Table&nbsp;<span>6.1</span></a>, and note the temperature. Describe any recent rainfall using <a href="ss_05_climate.html#tbl-ss-weatherp" class="quarto-xref">Table&nbsp;<span>6.2</span></a>.</p>
 <p>E.g., <span class="ceg">SU 21°C, NW</span> for fine weather with no rainfall in the previous week.</p>
 </section>
 <section id="sec-ss-bio" class="level3" data-number="10.3.5">
 <h3 data-number="10.3.5" class="anchored" data-anchor-id="sec-ss-bio"><span class="header-section-number">10.3.5</span> Biota</h3>
-<p>Record the dominant LUC vegetation class <span class="citation" data-cites="lynn2009">(see <a href="references.html#ref-lynn2009" role="doc-biblioref">Lynn et al. 2009</a>, appendix 3)</span> for the landform on which the site is located.</p>
+<p>For rapid assessment of vegetation, record the LCDB cover class (see <a href="#sec-ss-cvusmg" class="quarto-xref"><span>Section 10.3.6</span></a>). For routine work, record the dominant LUC vegetation class <span class="citation" data-cites="lynn2009">(see <a href="references.html#ref-lynn2009" role="doc-biblioref">Lynn et al. 2009</a>, appendix 3)</span> for the site. For detailed work, complete a RECCE description for the site.</p>
 <p>E.g., <span class="ceg">fP</span> for a site in podocarp forest.</p>
+<p>Direct assessment of earthworm presence in the topsoil is sometimes desired <span class="citation" data-cites="shepherd2000 shepherd2000a">(<a href="references.html#ref-shepherd2000" role="doc-biblioref">Shepherd 2000</a>; <a href="references.html#ref-shepherd2000a" role="doc-biblioref">Shepherd and Janssen 2000</a>)</span>. Optionally, record the number of earthworms observed in a ~20&nbsp;cm cube of topsoil. Convert the count to a rate per square metre as <span class="math inline">\(25 × n\)</span>. Accurate counts require moist soil conditions <span class="citation" data-cites="schon2023">(<a href="references.html#ref-schon2023" role="doc-biblioref">Schon et al. 2023</a>)</span>.</p>
 </section>
 <section id="sec-ss-cvusmg" class="level3" data-number="10.3.6">
 <h3 data-number="10.3.6" class="anchored" data-anchor-id="sec-ss-cvusmg"><span class="header-section-number">10.3.6</span> Land cover, use and management</h3>
-<p>Record the dominant land cover class of the landform using an option from <a href="ss_03_landscape.html#sec-gmph-lfm" class="quarto-xref"><span>Section 4.3</span></a>.</p>
-<p>Record the dominant land use of the landform using an option from <span class="citation" data-cites="law2024">(<a href="references.html#ref-law2024" role="doc-biblioref">Law 2024</a>)</span>. Note also the degree to which the land use has impacted the soil profile using <a href="ss_07_landuse_mgmt.html#tbl-ss-luimp" class="quarto-xref">Table&nbsp;<span>8.2</span></a>.</p>
-<p>E.g., <span class="ceg">2.2.1 M</span> for a landform being used primarily for dairying.</p>
-<p>Ancillary landuses may optionally be recorded if they are considered to be impacting the soil profile - for example, <span class="ceg">2.7.3</span> for a landform on a dairy farm that is regularly receiving waste water.</p>
-<p>Land management activities should be noted in free text when they are considered to be impacting the soil profile.</p>
+<p>Record the current dominant land cover class of the site using an option from <a href="ss_03_landscape.html#sec-gmph-lfm" class="quarto-xref"><span>Section 4.3</span></a>.</p>
+<p>Record the dominant land use at the site using an option from <a href="ss_07_landuse_mgmt.html#fig-ss-nzlum" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>. Ancillary land uses may optionally also be recorded if they are considered to be impacting the soil profile - for example, <span class="ceg">2.7.3</span> for a site on a dairy farm that is regularly receiving waste water.</p>
+<p>Prior land uses may be recorded if they are known and are considered to have been capable of impacting the profile, e.g., cropping prior to vineyard conversion. Time since land use change should also be noted.</p>
+<p>Land management activities (current and past, where known) should be noted in free text when they are considered to be impacting the soil profile. Minimise use of jargon and clearly separate information on current and past land uses.</p>
+<p>For example, in an orchard recently converted from sheep pasture,</p>
+<p><span class="ceg">33</span>, <span class="ceg">2.4.1</span> (previous <span class="ceg">2.2.3</span>), <em>“Drip irrigation, manual control, installed and planted 2022. Originally cleared 1920, other previous management details unknown.”</em></p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -2710,14 +2741,20 @@ Hewitt AE, MWLR Pedology Staff, 2025. <span>New Zealand</span> soil classificati
 <div id="ref-internationalorganizationforstandardization" class="csl-entry" role="listitem">
 International Organization for Standardization 2019. Date and time — representations for information interchange - part 1: Basic rules. [Internet]. <a href="https://www.iso.org/standard/70907.html">https://www.iso.org/standard/70907.html</a>
 </div>
-<div id="ref-law2024" class="csl-entry" role="listitem">
-Law R 2024. Land use information system - land use classification framework. [Internet]. Palmerston North, New Zealand. <a href="https://digitallibrary-landcareresearch-co-nz.landcareresearch.idm.oclc.org/digital/collection/p20022coll23/id/11494/rec/1">https://digitallibrary-landcareresearch-co-nz.landcareresearch.idm.oclc.org/digital/collection/p20022coll23/id/11494/rec/1</a>
-</div>
 <div id="ref-lynn2009" class="csl-entry" role="listitem">
 Lynn IH, Manderson AK, Page MJ, Harmsworth GR, Eyles GO, Douglas GB, Mackay AD, Newsome PJF 2009. Land use capability survey handbook - a <span>New Zealand</span> handbook for the classification of land. [Internet]. 3rd ed. Hamilton [N.Z.] Lincoln [N.Z.] Lower Hutt [N.Z.]: AgResearch Ltd, Hamilton; Landcare Research New Zealand Ltd, Lincoln; Institute of Geological; Nuclear Sciences Ltd, Lower Hutt. <a href="https://doi.org/10.7931/DL1MG6">https://doi.org/10.7931/DL1MG6</a>
 </div>
 <div id="ref-mckenzie2008" class="csl-entry" role="listitem">
 McKenzie NJ, Grundy MJ, Webster R, Ringrose-Voase AJ 2008. Guidelines for surveying soil and land resources. [Internet]. 2nd ed. Collingwood, Victoria: CSIRO Publishing. <a href="http://www.publish.csiro.au/book/5650/">http://www.publish.csiro.au/book/5650/</a>
+</div>
+<div id="ref-schon2023" class="csl-entry" role="listitem">
+Schon NL, Fraser PM, Mackay AD 2023. Earthworms for inclusion as an indicator of soil biological health in new zealand pastures. New Zealand Journal of Agricultural Research [Internet]. 66(3):208–223. <a href="https://doi.org/10.1080/00288233.2022.2041676">https://doi.org/10.1080/00288233.2022.2041676</a>
+</div>
+<div id="ref-shepherd2000" class="csl-entry" role="listitem">
+Shepherd TG 2000. Visual soil assessment: Volume 1 - field guide for cropping and pastoral grazing on flat to rolling country. Visual soil assessment [Internet]. <a href="https://www.landcareresearch.co.nz/publications/vsa-field-guide/">https://www.landcareresearch.co.nz/publications/vsa-field-guide/</a>
+</div>
+<div id="ref-shepherd2000a" class="csl-entry" role="listitem">
+Shepherd TG, Janssen H 2000. Visual soil assessment: Volume 3 - field guide for hill country land uses. Visual soil assessment [Internet]. <a href="https://www.landcareresearch.co.nz/publications/vsa-field-guide/">https://www.landcareresearch.co.nz/publications/vsa-field-guide/</a>
 </div>
 </div>
 </section>
