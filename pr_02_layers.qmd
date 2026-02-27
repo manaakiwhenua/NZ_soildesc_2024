@@ -278,24 +278,24 @@ Information about the lithology, origin and weathering degree of the soil parent
 
 ### Lithology {#sec-pr-lith}
 
-For rapid assessment, lithology is recorded at the landform level (@sec-ss-pm).
+For rapid assessment, dominant lithology is recorded once for the site (@sec-ss-recgmph). Where the subsolum is encountered, note its lithology (@sec-reg-lith) separately if it differs from the overlying material.
 
-For routine assessment, the lithology of the fine earth (mineral particles \<2 mm) and of rock fragments (if present) are noted separately for each soil horizon. Where subsolum layers are observed, their lithology is also noted. Use the codes in @tbl-ss-pm and record only the dominant lithologies present.
+Example: [ANDS, SAFT]{.ceg} for a mix of eroded sedimentary rocks and volcanic ash.
 
-For detailed assessment, a more complete list of lithologies may be defined, along with relative abundance as percentage by volume.
+For routine assessment, the lithology of the fine earth (mineral particles \<2 mm) is noted separately for each soil horizon, as are any rock fragments observed in each horizon (see also @sec-rockfrag). In the subsolum, each distinct layer observed should have its lithology captured separately. In all cases, use the codes in @tbl-ss-pm and record only the dominant lithologies present.
 
-Example: [An, Hs]{.ceg} for a mix of eroded sedimentary rocks and volcanic ash.
+For detailed assessment, a more complete list of lithologies may be defined for each mineral component.
 
 ### Weathering {#sec-pr-wdeg}
 
 The effects of weathering and pedogenesis vary down-profile (usually, but not always, decreasing with depth). Horizons that have experienced limited weathering may require specific descriptors (e.g. texture (@sec-tex-rec) cannot usually be determined on paralithic material, but bedding (@sec-reg-bed) may need to be described), so the need for these should be assessed early in the description process. Use the guidance in @tbl-pr-wdeg to clearly identify the solum, as well as any subsolum materials encountered. The weathering status of rock material specifically may be assessed using the schema in @sec-rockfrag-wth.
 
++:-----------+:---------------------+:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Code**   | **Name**             | **Description**                                                                                                                                                                                                                                                                                                          |
 +------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Code       | Name                 | Description                                                                                                                                                                                                                                                                                                              |
-+:===========+:=====================+:=========================================================================================================================================================================================================================================================================================================================+
 | [So]{.ceg} | Soil material        | Horizon characteristics include any of:                                                                                                                                                                                                                                                                                  |
 |            |                      |                                                                                                                                                                                                                                                                                                                          |
-|            |                      | -   anthropic or pedogenic structure (@sec-str-origin),                                                                                                                                                                                                                                                                  |
+|            |                      | -   anthropogenic or pedogenic structure (@sec-str-origin),                                                                                                                                                                                                                                                              |
 |            |                      | -   elevated biological activity,                                                                                                                                                                                                                                                                                        |
 |            |                      | -   formation of pedogenic features (@sec-secondary), *and*                                                                                                                                                                                                                                                              |
 |            |                      |                                                                                                                                                                                                                                                                                                                          |
@@ -339,6 +339,10 @@ For the purposes of classifying soils according to the New Zealand Soil Classifi
 Parent material origin, or mode of emplacement, describes how soil parent materials have arrived at the point of observation. Multiple modes may have operated in different parts of the soil profile. For soil materials that have weathered from rocks *in situ*, the mode of emplacement is recorded as the last major formation process that left the rocks in a place where they could start weathering into soil.
 
 Record one parent material origin code per soil horizon, using the codes in @tbl-ss-pmo. At the horizon level, the [An]{.ceg} Anthropic class can be subdivided by origin using the codes in @tbl-hr-antype (e.g. [Ann]{.ceg} for a fill pad in a residential housing development).
+
+::: {#nte-hzn-tmb .callout-note collapse="true" appearance="simple" title="Recording specific parent materials"}
+In New Zealand, and particularly on the North Island, many soils form in cover beds linked to specific volcanic events (e.g. ash from the 232 AD Taupō eruption). The presence of these stratigraphic 'marker beds', which may comprise horizons or subsolum layers, should be noted as free text where they are observed.
+:::
 
 ```{r}
 #| label: tbl-ss-pmo

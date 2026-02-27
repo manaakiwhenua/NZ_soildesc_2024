@@ -227,7 +227,7 @@ Example: [SL(G)]{.ceg} for a sandy loam soil with 5–35% gravels (size range 2�
 
 For routine assessment, append an estimate of rock fragment abundance as integer percentage of the whole horizon volume, as well as dominant lithology class using @tbl-ss-pm and shape using @tbl-hr-rockfrfrm, @tbl-hr-rockfrrnd and @tbl-hr-rockfrrgh.
 
-Example: [SL(G) 15% Hs CRS]{.ceg} for a sandy loam soil with 15% compact, rounded, smooth greywacke gravels.
+Example: [SL(G) 15% SAHD CRS]{.ceg} for a sandy loam soil with 15% compact, rounded, smooth greywacke gravels.
 
 For detailed assessment, one may optionally continue to add detail by recording volumetric abundance, lithology, shape and weathering status for each of the three rock fragment size classes given in @tbl-hr-rocksz. The three additional gravel size subdivisions in @tbl-hr-gvquals may also be used. Picking and sieving from a known volume of soil will likely be required for sufficient accuracy when making detailed assessments.
 
@@ -739,11 +739,11 @@ Horizons that have experienced limited weathering may exhibit geogenic features 
 
 ### Lithology {#sec-reg-lith}
 
-Lithology is recorded using @tbl-ss-pm. Recording requirements are outlined in @sec-pr-lith.
+Lithology is recorded using @tbl-ss-pm. For rapid recording, note the dominant lithology of the subsolum layers. For routine recording, note each layer's lithology/ies separately (see also @sec-pr-lith).
 
 ### Weathering {#sec-reg-wth}
 
-The degree to which geogenic features have weathered can be recorded using the code list in @tbl-hr-rockfrwth.
+Record the degree to which geogenic features have weathered using the code list in @tbl-hr-rockfrwth.
 
 ### Bedding {#sec-reg-bed}
 
@@ -765,9 +765,10 @@ For single fractures, record spacing as [0 cm]{.ceg}.
 
 dat_hr_fractyp <-
   tribble(~Code, ~Name, ~Description,
-          'F', 'Fault', 'Tectonically induced fractures that may cut across bedding. Bedding displacement will be apparent along the fault',
-          'C', 'Crush', 'Fracture patterns induced by crushing and shearing forces. Fractures will have relatively close spacing and irregular orientation.',
-          'P', 'Pressure', 'Fracture patterns induced by release of overburden pressure. Fractures are likely to be near-horizontal or parallel to the surface and may be curved.')
+          'T', 'Fault', 'Tectonically induced fractures that may cut across bedding. Bedding displacement will be apparent along the fault',
+          'C', 'Crush', 'Fracture patterns induced by crushing and shearing forces. Fractures will have uneven spacing and irregular orientation.',
+          'P', 'Pressure', 'Fracture patterns induced by release of overburden pressure. Fractures are likely to be near-horizontal or parallel to the surface and may be curved.',
+          'F', 'Fritter', 'Fracture patterns induced by chemical weathering. Fractures are likely to be dense, forming a grid or net pattern.')
 
 tbl_hr_fractyp <- gt(dat_hr_fractyp) |>
    tab_options(
