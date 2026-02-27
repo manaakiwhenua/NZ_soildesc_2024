@@ -10,47 +10,104 @@ Parent material can be explored in terms of geological units, lithology, and min
 
 ## Geology {#sec-pm-geol}
 
-Geological mapping, particularly surface and near-surface stratigraphy, is an essential resource for understanding the landscape. However, the scale and focus of the available products don't always align with soil observation needs. Some caution is needed when interpreting geological maps in a soils context. Keep the following in mind:
+Geological maps are the primary data source representing the spatial distribution of soil parent material. In particular, surface and near-surface stratigraphic maps are an essential resource for understanding the landscape. However, the scale and focus of the available products don't always align with soil observation needs. Some caution is needed when interpreting geological maps in a soils context. Keep the following in mind:
 
--   Read the accompanying reports for a given area as well as looking at the maps. They contain a wealth of contextual information.
--   When working in a depositional area, get familiar with the 'source' geologies - upstream, uphill, upwind. Those will be the main contributors to the parent material, which will often be mapped with closer reference to age and particle size than the lithology shown in the geological map unit descriptions.
--   In landscapes where layered deposits make up the uppermost materials of the land as unconsolidated cover beds (such as in central North Island), it is common for such cover beds to be missing from geological maps (although they will likely be noted in the accompanying text, e.g., see Leonard et al. 2010). This because the map units selected in geological mapping tend to reflect the underlying, large-scale deposits that have been landforming in emplacement.
+-   Read the accompanying reports for a given area as well as looking at geological maps. They contain a wealth of contextual information.
+-   When working in an area covered by transported soil materials, get familiar with the 'source' geologies - upstream, uphill, upwind. Those will be the main contributors to the soil parent material.
+-   In landscapes where transported materials make up the uppermost materials of the land as unconsolidated cover beds (such as in central North Island), it is common for such cover beds to be missing from geological maps [although they will likely be noted in the accompanying text, e.g., see @leonard2010]. This because the map units selected in geological mapping tend to reflect the underlying, large-scale deposits that have been land-forming in emplacement.
+-   The unit boundaries of broad-scale geology maps don't always align cleanly with landscape features on the ground, so they may not make reliable inputs for digital models of soil distribution without substantial refinement.
 
-Geology mapping in New Zealand can be accessed through resources provided by [Earth Sciences New Zealand](https://earthsciences.nz/). These include QMap, a unified 1:250,000 scale geological map of the country, and a large set of legacy geology maps produced at scales as detailed as 1:25,000.
+Due to these scale and purpose differences, recording the geological map code at a profile is optional, and if recorded, the surveyor should be confident that code is correct at the scale of the site. The source of the code should also be noted.
+
+Geology mapping in New Zealand can be accessed through resources provided by [Earth Sciences New Zealand](https://earthsciences.nz/). These include QMAP, a unified 1:250,000 scale geological map of the country, and a large set of legacy geology maps produced at scales as detailed as 1:25,000. In areas where volcanic ash deposition is extensive (e.g., the central North Island), tephra isopach maps showing the thickness and location of ash deposits from particular eruptive events will also be essential for understanding the landscape [@hopkins2021].
 
 ## Lithology {#sec-pm-lith}
 
-The specific mineral characteristics of the soil parent material, or its lithology, offers a more specific and soil-relevant categorisation than geology mapping generally supplies. Lithology is generally recorded when describing the soil's fine earth fraction (mineral material <2 mm), surface and in-profile rock fragments (mineral material >2 mm), subsolum rock, and profile-adjacent rock outcrops. @tbl-ss-pm provides a short list of parent material lithologies compatible with the NZSC Family [@webb2011].
+The specific rock(s) contributing to the soil parent material, or its lithology, offers a more specific and soil-relevant categorisation than geology mapping supplies. Lithology should be recorded when describing the soil's fine earth fraction (mineral material \<2 mm), surface and in-profile rock fragments (mineral material \>2 mm), subsolum rock, and profile-adjacent rock outcrops. Specific recording requirements for all of these characteristics are defined in @sec-pr-surface, @sec-hr-arch and @sec-tex. @tbl-ss-pm below provides a list of parent rocks common in New Zealand that can be applied in each case. Where lithology is difficult to determine, users may record using the second-level groupings (e.g. in mixed-origin alluvia), but it is always preferable to use the third level for rock fragments, subsolum material and outcrops. @tbl-ss-ss provides some additional mineral modifiers that may be applied to the clastic sedimentary rocks.
+
+Lithology data is required for classifying some orders of the *New Zealand Soil Classification* (e.g., Melanic Soils) and is also required when determining the Family and Sibling [@webb2011]. The code list used for this task is highly generalised but can be mapped to the rock types list in @tbl-ss-pm.
+
+| Major rock type | Composition | Composition code | Rock type | Rock type code |
+|:--------------|:--------------|:-------------:|:--------------|:-------------:|
+| Intrusive igneous rocks | Felsic | [IF]{.ceg} | Granite | [GRAN]{.ceg} |
+|  |  |  | Quartz-diorite | [QZDI]{.ceg} |
+|  |  |  | Granodiorite, tonalite | [GRDI]{.ceg} |
+|  | Intermediate | [II]{.ceg} | Diorite | [DIOR]{.ceg} |
+|  |  |  | Syenite | [DYEN]{.ceg} |
+|  | Mafic | [IM]{.ceg} | Gabbro | [GABB]{.ceg} |
+|  |  |  | Lamprophyre | [LAMP]{.ceg} |
+|  |  |  | Dolerite | [DOLE]{.ceg} |
+|  | Ultramafic | [IU]{.ceg} | Peridotite | [PERD]{.ceg} |
+|  |  |  | Pyroxenite | [PYRX]{.ceg} |
+|  |  |  | Ilmenite, magnetite | [ILMG]{.ceg} |
+| Extrusive igneous rocks | Felsic | [EF]{.ceg} | Rhyolite | [RHYL]{.ceg} |
+|  |  |  | Felsic tuff and tuffite | [FTUF]{.ceg} |
+|  |  |  | Felsic breccia or agglomerate | [FBRC]{.ceg} |
+|  |  |  | Pumice | [PUMC]{.ceg} |
+|  |  |  | Ignimbrite | [FIGN]{.ceg} |
+|  |  |  | Obsidian | [OBSD]{.ceg} |
+|  | Intermediate | [EI]{.ceg} | Andesite | [ANDS]{.ceg} |
+|  |  |  | Trachyte | [TRAC]{.ceg} |
+|  |  |  | Intermediate tuff and tuffite | [ITUF]{.ceg} |
+|  |  |  | Intermediate breccia or agglomerate | [IBRC]{.ceg} |
+|  |  |  | Intermediate scoria | [ISCR]{.ceg} |
+|  |  |  | Dacite | [DACT]{.ceg} |
+|  |  |  | Ignimbrite | [IIGN]{.ceg} |
+|  | Mafic | [EM]{.ceg} | Basalt | [BSLT]{.ceg} |
+|  |  |  | Basanite, tephrite | [BSNT]{.ceg} |
+|  |  |  | Mafic tuff and tuffite | [MTUF]{.ceg} |
+|  |  |  | Mafic breccia or agglomerate | [MBRC]{.ceg} |
+|  |  |  | Mafic scoria | [MSCR]{.ceg} |
+|  | Ultramafic | [EU]{.ceg} | Picrite | [PICR]{.ceg} |
+| Metamorphic Rocks | Felsic | [MF]{.ceg} | Quartzite | [QTZT]{.ceg} |
+|  |  |  | Felsic gneiss, migmatite, mylonite | [FGNS]{.ceg} |
+|  |  |  | Felsic schist | [FSCH]{.ceg} |
+|  |  |  | Felsic slate, phyllite (pelitic rocks, 'semi-schist') | [FSLT]{.ceg} |
+|  | Mafic | [MM]{.ceg} | Mafic gneiss, migmatite, mylonite | [MGNS]{.ceg} |
+|  |  |  | Mafic schist | [MSCH]{.ceg} |
+|  |  |  | Mafic slate, phyllite (pelitic rocks, 'semi-schist') | [MSLT]{.ceg} |
+|  |  |  | Marble | [MBLE]{.ceg} |
+|  |  |  | Amphibolite | [AMPH]{.ceg} |
+|  |  |  | Eclogite | [ECLG]{.ceg} |
+|  | Ultramafic | [MU]{.ceg} | Serpentinite | [SERP]{.ceg} |
+|  |  |  | Greenstone, jade, nephrite | [GNST]{.ceg} |
+| Sedimentary rocks | Clastic | [SC]{.ceg} | Conglomerate, breccia (hard) | [CONH]{.ceg} |
+|  |  |  | Conglomerate, breccia (soft) | [CONS]{.ceg} |
+|  |  |  | Sandstone (hard), greywacke, arkose | [SAHD]{.ceg} |
+|  |  |  | Sandstone (soft) | [SAFT]{.ceg} |
+|  |  |  | Silt-, mud-, claystone (hard) | [SIHD]{.ceg} |
+|  |  |  | Silt-, mud-, claystone (soft) | [SIFT]{.ceg} |
+|  |  |  | Shale | [SHAL]{.ceg} |
+|  | Carbonatic, organic | [SO]{.ceg} | Limestone (coarse) | [LMSC]{.ceg} |
+|  |  |  | Limestone (fine) | [LMSF]{.ceg} |
+|  |  |  | Dolostone | [DOLO]{.ceg} |
+|  |  |  | Marl, chalk, and similar soft mixtures | [MARL]{.ceg} |
+|  |  |  | Coal, lignite, bitumen | [COAL]{.ceg} |
+|  |  |  | Chert | [CHRT]{.ceg} |
+|  | Evaporites | [SE]{.ceg} | Anhydrite, gypsum | [GYPS]{.ceg} |
+|  |  |  | Halite | [HALT]{.ceg} |
+
+: Lithology classification for New Zealand soil survey (adapted from @laffan1988, @rattenbury2012 and @iussworkinggroupwrb2022) {#tbl-ss-pm .striped .hover tbl-colwidths="\[25,20,10,30,15\]"}
 
 ```{r}
-#| label: tbl-ss-pm
-#| tbl-cap: "NZSC Lithology"
+#| label: tbl-ss-ss
+#| tbl-cap: "Mineral modifiers for clastic sedimentary rocks"
 
-dat_ss_pm <-
-  tribble(~Code, ~Name,
-    'Cb',	'Carbonaceous Rock (Coal)',
-    'Sq',	'Soft Quartzitic Sediments',
-    'Hq',	'Hard Quartzitic Sediments',
-    'Sm',	'Soft mudstone',
-    'Ss',	'Soft sandstone',
-    'Hm',	'Hard mudstone',
-    'Hs',	'Hard sandstone',
-    'Tm',	'Tuffaceous mudstone',
-    'Ts',	'Tuffaceous sandstone',
-    'Sc',	'Schist',
-    'Ls',	'Soft calcareous',
-    'Li',	'Hard calcareous',
-    'Ma',	'Marble',
-    'Rh',	'Rhyolite',
-    'Ig',	'Ignimbrite',
-    'An',	'Andesite',
-    'Ba',	'Basalt',
-    'Gr',	'Granite and Gneiss',
-    'Di',	'Diorite',
-    'Ga',	'Gabbro',
-    'Fe',	'Iron Sands')
+dat_ss_ss <-
+  tribble(~Code, ~Name, ~Description,
+          'Cb', 'Carboncaeous',        'containing a large proportion of organic material',
+          'Ct', 'Carbonatic',          'containing a large propotion of carbonate minerals (but below the threshold for a limestone)',
+          'Si', 'Siliceous',           'containing a large proportion of secondary silica minerals',
+          'Qz', 'Quartzitic',          'containing a large proportion of quartz grains',
+          'Qf', 'Quartzo-feldspathic', 'containing a large proportion of quartz and feldspar minerals',
+          'Gl', 'Glauconitic',         'containing a large proportion of the greenish mineral glauconite',
+          'Ch', 'Chloritic',           'containing a large proportion of the greenish mineral chlorite',
+          'Be', 'Bentonitic',          'containing a large proportion of the swelling clay mineral bentonite',
+          'Mi', 'Micaceous',           'containing a large proportion of the platy, shiny mineral mica',
+          'Mf', 'Mafic',               'containing a large proportion of mafic or ultramafic minerals',
+          'Tf', 'Tuffaceous',          'containing a large proportion of pyroclastic materials')
       
-tbl_ss_pm <- gt(dat_ss_pm) |>
+tbl_ss_ss <- gt(dat_ss_ss) |>
    tab_options(
     column_labels.font.weight = 'bold', 
     heading.title.font.weight = 'bold',
@@ -63,7 +120,7 @@ tbl_ss_pm <- gt(dat_ss_pm) |>
             locations = cells_body(columns = 1)) |>
   cols_width(Code ~pct(10))
 
-tbl_ss_pm
+tbl_ss_ss
 
 ```
 
@@ -75,77 +132,16 @@ delete me
 'Soft' rocks in this context can at most be broken readily with a light hammer blow, and can be scraped and peeled by a pocket knife. 'Hard' rocks can at best be scratched with a knife but not scraped or peeled, and require a firm hammer blow to crack [@lynn1991, p. 11].
 :::
 
-### Other lithology classifications {#sec-pm-litho}
-
-#### Geological vocabularies {#sec-pm-vocabs}
-
-Several research-grade vocabularies for describing geology have been developed in recent years, including @geoscienceaustralia2016 and @mccormick2023. Both offer a detailed set of rock and mineral definitions in a hierarchical relationship structure, but both are currently missing one or more terms essential to the New Zealand context. Additionally, the hierarchies don't always align cleanly with those used in New Zealand geology. The vocabularies are expected to develop over time and may be recommended in future editions of this handbook.
+::: {#nte-litho .callout-note appearance="minimal" collapse="true" title="Geological research vocabularies and other approaches to recording lithology"}
+To encourage consistent geological terminology in scientific communication, several research-grade vocabularies for describing lithology have been developed in recent years, including @geoscienceaustralia2016 and @mccormick2023. These offer a detailed set of rock and mineral definitions in a hierarchical relationship structure, but are currently missing one or more terms essential to the New Zealand context. Additionally, the hierarchies don't always align cleanly with those used in New Zealand geology. Research vocabularies are expected to develop over time and may be recommended in future editions of this handbook.
 
 Other, simpler lithological vocabularies available in New Zealand and elsewhere often conflate lithology with mode of deposition and particle size when describing unconsolidated, transported materials (e.g. NZLRI rock types, @lynn1991 and WRB parent material, @iussworkinggroupwrb2022). Parent material origin and particle size distribution are described separately for soil materials in this handbook (@sec-pr-orig, @sec-tex). However, workers describing soils as part of an LUC assessment may still wish to use the NZLRI rock types list for compatibility reasons [@lynn1991].
 
-#### Silica-content classification {#sec-pm-lithsi}
-
 Soil parent material classifications have largely focused on major geological origin (igneous, metamorphic, sedimentary), grain size, and some obvious compositional classes. [-@gray2016] contend that the major differentiator for soil formation should first be silica (SiO~2~) content and propose an alternate lithology classification on that basis.
+:::
 
 ## Mineralogy
 
-The mineralogy classes of the US Soil Taxonomy [@soilsurveystaff2022] may be estimated if known, but these will require laboratory confirmation and the ability to classify the profile against US Soil Taxonomy at least to Great Group level.
+Soil mineral composition influences nutrient availability, pH, buffering capacity and many other chemical properties. Some plants have a preference for, or are specifically adapted to, soils with particular mineral profiles. Mineralogy information can also be used to help trace the origin of transported soil materials back to their parent rocks. An comprehensive review of minerals in soils can be found in @churchman2012.
 
-The New Zealand Soil Classification [@hewitt2010] references an older version of the Soil Taxonomy mineral classes, adapted to New Zealand conditions and extensively tested [@childs1990]. The classes are mentioned in relation to soil orders but are not used in the key or the diagnostic materials. Optionally, the dominant mineral class may be recorded on a per-horizon basis using the key in @tbl-ss-nzscmin. Estimates may be made using knowledge of soil parent materials and local soil-forming processes, but should be confirmed in the laboratory.
-
-```{r}
-#| label: tbl-ss-nzscmin
-#| tbl-cap: "New Zealand soil mineralogy classification (reproduced from @childs1990, Table 1)"
-
-dat_ss_nzscmin <-
-  tribble(
-    ~Code, ~Name, ~ Description, ~size,
-    'Gy', 'Gypsic', '\\>15% by weight of gypsum', '< 20 mm',
-    'Ca', 'Carbonatic', '\\>30% by weight carbonates (as CaCO~3~)',  '< 20 mm',
-    'Sf', 'Superferritic', '\\> 28% citrate-dithionite extractable Fe (≥ 40% as Fe~2~O~3~)', '< 2 mm',
-    'Fe', 'Ferritic', '\\> 7.0% citrate-dithionite extractable Fe (≥ 10% as Fe~2~O~3~)',  '< 2 mm',
-    'Al', 'Aluminitic', '\\> 40% by weight aluminium hydroxides and oxyhydroxides',  '< 2 mm',
-    'Si', 'Siliceous', '\\> 90% by weight silica (SiO~2~) minerals (quartz, chalcedony, or opal) and other durable minerals that are resistant to weathering, provided that the silica minerals are > 60% by weight',  '< 2 mm',
-    'Am', 'Amorphous', '\\> 5% by weight of minerals with short-range order (principally allophane, imogolite, and ferrihydrite)',  '< 2 mm',
-    'Mi', 'Micaceous', '\\> 40% by weight of mica minerals',  '< 2 mm',
-    'Cl', 'Chloritic', '\\> 40% by weight of chlorite',  '< 2 mm',
-    'Sp', 'Serpentinitic', '\\> 40% by weight of serpentine minerals (antigorite, chrysotile, fibrolite, and talc)',  '< 2 mm',
-    'Sm', 'Smectitic', 'More smectites than any other mineral group or single mineral (if mineral group not applicable, e.g. crandallite, chlorite)', '< 0.002 mm',
-    'Vm', 'Vermiculitic', 'More vermiculites than any other mineral group or single mineral', '< 0.002 mm',
-    'Il', 'Illitic', 'More illites than any other mineral group or single mineral', '< 0.002 mm',
-    'Ka', 'Kandic', '\\> 50% by weight Kaolin-group minerals (kaolinite, halloysite, dickite, and nacrite) *and* < 10% by weight smectites', '< 0.002 mm',
-    'Cm', 'Clay-mineralic', 'Other soils with > 10% clay. The dominant mineral or mineral group in the clay fraction is named (e.g. clay-mineralic (crandallite))', '< 0.002 mm',
-    'Gl', 'Glassy', '\\> 40% by weight volcanic glass', '< 2 mm',
-    'Wh', 'Whole-soil-mineralic', '\\> 40% by weight of any mineral or mineral group, other than silica minerals or feldspars', '< 2 mm',
-    'Ot', 'Other soils', '', 'Not applicable')
-        
-tbl_ss_nzscmin <- gt(dat_ss_nzscmin) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  tab_row_group(label = 'All soils', rows = 1:10, 
-                id ='all') |>
-  tab_row_group(label = 'Other soils with ≥ 10% clay', rows = 11:15,
-                id = 'clay') |>
-  tab_row_group(label = 'Other soils with < 10% clay', rows = 16:18,
-                id = 'not') |>
-  row_group_order(groups = c('all', 'clay', 'not')) |>
-  tab_style(style = list(cell_text(weight = 'bold')),
-            locations = cells_row_groups()) |>
-  fmt_markdown(columns = 3) |>
-  cols_label(size = 'Determinant size fraction') |>
-  tab_footnote(footnote = 'In New Zealand the following are regarded as "durable minerals": beryl, corundum, ilmenite, magnetite, tourmaline group, zircon.',
-               locations = cells_body(columns = 3, rows = 6)) |>
-  tab_style(style = list(cell_text(align = 'left')),
-                         locations = cells_footnotes()) |>
-  cols_width(Code ~pct(10), Name ~pct(20), Description ~pct(50))
-
-tbl_ss_nzscmin
-```
+The New Zealand Soil Classification [@hewitt2025] references a previous version of the *Soil Taxonomy* mineralogy classification, adapted to New Zealand conditions and extensively tested [@whitton1989; @childs1990]. The classes are mentioned in relation to soil Orders but are not used in the key or the diagnostic materials, so there is no requirement to record these in the field. Where mineralogy is of interest during fieldwork, the current mineralogy classes of *Soil Taxonomy* [@soilsurveystaff2022] may be estimated, but these will require laboratory confirmation and the ability to classify the profile against *Soil Taxonomy* at least to Great Group level.
