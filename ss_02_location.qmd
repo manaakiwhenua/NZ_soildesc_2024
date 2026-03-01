@@ -26,7 +26,7 @@ Location accuracy is largely a function of the equipment available and the quali
 
 ```{r}
 #| label: fig-loc
-#| fig-cap: "Example location: [1586090E, 5405722N (462 m)]{.ceg}"
+#| fig-cap: "Example location: 1586090E, 5405722N (462 m)"
 
 loc <- st_point(c(1586090, 5405722, 462), dim = "XYZ") |>
   st_sfc(crs = 2193) |>
