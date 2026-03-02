@@ -9,10 +9,10 @@ format:
 ## General {#sec-changes}
 
 -   The structure of the book has been updated and how has four major sections: Soil setting, Soil Profile, Soil Horizons, and Soil Interpretations.
--   Inherently numeric properties are now recorded as numbers; either single measurements, median-plus-range, or low-high range as appropriate. Options for classifying numeric parameters for ease of communication are presented in the Soil Interpretations section.\
+-   Inherently numeric properties are now preferentially recorded as numbers; either single measurements, median-plus-range, or low-high range as appropriate. Options for classifying numeric parameters for ease of communication are presented in the Soil Interpretations section.\
     **Rationale:** Numeric data recorded as ranges in the field has limited re-use potential (in that it can't be combined with the same data recorded against other classifications or as numbers) and the ranges have an inherently limited resolution. Many numeric soils parameters have no inherent natural breaks, but patterns in their distribution can emerge in specific landscapes or over certain scales of examination. Recording such data to classes reduces the odds of ever revealing those patterns clearly.
 -   Parameters required for the *New Zealand Soil CLassifciation* (NZSC) have been updated where needed in alignment with the simultaneous review of that document
--   Horizon name protocols remain substantially the same, with some updates to bring the schema into alignment with the NZSC
+-   Horizon name protocols remain substantially the same, with some updates to bring the schema into alignment with the NZSC.
 
 ## Soil Setting (formerly 'Site Data')
 
@@ -55,7 +55,7 @@ This section has been loosely structured around the major soil forming factors.
 -   **ADD** a requirement to record the maximum depth of observation (or calculate it from horizon depth data)
 -   **ADD** a code list for recording the reason a soil profile did not reach 100 cm
 -   **ADD** a code list for recording recent site disturbances that have the capacity to impact the soil profile description.
--   **ADD** a 'site setting' subsection, summarising the minimum required data points from the 'soil setting' chapters that should be recorded.
+-   **ADD** a 'site setting' subsection, summarising the required data points from the 'soil setting' chapters. .
 
 ### Soil surface
 
@@ -64,7 +64,7 @@ This section has been loosely structured around the major soil forming factors.
 -   **ADD** an optional code list for recording recent disturbances to the soil surface.
 -   **ADD** an optional code list for recording presence and state of surface water (@sec-pr-surfw)
 -   **ADD** an optional code list for recording open surface cracks (@sec-pr-crack)
-    -   **ADD** optional code lists for recording natural and anthropogenic microrelief (@sec-pr-micror)
+-   **ADD** optional code lists for recording natural and anthropogenic microrelief (@sec-pr-micror)
 -   **REMOVE** reference to 'fresh' or 'aged' samples [@milne1995, p. 35]; soil descriptions should only be carried out on fresh soil materials.
 -   **UPDATE** Separate Erosion/Deposition into two sets of three-part descriptive codes to allow easier recording of distinct processes affecting the surface (@sec-pr-erosion, @sec-pr-deposition). Rapid noting of erosion and deposition can be made using site disturbance codes; these are optional extras that allow a little more detail to be communicated.
     -   **UPDATE** gravity-driven erosion codes for international compatibility
@@ -176,7 +176,7 @@ This is a new section, containing drainage and other profile interpretations:
 -   **NEW** Appendix A - recommended field equipment - for excavation, measurement, small hand tools etc
 -   **NEW** Appendix B - recording data in the field. Some general commentary about paper and computers.
     -   **New** advice on taking effective field photographs
-    -   **New** example data sheets (previously in the back of the document)
+    -   **New** minimum dataset guidance
 -   **NEW** Appendix C - sampling guidance. Some parts of Appendix 9 have been moved in here. Guidance for exposing the profile and setting it up for description using different equipment is included, along with common sampling protocols for profiles and surface bulks. A sampling layout design for monitoring is included which aligns with the method currently used for soil carbon monitoring in New Zealand.
 -   **NEW** Appendix D - data model. Diagrams of how the data points in the document fit together in a relational database model; clear indications of must-have and nice-to-have parameters.
 -   **NEW** Appendix E - Classifying numeric measures. Contains classification schema that are commonly applied to various numeric parameters (slope, aspect, relief, abundance, size)
