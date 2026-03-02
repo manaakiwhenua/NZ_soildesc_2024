@@ -24,7 +24,42 @@ In New Zealand, the Köppen regions that currently occur can be seen in @fig-kop
 
 ### Regional {#sec-clim-region}
 
-Regional climate classifications are particularly useful when developing an understanding of an area new to the surveyor, and when comparing data from disparate environments. Various climate classifications specific to New Zealand have been produced in the past [e.g., @robertson1956; @garr1991; @sturman1999], with the most widely known to New Zealand soil scientists being the classification embedded in the Land Environments of New Zealand [LENZ, see @leathwick2002; @leathwick2003]. More recently, @singers2014 defined a set of regional macroclimates with reference to mean summer temperature and the ratio of rainfall to potential evapotranspiration.
+Regional climate classifications are particularly useful when developing an understanding of an area new to the surveyor, and when comparing data from disparate environments. Various climate classifications specific to New Zealand have been produced in the past [e.g., @robertson1956; @garr1991; @sturman1999], with the most widely known to New Zealand soil scientists being the classification embedded in the Land Environments of New Zealand [LENZ, see @leathwick2002; @leathwick2003].
+
+More recently, @singers2014 defined a set of regional macroclimates with reference to mean summer temperature and the ratio of rainfall to potential evapotranspiration. @tbl-ss-rmc outlines their macroclimate classification limits. For routine recording, the regional macroclimate may be estimated using @tbl-ss-rmc. For detailed recording, it should be determined from best available data. This does not have to be done in the field.
+
+```{r}
+#| label: tbl-ss-rmc
+#| tbl-cap: "Regeonal macroclimate limits, adapted from @singers2014, Note that the subtropical climates are currently considered to be limited to the Kermadec Islands."
+
+dat_ss_rmc <-
+  tribble(~Temp, ~evp1, ~evp2, ~evp3,
+          '>22.5', 'Subtropical, humid', 'Subtropical, subhumid', 'Subtropical, semi-arid', 
+          '>17–≤22.5',  'Warm, humid', 'Warm, subhumid', 'Warm, semi-arid',
+          '>15–≤17', 'Mild, humid', 'Mild, subhumid', 'Mild, semi-arid',
+          '>12.5–≤15', 'Cool, humid', 'Cool, subhumid', 'Cool, semi-arid',
+          '>10–≤12.5','Cold, humid', 'Cold, subhumid', 'Cold, semi-arid',
+          '>5–≤10','Low-alpine, humid', 'Low-alpine, subhumid', 'Low-alpine, semi-arid',
+          '<5', 'High-alpine, humid', 'High-alpine, subhumid', 'High-alpine, semi-arid')
+
+tbl_ss_rmc<- gt(dat_ss_rmc) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_label(Temp = 'Mean Summer Temp. (°C)',
+             evp1 = 'Annual Rainfall ≥4x Evapotranspiration', 
+             evp2 = 'Annual Rainfall <4x Evapotranspiration',
+             evp3 = 'Annual Water deficit >270 mm') |>
+  cols_width(Temp ~pct(10))
+
+tbl_ss_rmc
+```
 
 NIWA (now part of Earth Sciences New Zealand) have more recently published a set of [Regional Climatologies](https://niwa.co.nz/climate-and-weather/regional-climatologies), aligned to each of New Zealand's regional council boundaries. These do not comprise a true regional classification, but they contain consistent reporting of prevailing conditions within each regional council area, including discussion of within-region variability.
 
