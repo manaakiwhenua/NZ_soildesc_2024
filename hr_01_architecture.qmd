@@ -24,11 +24,9 @@ Each soil horizon may include any or all of the following major components:
         -   Macropores
         -   Micropores
 
-These components can be communicated as compositional percentage by volume, adding to 100%. Volumetric water content is best determined in the laboratory, and so is not described further in this handbook.
+Soil horizon architecture includes both composition and the physical arrangement of the above components, which can be communicated as compositional percentage by volume, adding to 100%.
 
 [complicated exploding pie chart or similar goes here]{.diags}
-
-Soil horizon architecture involves describing the nature and the physical arrangement of the above components.
 
 ## Structure {#sec-hr-stru}
 
@@ -172,12 +170,13 @@ tbl_hr_pedshp
 ```
 
 ::: {#nte-nut .callout-note collapse="true" title="Older terms for structural units" appearance="minimal"}
-Some structural terms that don't seem to fit into @tbl-hr-pedshp can be found in older soils literature. These terms should no longer be used because they conflate size and shape in a way that modern schemas seek to avoid.
+Some structural terms that don't seem to fit into @tbl-hr-pedshp can be found in older soils literature. These terms should no longer be used in structured data recording because they conflate size and shape in a way that modern schemas seek to avoid, but they are useful conversational shortcuts.
 
--   *Crumb:* a very fine structure seen in many silty to loamy horizons. The appearance is as of breadcrumbs, with 0.5–2 mm rounded peds loosely to firmly packed, depending on depth and drainage. Larger weak subangular blocky structures in well-drained Allophanic Soils almost always break down into moderately or strongly developed crumb structure. Crumb should be described as type [P]{.ceg} with [GR]{.ceg} shape.
--   *Nut:* a larger version of crumb, usually 5–20 mm in diameter, often encased in a network of grass roots. Nut structures are more common in topsoils but can also occur in well-drained loamy subsoils. Nut should be described as type [P]{.ceg} with [GR]{.ceg} or [PR]{.ceg} shape.
--   *Clod:* a tillage-induced structure \> 100 mm in length. Clods should be described as type [A]{.ceg} structures with [SB]{.ceg} or [PH]{.ceg} shape.
--   *Fragment:* a tillage-induced structure \< 100 mm in length. Fragments should be described as type [A]{.ceg} structures with [SB]{.ceg} or [PH]{.ceg} shape.
+-   *Crumb:* a very fine structure seen in many silty to loamy horizons. The appearance is as of breadcrumbs, with 0.5–2 mm rounded peds loosely to firmly packed, depending on depth and drainage. Larger weak subangular blocky structures in well-drained Allophanic Soils almost always break down into moderately or strongly developed crumb structure. Crumb should be recorded as type [P]{.ceg} with [GR]{.ceg} shape.
+-   *Nut:* a larger version of crumb, usually 5–20 mm in diameter, often encased in a network of grass roots. Nut structures are more common in topsoils but can also occur in well-drained loamy subsoils. Nut should be recorded as type [P]{.ceg} with [GR]{.ceg} or [PR]{.ceg} shape.
+-   *Clod:* a tillage-induced structure \> 100 mm in length. Clods should be recorded as type [A]{.ceg} structures with [SB]{.ceg} or [PH]{.ceg} shape.
+-   *Fragment:* a tillage-induced structure \< 100 mm in length. Fragments should be recorded as type [A]{.ceg} structures with [SB]{.ceg} or [PH]{.ceg} shape.
+-   *Earthy:* refers to the appearance of a horizon with crumb or apedal-massive structure from a distance.
 
 Ped strength (@sec-cn-stra) can assist in identifying tillage-induced structures, as they can be compacted and firmer than pedogenic structural units.
 :::
@@ -229,7 +228,7 @@ For routine assessment, append an estimate of rock fragment abundance as integer
 
 Example: [SL(G) 15% SAHD CRS]{.ceg} for a sandy loam soil with 15% compact, rounded, smooth greywacke gravels.
 
-For detailed assessment, one may optionally continue to add detail by recording volumetric abundance, lithology, shape and weathering status for each of the three rock fragment size classes given in @tbl-hr-rocksz. The three additional gravel size subdivisions in @tbl-hr-gvquals may also be used. Picking and sieving from a known volume of soil will likely be required for sufficient accuracy when making detailed assessments.
+For detailed assessment, one may optionally continue to add detail by recording volumetric abundance, lithology, shape and weathering status for each of the three rock fragment size classes given in @tbl-hr-rocksz. The three additional gravel size subdivisions in @tbl-hr-gvquals may also be used. Picking and sieving from a known volume of soil will likely be required for sufficient accuracy when making detailed assessments. Abundance data may be classified
 
 #### Rock fragment shape {#sec-rockfrag-shp}
 
@@ -658,7 +657,7 @@ Voids and pores are an integral part of soil structure, forming the spaces that 
 
 ### Voids {#sec-void}
 
-Voids comprise pores \>2 mm wide. Dimensions of large, isolated voids like burrows can be measured directly and volume calculated. Areal percentage of smaller inter-ped spaces can be assessed across a cut face using the abundance charts in @sec-in-abundpics or by counting void openings. Use a minimum area of 100 cm^2^ for this assessment.
+Voids comprise the fissures and gaps between peds, as well as pores \>2 mm wide. Dimensions of large, isolated voids like burrows can be measured directly and volume calculated. Areal percentage of smaller inter-ped spaces can be assessed across a cut face using the abundance charts in @sec-in-abundpics or by counting void openings. Use a minimum area of 100 cm^2^ for this assessment.
 
 For rapid assessment, estimate the areal percentage of the horizon volume occupied by void space. Always confirm absence of voids by recording a [0]{.ceg}.
 
@@ -747,17 +746,41 @@ Record the degree to which geogenic features have weathered using the code list 
 
 ### Bedding {#sec-reg-bed}
 
-Transported soil parent materials may comprise multiple thin layers of alternating texture or lithology. These layers can be unconsolidated (e.g. lamina or cross-bedding in aeolian and fluvial sediments), partly or fully consolidated, and may subsequently have been compressed, folded and/or faulted. Where layers of subsolum geogenic material have been identified (@sec-pr-wdeg) and bedding is apparent within a layer, measure the median angle of the bedding off horizontal. Optionally, add a thickness range for the bedding in centimetres.
+Transported soil parent materials may comprise multiple thin layers of alternating texture or lithology. These layers can be unconsolidated (e.g. lamina or cross-bedding in aeolian and fluvial sediments), partly or fully consolidated, and may subsequently have been compressed, folded and/or faulted. Where layers of subsolum geogenic material have been identified (@sec-pr-wdeg) and bedding is apparent, for rapid assessment note the steepness of the bedding using @tbl-reg-bstp. For routine assessment, measure the median angle of the bedding off horizontal. For detailed assessment, add a thickness range for the bedding in centimetres.
 
-E.g., [25° 10-30 cm]{.ceg} for thin, very firm marine sediments.
+E.g., [25° 10-30 cm]{.ceg} for thinly bedded, shallow-angle marine sediments.
+
+```{r}
+#| label: tbl-reg-bstp
+#| tbl-cap: "Bedding angle classes (adapted from @juilleret2016)."
+
+dat_reg_bstp <-
+  tribble(~Code, ~Name, ~Description,
+          'S', 'Shallow',  'Bedding angle 0–30°',
+          'T', 'Steep',    'Bedding angle 30–75°',
+          'V', 'Vertical', 'Bedding angle 75–90°')
+
+tbl_reg_bstp <- gt(dat_reg_bstp) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red',
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20)) 
+
+tbl_reg_bstp
+```
 
 ### Fractures {#sec-reg-fra}
 
-Rock at the base of the profile may be significantly fractured by tectonic and weathering processes. Where layers of subsolum geogenic material (@sec-pr-wdeg) have been identified and fractures are apparent, note fracture type using @tbl-hr-fractyp, orientation using @tbl-hr-fracotyp, and median spacing in centimetres. 
+Rock at the base of the profile may be significantly fractured by tectonic and weathering processes. Where layers of subsolum geogenic material (@sec-pr-wdeg) have been identified and fractures are apparent, for rapid assessment note whether the spacing between fractures is closer than 10 cm (ignore single fractures and faults). For routine or detailed assessment, note fracture type using @tbl-hr-fractyp, orientation using @tbl-hr-fracotyp, and median spacing in centimetres, with single fractures recorded as 0 cm.
 
 E.g., [F S 0]{.ceg} For a single fault showing vertical displacement.
-
-For single fractures, record spacing as [0 cm]{.ceg}.
 
 ```{r}
 #| label: tbl-hr-fractyp

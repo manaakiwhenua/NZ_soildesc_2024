@@ -202,7 +202,7 @@ Densipans occur in soils with felsic parent materials. The strength is due to a 
 1.  a moist chroma of 4 or more but less than 6, *and* 
 2.  \\< 2% redox segregations.
 
-Skeletans may be present and the horizon normally overlies a Bt horizon containing significantly more clay. Where the lower boundary is a lithological discontinuity and there is no clear evidence of an illuvial relationship with the underlying 2B horizon, the notation EBw is used (see Transitional Horizons)")
+Silt coats, or 'skeletans' may be present and the horizon normally overlies a Bt horizon containing significantly more clay. Where the lower boundary is a lithological discontinuity and there is no clear evidence of an illuvial relationship with the underlying 2B horizon, the notation EBw is used (see Transitional Horizons)")
 
 tbl_hr_hortwoe <- gt(dat_hr_hortwoe) |>
    tab_options(
@@ -368,12 +368,12 @@ See @nte-lowch for more detail.
 #| tbl-cap: "Redox suffixes"
 
 dat_hr_hortwor <-
-  tribble(~Code, ~Name, ~Description, ~usewith,
-          '*no code*', 'Unaffected' , "< 2% redox segregations, no low-chroma colours", 'Any',
-          '(f)', 'Slightly reduced', '≥ 2% redox segregations, no low-chroma colours', 'B, C',
-          '(g)', 'Reduced', '≥ 2% redox segregations, matrix and/or ped faces have < 50% low-chroma colours', 'E (alone), B, C',
-          'g' , 'Very reduced', '≥ 2% redox segregations, matrix has 50-85% low chroma colours, and/or ped faces have > 50% low-chroma colours', 'A, E (alone), B, C',
-          'r', 'Completely reduced', 'Matrix has > 85% low-chroma colours.', 'E (alone), B, C')
+  tribble(~Code, ~Name, ~segs, ~cols, ~usewith,
+          '*no code*', 'Unaffected' , '<2%', 'None', 'Any',
+          '(f)', 'Slightly reduced', '≥2%', 'None', 'B, C',
+          '(g)', 'Reduced', '≥2%', '<50%', 'E (alone), B, C',
+          'g' , 'Very reduced', '≥2%', 'Matrix 50–85%, and/or ped faces >50%', 'A, E (alone), B, C',
+          'r', 'Completely reduced', 'not diagnostic', 'Matrix >85%', 'E (alone), B, C')
 
 tbl_hr_hortwor <- gt(dat_hr_hortwor) |>
    tab_options(
@@ -389,9 +389,9 @@ tbl_hr_hortwor <- gt(dat_hr_hortwor) |>
   tab_style(style = "vertical-align:top",
             locations = cells_body(columns = c(1, 2))) |>
   tab_style(style = list(cell_text(weight = 'bold')),
-            locations = cells_body(columns = 4)) |>
+            locations = cells_body(columns = 5)) |>
   fmt_markdown(columns = 1, rows = 1) |>
-  cols_label(usewith = 'Used with') |>
+  cols_label(usewith = 'Used with', segs = 'Redox segregations', cols = 'Low chroma colours') |>
   cols_width(Code ~pct(10), Name ~pct(20), usewith ~pct(20))
 
 tbl_hr_hortwor
@@ -508,4 +508,4 @@ The notation for a buried **Ah** horizon in material similar to the overlying de
 
 Horizons formed in anthropogenic soil materials may be denoted by the prefix 'e' (e.g., [eAp]{.ceg}). This may include deliberately manufactured soils (e.g. for sports fields or mine rehabilitation), or natural soils that have a significant component of anthropogenic modification (e.g. backyard soils, kūmara fields). The remaining horizons of a truncated profile should not receive this designation, nor should agricultural topsoils that have only been subject to low-impact and reversible practices like tillage or fertilisation.
 
-Given that most anthropogenic soils in New Zealand will be <~800 years old, it is considered unlikely at present that the 'e' prefix will be valid when applied to subsoil horizons that require long periods of time to form e.g. [Bo]{.ceg}.
+Given that most anthropogenic soils in New Zealand will be \<\~800 years old, it is considered unlikely at present that the 'e' prefix will be valid when applied to subsoil horizons that require long periods of time to form e.g. [Bo]{.ceg}.

@@ -1,4 +1,4 @@
-# Secondary features {#sec-secondary}
+# Weathering features {#sec-secondary}
 
 ```{r}
 library(dplyr)
@@ -6,7 +6,7 @@ library(tibble)
 library(gt)
 ```
 
-Secondary soil features are bodies formed within the soil through pedogenic (natural soil-forming) processes. They contain a higher amount of a particular substance (or association of substances) and thus contrast with the surrounding material. Many of these features create barriers to water movement or alter chemistry in a way that affects soil organisms and plant root growth.
+Weathering features are distinct bodies formed within the soil through pedogenic (natural soil-forming) processes. They contain a higher amount of a particular substance (or association of substances) and thus contrast with the surrounding material. Many of these features create barriers to water movement or alter chemistry in a way that affects soil organisms and plant root growth.
 
 ## Concentrations {#sec-hr-conc}
 
@@ -54,7 +54,7 @@ dat_hr_conctype <-
   tribble(~Code, ~Name, ~Description,
           'A',  'Sandy', 'Sandy texture within a loamy, silty, or clayey matrix',
           'E',  'Earthy', 'Loamy or silty texture within a sandy or clayey matrix',
-          'L',  'Argillaceous', 'Clayey texture within a silty, earthy, or sandy matrix',
+          'L',  'Argillaceous', 'Clayey texture within a silty, loamy, or sandy matrix',
           'F',  'Ferrugineous', 'Iron-dominated minerals',
           'M',  'Manganiferous', 'Manganese-dominated minerals',
           'N',  'Ferromanganiferous', 'Dominated by a mix of iron and manganese',
@@ -88,7 +88,7 @@ Lamellae are thin bands of concentrated but uncemented soil materials, formed by
 
 Lamellae may technically qualify as distinct soil horizons. If a single lamella is evident between two contrasting horizons, then it must be described as a separate horizon rather than as a concentration. Where lamellae occur within a larger band of soil material that has consistent composition, they may be described as concentrations (e.g. [LM L 10% 3-5 mm]{.ceg} for a series of thin clay bands observed in a larger sandy layer). For more detailed discussion of lamellae, see @dijkerman1967, @rawling2000, and @bockheim2013.
 
-By contrast, lamina are thin bands of unconsolidated material with contrasting texture that have been emplaced by water, wind, or pyroclastic activity and have yet to be significantly disturbed by profile development. These geogenic layers are primary rather than secondary profile features and are described using terminology from @sec-reg-bed. No minimum or maximum thickness requirements are specified for lamina due to lack of data, but anecdotally they tend to be less than 5 cm thick.
+By contrast, lamina are thin bands of unconsolidated material with contrasting texture that have been emplaced by water, wind, or pyroclastic activity and have yet to be significantly disturbed by profile development. These geogenic layers are not weathering features and are described using terminology from @sec-reg-bed. No minimum or maximum thickness requirements are specified for lamina due to lack of data, but anecdotally they tend to be less than 5 cm thick.
 :::
 
 ## Coatings {#sec-hr-coat}
@@ -133,7 +133,7 @@ tbl_hr_coattype
 
 ## Pans {#sec-pan}
 
-Pans form when particular chemical compounds precipitate out of the soil solution and cement a layer of mineral particles (perhaps as a further accumulation and joining together of coatings and/or concentrations), or when particular particle size distributions and/or shape range become very tightly packed. Many pans are diagnostic in the *New Zealand Soil Classification*, because they can form a barrier to plant root growth or water movement.
+Pans form when particular chemical compounds precipitate out of the soil solution and cement a layer of mineral particles (perhaps as a further accumulation and joining together of coatings and/or concentrations), or when particular particle size distributions and/or shape range become very tightly packed. Many pans are diagnostic in the *New Zealand Soil Classification*, because they can form a barrier to plant root growth or water movement (see also @sec-in-rdpth).
 
 For rapid assessment, record pan type using @tbl-hr-pantype e.g., [X]{.ceg} for a fragipan. Only record pans that are strongly developed enough to be classification-relevant. A classification-relevant pan is one that is developed enough to meet all of the relevant diagnostic requirements listed in the *New Zealand Soil Classification*.
 
@@ -150,7 +150,8 @@ Pans can optionally be described in detail in terms of type, thickness, continui
 dat_hr_pantype <-
   tribble(~Code, ~Name, ~Description, ~Horizon,
           'C', 'Cultivation pan', 'Pan comprising compressed soil, induced by cultivation (e.g. use of heavy farm machinery)', NA,
-          'D', 'Densipan', 'Silty layers with a very high bulk density and extremely slow permeability', 'Ed',
+          'A', 'Argillic pan', 'Pan comprising an accumulation of clay sufficient to affect permeability',  'Btm', 
+          'D', 'Densipan', 'Silty layers with a very high bulk density and slow permeability', 'Ed',
           'H', 'Humus-pan', 'Cemented by aluminium and organic matter. Common in some Podzol Soils; sometimes known as \'coffee rock\'', 'Bhm',
           'F', 'Iron pan', 'Interlocking nodules of Fe(/Mn) precipitates (\'bog iron\'), often at a texture contrast boundary', NA,
           'K', 'Calcareous pan', 'Created by the precipitation of calcium carbonate (CaCO~3~)', '\\*km (B or BC horizons)',

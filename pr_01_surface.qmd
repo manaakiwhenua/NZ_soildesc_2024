@@ -133,8 +133,9 @@ Example: [BE 10%, GR 90%]{.ceg} for a pasture with near-complete ground coverage
 dat_pr_surfcov <-
   tribble(~Code, ~Name, ~Description,
           'BE', 'Earth', 'Bare unconsolidated sediment or soil, < 2 mm', 
-          'BR', 'Fragments', ' Rock fragments, shells, or bones, 2–200 mm',
-          'BO', 'Rock', 'Bare rock outcrop or large rock fragments > 200 mm',
+          'BG', 'Small Fragments', ' Rock fragments, shells, or bones, 2–200 mm',
+          'BB', 'Large fragments', 'Large rock fragments > 200 mm',
+          'BR', 'Rock', 'Bare rock outcrop',
           'WT', 'Water', 'Open water, ice or snow',
           'PT', 'Peat', 'Plant material decomposing under saturated conditions',
           'LI', 'Litter', 'Plant material decomposing under intermittently wet to dry conditions',
@@ -158,7 +159,7 @@ tbl_pr_surfcov <- gt(dat_pr_surfcov) |>
 tbl_pr_surfcov
 ```
 
-[GRAPHIC: Turn the above into a 3x3 grid with labels underneath conceptual diagrams]{.diags}
+[GRAPHIC: Turn the above into a grid with labels underneath conceptual diagrams]{.diags}
 
 ```{r}
 
