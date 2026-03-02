@@ -125,23 +125,7 @@ div.csl-indent {
       <a href="./">Soil Description Handbook</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/manaakiwhenua/NZ_soildesc_2024" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./MWLR_2024_DRAFT_soil-description-handbook.docx">
-              <i class="bi bi-file-word pe-1"></i>
-            Download Docx
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./MWLR_2024_DRAFT_soil-description-handbook.epub">
-              <i class="bi bi-journal pe-1"></i>
-            Download ePub
-            </a>
-          </li>
-      </ul>
-    </div>
+    <a href="./MWLR_2024_DRAFT_soil-description-handbook.docx" title="Download Docx" class="quarto-navigation-tool px-1" aria-label="Download Docx"><i class="bi bi-file-word"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -160,7 +144,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Soil Description Handbook - New Zealand</span></a>
+ <span class="menu-text">Soil Description Handbook for New Zealand</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -287,7 +271,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_04_secondary_features.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Secondary features</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Weathering features</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -393,7 +377,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./changelog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Changes in the new edition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Changes in the third edition</span></span></a>
   </div>
 </li>
       </ul>
@@ -416,7 +400,7 @@ div.csl-indent {
   <li><a href="#sec-erd-horizona" id="toc-sec-erd-horizona" class="nav-link" data-scroll-target="#sec-erd-horizona"><span class="header-section-number">D.6</span> Horizon architecture</a></li>
   <li><a href="#sec-erd-colour" id="toc-sec-erd-colour" class="nav-link" data-scroll-target="#sec-erd-colour"><span class="header-section-number">D.7</span> Horizon colour</a></li>
   <li><a href="#sec-erd-texture" id="toc-sec-erd-texture" class="nav-link" data-scroll-target="#sec-erd-texture"><span class="header-section-number">D.8</span> Horizon texture</a></li>
-  <li><a href="#sec-erd-secf" id="toc-sec-erd-secf" class="nav-link" data-scroll-target="#sec-erd-secf"><span class="header-section-number">D.9</span> Horizon secondary features</a></li>
+  <li><a href="#sec-erd-secf" id="toc-sec-erd-secf" class="nav-link" data-scroll-target="#sec-erd-secf"><span class="header-section-number">D.9</span> Horizon weathering features</a></li>
   <li><a href="#sec-erc-cons" id="toc-sec-erc-cons" class="nav-link" data-scroll-target="#sec-erc-cons"><span class="header-section-number">D.10</span> Horizon consistence tests</a></li>
   <li><a href="#sec-erd-fts" id="toc-sec-erd-fts" class="nav-link" data-scroll-target="#sec-erd-fts"><span class="header-section-number">D.11</span> Field tests</a></li>
   <li><a href="#sec-erd-interp" id="toc-sec-erd-interp" class="nav-link" data-scroll-target="#sec-erd-interp"><span class="header-section-number">D.12</span> Interpretation data</a>
@@ -449,7 +433,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 10, 2026</p>
+      <p class="date-modified">March 2, 2026</p>
     </div>
   </div>
     
@@ -534,6 +518,8 @@ Figure&nbsp;D.1: Overview - conceptual relationships
   landscape }|--|{ provinces : "code comes from"
   landscape }|--|{ landscapes : "code comes from"
   landscape ||--|{ landform : "contains at least one"
+  landscape ||--o{ lscape_struct : "may have some"
+  lscape_struct }|--|{ landscape_structs : "code comes from"
   landscape ||--o{ lscape_landuse : "may have some"
   lscape_landuse }|--|{ landuse_primary : "code comes from"
   lscape_landuse }|--|{ landuse_secondary : "code comes from"
@@ -547,7 +533,6 @@ Figure&nbsp;D.1: Overview - conceptual relationships
   lform_landuse }|--|{ landuse_primary : "code comes from"
   lform_landuse }|--|{ landuse_secondary : "code comes from"
   lform_landuse }|--|{ landuse_tertiary : "code comes from"
-  lform_landuse }|--|{ landuse_impact : "code comes from"
 
 </pre>
 </div>
@@ -574,6 +559,8 @@ Figure&nbsp;D.2: Setting - Overview
   landscape }|--|{ provinces : "code comes from"
   landscape }|--|{ landscapes : "code comes from"
   landscape ||--|{ landform : "contains at least one"
+  landscape ||--o{ lscape_struct : "may have some"
+  lscape_struct }|--|{ landscape_structs : "code comes from"
   landscape ||--o{ lscape_landuse : "may have some"
   lscape_landuse }|--|{ landuse_primary : "code comes from"
   lscape_landuse }|--|{ landuse_secondary : "code comes from"
@@ -587,7 +574,6 @@ Figure&nbsp;D.2: Setting - Overview
   lform_landuse }|--|{ landuse_primary : "code comes from"
   lform_landuse }|--|{ landuse_secondary : "code comes from"
   lform_landuse }|--|{ landuse_tertiary : "code comes from"
-  lform_landuse }|--|{ landuse_impact : "code comes from"
   
   %% data %%
   location {
@@ -623,14 +609,14 @@ Figure&nbsp;D.2: Setting - Overview
   landscape {
     id           id_site PK
     cat          catu_province FK          "Section 4.1"
-    cat          catu_landscape FK         "Section 4.2.1.4"
+    cat          catu_landscape FK         "Section 4.2.1"
     %% landscape relief %%
-    num[0-Inf]   amt_lscape_relief_med_m   "Section 4.2.1.1"
+    num[0-Inf]   amt_lscape_relief_med_m   "Section 4.2.2.1"
     %% landscape slope %%
-    num[0-90]    amt_lscape_slope_med_d    "Section 4.2.1.2"
-    num[0-90]    amt_lscape_slope_min_d    "Section 4.2.1.2"
-    num[0-90]    amt_lscape_slope_max_d    "Section 4.2.1.2"
-    %% not implementing stream channel stuff here %%
+    num[0-90]    amt_lscape_slope_med_d    "Section 4.2.2.2"
+    num[0-90]    amt_lscape_slope_min_d    "Section 4.2.2.2"
+    num[0-90]    amt_lscape_slope_max_d    "Section 4.2.2.2"
+    %% not implementing drainage pattern stuff here %%
   }
 
   provinces {
@@ -645,6 +631,21 @@ Figure&nbsp;D.2: Setting - Overview
     cat          catu_landscape FK         "Table 4.2"
     txt          txt_landscape_name        "Table 4.2"
     txt          txt_landscape_desc        "Table 4.2"
+  }
+  
+  %% data %%
+  lscape_struct {
+    id           id_site PK
+    id           id_landscape PK
+    id           id_lscape_struct PK
+    cat          catu_lscape_struct FK    "Section 4.2.2.4"
+  }
+  
+  landscape_structs {
+    id           id_lscape_struct PK
+    cat          catu_landscape_struct FK         "Table 4.3"
+    txt          txt_landscape_struct_name        "Table 4.3"
+    txt          txt_landscape_struct_desc        "Table 4.3"
   }
   
   %% data %%
@@ -676,7 +677,7 @@ Figure&nbsp;D.2: Setting - Overview
     id           id_landscape PK
     id           id_landform PK
     cat          catu_landform FK                "Section 4.3.1"
-    num[0-100]   amt_landform_p                  "Section 4.1.2.5"
+    num[0-100]   amt_landform_p                  "Section 4.2.2.5"
     %% can only be true for one landform per site/landscape: %%
     bool         ind_landform_contains_site  
     %% (other way is separate tables for site-landform and    %%
@@ -703,9 +704,9 @@ Figure&nbsp;D.2: Setting - Overview
   
   landform_types {
     id           id_landform PK
-    cat          catu_landform FK           "Table 4.3"
-    txt          txt_landform_name          "Table 4.3"
-    txt          txt_landform_desc          "Table 4.3"
+    cat          catu_landform FK           "Table 4.4"
+    txt          txt_landform_name          "Table 4.4"
+    txt          txt_landform_desc          "Table 4.4"
   }
   
   land_cover_types {
@@ -723,22 +724,22 @@ Figure&nbsp;D.2: Setting - Overview
   
   landform_elements {
     id          id_landform_element PK
-    cat         catu_landform_element FK    "Table 4.4"
-    txt         txt_landform_element_name   "Table 4.4"
+    cat         catu_landform_element FK    "Table 4.5"
+    txt         txt_landform_element_name   "Table 4.5"
   }
   
   landform_element_vmods {
     id          id_landform_element_vmod PK
-    cat         catu_landform_element_vmod FK    "Table 4.5"
-    txt         txt_landform_element_vmod_name   "Table 4.5"
-    txt         txt_landform_element_vmod_desc   "Table 4.5"
+    cat         catu_landform_element_vmod FK    "Table 4.6"
+    txt         txt_landform_element_vmod_name   "Table 4.6"
+    txt         txt_landform_element_vmod_desc   "Table 4.6"
   } 
 
   landform_element_hmods {
     id          id_landform_element_hmod PK
-    cat         catu_landform_element_hmod FK    "Table 4.6"
-    txt         txt_landform_element_hmod_name   "Table 4.6"
-    txt         txt_landform_element_hmod_desc   "Table 4.6"
+    cat         catu_landform_element_hmod FK    "Table 4.7"
+    txt         txt_landform_element_hmod_name   "Table 4.7"
+    txt         txt_landform_element_hmod_desc   "Table 4.7"
   } 
 
   %% data %%
@@ -756,13 +757,6 @@ Figure&nbsp;D.2: Setting - Overview
     id           id_landuse_tertiary PK
     cat          catu_landuse_tertiary FK         "Fig. 8.1"
     txt          txt_landuse_tertiary_name        "Fig. 8.1"
-  }
-
-  landuse_impacts {
-    id           id_landuse_impact PK
-    cat          catu_landuse_impact FK         "Table 8.2"
-    txt          txt_landuse_impact_name        "Table 8.2"
-    txt          txt_landuse_impact_desc        "Table 8.2"
   }
 
 </pre>
@@ -1318,9 +1312,10 @@ Figure&nbsp;D.8: Horizon - Overview
   
   lithology {
      id         id_lithology PK
-    cat         catu_lithology FK             
-    txt         txt_lithology_name            
-    txt         txt_lithology_desc            
+    cat         catu_lithology_group FK       "Table 5.1"
+    cat         catu_lithology FK             "Table 5.1"
+    txt         txt_lithology_name            "Table 5.1"
+    txt         txt_lithology_desc            "Table 5.1"
   }
 
   lithology_frac {
@@ -1401,7 +1396,7 @@ Figure&nbsp;D.9: Horizon - Details
   horizon_rock_fragments }|--|{ rock_fragment_roundness : "code comes from"
   horizon_rock_fragments }|--|{ rock_fragment_roughness : "code comes from"
   horizon_rock_fragments }|--|{ rock_fragment_weathering : "code comes from"
-  horizon_rock_fragments }|--|{ rock_fragment_lithology : "code comes from"
+  horizon_rock_fragments }|--|{ lithologies : "code comes from"
   horizon_arch ||--o{ horizon_other_fragments : "may have some"
   horizon_other_fragments }|--|{ other_fragment_types : "code comes from"
   horizon_arch ||--o{ horizon_artefacts : "may have some"
@@ -1417,6 +1412,9 @@ Figure&nbsp;D.9: Horizon - Details
   horizon_arch ||--o{ horizon_voids : "may have some"
   horizon_voids }|--|{ void_types : "code comes from"
   horizon_voids }|--|{ void_conns : "code comes from"
+  horizon_arch }|--|{ bedding_angles : "code comes from"
+  horizon_arch }|--|{ fracture_patterns : "code comes from"
+  horizon_arch }|--|{ fracture_orients : "code comes from"
 
 </pre>
 </div>
@@ -1446,7 +1444,7 @@ Figure&nbsp;D.10: Horizon architecture - Overview
   horizon_rock_fragments }|--|{ rock_fragment_roundnesses : "code comes from"
   horizon_rock_fragments }|--|{ rock_fragment_roughnesses : "code comes from"
   horizon_rock_fragments }|--|{ rock_fragment_weathering : "code comes from"
-  horizon_rock_fragments }|--|{ lithology : "code comes from"
+  horizon_rock_fragments }|--|{ lithologies : "code comes from"
   horizon_arch ||--o{ horizon_other_fragments : "may have some"
   horizon_other_fragments }|--|{ other_fragment_types : "code comes from"
   horizon_arch ||--o{ horizon_artefacts : "may have some"
@@ -1462,6 +1460,9 @@ Figure&nbsp;D.10: Horizon architecture - Overview
   horizon_arch ||--o{ horizon_voids : "may have some"
   horizon_voids }|--|{ void_types : "code comes from"
   horizon_voids }|--|{ void_conns : "code comes from"
+  horizon_arch }|--|{ bedding_angles : "code comes from"
+  horizon_arch }|--|{ fracture_patterns : "code comes from"
+  horizon_arch }|--|{ fracture_orients : "code comes from"
   
   horizon_arch {
     id         id_site PK
@@ -1484,26 +1485,30 @@ Figure&nbsp;D.10: Horizon architecture - Overview
     %% artefacts rapid %%
     num[0-100] amt_artefacts_p                  "Section 13.2.1.2"
     %% roots rapid %%
-    num[0-100] amt_total_roots_p                "Section 13.3.1"
+    num[0-Inf] amt_total_roots_n                "Section 13.3.1"
     cat        catu_total_roots_pos FK          "Section 13.3.2"
     %% void rapid %%
     num[0-100] amt_total_voids_p                "Section 13.4.1"
     %% pores rapid %%
-    num[0-10]  amt_total_pores_p                "Section 13.4.2"
+    bool        ind_pores                        "Section 13.4.2"
     %% pores detailed (could also spin out to subtable) %%
-    num[0-10]  amt_macropores_p                 "Section 13.4.2"
-    num[0-10]  amt_micropores_p                 "Section 13.4.2"
+    num[0-Inf]  amt_macropores_n                 "Section 13.4.2"
+    num[0-Inf]  amt_micropores_n                 "Section 13.4.2"
     %% Substrate features %%
-    num[0-90]  amt_bedding_angle_d              "Section 13.5.1"
-    num[0-Inf] amt_bedding_thickness_med        "Section 13.5.1"
-    num[0-Inf] amt_bedding_thickness_min        "Section 13.5.1"
-    num[0-Inf] amt_bedding_thickness_max        "Section 13.5.1"
+    %% rapid %%
+    cat        cato_bedding_angle               "Section 13.5.3"
+    %% routine %%
+    num[0-90]  amt_bedding_angle_d              "Section 13.5.3"
+    %% detailed %%
+    num[0-Inf] amt_bedding_thickness_med        "Section 13.5.3"
+    num[0-Inf] amt_bedding_thickness_min        "Section 13.5.3"
+    num[0-Inf] amt_bedding_thickness_max        "Section 13.5.3"
     cat        catu_bedding_lithology FK        "Section 5.2"
-    cat        catu_bedding_texture_group FK    "Section 15.1.1"
-    cat        catu_fracture_pattern FK         "Section 13.5.2"
-    num[0-Inf] amt_fracture_spacing_med         "Section 13.5.2"
-    num[0-Inf] amt_fracture_spacing_min         "Section 13.5.2"
-    num[0-Inf] amt_fracture_spacing_max         "Section 13.5.2"
+    cat        catu_fracture_pattern FK         "Section 13.5.4"
+    cat        catu_fracture_orientation FK         "Section 13.5.4"
+    num[0-Inf] amt_fracture_spacing_med         "Section 13.5.4"
+    num[0-Inf] amt_fracture_spacing_min         "Section 13.5.4"
+    num[0-Inf] amt_fracture_spacing_max         "Section 13.5.4"
                   
   }
 
@@ -1597,7 +1602,8 @@ Figure&nbsp;D.10: Horizon architecture - Overview
   }
   
   lithologies {
-    id          id_lithology PK    
+    id          id_lithology PK 
+    cat         catu_lithology_group FK  "Table 5.1"
     cat         catu_lithology FK        "Table 5.1"
     txt         txt_lithology_name       "Table 5.1"
     txt         txt_lithology_desc       "Table 5.1"
@@ -1680,7 +1686,7 @@ Figure&nbsp;D.10: Horizon architecture - Overview
     id         id_root PK
     cat        cato_root_size FK           "Section 13.3.1"
     cat        cato_root_pos FK            "Section 13.3.2"
-    num[0-100] amt_root_p                  "Section 13.3.1"
+    num[0-Inf] amt_root_n                  "Section 13.3.1"
   } 
 
   root_sizes {
@@ -1720,6 +1726,27 @@ Figure&nbsp;D.10: Horizon architecture - Overview
     txt         txt_void_conn_name        "Table 13.17"
     txt         txt_void_conn_desc        "Table 13.17"
   }  
+  
+  bedding_angles {
+    id          id_bedding_angle PK 
+    cat         cato_bedding_angle FK         "Table 13.18"
+    txt         txt_bedding_angle_name        "Table 13.18"
+    txt         txt_bedding_angle_desc        "Table 13.18"
+  } 
+  
+  fracture_patterns {
+    id          id_fracture_pattern PK 
+    cat         catu_fracture_pattern FK         "Table 13.19"
+    txt         txt_fracture_pattern_name        "Table 13.19"
+    txt         txt_fracture_pattern_desc        "Table 13.19"
+  }   
+  
+  fracture_orients {
+    id          id_fracture_orient PK 
+    cat         catu_fracture_orient FK         "Table 13.20"
+    txt         txt_fracture_orient_name        "Table 13.20"
+    txt         txt_fracture_orient_desc        "Table 13.20"
+  }   
   
 </pre>
 </div>
@@ -2002,6 +2029,7 @@ Figure&nbsp;D.14: Horizon texture - Overview
   
   lithologies {
     id          id_lithology PK    
+    cat         catu_lithology_group FK  "Table 5.1"
     cat         catu_lithology FK        "Table 5.1"
     txt         txt_lithology_name       "Table 5.1"
     txt         txt_lithology_desc       "Table 5.1"
@@ -2026,8 +2054,8 @@ Figure&nbsp;D.15: Horizon texture - Details
 </div>
 </section>
 <section id="sec-erd-secf" class="level2" data-number="D.9">
-<h2 data-number="D.9" class="anchored" data-anchor-id="sec-erd-secf"><span class="header-section-number">D.9</span> Horizon secondary features</h2>
-<p>The secondary features tables store essential information in a parent table and more detailed optional descriptions in child tables. The parent table can optionally extend the horizon overview table (<a href="#sec-erd-horizono" class="quarto-xref"><span>Section D.5</span></a>) as it has a 1:1 relationship.</p>
+<h2 data-number="D.9" class="anchored" data-anchor-id="sec-erd-secf"><span class="header-section-number">D.9</span> Horizon weathering features</h2>
+<p>The weathering features tables store essential information in a parent table and more detailed optional descriptions in child tables. The parent table can optionally extend the horizon overview table (<a href="#sec-erd-horizono" class="quarto-xref"><span>Section D.5</span></a>) as it has a 1:1 relationship.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div id="fig-mhorseco" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2036,23 +2064,23 @@ Figure&nbsp;D.15: Horizon texture - Details
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-mhorseco">erDiagram
   direction LR
-  horizon_secondary_features ||--o{ "horizon_concentrations" : "may have some"
+  horizon_weathering_features ||--o{ "horizon_concentrations" : "may have some"
   horizon_concentrations }|--|{ concentration_forms : "code comes from"
   horizon_concentrations }|--|{ concentration_types : "code comes from"
-  horizon_secondary_features ||--o{ "horizon_coatings" : "may have some"
+  horizon_weathering_features ||--o{ "horizon_coatings" : "may have some"
   horizon_coatings }|--|{ coating_types : "code comes from"
-  horizon_secondary_features }|--|{ concentration_forms : "code comes from"
-  horizon_secondary_features }|--|{ concentration_types : "code comes from"
-  horizon_secondary_features }|--|{ pan_types : "code comes from"
-  horizon_secondary_features }|--|{ pan_continuities : "code comes from"
-  horizon_secondary_features }|--|{ pan_structures : "code comes from"
-  horizon_secondary_features }|--|{ stress_types : "code comes from"
+  horizon_weathering_features }|--|{ concentration_forms : "code comes from"
+  horizon_weathering_features }|--|{ concentration_types : "code comes from"
+  horizon_weathering_features }|--|{ pan_types : "code comes from"
+  horizon_weathering_features }|--|{ pan_continuities : "code comes from"
+  horizon_weathering_features }|--|{ pan_structures : "code comes from"
+  horizon_weathering_features }|--|{ stress_types : "code comes from"
 
 </pre>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mhorseco-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;D.16: Horizon secondary features - Overview
+Figure&nbsp;D.16: Horizon weathering features - Overview
 </figcaption>
 </figure>
 </div>
@@ -2066,20 +2094,20 @@ Figure&nbsp;D.16: Horizon secondary features - Overview
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-mhorsecd">erDiagram
   direction LR
-  horizon_secondary_features ||--o{ "horizon_concentrations" : "may have some"
+  horizon_weathering_features ||--o{ "horizon_concentrations" : "may have some"
   horizon_concentrations }|--|{ concentration_forms : "code comes from"
   horizon_concentrations }|--|{ concentration_types : "code comes from"
-  horizon_secondary_features ||--o{ "horizon_coatings" : "may have some"
+  horizon_weathering_features ||--o{ "horizon_coatings" : "may have some"
   horizon_coatings }|--|{ coating_types : "code comes from"
-  horizon_secondary_features }|--|{ concentration_forms : "code comes from"
-  horizon_secondary_features }|--|{ concentration_types : "code comes from"
-  horizon_secondary_features }|--|{ pan_types : "code comes from"
-  horizon_secondary_features }|--|{ pan_continuities : "code comes from"
-  horizon_secondary_features }|--|{ pan_structures : "code comes from"
-  horizon_secondary_features }|--|{ stress_types : "code comes from"
+  horizon_weathering_features }|--|{ concentration_forms : "code comes from"
+  horizon_weathering_features }|--|{ concentration_types : "code comes from"
+  horizon_weathering_features }|--|{ pan_types : "code comes from"
+  horizon_weathering_features }|--|{ pan_continuities : "code comes from"
+  horizon_weathering_features }|--|{ pan_structures : "code comes from"
+  horizon_weathering_features }|--|{ stress_types : "code comes from"
   
   %% data %%
-  horizon_secondary_features {
+  horizon_weathering_features {
     id          id_site PK
     id          id_horizon PK
     %% concentrations_rapid %%  
@@ -2840,23 +2868,23 @@ Table&nbsp;D.1: Data record type
 </figcaption>
 <div aria-describedby="tbl-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="bdwxnkapvn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bdwxnkapvn table {
+<div id="zbpxznxpxg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zbpxznxpxg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bdwxnkapvn thead, #bdwxnkapvn tbody, #bdwxnkapvn tfoot, #bdwxnkapvn tr, #bdwxnkapvn td, #bdwxnkapvn th {
+#zbpxznxpxg thead, #zbpxznxpxg tbody, #zbpxznxpxg tfoot, #zbpxznxpxg tr, #zbpxznxpxg td, #zbpxznxpxg th {
   border-style: none;
 }
 
-#bdwxnkapvn p {
+#zbpxznxpxg p {
   margin: 0;
   padding: 0;
 }
 
-#bdwxnkapvn .gt_table {
+#zbpxznxpxg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2882,12 +2910,12 @@ Table&nbsp;D.1: Data record type
   border-left-color: #D3D3D3;
 }
 
-#bdwxnkapvn .gt_caption {
+#zbpxznxpxg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bdwxnkapvn .gt_title {
+#zbpxznxpxg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2899,7 +2927,7 @@ Table&nbsp;D.1: Data record type
   border-bottom-width: 0;
 }
 
-#bdwxnkapvn .gt_subtitle {
+#zbpxznxpxg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2911,7 +2939,7 @@ Table&nbsp;D.1: Data record type
   border-top-width: 0;
 }
 
-#bdwxnkapvn .gt_heading {
+#zbpxznxpxg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2923,13 +2951,13 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#bdwxnkapvn .gt_bottom_border {
+#zbpxznxpxg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bdwxnkapvn .gt_col_headings {
+#zbpxznxpxg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2944,7 +2972,7 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#bdwxnkapvn .gt_col_heading {
+#zbpxznxpxg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2964,7 +2992,7 @@ Table&nbsp;D.1: Data record type
   overflow-x: hidden;
 }
 
-#bdwxnkapvn .gt_column_spanner_outer {
+#zbpxznxpxg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2976,15 +3004,15 @@ Table&nbsp;D.1: Data record type
   padding-right: 4px;
 }
 
-#bdwxnkapvn .gt_column_spanner_outer:first-child {
+#zbpxznxpxg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bdwxnkapvn .gt_column_spanner_outer:last-child {
+#zbpxznxpxg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bdwxnkapvn .gt_column_spanner {
+#zbpxznxpxg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2996,11 +3024,11 @@ Table&nbsp;D.1: Data record type
   width: 100%;
 }
 
-#bdwxnkapvn .gt_spanner_row {
+#zbpxznxpxg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bdwxnkapvn .gt_group_heading {
+#zbpxznxpxg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3026,7 +3054,7 @@ Table&nbsp;D.1: Data record type
   text-align: left;
 }
 
-#bdwxnkapvn .gt_empty_group_heading {
+#zbpxznxpxg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3041,15 +3069,15 @@ Table&nbsp;D.1: Data record type
   vertical-align: middle;
 }
 
-#bdwxnkapvn .gt_from_md > :first-child {
+#zbpxznxpxg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bdwxnkapvn .gt_from_md > :last-child {
+#zbpxznxpxg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bdwxnkapvn .gt_row {
+#zbpxznxpxg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3068,7 +3096,7 @@ Table&nbsp;D.1: Data record type
   overflow-x: hidden;
 }
 
-#bdwxnkapvn .gt_stub {
+#zbpxznxpxg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3081,7 +3109,7 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#bdwxnkapvn .gt_stub_row_group {
+#zbpxznxpxg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3095,15 +3123,15 @@ Table&nbsp;D.1: Data record type
   vertical-align: top;
 }
 
-#bdwxnkapvn .gt_row_group_first td {
+#zbpxznxpxg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bdwxnkapvn .gt_row_group_first th {
+#zbpxznxpxg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bdwxnkapvn .gt_summary_row {
+#zbpxznxpxg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3113,16 +3141,16 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#bdwxnkapvn .gt_first_summary_row {
+#zbpxznxpxg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bdwxnkapvn .gt_first_summary_row.thick {
+#zbpxznxpxg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bdwxnkapvn .gt_last_summary_row {
+#zbpxznxpxg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3132,7 +3160,7 @@ Table&nbsp;D.1: Data record type
   border-bottom-color: #D3D3D3;
 }
 
-#bdwxnkapvn .gt_grand_summary_row {
+#zbpxznxpxg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3142,7 +3170,7 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#bdwxnkapvn .gt_first_grand_summary_row {
+#zbpxznxpxg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3152,7 +3180,7 @@ Table&nbsp;D.1: Data record type
   border-top-color: #D3D3D3;
 }
 
-#bdwxnkapvn .gt_last_grand_summary_row_top {
+#zbpxznxpxg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3162,11 +3190,11 @@ Table&nbsp;D.1: Data record type
   border-bottom-color: #D3D3D3;
 }
 
-#bdwxnkapvn .gt_striped {
+#zbpxznxpxg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bdwxnkapvn .gt_table_body {
+#zbpxznxpxg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3175,7 +3203,7 @@ Table&nbsp;D.1: Data record type
   border-bottom-color: #D3D3D3;
 }
 
-#bdwxnkapvn .gt_footnotes {
+#zbpxznxpxg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3189,7 +3217,7 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#bdwxnkapvn .gt_footnote {
+#zbpxznxpxg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3198,7 +3226,7 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#bdwxnkapvn .gt_sourcenotes {
+#zbpxznxpxg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3212,7 +3240,7 @@ Table&nbsp;D.1: Data record type
   border-right-color: #D3D3D3;
 }
 
-#bdwxnkapvn .gt_sourcenote {
+#zbpxznxpxg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3220,72 +3248,72 @@ Table&nbsp;D.1: Data record type
   padding-right: 5px;
 }
 
-#bdwxnkapvn .gt_left {
+#zbpxznxpxg .gt_left {
   text-align: left;
 }
 
-#bdwxnkapvn .gt_center {
+#zbpxznxpxg .gt_center {
   text-align: center;
 }
 
-#bdwxnkapvn .gt_right {
+#zbpxznxpxg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bdwxnkapvn .gt_font_normal {
+#zbpxznxpxg .gt_font_normal {
   font-weight: normal;
 }
 
-#bdwxnkapvn .gt_font_bold {
+#zbpxznxpxg .gt_font_bold {
   font-weight: bold;
 }
 
-#bdwxnkapvn .gt_font_italic {
+#zbpxznxpxg .gt_font_italic {
   font-style: italic;
 }
 
-#bdwxnkapvn .gt_super {
+#zbpxznxpxg .gt_super {
   font-size: 65%;
 }
 
-#bdwxnkapvn .gt_footnote_marks {
+#zbpxznxpxg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bdwxnkapvn .gt_asterisk {
+#zbpxznxpxg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bdwxnkapvn .gt_indent_1 {
+#zbpxznxpxg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bdwxnkapvn .gt_indent_2 {
+#zbpxznxpxg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bdwxnkapvn .gt_indent_3 {
+#zbpxznxpxg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bdwxnkapvn .gt_indent_4 {
+#zbpxznxpxg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bdwxnkapvn .gt_indent_5 {
+#zbpxznxpxg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bdwxnkapvn .katex-display {
+#zbpxznxpxg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bdwxnkapvn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zbpxznxpxg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
