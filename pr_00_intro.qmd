@@ -163,11 +163,11 @@ The method by which the soil was exposed for observation affects which parameter
 
 dat_pr_gear <-
   tribble(~Code, ~Name, ~Description,
-          'P1', 'Standard pit', 'Pit or trench > 1 m wide, exposing the complete profile to regolith or bedrock',
+          'P1', 'Standard pit', 'Pit or trench >1 m wide, exposing the complete profile to regolith or bedrock',
           'P2', 'Minimal pit', 'Pit up to 0.5 m wide and generally no deeper than 1m',
            'E', 'Exposure', 'Road cutting or similar, chipped back and cleaned',
-          'C1', 'Large Core', 'Relatively undisturbed soil core, ≥ 30 mm diameter',
-          'C2', 'Small Core', 'Relatively undisturbed soil core, < 30 mm diameter',
+          'C1', 'Large Core', 'Relatively undisturbed soil core, ≥30 mm diameter',
+          'C2', 'Small Core', 'Relatively undisturbed soil core, <30 mm diameter',
            'A', 'Auger', 'Hand or mechanical auger, including e.g. post hole diggers')
 
 tbl_pr_gear <- gt(dat_pr_gear) |>
@@ -242,7 +242,7 @@ The following requirements comprise a minimum dataset for any soil profile descr
 
 Location coordinates are captured as reference data (@sec-ref-loc). Additionally, record elevation in meters, and note the sensor or data source used to obtain location and elevation data using @tbl-ss-locsrc and @tbl-ss-elevsrc respectively. If the equipment in use does not estimate expected error automatically, estimate it manually.
 
-E.g., [1586090E, 5405722N ± 3 GS (462 ± 5 m A)]{.ceg} for a location obtained using a smartphone, and an elevation measured with a calibrated altimeter.
+E.g., [1586090E, 5405722N ± 3 GS (462 ± 5 m A)]{.ceg} for a location obtained using a smartphone, and an elevation measured with a calibrated altimeter.
 
 When establishing a monitoring site, record additional data relevant to relocating the site during future visits as described in @sec-loc-rel.
 

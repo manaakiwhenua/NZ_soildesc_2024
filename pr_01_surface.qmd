@@ -51,7 +51,7 @@ tbl_pr_slpmth
 
 Aspect is the direction a slope faces. Slope aspect helps determine exposure to sun, rain and prevailing winds, and so influences the biome growing in a particular soil. In some environments it also helps determine how much new material is received by deposition.
 
-Aspect should be measured at the same time and over the same transect as slope. Record aspect in whole degrees clockwise from north, using the range \[0-359°\] (360° = 0°). Use [ND]{.ceg} for flat ground (see @nte-flatwhat). Use [NR]{.ceg} if no measurement was taken. Aspect classes may be applied to the recorded data; some options are presented in @sec-aspectclass.
+Aspect should be measured at the same time and over the same transect as slope. Record aspect in whole degrees clockwise from north, using the range \[0–359°\] (360° = 0°). Use [ND]{.ceg} for flat ground (see @nte-flatwhat). Use [NR]{.ceg} if no measurement was taken. Aspect classes may be applied to the recorded data; some options are presented in @sec-aspectclass.
 
 Record the equipment used to measure aspect using @tbl-pr-aspmth.
 
@@ -88,14 +88,14 @@ delete me
 :::
 
 ::: {#nte-flatwhat .callout-note appearance="minimal" collapse="true" title="Defining 'flat' in soil survey"}
-Truly flat land is extremely rare over distances of more than a few meters. The cutoff slope value for *effective* flatness is not always provided in soil description standards (e.g. @schoeneberger2012) and is not consistent when it is, e.g.
+Truly flat land is extremely rare over distances of more than a few meters. The cutoff slope value for *effective* flatness is not always provided in soil description standards (e.g. @soilsurveystaffFieldBookDescribing2024) and is not consistent when it is, e.g.
 
 -   0.58° (\~1%) for level ground in @ncst2024
 -   2.86° (5%) in @hurst2022
 
 The slope measurement method in use can restrict the recordable limit of flat land. For instance, a hand-held clinometer may be difficult to use consistently and accurately at slopes of less than 3°, whereas survey-grade equipment (e.g. a tripod-mounted laser level) will have a higher accuracy.
 
-Slope calculated from a DEM also has inherent limitations. For example, a DEM with a cell size of 20 m and a vertical resolution of 0.5 m cannot discriminate slope increments of less than \~1.43° ($tan^{-1}(0.5/20)$).
+Slope calculated from a DEM also has inherent limitations. For example, a DEM with a cell size of 20 m and a vertical resolution of 0.5 m cannot discriminate slope increments of less than \~1.43° ($tan^{-1}(0.5/20)$).
 
 For site-scale aspect measurement, a flatness threshold of 1° (1.75%) is acceptable. This equates to a \~35 cm fall over 20 m.
 :::
@@ -132,9 +132,9 @@ Example: [BE 10%, GR 90%]{.ceg} for a pasture with near-complete ground coverage
 
 dat_pr_surfcov <-
   tribble(~Code, ~Name, ~Description,
-          'BE', 'Earth', 'Bare unconsolidated sediment or soil, < 2 mm', 
+          'BE', 'Earth', 'Bare unconsolidated sediment or soil, <2 mm', 
           'BG', 'Small Fragments', ' Rock fragments, shells, or bones, 2–200 mm',
-          'BB', 'Large fragments', 'Large rock fragments > 200 mm',
+          'BB', 'Large fragments', 'Large rock fragments >200 mm',
           'BR', 'Rock', 'Bare rock outcrop',
           'WT', 'Water', 'Open water, ice or snow',
           'PT', 'Peat', 'Plant material decomposing under saturated conditions',

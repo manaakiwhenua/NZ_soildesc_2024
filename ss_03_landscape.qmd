@@ -52,14 +52,15 @@ Few controlled vocabularies for landscapes exist. The schema given in @tbl-gmph-
 dat_gmph_lsnames <-
   tribble(~Code, ~Name, ~Description, ~Synonyms,
           'Mt', 'Mountains', 'Steep to very steep, high relief (>300 m), fixed and well connected drainage pattern with high stream power, often deeply incised', 'Alps, Mountain country',
-          'Hi', 'Hills', 'Gentle to very steep, moderately high to high relief (90-300 m), fixed and well connected drainage pattern with high to moderate stream power, shallow to deeply incised', 'Hillscapes, hill country, hilly land',
-          'Vo', 'Volcanoes', 'Moderate to very steep, usually high relief, often with a radial drainage pattern with high to moderate stream power that has been interrupted by past eruptive events', '',
-          'Up', 'Uplands', 'Gentle to very steep, low relief (30-90 m) but relatively high elevation, fixed and well connected drainage pattern with low stream power, shallow valleys and plateaus, located among hills and mountains', 'Piedmont',
-          'Ll', 'Lowlands', 'Gentle to very steep, low relief (30-90 m) and elevation, someties loess-covered, fixed and well connected drainage pattern with low stream power, shallow to deep', 'Downlands',
-          'Vl', 'Volcanic lowlands', 'Level to gentle, sometimes highly uneven or hummocky surfaces created by lava flows, lahars and debris avalanches, often blanketed in airfall tephra. Drainage pattern has variable stream power and may be discontinuous or even absent', 'Moundplains, ringplains', 
+          'Hi', 'Hills', 'Gentle to very steep, moderately high to high relief (90–300 m), fixed and well connected drainage pattern with high to moderate stream power, shallow to deeply incised', 'Hillscapes, hill country, hilly land',
+          'Vo', 'Volcanoes', 'Moderate to very steep, usually high relief (>150 m), often with a radial drainage pattern with high to moderate stream power that has been interrupted by past eruptive events', '',
+          'Up', 'Uplands', 'Gentle to very steep, low relief (30–90 m) but relatively high elevation, fixed and well connected drainage pattern with low stream power, shallow valleys and plateaus, located among hills and mountains', 'Piedmont',
+          'Ll', 'Lowlands', 'Gentle to very steep, low relief (30–90 m) and elevation, sometimes loess-covered, fixed and well connected drainage pattern with low stream power, shallow to deep', 'Downlands',
+          'Vl', 'Volcanic lowlands', 'Level to gentle, very low relief (9–30 m), sometimes highly uneven or hummocky surfaces created by eruptions, lahars and debris avalanches, often blanketed in airfall tephra. Drainage pattern has variable stream power and may be discontinuous or even absent', 'Moundplains, ringplains, scoria fields', 
           'Te', 'Terraces', 'Former plains, uplifted and sometimes loess-covered. Flat to gently undulating upper surfaces bounded by distinctive drop-offs on their downhill end, often backing on to lowlands, hills or mountains at their uphill end. Variably developed drainage pattern with low to moderate stream power, often strongly controlled by underlying geology', 'Marine benches',
-          'Pl', 'Plains', 'Level to very gentle surfaces created by fluvial and/or aeolian deposition. Active, migrating drainage pattern with shallow to deep channels and variable stream power, subject to flooding', 'Floodplains',
-          'Sc', 'Sand country', 'Extensive dune and sandplain areas. Low relief and elevation, gentle to steep slopes, and active drainage pattern of variable power, often with interrupted connectivity', 'Dunefields',
+          'Ri', 'Rises' , 'Very gentle to steep, very low relief (9–30 m) and elevation, sometimes loess-covered, variable drainage pattern with low to moderate stream power', '',
+          'Pl', 'Plains', 'Level to very gentle surfaces with very low relief (<9 m) created by fluvial and/or aeolian deposition. Active, migrating drainage pattern with shallow to deep channels and variable stream power, subject to flooding', 'Floodplains',
+          'Sc', 'Sand country', 'Extensive dune and sandplain areas. Low to moderate relief (9–90 m) and elevation, gentle to steep slopes, and active drainage pattern of variable power, often with interrupted connectivity', 'Dunefields',
           'Cs', 'Coasts', 'On- and near-shore environments created by the interaction of the ocean with the land, including beaches, deltas, lagoons and estuaries. Drainage pattern active and subject to tidal influence', 'Coastlines'
           )
 
@@ -105,7 +106,7 @@ Some landscapes may have two or more distinct characteristic slopes, e.g. the fr
 
 #### Drainage pattern {#sec-gmph-lscchn}
 
-Natural drainage patterns are relevant to understanding landscape development, but are best observed remotely. They do not need to be recorded in the field. If desired, assess the landscape drainage pattern using available data sources and define it using the attributes given in [-@ncst2024, p. 38-41].
+Natural drainage patterns are relevant to understanding landscape development, but are best observed remotely. They do not need to be recorded in the field. If desired, assess the landscape drainage pattern using available data sources and define it using the attributes given in @ncst2024 [p. 38-41].
 
 #### Structural controls {#sec-gmph-lscst}
 
@@ -248,7 +249,7 @@ Orientation is the characteristic aspect of the major part of the landform. For 
 
 #### Landform element {#sec-gmph-lfmelem}
 
-The following is adapted from [-@ncst2024, pp. 19-25].
+The following is adapted from @ncst2024.
 
 A landform element is the simplest component of a landform, and some landforms are made up of only one element. Landform elements are first assigned to a morphological type - one of a series of simple shapes - at the scale of observation. These are given in @tbl-gmph-elnames below. Each morphological type extends to a break of slope or point of 0-curvature.
 
@@ -258,7 +259,7 @@ A landform element is the simplest component of a landform, and some landforms a
 
 dat_gmph_elnames <-
   tribble(~Code, ~Name, ~Description,
-          'Cr', 'Crest', 'A local high area',
+          'Cr', 'Crest', 'A locally high area',
           'Ri', 'Ridge', 'A linear high area', 
           'Sl', 'Slope', 'A sloping area',
           'Fl', 'Flat', 'A non-sloping area',

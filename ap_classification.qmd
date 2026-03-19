@@ -8,7 +8,7 @@ library(gt)
 
 ## Setting and site {#sec-in-setting}
 
-Many of the parameters described in Soil Setting are inherently categorical. Classifying the numeric measurements as well can be useful for efficient communication. However, in the absence of inherent groupings in these data, class boundaries need to be chosen carefully. 
+Many of the parameters described in Soil Setting are inherently categorical. Classifying the numeric measurements as well can be useful for efficient communication. However, in the absence of inherent groupings in these data, class boundaries need to be chosen carefully.
 
 ### Slope classification {#sec-slopeclass}
 
@@ -26,13 +26,13 @@ The class boundaries are reproduced from Table 26 of the LUC Handbook in @tbl-i
 
 dat_in_slpluc <-
   tribble(~Code,   ~Limits, 
-            'A',   '0 - 3', 
-            'B',   '4 - 7',
-            'C',  '8 - 15', 
-            'D', '16 - 20',
-            'E', '21 - 25', 
-            'F', '26 - 35', 
-            'G',    '> 35')
+            'A',   '0–3', 
+            'B',   '4–7',
+            'C',  '8–15', 
+            'D', '16–20',
+            'E', '21–25', 
+            'F', '26–35', 
+            'G',   '>35')
 
 tbl_in_slpluc <- gt(dat_in_slpluc) |>
    tab_options(
@@ -63,7 +63,7 @@ delete me
 :::
 
 ::: {#tip-slplim .callout-tip appearance="simple" collapse="true" title="LUC slope limits"}
-Note that the LUC Handbook does not provide fully closed limits for slope classes. For consistency, slope class A should be considered to be 0 - ≤4, B as \>4 - ≤8, etc.
+Note that the LUC Handbook does not provide fully closed limits for slope classes. For consistency, slope class A should be considered to be 0–≤4, B as \>4–≤8, etc.
 :::
 
 #### Natural Log classifications {#sec-slopeclass-log}
@@ -75,15 +75,15 @@ Work by @speight1971 promotes the use of slope classes with natural-log derived 
 #| tbl-cap: "Natural-log Slope Classes"
 
 dat_in_slpaus <-
-  tribble(~Code,         ~Name,      ~Limits_p,           ~Limits_d, 
-           'LE',       'Level',       '0 - ≤ 1',       '0 - ≤ 0.57',
-           'VG', 'Very Gentle',     '> 1 - ≤ 3',  '> 0.57 - ≤ 1.72',
-           'GE',      'Gentle',    '> 3 - ≤ 10',  '> 1.72 - ≤ 5.71', 
-           'MO',    'Moderate',   '> 10 - ≤ 32',  '> 5.71 - ≤ 17.7',
-           'ST',       'Steep',   '> 32 - ≤ 56', '> 17.7 - ≤ 29.25',
-           'VS',  'Very Steep',  '> 56 - ≤ 100',   '> 29.25 - ≤ 45',
-           'PR', 'Precipitous', '> 100 - ≤ 300',    '> 45 - ≤ 71.6',
-           'CL',     'Cliffed',         '> 300',           '> 71.6')
+  tribble(~Code,         ~Name,      ~Limits_p,       ~Limits_d, 
+           'LE',       'Level',         '0–≤1',       '0–≤0.57',
+           'VG', 'Very Gentle',        '>1–≤3',   '>0.57–≤1.72',
+           'GE',      'Gentle',       '>3–≤10',   '>1.72–≤5.71', 
+           'MO',    'Moderate',      '>10–≤32',  '>5.71–≤17.70',
+           'ST',       'Steep',      '>32–≤56', '>17.70–≤29.25',
+           'VS',  'Very Steep',     '>56–≤100', '>29.25–≤45.00',
+           'PR', 'Precipitous',    '>100–≤300', '>45.00–≤71.60',
+           'CL',     'Cliffed',         '>300',        '>71.60')
 
 tbl_in_slpaus <- gt(dat_in_slpaus) |>
    tab_options(
@@ -121,16 +121,16 @@ The following classification was offered by the UN-FAO *Guidelines for Soil Desc
 
 dat_in_slpfao <-
   tribble(~Code,                 ~Name,       ~Limits_p,         ~Limits_d, 
-           '01',                'Flat',     '0 - ≤ 0.2',      '0 - ≤ 0.11',
-           '02',               'Level', '> 0.2 - ≤ 0.5', '> 0.11 - ≤ 0.29',
-           '03',        'Nearly level', '> 0.5 - ≤ 1.0', '> 0.29 - ≤ 0.57', 
-           '04', 'Very gently sloping', '> 1.0 - ≤ 2.0', '> 0.57 - ≤ 1.15',
-           '05',      'Gently sloping',     '> 2 - ≤ 5', '> 1.15 - ≤ 2.86',
-           '06',             'Sloping',    '> 5 - ≤ 10', '> 2.86 - ≤ 5.71',
-           '07',    'Strongly sloping',   '> 10 - ≤ 15', '> 5.71 - ≤ 8.53',
-           '08',    'Moderately steep',   '> 15 - ≤ 30', '> 8.53 - ≤ 16.7',
-           '09',               'Steep',   '> 30 - ≤ 60', '> 16.7 - ≤ 31.0',
-           '10',          'Very steep',          '> 60',         '> 31.0')
+           '01',                'Flat',        '0–≤0.2',      '0.00–≤0.11',
+           '02',               'Level',     '>0.2–≤0.5',     '>0.11–≤0.29',
+           '03',        'Nearly level',     '>0.5–≤1.0',     '>0.29–≤0.57', 
+           '04', 'Very gently sloping',     '>1.0–≤2.0',     '>0.57–≤1.15',
+           '05',      'Gently sloping',         '>2–≤5',     '>1.15–≤2.86',
+           '06',             'Sloping',        '>5–≤10',     '>2.86–≤5.71',
+           '07',    'Strongly sloping',       '>10–≤15',     '>5.71–≤8.53',
+           '08',    'Moderately steep',       '>15–≤30',    '>8.53–≤16.70',
+           '09',               'Steep',       '>30–≤60',   '>16.70–≤31.00',
+           '10',          'Very steep',           '>60',          '>31.00')
 
 tbl_in_slpfao <- gt(dat_in_slpfao) |>
    tab_options(
@@ -173,13 +173,13 @@ Relief classifications are scale-dependant; these are calculated by convention o
 #| tbl-cap: "Relief classification"
 
 dat_in_relief <-
-  tribble(~Code,           ~Name,          ~Rng_m, ~avg_m,       
-            'P', 'Extremely low',           '≤ 9',   '~5', 
-            'R',      'Very Low',    '> 9 - ≤ 30',  '~15', 
-            'L',           'Low',   '> 30 - ≤ 90',  '~60',
-            'M',      'Moderate',  '> 90 - ≤ 150', '~120',
-            'H',          'High', '> 150 - ≤ 300', '~200',
-            'V',     'Very High',         '> 300', '~500')
+  tribble(~Code,           ~Name,      ~Rng_m, ~avg_m,       
+            'P', 'Extremely low',        '≤9',   '~5', 
+            'R',      'Very Low',    '>9–≤30',  '~15', 
+            'L',           'Low',   '>30–≤90',  '~60',
+            'M',      'Moderate',  '>90–≤150', '~120',
+            'H',          'High', '>150–≤300', '~200',
+            'V',     'Very High',      '>300', '~500')
 
 tbl_in_relief <- gt(dat_in_relief) |>
    tab_options(
@@ -201,7 +201,7 @@ tbl_in_relief
 
 ## Profile
 
-Classifying numeric profile data may be done for cross-compatibility with older data, or for summarised communiations. 
+Classifying numeric profile data may be done for cross-compatibility with older data, or for summarised communiations.
 
 ```{r}
 library(dplyr)
@@ -220,16 +220,16 @@ The following size classification may be applied to size data gathered for peds 
 #| tbl-cap: "Size classification for soil materials"
 
 dat_in_size <-
-  tribble(~Code, ~Name, ~Description,
-          1, 'Microfine', '< 1',
-          2, 'Extremely fine', '1 - 2',
-          3, 'Very fine', '2 - 6',
-          4, 'Fine', '6 - 10',
-          5, 'Medium', '10 - 20',
-          6, 'Coarse', '20 - 60',
-          7, 'Very Coarse', '60 - 100',
-          8, 'Extremely coarse', '100 - 200',
-          9, 'Gross', '> 200'
+  tribble(~Code,              ~Name, ~Description,
+              1,        'Microfine',         '<1',
+              2,   'Extremely fine',        '1–2',
+              3,        'Very fine',        '2–6',
+              4,             'Fine',       '6–10',
+              5,           'Medium',      '10–20',
+              6,           'Coarse',      '20–60',
+              7,      'Very Coarse',     '60–100',
+              8, 'Extremely coarse',    '100–200',
+              9,            'Gross',       '>200'
   )
 
 tbl_in_size <- gt(dat_in_size) |>
@@ -259,14 +259,14 @@ The following classification may be applied to directly measured size data for r
 #| tbl-cap: "Rock fragment size classes"
 
 dat_in_rockfrsz <-
-  tribble(~Code, ~Name, ~Description,
-         1, 'Fine gravel',    '2 - 6',
-         2, 'Medium gravel',  '6 - 20',
-         3, 'Coarse gravel',  '20 - 60',
-         4, 'Cobbles',        '60 - 200',
-         5, 'Stones',         '200 - 600',
-         6, 'Boulders',       '600 - 2000', 
-         7, 'Large boulders', '>2000') 
+  tribble(~Code,           ~Name, ~Description,
+              1,   'Fine gravel',        '2–6',
+              2, 'Medium gravel',       '6–20',
+              3, 'Coarse gravel',      '20–60',
+              4,       'Cobbles',     '60–200',
+              5,        'Stones',    '200–600',
+              6,      'Boulders',   '600–2000', 
+              7,'Large boulders',      '>2000') 
 
 tbl_in_rockfrsz <- gt(dat_in_rockfrsz) |>
   tab_options(
@@ -337,12 +337,12 @@ tbl_hr_rtab
 dat_in_abgen <-
   tribble(~Code,      ~Name,  ~Description,
               0,     'None',          '0%',
-              1, 'Very Few',    '> 0 - 2%',
-              2,      'Few',    '> 2 - 10',
-              3,   'Common',  '> 10 - 35%',
-              4,     'Many',  '> 35 - 50%',
-              5, 'Abundant',  '> 50 - 75%',
-              6,  'Dominant',      '> 75%' )
+              1, 'Very Few',       '>0–2%',
+              2,      'Few',       '>2–10',
+              3,   'Common',     '>10–35%',
+              4,     'Many',     '>35–50%',
+              5, 'Abundant',     '>50–75%',
+              6,  'Dominant',       '>75%' )
 
 tbl_in_abgen <- gt(dat_in_abgen) |>
   tab_options(
