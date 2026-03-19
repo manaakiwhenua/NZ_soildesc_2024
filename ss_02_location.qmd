@@ -132,12 +132,12 @@ Parts of New Zealand still lack highly accurate elevation data. Recording the el
 #| tbl-cap: "Elevation data sources"
 
 dat_ss_elevsrc <-
-  tribble(~Code, ~Name,
-          'D', 'Extracted from high-accuracy Digital Terrain Model (DTM) e.g. Lidar-based',
-          'G', 'Measured using a GNSS system with an adequate 3D fix',
-          'M', 'Extracted from a low-accuracy DTM',
-          'A', 'Measured by a calibrated altimeter',
-          'E', 'Estimated'
+  tribble(~Code, ~Name, ~Description,
+          'D', 'DTM',       'Extracted from high-accuracy Digital Terrain Model (DTM) e.g. Lidar-based',
+          'G', 'GPS',       'Measured using a GNSS system with an adequate 3D fix',
+          'M', 'Map',       'Extracted from a low-accuracy DTM',
+          'A', 'Altimeter', 'Measured by a calibrated altimeter',
+          'E', 'Estimated', 'Estimated with reference to a nearby point of known elevation or from local knowledge'
           )
 
 
