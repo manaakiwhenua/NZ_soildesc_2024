@@ -74,10 +74,13 @@ dat_in_pdrng <-
     'VP', 'Very Poor', 'Profiles with very poorly drained horizons starting <10 cm from the land surface',
     'PO',    'Poor', 'Profiles with poorly drained horizons starting <30 cm from the land surface',
     'IP',  'Imperfect', 'Profiles with poorly drained horizons starting 30–60 cm from the land surface, *or*
-    Profiles with imperfectly drained horizons starting <30 cm from the land surface',
+    
+Profiles with imperfectly drained horizons starting <30 cm from the land surface',
     'MW', 'Moderately Well', 'Profiles with moderately well-drained horizons starting <90 cm from the surface, *or*
-    Profiles with poorly-drained horizons starting 60–90 cm from the surface, *or*
-    Profiles with imperfectly drained horizons starting 30–90 cm from the surface', 
+    
+Profiles with poorly-drained horizons starting 60–90 cm from the surface, *or*
+
+Profiles with imperfectly drained horizons starting 30–90 cm from the surface', 
     'WE', 'Well', 'All horizons starting within 90 cm of the surface are well-drained.'  )
 
 tbl_in_pdrng <- gt(dat_in_pdrng) |>
@@ -86,12 +89,14 @@ tbl_in_pdrng <- gt(dat_in_pdrng) |>
     heading.title.font.weight = 'bold',
     table.align = 'center',
     table.width = '85%'
+    #quarto.disable_processing = TRUE # stops duplicate text in IP and MW descs when bulleted but breaks cell stripes
   ) |>
   tab_style(style = list(cell_text(color  = 'red',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  fmt_markdown(columns = 3)
+  fmt_markdown(columns = 3) |>
+  cols_width(Code ~pct(10), Name ~pct(20))
 
 tbl_in_pdrng
 
