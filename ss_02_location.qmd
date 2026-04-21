@@ -6,6 +6,9 @@ library(tibble)
 library(gt)
 library(sf)
 library(tmap)
+library(rnaturalearth)
+# remotes::install_github("ropensci/rnaturalearthhires")
+library(rnaturalearthhires)
 ```
 
 A soil description is essentially useless without a confident location. Confidence is supported by clear communication about equipment, datum and coordinate reference system, measurement units, and expected error.
