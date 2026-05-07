@@ -67,14 +67,14 @@ Lithology data is required for classifying some orders of the *New Zealand Soil 
 |  |  |  | Amphibolite, Eclogite | [AMPH]{.ceg} |
 |  | Ultramafic | [MU]{.ceg} | Serpentinite | [SERP]{.ceg} |
 |  |  |  | Greenstone | [GNST]{.ceg} |
-|  | Carbonatic | [MC]{.ceg} | Marble | [MBLE]{.ceg} |
+|  | Calcareous | [MC]{.ceg} | Marble | [MBLE]{.ceg} |
 | Sedimentary rocks | Clastic | [SC]{.ceg} | Conglomerate, breccia (hard) | [CONH]{.ceg} |
 |  |  |  | Conglomerate, breccia (soft) | [CONS]{.ceg} |
 |  |  |  | Sandstone (hard), greywacke, arkose | [SAHD]{.ceg} |
 |  |  |  | Sandstone (soft) | [SAFT]{.ceg} |
 |  |  |  | Silt-, mud-, claystone (hard) | [SIHD]{.ceg} |
 |  |  |  | Silt-, mud-, claystone (soft) | [SIFT]{.ceg} |
-|  | Carbonatic | [SO]{.ceg} | Limestone | [LMST]{.ceg} |
+|  | Calcareous | [SO]{.ceg} | Limestone | [LMST]{.ceg} |
 |  |  |  | Dolostone | [DOLO]{.ceg} |
 |  |  |  | Marl, chalk, and similar soft mixtures | [MARL]{.ceg} |
 |  | Organic | [SB]{.ceg} | Coal, lignite, bitumen | [COAL]{.ceg} |
@@ -90,7 +90,7 @@ Lithology data is required for classifying some orders of the *New Zealand Soil 
 dat_ss_ss <-
   tribble(~Code, ~Name, ~Description,
           'Cb', 'Carboncaeous',        'containing a large proportion of organic material',
-          'Ct', 'Carbonatic',          'containing a large propotion of carbonate minerals (but below the threshold for a limestone)',
+          'Cl', 'Calcareous',          'containing a large propotion of carbonate minerals (but below the threshold for a limestone)',
           'Si', 'Siliceous',           'containing a large proportion of secondary silica minerals',
           'Qz', 'Quartzitic',          'containing a large proportion of quartz grains',
           'Qf', 'Quartzo-feldspathic', 'containing a large proportion of quartz and feldspar minerals',
