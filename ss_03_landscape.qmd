@@ -200,8 +200,9 @@ dat_gmph_lfnames <-
           'Sl', 'Slope', 'Very gentle to very steep inclined surfaces', 'Backslope, midslope, toeslope, footslope, dip slope, flank, headslope, talus slope', 
           'Sp', 'Sand plain', 'Gently sloping to flat, low-lying areas of wind-deposited sand', '',
           'Sw', 'Swale', 'A low-lying depression between adjacent ridges', 'Interdune, dune slack',
+          'Tf', 'Tidal flat', 'Low-lying coastal flat subject to inundation by saline or brackish waters as a result of tidal action', 'intertidal flat, supratidal flat, extratidal flat',
           'Va', 'Valley', 'Linear open depression with gentle to steep sides, created primarily by fluvial erosion, usually with an active or seasonally active flowing channel in its base', 'Drainage line',
-          'Vb', 'Valley-flat', 'Open, very low-slope to flat depression between steeper parallel facing slopes, with a flat base in cross-section', '',
+          'Vf', 'Valley-flat', 'Open, very low-slope to flat depression between steeper parallel facing slopes, with a flat base in cross-section', '',
           'Vl', 'Valley-fill', 'Open, relatively low-slope depression between steeper parallel facing slopes, with a concave, U-shaped or V-shaped base in cross-section', '',
           'We', 'Wetland (ephemeral)', 'Flat to shallow land, or open or closed depression with the water table at or near the surface for a part of the year and a low-flow drainage regime', '',
           'Wl', 'Wetland (permanent)', 'Flat to shallow land, or open or closed depression with the water table at or near the surface all year and a low-flow drainage regime', 'Swamp, bog, Fen, Marsh, Saltmarsh',
@@ -224,8 +225,8 @@ tbl_gmph_lfnames <- gt(dat_gmph_lfnames) |>
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
   # consider replacing this with a column in dat_hr_lfnames, maintenance sucks
-  tab_row_group(label = 'Natural', rows = 1:43, id = 'n') |>
-  tab_row_group(label = 'Human-induced', rows = 44:47, id = 'a') |>
+  tab_row_group(label = 'Natural', rows = 1:45, id = 'n') |>
+  tab_row_group(label = 'Human-induced', rows = 46:49, id = 'a') |>
   row_group_order(groups = c('n', 'a')) |>
   tab_style(style = list(cell_text(weight = 'bold')),
             locations = cells_row_groups()) |>
