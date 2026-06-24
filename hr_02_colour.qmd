@@ -1,3 +1,9 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
 # Colour {#sec-col}
 
 ```{r}
@@ -11,6 +17,7 @@ library(munsell)
 
 The colour of soil components is recorded using the Munsell Soil Colour system [@munsellcolorcompany2009; @pantone2017], which conceptualises colour using Hue, Value and Chroma parameters. @tbl-hr-coloreg shows some example soil colours and their representation in the Munsell system as well as their approximate translations into other colour spaces. A comprehensive primer on colour and its application in soil science can be found in @bigham1993.
 
+::: {.content-visible when-format="html"}
 ```{r}
 #| label: tbl-hr-coloreg
 #| tbl-cap: "Examples of Munsell Colour codes and their approximate matches in other systems."
@@ -18,10 +25,11 @@ The colour of soil components is recorded using the Munsell Soil Colour system [
 
 dat_hr_munsell <-
   tribble(~Munsell, ~RGB, ~Hex,
-          '10YR5/4', '148, 118, 80', '#947650',
-          '7.5YR3/2', '88, 69, 55', '#584537',
-          '5R3/8', '130, 41, 48', '#822930',
-          'N4/0', '97, 97, 97', '#616161')
+          '10YR 5/4', '148, 118, 80', '#947650',
+          '7.5YR 3/2', '88, 69, 55', '#584537',
+          '5R 3/8', '130, 41, 48', '#822930',
+          'N 4/0', '97, 97, 97', '#616161') |>
+  dplyr::mutate(fa_icon = 'fas fa-circle')
 
 tbl_hr_munsell <- gt(dat_hr_munsell) |>
    tab_options(
@@ -30,20 +38,61 @@ tbl_hr_munsell <- gt(dat_hr_munsell) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  data_color(fn = \(x) dat_hr_munsell$Hex) |>
-  cols_width(Munsell ~ pct(33), Hex ~ pct(33)) |>
+  fmt_icon(columns    = fa_icon, 
+           fill_color = from_column("Hex"), 
+           height     = '1.5em') |>
+  cols_label(fa_icon = 'Colour') |>
+  cols_width(Munsell ~ pct(25), RGB ~ pct(25), Hex ~ pct(25)) |>
   cols_align('center')
 
 tbl_hr_munsell
 
 ```
+:::
+
+::: {.content-visible unless-format="html"}
+```{r}
+#| label: tbl-hr-coloreg2
+#| tbl-cap: "Examples of Munsell Colour codes and their approximate matches in other systems."
+#| classes : no-stripe
+
+
+dat_hr_munsell <-
+  tribble(~Munsell, ~RGB, ~Hex, ~Colour,
+          '10YR 5/4', '148, 118, 80', '#947650', '',
+          '7.5YR 3/2', '88, 69, 55', '#584537', '',
+          '5R 3/8', '130, 41, 48', '#822930', '',
+          'N 4/0', '97, 97, 97', '#616161', '')
+
+tbl_hr_munsell <- gt(dat_hr_munsell) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  ## colour in Col 4
+  tab_style(style = list(cell_fill(color = '#947650')),
+                         locations = cells_body(columns = 4, rows = 1)) |>
+  tab_style(style = list(cell_fill(color = '#584537')),
+                         locations = cells_body(columns = 4, rows = 2)) |>
+  tab_style(style = list(cell_fill(color = '#822930')),
+                         locations = cells_body(columns = 4, rows = 3)) |>
+  tab_style(style = list(cell_fill(color = '#616161')),
+                         locations = cells_body(columns = 4, rows = 4)) |>
+  cols_width(Munsell ~ pct(25), RGB ~ pct(25), Hex ~ pct(25)) |>
+  cols_align('center')
+  
+tbl_hr_munsell
+```
+:::
 
 For accurately describing colour:
 
--   The colour charts must be used in clear direct or non-dappled indirect daylight. Avoid describing colours in the early morning, late afternoon, in dappled light or in deep shade. Avoid using damaged or faded colour books.
--   Record the **moist** colour to standardise the readings across profiles. Use a spray bottle to gently wet up a sample, if necessary, or wait for a saturated sample to dry out slightly. In both cases wait until the sample surface is no longer glistening.
--   Remove sunglasses and turn to keep the main light source behind your shoulder.
--   The sample may not perfectly match any one chip; record the closest match available. Do not interpolate between chips.
+- The colour charts must be used in clear direct or non-dappled indirect daylight. Avoid describing colours in the early morning, late afternoon, in dappled light or in deep shade. Avoid using damaged or faded colour books.
+- Record the **moist** colour to standardise the readings across profiles. Use a spray bottle to gently wet up a sample, if necessary, or wait for a saturated sample to dry out slightly. In both cases wait until the sample surface is no longer glistening.
+- Remove sunglasses and turn to keep the main light source behind your shoulder.
+- The sample may not perfectly match any one chip; record the closest match available. Do not interpolate between chips.
 
 ::: {#wrn-col .callout-warning appearance="minimal" collapse="true" title="Colour vision acuity"}
 Operators need full colour vision to use the Munsell colour system correctly. While diagnosed colour blindness is relatively rare, many people have minor colour-recognition limitations without knowing it. Taking a colour vision test periodically is recommended.
@@ -59,10 +108,10 @@ The matrix colour of the soil is the dominant 'background' colour. This excludes
 
 ### Method: Determining matrix colour
 
--   Take a 2–3 cm^3^ sample of fresh soil from the target horizon, avoiding colour transition zones (e.g. horizon boundaries). If large enough peds are available, extract a ped and break it open to expose a fresh face. Otherwise, cut or scoop a fresh sample from the soil mass.
--   Moisten the sample lightly before assessing the colour, by holding the sample up against the chips in the colour book. Hold the sample just in front of a colour chip for comparison. Look for a colour where the sample appears to fade into the chip.
-    -   Do not record the colour of a texture bolus or a smeared surface, as these can be altered by mixing in mottles or destroying ped surface features.
-    -   For sands, which may have differently-coloured grains from multiple parent materials, colour matching can be difficult. Try to pick the colour of the dominant mineral component. Holding the sample out at arms' length may also help determine a dominant colour.
+- Take a 2–3 cm^3^ sample of fresh soil from the target horizon, avoiding colour transition zones (e.g. horizon boundaries). If large enough peds are available, extract a ped and break it open to expose a fresh face. Otherwise, cut or scoop a fresh sample from the soil mass.
+- Moisten the sample lightly before assessing the colour, by holding the sample up against the chips in the colour book. Hold the sample just in front of a colour chip for comparison. Look for a colour where the sample appears to fade into the chip.
+- Do not record the colour of a texture bolus or a smeared surface, as these can be altered by mixing in mottles or destroying ped surface features.
+- For sands, which may have differently-coloured grains from multiple parent materials, colour matching can be difficult. Try to pick the colour of the dominant mineral component. Holding the sample out at arms' length may also help determine a dominant colour.
 
 Additional colour information can be stored as free-text notes.
 
@@ -181,7 +230,7 @@ Rules for determining contrast in the field are defined in @tbl-hr-patcont. If b
 |           |           | 3.  At least one unit of chroma or two units of value if there is a difference of one full hue (2.5 Munsell units).                                                                                                        |
 +-----------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-: Types of soil colour pattern contrast {#tbl-hr-patcont .striped cols_width=\[10,20,70\]}
+: Types of soil colour pattern contrast {#tbl-hr-patcont .striped tbl-colwidths="[10,20,70]"}
 
 ### Pattern boundary distinctness {#sec-patt-dist}
 
@@ -219,7 +268,7 @@ For rapid recording of pattern colour, the single letter codes in @tbl-hr-colors
 
 For example, [M O 25%]{.ceg} for a bright orange redox mottle observed in moist soil conditions.
 
-::: {.callout-important appearance="minimal" collapse="false"}
+::: {#imp-colshrt .callout-important collapse="false" title="Appropriate use of colour short codes" appearance="minimal"}
 Colour short codes must not be used for recording the matrix colour(s), as they do not provide enough detail for soil classification.
 :::
 
