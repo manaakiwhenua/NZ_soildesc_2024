@@ -46,10 +46,28 @@ tm_shape(nzch) +
   tm_fill() +
   tm_borders() +
 tm_shape(loc) +
-  tm_symbols(col = 'red') +
-  #tm_text(text = 'label', size = 0.75, xmod = 4.25, ymod = -0.5) +
-tm_compass(type='arrow') +
-tm_scale_bar(breaks = c(0, 100, 200)) 
+  tm_symbols(fill = 'red', shape = 20) +
+  tm_compass(type = 'arrow', position = tm_pos_in('left', 'top')) +
+  tm_scalebar(breaks = c(0, 100, 200)) 
+
+# tmap is currently used to generate the Koppen figure in Ch 5, so I'm keeping
+# the aesthetics consistent. If that's ever revisited, the ggplot version of
+# this is:
+
+#ggplot() +
+#  geom_sf(data = nzch, fill = 'grey80', colour = 'grey20', 
+#          alpha = 0.8, show.legend = FALSE) +
+#  geom_sf(data = loc, col = 'red', shape  = 20, size = 5) + 
+#  theme_void() +
+#  theme(panel.border = element_rect(colour = 'grey20')) +
+#  coord_sf(datum = 2193) +
+#  annotation_north_arrow(location = 'tl', 
+#                         #which_north = 'true',
+#                         width = unit(0.75, 'cm'), height = unit(1, 'cm'),
+#                         style = north_arrow_orienteering(text_col = 'white', 
+#                                                          text_size = 0)) +
+#  annotation_scale(location = 'br')
+
 
 ```
 
