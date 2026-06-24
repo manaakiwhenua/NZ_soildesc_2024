@@ -273,6 +273,7 @@ The solution and treated paper both degrade over time and should not be stored f
 -   Make sure NaF containers are clearly labelled.
 :::
 
+::: {.content-visible when-format="html"}
 ```{r}
 #| label: tbl-ft-naf
 #| tbl-cap: "Sodium fluoride reaction ratings"
@@ -310,6 +311,47 @@ tbl_ft_naf <- gt(dat_ft_naf) |>
   
 tbl_ft_naf
 ```
+
+:::
+
+::: {.content-visible unless-format="html"}
+```{r}
+#| label: tbl-ft-naf2
+#| tbl-cap: "Sodium fluoride reaction ratings"
+
+dat_ft_naf <-
+  tribble(~Code, ~Name, ~Description, ~Colour, 
+          'N', 'No reaction',  'No colour change', '',
+          'L', 'Slight reaction', 'Paper turns faint pink within two minutes',  '',
+          'M', 'Moderate reaction', 'Paper turns moderate pink, usually within 30 seconds', '',
+          'H', 'Strong reaction', 'Paper turns dark pink, usually within 10 seconds', ''
+  )
+
+tbl_ft_naf <- gt(dat_ft_naf) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  ## colour in Col 4
+  tab_style(style = list(cell_fill(color = '#FFFFFF')),
+                         locations = cells_body(columns = 4, rows = 1)) |>
+  tab_style(style = list(cell_fill(color = '#FFBADE')),
+                         locations = cells_body(columns = 4, rows = 2)) |>
+  tab_style(style = list(cell_fill(color = '#CF3A69')),
+                         locations = cells_body(columns = 4, rows = 3)) |>
+  tab_style(style = list(cell_fill(color = '#A11844')),
+                         locations = cells_body(columns = 4, rows = 4)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20), Colour ~ pct(10))
+  
+tbl_ft_naf
+```
+
+:::
 
 ::: {.content-visible when-format="docx"}
 delete me
