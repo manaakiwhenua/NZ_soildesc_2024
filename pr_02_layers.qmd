@@ -13,7 +13,7 @@ Soil horizons are commonly grouped into two major zones - the topsoil, where bio
 
 While this handbook focuses primarily on describing the solum, the subsolum, when encountered, should be described as well. Subsolum materials play a key role in deep drainage, groundwater recharge, slope stability, and ecological support [@juilleret2016]. 'Horizon' boundaries within the subsolum will most commonly relate to lithological or depositional discontinuities.
 
-::: {#nte-hzn-cls .callout-note collapse="true" appearance="simple" title="Soil horizons and classification systems"}
+::: {#nte-hzn-cls .callout-note collapse="true" appearance="minimal" title="Soil horizons and classification systems"}
 All soil classification systems use particular soil horizons to help locate a soil within the system. To be classification-relevant, such horizons must not be merely present but must also meet particular thresholds of development, e.g. by having a minimum thickness or a particular abundance range for a key property.
 :::
 
@@ -33,7 +33,7 @@ Where a wider exposure (see @tbl-pr-gear, type [E]{.ceg}, [P1]{.ceg}, [P2]{.ceg}
 
 Measure boundaries to and from the midpoint of each horizon transition zone (see @sec-pr-bdydist). Where depths are correctly measured, horizon thicknesses can be calculated after fieldwork.
 
-::: {#imp-stp .callout-important collapse="true" appearance="simple" title="Defining horizons on steep slopes"}
+::: {#imp-stp .callout-important collapse="true" appearance="minimal" title="Defining horizons on steep slopes"}
 On steeper slopes, measuring horizons from vertical exposures can exaggerate horizon thicknesses, as the soil horizons mantle the landscape perpendicular to the sloping surface [@prietzel2019]. This starts to matter at slopes \> 25°, and progressively becomes more important - especially when calculating volumetric stocks of soil components. @fig-hr-slpex shows how a vertical 30-cm depth represents a progressively shallower 'true depth' as slope increases.
 
 Where depths are measured perpendicular to the surface, no adjustment needs to be made. To adjust vertically measured horizon depths to correct for slope, apply the formula $depth × cos(slope)$. Supply depth in cm and slope in radians. Slopes measured in degrees can be converted to radians using the formula $(slope × \pi) ÷ 180$. If this correction is made, record that it has been done in the site notes to prevent the horizon depths from being adjusted any further.
@@ -144,7 +144,7 @@ Open subsurface voids should be described as per @sec-void, and open surface cra
 dat_hr_infl <-
   tribble(~Code, ~Name, ~Description,
           'C', 'Crack',  'Infilled surface crack caused by shrink-swell clay movement',
-          'T', 'Tunnel', 'Infilled animal burrow ≧20 mm diameter',
+          'T', 'Tunnel', 'Infilled animal burrow ≥20 mm diameter',
           'B', 'Burrow', 'Infilled animal burrow <20 mm diameter', 
 
           'R', 'Root',   'Infilled root channel',
@@ -240,11 +240,11 @@ tbl_hr_bdst
 
 Depth to free water can be determined from the upper depth of the uppermost [S]{.ceg} saturated horizon (@tbl-hr-soilmst), or may be recorded directly, in whole centimetres. Depending on the soil's transmissivity, the water table may be also become evident by the pit or core filling with water. In this case, wait for the water level to stabilise before measuring.
 
--   If the water table is not encountered, record [NA]{.ceg}
--   If the water table is encountered, use @tbl-hr-frw to code its position in the profile, then record its depth above or below the soil surface in whole centimetres. Do not record negative numbers to signify a water table above the surface.
--   If the water table is exactly at the soil surface, record ['B 0']{.ceg}.
+- If the water table is not encountered, record [NA]{.ceg}
+- If the water table is encountered, use @tbl-hr-frw to code its position in the profile, then record its depth above or below the soil surface in whole centimetres. Do not record negative numbers to signify a water table above the surface.
+- If the water table is exactly at the soil surface, record [B 0]{.ceg}.
 
-e.g. ['B 80']{.ceg} for a profile saturated below 80 cm depth; ['A 1']{.ceg} for a saturated and barely-walkable peat.
+e.g. [B 80]{.ceg} for a profile saturated below 80 cm depth; [A 1]{.ceg} for a saturated and barely-walkable peat.
 
 ```{r}
 #| label: tbl-hr-frw
@@ -290,14 +290,16 @@ For detailed assessment, a more complete list of lithologies may be defined for 
 
 The effects of weathering and pedogenesis vary down-profile (usually, but not always, decreasing with depth). Horizons that have experienced limited weathering may require specific descriptors (e.g. texture (@sec-tex-rec) cannot usually be determined on paralithic material, but bedding (@sec-reg-bed) may need to be described), so the need for these should be assessed early in the description process. Use the guidance in @tbl-pr-wdeg to clearly identify the solum, as well as any subsolum materials encountered. The weathering status of rock material specifically may be assessed using the schema in @sec-rockfrag-wth.
 
-+:-----------+:---------------------+:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|            |                      |                                                                                                                                                                                                                                                                                                                          |
++:===========+:=====================+:=========================================================================================================================================================================================================================================================================================================================+
 | **Code**   | **Name**             | **Description**                                                                                                                                                                                                                                                                                                          |
 +------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | [So]{.ceg} | Soil material        | Horizon characteristics include any of:                                                                                                                                                                                                                                                                                  |
 |            |                      |                                                                                                                                                                                                                                                                                                                          |
-|            |                      | -   anthropogenic or pedogenic structure (@sec-str-origin),                                                                                                                                                                                                                                                              |
-|            |                      | -   elevated biological activity,                                                                                                                                                                                                                                                                                        |
-|            |                      | -   formation of pedogenic features (@sec-secondary), *and*                                                                                                                                                                                                                                                              |
+|            |                      | - anthropogenic or pedogenic structure (@sec-str-origin),                                                                                                                                                                                                                                                                |
+|            |                      | - elevated biological activity,                                                                                                                                                                                                                                                                                          |
+|            |                      | - formation of pedogenic features (@sec-secondary), *and*                                                                                                                                                                                                                                                                |
 |            |                      |                                                                                                                                                                                                                                                                                                                          |
 |            |                      | a lack of residual geogenic structure.                                                                                                                                                                                                                                                                                   |
 +------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -328,9 +330,9 @@ The effects of weathering and pedogenesis vary down-profile (usually, but not al
 |            |                      | 4.  has no roots - neither along geogenic features nor in the matrix.                                                                                                                                                                                                                                                    |
 +------------+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-: Weathering status of soil-forming materials, adapted from @juilleret2016. {#tbl-pr-wdeg .striped .hover tbl-colwidths=\[10,20,70\]}
+: Weathering status of soil-forming materials, adapted from @juilleret2016. {#tbl-pr-wdeg .striped .hover tbl-colwidths="[10,20,70]"}
 
-::: {#nte-stp .callout-note collapse="true" appearance="simple" title="Degree of weathering and the New Zealand Soil Classification"}
+::: {#nte-stp .callout-note collapse="true" appearance="minimal" title="Degree of weathering and the New Zealand Soil Classification"}
 For the purposes of classifying soils according to the New Zealand Soil Classification, profiles overlying a layer of Lithic material as defined in @tbl-pr-wdeg would qualify for the 'lithic contact', while profiles overlying Saprolithic or Paralithic material would qualify for the 'paralithic contact'.
 :::
 
@@ -340,7 +342,7 @@ Parent material origin, or mode of emplacement, describes how soil parent materi
 
 Record one parent material origin code per soil horizon, using the codes in @tbl-ss-pmo. At the horizon level, the [An]{.ceg} Anthropic class can be subdivided by origin using the codes in @tbl-hr-antype (e.g. [Ann]{.ceg} for a fill pad in a residential housing development).
 
-::: {#nte-hzn-tmb .callout-note collapse="true" appearance="simple" title="Recording specific parent materials"}
+::: {#nte-hzn-tmb .callout-note collapse="true" appearance="minimal" title="Recording specific parent materials"}
 In New Zealand, and particularly on the North Island, many soils form in cover beds linked to specific volcanic events (e.g. ash from the 232 AD Taupō eruption). The presence of these stratigraphic 'marker beds', which may comprise horizons or subsolum layers, should be noted as free text where they are observed.
 :::
 

@@ -30,9 +30,9 @@ dat_cn_ct <-
   tribble(~Test, ~grav, ~ncoh, ~coh, ~org, ~mstat,
           '[Strength - unconfined mass](#sec-cn-stru)', 'If test cube can be formed', 'No', 'Yes', 'Yes', 'Any',
           '[Strength - soil peds](#sec-cn-stra)', 'No', 'No', 'If pedal', 'No', 'Any',
-          '[Strength - remoulded](#sec-sn-strr)', 'No', 'No', 'Yes', 'No', 'Moist or Wet',
-          '[Strength - at plastic limit](#sec-sn-strp)', 'No', 'No', 'Yes', 'No', 'Moist or Wet',
-          '[Sensitivity](#sec-sn-sens)', 'No', 'No', 'Yes', 'No', 'Moist or Wet',
+          '[Strength - remoulded](#sec-cn-strr)', 'No', 'No', 'Yes', 'No', 'Moist or Wet',
+          '[Strength - at plastic limit](#sec-cn-stru)', 'No', 'No', 'Yes', 'No', 'Moist or Wet',
+          '[Sensitivity](#sec-cn-sens)', 'No', 'No', 'Yes', 'No', 'Moist or Wet',
           '[Plasticity](#sec-cn-pla)', 'Yes', 'No', 'Yes', 'No', 'Wet',
           '[Stickiness](#sec-cn-sti)', 'Yes', 'Yes', 'Yes', 'Yes', 'Wet',
           '[Dilatency](#sec-cn-dil)', 'No', 'Yes', 'Yes', 'No', 'Moist to Wet',
@@ -73,16 +73,16 @@ tbl_cn_ct
 ::: {#nte-consnzsc .callout-note appearance="minimal" collapse="true" title="Consistence tests and the New Zealand Soil Classification (NZSC)"}
 For classifying using the New Zealand Soil Classification, particular tests down to or at a certain depth may be required to progress through the Key to Soil Orders. At the soil order level, these are:
 
--   **Gley Soils:** must not have any moderately or very fluid (@sec-cn-flu) layers within 30 cm of the soil surface. Unconfined soil strength (@sec-cn-stru) and cementation (@sec-cn-ind) tests may be required to confirm absence of an underlying fragipan.
--   **Ultic Soils:** need an assessment of soil strength (@sec-cn-stru) in the B horizon under moist conditions. May need assessment of failure mode (@sec-cn-fail) over a range of moisture conditions to rule out oxidic or cutanoxidic horizons. May need assessment of sensitivity (@sec-cn-sens) and stickiness (@sec-cn-sti) to rule out allophanic soil materials.
--   **Podzol Soils:** may need unconfined strength (@sec-cn-stru) and failure mode (@sec-cn-fail) tests to help identify a Podzolic B horizon, as well as the presence of humus- and ortstein-pans.
--   **Allophanic Soils:** may need assessment of sensitivity (@sec-cn-sens) and stickiness (@sec-cn-sti) to help confirm the presence of allophanic soil materials.
--   **Melanic Soils:** may require stickiness assessment (@sec-cn-sti) in the B horizon.
--   **Semiarid Soils:** may require cementation tests (@sec-cn-ind) to confirm fragipan absence.
--   **Oxidic Soils:** May need assessment of ped strength (@sec-cn-stra), soil strength (@sec-cn-stru), and failure mode (@sec-cn-fail) over a range of moisture conditions to confirm presence of an oxidic horizon. Stickiness (@sec-cn-sti) and plasticity (@sec-cn-pla) may also be helpful.
--   **Granular Soils:** May need assessment of ped strength (@sec-cn-stra), soil strength (@sec-cn-stru), and failure mode (@sec-cn-fail) over a range of moisture conditions to confirm presence of a cutanoxidic horizon. Stickiness (@sec-cn-sti) and plasticity (@sec-cn-pla) may also be helpful.
--   **Pallic Soils:** may require a negative cementation test (@sec-cn-ind) to help identify any fragipans. May require assessment of failure mode (@sec-cn-fail) to help confirm Brittle-B horizon presence. May require ped strength assessment in the B horizon.
--   **Recent Soils:** must not have any moderately or very fluid (@sec-cn-flu) layers within 30 cm of the soil surface.
+- **Gley Soils:** must not have any moderately or very fluid (@sec-cn-flu) layers within 30 cm of the soil surface. Unconfined soil strength (@sec-cn-stru) and cementation (@sec-cn-ind) tests may be required to confirm absence of an underlying fragipan.
+- **Ultic Soils:** need an assessment of soil strength (@sec-cn-stru) in the B horizon under moist conditions. May need assessment of failure mode (@sec-cn-fail) over a range of moisture conditions to rule out oxidic or cutanoxidic horizons. May need assessment of sensitivity (@sec-cn-sens) and stickiness (@sec-cn-sti) to rule out allophanic soil materials.
+- **Podzol Soils:** may need unconfined strength (@sec-cn-stru) and failure mode (@sec-cn-fail) tests to help identify a Podzolic B horizon, as well as the presence of humus- and ortstein-pans.
+- **Allophanic Soils:** may need assessment of sensitivity (@sec-cn-sens) and stickiness (@sec-cn-sti) to help confirm the presence of allophanic soil materials.
+- **Melanic Soils:** may require stickiness assessment (@sec-cn-sti) in the B horizon.
+- **Semiarid Soils:** may require cementation tests (@sec-cn-ind) to confirm fragipan absence.
+- **Oxidic Soils:** May need assessment of ped strength (@sec-cn-stra), soil strength (@sec-cn-stru), and failure mode (@sec-cn-fail) over a range of moisture conditions to confirm presence of an oxidic horizon. Stickiness (@sec-cn-sti) and plasticity (@sec-cn-pla) may also be helpful.
+- **Granular Soils:** May need assessment of ped strength (@sec-cn-stra), soil strength (@sec-cn-stru), and failure mode (@sec-cn-fail) over a range of moisture conditions to confirm presence of a cutanoxidic horizon. Stickiness (@sec-cn-sti) and plasticity (@sec-cn-pla) may also be helpful.
+- **Pallic Soils:** may require a negative cementation test (@sec-cn-ind) to help identify any fragipans. May require assessment of failure mode (@sec-cn-fail) to help confirm Brittle-B horizon presence. May require ped strength assessment in the B horizon.
+- **Recent Soils:** must not have any moderately or very fluid (@sec-cn-flu) layers within 30 cm of the soil surface.
 
 Strength, fluidity, stickiness, mode of failure, and rubbed fibre content tests are also common diagnostic features at the group and subgroup level in the NZSC.
 :::
@@ -91,8 +91,8 @@ Strength, fluidity, stickiness, mode of failure, and rubbed fibre content tests 
 
 The nature of the soil materials in each horizon determines what tests can and should be done. The first step is to determine if the sample is cohesive. Cohesion refers to the tendency of soil particles (i.e., grains of sand, silt and clay) to stick together under pressure, due to internal forces of attraction between them. Whether soil materials are cohesive affects which consistency tests can and should be undertaken in each horizon.
 
--   **Cohesive soil materials** adhere together strongly enough that they do not easily break up into individual grains. They may have plasticity and stickiness characteristics and have a strength which can be measured in unconfined compression. All listed properties, except particle packing, can be described for non-stony, cohesive soils.
--   **Non-cohesive soil materials** have no shear resistance other than that developed by internal friction between grains and will fall apart when disturbed. Non-cohesive soil materials, by definition, have no unconfined dry strength or plasticity, and the only property that can be meaningfully described is degree of packing or particle packing.
+- **Cohesive soil materials** adhere together strongly enough that they do not easily break up into individual grains. They may have plasticity and stickiness characteristics and have a strength which can be measured in unconfined compression. All listed properties, except particle packing, can be described for non-stony, cohesive soils.
+- **Non-cohesive soil materials** have no shear resistance other than that developed by internal friction between grains and will fall apart when disturbed. Non-cohesive soil materials, by definition, have no unconfined dry strength or plasticity, and the only property that can be meaningfully described is degree of packing or particle packing.
 
 The range of properties which can be described in stony, cohesive soils varies with rock fragment content. In practice, this depends on the feasibility of obtaining samples for the required tests.
 
@@ -168,9 +168,9 @@ tbl_cn_str
 
 Unconfined soil strength describes how strongly soil material resists crushing when unsupported by surrounding material. It provides a simple field indicator of structural integrity in cohesive soils.
 
--   Test at observed field moisture condition.
--   If a test cube cannot be formed, the result is strength class [1]{.ceg} 'Very Weak' (see @tbl-cn-str). This can happen when soil pedality is weak or absent, but also when pedality is strong and peds are small.
--   This test cannot be reliably performed on auger-extracted samples.
+- Test at observed field moisture condition.
+- If a test cube cannot be formed, the result is strength class [1]{.ceg} 'Very Weak' (see @tbl-cn-str). This can happen when soil pedality is weak or absent, but also when pedality is strong and peds are small.
+- This test cannot be reliably performed on auger-extracted samples.
 
 *Procedure*
 
@@ -183,9 +183,9 @@ Unconfined soil strength describes how strongly soil material resists crushing w
 
 Unconfined aggregate strength describes the physical integrity of soil aggregates (peds) under natural conditions. It provides a simple field indicator of soil structural stability in response to management practices and different environmental conditions.
 
--   Test at observed field moisture condition.
--   Only peds 30 mm or larger can be reliably tested; peds larger than 50 mm should be trimmed down to 30 mm.
--   This test cannot be reliably performed on auger-extracted samples.
+- Test at observed field moisture condition.
+- Only peds 30 mm or larger can be reliably tested; peds larger than 50 mm should be trimmed down to 30 mm.
+- This test cannot be reliably performed on auger-extracted samples.
 
 *Procedure*
 
@@ -198,9 +198,9 @@ Unconfined aggregate strength describes the physical integrity of soil aggregate
 
 This test determines the strength of the soil after significant disturbance and reworking, disrupting the structure and any other binding materials like plant roots.
 
--   Test at observed field moisture condition.
--   Perform the test on an extracted 30 mm cube or sample of equivalent volume.
--   This test may be performed on auger-extracted samples.
+- Test at observed field moisture condition.
+- Perform the test on an extracted 30 mm cube or sample of equivalent volume.
+- This test may be performed on auger-extracted samples.
 
 *Procedure*
 
@@ -213,9 +213,9 @@ This test determines the strength of the soil after significant disturbance and 
 
 Failure is the manner in which unconfined soil yields to increasing stress. This property varies with soil moisture content.
 
--   Test at observed field moisture condition.
--   Perform the test on a minimally disturbed 30 mm cube, or an aggregate.
--   If diagnosing oxidic or cutanoxidic soil material for the New Zealand Soil Classification, repeat the test under dry to wet moisture conditions.
+- Test at observed field moisture condition.
+- Perform the test on a minimally disturbed 30 mm cube, or an aggregate.
+- If diagnosing oxidic or cutanoxidic soil material for the New Zealand Soil Classification, repeat the test under dry to wet moisture conditions.
 
 *Procedure*
 
@@ -251,13 +251,13 @@ tbl_cn_fail <- gt(dat_cn_fail) |>
 tbl_cn_fail
 ```
 
-## Particle Packing {#sec-sn-pack}
+## Particle Packing {#sec-cn-pack}
 
 Particle packing assesses the stability of a non-cohesive soil.
 
--   Test only on soils where unconfined strength (@sec-cn-stru) cannot be assessed e.g., gravelly, cobbly or bouldery soils, or loose sands
--   This test requires a large pit or exposure
--   Do not test at wet or saturated field moisture conditions, as this is unsafe
+- Test only on soils where unconfined strength (@sec-cn-stru) cannot be assessed e.g., gravelly, cobbly or bouldery soils, or loose sands
+- This test requires a large pit or exposure
+- Do not test at wet or saturated field moisture conditions, as this is unsafe
 
 *Procedure*
 
@@ -299,7 +299,7 @@ The Singleton blade was a device invented in the 1980s by the New Zealand pedolo
 
 Penetration resistance is the capacity of the soil, in its natural confined state, to resist penetration by rigid objects. This property is commonly related to strength by empirical means (@tbl-cn-penr).
 
--   This test requires a large pit or exposure.
+- This test requires a large pit or exposure.
 
 *Procedure*
 
@@ -347,9 +347,9 @@ tbl_cn_penr
 
 The sensitivity of a soil reflects the extent to which its structure contributes to its strength, and how that strength is reduced when the structure is destroyed. In soils with an unconfined strength class of [4]{.ceg} firm or greater, sensitivity is reported as the ratio of unconfined soil strength (@sec-cn-stru) to remoulded strength (@sec-cn-strr). For soils with an unconfined strength class of 1–3, the 'shear test' is performed. The two methods are assigned equivalent classes in @tbl-cn-sens.
 
--   Test soil at a moist or wet state.
--   Perform the test on a minimally disturbed 30 mm sample cube.
--   This test cannot be reliably performed on auger-extracted samples.
+- Test soil at a moist or wet state.
+- Perform the test on a minimally disturbed 30 mm sample cube.
+- This test cannot be reliably performed on auger-extracted samples.
 
 *Procedure*
 
@@ -394,9 +394,9 @@ tbl_cn_sens
 
 Plasticity is the capacity of soil material to change shape continuously when stress is applied and to retain that shape after the removal of stress. Plasticity can help distinguish clayey from silty textures, with silts having relatively low plasticity.
 
--   Test soil at a wet state.
--   Perform the test on 3-4 cm^3^ of soil (a 15–20 mm cube).
--   This test may be performed on auger-extracted samples.
+- Test soil at a wet state.
+- Perform the test on 3-4 cm^3^ of soil (a 15–20 mm cube).
+- This test may be performed on auger-extracted samples.
 
 *Procedure*
 
@@ -435,9 +435,9 @@ tbl_cn_plas
 
 Stickiness is the degree to which remoulded soil adheres to external objects. Stickiness can suggest the presence of clay (particularly 2:1 phyllosilicates) and has agricultural and mechanical implications, e.g. root crop harvesting can be difficult in sticky materials, as can excavation.
 
--   Test soil at a wet state.
--   Perform the test on 3-4 cm^3^ of soil (a 15–20 mm cube).
--   This test may be performed on auger-extracted samples.
+- Test soil at a wet state.
+- Perform the test on 3-4 cm^3^ of soil (a 15–20 mm cube).
+- This test may be performed on auger-extracted samples.
 
 *Procedure*
 
@@ -477,9 +477,9 @@ tbl_cn_stik
 
 Dilatancy occurs due to volume change during shearing and is used as a criterion for distinguishing non-cohesive from cohesive soil materials. The test can also help determine the relative dominance of silt and clay (silty textures are more dilatant,
 
--   Test soil at a moist to wet state.
--   Perform the test on 3-4 cm^3^ of soil (a 15–20 mm cube).
--   This test may be performed on auger-extracted samples.
+- Test soil at a moist to wet state.
+- Perform the test on 3-4 cm^3^ of soil (a 15–20 mm cube).
+- This test may be performed on auger-extracted samples.
 
 *Procedure*
 
@@ -493,10 +493,10 @@ A dilatant reaction is shown by a shiny surface caused by water extrusion, and b
 
 Fluidity tests whether saturated soils have an unconfined strength that is largely eliminated by saturation. Such materials were generally emplaced under water, have never been drained, have a fine texture that minimises gravity-based settling, and are not overlain by enough other sediment to have been compressed.
 
--   Test soil at a saturated state.
--   Only test soils that are saturated under field conditions.
--   Perform the test on \~200 cm^3^ of soil (a large handful).
--   This test may be performed on auger-extracted samples.
+- Test soil at a saturated state.
+- Only test soils that are saturated under field conditions.
+- Perform the test on \~200 cm^3^ of soil (a large handful).
+- This test may be performed on auger-extracted samples.
 
 *Procedure*
 
@@ -533,16 +533,16 @@ tbl_cn_fluid
 
 Induration is the degree to which soil particles are held together by some combination of cementation and close packing.
 
--   Perform the test on a minimally disturbed 30 mm cube, or aggregate.
--   This test may also be performed on individual nodules and other solids \< 30 mm.
--   This test cannot be reliably performed on auger-extracted samples.
--   This test requires a minimum one hour to complete so may be done immediately following fieldwork.
+- Perform the test on a minimally disturbed 30 mm cube, or aggregate.
+- This test may also be performed on individual nodules and other solids \< 30 mm.
+- This test cannot be reliably performed on auger-extracted samples.
+- This test requires a minimum one hour to complete so may be done immediately following fieldwork.
 
 *Equipment*
 
--   Sponge (\~50 mm diameter, flat)
--   Deionised (DI) water
--   Sample container at least 40–50 mm deep
+- Sponge (\~50 mm diameter, flat)
+- Deionised (DI) water
+- Sample container at least 40–50 mm deep
 
 *Procedure*
 
@@ -583,10 +583,10 @@ tbl_cn_ind
 
 Rubbed fibre content is an indicator of the degree of organic decomposition and can be used to help determine whether organic material qualifies as fibric, mesic or humic (@sec-tex-orgmod, @sec-hor-o).
 
--   This test can be performed on any sample with an appreciable amount of visible and decomposing organic matter. Live plant roots should be removed before performing the test.
--   This test can be performed on auger-extracted samples. However, exercise caution when extracting samples from below the water table as they may easily become cross-contaminated by overlying material.
--   Perform the test on \~100 cm^3^ of soil (a small handful)
--   Perform the test on wet materials.
+- This test can be performed on any sample with an appreciable amount of visible and decomposing organic matter. Live plant roots should be removed before performing the test.
+- This test can be performed on auger-extracted samples. However, exercise caution when extracting samples from below the water table as they may easily become cross-contaminated by overlying material.
+- Perform the test on \~100 cm^3^ of soil (a small handful)
+- Perform the test on wet materials.
 
 *Procedure*
 

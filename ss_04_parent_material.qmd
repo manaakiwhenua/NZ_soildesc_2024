@@ -12,10 +12,10 @@ Parent material can be explored in terms of geological units, lithology, and min
 
 Geological maps are the primary data source representing the spatial distribution of soil parent material. In particular, surface and near-surface stratigraphic maps are an essential resource for understanding the landscape. However, the scale and focus of the available products don't always align with soil observation needs. Some caution is needed when interpreting geological maps in a soils context. Keep the following in mind:
 
--   Read the accompanying reports for a given area as well as looking at geological maps. They contain a wealth of contextual information.
--   When working in an area covered by transported soil materials, get familiar with the 'source' geologies - upstream, uphill, upwind. Those will be the main contributors to the soil parent material.
--   In landscapes where transported materials make up the uppermost materials of the land as unconsolidated cover beds (such as in central North Island), it is common for such cover beds to be missing from geological maps [although they will likely be noted in the accompanying text, e.g., see @leonard2010]. This because the map units selected in geological mapping tend to reflect the underlying, large-scale deposits that have been land-forming in emplacement.
--   The unit boundaries of broad-scale geology maps don't always align cleanly with landscape features on the ground, so they may not make reliable inputs for digital models of soil distribution without substantial refinement.
+- Read the accompanying reports for a given area as well as looking at geological maps. They contain a wealth of contextual information.
+- When working in an area covered by transported soil materials, get familiar with the 'source' geologies - upstream, uphill, upwind. Those will be the main contributors to the soil parent material.
+- In landscapes where transported materials make up the uppermost materials of the land as unconsolidated cover beds (such as in central North Island), it is common for such cover beds to be missing from geological maps [although they will likely be noted in the accompanying text, e.g., see @leonard2010]. This because the map units selected in geological mapping tend to reflect the underlying, large-scale deposits that have been land-forming in emplacement.
+- The unit boundaries of broad-scale geology maps don't always align cleanly with landscape features on the ground, so they may not make reliable inputs for digital models of soil distribution without substantial refinement.
 
 Due to these scale and purpose differences, recording the geological map code at a profile is optional, and if recorded, the surveyor should be confident that code is correct at the scale of the site. The source of the code should also be noted.
 
@@ -81,7 +81,7 @@ Lithology data is required for classifying some orders of the *New Zealand Soil 
 |  | Evaporites | [SE]{.ceg} | Anhydrite, gypsum | [GYPS]{.ceg} |
 |  |  |  | Halite | [HALT]{.ceg} |
 
-: Lithology classification for New Zealand soil survey (adapted from @laffan1988, @rattenbury2012 and @iussworkinggroupwrb2022) {#tbl-ss-pm .striped .hover tbl-colwidths="\[25,20,10,30,15\]"}
+: Lithology classification for New Zealand soil survey (adapted from @laffan1988, @rattenbury2012 and @iussworkinggroupwrb2022) {#tbl-ss-pm .striped .hover tbl-colwidths="[25,20,10,30,15]"}
 
 ```{r}
 #| label: tbl-ss-ss
@@ -90,7 +90,7 @@ Lithology data is required for classifying some orders of the *New Zealand Soil 
 dat_ss_ss <-
   tribble(~Code, ~Name, ~Description,
           'Cb', 'Carboncaeous',        'containing a large proportion of organic material',
-          'Cl', 'Calcareous',          'containing a large propotion of carbonate minerals (but below the threshold for a limestone)',
+          'Cl', 'Calcareous',          'containing a large proportion of carbonate minerals (but below the threshold for a limestone)',
           'Si', 'Siliceous',           'containing a large proportion of secondary silica minerals',
           'Qz', 'Quartzitic',          'containing a large proportion of quartz grains',
           'Qf', 'Quartzo-feldspathic', 'containing a large proportion of quartz and feldspar minerals',
