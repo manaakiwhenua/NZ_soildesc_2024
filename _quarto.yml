@@ -21,9 +21,9 @@ book:
     - intro.qmd
     - part: "Soil Setting"
       chapters:
-        - ss_00_intro.qmd
+        - ss_01_background.qmd
         - ss_02_location.qmd
-        - ss_03_landscape.qmd
+        - ss_03_geomorphology.qmd
         - ss_04_parent_material.qmd
         - ss_05_climate.qmd
         - ss_06_biota.qmd
@@ -32,30 +32,30 @@ book:
 
     - part: "Soil surface and profile"
       chapters:
-        - pr_00_intro.qmd
-        - pr_01_surface.qmd
-        - pr_02_layers.qmd
+        - pr_01_site.qmd
+        - pr_02_surface.qmd
+        - pr_03_horizons.qmd
 
     - part: "Soil horizons"
       chapters:
         - hr_01_architecture.qmd
         - hr_02_colour.qmd
         - hr_03_texture.qmd
-        - hr_04_secondary_features.qmd
-        - hr_05_physical_properties.qmd
+        - hr_04_weathering_features.qmd
+        - hr_05_consistence.qmd
         - hr_06_chemical_properties.qmd
 
     - part: "Soil interpretations"
       chapters:
         - in_01_horizon_names.qmd
-        - in_02_interpreted_properties.qmd
-        - in_05_nzsc_reqs.qmd
+        - in_02_profile_behaviour.qmd
+        - in_03_nzsc_reqs.qmd
     - references.qmd
   appendices:
-    - ap_01_equipment.qmd
-    - ap_02_field_recording.qmd
+    - ap_equipment.qmd
+    - ap_field_recording.qmd
     - ap_sampling.qmd
-    - ap_03_database_design.qmd
+    - ap_data_model.qmd
     - ap_classification.qmd
     - ap_compat.qmd
     - ap_province.qmd
@@ -96,3 +96,24 @@ knitr:
     warning: false
     message: false
     error: false
+
+## Current dependencies
+## renv::dependencies() |>
+##   dplyr::distinct(Package) |>
+##   dplyr::arrange(Package)
+#
+#              dplyr
+#            ggplot2
+#             ggtern
+#                 gt
+#           gtExtras
+#            munsell
+#              purrr
+#          rmarkdown
+#      rnaturalearth
+# rnaturalearthhires
+#                 sf
+#            stringr
+#             tibble
+#          tidyverse
+#               tmap
