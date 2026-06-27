@@ -67,20 +67,20 @@ NIWA (now part of Earth Sciences New Zealand) have more recently published a set
 
 Earth Sciences New Zealand publish short and long-term climate data statistics for over 1200 specific recording stations [@earthsciencesnewzealandClimateStationStatistics2025; @earthsciencesnewzealandClimateStationNormals2025]. Local records of climatic conditions are also commonly kept by individual landholders, and should be sought out as needed.
 
-## Key parameters {#sec-clim-meas}
+### Key parameters {#sec-clim-meas}
 
 Some climatic parameters are more directly related to soils than others, mainly through their influence on vegetation community and evapotranspiration. The following subsections comprise a brief discussion of commonly available climate parameters as they pertain to soil occurrence and development in New Zealand.
 
 Spatial estimates of many of the parameters described below were made at 100 m resolution for LENZ and have been republished in the New Zealand Environmental Data Stack [@mccarthy2021]. However, these maps were based on a relatively small set of observations that covered the period 1950-1980, so their utility is limited [@srinivasan2024]. Newer versions of these datasets covering the period 1991-2020 are available from Earth Sciences New Zealand [@earthsciencesnewzealandRegionalClimatologyGridded2025], although their spatial resolution is lower, at 500 m. Summary figures from specific recording stations are available from the NIWA regional climatology documents discussed in @sec-clim-region.
 
-### Rainfall {#sec-clim-rfall}
+#### Rainfall {#sec-clim-rfall}
 
 Soil moisture availability strongly influences chemical weathering in soils [@dixon2016], and in many parts of the landscape the main source of soil moisture is rainfall.
 
 - Total annual rainfall: some soils are unlikely to form outside a particular total annual rainfall range, e.g. Allophanic Soils are uncommon where total annual rainfall is less than 1000 mm [@hewitt2025].
 - Rainfall seasonality: calculated as the mean of monthly rainfall totals, divided by their standard deviation. More pronounced seasonality implies stronger soil wetting and drying cycles, which in turn influences weathering processes. An alternate measurement of seasonality involves calculating the ratio of rainfall in the warmest versus the coolest three months. In New Zealand this is usually (December+ January + February)/(June + July + August).
 
-### Temperature {#sec-clim-temp}
+#### Temperature {#sec-clim-temp}
 
 - Soil temperature: soil temperatures vary from atmospheric temperatures, changing more slowly and also varying by depth. Land cover and geothermal heat sources can also affect soil temperature. While not a key feature of the New Zealand soil classification [@hewitt2025], other systems like Soil Taxonomy [@soilsurveystaff2022] require knowledge of the soil temperature regime.
 - Mean annual temperature: the mean atmospheric temperature recorded year-round. Relevant for agricultural suitability assessments.
@@ -88,15 +88,15 @@ Soil moisture availability strongly influences chemical weathering in soils [@di
 - Growing Degree Days (GDD): GDD measures the total number of degrees Celsius above a set minimum temperature (usually 5, 10, or 16°C). Average daily temperature (maximum - minimum/2) is used in the calculation, and where temperature is below the set minimum, 0 is recorded. Plant species have specific GDD requirements that help determine their distribution and preferred growing conditions.
 - Frost Days (FD): frost days are days where the temperature drops below 0 °C, measured 1.2 m above the land surface. Many plant species are vulnerable to frost, particularly as juveniles.
 
-### Water balance
+#### Water balance
 
 Data on evapotranspiration rate, relative humidity, and soil moisture deficit (or excess) are relevant to ecological studies and agricultural suitability assessments. Only soil moisture deficit may directly relate to soil profile characteristics (e.g. drainage behaviour) but available data is too low-resolution to be applied at individual sites.
 
-### Light {#sec-clim-insol}
+#### Light {#sec-clim-insol}
 
 The amount of solar energy received by a site, modified by terrain, day length and cloud cover, can strongly affect plant growth, evapotranspiration, and soil weathering rates. Incoming solar radiation, total annual and monthly sunshine hour data surfaces are available from @earthsciencesnewzealandRegionalClimatologyGridded2025, and theoretical maximums under fine weather conditions can be calculated in GIS software with the aid of a digital elevation model.
 
-### Wind {#sec-clim-wind}
+#### Wind {#sec-clim-wind}
 
 The prevailing wind direction, its usual strength and seasonality all affect evapotranspiration rates and even the physical development of growing plants. Prevailing wind can also influence aeolian sediment supply (loess or sand) and depositional or erosional pattern. Particularly when conducting agricultural suitability assessments, it may be important to note the most common directions of prevailing winds, their strength, seasonality and the degree to which each landform assessed is sheltered. Wind shelter can be interpreted from measurements of exposure (@sec-gmph-exp) and landform orientation (@sec-gmph-lfmori) in relation to prevailing wind direction.
 
