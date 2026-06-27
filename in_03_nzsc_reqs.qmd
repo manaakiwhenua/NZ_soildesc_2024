@@ -334,24 +334,25 @@ Detailed requirements for classifying the Family and Sibling are contained in @w
 
 ### Family requirements {#sec-in-nzscfam}
 
-+-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| Parameter                               | Requirements                                                                                                               |
-+:========================================+:===========================================================================================================================+
-| Soil Profile Material                   | - [Rock fragment content](hr_01_architecture.qmd#sec-rockfrag) (either texture code or percentage estimate)                |
-|                                         | - [Rock fragment roundedness](hr_01_architecture.qmd#sec-rockfrag-shp)                                                     |
-|                                         | - Depth to [regolithic or saprolithic material](pr_03_horizons.qmd#sec-pr-wdeg), if encountered                            |
-|                                         | - Depth to lithic or paralithic contact, if encountered                                                                    |
-|                                         | - Thickness of organic soil material, if encountered                                                                       |
-+-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| Rock class of profile stone and bedrock | - [Lithology](ss_04_parent_material.qmd#sec-pm-lith) of rock fragments (if encountered)                                    |
-|                                         | - [Lithology](ss_04_parent_material.qmd#sec-pm-lith) of substrate non-soil materials (if encountered)                      |
-+-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| Rock class of fines                     | Originating [lithology](ss_04_parent_material.qmd#sec-pm-lith) of soil materials \<2 mm                                    |
-+-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| Texture group class                     | [Texture class](hr_03_texture.qmd#sec-hr-eatxt) of all horizons to 60 cm depth or the limit of soil material, if shallower |
-+-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| Permeability class                      | [Profile permeability](in_02_profile_behaviour.qmd#sec-in-pperm) class \|                                                  |
-+-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter                               | Requirements                                                                                                                                                                       |
++:========================================+:===================================================================================================================================================================================+
+| Soil Profile Material                   | - [Rock fragment content](hr_01_architecture.qmd#sec-rockfrag) (either texture code or percentage estimate) - [Rock fragment roundedness](hr_01_architecture.qmd#sec-rockfrag-shp) |
+|                                         | - Depth to [regolithic or saprolithic material](pr_03_horizons.qmd#sec-pr-wdeg), if encountered                                                                                    |
+|                                         | - Depth to lithic or paralithic contact, if encountered                                                                                                                            |
+|                                         | - Thickness of organic soil material, if encountered                                                                                                                               |
++-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Rock class of profile stone and bedrock | - [Lithology](ss_04_parent_material.qmd#sec-pm-lith) of rock fragments (if encountered)                                                                                            |
+|                                         | - [Lithology](ss_04_parent_material.qmd#sec-pm-lith) of substrate non-soil materials (if encountered)                                                                              |
++-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Rock class of fines                     | Originating [lithology](ss_04_parent_material.qmd#sec-pm-lith) of soil materials \<2 mm                                                                                            |
++-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Texture group class                     | [Texture class](hr_03_texture.qmd#sec-hr-eatxt) of all horizons to 60 cm depth or the limit of soil material, if shallower                                                         |
++-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Permeability class                      | [Profile permeability](in_02_profile_behaviour.qmd#sec-in-pperm) class                                                                                                             |
++-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Profile material origin class           | [Parent material origin](pr_03_horizons.qmd#sec-pr-orig) class, summarised to a maximum of two dominant classes in the top 100 cm                                                  |
++-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 : Parameters required to identify the NZSC Family {#tbl-nzsc-famid .striped .hover tbl-colwidths="[40, 60]"}
 
