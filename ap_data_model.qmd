@@ -1,2191 +1,672 @@
+---
+format:
+  html:
+    mermaid:
+      theme: neutral
+---
 # Data model {#sec-erds}
 
-The following diagrams demonstrate one way in which the contents of this manual can be structured in a database. The diagrams only deal with the data themselves - security, user management, change tracking and other helper functionalities are left out for clarity. Data tables for samples and laboratory results are also not included. The model is optimised to highlight the relationships between the various data points and contains some structures that support the controlled vocabulary lists, but is not optimised for performance. 
+::: {.content-hidden when-format='html'}
+This appendix demonstrates one way in which the contents of this manual can be structured in a database. Security, user management, change tracking, reporting, and other helper functionalities are left out for clarity. Audiovisual records, physical samples, sensor data and analytical results are also not considered. The size and complexity of the diagrams means that they are best viewed online at @sec-erds.
 
-## Conceptual model
-
-This overview shows the relationships between each part of the standard.
-
-```{mermaid}
-%%| label: fig-movv
-%%| fig-cap: "Overview - conceptual relationships"
-
-erDiagram
-  direction LR
-  Site ||--|| Location : "has one"
-  Site ||--|| Landform : "is in one"
-  Site ||--|| Landscape : "is in one"
-  Landscape ||--|{ Landform : "comprises at least one"
-  Site ||--o{ "Recent events" : "may have some"
-  Site ||--|| "Site surface" : "has one"
-  "Site surface" ||--|{ "Surface cover" : "has"
-  "Site surface" ||--|{ Disturbances : "has"
-  "Site surface" ||--|{ Microrelief : "has"
-  "Site surface" ||--o{ Erosion : "may have some"
-  "Site surface" ||--o{ Deposition : "may have some"
-  Site ||--|{ Horizon : "has at least one"
-  Horizon ||--o{ "Peds" : "may contain"
-  Horizon ||--o{ "Rock Fragments" : "may contain"
-  Horizon ||--o{ "Other Fragments" : "may contain"
-  Horizon ||--o{ "Artefacts" : "may contain"
-  Horizon ||--o{ "Roots" : "may contain"
-  Horizon ||--o{ "Voids" : "may contain"
-  Horizon ||--o{ "Pores" : "may contain"
-  Horizon ||--|{ "Matrix colour" : "has one or more"
-  Horizon ||--o{ "Colour patterns" : "may have"
-  Horizon ||--|| "Texture" : "has a"
-  Horizon ||--|| "Particle size distribution (estimate)" : "has a"
-  Horizon ||--o{ "Concentrations" : "may have some"
-  Horizon ||--o{ "Coatings" : "may have some"
-  Horizon ||--o{ "Pan" : "may be a"
-  Horizon ||--o{ "Stress Features" : "may have some"
-  Horizon ||--o{ "Consistence tests" : "may have some"
-  Site ||--o{ "Field tests" : "may have some"
-  Site ||--|{ "NZ Soil Classification" : "has an"
-  Site ||--o{ "Interpreted properties" : "may have some"
-  Horizon ||--|| "Horizon Names" : "has a"
-
-```
-
-## Soil Setting {#sec-erd-setting}
-
-The setting tables store site location (@sec-loc), landscape and landform (@sec-gmph), land cover (@sec-lcov), and land use (@sec-luse).
-
-::: {.content-hidden when-format='docx'}
-```{mermaid}
-%%| label: fig-msettingo
-%%| fig-cap: "Setting - Overview"
-
-erDiagram
-  direction LR
-  site ||--|| location : "has one"
-  location }|--|{ elevation_measurement_methods : "code comes from"
-  location }|--|{ gnss_types : "code comes from"
-  site ||--|| landscape : "has one associated"
-  landscape }|--|{ provinces : "code comes from"
-  landscape }|--|{ landscapes : "code comes from"
-  landscape ||--|{ landform : "contains at least one"
-  landscape ||--o{ lscape_struct : "may have some"
-  lscape_struct }|--|{ landscape_structs : "code comes from"
-  landscape ||--o{ lscape_landuse : "may have some"
-  lscape_landuse }|--|{ landuse_primary : "code comes from"
-  lscape_landuse }|--|{ landuse_secondary : "code comes from"
-  landform }|--|{ landform_types : "code comes from"
-  landform }|--|{ measurement_types : "code comes from"
-  landform }|--|{ landform_elements : "code comes from"
-  landform }|--|{ landform_element_vmods : "code comes from"
-  landform }|--|{ landform_element_hmods : "code comes from"
-  landform ||--o{ lform_landuse : "may have some"
-  landform }|--|{ land_cover_types : "code comes from"
-  lform_landuse }|--|{ landuse_primary : "code comes from"
-  lform_landuse }|--|{ landuse_secondary : "code comes from"
-  lform_landuse }|--|{ landuse_tertiary : "code comes from"
-
-```
 :::
 
+::: {.content-visible when-format='html'}
+
+This appendix demonstrates one way in which the contents of this manual can be structured in a database. Security, user management, change tracking, reporting, and other helper functionalities are left out for clarity. Audiovisual records, physical samples, sensor data and analytical results are also not considered.
+
+## Overview
+
+This overview shows the high-level relationships between each part of the standard. End nodes with "..." continue to be described in greater detail in a sub-diagram.
+
+### Site
+
 ```{mermaid}
-%%| label: fig-msettingd
-%%| fig-cap: "Setting - Details"
+%%| label: fig-erd-ov-sit
+%%| fig-cap: "Overview - conceptual relationships (Site)"
 
 erDiagram
   direction LR
-  site ||--|| location : "has one"
-  location }|--|{ elevation_measurement_methods : "code comes from"
-  location }|--|{ gnss_types : "code comes from"
-  site ||--|| landscape : "has one associated"
-  landscape }|--|{ provinces : "code comes from"
-  landscape }|--|{ landscapes : "code comes from"
-  landscape ||--|{ landform : "contains at least one"
-  landscape ||--o{ lscape_struct : "may have some"
-  lscape_struct }|--|{ landscape_structs : "code comes from"
-  landscape ||--o{ lscape_landuse : "may have some"
-  lscape_landuse }|--|{ landuse_primary : "code comes from"
-  lscape_landuse }|--|{ landuse_secondary : "code comes from"
-  landform }|--|{ landform_types : "code comes from"
-  landform }|--|{ measurement_types : "code comes from"
-  landform }|--|{ landform_elements : "code comes from"
-  landform }|--|{ landform_element_vmods : "code comes from"
-  landform }|--|{ landform_element_hmods : "code comes from"
-  landform ||--o{ lform_landuse : "may have some"
-  landform }|--|{ land_cover_types : "code comes from"
-  lform_landuse }|--|{ landuse_primary : "code comes from"
-  lform_landuse }|--|{ landuse_secondary : "code comes from"
-  lform_landuse }|--|{ landuse_tertiary : "code comes from"
-  
-  %% data %%
-  location {
-    id           id_site PK                  
-    geo          geo_point_site_xy        "Section 2.1.1"
-    num[-5-3724] amt_elevation_abs_m      "Section 2.1.1"
-    num[0-Inf]   amt_error_location_m     "Section 2.1.2"
-    num[0-Inf]   amt_error_elevation_m    "Section 2.1.2"
-    cat          catu_elevation_method FK "Section 2.1.3"
-    cat          catu_gnss FK             "Section 2.1.3"
-    num[-5-3724] amt_elevation_rel_m      "Section 2.2.2"
-    txt          txt_notes_triangulation  "Section 2.2.1"
-    txt          txt_location_desc        "Section 2.2.3"
-    %% not defining code tables for these just now %%
-    cat          catu_admin_rc            "Section 2.2.4"
-    cat          catu_admin_dc            "Section 2.2.4"
-  }
-  
-  elevation_measurement_methods {
-    id           id_elevation_method PK
-    cat          catu_elevation_method FK  "Table 2.2"
-    txt          txt_elevation_method_name "Table 2.2"
-  }
+  Site ||--|| "Reference data..." : "has"
+  Site ||--|| Location : "is at"
+      Location ||--|| "Absolute location..." : "has"
+      Location ||--|| "Relative location..." : "has"
+  Site ||--|| Setting : "has"
+    Setting ||--|| "Geomorphology..." : "has"
+    Setting ||--|| "Parent Material..." : "has"
+    Setting ||--|| "Climate and Weather..." : "has"
+    Setting ||--|| "Vegetation..." : "has"
+    Setting ||--|| "Land classification..." : "has"
+  Site ||--|| "Soil Profile" : "contains"
+    "Soil Profile" ||--|| "Surface..." : "has"
+    "Soil Profile" ||--|{ "Horizon..." : "has at least one"
+    "Soil Profile" ||--|{ "Interpreted properties..." : "has"
+ 
+```
 
-  gnss_types {
-    id           id_gnss PK
-    cat          catu_gnss FK              "Table 2.1"
-    txt          txt_gnss_name             "Table 2.1"
-    txt          txt_gnss_desc             "Table 2.1"
-  }  
-  
-  %% data %%
-  landscape {
-    id           id_site PK
-    cat          catu_province FK          "Section 3.1"
-    cat          catu_landscape FK         "Section 3.2.1"
-    %% landscape relief %%
-    num[0-Inf]   amt_lscape_relief_med_m   "Section 3.2.2.1"
-    %% landscape slope %%
-    num[0-90]    amt_lscape_slope_med_d    "Section 3.2.2.2"
-    num[0-90]    amt_lscape_slope_min_d    "Section 3.2.2.2"
-    num[0-90]    amt_lscape_slope_max_d    "Section 3.2.2.2"
-    %% not implementing drainage pattern stuff here %%
-  }
+Note that a site is conceptualised here as a visit at a single point in time. Repeated visits to the same physical location need to be modelled with additional structures not included here.
 
-  provinces {
-    id           id_province PK
-    cat          catu_province FK          "Table 3.1"
-    txt          txt_province_name         "Table 3.1"
-    txt          txt_province_desc         "Appendix G"
-  }
-  
-  landscapes {
-    id           id_landscape PK
-    cat          catu_landscape FK         "Table 3.2"
-    txt          txt_landscape_name        "Table 3.2"
-    txt          txt_landscape_desc        "Table 3.2"
-  }
-  
-  %% data %%
-  lscape_struct {
-    id           id_site PK
-    id           id_landscape PK
-    id           id_lscape_struct PK
-    cat          catu_lscape_struct FK    "Section 3.2.2.4"
-  }
-  
-  landscape_structs {
-    id           id_lscape_struct PK
-    cat          catu_landscape_struct FK         "Table 3.3"
-    txt          txt_landscape_struct_name        "Table 3.3"
-    txt          txt_landscape_struct_desc        "Table 3.3"
-  }
-  
-  %% data %%
-  lscape_landuse {
-    id           id_site PK
-    id           id_landscape PK
-    id           id_lscape_landuse PK
-    cat          catu_lscape_landuse_primary FK    "Section 7.2.1"
-    cat          catu_lscape_landuse_secondary FK  "Section 7.2.1"
-    num[0-100]   amt_landuse_area_p                "Section 7.2.1"
-  }
+### Setting
 
-  landuse_primary {
-    id           id_landuse_primary PK
-    cat          catu_landuse_primary FK         "Fig. 7.1"
-    txt          txt_landuse_primary_name        "Fig. 7.1"
-  }
+```{mermaid}
+%%| label: fig-erd-ov-set
+%%| fig-cap: "Overview - conceptual relationships (Setting)"
 
-  landuse_secondary {
-    id           id_landuse_primary PK
-    id           id_landuse_secondary PK
-    cat          catu_landuse_secondary FK       "Fig. 7.1"
-    txt          txt_landuse_secondary_name      "Fig. 7.1"
-  }
+erDiagram
+  direction LR
+    Setting ||--|| Geomorphology : "has"
+      Geomorphology ||--|| Province : "has"
+      Geomorphology ||--|| "Landscape..." : "has"
+      Geomorphology ||--|| "Landform..." : "has"
+    Setting ||--|| "Parent Material" : "has"
+      "Parent Material" ||--o{ Geology : "may have"
+         Geology ||--o{ "Map Code" : "may have"
+           "Map Code" ||--|| "Source" : "has" 
+      "Parent Material" ||--|{ "Lithology" : "has"
+      "Parent Material" ||--|{ "Origin" : "has"
+    Setting ||--|| "Climate and Weather" : "has"
+      "Climate and Weather" ||--|| Climate : "has"
+        Climate ||--o| "Global..." : "may have"
+        Climate ||--o| "Regional..." : "may have"
+        Climate ||--o| "Local..." : "may have"
+      "Climate and Weather" ||--|| Weather : "has"
+        Weather ||--o| "Current weather" : "may have"
+        Weather ||--o| "Current temperature" : "may have"
+        Weather ||--|| "Recent Rainfall" : "has"
+    Setting ||--|| Vegetation : "has"
+      Vegetation ||--o| "Detailed description" : "may have one"
+      Vegetation ||--|| "Vegetation Class" : "has"
+    Setting ||--|| "Land classification" : "has"
+      "Land classification"  ||--|| "Land Cover" : "has"
+      "Land classification"  ||--|| "Land Use" : "has"
+      "Land classification"  ||--|| "Land Management" : "has"
 
-  %% data %%
-  landform {
-    id           id_site PK
-    id           id_landscape PK
-    id           id_landform PK
-    cat          catu_landform FK                "Section 3.3.1"
-    num[0-100]   amt_landform_p                  "Section 3.2.2.5"
-    %% can only be true for one landform per site/landscape: %%
-    bool         ind_landform_contains_site  
-    %% (other way is separate tables for site-landform and    %%
-    %% landscape-landforms)                                   %%
-    cat          catu_land_cover FK              "Section 7.1"
-    %% detailed optional stuff: %%
-    num[0-Inf]   amt_landform_relief_m           "Section 3.3.2.1"
-    num[0-90]    amt_landform_slope_med_d        "Section 3.3.2.2"
-    num[0-90]    amt_landform_slope_min_d        "Section 3.3.2.2"
-    num[0-90]    amt_landform_slope_max_d        "Section 3.3.2.2"
-    num[0-359]   val_landform_aspect_med_d       "Section 3.3.2.3"
-    num[0-359]   val_landform_aspect_min_d       "Section 3.3.2.3"
-    num[0-359]   val_landform_aspect_max_d       "Section 3.3.2.3"
-    cat          catu_landform_aspect_rec FK     "Section E.1.2"
-    cat          catu_landform_element FK        "Section 3.3.2.4"
-    cat          catu_landform_element_vmod FK   "Section 3.3.2.4"
-    cat          catu_landform_element_hmod FK   "Section 3.3.2.4"
-    %% extremely optional %%
-    num[0-Inf]   amt_slope_length_m         "Section 3.4.1"
-    num[-90-90]  amt_mesoscale_topo_index   "Section 3.4.2"
-    num[-90-90]  amt_terrain_shape_index    "Section 3.4.3"
+```
+
+### Soil Profile
+
+```{mermaid}
+%%| label: fig-erd-ov-prf
+%%| fig-cap: "Overview - conceptual relationships (profile)"
+
+erDiagram
+  direction LR
+ "Soil Profile" ||--|| Surface : "has"
+    Surface ||--|| "Morphometry..." : "has"
+    Surface ||--|| "Features..." : "has"
+    Surface ||--|| "Disturbances..." : "has" 
+ "Soil Profile" ||--|{ "Horizon" : "has at least one"
+    Horizon ||--|| "Extent..." : "has"
+    Horizon ||--|| "Moisture status" : "has"
+    Horizon ||--|| "Parent Material..." : "has"
+    Horizon ||--|| "Architecture..." : "has"
+    Horizon ||--|| "Colours..." : "has" 
+    Horizon ||--|| "Texture..." : "has"
+    Horizon ||--o{ "Weathering features..." : "may have"
+    Horizon ||--o{ "Consistence tests..." : "may have"
+    Horizon ||--o{ "Field tests..." : "may have"
+    Horizon ||--|| "Interpreted properties..." : "has"
+  "Soil Profile" ||--|{ "Interpreted properties" : "has"
+    "Interpreted properties" ||--|| "Drainage" : "has"
+    "Interpreted properties" ||--|| "Permeability" : "has"
+    "Interpreted properties" ||--o{ "Rooting barriers..." : "may have"
+    "Interpreted properties" ||--|| "NZ Soil Classification..." : "has"
+    "Interpreted properties" ||--o| "Depth to water" : "may have"
+
+
+```
+
+## Site
+
+### Reference data
+
+```{mermaid}
+%%| label: fig-erd-sit-ref
+%%| fig-cap: "Site - reference data"
+
+erDiagram
+  direction LR
+  "Reference data" ||--|| Identifier : "has"
+    Identifier ||--o| Alias : "may have"
+  "Reference data" ||--|{ Author : "has"
+    Author ||--|| Name : "has"
+    Author ||--o| Role : "may have"
+  "Reference data" ||--|| "Date of observation" : "has"
+  "Reference data" ||--|| "Purpose" : "has"
+  "Reference data" ||--|| "Selection method" : "has"
+  "Reference data" ||--|| "Exposure type" : "has"
+  "Reference data" ||--|| "Observation max. depth" : "has"
+  "Reference data" ||--o| "Early stop reason" : "may have"
+
+```
+
+### Location 
+
+```{mermaid}
+%%| label: fig-erd-sit-loc
+%%| fig-cap: "Site - location data"
+
+erDiagram
+  direction LR
+  Location ||--|| "Absolute location" : "has"
+    "Absolute location" ||--|| "XY Coordinates" : "has"
+      "XY Coordinates" ||--|| "Coord. Ref. System" : "has"
+      "XY Coordinates" ||--|| "Expected error" : "has"
+      "XY Coordinates" ||--|| "Data source" : "has"
+    "Absolute location" ||--|| "Elevation" : "has"
+      "Elevation" ||--|| "Vert. Coord. Ref. System" : "has"
+      "Elevation" ||--|| "Vert. Expected error" : "has"
+      "Elevation" ||--|| "El. Data source" : "has"
+  Location ||--|| "Relative location" : "has"
+    "Relative location" ||--o| "Triangulation description" : "may have"
+    "Relative location" ||--o| "Relative elevation" : "may have"
+      "Relative elevation" ||--|| Value : "has"
+      "Relative elevation" ||--|| "Reference point" : "has"
+    "Relative location" ||--o| "Access description" : "may have"
+
+```
+
+## Setting
+
+### Geomorphology
+
+```{mermaid}
+%%| label: fig-erd-set-gmf
+%%| fig-cap: "Setting - Geomorphology"
+
+erDiagram
+  direction LR
+      Geomorphology ||--|| Landscape : "has"
+        Landscape ||--|| "Lsc. Name" : "has"
+        Landscape ||--o| "Lsc. Relief" : "may have"
+          "Lsc. Relief" ||--|| "LscR Value" : "has"
+          "Lsc. Relief" ||--o| "LscR Range" : "may have"
+        Landscape ||--o| "Lsc. Slope" : "may have"
+          "Lsc. Slope" ||--|| "LscS Value" : "has"
+          "Lsc. Slope" ||--o| "LscS Range" : "may have"
+        Landscape ||--o| "Lsc. Drainage pattern" : "may have"
+        Landscape ||--o{ "Lsc. Structural Controls" : "may have"
+      Geomorphology ||--|| Landform : "has"
+        Landform ||--|| "Lfm. Name" : "has"
+        Landform ||--|| "Lfm. Slope" : "has"
+          "Lfm. Slope" ||--|| "LfmS Value": "has"
+          "Lfm. Slope" ||--o| "LfmS Range" : "may have"
+        Landform ||--|| "Lfm. Orientation" : "has"
+          "Lfm. Orientation" ||--|| "LfmO Value": "has" 
+          "Lfm. Orientation" ||--|| "LfmO Range": "has" 
+        Landform ||--|{ "Lfm. Element" : "has"
+          "Lfm. Element" ||--|| "LfmE Morphology" : "has"
+          "Lfm. Element" ||--o| "LfmE rel. inclination" : "may have"
+          "Lfm. Element" ||--o| "LfmE rel. enclosure" : "may have"
+        Landform ||--o| "Lfm. Slope Length" : "may have"
+          "Lfm. Slope Length" ||--|| "LfmSl Value" : "has"
+          "Lfm. Slope Length" ||--|| "LfmSl Method" : "has"
+        Landform ||--o| MTI : "may have"
+            MTI ||--o{ "MTI Bearing" : "has"
+              "MTI Bearing" ||--|| "MTI Angle" : "has"
+```
+
+### Climate
+
+```{mermaid}
+%%| label: fig-erd-set-cli
+%%| fig-cap: "Setting - Climate"
+
+erDiagram
+  direction LR
+  Climate ||--o| Global : "may have"
+    Global ||--|| "Gl. Classification" : "has"
+      "Gl. Classification" ||--|| "Gl. Cl. Source" : "has"
+  Climate ||--o| Regional : "may have"
+    Regional ||--|| "Rg. Classification" : "has"
+      "Rg. Classification" ||--|| "Rg. Cl. Source" : "has"
+  Climate ||--|| Local : "has"
+    Local ||--|| "Lc. Classification" : "has"
+      "Lc. Classification" ||--|| "Lc. Cl. Source" : "has"
+    Local ||--o| Rainfall : "may have"
+      Rainfall ||--o| "Rf Tot. Ann" : "may have"
+        "Rf Tot. Ann" ||--|| "RFTA Source" : "has"
+      Rainfall ||--o| "Rf. Seasonality" : "may have"
+        "Rf. Seasonality" ||--|| "RFTS Source" : "has"
+    Local ||--o| Temperature : "may have"
+      Temperature ||--o| "Temp Mean Ann." : "may have"
+        "Temp Mean Ann." ||--|| "TMA Source" : "has"
+      Temperature ||--o| "Temp Mean Sum." : "may have"
+        "Temp Mean Sum." ||--|| "TMS Source" : "has"
+      
+```
+
+Note that other values mentioned in @sec-clim-rfall through to @sec-clim-wind may potentially be stored in a similar manner to that described above for local rainfall and temperature data, but it may be more efficient not to do so where the values are already published in continuous data surfaces.
+
+## Profile
+
+### Surface
+
+```{mermaid}
+%%| label: fig-erd-prf-sfc
+%%| fig-cap: "Profile - soil surface"
+
+erDiagram
+  direction LR
+  Surface ||--|| Morphometry : "has"
+   Morphometry ||--|| Slope : "has"
+     Slope ||--|| "Sl. Value" :  "has"
+     Slope ||--o| "Sl. Range" :  "may have"
+   Morphometry ||--|| Aspect: "has"
+     Aspect ||--|| "A. Value" :  "has"
+     Aspect ||--o| "A. Range" :  "may have"
+   Morphometry ||--o| TSI : "may have"
+     TSI ||--o{ "TSI Bearing" : "has"
+       "TSI Bearing" ||--|| "TSI Angle" : "has"
+  Surface ||--|| Features : "has"
+    Features ||--|| Cover : "has"
+      Cover ||--|{ "Cover Type" : has
+        "Cover Type"||--|| "C. Abundance" : has 
+    Features ||--o| Water : "may have"
+      Water ||--|| "Water type" : "has"
+      Water ||--o| "Wt. Persistence" : "may have"
+    Features ||--o| Cracks : "may have"
+      Cracks ||--|| Width : "has"
+      Cracks ||--|| Depth : "has"
+      Cracks ||--|| Spacing : "has"
+      Cracks ||--o| "Ck. Persistence" :  "may have"
+      Cracks ||--o| "Ck. Arrangement" :  "may have"
+    Features ||--|| Microrelief : "has"
+      Microrelief ||--|{ "Natural Microrelief" : "has"
+        "Natural Microrelief" ||--|| "MR Type" : "has"
+        "Natural Microrelief" ||--o| "MR Form" : "may have"
+        "Natural Microrelief" ||--o| "MR Height" : "may have"
+        "Natural Microrelief" ||--o| "MR Spacing" : "may have"
+      Microrelief ||--o{ "Anthropogenic Microrelief" : "may have"
+        "Anthropogenic Microrelief" ||--|| "AMR Type" : "has"
+        "Anthropogenic Microrelief" ||--o| "AMR Height" : "may have"
+        "Anthropogenic Microrelief" ||--o| "AMR Spacing" : "may have"
+    Surface ||--||Disturbances : "has" 
+      Disturbances ||--|{ "Recent Disturbances" : "has"
+        "Recent Disturbances" ||--|| "Dist. Type" : "has"
+        "Recent Disturbances" ||--o| "Dist. Recency Class" : "may have"
+        "Recent Disturbances" ||--o| "Dist. Recency Days" : "may have"
+      Disturbances ||--o{ Erosion : "may have"
+        Erosion ||--|| "Er. Type" : "has"
+        Erosion ||--|| Activity : "has"
+        Erosion ||--|| "Er. Severity" : "has"
+      Disturbances ||--o{ Deposition : "may have"
+        Deposition ||--|| "Dp. Type" : "has"
+        Deposition ||--|| Activity : "has"
+        Deposition ||--|| "Dp. Severity" : "has"
+
+```
+
+### Horizons
+
+```{mermaid}
+%%| label: fig-erd-hzn
+%%| fig-cap: "Profile - Soil horizons"
+
+erDiagram
+  direction LR
+  Horizon ||--|| "Extent" : "has"
+    Extent ||--|| "Depths..." : "has"
+    Extent ||--|| "Boundary..." : "has"
+  Horizon ||--o{ "Infill features" : "may have"
+     "Infill features" ||--|| "IF Type" : has
+     "Infill features" ||--o| "IF Material" : "may have"
+  Horizon ||--|| "Moisture status" : "has"
+  Horizon ||--|| "Parent Material" : "has"
+    "Parent Material" ||--|{ "Lithology" : "has one or more"
+    "Parent Material" ||--|{ "Mineralogy" : "has one or more"
+    "Parent Material" ||--|| "Weathering status" : "has"
+    "Parent Material" ||--|{ "Origin" : "has one or more"
+  Horizon ||--|| Architecture : "has one"
+    Architecture ||--|{ "Structure..." : "has one or more"
+    Architecture ||--o{ "Fragments..." : "may have"
+    Architecture ||--o{ "Roots..." : "may have"
+    Architecture ||--o{ "Voids and pores..." : "may have"
+    Architecture ||--o{ "Subsolum features..." : "may have"
+  Horizon ||--|| Colours : "has" 
+    Colours ||--|{ "Matrix colour..." : "has"
+    Colours ||--o{ "Colour patterns..." : "has"
+  Horizon ||--|| Texture : "has"
+    Texture ||--|| "Texture group" : "has"
+    Texture ||--|| "Texture class..." : "has"
+    Texture ||--|| "PSD (estimate)..." : "has a"
+  Horizon ||--o{ "Weathering features" : "may have"
+    "Weathering features" ||--o{ "Concentrations..." : "may have"
+    "Weathering features" ||--o{ "Coatings..." : "may have"
+    "Weathering features" ||--o{ "Pan..." : "may be a"
+    "Weathering features" ||--o{ "Stress Features..." : "may have"
+  Horizon ||--o{ "Consistence tests" : "may have"
+    "Consistence tests" ||--|| "C. Test parameter" : "has"
+    "Consistence tests" ||--|| "C. Test method" : "has"
+    "Consistence tests" ||--|| "C. Test result" : "has"
+    "Consistence tests" ||--|| "C. Moisture Status" : "has"
+  Horizon ||--o{ "Field tests" : "may have"
+    "Field tests" ||--|| "F. Test parameter" : "has"
+    "Field tests" ||--|| "F. Test method" : "has"
+    "Field tests" ||--|| "F. Test Result" : "has"
+  Horizon ||--|| "Interpreted properties" : "has"
+    "Interpreted properties" ||--|| "Horizon Notation..." : "has"
+    "Interpreted properties" ||--|| "Horizon drainage class" : "has"
+    "Interpreted properties" ||--|| "Horizon permeability class" : "has"
+
+```
+
+Notes:
+
+-  Consistence tests can be modelled separately from soil horizons, in which case each combination of test parameter, method, result and moisture status would be conceptualised as belonging to the soil profile, and be associated with a point or range depth measurement.
+-  Field tests can be modelled separately from soil horizons, in which case each combination of test parameter, method, and result would be conceptualised as belonging to the soil profile, and be associated with a point or range depth measurement.
+
+
+#### Extent
+
+```{mermaid}
+%%| label: fig-erd-hzn-ext
+%%| fig-cap: "Horizons  - extent"
+
+erDiagram
+  direction LR
+  Horizon ||--|| Extent : "has"
+    Extent ||--|| Depths : "has"
+      Depths ||--|| "Upper depth" : "has"
+        "Upper depth" ||--|| "UD Value" : has
+        "Upper depth" ||--o| "UD Range" : "may have"
+      Depths ||--|| "Lower depth" : "has"
+        "Lower depth" ||--|| "LD Value" : has
+        "Lower depth" ||--o| "LD Range" : "may have"
+    Extent ||--|| Boundary : "has"
+      Boundary ||--o| "Bdy Shape" : "may have"
+      Boundary ||--o| "Bdy Distinctness" : "may have"
+        "Bdy Distinctness" ||--|| "BD Value" : "has"
+        "Bdy Distinctness" ||--o| "BD Range" : "may have"
+
+```
+
+#### Architecture
+
+```{mermaid}
+%%| label: fig-erd-hzn-arc
+%%| fig-cap: "Horizons - Architecture"
+
+erDiagram
+  direction LR
+  Architecture ||--|{ Structure : "has one or more"
+    Structure ||--|| "Str. Origin" : "has"
+    Structure ||--|| "Str. Development" : "has"
+    Structure ||--o| "Str. Shape" : "may have"
+    Structure ||--o| "Str. Size" : "may have"
+      "Str. Size" ||--|| "StrS Value" : has
+      "Str. Size" ||--o| "StrS Range" : "may have"
+  Architecture ||--o{ Fragments : "may have"
+      Fragments ||--o{ "Rock Fragments..." : "may have"
+      Fragments ||--o{ "Natural Fragments..." : "may have"
+      Fragments ||--|{ "Artefacts..." : "may have"
+  Architecture ||--o{ Roots : "may have"
+    Roots ||--|| "Root Abundance" : "has"
+    Roots ||--o{ "Root Size" : "may have"
+      "Root Size" ||--|| "RS Abundance" : "may have"
+    Roots ||--|| "Root Position" : "has"
+  Architecture ||--o{ "Voids and pores" : "may have"
+    "Voids and pores" ||--o{ "Voids..." : "may have"
+    "Voids and pores" ||--o{ "Pores..." : "may have" 
+  Architecture ||--o{ "Subsolum features" : "may have"
+    "Subsolum features" ||--o| "SS Lithology" : "may have"
+    "Subsolum features" ||--o| "SS Weathering" : "may have"
+    "Subsolum features" ||--o| "SS Bedding" : "may have"
+      "SS Bedding" ||--|| "SSB Angle" : "has"
+      "SS Bedding" ||--|| "SSB Thickness" : "has"
+    "Subsolum features" ||--o{ Fractures : "has"
+      Fractures ||--|| "SSF Type" : "has"
+        "SSF Type" ||--o| "SSFT Orientation" : "may have"
     
-  }
-  
-  landform_types {
-    id           id_landform PK
-    cat          catu_landform FK           "Table 3.4"
-    txt          txt_landform_name          "Table 3.4"
-    txt          txt_landform_desc          "Table 3.4"
-  }
-  
-  land_cover_types {
-    id           id_land_cover PK
-    cat          catu_land_cover FK         "Table 7.1"
-    txt          txt_land_cover_name        "Table 7.1"
-    txt          txt_land_cover_desc        "Table 7.1"
-  }
-
-  measurement_types {
-    id          id_mtype PK
-    cat         catu_mtype FK               "Table D.1.1"
-    txt         txt_mtype_name              "Table D.1.1"
-  }
-  
-  landform_elements {
-    id          id_landform_element PK
-    cat         catu_landform_element FK    "Table 3.5"
-    txt         txt_landform_element_name   "Table 3.5"
-  }
-  
-  landform_element_vmods {
-    id          id_landform_element_vmod PK
-    cat         catu_landform_element_vmod FK    "Table 3.6"
-    txt         txt_landform_element_vmod_name   "Table 3.6"
-    txt         txt_landform_element_vmod_desc   "Table 3.6"
-  } 
-
-  landform_element_hmods {
-    id          id_landform_element_hmod PK
-    cat         catu_landform_element_hmod FK    "Table 3.7"
-    txt         txt_landform_element_hmod_name   "Table 3.7"
-    txt         txt_landform_element_hmod_desc   "Table 3.7"
-  } 
-
-  %% data %%
-  lform_landuse {
-    id           id_site PK
-    id           id_landform PK
-    id           id_lform_landuse PK
-    cat          catu_lform_landuse_tertiary FK   "Section 7.2.2"
-    amt[0-100]   amt_landuse_area_p               "Section 7.2.2"
-    cat          cato_landuse_impact              "Section 7.2.2"
-  }
-
-  landuse_tertiary {
-    id           id_landuse_secondary PK
-    id           id_landuse_tertiary PK
-    cat          catu_landuse_tertiary FK         "Fig. 7.1"
-    txt          txt_landuse_tertiary_name        "Fig. 7.1"
-  }
-
 ```
 
-## Site overview {#sec-erd-siteover}
+##### Fragments
 
-The site table stores reference data (@sec-ref), except for location.
-
-::: {.content-hidden when-format='docx'}
 ```{mermaid}
-%%| label: fig-msiteo
-%%| fig-cap: "Site - Overview"
+%%| label: fig-erd-hzn-arc-frg
+%%| fig-cap: "Horizons - Architecture - Fragments"
 
 erDiagram
   direction LR
-  site }|--|{ site_purposes : "code comes from"
-  site }|--|{ site_selection_methods : "code comes from"
-  site }|--|{ site_exposure_types : "code comes from"
-  site }|--|{ site_early_stop_types : "code comes from"
-  site }|--|{ macroclimates : "code comes from"
-  site }|--|{ current_weather : "code comes from"
-  site }|--|{ recent_rainfall : "code comes from"
+  Fragments ||--o{ "Rock Fragments" : "may have"
+        "Rock Fragments" ||--|| "RF Abundance" : "has"
+          "RF Abundance" ||--|| "RFA Value" : "has"
+          "RF Abundance" ||--o| "RFA Range" : "may have"
+        "Rock Fragments" ||--|{ "RF Lithology" : "has"
+        "Rock Fragments" ||--o| "RF Shape" : "may have"
+          "RF Shape" ||--o| "RF Form" : "may have"
+          "RF Shape" ||--o| "RF Roundedness" : "may have"
+          "RF Shape" ||--o| "RF Roughness" : "may have"
+        "Rock Fragments" ||--o| Weathering : "may have"
+        "Rock Fragments" ||--o{ "RF Size Class" : "may have"
+          "RF Size Class" ||--|| "RFC Abundance" : "has"
+            "RFC Abundance" ||--|| "RFCA Value" : "has"
+            "RFC Abundance" ||--o| "RFCA Range" : "may have"
+          "RF Size Class" ||--o{ "RFC Lithology" : "may have"
+          "RF Size Class" ||--o| "RFC Shape" : "may have"
+            "RFC Shape" ||--o| "RFC Form" : "may have"
+            "RFC Shape" ||--o| "RFC Roundedness" : "may have"
+            "RFC Shape" ||--o| "RFC Roughness" : "may have"
+          "RF Size Class" ||--o| "RF Weathering" : "may have"
+    Fragments ||--o{ "Natural Fragments" : "may have"
+        "Natural Fragments" ||--|| "NF Abundance" : "has"
+            "NF Abundance" ||--|| "NFA Value" : "has"
+            "NF Abundance" ||--o| "NFA Range" : "may have" 
+        "Natural Fragments" ||--o{ "NF Type" : "may have"
+          "NF Type" ||--|| "NFT Abundance" : "has"
+            "NFT Abundance" ||--|| "NFTA Value" : "has"
+            "NFT Abundance" ||--o| "NFTA Range" : "may have"
+          "NF Type" ||--|| "NFT Size" : "has"
+            "NFT Size" ||--|| "NFTS Value" : "has"
+            "NFT Size" ||--o| "NFTS Range" : "may have"  
+    Fragments ||--|{ Artefacts : "may have"
+        Artefacts ||--|| "AF Abundance" : "has"
+          "AF Abundance" ||--|| "AFA Value" : "has"
+          "AF Abundance" ||--o| "AFA Range" : "may have" 
+        Artefacts ||--o{ "AF Type" : "may have"
+          "AF Type" ||--|| "AFT Abundance" : "has"
+            "AFT Abundance" ||--|| "AFTA Value" : "has"
+            "AFT Abundance" ||--o| "AFTA Range" : "may have"
+          "AF Type"  ||--o| "AFT Size" : "may have"
+            "AFT Size" ||--|| "AFTS Value" : "has"
+            "AFT Size" ||--o| "AFTS Range" : "may have"  
+          "AF Type"  ||--o| "AFT Origin" : "may have"
+          "AF Type"  ||--o| "AFT Fixation" : "may have"
+          "AF Type"  ||--o| "AFT Shape" : "may have"
+          "AF Type"  ||--o| "AFT Degradation" : "may have"
+        
+```
+
+##### Voids and Pores
+
+
+```{mermaid}
+%%| label: fig-erd-hzn-arch-vp
+%%| fig-cap: "Horizons - Architecture - Voids and Pores"
+
+erDiagram
+  direction LR
+    "Voids and pores" ||--o{ Voids : "may have"
+      Voids ||--|| "Void Abundance" : "has"
+        "Void Abundance" ||--|| "VA Value" : "has"
+        "Void Abundance" ||--o| "VA Range" : "may have"  
+      Voids ||--o| "Void Connectivity" : "may have"
+      Voids ||--o{ "Void Type" : "may have"
+        "Void Type" ||--|| "VT Abundance" : "has"
+          "VT Abundance" ||--|| "VTA Value" : "has"
+          "VT Abundance" ||--o| "VTA Range" : "may have" 
+        "Void Type" ||--o| "VT Connectivity" : "may have"
+    "Voids and pores" ||--o{ Pores : "may have" 
+      Pores ||--o| "Pore Presence" : "may have"
+      Pores ||--o{ "Pore Size Class" : "may have"
+        "Pore Size Class" ||--|| "Pore Abundance" : "may have"
+          "Pore Abundance" ||--|| "PA Value" : "has"
+          "Pore Abundance" ||--o| "PA Range" : "may have" 
 
 ```
+
+#### Colours
+
+```{mermaid}
+%%| label: fig-erd-hzn-col
+%%| fig-cap: "Horizons - Colour"
+
+erDiagram
+  direction LR
+  Colours ||--|{ "Matrix colour" : "has"
+    "Matrix colour" ||--|| Hue : "has"
+    "Matrix colour" ||--|| Value : "has"
+    "Matrix colour" ||--|| Chroma : "has"
+    "Matrix colour" ||--|| "Moisture Status" : "has"
+  Colours ||--o{ "Colour patterns" : "may have"
+    "Colour patterns" ||--|| Type : "has"
+    "Colour patterns" ||--o| "Shape" : "may have"
+    "Colour patterns" ||--|| "CP Abundance" : "has"
+      "CP Abundance" ||--|| "CPA Value" : "has"
+      "CP Abundance" ||--o| "CPA Range" : "may have" 
+    "Colour patterns" ||--o| "CP Size" : "may have"
+      "CP Size" ||--|| "CPS Value" : "has"
+      "CP Size" ||--o| "CPS Range" : "may have"    
+    "Colour patterns" ||--o| Contrast : "may have"
+    "Colour patterns" ||--|| "CP Colour" : "has"
+      "CP Colour" ||--o| "CP Short Colour" : "may have"
+      "CP Colour" ||--o| "CP Hue" : "may have"
+      "CP Colour" ||--o| "CP Value" : "may have"
+      "CP Colour" ||--o| "CP Chroma" : "may have"
+      "CP Colour" ||--|| "CP Moisture Status" : "has"
+    
+```
+
+
+#### Texture
+
+```{mermaid}
+%%| label: fig-erd-hzn-tex
+%%| fig-cap: "Horizons - Texture class"
+
+erDiagram
+  direction LR
+  Texture ||--|| "Texture Class" : "has"
+    "Texture Class" ||--o| "Fine Earth Texture Code" : "may have"
+      "Fine Earth Texture Code" ||--o| "FE Sand size mod" : "may have"  
+      %% main , major or minor component:
+      "Fine Earth Texture Code" ||--|| "FE position" : "has"   
+    "Texture Class" ||--o| "Rock Fragment Code" : "may have"
+      "Rock Fragment Code" ||--o| "RF size mod" : "may have"   
+      "Rock Fragment Code" ||--|| "RF position" : "has"  
+    "Texture Class" ||--o| "Organic Matter Code" : "may have"
+      "Organic Matter Code" ||--o| "OM decomp. mod" : "may have"   
+      "Organic Matter Code" ||--o| "OM origin mod" : "may have" 
+      "Organic Matter Code" ||--|| "OM position" : "has"  
+   Texture ||--|| "PSD (estimate)" : "may have"
+     "PSD (estimate)" ||--|| "Clay content" : "has"
+       "Clay content" ||--|| "Clay value" : "has"
+       "Clay content" ||--o| "Clay range" : "may have"
+     "PSD (estimate)" ||--|| "Sand content" : "has"
+       "Sand content" ||--|| "Sand value" : "has"
+       "Sand content" ||--o| "Sand range" : "may have"   
+```
+
+#### Weathering Features
+
+```{mermaid}
+%%| label: fig-erd-hzn-wft
+%%| fig-cap: "Horizons - Weathering Features"
+
+erDiagram
+  direction LR
+    "Weathering features" ||--o{ "Concentrations" : "may have"
+      "Concentrations" ||--|| "CF Form" : "has"
+      "Concentrations" ||--|| "CF Type" : "has"
+      "Concentrations" ||--|| "CF Abundance" : "has"
+        "CF Abundance" ||--|| "CFA Value" : "has"
+        "CF Abundance" ||--o| "CFA Range" : "may have"
+      "Concentrations" ||--|| "CF Size" : "has"
+        "CF Size" ||--|| "CFS Value" : "has"
+        "CF Size" ||--o| "CFS Range" : "may have"
+    "Weathering features" ||--o{ "Coatings" : "may have"
+      "Coatings" ||--|| "CT Type" : "has"
+      "Coatings" ||--|| "CT Abundance" : "has"
+        "CT Abundance" ||--|| "CTA Value" : "has"
+        "CT Abundance" ||--o| "CTA Range" : "may have"
+    "Weathering features" ||--o{ "Pan" : "may be a"
+      "Pan" ||--|| "Pan Type" : "has"
+      "Pan" ||--o| "Pan Continuity" : "may have"
+      "Pan" ||--o| "Pan Structure" : "may have"
+    "Weathering features" ||--o{ "Stress Features" : "may have"
+      "Stress Features" ||--|| "SF Type" : has
+      "Stress Features" ||--o| "SF Abundance" : has
+        "SF Abundance" ||--|| "SFA Value" : "has"
+        "SF Abundance" ||--o| "SFA Range" : "may have"
+
+```
+
+#### Interpreted Properties
+
+##### Horizon notation
+
+```{mermaid}
+%%| label: fig-erd-hzn-not
+%%| fig-cap: "Horizons - Interpreted Properties - Notation"
+
+erDiagram
+  direction LR
+  "Horizon notation" ||--|| "Primary designation" : "has"
+  "Horizon notation" ||--|| "Secondary designation" : "has"
+  "Secondary designation" ||--o| "Redox suffix" : "has"
+  "Secondary designation" ||--o{ "Other suffix" : "has"
+  "Secondary designation" ||--|| "Subhorizon Index" : "has"
+  "Secondary designation" ||--|| "Lithological prefix" : "has"
+  "Secondary designation" ||--o| "Burial indicator" : "has"
+  "Secondary designation" ||--o| "Anthropic indicator" : "has"
+  
+
+```
+
+### Interpreted Properties
+
+#### New Zealand Soil Classification
+
+```{mermaid}
+%%| label: fig-erd-prf-int-nzsc
+%%| fig-cap: "Profile - Interpreted Properties - New Zealand Soil Classification"
+
+erDiagram
+  direction LR
+  "NZSC" ||--|| "NZSC Order" : "has"
+    "NZSC Order" ||--|| "NZSC Group" : "has"
+      "NZSC Group" ||--|| "NZSC Subgroup" : "has"
+        "NZSC Subgroup" ||--|| "NZSC Family" : "has"
+          "NZSC Family" ||--|| "Soil profile material class" : "has"
+          "NZSC Family" ||--|| "Rock Class (profile and/or bedrock stone)" : "has"
+          "NZSC Family" ||--|| "Rock Class (fine earth)" : "has"
+          "NZSC Family" ||--|| "Texture group class" : "has"
+          "NZSC Family" ||--|| "Permeability class" : "has"
+          "NZSC Family" ||--|| "Parent material origin class" : "has"
+          "NZSC Family" ||--|| "NZSC Sibling" : "has"
+            "NZSC Sibling" ||--|| "Depth Class" : "has" 
+            "NZSC Sibling" ||--|| "Topsoil Stone Class" : "has" 
+            "NZSC Sibling" ||--|| "Texture Class" : "has" 
+            "NZSC Sibling" ||--|| "Drainage Class" : "has" 
+            "NZSC Sibling" ||--|| "Misc. Class" : "has" 
+            "NZSC Sibling" ||--|{ "Functional Horizon" : "has" 
+            "Functional Horizon" ||--|| "Permeability" : "has"
+
+```
+
+#### Rooting barriers
+
+```{mermaid}
+%%| label: fig-erd-prf-int-rb
+%%| fig-cap: "Profile - Interpreted Properties - Rooting barriers"
+
+erDiagram
+  direction LR
+  "Rooting barrier" ||--o{ "Barrier type" : "may have"
+    "Barrier type" ||--|| "Barrier depth" : "has"
+      "Barrier depth" ||--|| "BD Value" : "has"
+      "Barrier depth" ||--o| "BD Range" : "may have"
+
+```
+
 :::
-
-```{mermaid}
-%%| label: fig-msited
-%%| fig-cap: "Site - Details"
-
-erDiagram
-  direction LR
-  site }|--|{ site_purposes : "code comes from"
-  site }|--|{ site_selection_methods : "code comes from"
-  site }|--|{ site_exposure_types : "code comes from"
-  site }|--|{ site_early_stop_types : "code comes from"
-  site }|--|{ macroclimates : "code comes from"
-  site }|--|{ current_weather : "code comes from"
-  site }|--|{ recent_rainfall : "code comes from"
-
-  %% data %%
-  site {
-    id          id_site PK               "Section 9.2.1"
-    usr         usr_author               "Section 9.2.2"
-    dt          dt_site                  "Section 9.2.4"
-    cat         catu_site_purpose FK     "Section 9.2.5"
-    cat         catu_site_selection FK   "Section 9.2.6"
-    cat         catu_site_exposure FK    "Section 9.2.7"
-    num[0-1000] amt_site_depth_max_cm    "Section 9.2.8"
-    cat         catu_site_early_stop FK  "Section 9.2.8.1"
-    %% macroclimate %% 
-    cat         cato_macroclimate FK     "Section 5.1.2"
-    %% weather at visit %%
-    cat         catu_weather FK          "Section 5.3.1"
-    num[-50-50] val_temperature_c        "Section 5.3.1"
-    cat         cato_recent_rain FK      "Section 5.3.2"
-  }
-  
-  site_purposes {
-    id          id_site_purpose PK
-    cat         catu_site_purpose FK     "Table 9.1"
-    txt         txt_site_purpose_name    "Table 9.1"
-  }
-  
-  site_selection_methods {
-    id          id_site_selection PK
-    cat         catu_site_selection FK   "Table 9.2"
-    txt         txt_site_selection_name  "Table 9.2"
-  }
-  
-  site_exposure_types {
-    id          id_site_exposure PK
-    cat         catu_site_exposure FK    "Table 9.3"
-    txt         txt_site_exposure_name   "Table 9.3"
-  }
-  
-  site_early_stop_types {
-    id          id_site_early_stop PK
-    cat         catu_site_early_stop FK  "Table 9.4"
-    txt         txt_site_early_stop_name "Table 9.4"
-    txt         txt_site_early_stop_desc "Table 9.4"
-  }
-
-  macroclimates {
-    id          id_weather PK
-    cat         catu_weather FK  "Table 5.1"
-    txt         txt_weather_name "Table 5.1"
-  }
-
-  current_weather {
-    id          id_weather PK
-    cat         catu_weather FK  "Table 5.2"
-    txt         txt_weather_name "Table 5.2"
-  }
-  
-  recent_rainfall {
-    id          id_rainfall PK
-    cat         catu_rainfall FK  "Table 5.3"
-    txt         txt_rainfall_name "Table 5.3"
-  }
-
-```
-
-## Surface {#sec-erd-surface}
-
-The surface table stores slope, aspect, surface cover, surface disturbances, surface water, surface cracking, microrelief, erosion and deposition data (@sec-pr-surface). It can also store LUC vegetation code (@sec-veg). This table can optionally extend the site table (@sec-erd-siteover) as it has a 1:1 relationship.
-
-::: {.content-hidden when-format='docx'}
-```{mermaid}
-%%| label: fig-msurfaceo
-%%| fig-cap: "Surface - Overview"
-
-erDiagram
-  direction LR
-  site_surface }|--|{ slope_methods : "code comes from"
-  site_surface }|--|{ measurement_types : "code comes from"
-  site_surface }|--|{ aspect_methods : "code comes from"
-  site_surface ||--|{ surface_cover : "has"
-  surface_cover }|--|{ surface_cover_types : "code comes from"
-  site_surface ||--|{ disturbances : "has"
-  disturbances }|--|{ disturbance_types : "code comes from"
-  disturbances }|--|{ disturbance_ages : "code comes from"
-  site_surface }|--|{ surface_water_types : "code comes from"
-  site_surface }|--|{ surface_water_persts : "code comes from"
-  site_surface }|--|{ surface_crack_types : "code comes from"
-  site_surface }|--|{ surface_crack_shapes : "code comes from"
-  site_surface ||--|{ surface_microrelief : "has"
-  surface_microrelief }|--|{ surface_microrelief_driver : "code comes from"
-  surface_microrelief }|--|{ surface_microrelief_form : "code comes from"
-  site_surface ||--o{ site_erosion : "may have"
-  site_erosion }|--|{ erosion_types : "code comes from"
-  site_erosion }|--|{ erosion_severity : "code comes from"
-  site_erosion }|--|{ erodep_activity : "code comes from"
-  site_surface ||--o{ site_deposition : "may have"
-  site_deposition }|--|{ deposition_types : "code comes from"
-  site_deposition }|--|{ deposition_severity : "code comes from"
-  site_deposition }|--|{ erodep_activity : "code comes from"
-  site_surface }|--|{ water_depths : "code comes from"
-  site_surface }|--|{ luc_vegetation_codes : "code comes from"
-
-```
-:::
-
-```{mermaid}
-%%| label: fig-msurfaced
-%%| fig-cap: "Surface - Details"
-
-erDiagram
-  direction LR
-  site_surface }|--|{ slope_methods : "code comes from"
-  site_surface }|--|{ measurement_types : "code comes from"
-  site_surface }|--|{ aspect_methods : "code comes from"
-  site_surface ||--|{ surface_cover : "has"
-  surface_cover }|--|{ surface_cover_types : "code comes from"
-  site_surface ||--|{ disturbances : "has"
-  disturbances }|--|{ disturbance_types : "code comes from"
-  disturbances }|--|{ disturbance_ages : "code comes from"
-  site_surface }|--|{ surface_water_types : "code comes from"
-  site_surface }|--|{ surface_water_persts : "code comes from"
-  site_surface }|--|{ surface_crack_types : "code comes from"
-  site_surface }|--|{ surface_crack_shapes : "code comes from"
-  site_surface ||--|{ surface_microrelief : "has"
-  surface_microrelief }|--|{ surface_microrelief_driver : "code comes from"
-  surface_microrelief }|--|{ surface_microrelief_form : "code comes from"
-  site_surface ||--o{ site_erosion : "may have"
-  site_erosion }|--|{ erosion_types : "code comes from"
-  site_erosion }|--|{ erosion_severity : "code comes from"
-  site_erosion }|--|{ erodep_activity : "code comes from"
-  site_surface ||--o{ site_deposition : "may have"
-  site_deposition }|--|{ deposition_types : "code comes from"
-  site_deposition }|--|{ deposition_severity : "code comes from"
-  site_deposition }|--|{ erodep_activity : "code comes from"
-  site_surface }|--|{ water_depths : "code comes from"
-  site_surface }|--|{ luc_vegetation_codes : "code comes from"
-
-  %% data %%
-  site_surface {
-    id          id_site PK                       "Section 9.2.1"
-    num[0-90]   amt_slope_d                      "Section 10.1"
-    cat         catu_slope_rec FK                "Section D.13.1"
-    cat         catu_slope_method FK             "Section 10.1"
-    num[0-359]  amt_aspect_d                     "Section 10.2"
-    cat         catu_aspect_rec FK               "Section D.13.1"
-    cat         catu_aspect_method FK            "Section 10.2"
-    cat         catu_surface_water FK            "Section 10.4"
-    cat         cato_surface_water_perst FK      "Section 10.4"
-    cat         catu_surface_cracks FK           "Section 10.5"
-    cat         catu_surface_crack_shp FK        "Section 10.5"
-    num[0-Inf]  amt_depth_water_cm               "Section 11.7"
-    cat         catu_depth_water FK              "Section 11.7"
-    %% vegetation could also be stored at landscape and/or landform %%
-    cat         catu_vegetation_luc FK           "Section 6.1"
-  }
-  
-  slope_methods {
-    id          id_slope_method PK
-    cat         catu_slope_method FK     "Table 10.1"
-    txt         txt_slope_method_name    "Table 10.1"
-    txt         txt_slope_method_desc    "Table 10.1"
-  }
-  
-  aspect_methods {
-    id          id_aspect_method PK
-    cat         catu_aspect_method FK     "Table 10.2"
-    txt         txt_aspect_method_name    "Table 10.2"
-    txt         txt_aspect_method_desc    "Table 10.2"
-  }
-  
-  measurement_types {
-    id          id_mtype PK
-    cat         catu_mtype FK
-    txt         txt_mtype_name           "Table D.1"
-    txt         txt_mtype_desc           "Table D.1"
-  }
-
-  %% data %%
-  surface_cover {
-    id          id_site PK
-    cat         catu_surface_cover FK    "Section 10.3"
-    num[0-100]  amt_surface_cover_p      "Section 10.3"
-  }
-  
-  surface_cover_types {
-    id          id_surface_cover PK
-    cat         catu_surface_cover FK    "Table 10.3"
-    txt         txt_surface_cover_name   "Table 10.3"
-    txt         txt_surface_cover_desc   "Table 10.3"
-  }
-  
-  disturbances {
-    id          id_site PK
-    id          id_disturbance PK
-    cat         catu_disturbance FK      "Section 10.4"
-    cat         catu_disturbance_age FK  "Section 10.4"
-    num[0-Inf]  amt_disturbance_age_days "Section 10.4"
-  }
-
-  disturbance_types {
-    id          id_disturbance PK
-    cat         catu_disturbance FK      "Table 10.4"
-    txt         txt_disturbance_name     "Table 10.4"
-  }
-  
-  disturbance_ages {
-    id          id_disturbance_age PK
-    cat         catu_disturbance_age FK  "Table 10.5"
-    txt         txt_disturbance_age_name "Table 10.5"
-  }
-
-  
-  surface_water_types {
-    id          id_surface_water PK
-    cat         catu_surface_water FK   "Table 10.6"
-    txt         txt_surface_water_name  "Table 10.6"
-    txt         txt_surface_water_desc  "Table 10.6"
-  }
-
-  surface_water_persts {
-    id          id_surface_water_perst PK
-    cat         catu_surface_water_perst FK    "Table 10.7"
-    txt         txt_surface_water_perst_name   "Table 10.7"
-    txt         txt_surface_water_perst_desc   "Table 10.7"
-  }
-
-  surface_crack_types {
-    id          id_surface_crack
-    cat         catu_surface_crack             "Table 10.8"
-    txt         txt_surface_crack_name         "Table 10.8"
-    txt         txt_surface_crack_desc         "Table 10.8"
-  }
-  
-  surface_crack_shapes {
-    id          id_surface_crack_shp PK
-    cat         catu_surface_crack_shp FK      "Table 10.9"
-    txt         txt_surface_crack_shp_name     "Table 10.9"
-    txt         txt_surface_crack_shp_desc     "Table 10.9"
-  }
-  
-    %% data %%
-  surface_microrelief {
-    id          id_site PK
-    id          id_microrelief PK
-    cat         catu_microrelief_driver FK   "Section 10.7.1/2"
-    cat         catu_microrelief_form FK     "Section 10.7.1.2"
-    %% optional details %%
-    num[0-Inf]  amt_microrelief_width_cm     "Section 10.7.1/2"
-    num[0-Inf]  amt_microrelief_height_cm    "Section 10.7.1/2"
-  }
-  
-  surface_microrelief_driver {
-    id          id_microrelief_driver PK
-    cat         catu_microrelief_driver FK      "Table 10.10"
-    txt         txt_microrelief_driver_name     "Table 10.10"
-    txt         txt_microrelief_driver_desc     "Table 10.10"
-  }
-  
-  surface_microrelief_form {
-    id          id_microrelief_form PK
-    cat         catu_microrelief_form FK      "Table 10.11/12"
-    txt         txt_microrelief_form_name     "Table 10.11/12"
-    txt         txt_microrelief_form_desc     "Table 10.11/12"
-  }
-  
-  %% data %%
-  site_erosion {
-    id          id_site PK
-    id          id_erosion PK                   
-    cat         catu_erosion FK              "Section 10.7"            
-    cat         cato_erosion_severity FK     "Section 10.7"
-    cat         cato_erodep_activity FK      "Section 10.7"
-  }
-  
-  erosion_types {
-    id          id_erosion PK
-    cat         catu_erosion FK              "Table 10.13"
-    txt         txt_erosion_name             "Table 10.13"
-    txt         txt_erosion_desc             "Table 10.13"
-  }
-  
-  erosion_severity {
-    id          id_erosion_severity PK
-    cat         catu_erosion_severity FK     "Table 10.14"
-    txt         txt_erosion_severity_name    "Table 10.14"
-    txt         txt_erosion_severity_desc    "Table 10.14"
-  }  
-  
-  erodep_activity {
-    id          id_erodep_activity PK
-    cat         catu_erodep_activity FK     "Table 10.14"
-    txt         txt_erodep_activity_name    "Table 10.14"
-    txt         txt_erodeo_activity_desc    "Table 10.14"
-  }  
-  
- %% data %%
- site_deposition {
-    id          id_site PK
-    id          id_deposition PK
-    cat         catu_deposition FK             "Section 10.8.2"    
-    cat         cato_deposition_severity FK    "Section 10.8.2"
-    cat         cato_erodep_activity FK        "Section 10.8.1"
-  }
-  
-  deposition_types {
-    id          id_deposition PK
-    cat         catu_deposition FK                "Table 10.16"
-    txt         txt_deposition_name               "Table 10.16"
-    txt         txt_deposition_desc               "Table 10.16"
-  }  
-  
-  deposition_severity {
-    id          id_deposition_severity PK
-    cat         catu_deposition_severity FK       "Table 10.17"
-    txt         txt_deposition_severity_name      "Table 10.17"
-    txt         txt_deposition_severity_desc      "Table 10.17"
-  }  
-  
-
-  water_depths {
-    id          id_depth_water PK
-    cat         catu_depth_water FK        "Table 11.6"
-    txt         txt_depth_water_name       "Table 11.6"
-    txt         txt_depth_water_desc       "Table 11.6"  
-  }
- 
-  luc_vegetation_codes {
-    id          id_vegetation_luc PK
-    cat         catu_vegetation_luc FK        "Section 7.1"
-    txt         txt_vegetation_luc_name       "Section 7.1"
-    txt         txt_vegetation_luc_desc       "Section 7.1"  
-  } 
-```
-
-## Horizon overview {#sec-erd-horizono}
-
-The horizon overview table stores boundary definitions, soil moisture status at the time of examination, parent material information, and horzion-level permeability and drainage. 
-
-::: {.content-hidden when-format='docx'}
-```{mermaid}
-%%| label: fig-mhorizono
-%%| fig-cap: "Horizon - Overview"
-
-erDiagram
-  direction LR
-  horizon }|--|{ boundary_shapes : "code comes from"
-  horizon }|--|{ boundary_widths : "code comes from"
-  horizon ||--o{ horizon_infill : "may have"
-  horizon_infill }|--|{ infill_type : "code comes from"
-  horizon_infill }|--|{ infill_material : "code comes from"
-  horizon }|--|{ soil_moistures : "code comes from"
-  horizon ||--|{ horizon_lithology : "has"
-  horizon_lithology }|--|{ lithology : "code comes from"
-  horizon_lithology }|--|{ lithology_frac : "code comes from"
-  horizon }|--|{ pmo : "code comes from"
-  horizon }|--|{ pmo_mod : "code comes from"
-  horizon }|--|{ weathering : "code comes from"
-  horizon }|--|{ horizon_drainage : "code comes from"
-  horizon }|--|{ horizon_permeability : "code comes from"
-
-```
-:::
-
-```{mermaid}
-%%| label: fig-mhorizond
-%%| fig-cap: "Horizon - Details"
-
-erDiagram
-  direction LR
-  horizon }|--|{ boundary_shapes : "code comes from"
-  horizon }|--|{ boundary_widths : "code comes from"
-  horizon ||--o{ horizon_infill : "may have"
-  horizon_infill }|--|{ infill_type : "code comes from"
-  horizon_infill }|--|{ infill_material : "code comes from"
-  horizon }|--|{ soil_moistures : "code comes from"
-  horizon ||--|{ horizon_lithology : "has"
-  horizon_lithology }|--|{ lithology : "code comes from"
-  horizon_lithology }|--|{ lithology_frac : "code comes from"
-  horizon }|--|{ pmo : "code comes from"
-  horizon }|--|{ pmo_mod : "code comes from"
-  horizon }|--|{ weathering : "code comes from"
-  horizon }|--|{ horizon_drainage : "code comes from"
-  horizon }|--|{ horizon_permeability : "code comes from"
-  
-  %% data %%
-  horizon {
-  id         id_site PK
-  id         id_horizon PK
-  num[0-Inf] amt_upper_depth_cm      "Section 11.2"
-  num[0-Inf] amt_upper_depth_med_cm  "Section 11.2"
-  num[0-Inf] amt_upper_depth_min_cm  "Section 11.2"
-  num[0-Inf] amt_upper_depth_max_cm  "Section 11.2"
-  num[0-Inf] amt_lower_depth_cm      "Section 11.2"
-  num[0-Inf] amt_lower_depth_med_cm  "Section 11.2"
-  num[0-Inf] amt_lower_depth_min_cm  "Section 11.2"
-  num[0-Inf] amt_lower_depth_max_cm  "Section 11.2"
-  cat        catu_boundary_shape FK  "Section 11.3"
-  num[0-Inf] amt_boundary_cm         "Section 11.3"
-  cat        cato_boundary_width FK  "Section 11.4" 
-  cat        cato_soil_moisture FK   "Section 11.6"
-  %% pmo %%
-  cat        catu_parent_material_origin FK    "Section 11.8.3"
-  cat        catu_anthropic_origin_modifier FK "Section 11.8.3"
-  %% weathering %%
-  cat        cato_horizon_weathering FK  "Section 11.8.2"
-  %% drainage %%
-  cat        cato_horizon_drainage FK    "Section 19.1.1"
-  %% perm %%
-  cat        cato_horizon_permeability FK  "Section 19.2.1"
-  }
-  
-  boundary_shapes {
-    id          id_boundary_shape PK
-    cat         catu_boundary_shape FK       "Table 11.1"
-    txt         txt_boundary_shape_name      "Table 11.1"
-    txt         txt_boundary_shape_desc      "Table 11.1"
-  }
- 
-  boundary_widths {
-    id          id_boundary_width PK
-    cat         cato_boundary_width FK       "Table 11.2"
-    txt         txt_boundary_width_name      "Table 11.2"
-    txt         txt_boundary_width_desc      "Table 11.2"
-  } 
-  
-  %% data %%
-  horizon_infill {
-  id         id_site PK
-  id         id_horizon PK
-  id         id_infill PK
-  cat        catu_infill_type FK            "Section 11.5"
-  cat        catu_infill_material FK        "Section 11.5"
-  }
-  
-  infill_type {
-     id         id_infill PK
-    cat         catu_infill FK             "Table 11.3"
-    txt         txt_infill_name            "Table 11.3"
-    txt         txt_infill_desc            "Table 11.3"  
-  }
-  
-  infill_material {
-     id         id_infill_material PK
-    cat         catu_infill_material FK       "Table 11.4"
-    txt         txt_infill_material_name      "Table 11.4"
-    txt         txt_infill_material_desc      "Table 11.4"   
-  }
-  
-  soil_moistures {
-    id          id_soil_moisture PK
-    cat         cato_soil_moisture FK       "Table 11.5"
-    txt         txt_soil_moisture_name      "Table 11.5"
-  }
-
-   %% data %%
-  horizon_lithology {
-  id         id_site PK
-  id         id_horizon PK
-  id         id_lithology PK
-  cat        catu_lithology FK            "Section 11.8.1"
-  cat        catu_lithology_frac FK       "Section 11.8.1"
-  }
-  
-  lithology {
-     id         id_lithology PK
-    cat         catu_lithology_group FK       "Table 4.1"
-    cat         catu_lithology FK             "Table 4.1"
-    txt         txt_lithology_name            "Table 4.1"
-    txt         txt_lithology_desc            "Table 4.1"
-  }
-
-  lithology_frac {
-     id         id_lithology_frac PK
-    cat         catu_lithology_frac FK            "C, F"
-    txt         txt_lithology_frac_name           "Coarse, Fine" 
-    txt         txt_lithology_frac_desc           ">2 mm, <2mm" 
-  }
-  
-  pmo {
-    id          id_pmo PK
-    cat         catu_pmo FK             "Table 11.8"
-    txt         txt_pmo_name            "Table 11.8"
-    txt         txt_pmo_desc            "Table 11.8"  
-  }
-  
-  pmo_mod {
-    id          id_pmo_mod PK
-    cat         catu_pmo_mod FK         "Table 11.9"
-    txt         txt_pmo_mod_name        "Table 11.9"
-    txt         txt_pmo_mod_desc        "Table 11.9"  
-  }
-  
-  weathering {
-    id          id_weathering PK
-    cat         catu_weathering FK         "Table 11.7"
-    txt         txt_weathering_name        "Table 11.7"
-    txt         txt_weathering_desc_rock   "Table 11.7"  
-    txt         txt_weathering_desc_seds   "Table 11.7" 
-  }
-  
-  horizon_drainage {
-    id          id_horizon_drainage PK
-    cat         catu_horizon_drainage FK    "Table 19.1"
-    txt         txt_horizon_drainage_name   "Table 19.1"
-    txt         txt_horizon_drainage_rock   "Table 19.1"  
-    txt         txt_horizon_drainage_seds   "Table 19.1" 
-  }
-  
-horizon_permeability {
-    id   id_horizon_permeability PK
-    cat  catu_horizon_permeability FK    "Table 19.4"
-    txt  txt_horizon_permeability_name   "Table 19.4"
-    txt  txt_horizon_permeability_rock   "Table 19.4"  
-    txt  txt_horizon_permeability_seds   "Table 19.4" 
-  }
-  
-  
-```
-
-## Horizon architecture {#sec-erd-horizona}
-
-The horizon architecture table stores data about pedality, fragments, roots, voids and pores. This table can optionally extend the horizon overview table (@sec-erd-horizono) as it has a 1:1 relationship.
-
-::: {.content-hidden when-format='docx'}
-```{mermaid}
-%%| label: fig-mhorao
-%%| fig-cap: "Horizon architecture - Overview"
-
-erDiagram
-  direction LR
-  horizon_arch ||--|{ horizon_structures : "has"
-  horizon_structures }|--|{ structure_types : "code comes from"
-  horizon_structures }|--|{ structure_grades : "code comes from"
-  horizon_structures }|--|{ structure_shapes : "code comes from"
-  %% detailed rock frag - split into numeric size ranges %%
-  horizon_arch ||--o{ horizon_rock_fragments : "may have some"
-  horizon_rock_fragments }|--|{ rock_fragment_form : "code comes from"
-  horizon_rock_fragments }|--|{ rock_fragment_roundness : "code comes from"
-  horizon_rock_fragments }|--|{ rock_fragment_roughness : "code comes from"
-  horizon_rock_fragments }|--|{ rock_fragment_weathering : "code comes from"
-  horizon_rock_fragments }|--|{ lithologies : "code comes from"
-  horizon_arch ||--o{ horizon_other_fragments : "may have some"
-  horizon_other_fragments }|--|{ other_fragment_types : "code comes from"
-  horizon_arch ||--o{ horizon_artefacts : "may have some"
-  horizon_artefacts }|--|{ artefact_types: "code comes from"
-  horizon_artefacts }|--|{ artefact_origins: "code comes from"
-  horizon_artefacts }|--|{ artefact_fixations: "code comes from"
-  horizon_artefacts }|--|{ artefact_shapes: "code comes from"
-  horizon_artefacts }|--|{ artefact_degradations: "code comes from"
-  horizon_arch ||--o{ horizon_roots : "may have some"
-  horizon_arch }|--|{ root_positions: "code comes from"
-  horizon_roots }|--|{ root_positions: "code comes from"
-  horizon_roots }|--|{ root_sizes: "code comes from"
-  horizon_arch ||--o{ horizon_voids : "may have some"
-  horizon_voids }|--|{ void_types : "code comes from"
-  horizon_voids }|--|{ void_conns : "code comes from"
-  horizon_arch }|--|{ bedding_angles : "code comes from"
-  horizon_arch }|--|{ fracture_patterns : "code comes from"
-  horizon_arch }|--|{ fracture_orients : "code comes from"
-
-```
-:::
-
-```{mermaid}
-%%| label: fig-mhorad
-%%| fig-cap: "Horizon architecture - Details"
-
-erDiagram
-  direction LR
-  horizon_arch ||--|{ horizon_structures : "has"
-  horizon_structures }|--|{ structure_types : "code comes from"
-  horizon_structures }|--|{ structure_grades : "code comes from"
-  horizon_structures }|--|{ structure_shapes : "code comes from"
-  %% detailed rock frag - split into numeric size ranges %%
-  horizon_arch ||--o{ horizon_rock_fragments : "may have some"
-  horizon_rock_fragments }|--|{ rock_fragment_forms : "code comes from"
-  horizon_rock_fragments }|--|{ rock_fragment_roundnesses : "code comes from"
-  horizon_rock_fragments }|--|{ rock_fragment_roughnesses : "code comes from"
-  horizon_rock_fragments }|--|{ rock_fragment_weathering : "code comes from"
-  horizon_rock_fragments }|--|{ lithologies : "code comes from"
-  horizon_arch ||--o{ horizon_other_fragments : "may have some"
-  horizon_other_fragments }|--|{ other_fragment_types : "code comes from"
-  horizon_arch ||--o{ horizon_artefacts : "may have some"
-  horizon_artefacts }|--|{ artefact_types: "code comes from"
-  horizon_artefacts }|--|{ artefact_origins: "code comes from"
-  horizon_artefacts }|--|{ artefact_fixations: "code comes from"
-  horizon_artefacts }|--|{ artefact_shapes: "code comes from"
-  horizon_artefacts }|--|{ artefact_degradations: "code comes from"
-  horizon_arch ||--o{ horizon_roots : "may have some"
-  horizon_arch }|--|{ root_positions: "code comes from"
-  horizon_roots }|--|{ root_positions: "code comes from"
-  horizon_roots }|--|{ root_sizes: "code comes from"
-  horizon_arch ||--o{ horizon_voids : "may have some"
-  horizon_voids }|--|{ void_types : "code comes from"
-  horizon_voids }|--|{ void_conns : "code comes from"
-  horizon_arch }|--|{ bedding_angles : "code comes from"
-  horizon_arch }|--|{ fracture_patterns : "code comes from"
-  horizon_arch }|--|{ fracture_orients : "code comes from"
-  
-  horizon_arch {
-    id         id_site PK
-    id         id_horizon PK
-    %% rapid structure %%
-    cat        cato_structure_grade FK          "Section 12.1.2"
-    cat        cato_structure_size_rapid        "Section 12.1.4"
-    %% routine structures are in subtable %%
-    %% all frags super rapid (record this OR by type) %%
-    num[0-100] amt_total_frags_p                "Section 12.2"
-    %% rock frags routine (rapid - size embedded in texture code) %%
-    num[0-100] amt_rockfrags_p                  "Section 12.2.1"
-    cat        catu_rockfrag_form FK            "Section 12.2.1.1"
-    cat        catu_rockfrag_roundness FK       "Section 12.2.1.1"
-    cat        catu_rockfrag_roughness FK       "Section 12.2.1.1"
-    cat        catu_rockfrag_weathering FK      "Section 12.2.1.2"
-    cat        catu_rockfrag_lithology FK       "Section 12.2.1"
-    %% notrock frags rapid %%
-    num[0-100] amt_otherfrags_p                 "Section 12.2.1.1"
-    %% artefacts rapid %%
-    num[0-100] amt_artefacts_p                  "Section 12.2.1.2"
-    %% roots rapid %%
-    num[0-Inf] amt_total_roots_n                "Section 12.3.1"
-    cat        catu_total_roots_pos FK          "Section 12.3.2"
-    %% void rapid %%
-    num[0-100] amt_total_voids_p                "Section 12.4.1"
-    %% pores rapid %%
-    bool        ind_pores                        "Section 12.4.2"
-    %% pores detailed (could also spin out to subtable) %%
-    num[0-Inf]  amt_macropores_n                 "Section 12.4.2"
-    num[0-Inf]  amt_micropores_n                 "Section 12.4.2"
-    %% Substrate features %%
-    %% rapid %%
-    cat        cato_bedding_angle               "Section 12.5.3"
-    %% routine %%
-    num[0-90]  amt_bedding_angle_d              "Section 12.5.3"
-    %% detailed %%
-    num[0-Inf] amt_bedding_thickness_med        "Section 12.5.3"
-    num[0-Inf] amt_bedding_thickness_min        "Section 12.5.3"
-    num[0-Inf] amt_bedding_thickness_max        "Section 12.5.3"
-    cat        catu_bedding_lithology FK        "Section 4.2"
-    cat        catu_fracture_pattern FK         "Section 12.5.4"
-    cat        catu_fracture_orientation FK     "Section 12.5.4"
-    num[0-Inf] amt_fracture_spacing_med         "Section 12.5.4"
-    num[0-Inf] amt_fracture_spacing_min         "Section 12.5.4"
-    num[0-Inf] amt_fracture_spacing_max         "Section 12.5.4"
-                  
-  }
-
-  structure_types {
-    id          id_structure PK      
-    cat         catu_structure FK    "Table 12.1"
-    txt         txt_structure_name   "Table 12.1"
-    txt         txt_structure_desc   "Table 12.1"
-  }
-
-  structure_grades {
-    id          id_structure_grade PK      
-    cat         cato_structure_grade FK    "Table 12.2"
-    txt         txt_structure_grade_name   "Table 12.2"
-    txt         txt_structure_grade_desc   "Table 12.2"
-  }
-
-  structure_shapes {
-    id          id_structure_shape PK     
-    cat         catu_structure_shape FK        "Table 12.3"
-    txt         txt_structure_shape_name       "Table 12.3"
-    txt         txt_structure_shape_desc       "Table 12.3"
-  }
-
-  structure_sizes_rapid {
-    id          id_structure_size_rapid PK      "Section 12.1.4"
-    cat         cato_structure_size_rapid FK    "C, F"
-    txt         txt_structure_size_rapid_name   "Coarse, Fine"
-    txt         txt_structure_size_rapid_desc   ">20 mm, <20 mm"
-  }
-  
-  %% data %%
-  horizon_structures {
-    id         id_site PK
-    id         id_horizon PK
-    id         id_structure PK
-    cat        catu_structure_type FK     "Section 12.1.1"
-    cat        cato_structure_grade FK    "Section 12.1.2"
-    cat        cato_structure_shape FK    "Section 12.1.3"
-    %% rapid size %%
-    cat        cato_structure_size FK     "Section 12.1.4"
-    %% routine size %%
-    num[0-Inf] amt_structure_size_med_mm  "Section 12.1.4" 
-    %% add for detailed size %%
-    num[0-Inf] amt_structure_size_min_mm  "Section 12.1.4" 
-    num[0-Inf] amt_structure_size_max_mm  "Section 12.1.4"
-  }
-  
-  %% data %%
-  horizon_rock_fragments {
-    id         id_site PK
-    id         id_horizon PK
-    id         id_rock_fragment PK
-    amt[0-Inf] amt_rock_fragment_size_med         "Section 12.2.1"
-    amt[0-Inf] amt_rock_fragment_size_min         "Section 12.2.1"
-    amt[0-Inf] amt_rock_fragment_size_max         "Section 12.2.1"
-    cat        catu_rock_fragment_form FK         "Section 12.2.1.1"
-    cat        catu_rock_fragment_roundness FK    "Section 12.2.1.1"
-    cat        catu_rock_fragment_roughness FK    "Section 12.2.1.1"
-    cat        catu_rock_fragment_lithology FK    "Section 4.1"
-    cat        catu_rock_fragment_weathering FK   "Section 12.2.1.1"
-    num[0-100] amt_rock_fragment_p 
-  }
-  
-  rock_fragment_forms {
-    id          id_rockfrag_form PK    
-    cat         catu_rockfrag_form FK        "Table 12.4"
-    txt         txt_rockfrag_form_name       "Table 12.4"
-    txt         txt_rockfrag_form_desc       "Table 12.4"
-  }
-
-  rock_fragment_roundnesses {
-    id          id_rockfrag_roundnesses PK    
-    cat         catu_rockfrag_roundnesses FK        "Table 12.5"
-    txt         txt_rockfrag_roundnesses_name       "Table 12.5"
-    txt         txt_rockfrag_roundnesses_desc       "Table 12.5"
-  }
-  
-  rock_fragment_roughnesses {
-    id          id_rockfrag_roughnesses PK    
-    cat         catu_rockfrag_roughnesses FK        "Table 12.6"
-    txt         txt_rockfrag_roughnesses_name       "Table 12.6"
-    txt         txt_rockfrag_roughnesses_desc       "Table 12.6"
-  }
-
-  rock_fragment_weathering {
-    id          id_rockfrag_weathering PK    
-    cat         catu_rockfrag_weathering FK        "Table 12.7"
-    txt         txt_rockfrag_weathering_name       "Table 12.7"
-    txt         txt_rockfrag_weathering_desc       "Table 12.7"
-  }
-  
-  lithologies {
-    id          id_lithology PK 
-    cat         catu_lithology_group FK  "Table 4.1"
-    cat         catu_lithology FK        "Table 4.1"
-    txt         txt_lithology_name       "Table 4.1"
-    txt         txt_lithology_desc       "Table 4.1"
-  }
-
-  %% data %%
-  horizon_other_fragments {
-    id         id_site PK
-    id         id_horizon PK
-    id         id_other_fragment PK
-    cat        cato_other_fragment FK           "Section 12.2.2"
-    num[0-Inf] amt_other_fragment_size_med
-    num[0-Inf] amt_other_fragment_size_min
-    num[0-Inf] amt_other_fragment_size_max
-    num[0-100] amt_rock_fragment_p              "Section 12.2.2"
-  }  
-  
-  other_fragment_types {
-    id          id_other_fragment PK
-    cat         cato_other_fragment FK        "Table 12.8"
-    txt         txt_other_fragment_name       "Table 12.8"
-    txt         txt_other_fragment_desc       "Table 12.8"
-  }
-
-  %% data %%
-  horizon_artefacts {
-    id         id_site PK
-    id         id_horizon PK
-    id         id_artefact PK
-    cat        cato_artefact FK                "Section 12.2.3"
-    cat        catu_artefact_origin            "Section 12.2.3"
-    cat        catu_artefact_fixation FK       "Section 12.2.3"
-    cat        catu_artefact_shape FK          "Section 12.2.3"
-    cat        catu_artefact_degradation FK    "Section 12.2.3"
-    num[0-Inf] amt_artefact_size_med           "Section 12.2.3"
-    num[0-Inf] amt_artefact_size_min           "Section 12.2.3"
-    num[0-Inf] amt_artefact_size_max           "Section 12.2.3"
-    num[0-100] amt_artefact_p                  "Section 12.2.3"
-  } 
-  
-  artefact_types {
-    id          id_artefact PK
-    cat         catu_artefact FK             "Table 12.9"
-    txt         txt_artefact_type_name       "Table 12.9"
-    txt         txt_artefact_type_desc       "Table 12.9"
-  }
-
-  artefact_origins {
-    id          id_artefact_fixation PK
-    cat         catu_artefact_fixation FK    "Table 12.10"
-    txt         txt_artefact_fixation_name   "Table 12.10"
-    txt         txt_artefact_fixation_desc   "Table 12.10"
-  }  
-  
-  artefact_fixations {
-    id          id_artefact_fixation PK
-    cat         catu_artefact_fixation FK    "Table 12.11"
-    txt         txt_artefact_fixation_name   "Table 12.11"
-    txt         txt_artefact_fixation_desc   "Table 12.11"
-  }  
-  
-  artefact_shapes {
-    id          id_artefact_shape PK
-    cat         catu_artefact_shape FK       "Table 12.12"
-    txt         txt_artefact_shape_name      "Table 12.12"
-    txt         txt_artefact_shape_desc      "Table 12.12"
-  }    
-  
-  artefact_degradations {
-    id          id_artefact_degradation PK
-    cat         catu_artefact_degradation FK   "Table 12.13"
-    txt         txt_artefact_degradation_name  "Table 12.13"
-    txt         txt_artefact_degradation_desc  "Table 12.13"
-  }   
-  
-  %% data %%
-  horizon_roots {
-    id         id_site PK
-    id         id_horizon PK
-    id         id_root PK
-    cat        cato_root_size FK           "Section 12.3.1"
-    cat        cato_root_pos FK            "Section 12.3.2"
-    num[0-Inf] amt_root_n                  "Section 12.3.1"
-  } 
-
-  root_sizes {
-    id          id_root_size PK     
-    cat         catu_root_size FK         "Table 12.14"
-    txt         txt_root_size_name        "Table 12.14"
-    txt         txt_root_size_desc        "Table 12.14"
-  }
-  
-  root_positions {
-    id          id_root_pos PK     
-    cat         catu_root_pos FK         "Table 12.15"
-    txt         txt_root_pos_name        "Table 12.15"
-    txt         txt_root_pos_desc        "Table 12.15"
-  }
-
-  %% data %%
-  horizon_voids {
-    id         id_site PK
-    id         id_horizon PK
-    id         id_void PK
-    cat        catu_void FK                 "Section 12.4"
-    cat        cato_void_conn FK            "Section 12.4"
-    num[0-100] amt_void_p                   "Section 12.4"
-  } 
-  
-  void_types {
-    id          id_void PK 
-    cat         catu_void FK              "Table 12.16"
-    txt         txt_void_name             "Table 12.16"
-    txt         txt_void_desc             "Table 12.16"
-  }  
-
-  void_conns {
-    id          id_void_conn PK 
-    cat         cato_void_conn FK         "Table 12.17"
-    txt         txt_void_conn_name        "Table 12.17"
-    txt         txt_void_conn_desc        "Table 12.17"
-  }  
-  
-  bedding_angles {
-    id          id_bedding_angle PK 
-    cat         cato_bedding_angle FK         "Table 12.18"
-    txt         txt_bedding_angle_name        "Table 12.18"
-    txt         txt_bedding_angle_desc        "Table 12.18"
-  } 
-  
-  fracture_patterns {
-    id          id_fracture_pattern PK 
-    cat         catu_fracture_pattern FK         "Table 12.19"
-    txt         txt_fracture_pattern_name        "Table 12.19"
-    txt         txt_fracture_pattern_desc        "Table 12.19"
-  }   
-  
-  fracture_orients {
-    id          id_fracture_orient PK 
-    cat         catu_fracture_orient FK         "Table 12.20"
-    txt         txt_fracture_orient_name        "Table 12.20"
-    txt         txt_fracture_orient_desc        "Table 12.20"
-  }   
-  
-```
-
-## Horizon colour {#sec-erd-colour}
-
-These tables store matrix colours (@sec-col-matrix) and colour patterns (@sec-col-patt).
-
-::: {.content-hidden when-format='docx'}
-```{mermaid}
-%%| label: fig-mhorcolo
-%%| fig-cap: "Horizon colour - Overview"
-
-erDiagram
-  direction LR
-  horizon ||--|{ horizon_matrix_colours : "has one or more"
-  horizon ||--o{ horizon_colour_patterns : "may have some"
-  horizon_matrix_colours }|--|{ munsell_colours : "code comes from"
-  horizon_colour_patterns }|--|{ munsell_colours : "code comes from"
-  horizon_colour_patterns }|--|{ short_colours : "code comes from"
-  horizon_colour_patterns }|--|{ pattern_types : "code comes from"
-  horizon_colour_patterns }|--|{ pattern_shapes : "code comes from"
-  horizon_colour_patterns }|--|{ pattern_contrasts : "code comes from"
-  horizon_colour_patterns }|--|{ pattern_edges : "code comes from"
-```
-:::
-
-```{mermaid}
-%%| label: fig-mhorcold
-%%| fig-cap: "Horizon colour - Details"
-
-erDiagram
-  direction LR
-  horizon ||--|{ horizon_matrix_colours : "has one or more"
-  horizon ||--o{ horizon_colour_patterns : "may have some"
-  horizon_matrix_colours }|--|{ munsell_colours : "code comes from"
-  horizon_colour_patterns }|--|{ munsell_colours : "code comes from"
-  horizon_colour_patterns }|--|{ short_colours : "code comes from"
-  horizon_colour_patterns }|--|{ pattern_types : "code comes from"
-  horizon_colour_patterns }|--|{ pattern_shapes : "code comes from"
-  horizon_colour_patterns }|--|{ pattern_contrasts : "code comes from"
-  horizon_colour_patterns }|--|{ pattern_edges : "code comes from"
-  
-  %% data %%
-  horizon_matrix_colours {
-    id          id_site PK
-    id          id_horizon PK
-    id          id_colour_matrix PK        "Section 13.2"
-    %% can also split into hue/value/chroma with subtables %%
-    cat         cato_matrix_munsell        "Section 13.2"
-    %% no simple colours on the matrix!! %%
-    cat         catu_colour_moisture       "Section 13.2"
-  }
-  
-  %% data %%
-  horizon_colour_patterns {
-    id          id_site PK
-    id          id_horizon PK
-    id          id_colour_pattern PK
-    %% either %%
-    cat         cato_pattern_munsell FK        "Section 13.2"
-    %% or, %%
-    cat         catu_pattern_short_colour FK   "Section 13.3.7"
-    cat         catu_pattern_type FK           "Section 13.3.1"
-    num[0-100]  amt_pattern_p                  "Section 13.3.2"
-    cat         catu_pattern_shape  FK         "Section 13.3.3"
-    num[0-Inf]  amt_pattern_size_mm            "Section 13.3.4"
-    cat         cato_pattern_contrast FK       "Section 13.3.5"
-    cat         cato_pattern_edge FK           "Section 13.3.6"
-   }
- 
-  munsell_colours {
-    id          id_munsell PK
-    cat         cato_munsell              "See charts for allowable values"
-    %% optional but handy: %%
-    txt         txt_colour_hex
-  }  
-   
-  short_colours {
-    id          id_colour PK
-    cat         catu_colour FK            "Table 13.6"
-    txt         txt_colour_name           "Table 13.6"
-    txt         txt_colour_desc           "Table 13.6"
-  } 
-  
-  colour_moistures {
-    id          id_colour_moisture
-    cat         cato_colour_moisture      "M or D"
-    txt         txt_colour_moisture_name  "Moist or Dry"
-  }
-
-  pattern_types {
-    id          id_pattern PK
-    cat         catu_pattern FK           "Table 14.3"
-    txt         txt_pattern_name          "Table 14.3"
-    txt         txt_pattern_desc          "Table 14.3"
-  } 
-
-  pattern_shapes {
-    id          id_pattern_shape PK
-    cat         catu_pattern_shape FK     "Table 13.3"
-    txt         txt_pattern_shape_name    "Table 13.3"
-    txt         txt_pattern_shape_desc    "Table 13.3"
-  }
-
-  pattern_contrasts {
-    id          id_pattern_contrast PK
-    cat         catu_pattern_contrast FK  "Table 13.4"
-    txt         txt_pattern_contrast_name "Table 13.4"
-    txt         txt_pattern_contrast_desc "Table 13.4"
-  }
-  
-  pattern_edges {
-    id          id_pattern_edge PK
-    cat         catu_pattern_edge FK      "Table 13.5"
-    txt         txt_pattern_edge_name     "Table 13.5"
-    txt         txt_pattern_edge_desc     "Table 13.5"
-  }
-```
-
-## Horizon texture {#sec-erd-texture}
-
-The horizon texture table stores texture category as well as field estimates of sand and clay, and optionally lithology and mineralogy of the fine earth fraction. This table can optionally extend the horizon overview table (@sec-erd-horizono) as it has a 1:1 relationship.
-
-::: {.content-hidden when-format='docx'}
-```{mermaid}
-%%| label: fig-mhortexo
-%%| fig-cap: "Horizon texture - Overview"
-
-erDiagram
-  direction LR
-  horizon_texture }|--|{ texture_groups : "code comes from"
-  horizon_texture }|--|{ texture_classes : "code comes from"
-  horizon_texture }|--|{ rock_fragment_classes : "code comes from"
-  horizon_texture }|--|{ organic_types : "code comes from"
-  horizon_texture }|--|{ sand_sizes : "code comes from"
-  horizon_texture }|--|{ gravel_sizes : "code comes from"
-  horizon_texture }|--|{ organic_decomps : "code comes from"
-  horizon_texture }|--|{ organic_origins : "code comes from"
-  horizon_texture }|--|{ lithologies : "code comes from"
-
-```
-:::
-
-```{mermaid}
-%%| label: fig-mhortexd
-%%| fig-cap: "Horizon texture - Details"
-
-erDiagram
-  direction LR
-  horizon_texture }|--|{ texture_groups : "code comes from"
-  horizon_texture }|--|{ texture_classes : "code comes from"
-  horizon_texture }|--|{ rock_fragment_classes : "code comes from"
-  horizon_texture }|--|{ organic_types : "code comes from"
-  horizon_texture }|--|{ sand_sizes : "code comes from"
-  horizon_texture }|--|{ gravel_sizes : "code comes from"
-  horizon_texture }|--|{ organic_decomps : "code comes from"
-  horizon_texture }|--|{ organic_origins : "code comes from"
-  horizon_texture }|--|{ lithologies : "code comes from"
-  
-  %% data %%
-  horizon_texture {
-    id          id_site PK
-    id          id_horizon PK
-    cat         catu_texture_group FK       "Section 14.1.1"
-    cat         catu_texture_class FK       "Section 14.1.1"
-    cat         catu_rockfrag_mod_major FK  "Section 14.1.2"
-    cat         catu_rockfrag_mod_minor FK  "Section 14.1.2"
-    cat         catu_organic_mod_major FK   "Section 14.1.2"
-    cat         catu_organic_mod_minor FK   "Section 14.1.2"
-    cat         catu_texture_mod_major FK   "Section 14.1.2"
-    cat         catu_texture_mod_minor FK   "Section 14.1.2"
-    cat         cato_sand_size FK           "Section 14.1.1.1"
-    cat         cato_gravel_size FK         "Section 14.1.2.1"
-    cat         cato_org_decomp FK          "Section 14.1.3.1"
-    cat         catu_org_origin FK          "Section 14.1.3.1"
-    num[0-100]  amt_sand_est_med_p          "Section 14.3"
-    num[0-100]  amt_sand_est_min_p          "Section 14.3"
-    num[0-100]  amt_sand_est_max_p          "Section 14.3"
-    num[0-100]  amt_clay_est_med_p          "Section 14.3"
-    num[0-100]  amt_clay_est_min_p          "Section 14.3"
-    num[0-100]  amt_clay_est_max_p          "Section 14.3"
-    cat         catu_lithology FK           "Section 4.2"
-    txt         txt_texture                 "Section 14.5"
-  }
-   
-  texture_groups {
-    id          id_simple_texture PK
-    cat         cato_simple_texture FK    "Table 14.2, 14.5, 14.7"
-    txt         txt_simple_texture_name   "Table 14.2, 14.5, 14.7"
-    txt         txt_simple_texture_desc   "Table 14.2, 14.5, 14.7"
-  } 
-
-  texture_classes {
-    id          id_texture PK
-    cat         cato_texture FK           "Table 14.3"
-    txt         txt_texture_name          "Table 14.3"
-    txt         txt_texture_desc          "Table 14.3"
-  } 
-  
-  rock_fragment_classes {
-    id          id_texture PK
-    cat         cato_texture FK           "Table 14.5"
-    txt         txt_texture_name          "Table 14.5"
-    txt         txt_texture_desc          "Table 14.5"
-  } 
-
-  organic_types {
-    id          id_organic_type PK
-    cat         catu_organic_type FK      "Table 14.8"
-    txt         txt_organic_type_name     "Table 14.8"
-    txt         txt_organic_type_desc     "Table 14.8"
-  }
-
-  sand_sizes {
-    id          id_sand_size PK
-    cat         catu_sand_size FK         "Table 14.4"
-    txt         txt_sand_size_name        "Table 14.4"
-    txt         txt_sand_size_desc        "Table 14.4"
-  }
-
-  gravel_sizes {
-    id          id_gravel_size PK
-    cat         catu_gravel_size FK         "Table 14.7"
-    txt         txt_gravel_size_name        "Table 14.7"
-    txt         txt_gravel_size_desc        "Table 14.7"
-  }
-
- organic_decomps {
-    id          id_organic_decomp PK
-    cat         catu_organic_decomp FK    "Table 14.10"
-    txt         txt_organic_decomp_name   "Table 14.10"
-    txt         txt_organic_decomp_desc   "Table 14.10"
-  }
- 
-  organic_origins {
-    id          id_organic_origin PK
-    cat         catu_organic_origin FK           "Table 14.11"
-    txt         txt_organic_origin_name          "Table 14.11"
-    txt         txt_organic_origin_desc          "Table 14.11"
-  }
-  
-  lithologies {
-    id          id_lithology PK    
-    cat         catu_lithology_group FK  "Table 4.1"
-    cat         catu_lithology FK        "Table 4.1"
-    txt         txt_lithology_name       "Table 4.1"
-    txt         txt_lithology_desc       "Table 4.1"
-  }
-  
-```
-
-## Horizon weathering features {#sec-erd-secf}
-
-The weathering features tables store essential information in a parent table and more detailed optional descriptions in child tables. The parent table can optionally extend the horizon overview table (@sec-erd-horizono) as it has a 1:1 relationship.
-
-::: {.content-hidden when-format='docx'}
-```{mermaid}
-%%| label: fig-mhorseco
-%%| fig-cap: "Horizon weathering features - Overview"
-
-erDiagram
-  direction LR
-  horizon_weathering_features ||--o{ "horizon_concentrations" : "may have some"
-  horizon_concentrations }|--|{ concentration_forms : "code comes from"
-  horizon_concentrations }|--|{ concentration_types : "code comes from"
-  horizon_weathering_features ||--o{ "horizon_coatings" : "may have some"
-  horizon_coatings }|--|{ coating_types : "code comes from"
-  horizon_weathering_features }|--|{ concentration_forms : "code comes from"
-  horizon_weathering_features }|--|{ concentration_types : "code comes from"
-  horizon_weathering_features }|--|{ pan_types : "code comes from"
-  horizon_weathering_features }|--|{ pan_continuities : "code comes from"
-  horizon_weathering_features }|--|{ pan_structures : "code comes from"
-  horizon_weathering_features }|--|{ stress_types : "code comes from"
-
-```
-:::
-
-```{mermaid}
-%%| label: fig-mhorsecd
-%%| fig-cap: "Horizon secondary features - Details"
-
-erDiagram
-  direction LR
-  horizon_weathering_features ||--o{ "horizon_concentrations" : "may have some"
-  horizon_concentrations }|--|{ concentration_forms : "code comes from"
-  horizon_concentrations }|--|{ concentration_types : "code comes from"
-  horizon_weathering_features ||--o{ "horizon_coatings" : "may have some"
-  horizon_coatings }|--|{ coating_types : "code comes from"
-  horizon_weathering_features }|--|{ concentration_forms : "code comes from"
-  horizon_weathering_features }|--|{ concentration_types : "code comes from"
-  horizon_weathering_features }|--|{ pan_types : "code comes from"
-  horizon_weathering_features }|--|{ pan_continuities : "code comes from"
-  horizon_weathering_features }|--|{ pan_structures : "code comes from"
-  horizon_weathering_features }|--|{ stress_types : "code comes from"
-  
-  %% data %%
-  horizon_weathering_features {
-    id          id_site PK
-    id          id_horizon PK
-    %% concentrations_rapid %%  
-    cat         catu_concentration_form FK       "Section 15.1"
-    cat         catu_concentration_type FK       "Section 15.1"
-    num[0-100]  amt_concentration_p              "Section 15.1"
-    %% coatings rapid still has to go in a subtable, see below %%
-    %% rapid pans (you can only have one) %%
-    cat         catu_pan_type FK                 "Section 15.3"
-    %% add this stuff for routine %%
-    cat         cato_pan_continuity  FK          "Section 15.3"
-    cat         catu_pan_structure FK            "Section 15.3"
-    %% stress features (NB you get one or the other because Physics) %%
-    cat         catu_stress_type FK              "Section 15.4"
-    num[0-100]  amt_stress_p                     "Section 15.4"
-  }
-   
-  %% data %%
-  horizon_concentrations {
-    id          id_site PK
-    id          id_horizon PK
-    id          id_concentration PK
-    cat         catu_concentration_form FK       "Table 15.1"
-    cat         catu_concentration_type FK       "Table 15.2"
-    num[0-Inf]  amt_concentration_size_med_mm    "Section 15.1"
-    num[0-Inf]  amt_concentration_size_min_mm    "Section 15.1"
-    num[0-Inf]  amt_concentration_size_max_mm    "Section 15.1"
-    num[0-100]  amt_concentration_med_p          "Section 15.1"
-    num[0-100]  amt_concentration_min_p          "Section 15.1"
-    num[0-100]  amt_concentration_max_p          "Section 15.1"
-  } 
-
-  concentration_forms {
-    id          id_conc_form PK
-    cat         catu_conc_form FK    "Table 15.1"
-    txt         txt_conc_form_name   "Table 15.1"
-    txt         txt_conc_form_desc   "Table 15.1"
-  }
-
-  concentration_types {
-    id          id_conc PK
-    cat         catu_conc FK         "Table 15.2"
-    txt         txt_conc_form_name   "Table 15.2"
-    txt         txt_conc_form_desc   "Table 15.2"
-  }
-
-  %% data %%
-  horizon_coatings {
-    id          id_site PK
-    id          id_horizon PK
-    id          id_coating PK
-    cat         catu_coating FK           "Section 15.2"
-    num[0-100]  amt_coating_p             "Section 15.2"
-  } 
-
-  coating_types {
-    id          id_coating PK
-    cat         catu_coating FK         "Table 15.3"
-    txt         txt_coating_name        "Table 15.3"
-    txt         txt_coating_desc        "Table 15.3"
-  }
-
-
-  pan_types {
-    id          id_pan PK
-    cat         catu_pan FK         "Table 15.4"
-    txt         txt_pan_name        "Table 15.4"
-    txt         txt_pan_desc        "Table 15.4"
-  }
-
-  pan_continuities {
-    id          id_pan_cont PK
-    cat         catu_pan_cont FK    "Table 15.5"
-    txt         txt_pan_cont_name   "Table 15.5"
-    txt         txt_pan_cont_desc   "Table 15.5"
-  }
-
-  pan_structures {
-    id          id_pan_structure PK
-    cat         catu_pan_structure FK  "Table 15.6"
-    txt         txt_pan_structure_name "Table 15.6"
-    txt         txt_pan_structure_desc "Table 15.6"
-  }
-  
-  stress_types {
-    id          id_stress PK
-    cat         catu_stress FK          "Table 15.7"
-    txt         txt_stress_name         "Table 15.7"
-    txt         txt_stress_desc         "Table 15.7"
-  }
-
-```
-
-## Horizon consistence tests {#sec-erc-cons}
-
-The consistence tests table can optionally extend the horizon overview table (@sec-erd-horizono) as it has a 1:1 relationship.
-
-::: {.content-hidden when-format='docx'}
-```{mermaid}
-%%| label: fig-mhorcono
-%%| fig-cap: "Horizon consistence tests - Overview"
-
-erDiagram
-  direction LR
-  consistence_tests }|--|{ strengths : "code comes from"
-  consistence_tests }|--|{ sensitivities : "code comes from"
-  consistence_tests }|--|{ plasticities : "code comes from"
-  consistence_tests }|--|{ stickinesses : "code comes from"
-  consistence_tests }|--|{ penrests : "code comes from"
-  consistence_tests }|--|{ packings : "code comes from"
-  consistence_tests }|--|{ failures : "code comes from"
-  consistence_tests }|--|{ fluidities : "code comes from"
-  consistence_tests }|--|{ indurations : "code comes from"
-  consistence_tests }|--|{ fibre_contents : "code comes from"
-
-```
-:::
-
-```{mermaid}
-%%| label: fig-mhorcond
-%%| fig-cap: "Horizon consistence tests - Details"
-
-erDiagram
-  direction LR
-  consistence_tests }|--|{ strengths : "code comes from"
-  consistence_tests }|--|{ sensitivities : "code comes from"
-  consistence_tests }|--|{ plasticities : "code comes from"
-  consistence_tests }|--|{ stickinesses : "code comes from"
-  consistence_tests }|--|{ penrests : "code comes from"
-  consistence_tests }|--|{ packings : "code comes from"
-  consistence_tests }|--|{ failures : "code comes from"
-  consistence_tests }|--|{ fluidities : "code comes from"
-  consistence_tests }|--|{ indurations : "code comes from"
-  consistence_tests }|--|{ fibre_contents : "code comes from"
-  
-  consistence_tests {
-    id          id_site PK
-    id          id_horizon PK
-    bool        ind_cohesive                "Section 16.2.1"
-    cat         cato_strength_unconfined FK "Section 16.3.1"
-    cat         cato_strength_ped FK        "Section 16.3.2"
-    cat         cato_strength_remoulded FK  "Section 16.3.3"
-    cat         catu_failure FK             "Section 16.4"
-    cat         cato_packing FK             "Section 16.5"
-    cat         cato_penetration_rest FK    "Section 16.6"
-    cat         cato_sensitivity FK         "Section 16.7"
-    cat         cato_plasticity FK          "Section 16.8"
-    cat         cato_stickiness FK          "Section 16.9"
-    bool        ind_dilatent                "Section 16.10"
-    cat         cato_fluidity FK            "Section 16.11"
-    cat         cato_induration FK          "Section 16.12"
-    cat         cato_fibre_content FK       "Section 16.13"
-  }
-
-  strengths {
-    id          id_strength PK
-    cat         catu_strength FK         "Table 16.2"
-    txt         txt_strength_name        "Table 16.2"
-    txt         txt_strength_desc        "Table 16.2"
-  }
-  
-  
-  failures {
-    id          id_failure PK
-    cat         catu_failure FK         "Table 16.3"
-    txt         txt_failure_name        "Table 16.3"
-    txt         txt_failure_desc        "Table 16.3"
-  }
-  
-  packings {
-    id          id_packing PK
-    cat         catu_packing FK         "Table 16.4"
-    txt         txt_packing_name        "Table 16.4"
-    txt         txt_packing_desc        "Table 16.4"
-  }
-  
-  penrests {
-    id          id_penrest PK
-    cat         catu_penrest FK         "Table 16.5"
-    txt         txt_penrest_name        "Table 16.5"
-    txt         txt_penrest_desc        "Table 16.5"
-  }
-
-  sensitivities {
-    id          id_sensitivity PK
-    cat         catu_sensitivity FK         "Table 16.6"
-    txt         txt_sensitivity_name        "Table 16.6"
-    txt         txt_sensitivity_desc        "Table 16.6"
-  }
-
-  plasticities {
-    id          id_plasticity PK
-    cat         catu_plasticity FK         "Table 16.7"
-    txt         txt_plasticity_name        "Table 16.7"
-    txt         txt_plasticity_desc        "Table 16.7"
-  }
-
-  stickinesses {
-    id          id_stickiness PK
-    cat         catu_stickiness FK         "Table 16.8"
-    txt         txt_stickiness_name        "Table 16.8"
-    txt         txt_stickiness_desc        "Table 16.8"
-  }
-
-  fluidities {
-    id          id_fluidity PK
-    cat         catu_fluidity FK         "Table 16.9"
-    txt         txt_fluidity_name        "Table 16.9"
-    txt         txt_fluidity_desc        "Table 16.9"
-  }  
-
-  indurations {
-    id          id_induration PK
-    cat         cato_induration FK         "Table 16.10"
-    txt         txt_induration_name        "Table 16.10"
-    txt         txt_induration_desc        "Table 16.10"
-  }  
-  
-  fibre_contents {
-    id          id_fibre_content PK
-    cat         cato_fibre_content FK         "Table 16.11"
-    txt         txt_fibre_content_name        "Table 16.11"
-    txt         txt_fibre_content_desc        "Table 16.11"
-  }  
-  
-```
-
-## Field tests {#sec-erd-fts}
-
-Field tests are conducted from samples taken at set depths so in this example are connected to sites rather than horizons. It is also possible to nest them within horizons.
-
-::: {.content-hidden when-format='docx'}
-```{mermaid}
-%%| label: fig-mhorfto
-%%| fig-cap: "Horizon field tests - Overview"
-
-erDiagram
-  direction LR
-  field_tests }|--|{ pH_raupachs : "code comes from"
-  field_tests }|--|{ h2o2_rxns : "code comes from"
-  field_tests }|--|{ hcl_rxns : "code comes from"
-  field_tests }|--|{ naf_rxns : "code comes from"
-  field_tests }|--|{ wrep_rxns : "code comes from"
-  field_tests }|--|{ slaking_rxns : "code comes from"
-  field_tests }|--|{ dispersion_rxns : "code comes from"
-
-```
-:::
-
-```{mermaid}
-%%| label: fig-mhorftd
-%%| fig-cap: "Horizon field tests - Details"
-
-erDiagram
-  direction LR
-  field_tests }|--|{ pH_raupachs : "code comes from"
-  field_tests }|--|{ h2o2_rxns : "code comes from"
-  field_tests }|--|{ hcl_rxns : "code comes from"
-  field_tests }|--|{ naf_rxns : "code comes from"
-  field_tests }|--|{ wrep_rxns : "code comes from"
-  field_tests }|--|{ slaking_rxns : "code comes from"
-  field_tests }|--|{ dispersion_rxns : "code comes from"
-  
-  field_tests {
-    id          id_site PK
-    num[0-Inf]  amt_test_depth_cm
-    cat         cato_pH_raupach FK   "Section 17.1.1"
-    num[0-14]   val_pH_water         "Section 17.1.2"
-    num[0-14]   val_pH_h2o2          "Section 17.1.3"
-    cat         cato_h2o2_rxn FK     "Section 17.1.3"
-    num[0-Inf]  amt_ec_dSm           "Section 17.1.4"
-    cat         cato_hcl_rxn FK      "Section 17.1.5"
-    bool        ind_mn_rxn           "Section 17.1.6"
-    cat         cato_naf_rxn FK      "Section 17.1.7"
-    bool        ind_22bip_rxn        "Section 17.1.8"
-    cat         cato_water_repellent "Section 17.1.9"
-    cat         cato_slaking FK      "Section 17.1.10"
-    cat         cato_dispersion FK   "Section 17.1.10"
-  }
-
-  pH_raupachs {
-    id          id_raupach PK
-    cat         catu_raupach FK          "2.0, 2.5 etc"
-  }
-
-  h2o2_rxns {
-    id          id_h2o2_rxn PK
-    cat         catu_h2o2_rxn FK        "Table 17.1"
-    txt         txt_h2o2_rxn_name       "Table 17.1"
-    txt         txt_h2o2_rxn_desc       "Table 17.1"
-  }
-
-  hcl_rxns {
-    id          id_hcl_rxn PK
-    cat         catu_hcl_rxn FK         "Table 17.2"
-    txt         txt_hcl_rxn_name        "Table 17.2"
-    txt         txt_hcl_rxn_desc        "Table 17.2"
-  }
-
-  naf_rxns {
-    id          id_naf_rxn PK
-    cat         catu_naf_rxn FK         "Table 17.3"
-    txt         txt_naf_rxn_name        "Table 17.3"
-    txt         txt_naf_rxn_desc        "Table 17.3"
-  }
-  
-  wrep_rxns {
-    id          id_wrep_rxn PK
-    cat         cato_wrep_rxn FK         "Table 17.4"
-    txt         txt_wrep_rxn_name        "Table 17.4"
-    txt         txt_wrep_rxn_desc        "Table 17.4"
-  }
-
-  slaking_rxns {
-    id          id_slaking_rxn PK
-    cat         catu_slaking_rxn FK     "Table 17.5"
-    txt         txt_slaking_rxn_name    "Table 17.5"
-    txt         txt_slaking_rxn_desc    "Table 17.5"
-  }
-  
-  dispersion_rxns {
-    id          id_dispersion_rxn PK
-    cat         catu_dispersion_rxn FK  "Table 17.6"
-    txt         txt_dispersion_rxn_name "Table 17.6"
-    txt         txt_dispersion_rxn_desc "Table 17.6"
-  }
-  
-```
-
-## Interpretation data {#sec-erd-interp}
-
-### Horizon names {#sec-erd-names}
-
-This table can optionally extend the horizon overview table as it has a 1:1 relationship (@sec-erd-horizono).
-
-::: {.content-hidden when-format='docx'}
-```{mermaid}
-%%| label: fig-mhnmo
-%%| fig-cap: "Horizon names - Overview"
-
-erDiagram
-  direction LR
-  horizon_names }|--|{ horizon_names_primary : "code comes from"
-  horizon_names }|--|{ horizon_names_secondary : "code comes from"
-  horizon_names }|--|{ horizon_suffix_redox : "code comes from"
-  horizon_names ||--o{ horizon_names_suffix_other : "may have some"
-  horizon_names_suffix_other }|--|{ horizon_suffix_other : "code comes from"
-
-```
-:::
-
-```{mermaid}
-%%| label: fig-mhnmd
-%%| fig-cap: "Horizon names - Details"
-
-erDiagram
-  direction LR
-  horizon_names }|--|{ horizon_names_primary : "code comes from"
-  horizon_names }|--|{ horizon_names_secondary : "code comes from"
-  horizon_names }|--|{ horizon_suffix_redox : "code comes from"
-  horizon_names ||--o{ horizon_names_suffix_other : "may have some"
-  horizon_names_suffix_other }|--|{ horizon_suffix_other : "code comes from"
-  
-  %% data %%
-  horizon_names {
-    id          id_site PK
-    id          id_horizon PK
-    %% for very rapid assessment %%
-    cat         catu_horizon_primary FK      "Section 18.1"
-    cat         catu_horizon_secondary FK    "Section 18.2"
-    cat         catu_horizon_suffix_redox FK "Section 18.3"
-    %% 'other' 1:n so in subtable see below %%
-    int[2-Inf]  val_duplicate                "Section 18.5"
-    int[2-Inf]  val_lith_discont             "Section 18.6"
-    bool        ind_buried                   "Section 18.7"
-    bool        ind_anthropogenic            "Section 18.8"
-    %% for edge cases %%
-    txt         txt_horizon_name_full
-  }
-  
-  %% data %%
-  horizon_names_suffix_other {
-    id          id_site PK
-    id          id_horizon PK
-    id          id_suffix
-    cat         catu_horizon_suffix          "Section 18.4"
-  }
-
-  horizon_names_primary {
-    id          id_horizon_primary PK     
-    cat         catu_horizon_primary FK        "Table 18.1"
-    txt         txt_horizon_primary_name       "Table 18.1"
-    txt         txt_horizon_primary_desc       "Table 18.1"
-  }
-
-  horizon_names_secondary {
-    id          id_horizon_secondary PK     
-    cat         catu_horizon_secondary FK      "Tables 18.2-18.7"
-    txt         txt_horizon_secondary_name     "Tables 18.2-18.7"
-    txt         txt_horizon_secondary_desc     "Tables 18.2-18.7"
-  }
-
-  horizon_suffix_redox {
-    id          id_horizon_suffix_redox PK    
-    cat         catu_horizon_suffix_redox FK        "Table 18.8"
-    txt         txt_horizon_suffix_redox_name       "Table 18.8"
-    txt         txt_horizon_suffix_redox_desc       "Table 18.8"
-  }
-  
-  horizon_suffix_other {
-    id          id_horizon_suffix_other PK    
-    cat         catu_horizon_suffix_other FK        "Table 18.9"
-    txt         txt_horizon_suffix_other_name       "Table 18.9"
-    txt         txt_horizon_suffix_other_desc       "Table 18.9"
-  }
-  
-```
-
-::: {.content-visible when-format='docx'}
-delete me 
-:::
-
-::: {#nte-hzn .callout-note collapse="true" appearance="minimal" title="Storing conventional horizon names"}
-Conventional horizon names in the New Zealand system are difficult to store in a structured manner due to the large number of ways the various components can be combined (@sec-hnms). The above implementation can store most of the possible variations in a structured manner, leaving a free-text field for edge cases. 
-:::
-
-### Profile behaviour
-
-Note that horizon-level drainage and permeability ratings are stored in the base horizon table.
-
-::: {.content-hidden when-format='docx'}
-```{mermaid}
-%%| label: fig-prbeh
-%%| fig-cap: "Profile behaviour - Overview"
-
-erDiagram
-  direction LR
-  interpretations }|--|{ drainage : "code comes from"
-  interpretations }|--|{ permeability : "code comes from"
-  interpretations ||--o{ root_barriers : "may have some"
-  root_barriers }|--|{ root_barrier_types: "code comes from"
-
-```
-:::
-
-
-```{mermaid}
-%%| label: fig-prbehd
-%%| fig-cap: "Profile behaviour - Details"
-
-erDiagram
-  direction LR
-  interpretations }|--|{ drainage : "code comes from"
-  interpretations }|--|{ permeability : "code comes from"
-  interpretations ||--o{ root_barriers : "may have some"
-  root_barriers }|--|{ root_barrier_types: "code comes from"
-  
-  %% data %%
-  interpretations {
-    id   id_site PK
-    cat  cato_profile_drainage FK      "Section 19.1.2"
-    cat  cato_profile_permeability FK  "Section 19.2.2"
-  }
-  
-  drainage {
-    id   id_drainage PK    
-    cat  catu_drainage FK   "Table 19.3"
-    txt  txt_drainage_name  "Table 19.3"
-    txt  txt_drainage_desc  "Table 19.3"
-  }
-
-  permeability {
-    id   id_permeability PK    
-    cat  catu_permeability FK   "Table 19.5"
-    txt  txt_permeability_name  "Table 19.5"
-    txt  txt_permeability_desc  "Table 19.5"
-  }
-
-
-  %% data %%
-  root_barriers {
-    id         id_site PK
-    id         id_root_barrier PK
-    cat        catu_root_barrier FK    "Section 19.3"
-    num[0-Inf] amt_root_barrier_depth  "Section 19.3"
-}
-
-  root_barrier_types {
-    id   id_root_barrier PK    
-    cat  catu_root_barrier FK   "Table 19.6"
-    txt  txt_root_barrier_name  "Table 19.6"
-    txt  txt_root_barrier_desc  "Table 19.6"
-  }
-
-
-
-```
-
-### NZSC {#sec-erd-nzsc}
-
-Detailed requirements for the *New Zealand Soil Classification* can be found in @hewitt2025 and @webb2011.
-
-::: {.content-hidden when-format='docx'}
-```{mermaid}
-%%| label: fig-mnzsco
-%%| fig-cap: "NZSC - Overview"
-
-erDiagram
-  direction LR
-  nzsc }|--|{ nzsc_orders : "code comes from"
-  nzsc }|--|{ nzsc_groups : "code comes from"
-  nzsc }|--|{ nzsc_subgroups : "code comes from"
-  nzsc }|--|{ nzsc_fam_profile_materials : "code comes from"
-  nzsc }|--|{ nzsc_lithologies : "code comes from"
-  nzsc }|--|{ nzsc_fam_textures : "code comes from"
-  nzsc }|--|{ nzsc_fam_permeabilities : "code comes from"
-  nzsc }|--|{ nzsc_fam_pm_origins : "code comes from"
-  nzsc }|--|{ nzsc_sib_depths : "code comes from"
-  nzsc }|--|{ nzsc_sib_tsstones : "code comes from"
-  nzsc }|--|{ nzsc_sib_textures : "code comes from"
-  nzsc }|--|{ nzsc_sib_drainages : "code comes from"
-
-```
-:::
-
-```{mermaid}
-%%| label: fig-mnzscd
-%%| fig-cap: "NZSC - Details"
-
-erDiagram
-  direction LR
-  nzsc }|--|{ nzsc_orders : "code comes from"
-  nzsc }|--|{ nzsc_groups : "code comes from"
-  nzsc }|--|{ nzsc_subgroups : "code comes from"
-  nzsc }|--|{ nzsc_fam_profile_materials : "code comes from"
-  nzsc }|--|{ nzsc_lithologies : "code comes from"
-  nzsc }|--|{ nzsc_fam_textures : "code comes from"
-  nzsc }|--|{ nzsc_fam_permeabilities : "code comes from"
-  nzsc }|--|{ nzsc_pm_origins : "code comes from"
-  nzsc }|--|{ nzsc_sib_depths : "code comes from"
-  nzsc }|--|{ nzsc_sib_tsstones : "code comes from"
-  nzsc }|--|{ nzsc_sib_textures : "code comes from"
-  nzsc }|--|{ nzsc_sib_drainages : "code comes from"
-  
-  nzsc {
-    id          id_site PK
-    cat         catu_nzsc_order FK                "Hewitt et al, 2024"
-    cat         catu_nzsc_group FK                "Hewitt et al, 2024"
-    cat         catu_nzsc_subgroup FK             "Hewitt et al, 2024"
-    cat         catu_nzsc_fam_profile_material FK "Webb and Lilburne, 2011"
-    cat         catu_nzsc_fam_stones_rock FK      "Webb and Lilburne, 2011"
-    cat         catu_nzsc_fam_fines_rock FK       "Webb and Lilburne, 2011"
-    cat         catu_nzsc_fam_texture FK          "Webb and Lilburne, 2011"
-    cat         catu_nzsc_fam_permeability FK     "Webb and Lilburne, 2011"
-    cat         catu_nzsc_fam_pm_origin FK        "Webb and Lilburne, 2011"
-    cat         catu_nzsc_sib_depth FK            "Webb and Lilburne, 2011"
-    cat         catu_nzsc_sib_tsstone FK          "Webb and Lilburne, 2011"
-    cat         catu_nzsc_sib_texture FK          "Webb and Lilburne, 2011"
-    cat         catu_nzsc_sib_drainage FK         "Webb and Lilburne, 2011"
-  }
-
-  nzsc_orders {
-    id          id_nzsc_order PK    
-    cat         catu_nzsc_order FK  
-    txt         txt_nzsc_order_name 
-    }
-
-  nzsc_groups {
-    id          id_nzsc_group PK    
-    cat         catu_nzsc_group FK  
-    txt         txt_nzsc_group_name 
-    }
-
-  nzsc_subgroups {
-    id          id_nzsc_subgroup PK    
-    cat         catu_nzsc_subgroup FK  
-    txt         txt_nzsc_subgroup_name 
-    }
-
-  nzsc_fam_profile_materials {
-    id          id_nzsc_fam_pm PK
-    cat         catu_nzsc_fam_pm FK          
-    txt         txt_nzsc_fam_pm_name         
-    txt         txt_nzsc_fam_pm_desc         
-    }
-
-  nzsc_lithologies {
-    id          id_nzsc_lithology PK    
-    cat         catu_nzsc_lithology FK       
-    txt         txt_nzsc_lithology_name      
-  }
-  
-  nzsc_fam_textures {
-    id          id_nzsc_fam_texture PK    
-    cat         catu_nzsc_fam_texture FK
-    txt         txt_nzsc_fam_texture_name
-  }
-
-  nzsc_fam_permeabilities {
-    id          id_nzsc_fam_perm PK     
-    cat         catu_nzsc_fam_perm FK 
-    txt         txt_nzsc_fam_perm_name
-    txt         txt_nzsc_fam_perm_desc
-  }  
-  
-  nzsc_pm_origins {
-    id          id_nzsc_pm_origin PK    
-    cat         catu_nzsc_pm_origin FK  
-    txt         txt_nzsc_pm_origin_name 
-    txt         txt_nzsc_pm_origin_desc 
-
-}
-
-  nzsc_sib_depths {
-    id          id_nzsc_sib_depth PK    
-    cat         catu_nzsc_sib_perm FK 
-    txt         txt_nzsc_sib_perm_name
-    txt         txt_nzsc_sib_perm_desc
-  }
-
-  nzsc_sib_tsstones {
-    id          id_nzsc_sib_tsstone PK    
-    cat         catu_nzsc_sib_tsstone FK  
-    txt         txt_nzsc_sib_tsstone_name 
-    txt         txt_nzsc_sib_tsstone_desc 
-  }
-
-  nzsc_sib_textures {
-    id          id_nzsc_sib_texture PK    
-    cat         catu_nzsc_sib_texture FK 
-    txt         txt_nzsc_sib_texture_name
-  }
-  
-  nzsc_sib_drainages {
-    id          id_nzsc_sib_drainage PK    
-    cat         catu_nzsc_sib_drainage FK 
-    txt         txt_nzsc_sib_drainage_name
-    txt         txt_nzsc_sib_drainage_desc
-  }
-
-```
-
-## Helper tables
-
-### Measurement type
-
-Some numeric parameters require a separate specification for types of missing data (e.g. aspect at the site, @sec-pr-aspect). These codes are built in to most categorical code lists in this standard (where it makes sense to include them). For numeric data, a companion text column is required. It is generally expected that it will be populated in a semi-automated manner - for each parameter, it should default to [NR]{.ceg}, and be automatically updated to [NM]{.ceg} if a value is supplied. Users may also update to [ND]{.ceg} as needed.
-
-```{r}
-#| label: tbl-missing
-#| tbl-cap: "Data record type"
-
-library(dplyr)
-library(tibble)
-library(gt)
-
-dat_ss_eventt <-
-  tribble(~Code, ~Name,
-            'NM', 'Parameter was recorded normally',
-            'ND', 'Parameter could not be reliably determined or does not apply',
-            'NR', 'Parameter was not recorded')
-
-tbl_ss_eventt <- gt(dat_ss_eventt) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10))
-
-tbl_ss_eventt
-```
