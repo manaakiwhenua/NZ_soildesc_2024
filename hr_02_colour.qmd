@@ -148,10 +148,10 @@ Soil colour patterns are most commonly driven by redox processes affecting iron 
 
 dat_hr_pattype <-
   tribble(~Code, ~Name, ~Description,
-         'M', 'Mottles', 'Colour patterns induced by redox processes',
-         'R', 'Structural', 'Colour patterns induced by preferential flow',
-         'W', 'Weathering', 'Colour patterns induced by parent material weathering, most commonly seen in BC horizons and below (e.g. rock ghost patterns)',
-         'X', 'Mixing', 'Colour patterns created by biological (e.g. worm tunnels) or mechanical (e.g. landslide) means')
+         'R', 'Redox mottles', 'Colour patterns induced by redox processes',
+         'W', 'Weathering',    'Colour patterns induced by development of weathering features e.g. coatings',
+         'L', 'Leaching',      'Colour patterns induced by effects of leaching e.g. pale veins',
+         'X', 'Mixing',        'Colour patterns induced by biological (e.g. worm tunnels) or mechanical (e.g. landslide) means')
 
 tbl_hr_pattype <- gt(dat_hr_pattype) |>
   tab_options(
@@ -220,7 +220,7 @@ Rules for determining contrast in the field are defined in @tbl-hr-patcont. If b
 +-----------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | [D]{.ceg} | Distinct  | Although not striking, the colour variation is readily seen. The secondary and primary colours usually:                                                                                                                    |
 |           |           |                                                                                                                                                                                                                            |
-|           |           | 1.  Have the same hue. but differ by more than one and less than four units of chroma, or more than two and less than four units of value, or                                                                              |
+|           |           | 1.  Have the same hue, but differ by more than one and less than four units of chroma, or more than two and less than four units of value, or                                                                              |
 |           |           | 2.  Differ by one hue (2.5 Munsell units) and not more than one unit of chroma or two units of value.                                                                                                                      |
 +-----------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | [P]{.ceg} | Prominent | The colour variation is conspicuous. The secondary and primary colours normally differ by                                                                                                                                  |
