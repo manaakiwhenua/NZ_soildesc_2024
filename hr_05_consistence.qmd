@@ -16,11 +16,11 @@ Consistence is a general term for the field-assessed behaviour of soil materials
 
 Some consistence properties (strength, failure, penetration resistance) vary markedly with soil-water content. The soil moisture status of the material should therefore be recorded at the time of description (see @sec-pr-sws) . Consistence descriptions on the same soils at different moisture states allow the change in consistence with moisture to be described. Other consistence properties are described at reference water contents.
 
-### Sampling for consistency tests {#sec-cons-bg-samp}
+### Sampling for consistence tests {#sec-cons-bg-samp}
 
-Consistency tests should be performed down-profile, with at least one sample tested per horizon. Samples should be taken from the mid-point of each horizon. Additional samples in transition zones may also be of interest. For most of these tests, a 30 mm sample cube of soil (27 cm^3^) must be carefully extracted, preferably with a sharp knife. Keeping the sample size and shape consistent helps produce consistent results. Tests which involve remoulding the soil may use smaller volumes, but must use no less than \~3 cm^3^ (a 15 mm cube).
+Consistence tests should be performed down-profile, with at least one sample tested per horizon. Samples should be taken from the mid-point of each horizon. Additional samples in transition zones may also be of interest. For most of these tests, a 30 mm sample cube of soil (27 cm^3^) must be carefully extracted, preferably with a sharp knife. Keeping the sample size and shape consistent helps produce consistent results. Tests which involve remoulding the soil may use smaller volumes, but must use no less than \~3 cm^3^ (a 15 mm cube).
 
-Within each horizon, the consistency tests that can and should be undertaken will depend on the cohesion (@sec-dn-prep) of the soil materials in that horizon. @tbl-cn-ct illustrates which tests are appropriate for different soil materials.
+Within each horizon, the consistence tests that can and should be undertaken will depend on the cohesion (@sec-dn-prep) of the soil materials in that horizon. @tbl-cn-ct illustrates which tests are appropriate for different soil materials.
 
 ```{r}
 #| label: tbl-cn-ct
@@ -292,7 +292,7 @@ tbl_cn_fail
 ```
 
 ::: {#nte-singbl .callout-note appearance="minimal" collapse="true" title="Use of the Singleton Blade"}
-The Singleton blade was a device invented in the 1980s by the New Zealand pedologist Peter Singleton to improve on packing density assessment methods available at the time. The device was thin, flexible piece of metal with a notched blade that was inserted into the pit face, leaving a longer end protruding. A pocket penetrometer was then used to push the protruding end of the blade sideways until it reached 45° or the blade fell out of the pit face. The penetrometer reading was empirically correlated to packing density. Mention of this device can be found in many New Zealand soil publications from \~1980-2000 [@griffiths1999] but has not been made commercially available and is now rarely used.
+The Singleton blade was a device invented in the 1980s by the New Zealand pedologist Peter Singleton to improve on packing density assessment methods available at the time. The device was a thin, flexible piece of metal with a notched blade that was inserted into the pit face, leaving a longer end protruding. A pocket penetrometer was then used to push the protruding end of the blade sideways until it reached 45° or the blade fell out of the pit face. The penetrometer reading was empirically correlated to packing density. Mention of this device can be found in many New Zealand soil publications from \~1980-2000 [@griffiths1999] but has not been made commercially available and is now rarely used.
 :::
 
 ## Penetration resistance {#sec-cn-pres}
@@ -323,7 +323,7 @@ dat_cn_penr <-
           3, 'Low', 'Readily indented by thumb but penetrated with considerable effort. Imprinted by finger with some effort.', '1000–1500',
           4, 'Moderate', 'Readily indented by thumbnail', '1500–2200',
           5, 'High', 'Barely imprinted by thumb or forefinger', '2200–3000',
-          6, 'Very high', 'Indented by thumbnail. No imprint by thumb or finger', '3100–4000',
+          6, 'Very high', 'Indented by thumbnail. No imprint by thumb or finger', '3000–4000',
           7, 'Extremely high', 'Barely indented by thumbnail', '>4000')
 
 tbl_cn_penr <- gt(dat_cn_penr) |>
@@ -475,7 +475,7 @@ tbl_cn_stik
 
 ## Dilatancy {#sec-cn-dil}
 
-Dilatancy occurs due to volume change during shearing and is used as a criterion for distinguishing non-cohesive from cohesive soil materials. The test can also help determine the relative dominance of silt and clay (silty textures are more dilatant,
+Dilatancy occurs due to volume change during shearing and is used as a criterion for distinguishing non-cohesive from cohesive soil materials. The test can also help determine the relative dominance of silt and clay (silty textures are more prone to exhibiting dilatant behaviour).
 
 - Test soil at a moist to wet state.
 - Perform the test on 3-4 cm^3^ of soil (a 15–20 mm cube).
@@ -560,8 +560,8 @@ dat_cn_ind <-
           1, 'Non-indurated', 'Sample slakes within one hour',
           2, 'Very weakly indurated', 'Has not slaked, strength class of 2–4',
           3, 'Weakly indurated', 'strength class of 5–6',
-          4, 'Strongly indurated', 'strength class of 7',
-          5, 'Very strongly indurated', 'strength class of >7; does not break when struck by a sharp blow with a hammer.')
+          4, 'Strongly indurated', 'strength class of 7 but will break when struck by a sharp blow with a hammer',
+          5, 'Very strongly indurated', 'strength class of 7 but does not break when struck by a sharp blow with a hammer.')
 
 tbl_cn_ind <- gt(dat_cn_ind) |>
    tab_options(

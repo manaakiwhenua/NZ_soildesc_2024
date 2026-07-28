@@ -18,7 +18,7 @@ Precision needs will vary with slope and survey purpose; whole number degrees ar
 
 Record the equipment used to measure slope using @tbl-pr-slpmth.
 
-E.g, [5° E]{.ceg} for an estimated 5-degree slope.
+E.g., [5° E]{.ceg} for an estimated 5-degree slope.
 
 ```{r}
 #| label: tbl-pr-slpmth
@@ -644,8 +644,8 @@ dat_pr_deposition <-
           'FA', 'Fall', 'Rapid, freefall collapse of earth material on precipitous slopes',
           'TO', 'Topple', 'Large blocks of earth material falling forward off very steep to precipitous slope',
           'SL', 'Slide', 'Lateral displacement of earth materials moving as a block along a deep-seated slip face, either rotational (\'slump\') or translational',
-          'SP', 'Spread', 'rapid displacement of wet, plastic materials that liquefy, often bringing along intact blocks or beds',
-          'FW', 'Flow', 'slow to rapid movement of earth materials that behave as a viscous fluid(earthflow or mudslide)',
+          'SP', 'Spread', 'Rapid displacement of wet, plastic materials that liquefy, often bringing along intact blocks or beds',
+          'FW', 'Flow', 'Slow to rapid movement of earth materials that behave as a viscous fluid (earthflow or mudslide)',
           'CR', 'Creep',  'Slow, gradual movement of earth materials down a slope',
           
           # wind
@@ -692,8 +692,8 @@ tbl_pr_deposition
 dat_pr_depsev <-
   tribble(~Code, ~Name, ~Description,
           'S', 'Slight',   'Patchy or thin cover over previous surface layers, original ecological functions largely intact', 
-          'M', 'Moderate', 'Cover mostly complete but < 10cm thick, original ecological functions partly destroyed',
-          'V', 'Severe',   'Cover complete and > 10cm thick, original ecological functions largely destroyed',
+          'M', 'Moderate', 'Cover mostly complete but <10 cm thick, original ecological functions partly destroyed',
+          'V', 'Severe',   'Cover complete and >10 cm thick, original ecological functions largely destroyed',
           'E', 'Extreme',  'Cover complete and permanent, original ecological functions fully destroyed')
 
 tbl_pr_depsev <- gt(dat_pr_depsev) |>

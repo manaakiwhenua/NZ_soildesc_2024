@@ -14,7 +14,7 @@ Soil drainage is an assessment of how fast water leaves a soil profile relative 
 
 ### Horizon drainage {#sec-in-hdrng}
 
-Drainage should first be assessed on a per-horizon basis. These interpretations may then be summarised a profile level (see @sec-in-pdrng). @tbl-in-hdrng below highlights the common characteristics associated with each horizon drainage class.
+Drainage should first be assessed on a per-horizon basis. These interpretations may then be summarised at profile level (see @sec-in-pdrng). @tbl-in-hdrng below highlights the common characteristics associated with each horizon drainage class.
 
 ```{r}
 #| label: tbl-in-hdrng
@@ -194,9 +194,9 @@ Summarising permeability at a profile level involves identifying the layer with 
 
 dat_in_sibdepth <-
   tribble(~Code, ~Name, ~Description, ~Hzn,
-         'SL', 'Slow',     '<4 mm/hr', 'Extremely slow, slow',
-         'MO', 'Moderate', '≥4–<72 mm/hr', 'Moderately slow, moderate',
-         'RA', 'Rapid',    '≥72 mm/hr', 'Rapid')
+         'SL', 'Slow',     '<4 mm/h', 'Extremely slow, slow',
+         'MO', 'Moderate', '≥4–<72 mm/h', 'Moderately slow, moderate',
+         'RA', 'Rapid',    '≥72 mm/h', 'Rapid')
 
 tbl_in_sibdepth <- gt(dat_in_sibdepth) |>
   tab_options(
@@ -223,10 +223,10 @@ tbl_in_sibdepth
 %%{ init: { 'flowchart': { 'curve': 'natural' } } }%%
 graph TD
   A["Identify the uppermost horizon with the slowest permeability, or rock above 100 cm. This is Horizon X."]-->B["Does Horizon X have >30 cm of contrasting permeability above?"]
-  B--->|Yes|C("Use **m/s**, **r/s**, or **r/m**")
+  B--->|Yes|C("Use **MO/SL**, **RA/SL**, or **RA/MO**")
   B--> |No|D["Does the profile have a horizon ≥20 cm thick below Horizon X with a different permeability class?"]
-  D-->|Yes|E("Use **s/m**, **s/r** or **m/r**")
-  D-->|No|F("Use **s**, **m**, or **r**")
+  D-->|Yes|E("Use **SL/MO**, **SL/RA** or **MO/RA**")
+  D-->|No|F("Use **SL**, **MO**, or **RA**")
   
 ```
 
@@ -247,7 +247,7 @@ Where rooting behaviour appears to be impaired, evidence of a likely cause may b
 
 Where these features are observed, to be considered as a potential rooting depth barrier their occurrence must usually coincide with the zone where root behaviour changes, or roots disappear. Only a few barriers (e.g. bedrock) can be considered definite regardless of whether any roots are actually present in the profile. Where no obvious restricting features are present but impeded root growth is still observable, laboratory testing may be required to investigate the cause.
 
-Record rooting barrier information as type using @tbl-in-rbarr and depth encountered in cm, e.g. [Br 30 cm]{.ceg} for a shallow profile over bedrock. Rooting depths should usually coincide with a horizon boundary.
+Record rooting barrier information as type using @tbl-in-rbarr and depth encountered in cm, e.g. [Bm 30 cm]{.ceg} for a shallow profile over bedrock. Rooting depths should usually coincide with a horizon boundary.
 
 ```{r}
 #| label: tbl-in-rbarr
@@ -267,9 +267,9 @@ dat_in_rbarr <-
            'Sk', 'Sandy',               'Soil texture is coarse sandy or sandy-skeletal with loose packing',
            'Cl', 'Clayey',              'Soil texture is clayey and structure is apedal massive',
            'Rk', 'Profile rock',        'Rock fragments occupy over 35% of the horizon by volume, either in the soil or in regolithic material',
-           'Ak', 'Artefact',            'A buried layer of anthropogenic origin is present (e.g. geofabric)',
+           'Ar', 'Artefact',            'A buried layer of anthropogenic origin is present (e.g. geofabric)',
            'Bf', 'Fractured substrate', 'Saprolithic, paralithic or lithic material with notable cracking is present',
-           'Bm', 'Massive substrate',   'Paralithic or lithic material with no or mininimal cracking is present')
+           'Bm', 'Massive substrate',   'Paralithic or lithic material with no or minimal cracking is present')
 
 tbl_in_rbarr <- gt(dat_in_rbarr) |>
   tab_options(

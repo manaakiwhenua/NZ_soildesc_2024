@@ -18,10 +18,10 @@ The current scheme for New Zealand reported here was developed largely from the 
 
 ## Primary designations {#sec-hzn-convp}
 
-Codes for primary horizons designations (previously known as master horizons) can be used by themselves for rapid assessment, or where criteria for more detailed nomenclature is not met. Always capitalised, they may be divided in to two organic horizons (L, O) and five mineral horizons (A, E, B, C, R) as per @tbl-hr-horprime.
+Codes for primary horizons designations (previously known as master horizons) can be used by themselves for rapid assessment, or where criteria for more detailed nomenclature is not met. Always capitalised, they may be divided into two organic horizons (L, O) and five mineral horizons (A, E, B, C, R) as per @tbl-hr-horprime.
 
 ::: {#nte-lhzn .callout-note appearance="minimal" collapse="true" title="L Horizons"}
-Note that while the 'L' horizon was previously used to describe fresh leaf litter, such materials are now not considered part of the profile description and so this designation has been removed. Litter presence is described as part of surface cover assessment (@sec-pr-surfcov). The 'L' horizon now unites the former F and H horizons.
+Note that while the 'L' horizon was previously used to describe fresh leaf litter, such materials are now not considered part of the profile description and so this designation has been removed. Fresh litter presence is described as part of surface cover assessment (@sec-pr-surfcov). The 'L' horizon now unites the former F and H horizons.
 :::
 
 ```{r}
@@ -324,7 +324,7 @@ For simplicity the capital letters for all transitional horizons are used in the
 dat_hr_hortwoc <-
   tribble(~Code, ~Description,
           'A/B', 'A transitional horizon at the interface between the A and B horizons, where substantial biological mixing or dense shrink-swell cracking has produced a horizon with distinct but intermingled zones of A and B horizon material. More than one-third of the material is clearly identifiable as originating from the overlying A horizon. The B horizon material may qualify as Bo, Bs, Bw, or Bt and may or may not also have a redox suffix applied (e.g. Apg/Bg).',
-          'AB', 'A horizon transitional in character between an A and a B horizon, usually below a A horizon. It is distinguished from a B horizon by any or all of: having a darker colour due to relatively elevated organic matter, having less-developed structural units, having a structure closer in character to the overlying A horizon. An AB horizon may also lack secondary features expressed lower in the B horizon, or show weaker development of same.',
+          'AB', 'A horizon transitional in character between an A and a B horizon, usually below an A horizon. It is distinguished from a B horizon by any or all of: having a darker colour due to relatively elevated organic matter, having less-developed structural units, having a structure closer in character to the overlying A horizon. An AB horizon may also lack secondary features expressed lower in the B horizon, or show weaker development of same.',
           'BC', "A horizon transitional in character between a B and a C horizon, usually below a B horizon. It is distinguished from a B horizon in similar material by lacking some required characteristic of colour, pedality or degree of weathering. It differs from a C horizon by having some B horizon feature, albeit weakly expressed.
 Note that a BC horizon can be identified in a profile without needing to first identify an overlying B (e.g. a horizon sequence of A-BC-C down-profile).",
           'CR', "A weakly consolidated C horizon that is sufficiently dense and coherent to form a significant barrier to roots. Soft rocks (with a hardness on Moh's scale of < 3) such as shale and siltstone, and some exceptionally dense glacial tills and pyroclastic deposits are included. The material can be dug with difficulty with a spade when moist.
@@ -408,7 +408,7 @@ One or more of these suffixes may be added to the designations defined above to 
 dat_hr_horother <-
   tribble(~Code, ~Name, ~Description, ~usewith,
           'c', 'Concretionary', 'To denote that the horizon contains \\>5% by volume of concretions - spherical bodies with concentric internal fabric. The suffix should be used in combination with other letters to indicate the nature of the concretionary material.', 'A, E, B, C',
-'u', 'Fluid', 'To a horizon that has a moderately or very fluid fluidity class.', 'A, E, B, C',
+'u', 'Fluid', 'To denote a horizon that has a moderately or very fluid fluidity class.', 'A, E, B, C',
 '(h)', 'Cutanic', 'To denote a horizon with cutanic horizon properties. Such horizons have dark coloured coats on ped faces, in pores and on rock fragments. 
 
 A cutanic horizon meets both of the following criteria:
@@ -426,7 +426,7 @@ The suffix is used with **Bs**, **Bt**, **Bw** and **BC** horizons and also with
 'n', 'Sodic', 'To denote a significant accumulation of exchangeable sodium. Sodic soil materials have an exchangeable sodium percentage (ESP) of ≥6% and an uncemented dry sample will exhibit moderate to complete dispersion. Natural sodicity is most common in B horizons.', 'B, BC, C',
 'q', 'Silicic', 'To denote an accumulation of secondary silica. Silica accumulations are cemented, pale, and do not react to 10% HCl. They may exist as nodules, patches, hard coatings, or most often as continuous pans, called duripans.', 'B, BC, C',
 'v', 'Variegated', 'To denote a horizon with mottles or variegated colour pattern due to differential weathering of mineral components and not attributable to reduction and segregation of iron caused by saturation with water.', 'BC, C',
-'x', 'Fragipan', 'To denote a non-cemented horizon that has high bulk density (usually ≥1.5 Mg/m3) with high strength when dry. A fragipan must fulfill **all** of the following requirements: 
+'x', 'Fragipan', 'To denote a non-cemented horizon that has high bulk density (usually ≥1.5 Mg/m^3^) with high strength when dry. A fragipan must fulfill **all** of the following requirements: 
 
 1. An air-dried sample slakes when fully immersed in water. 
 2. It has brittle failure when moist. The horizon may contain rock fragments, but the fine earth must be sufficiently coherent to allow brittle failure. 

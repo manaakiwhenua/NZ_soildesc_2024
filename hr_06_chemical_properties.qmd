@@ -109,7 +109,7 @@ The following method is reproduced from @sullivan2018, section A1.4.3.
 -   Concentrated hydrogen peroxide is highly corrosive. Wear safety glasses and gloves when handling, and in a field situation make sure that there is access to plenty of clean water for rinsing.
 -   Before bringing H~2~O~2~ into the field, it must be buffered to pH 4.5–5.5. While stirring, add a few drops of dilute NaOH and regularly check the pH with a calibrated electrode until the correct range is reached. Allow the H~2~O~2~ to stand for 15 minutes and then recheck the pH.
 -   As H~2~O~2~ degrades over time, only buffer small quantities at a time and refrigerate when not in use.
--   In the field, H~2~O~2~ containers should be kept out of direct sunlight and preferably in a small cooler, as excessive heat will cause the H~2~O~2~ to break down, releasing oxygen. This can cause its container to rupture or spray it contents when opened. Only take small containers into the field, and monitor them for signs of elevated internal pressure (e.g. bulging). Make sure all containers are clearly labelled.
+-   In the field, H~2~O~2~ containers should be kept out of direct sunlight and preferably in a small cooler, as excessive heat will cause the H~2~O~2~ to break down, releasing oxygen. This can cause its container to rupture or spray its contents when opened. Only take small containers into the field, and monitor them for signs of elevated internal pressure (e.g. bulging). Make sure all containers are clearly labelled.
 :::
 
 ```{r}
@@ -122,7 +122,7 @@ dat_ft_foxrx <-
           'L', 'Slight reaction', 'Sample fizzes or bubbles slightly but does not steam',
           'M', 'Moderate reaction', 'Sample bubbles and steams slightly but does not completely boil. Unlikely to continue reacting if more peroxide is added',
           'H', 'High reaction', 'Sample boils and steams but does not boil over. May continue to react when more peroxide is added',
-          'X', 'Explosive reaction', 'Sample rapidly boils over and puts off considerable steam; likely to continue to react when more peroxide is added' 
+          'X', 'Explosive reaction', 'Sample rapidly boils over and gives off considerable steam; likely to continue to react when more peroxide is added' 
   )
 
 tbl_ft_foxrx <- gt(dat_ft_foxrx) |>
@@ -151,7 +151,7 @@ Field-adjacent incubation methods are available as an alternative low-cost metho
 
 ### Electrical conductivity (EC~f~) {#sec-ft-ec}
 
-The soil solution's EC~f~ is an estimate of its soluble salt content, which can affect plant nutrition and water uptake. Salinity is a diagnostic criterion in the NZSC, used within the Gley, Semi-Arid, Recent and Raw Soil orders. In New Zealand, a 1:5 ratio of soil to water is used in the laboratory, and so this must be matched in the field.
+The soil solution's EC~f~ is an estimate of its soluble salt content, which can affect plant nutrition and water uptake. Salinity is a diagnostic criterion in the NZSC, used within the Gley, Semiarid, Recent and Raw Soil orders. In New Zealand, a 1:5 ratio of soil to water is used in the laboratory, and so this must be matched in the field.
 
 *Equipment*
 
@@ -360,11 +360,11 @@ delete me
 ::: {#imp-naf .callout-important appearance="minimal" collapse="true" title="Use caution interpreting the NaF~f~ test"}
 -   The presence of alkaline conditions and/or free calcium carbonate will cause a strong false positive for this test, as the NaF will precipitate to CaF~2~ and yield Na~2~CO~3~. When in doubt, pre-screening with 10% HCl or a field pH test is recommended to avoid confusion.
 -   The presence of organic matter can interfere with the test by buffering the pH change.
--   Soils containing free aluminium (Al^2+^) may also react.
+-   Soils containing free aluminium (Al^3+^) may also react.
 :::
 
 ::: {#nte-nafint .callout-note appearance="minimal" collapse="true" title="NaF~f~ test interpretation"}
-Reactivity ratings used to interpret the NaF~f~ test have been inconsistently presented over the decades since its original publication, with a tendency to get more complicated over time. The reactivity ratings presented in @tbl-ft-naf is a return towards the simpler schemas seen in early reporting.
+Reactivity ratings used to interpret the NaF~f~ test have been inconsistently presented over the decades since its original publication, with a tendency to get more complicated over time. The reactivity ratings presented in @tbl-ft-naf are a return towards the simpler schemas seen in early reporting.
 
 While a strong correlation can be made between phosphate retention and NaF reaction intensity within younger tephra-derived soils (Allophanic and Pumice Soil orders), the correlation does not hold across all soils.
 :::
@@ -397,7 +397,7 @@ Current best practice for research-grade monitoring of redox potential in soils 
 
 ### Water repellence {#sec-ft-wtrep}
 
-Water repellence in soils results from hydrophobic organic compounds (e.g. plant leaf waxes) accumulating under a specific range of soil moisture conditions [@dekker2009; @soilsurveystaffFieldBookDescribing2024]. Repellency is thus locally and seasonally variable, and usually confined to surface layers. Water repellence is most commonly assessed by observing absorbance of distilled water and/or ethanol.
+Water repellence in soils results from hydrophobic organic compounds (e.g. plant leaf waxes) accumulating under a specific range of soil moisture conditions [@dekker2009; @soilsurveystaffFieldBookDescribing2024]. Repellency is thus locally and seasonally variable, and usually confined to surface layers. Water repellence is most commonly assessed by observing absorption of distilled water and/or ethanol into the soil.
 
 *Equipment*
 
@@ -445,7 +445,7 @@ tbl_ft_wrep
 
 ### Rapid slaking and dispersion {#sec-ft-slak}
 
-Soil aggregates can slake, or disintegrate, when wet up from a dry state, as trapped air rushes out of pore spaces. Over a longer time period, clay swelling may also contribute to aggregate breakdown by slaking. Aggregate resistance to slaking behaviour is modified by organic matter content and clay mineral type. Dispersive behaviour also causes aggregate breakdown in water but is driven by relative dominance of Na^+^ ions (and to some extent Mn^2+^ and K^+^) on ion exchange sites.
+Soil aggregates can slake, or disintegrate, when wet up from a dry state, as trapped air rushes out of pore spaces. Over a longer time period, clay swelling may also contribute to aggregate breakdown by slaking. Aggregate resistance to slaking behaviour is modified by organic matter content and clay mineral type. Dispersive behaviour also causes aggregate breakdown in water but is driven by relative dominance of Na^+^ ions (and to some extent Mg^2+^ and K^+^) on ion exchange sites.
 
 Field testing can reveal soils that are prone to rapid slaking and dispersion. However, soils that are only slightly prone to these behaviours may not be detected in the short assessment time described below. The test also requires dry soil samples, which can be hard to come by under New Zealand field conditions. Running the test over a 2–hour period on air-dried peds after fieldwork will often be more useful. The laboratory equivalent assessment runs over a minimum of 20 hours [@standardsaustralia; @emerson2002].
 
@@ -492,7 +492,7 @@ tbl_ft_slak
 
 dat_ft_disp <-
   tribble(~Code, ~Name, ~Description,
-          'N', 'No dispersal',  'Peds remain intact and water remains clear', 
+          'N', 'No dispersion',  'Peds remain intact and water remains clear', 
           'S', 'Slight dispersion', 'Peds remain largely intact but a faint milky halo of suspended clay particles can be seen around them',
           'M', 'Moderate dispersion', 'Peds partly collapse and a milky halo is visible around the sample',
           'C', 'Complete dispersion', 'Peds have collapsed into a pile of separate grains, and are surrounded by an extensive and dense halo.') 

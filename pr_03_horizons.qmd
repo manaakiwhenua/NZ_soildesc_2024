@@ -236,13 +236,13 @@ tbl_hr_bdst <- gt(dat_hr_bdst) |>
 tbl_hr_bdst
 ```
 
-## Depth to free water
+## Depth to free water {#sec-pr-freewater}
 
 Depth to free water can be determined from the upper depth of the uppermost [S]{.ceg} saturated horizon (@tbl-hr-soilmst), or may be recorded directly, in whole centimetres. Depending on the soil's transmissivity, the water table may be also become evident by the pit or core filling with water. In this case, wait for the water level to stabilise before measuring.
 
 - If the water table is not encountered, record [NA]{.ceg}
 - If the water table is encountered, use @tbl-hr-frw to code its position in the profile, then record its depth above or below the soil surface in whole centimetres. Do not record negative numbers to signify a water table above the surface.
-- If the water table is exactly at the soil surface, record [B 0]{.ceg}.
+- If the water table is exactly at the soil surface, record [A 0]{.ceg}.
 
 e.g. [B 80]{.ceg} for a profile saturated below 80 cm depth; [A 1]{.ceg} for a saturated and barely-walkable peat.
 
@@ -359,12 +359,12 @@ dat_ss_pmo <-
           'Gl', 'Glacial till', 'Poorly stratified, poorly sorted rock fragments, sand and mud, surface or near-surface deposits resulting from the transportation by and deposition from ice or meltwater from beneath or in close proximity to glacial ice.',
           'Lc', 'Lacustrine', 'Formed in and around lake bed deposits; comprises extremely fine sediment deposited under very low-flow and usually freshwater conditions.',
           'Mr', 'Marine' , 'Unconsolidated sediments saturated by brackish or saline water.',
-          'Lh', 'Lahar', 'A flow of heterogenous volcaniclastic material mixed with water and deposited rapidly in river valleys associated with stratovolcanoes. Lahars may be triggered by volcanic eruption or by cone collapse in response to oversteepening.',
+          'Lh', 'Lahar', 'A flow of heterogeneous volcaniclastic material mixed with water and deposited rapidly in river valleys associated with stratovolcanoes. Lahars may be triggered by volcanic eruption or by cone collapse in response to oversteepening.',
           'Tp', 'Tephra', 'Unconsolidated primary pyroclastic products of explosive volcanic eruptions encompassing all grain sizes (ash, lapilli and larger) and lithologic compositions. Both airfall and non-welded pyroclastic flow deposits are included.',
           
           'Lo', 'Loess', 'A blanket deposit of silt-sized particles (0.002--0.06 mm diameter); usually carried by wind from dry riverbeds or outwash plains during glacial and post-glacial periods.',
           'Sa', 'Aeolian sand', 'Wind-deposited sand-sized particles (0.05--2.0 mm diameter), i.e. dune sand.',
-          'Sf', 'Solifluction', 'Unconsolidated, unsorted, usually weathered soil and rock material mantling hillslopes and derived from slow, viscous, gravity-driven downslope movement of waterlogged soil amd materials in terrains underlain by frozen soil or permafrost, either now or in the past.',
+          'Sf', 'Solifluction', 'Unconsolidated, unsorted, usually weathered soil and rock material mantling hillslopes and derived from slow, viscous, gravity-driven downslope movement of waterlogged soil and materials in terrains underlain by frozen soil or permafrost, either now or in the past.',
           'Ex', 'Extruded rock', 'Volcanic rocks that were emplaced on the land surface in a molten state',
           'In', 'Intruded rock', 'Plutonic rocks that were emplaced beneath the land surface in a molten state',
           'Rx', 'Indurated rock', 'Uplifted rocks with strong sedimentary induration and/or metamorphosis',
@@ -402,7 +402,7 @@ tbl_ss_pmo
 dat_hr_antype <-
   tribble(~Code, ~Name, ~Description,
           'm', 'Historic Māori', 'Soil modifications resulting from Māori cultural practices dating from Polynesian arrival in New Zealand, particularly agricultural practices',
-          'p', 'Historic Pakeha', 'Soil modifications dating from Pakeha (non-Māori) arrival in New Zealand up to modern times (e.g. non-mechanised European agricultural and mining practices)',
+          'p', 'Historic Pākehā', 'Soil modifications dating from Pākehā (non-Māori) arrival in New Zealand up to modern times (e.g. non-mechanised European agricultural and mining practices)',
           'n', 'Modern', 'Soil modifications resulting from modern mechanised agricultural practices, other land alteration practices (e.g. mining, terracing in urban environments) and/or addition of industrially produced materials to the soil (e.g. plastics).'
           )
 

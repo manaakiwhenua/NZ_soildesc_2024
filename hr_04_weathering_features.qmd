@@ -55,7 +55,7 @@ dat_hr_conctype <-
           'A',  'Sandy', 'Sandy texture within a loamy, silty, or clayey matrix',
           'E',  'Earthy', 'Loamy or silty texture within a sandy or clayey matrix',
           'L',  'Argillaceous', 'Clayey texture within a silty, loamy, or sandy matrix',
-          'F',  'Ferrugineous', 'Iron-dominated minerals',
+          'F',  'Ferruginous', 'Iron-dominated minerals',
           'M',  'Manganiferous', 'Manganese-dominated minerals',
           'N',  'Ferromanganiferous', 'Dominated by a mix of iron and manganese',
           'K',  'Calcareous', 'Dominated by calcium carbonate (CaCO~3~)',
@@ -83,12 +83,12 @@ tbl_hr_conctype <- gt(dat_hr_conctype) |>
 tbl_hr_conctype
 ```
 
-::: {#nte-lamn .callout-note appearance="minimal" collapse="true" title="Lamellae and Lamina"}
+::: {#nte-lamn .callout-note appearance="minimal" collapse="true" title="Lamellae and Laminae"}
 Lamellae are thin bands of concentrated but uncemented soil materials, formed by pedological processes. Lamellae are usually of a finer texture than their surrounds and may also have relatively high levels of other weathering products like iron precipitates or organic matter. While their formation mechanisms are still not fully understood, presence of lamellae in a profile can signify absence of some processes (e.g. bioturbation) and presence of others (e.g. seasonal freeze/thaw activity). Lamellae usually occur horizontally or parallel to the land surface at a scale of several meters, but can exhibit a wavy character at the sub-meter scale.
 
 Lamellae may technically qualify as distinct soil horizons. If a single lamella is evident between two contrasting horizons, then it must be described as a separate horizon rather than as a concentration. Where lamellae occur within a larger band of soil material that has consistent composition, they may be described as concentrations (e.g. [LM L 10% 3-5 mm]{.ceg} for a series of thin clay bands observed in a larger sandy layer). For more detailed discussion of lamellae, see @dijkerman1967, @rawling2000, and @bockheim2013.
 
-By contrast, lamina are thin bands of unconsolidated material with contrasting texture that have been emplaced by water, wind, or pyroclastic activity and have yet to be significantly disturbed by profile development. These geogenic layers are not weathering features and are described using terminology from @sec-reg-bed. No minimum or maximum thickness requirements are specified for lamina due to lack of data, but anecdotally they tend to be less than 5 cm thick.
+By contrast, laminae are thin bands of unconsolidated material with contrasting texture that have been emplaced by water, wind, or pyroclastic activity and have yet to be significantly disturbed by profile development. These geogenic layers are not weathering features and are described using terminology from @sec-reg-bed. No minimum or maximum thickness requirements are specified for individual lamina due to lack of data, but anecdotally they tend to be less than 5 cm thick.
 :::
 
 ## Coatings {#sec-hr-coat}
@@ -245,7 +245,7 @@ Example: [SL 30%]{.ceg} in a well-developed Vertic Melanic Soil.
 
 ```{r}
 #| label: tbl-hr-pftype
-#| tbl-cap: "Types of pressure face"
+#| tbl-cap: "Stress feature type"
 
 dat_hr_pftype <-
   tribble(~Code, ~Name, ~Description,

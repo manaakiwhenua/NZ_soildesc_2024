@@ -249,7 +249,7 @@ dat_hr_cftex <-
   tribble(~Percent, ~Convention, ~egcode, ~egtext,
          '<5%', 'Do not append', 'CL', 'clay loam with ~2% gravel',
          '≥5–<35%', 'Append as suffix', 'CL(G)', 'clay loam with ~10% gravel',
-         '≥35–<70 ',  'Append as prefix', '(G)CL', 'clay loam with ~50% gravel',
+         '≥35–<70%',  'Append as prefix', '(G)CL', 'clay loam with ~50% gravel',
          '≥70%', 'Use as primary code', 'G', 'clean gravel')
 
 tbl_hr_cftex <- gt(dat_hr_cftex) |>
@@ -324,7 +324,7 @@ Similar subdivisions are not considered useful for the cobble or boulder fractio
 
 ### Organic materials {#sec-hr-ortxt}
 
-Where organic materials occupy more than 17% of the horizon volume, their presence should be signified in the texture code. Use either the the [H]{.ceg} Humose or [P]{.ceg} Peaty codes from @tbl-hr-omtyp, choosing the code that describes the majority of the organic material, and apply it using the conventions in @tbl-hr-omtex.
+Where organic materials occupy more than 17% of the horizon volume, their presence should be signified in the texture code. Use either the [H]{.ceg} Humose or [P]{.ceg} Peaty codes from @tbl-hr-omtyp, choosing the code that describes the majority of the organic material, and apply it using the conventions in @tbl-hr-omtex.
 
 ```{r}
 #| label: tbl-hr-omtyp
@@ -478,11 +478,11 @@ dat_hr_texchar <-
           'Loamy', 'SL', 'Sandy Loam', 'Visible grains in a matrix of finer material. Feels gritty to the touch. Can form a weak ball and a short ribbon (<~25 mm).',
           'Loamy', 'SC', 'Sandy Clay Loam', 'Visible grains in a matrix of finer material. Feels gritty to the touch. Can form a coherent ball and a short ribbon (<~25 mm).',
           'Loamy', 'CL', 'Clay Loam', 'Some visible grains but mostly finer material. Feels slightly gritty to the touch. Can form a coherent ball that will crack when compressed. Will form a ribbon of ~25–50 mm length.',
-          'Silty', 'LZ', 'Loamy silt', 'Some visible grains but mostly finer material. Feels smooth or floury to the touch. Can form a weak ball but cannot easily form a ribbon.',
+          'Silty', 'LZ', 'Loamy Silt', 'Some visible grains but mostly finer material. Feels smooth or floury to the touch. Can form a weak ball but cannot easily form a ribbon.',
           'Silty', 'ZZ', 'Silt', 'Fine material without visible grains. Feels smooth or floury to the touch. May form a weak ball but tends to smear rather than form a ribbon.',
-          'Silty', 'ZL', 'Silty loam', 'Fine material without visible grains. Feels smooth or floury to the touch. Can form a coherent ball that will usually crack when compressed. Will form a ribbon of ~25–50 mm length.',
-          'Clayey', 'LC', 'Loamy clay', 'Fine material with some appreciable grit. Forms a coherent, smooth ball that may be difficult to compress and tends not to crack. Can form a ribbon of >~50 mm length.',
-          'Clayey', 'ZC', 'Silty clay', 'Fine material without visible grains. Forms a coherent, very smooth ball that may be difficult to compress and tends not to crack. Can form a ribbon of >~50 mm length.',
+          'Silty', 'ZL', 'Silty Loam', 'Fine material without visible grains. Feels smooth or floury to the touch. Can form a coherent ball that will usually crack when compressed. Will form a ribbon of ~25–50 mm length.',
+          'Clayey', 'LC', 'Loamy Clay', 'Fine material with some appreciable grit. Forms a coherent, smooth ball that may be difficult to compress and tends not to crack. Can form a ribbon of >~50 mm length.',
+          'Clayey', 'ZC', 'Silty Clay', 'Fine material without visible grains. Forms a coherent, very smooth ball that may be difficult to compress and tends not to crack. Can form a ribbon of >~50 mm length.',
           'Clayey', 'CC', 'Clay', 'Fine material without visible grains. Forms a coherent, smooth ball that may be difficult to compress, but can compress without cracking. Can form a ribbon of >~50 mm length.')
 
 tbl_hr_texchar <- gt(group_by(dat_hr_texchar, Group)) |>
@@ -531,7 +531,7 @@ For routine assessment, record one of the texture class codes in @tbl-hr-texchar
 
 Example: a coarse sandy loam with fine gravel. Rapid: [L(G)]{.ceg}, Routine: [KSL(FG)]{.ceg}
 
-## Recording particle size distribution
+## Recording particle size distribution {#sec-tex-rec-psd}
 
 Numerical estimates of particle size distribution for the fine earth fraction may be desired, particularly where it is known that laboratory particle size measurements will not be available. Record field estimates of clay and sand content derived from hand texturing to the nearest 1%, and work silt out by difference. It is recommended to add a separate error estimate (± x%) as an expression of confidence.
 
@@ -545,7 +545,7 @@ As discussed in @wrn-tex, fine-earth texture estimated by hand in the field can 
 Laboratory particle size measurement also has limitations. Available methods can incorporate particle shape and mineralogy, but these methods are labour-intensive and generally confined to research contexts. High-throughput analyses are far more common and usually involve removal of organic materials and soluble minerals, along with more aggressive aggregate dispersion using shaking and chemical solutions. Below approximately 0.04 mm, the method of measurement switches from sieving to less direct observations (commonly based on settling time in a liquid column). The calculations used to translate these observations into particle size estimates make some assumptions about shape and mineralogy that may not hold true for the sample under examination (see @loveland2001, for a more detailed discussion).
 :::
 
-### Recording whole-soil particle size estimates
+### Recording whole-soil particle size estimates {#sec-tex-rec-wt}
 
 Percentage estimates of particle size require some adjustment when reporting on a whole-soil basis. Total fine earth is the sum of the mineral fine earth and the organic matter. Clay, silt and sand percentage estimates are initially reported as a fraction of the *mineral* fine earth only, and organic matter as a fraction of the total fine earth. Rock fragments are reported as a percentage of the whole soil volume.
 
@@ -564,7 +564,7 @@ The final whole-earth composition is 18% clay, 25% silt, 29% sand, 15% cobble, a
 
 Report the final results in whole percentages; the method in use can't support any higher precision.
 
-## Whole-soil texture description statements
+## Whole-soil texture description statements {#sec-tex-desc}
 
 Plain-text descriptions of texture (or of laboratory-analysed particle size distribution) may be preferred in some cases, for example in teaching materials and long-form reporting. The coding system described above can be translated into plain text. Use the grammatical conventions in @tbl-hr-txab to describe their relative dominance. For each abundance fraction, the dominant size class is mentioned in descending order.
 

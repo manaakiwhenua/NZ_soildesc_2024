@@ -49,7 +49,7 @@ Structural development can be controlled by different processes depending on ver
 dat_hr_form <-
   tribble(~Code, ~Name,  ~Description,
           'P', 'Pedogenic', 'Structural units meet the definition of natural soil peds and occur largely within the solum',
-          'G', 'Geogenic', 'Structural units are inherited from parent materials that have undergone limited weathering e.g. bedding planes, and occur largely below the solum',
+          'G', 'Geogenic', 'Structural units are inherited from parent materials that have undergone limited weathering e.g., bedding planes, and occur largely below the solum',
           'A', 'Anthropogenic', 'Structural units have been induced by human activity, usually within the solum and most commonly in surface horizons',
           'U', 'Unknown', 'Type of structural development could not be determined with confidence')
 
@@ -199,7 +199,7 @@ Well-developed peds may be nested, with large structures breaking down to smalle
 
 For example, [P S PR 80 ± 10]{.ceg} breaking to [P M AB 20 ± 2]{.ceg}.
 
-### Method: Assessing structure in the field
+### Method: Assessing structure in the field {#sec-str-method}
 
 - To assess the structure in an [E]{.ceg} or [P2]{.ceg} type profile (@tbl-pr-gear), insert a spade horizontally near the base of the horizon and push down on the handle, levering out a section of soil. Drop the spade blade with the soil, approximately 0.3 m onto a hard surface, e.g., the blade of another spade. Remove major roots that bind the mass together and again note the attributes of the newly produced solids. Note that this procedure will not necessarily disaggregate very moist or wet soils.
 - Structure may also be observed *in situ* by using a small hand tool to gently pick back the profile face. See @sec-dig. Structure of hard layers may need to be assessed in place, or by careful removal of individual units, and will usually require an [E]{.ceg} or [P2]{.ceg} type profile.
@@ -274,7 +274,7 @@ Roundedness refers specifically to how sharp any corners or edges present on the
 dat_hr_rockfrrnd <-
   tribble(~Code, ~Name, ~Description,
           'A', 'Angular', 'Rock fragments with clear, well-defined corners separated by flat and sometimes concave outer faces.',
-          'S', 'Sub-angular', 'Rock fragments with visible but blunt corners and edges. Outer faces my be flat, concave or convex.',
+          'S', 'Sub-angular', 'Rock fragments with visible but blunt corners and edges. Outer faces may be flat, concave or convex.',
           'U', 'Sub-rounded', 'Rock fragments with poorly defined but appreciable corners and edges. Faces will be discernible but usually not flat.',
           'R', 'Rounded', 'Rock fragments with no discernible flat faces, edges or corners.') 
 
@@ -483,8 +483,8 @@ tbl_hr_aorg
 
 dat_hr_afix <-
   tribble(~Code, ~Name, ~Description,
-         'NF', 'None',    'Artefacts are not included in soil aggregates, or soil is apedal',
-         'SF', 'Solely',   'Some artefacts are incorporated into soil aggregates, but most are loose',
+         'NF', 'None', 'Artefacts are not included in soil aggregates, or soil is apedal',
+         'SF', 'Slight', 'Some artefacts are incorporated into soil aggregates, but most are loose',
          'MF', 'Moderate', 'The majority of artefacts are incorporated into soil aggregates, but some pieces are loose',
          'CF', 'Complete', 'All artefacts are incorporated into soil aggregates')
 
@@ -512,7 +512,7 @@ tbl_hr_afix
 dat_hr_ashp <-
   tribble(~Code, ~Name, ~Description,
          'P', 'Preserved', 'The original manufactured shape of the object is recognisable',  
-         'B', 'Broken',  'The fragment is recognisable as having been part of a larger object',
+         'B', 'Broken', 'The fragment is recognisable as having been part of a larger object',
          'F', 'Flat', 'Tabular or sheet-like',
          'A', 'Angular', 'Sharp-edged',
          'R', 'Rounded', 'Has edges that are not sharp',
@@ -543,7 +543,7 @@ dat_hr_adeg <-
   tribble(~Code, ~Name, ~Description,
          'N', 'Not verifiable', 'Designation not possible / uncertain',    
          'F', 'Fresh', 'Fresh artefacts with bright colours, unaffected shape, without signs of deterioration (cracks, broken edges, rough surfaces)', 
-         'I', 'Incipient alteration', 'Artefacts with incipient deterioration surface such as first cracks, broken edges or roughened/grooved surfaces',
+         'I', 'Incipient alteration', 'Artefacts with incipient deterioration surface, such as first cracks, broken edges or roughened/grooved surfaces',
          'D', 'Degraded', 'Artefacts with clear indications of ageing such as pale colours or obvious discolouration, strong fragmentation, frayed edges',
          'S', 'Strongly degraded', 'Artefacts with strongly degraded surfaces, faded colours, soft surface, frayed areas or edges')
 
