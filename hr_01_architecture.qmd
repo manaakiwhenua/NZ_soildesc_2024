@@ -136,16 +136,16 @@ Where distinct structural units can be identified in a horizon (development type
 
 dat_hr_pedshp <-
   tribble(~Group,     ~Code, ~Name,              ~Diagram,
-          'Blocky',    'AB', 'Angular blocky',       '*to be added*',
-          'Blocky',    'SB', 'Subangular blocky',    '*to be added*',
-          'Rounded',   'PH', 'Polyhedral',           '*to be added*',
-          'Rounded',   'GR', 'Granular',             '*to be added*',
-          'Rounded',   'CA', 'Cast',                 '*to be added*',
-          'Platelike', 'PL', 'Platy',                '*to be added*',
-          'Platelike', 'LE', 'Lenticular',           '*to be added*',
-          'Platelike', 'WE', 'Wedgelike',            '*to be added*',
-          'Prismlike', 'PR', 'Prismatic',            '*to be added*',
-          'Prismlike', 'CO', 'Columnar',             '*to be added*') 
+          'Blocky',    'AB', 'Angular blocky',       'data/FIGS_blocky_angular.png',
+          'Blocky',    'SB', 'Subangular blocky',    'data/FIGS_subangular.png',
+          'Rounded',   'PH', 'Polyhedral',           'data/FIGS_polyhedral.png',
+          'Rounded',   'GR', 'Granular',             'data/FIGS_granular.png',
+          'Rounded',   'CA', 'Cast',                 'data/FIGS_cast.png',
+          'Platelike', 'PL', 'Platy',                'data/FIGS_platy.png',
+          'Platelike', 'LE', 'Lenticular',           'data/FIGS_lentiform.png',
+          'Platelike', 'WE', 'Wedgelike',            'data/FIGS_wedge.png',
+          'Prismlike', 'PR', 'Prismatic',            'data/FIGS_prismatic.png',
+          'Prismlike', 'CO', 'Columnar',             'data/FIGS_columnar.png') 
 
 tbl_hr_pedshp <- gt(group_by(dat_hr_pedshp, Group)) |>
   tab_options(
@@ -163,8 +163,13 @@ tbl_hr_pedshp <- gt(group_by(dat_hr_pedshp, Group)) |>
                                    align  = 'center',
                                    v_align = 'middle')),
             locations = cells_row_groups()) |>
-  fmt_markdown(columns = 4) |>
-  cols_width(Group ~pct(20), Code ~pct(10), Name ~ pct(30))
+  tab_style(style = list(cell_text(align  = 'center',
+                                   v_align = 'middle')),
+            locations = cells_body(columns = 4)) |>
+  tab_style(style = list(cell_text(align  = 'center')),
+            locations = cells_column_labels()) |> 
+  fmt_image(columns = 4, height = '3em') |>
+  cols_width(Group ~pct(20), Code ~pct(20), Name ~ pct(30))
   
 tbl_hr_pedshp
 ```
@@ -657,7 +662,7 @@ Voids and pores are an integral part of soil structure, forming the spaces that 
 
 ### Voids {#sec-void}
 
-Voids comprise the fissures and gaps between peds, as well as pores \>2 mm wide. Dimensions of large, isolated voids like burrows can be measured directly and volume calculated. Areal percentage of smaller inter-ped spaces can be assessed across a cut face using the abundance charts in @sec-in-abundpics or by counting void openings. Use a minimum area of 100 cm^2^ for this assessment.
+Voids comprise the fissures and gaps between peds, as well as pores \>2 mm wide. Dimensions of large, isolated voids like burrows can be measured directly and volume calculated. Areal percentage of smaller inter-ped spaces can be assessed across a cut face using the abundance charts in @sec-in-abgen or by counting void openings. Use a minimum area of 100 cm^2^ for this assessment.
 
 For rapid assessment, estimate the areal percentage of the horizon volume occupied by void space. Always confirm absence of voids by recording a [0]{.ceg}.
 
@@ -730,7 +735,7 @@ For routine assessment, note presence or absence of any pores visible without ma
 
 For detailed assessment, count the number of macropores and micropores separately over a minimum area of 100 cm^2^. This may necessitate sampling several peds or small blocks from the target horizon. Counting micropores will require the use of a magnifier.
 
-[size example diagram here]{.diags}
+![Relative sizes of voids and pores.](data/FIGS_Pores.png){#fig-voidporesize width="80%" fig-alt="Conceptual diagram showing the relative sizes of voids and pores" fig-align="center"}
 
 ## Subsolum features {#sec-reg}
 
