@@ -156,11 +156,11 @@ Where high-precision DEMs are available and the areal limits of landscapes are i
 
 ### Aspect classification {#sec-aspectclass}
 
-The broadest aspect classification available divides the landscape into flat/sunny/shady. In New Zealand, 'sunny' is roughly 'north-facing'.
+The broadest aspect classification available divides the landscape into flat/sunny/shady. In New Zealand, 'sunny' is roughly 'north-facing', adjusted for the earth's axial tilt (23.44°) and the range of exposure varies with season. Daytime sun directions ('azimuth') in Wellington are highlighted in @fig-aspect, where the narrowest yellow range corresponds to winter sun azimuth range (324–82°), and the widest dark orange range is the summer sun azimuth range (260–146°). These ranges vary only slightly in the north and south of the country.
 
-For more detail, aspect data can be classified by cardinal compass direction, in 4, 8, or 16 divisions as needed (N, NNE, ENE, etc).
+For greater precision, numeric aspect data can be classified by cardinal compass direction, in 4, 8, or 16 divisions as needed. Do not forget to correct magnetic directions to true directions by accounting for declination.
 
-[compass rose image goes here, similar to [the WRB's one](https://obrl-soil.github.io/wrbsoil2022/annex-01-field-guide.html#sec-a1-823-as)]{.diags}
+![Aspect classes represented on a compass rose, with seasonal sunrise to sunset azimuth ranges highlighted - [{{< fa circle >}}]{style="color: #f0ca24"} winter, [{{< fa circle >}}]{style="color: #f89f1d"} spring/autumn, [{{< fa circle >}}]{style="color: #f16815"} summer. Note that 0° aligns to true north on this diagram, but a magnetic compass will point to magnetic north - currently between about 17° and 26° depending on location within New Zealand.](data/FIGS_compass.png){#fig-aspect width="80%" fig-alt="Aspect classes represented on a compass." fig-align="center"}
 
 ### Relief classification {#sec-reliefclass}
 
@@ -250,6 +250,8 @@ tbl_in_size
 
 ```
 
+![Size classes for soil solids.](data/FIGS_size_soil_solids.png){#fig-pedsize width="80%" fig-alt="Diagrammatic representation of the size classes for soil solids" fig-align="center"}
+
 #### Size classes for rock fragments
 
 The following classification may be applied to directly measured size data for rock fragments, or used when assessing rock fragment composition in detail (@sec-rockfrag).
@@ -285,11 +287,7 @@ tbl_in_rockfrsz <- gt(dat_in_rockfrsz) |>
 tbl_in_rockfrsz
 ```
 
-#### Estimating size classes {#sec-in-sizepics}
-
-The following images can help accurately estimate the size of soil features.
-
-[images go here]{.diags}
+![Comparative size classes for rock fragments](data/FIGS_size_rock_frags.png){#fig-rocksize width="80%" fig-alt="Diagrammatic representation of relative sizes of rock fragment classes." fig-align="center"}
 
 ### Abundance classes {#sec-in-abund}
 
@@ -328,6 +326,8 @@ tbl_hr_rtab
 
 ```
 
+![Abundance classes for live roots.](data/FIGS_root_abund_amt.png){#fig-root-n width="80%" fig-alt="Diagrammatic visual guide to live root counts" fig-align="center"}
+
 #### Abundance classes for other soil components {#sec-in-abgen}
 
 ```{r}
@@ -360,8 +360,4 @@ tbl_in_abgen <- gt(dat_in_abgen) |>
 tbl_in_abgen
 ```
 
-#### Estimating abundance classes {#sec-in-abundpics}
-
-The following images can help accurately estimate percentage abundance of soil features by area.
-
-[images go here]{.diags}
+![Abundance charts.](data/FIGS_abund_pc.png){#fig-abund-pc width="80%" fig-alt="Abundance charts." fig-align="center"}

@@ -455,7 +455,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 28, 2026</p>
+      <p class="date-modified">August 4, 2026</p>
     </div>
   </div>
     
@@ -488,7 +488,16 @@ Note&nbsp;11.1: Soil horizons and classification systems
 <section id="sec-pr-ssurf" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="sec-pr-ssurf"><span class="header-section-number">11.1</span> Defining the soil surface</h2>
 <p>The soil surface has a slightly more restrictive definition than the land surface. The soil surface begins below the layer of fresh leaf litter or small living plants, and at the top of organic soil materials such as decomposing litter or peat. The mineral soil surface is further restricted, identified as the top of the first horizon that is dominated by mineral soil material. Horizon depths are defined with reference to the soil surface overall - thus only fresh litter and/or small plants should be scraped back before measuring.</p>
-<p><span class="diags">draw this</span></p>
+<div id="fig-ssurf" class="quarto-float quarto-figure quarto-figure-center anchored" data-img-alt="Diagram showing the difference between the land surface, the soil surface and the mineral soil surface.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ssurf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="data/FIGS_soil_surface-c.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;11.1: Distinguishing the soil surface from the mineral soil surface."><img src="data/FIGS_soil_surface-c.png" class="img-fluid figure-img" style="width:80.0%" data-img-alt="Diagram showing the difference between the land surface, the soil surface and the mineral soil surface."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ssurf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.1: Distinguishing the soil surface from the mineral soil surface.
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="sec-pr-depths" class="level2" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="sec-pr-depths"><span class="header-section-number">11.2</span> Recording depths</h2>
@@ -508,19 +517,35 @@ Important&nbsp;11.1: Defining horizons on steep slopes
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>On steeper slopes, measuring horizons from vertical exposures can exaggerate horizon thicknesses, as the soil horizons mantle the landscape perpendicular to the sloping surface <span class="citation" data-cites="prietzel2019">(<a href="references.html#ref-prietzel2019" role="doc-biblioref">Prietzel and Wiesmeier 2019</a>)</span>. This starts to matter at slopes &gt; 25°, and progressively becomes more important - especially when calculating volumetric stocks of soil components. <a href="#fig-hr-slpex" class="quarto-xref">Figure&nbsp;<span>11.1</span></a> shows how a vertical 30-cm depth represents a progressively shallower ‘true depth’ as slope increases.</p>
-<p>Where depths are measured perpendicular to the surface, no adjustment needs to be made. To adjust vertically measured horizon depths to correct for slope, apply the formula <span class="math inline">\(depth × cos(slope)\)</span>. Supply depth in cm and slope in radians. Slopes measured in degrees can be converted to radians using the formula <span class="math inline">\((slope × \pi) ÷ 180\)</span>. If this correction is made, record that it has been done in the site notes to prevent the horizon depths from being adjusted any further.</p>
-<div class="cell" data-layout-align="center">
+<p>On steeper slopes, measuring horizons from vertical exposures can exaggerate horizon thicknesses, as the soil horizons mantle the landscape perpendicular to the sloping surface <span class="citation" data-cites="prietzel2019">(<a href="references.html#ref-prietzel2019" role="doc-biblioref">Prietzel and Wiesmeier 2019</a>)</span>. This starts to become noticeable at slopes &gt; 10°, and progressively becomes more important - especially when calculating volumetric stocks of soil components. <a href="#fig-hr-slpdpth" class="quarto-xref">Figure&nbsp;<span>11.2</span></a> shows the relative difference between measuring perpendicular and measuring vertically, and <a href="#fig-hr-slpex" class="quarto-xref">Figure&nbsp;<span>11.3</span></a> charts the degree of exaggeration with increasing slope.</p>
+<p>Where depths are measured perpendicular to the surface, no adjustment needs to be made. To adjust vertically measured horizon depths to correct for slope, apply the formula <span class="math inline">\(depth × cos(slope)\)</span>. Supply depth in cm and slope in radians. Slopes measured in degrees can be converted to radians using the formula <span class="math inline">\((slope × \pi) ÷ 180\)</span>. If this correction is made, clearly indicate this is the profile description record to prevent the horizon depths from being adjusted any further.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-hr-slpdpth" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Diagram showing the way that measuring horizons vertically on steep slopes exaggerates their thickness.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hr-slpdpth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="data/FIGS_slope-depths.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;11.2: Representation of the difference between measuring perpendicular to the slope (a) and measuring vertically (b). On non-flat land, b is always longer than a and measuring b overestimates the horizon thickness."><img src="data/FIGS_slope-depths.png" class="img-fluid figure-img" style="width:80.0%" alt="Diagram showing the way that measuring horizons vertically on steep slopes exaggerates their thickness."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hr-slpdpth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.2: Representation of the difference between measuring perpendicular to the slope (<em>a</em>) and measuring vertically (<em>b</em>). On non-flat land, <em>b</em> is always longer than <em>a</em> and measuring <em>b</em> overestimates the horizon thickness.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output-display">
 <div id="fig-hr-slpex" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hr-slpex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="pr_03_horizons_files/figure-html/fig-hr-slpex-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;11.1: Depth exaggeration by slope."><img src="pr_03_horizons_files/figure-html/fig-hr-slpex-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a>
+<a href="pr_03_horizons_files/figure-html/fig-hr-slpex-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;11.3: Depth exaggeration by slope, for a nominal 30-cm thick horizon. At low slope, perpendicular thickness is almost equal to vertical, but by 50°, vertical thickness exceeds perpendicular by a factor of over 1.5."><img src="pr_03_horizons_files/figure-html/fig-hr-slpex-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hr-slpex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11.1: Depth exaggeration by slope.
+Figure&nbsp;11.3: Depth exaggeration by slope, for a nominal 30-cm thick horizon. At low slope, perpendicular thickness is almost equal to vertical, but by 50°, vertical thickness exceeds perpendicular by a factor of over 1.5.
 </figcaption>
 </figure>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -539,23 +564,23 @@ Table&nbsp;11.1: Horizon boundary shape
 </figcaption>
 <div aria-describedby="tbl-hr-bshp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="cldjenwehj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cldjenwehj table {
+<div id="wcwpjeotej" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wcwpjeotej table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cldjenwehj thead, #cldjenwehj tbody, #cldjenwehj tfoot, #cldjenwehj tr, #cldjenwehj td, #cldjenwehj th {
+#wcwpjeotej thead, #wcwpjeotej tbody, #wcwpjeotej tfoot, #wcwpjeotej tr, #wcwpjeotej td, #wcwpjeotej th {
   border-style: none;
 }
 
-#cldjenwehj p {
+#wcwpjeotej p {
   margin: 0;
   padding: 0;
 }
 
-#cldjenwehj .gt_table {
+#wcwpjeotej .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -581,12 +606,12 @@ Table&nbsp;11.1: Horizon boundary shape
   border-left-color: #D3D3D3;
 }
 
-#cldjenwehj .gt_caption {
+#wcwpjeotej .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cldjenwehj .gt_title {
+#wcwpjeotej .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -598,7 +623,7 @@ Table&nbsp;11.1: Horizon boundary shape
   border-bottom-width: 0;
 }
 
-#cldjenwehj .gt_subtitle {
+#wcwpjeotej .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -610,7 +635,7 @@ Table&nbsp;11.1: Horizon boundary shape
   border-top-width: 0;
 }
 
-#cldjenwehj .gt_heading {
+#wcwpjeotej .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -622,13 +647,13 @@ Table&nbsp;11.1: Horizon boundary shape
   border-right-color: #D3D3D3;
 }
 
-#cldjenwehj .gt_bottom_border {
+#wcwpjeotej .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cldjenwehj .gt_col_headings {
+#wcwpjeotej .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -643,7 +668,7 @@ Table&nbsp;11.1: Horizon boundary shape
   border-right-color: #D3D3D3;
 }
 
-#cldjenwehj .gt_col_heading {
+#wcwpjeotej .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -663,7 +688,7 @@ Table&nbsp;11.1: Horizon boundary shape
   overflow-x: hidden;
 }
 
-#cldjenwehj .gt_column_spanner_outer {
+#wcwpjeotej .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -675,15 +700,15 @@ Table&nbsp;11.1: Horizon boundary shape
   padding-right: 4px;
 }
 
-#cldjenwehj .gt_column_spanner_outer:first-child {
+#wcwpjeotej .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cldjenwehj .gt_column_spanner_outer:last-child {
+#wcwpjeotej .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cldjenwehj .gt_column_spanner {
+#wcwpjeotej .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -695,11 +720,11 @@ Table&nbsp;11.1: Horizon boundary shape
   width: 100%;
 }
 
-#cldjenwehj .gt_spanner_row {
+#wcwpjeotej .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cldjenwehj .gt_group_heading {
+#wcwpjeotej .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -725,7 +750,7 @@ Table&nbsp;11.1: Horizon boundary shape
   text-align: left;
 }
 
-#cldjenwehj .gt_empty_group_heading {
+#wcwpjeotej .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -740,15 +765,15 @@ Table&nbsp;11.1: Horizon boundary shape
   vertical-align: middle;
 }
 
-#cldjenwehj .gt_from_md > :first-child {
+#wcwpjeotej .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cldjenwehj .gt_from_md > :last-child {
+#wcwpjeotej .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cldjenwehj .gt_row {
+#wcwpjeotej .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -767,7 +792,7 @@ Table&nbsp;11.1: Horizon boundary shape
   overflow-x: hidden;
 }
 
-#cldjenwehj .gt_stub {
+#wcwpjeotej .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -780,7 +805,7 @@ Table&nbsp;11.1: Horizon boundary shape
   padding-right: 5px;
 }
 
-#cldjenwehj .gt_stub_row_group {
+#wcwpjeotej .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -794,15 +819,15 @@ Table&nbsp;11.1: Horizon boundary shape
   vertical-align: top;
 }
 
-#cldjenwehj .gt_row_group_first td {
+#wcwpjeotej .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cldjenwehj .gt_row_group_first th {
+#wcwpjeotej .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cldjenwehj .gt_summary_row {
+#wcwpjeotej .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -812,16 +837,16 @@ Table&nbsp;11.1: Horizon boundary shape
   padding-right: 5px;
 }
 
-#cldjenwehj .gt_first_summary_row {
+#wcwpjeotej .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cldjenwehj .gt_first_summary_row.thick {
+#wcwpjeotej .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cldjenwehj .gt_last_summary_row {
+#wcwpjeotej .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -831,7 +856,7 @@ Table&nbsp;11.1: Horizon boundary shape
   border-bottom-color: #D3D3D3;
 }
 
-#cldjenwehj .gt_grand_summary_row {
+#wcwpjeotej .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -841,7 +866,7 @@ Table&nbsp;11.1: Horizon boundary shape
   padding-right: 5px;
 }
 
-#cldjenwehj .gt_first_grand_summary_row {
+#wcwpjeotej .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -851,7 +876,7 @@ Table&nbsp;11.1: Horizon boundary shape
   border-top-color: #D3D3D3;
 }
 
-#cldjenwehj .gt_last_grand_summary_row_top {
+#wcwpjeotej .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -861,11 +886,11 @@ Table&nbsp;11.1: Horizon boundary shape
   border-bottom-color: #D3D3D3;
 }
 
-#cldjenwehj .gt_striped {
+#wcwpjeotej .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cldjenwehj .gt_table_body {
+#wcwpjeotej .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -874,7 +899,7 @@ Table&nbsp;11.1: Horizon boundary shape
   border-bottom-color: #D3D3D3;
 }
 
-#cldjenwehj .gt_footnotes {
+#wcwpjeotej .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -888,7 +913,7 @@ Table&nbsp;11.1: Horizon boundary shape
   border-right-color: #D3D3D3;
 }
 
-#cldjenwehj .gt_footnote {
+#wcwpjeotej .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -897,7 +922,7 @@ Table&nbsp;11.1: Horizon boundary shape
   padding-right: 5px;
 }
 
-#cldjenwehj .gt_sourcenotes {
+#wcwpjeotej .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -911,7 +936,7 @@ Table&nbsp;11.1: Horizon boundary shape
   border-right-color: #D3D3D3;
 }
 
-#cldjenwehj .gt_sourcenote {
+#wcwpjeotej .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -919,72 +944,72 @@ Table&nbsp;11.1: Horizon boundary shape
   padding-right: 5px;
 }
 
-#cldjenwehj .gt_left {
+#wcwpjeotej .gt_left {
   text-align: left;
 }
 
-#cldjenwehj .gt_center {
+#wcwpjeotej .gt_center {
   text-align: center;
 }
 
-#cldjenwehj .gt_right {
+#wcwpjeotej .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cldjenwehj .gt_font_normal {
+#wcwpjeotej .gt_font_normal {
   font-weight: normal;
 }
 
-#cldjenwehj .gt_font_bold {
+#wcwpjeotej .gt_font_bold {
   font-weight: bold;
 }
 
-#cldjenwehj .gt_font_italic {
+#wcwpjeotej .gt_font_italic {
   font-style: italic;
 }
 
-#cldjenwehj .gt_super {
+#wcwpjeotej .gt_super {
   font-size: 65%;
 }
 
-#cldjenwehj .gt_footnote_marks {
+#wcwpjeotej .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cldjenwehj .gt_asterisk {
+#wcwpjeotej .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cldjenwehj .gt_indent_1 {
+#wcwpjeotej .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cldjenwehj .gt_indent_2 {
+#wcwpjeotej .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cldjenwehj .gt_indent_3 {
+#wcwpjeotej .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cldjenwehj .gt_indent_4 {
+#wcwpjeotej .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cldjenwehj .gt_indent_5 {
+#wcwpjeotej .gt_indent_5 {
   text-indent: 25px;
 }
 
-#cldjenwehj .katex-display {
+#wcwpjeotej .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#cldjenwehj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wcwpjeotej div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1042,6 +1067,16 @@ Table&nbsp;11.1: Horizon boundary shape
 </figure>
 </div>
 </div>
+<div id="fig-bdy-shp" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A diagrammatic representation of horizon boundary shape classes.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bdy-shp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="data/FIGS_boundary_shape.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;11.4: Horizon boundary shape classes."><img src="data/FIGS_boundary_shape.png" class="img-fluid figure-img" alt="A diagrammatic representation of horizon boundary shape classes."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bdy-shp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.4: Horizon boundary shape classes.
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="sec-pr-bdydist" class="level2" data-number="11.4">
 <h2 data-number="11.4" class="anchored" data-anchor-id="sec-pr-bdydist"><span class="header-section-number">11.4</span> Boundary distinctness</h2>
@@ -1055,23 +1090,23 @@ Table&nbsp;11.2: Horizon boundary distinctness
 </figcaption>
 <div aria-describedby="tbl-hr-bdst-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="wuqqigodrw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wuqqigodrw table {
+<div id="ddpuoadwws" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ddpuoadwws table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wuqqigodrw thead, #wuqqigodrw tbody, #wuqqigodrw tfoot, #wuqqigodrw tr, #wuqqigodrw td, #wuqqigodrw th {
+#ddpuoadwws thead, #ddpuoadwws tbody, #ddpuoadwws tfoot, #ddpuoadwws tr, #ddpuoadwws td, #ddpuoadwws th {
   border-style: none;
 }
 
-#wuqqigodrw p {
+#ddpuoadwws p {
   margin: 0;
   padding: 0;
 }
 
-#wuqqigodrw .gt_table {
+#ddpuoadwws .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1097,12 +1132,12 @@ Table&nbsp;11.2: Horizon boundary distinctness
   border-left-color: #D3D3D3;
 }
 
-#wuqqigodrw .gt_caption {
+#ddpuoadwws .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wuqqigodrw .gt_title {
+#ddpuoadwws .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1114,7 +1149,7 @@ Table&nbsp;11.2: Horizon boundary distinctness
   border-bottom-width: 0;
 }
 
-#wuqqigodrw .gt_subtitle {
+#ddpuoadwws .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1126,7 +1161,7 @@ Table&nbsp;11.2: Horizon boundary distinctness
   border-top-width: 0;
 }
 
-#wuqqigodrw .gt_heading {
+#ddpuoadwws .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1138,13 +1173,13 @@ Table&nbsp;11.2: Horizon boundary distinctness
   border-right-color: #D3D3D3;
 }
 
-#wuqqigodrw .gt_bottom_border {
+#ddpuoadwws .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wuqqigodrw .gt_col_headings {
+#ddpuoadwws .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1159,7 +1194,7 @@ Table&nbsp;11.2: Horizon boundary distinctness
   border-right-color: #D3D3D3;
 }
 
-#wuqqigodrw .gt_col_heading {
+#ddpuoadwws .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1179,7 +1214,7 @@ Table&nbsp;11.2: Horizon boundary distinctness
   overflow-x: hidden;
 }
 
-#wuqqigodrw .gt_column_spanner_outer {
+#ddpuoadwws .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1191,15 +1226,15 @@ Table&nbsp;11.2: Horizon boundary distinctness
   padding-right: 4px;
 }
 
-#wuqqigodrw .gt_column_spanner_outer:first-child {
+#ddpuoadwws .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wuqqigodrw .gt_column_spanner_outer:last-child {
+#ddpuoadwws .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wuqqigodrw .gt_column_spanner {
+#ddpuoadwws .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1211,11 +1246,11 @@ Table&nbsp;11.2: Horizon boundary distinctness
   width: 100%;
 }
 
-#wuqqigodrw .gt_spanner_row {
+#ddpuoadwws .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wuqqigodrw .gt_group_heading {
+#ddpuoadwws .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1241,7 +1276,7 @@ Table&nbsp;11.2: Horizon boundary distinctness
   text-align: left;
 }
 
-#wuqqigodrw .gt_empty_group_heading {
+#ddpuoadwws .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1256,15 +1291,15 @@ Table&nbsp;11.2: Horizon boundary distinctness
   vertical-align: middle;
 }
 
-#wuqqigodrw .gt_from_md > :first-child {
+#ddpuoadwws .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wuqqigodrw .gt_from_md > :last-child {
+#ddpuoadwws .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wuqqigodrw .gt_row {
+#ddpuoadwws .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1283,7 +1318,7 @@ Table&nbsp;11.2: Horizon boundary distinctness
   overflow-x: hidden;
 }
 
-#wuqqigodrw .gt_stub {
+#ddpuoadwws .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1296,7 +1331,7 @@ Table&nbsp;11.2: Horizon boundary distinctness
   padding-right: 5px;
 }
 
-#wuqqigodrw .gt_stub_row_group {
+#ddpuoadwws .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1310,15 +1345,15 @@ Table&nbsp;11.2: Horizon boundary distinctness
   vertical-align: top;
 }
 
-#wuqqigodrw .gt_row_group_first td {
+#ddpuoadwws .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wuqqigodrw .gt_row_group_first th {
+#ddpuoadwws .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wuqqigodrw .gt_summary_row {
+#ddpuoadwws .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1328,16 +1363,16 @@ Table&nbsp;11.2: Horizon boundary distinctness
   padding-right: 5px;
 }
 
-#wuqqigodrw .gt_first_summary_row {
+#ddpuoadwws .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wuqqigodrw .gt_first_summary_row.thick {
+#ddpuoadwws .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wuqqigodrw .gt_last_summary_row {
+#ddpuoadwws .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1347,7 +1382,7 @@ Table&nbsp;11.2: Horizon boundary distinctness
   border-bottom-color: #D3D3D3;
 }
 
-#wuqqigodrw .gt_grand_summary_row {
+#ddpuoadwws .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1357,7 +1392,7 @@ Table&nbsp;11.2: Horizon boundary distinctness
   padding-right: 5px;
 }
 
-#wuqqigodrw .gt_first_grand_summary_row {
+#ddpuoadwws .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1367,7 +1402,7 @@ Table&nbsp;11.2: Horizon boundary distinctness
   border-top-color: #D3D3D3;
 }
 
-#wuqqigodrw .gt_last_grand_summary_row_top {
+#ddpuoadwws .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1377,11 +1412,11 @@ Table&nbsp;11.2: Horizon boundary distinctness
   border-bottom-color: #D3D3D3;
 }
 
-#wuqqigodrw .gt_striped {
+#ddpuoadwws .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wuqqigodrw .gt_table_body {
+#ddpuoadwws .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1390,7 +1425,7 @@ Table&nbsp;11.2: Horizon boundary distinctness
   border-bottom-color: #D3D3D3;
 }
 
-#wuqqigodrw .gt_footnotes {
+#ddpuoadwws .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1404,7 +1439,7 @@ Table&nbsp;11.2: Horizon boundary distinctness
   border-right-color: #D3D3D3;
 }
 
-#wuqqigodrw .gt_footnote {
+#ddpuoadwws .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1413,7 +1448,7 @@ Table&nbsp;11.2: Horizon boundary distinctness
   padding-right: 5px;
 }
 
-#wuqqigodrw .gt_sourcenotes {
+#ddpuoadwws .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1427,7 +1462,7 @@ Table&nbsp;11.2: Horizon boundary distinctness
   border-right-color: #D3D3D3;
 }
 
-#wuqqigodrw .gt_sourcenote {
+#ddpuoadwws .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1435,72 +1470,72 @@ Table&nbsp;11.2: Horizon boundary distinctness
   padding-right: 5px;
 }
 
-#wuqqigodrw .gt_left {
+#ddpuoadwws .gt_left {
   text-align: left;
 }
 
-#wuqqigodrw .gt_center {
+#ddpuoadwws .gt_center {
   text-align: center;
 }
 
-#wuqqigodrw .gt_right {
+#ddpuoadwws .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wuqqigodrw .gt_font_normal {
+#ddpuoadwws .gt_font_normal {
   font-weight: normal;
 }
 
-#wuqqigodrw .gt_font_bold {
+#ddpuoadwws .gt_font_bold {
   font-weight: bold;
 }
 
-#wuqqigodrw .gt_font_italic {
+#ddpuoadwws .gt_font_italic {
   font-style: italic;
 }
 
-#wuqqigodrw .gt_super {
+#ddpuoadwws .gt_super {
   font-size: 65%;
 }
 
-#wuqqigodrw .gt_footnote_marks {
+#ddpuoadwws .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wuqqigodrw .gt_asterisk {
+#ddpuoadwws .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wuqqigodrw .gt_indent_1 {
+#ddpuoadwws .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wuqqigodrw .gt_indent_2 {
+#ddpuoadwws .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wuqqigodrw .gt_indent_3 {
+#ddpuoadwws .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wuqqigodrw .gt_indent_4 {
+#ddpuoadwws .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wuqqigodrw .gt_indent_5 {
+#ddpuoadwws .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wuqqigodrw .katex-display {
+#ddpuoadwws .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wuqqigodrw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ddpuoadwws div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1559,7 +1594,16 @@ Table&nbsp;11.2: Horizon boundary distinctness
 </div>
 </div>
 <p>Where a transition is thicker than 30&nbsp;cm, it should be defined as a new horizon. Use transitional horizon names as needed (see <a href="in_01_horizon_names.html#sec-hor-tran" class="quarto-xref"><span>Section 18.2.6</span></a>).</p>
-<p><span class="diags">put a diagram unifying the previous three concepts here</span></p>
+<div id="fig-bdy-dist" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A diagrammatic representation of horizon boundary distinctness classes.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bdy-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="data/FIGS_boundary_distinctness.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;11.5: Horizon boundary distinctness classes."><img src="data/FIGS_boundary_distinctness.png" class="img-fluid figure-img" alt="A diagrammatic representation of horizon boundary distinctness classes."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bdy-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.5: Horizon boundary distinctness classes.
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="sec-pr-inf" class="level2" data-number="11.5">
 <h2 data-number="11.5" class="anchored" data-anchor-id="sec-pr-inf"><span class="header-section-number">11.5</span> Infill features</h2>
@@ -1574,23 +1618,23 @@ Table&nbsp;11.3: Infill feature types
 </figcaption>
 <div aria-describedby="tbl-hr-infl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="hocovuyows" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hocovuyows table {
+<div id="itcnvpnkbx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#itcnvpnkbx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hocovuyows thead, #hocovuyows tbody, #hocovuyows tfoot, #hocovuyows tr, #hocovuyows td, #hocovuyows th {
+#itcnvpnkbx thead, #itcnvpnkbx tbody, #itcnvpnkbx tfoot, #itcnvpnkbx tr, #itcnvpnkbx td, #itcnvpnkbx th {
   border-style: none;
 }
 
-#hocovuyows p {
+#itcnvpnkbx p {
   margin: 0;
   padding: 0;
 }
 
-#hocovuyows .gt_table {
+#itcnvpnkbx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1616,12 +1660,12 @@ Table&nbsp;11.3: Infill feature types
   border-left-color: #D3D3D3;
 }
 
-#hocovuyows .gt_caption {
+#itcnvpnkbx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hocovuyows .gt_title {
+#itcnvpnkbx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1633,7 +1677,7 @@ Table&nbsp;11.3: Infill feature types
   border-bottom-width: 0;
 }
 
-#hocovuyows .gt_subtitle {
+#itcnvpnkbx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1645,7 +1689,7 @@ Table&nbsp;11.3: Infill feature types
   border-top-width: 0;
 }
 
-#hocovuyows .gt_heading {
+#itcnvpnkbx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1657,13 +1701,13 @@ Table&nbsp;11.3: Infill feature types
   border-right-color: #D3D3D3;
 }
 
-#hocovuyows .gt_bottom_border {
+#itcnvpnkbx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hocovuyows .gt_col_headings {
+#itcnvpnkbx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1678,7 +1722,7 @@ Table&nbsp;11.3: Infill feature types
   border-right-color: #D3D3D3;
 }
 
-#hocovuyows .gt_col_heading {
+#itcnvpnkbx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1698,7 +1742,7 @@ Table&nbsp;11.3: Infill feature types
   overflow-x: hidden;
 }
 
-#hocovuyows .gt_column_spanner_outer {
+#itcnvpnkbx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1710,15 +1754,15 @@ Table&nbsp;11.3: Infill feature types
   padding-right: 4px;
 }
 
-#hocovuyows .gt_column_spanner_outer:first-child {
+#itcnvpnkbx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hocovuyows .gt_column_spanner_outer:last-child {
+#itcnvpnkbx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hocovuyows .gt_column_spanner {
+#itcnvpnkbx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1730,11 +1774,11 @@ Table&nbsp;11.3: Infill feature types
   width: 100%;
 }
 
-#hocovuyows .gt_spanner_row {
+#itcnvpnkbx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hocovuyows .gt_group_heading {
+#itcnvpnkbx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1760,7 +1804,7 @@ Table&nbsp;11.3: Infill feature types
   text-align: left;
 }
 
-#hocovuyows .gt_empty_group_heading {
+#itcnvpnkbx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1775,15 +1819,15 @@ Table&nbsp;11.3: Infill feature types
   vertical-align: middle;
 }
 
-#hocovuyows .gt_from_md > :first-child {
+#itcnvpnkbx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hocovuyows .gt_from_md > :last-child {
+#itcnvpnkbx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hocovuyows .gt_row {
+#itcnvpnkbx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1802,7 +1846,7 @@ Table&nbsp;11.3: Infill feature types
   overflow-x: hidden;
 }
 
-#hocovuyows .gt_stub {
+#itcnvpnkbx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1815,7 +1859,7 @@ Table&nbsp;11.3: Infill feature types
   padding-right: 5px;
 }
 
-#hocovuyows .gt_stub_row_group {
+#itcnvpnkbx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1829,15 +1873,15 @@ Table&nbsp;11.3: Infill feature types
   vertical-align: top;
 }
 
-#hocovuyows .gt_row_group_first td {
+#itcnvpnkbx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hocovuyows .gt_row_group_first th {
+#itcnvpnkbx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hocovuyows .gt_summary_row {
+#itcnvpnkbx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1847,16 +1891,16 @@ Table&nbsp;11.3: Infill feature types
   padding-right: 5px;
 }
 
-#hocovuyows .gt_first_summary_row {
+#itcnvpnkbx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hocovuyows .gt_first_summary_row.thick {
+#itcnvpnkbx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hocovuyows .gt_last_summary_row {
+#itcnvpnkbx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1866,7 +1910,7 @@ Table&nbsp;11.3: Infill feature types
   border-bottom-color: #D3D3D3;
 }
 
-#hocovuyows .gt_grand_summary_row {
+#itcnvpnkbx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1876,7 +1920,7 @@ Table&nbsp;11.3: Infill feature types
   padding-right: 5px;
 }
 
-#hocovuyows .gt_first_grand_summary_row {
+#itcnvpnkbx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1886,7 +1930,7 @@ Table&nbsp;11.3: Infill feature types
   border-top-color: #D3D3D3;
 }
 
-#hocovuyows .gt_last_grand_summary_row_top {
+#itcnvpnkbx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1896,11 +1940,11 @@ Table&nbsp;11.3: Infill feature types
   border-bottom-color: #D3D3D3;
 }
 
-#hocovuyows .gt_striped {
+#itcnvpnkbx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hocovuyows .gt_table_body {
+#itcnvpnkbx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1909,7 +1953,7 @@ Table&nbsp;11.3: Infill feature types
   border-bottom-color: #D3D3D3;
 }
 
-#hocovuyows .gt_footnotes {
+#itcnvpnkbx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1923,7 +1967,7 @@ Table&nbsp;11.3: Infill feature types
   border-right-color: #D3D3D3;
 }
 
-#hocovuyows .gt_footnote {
+#itcnvpnkbx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1932,7 +1976,7 @@ Table&nbsp;11.3: Infill feature types
   padding-right: 5px;
 }
 
-#hocovuyows .gt_sourcenotes {
+#itcnvpnkbx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1946,7 +1990,7 @@ Table&nbsp;11.3: Infill feature types
   border-right-color: #D3D3D3;
 }
 
-#hocovuyows .gt_sourcenote {
+#itcnvpnkbx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1954,72 +1998,72 @@ Table&nbsp;11.3: Infill feature types
   padding-right: 5px;
 }
 
-#hocovuyows .gt_left {
+#itcnvpnkbx .gt_left {
   text-align: left;
 }
 
-#hocovuyows .gt_center {
+#itcnvpnkbx .gt_center {
   text-align: center;
 }
 
-#hocovuyows .gt_right {
+#itcnvpnkbx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hocovuyows .gt_font_normal {
+#itcnvpnkbx .gt_font_normal {
   font-weight: normal;
 }
 
-#hocovuyows .gt_font_bold {
+#itcnvpnkbx .gt_font_bold {
   font-weight: bold;
 }
 
-#hocovuyows .gt_font_italic {
+#itcnvpnkbx .gt_font_italic {
   font-style: italic;
 }
 
-#hocovuyows .gt_super {
+#itcnvpnkbx .gt_super {
   font-size: 65%;
 }
 
-#hocovuyows .gt_footnote_marks {
+#itcnvpnkbx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hocovuyows .gt_asterisk {
+#itcnvpnkbx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hocovuyows .gt_indent_1 {
+#itcnvpnkbx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hocovuyows .gt_indent_2 {
+#itcnvpnkbx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hocovuyows .gt_indent_3 {
+#itcnvpnkbx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hocovuyows .gt_indent_4 {
+#itcnvpnkbx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hocovuyows .gt_indent_5 {
+#itcnvpnkbx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#hocovuyows .katex-display {
+#itcnvpnkbx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#hocovuyows div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#itcnvpnkbx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2080,23 +2124,23 @@ Table&nbsp;11.4: Infill feature material
 </figcaption>
 <div aria-describedby="tbl-hr-infm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="oniqfuzjwi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#oniqfuzjwi table {
+<div id="qhbmklkbnf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qhbmklkbnf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#oniqfuzjwi thead, #oniqfuzjwi tbody, #oniqfuzjwi tfoot, #oniqfuzjwi tr, #oniqfuzjwi td, #oniqfuzjwi th {
+#qhbmklkbnf thead, #qhbmklkbnf tbody, #qhbmklkbnf tfoot, #qhbmklkbnf tr, #qhbmklkbnf td, #qhbmklkbnf th {
   border-style: none;
 }
 
-#oniqfuzjwi p {
+#qhbmklkbnf p {
   margin: 0;
   padding: 0;
 }
 
-#oniqfuzjwi .gt_table {
+#qhbmklkbnf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2122,12 +2166,12 @@ Table&nbsp;11.4: Infill feature material
   border-left-color: #D3D3D3;
 }
 
-#oniqfuzjwi .gt_caption {
+#qhbmklkbnf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#oniqfuzjwi .gt_title {
+#qhbmklkbnf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2139,7 +2183,7 @@ Table&nbsp;11.4: Infill feature material
   border-bottom-width: 0;
 }
 
-#oniqfuzjwi .gt_subtitle {
+#qhbmklkbnf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2151,7 +2195,7 @@ Table&nbsp;11.4: Infill feature material
   border-top-width: 0;
 }
 
-#oniqfuzjwi .gt_heading {
+#qhbmklkbnf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2163,13 +2207,13 @@ Table&nbsp;11.4: Infill feature material
   border-right-color: #D3D3D3;
 }
 
-#oniqfuzjwi .gt_bottom_border {
+#qhbmklkbnf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#oniqfuzjwi .gt_col_headings {
+#qhbmklkbnf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2184,7 +2228,7 @@ Table&nbsp;11.4: Infill feature material
   border-right-color: #D3D3D3;
 }
 
-#oniqfuzjwi .gt_col_heading {
+#qhbmklkbnf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2204,7 +2248,7 @@ Table&nbsp;11.4: Infill feature material
   overflow-x: hidden;
 }
 
-#oniqfuzjwi .gt_column_spanner_outer {
+#qhbmklkbnf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2216,15 +2260,15 @@ Table&nbsp;11.4: Infill feature material
   padding-right: 4px;
 }
 
-#oniqfuzjwi .gt_column_spanner_outer:first-child {
+#qhbmklkbnf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#oniqfuzjwi .gt_column_spanner_outer:last-child {
+#qhbmklkbnf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#oniqfuzjwi .gt_column_spanner {
+#qhbmklkbnf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2236,11 +2280,11 @@ Table&nbsp;11.4: Infill feature material
   width: 100%;
 }
 
-#oniqfuzjwi .gt_spanner_row {
+#qhbmklkbnf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#oniqfuzjwi .gt_group_heading {
+#qhbmklkbnf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2266,7 +2310,7 @@ Table&nbsp;11.4: Infill feature material
   text-align: left;
 }
 
-#oniqfuzjwi .gt_empty_group_heading {
+#qhbmklkbnf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2281,15 +2325,15 @@ Table&nbsp;11.4: Infill feature material
   vertical-align: middle;
 }
 
-#oniqfuzjwi .gt_from_md > :first-child {
+#qhbmklkbnf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#oniqfuzjwi .gt_from_md > :last-child {
+#qhbmklkbnf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#oniqfuzjwi .gt_row {
+#qhbmklkbnf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2308,7 +2352,7 @@ Table&nbsp;11.4: Infill feature material
   overflow-x: hidden;
 }
 
-#oniqfuzjwi .gt_stub {
+#qhbmklkbnf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2321,7 +2365,7 @@ Table&nbsp;11.4: Infill feature material
   padding-right: 5px;
 }
 
-#oniqfuzjwi .gt_stub_row_group {
+#qhbmklkbnf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2335,15 +2379,15 @@ Table&nbsp;11.4: Infill feature material
   vertical-align: top;
 }
 
-#oniqfuzjwi .gt_row_group_first td {
+#qhbmklkbnf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#oniqfuzjwi .gt_row_group_first th {
+#qhbmklkbnf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#oniqfuzjwi .gt_summary_row {
+#qhbmklkbnf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2353,16 +2397,16 @@ Table&nbsp;11.4: Infill feature material
   padding-right: 5px;
 }
 
-#oniqfuzjwi .gt_first_summary_row {
+#qhbmklkbnf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#oniqfuzjwi .gt_first_summary_row.thick {
+#qhbmklkbnf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#oniqfuzjwi .gt_last_summary_row {
+#qhbmklkbnf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2372,7 +2416,7 @@ Table&nbsp;11.4: Infill feature material
   border-bottom-color: #D3D3D3;
 }
 
-#oniqfuzjwi .gt_grand_summary_row {
+#qhbmklkbnf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2382,7 +2426,7 @@ Table&nbsp;11.4: Infill feature material
   padding-right: 5px;
 }
 
-#oniqfuzjwi .gt_first_grand_summary_row {
+#qhbmklkbnf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2392,7 +2436,7 @@ Table&nbsp;11.4: Infill feature material
   border-top-color: #D3D3D3;
 }
 
-#oniqfuzjwi .gt_last_grand_summary_row_top {
+#qhbmklkbnf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2402,11 +2446,11 @@ Table&nbsp;11.4: Infill feature material
   border-bottom-color: #D3D3D3;
 }
 
-#oniqfuzjwi .gt_striped {
+#qhbmklkbnf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#oniqfuzjwi .gt_table_body {
+#qhbmklkbnf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2415,7 +2459,7 @@ Table&nbsp;11.4: Infill feature material
   border-bottom-color: #D3D3D3;
 }
 
-#oniqfuzjwi .gt_footnotes {
+#qhbmklkbnf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2429,7 +2473,7 @@ Table&nbsp;11.4: Infill feature material
   border-right-color: #D3D3D3;
 }
 
-#oniqfuzjwi .gt_footnote {
+#qhbmklkbnf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2438,7 +2482,7 @@ Table&nbsp;11.4: Infill feature material
   padding-right: 5px;
 }
 
-#oniqfuzjwi .gt_sourcenotes {
+#qhbmklkbnf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2452,7 +2496,7 @@ Table&nbsp;11.4: Infill feature material
   border-right-color: #D3D3D3;
 }
 
-#oniqfuzjwi .gt_sourcenote {
+#qhbmklkbnf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2460,72 +2504,72 @@ Table&nbsp;11.4: Infill feature material
   padding-right: 5px;
 }
 
-#oniqfuzjwi .gt_left {
+#qhbmklkbnf .gt_left {
   text-align: left;
 }
 
-#oniqfuzjwi .gt_center {
+#qhbmklkbnf .gt_center {
   text-align: center;
 }
 
-#oniqfuzjwi .gt_right {
+#qhbmklkbnf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#oniqfuzjwi .gt_font_normal {
+#qhbmklkbnf .gt_font_normal {
   font-weight: normal;
 }
 
-#oniqfuzjwi .gt_font_bold {
+#qhbmklkbnf .gt_font_bold {
   font-weight: bold;
 }
 
-#oniqfuzjwi .gt_font_italic {
+#qhbmklkbnf .gt_font_italic {
   font-style: italic;
 }
 
-#oniqfuzjwi .gt_super {
+#qhbmklkbnf .gt_super {
   font-size: 65%;
 }
 
-#oniqfuzjwi .gt_footnote_marks {
+#qhbmklkbnf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#oniqfuzjwi .gt_asterisk {
+#qhbmklkbnf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#oniqfuzjwi .gt_indent_1 {
+#qhbmklkbnf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#oniqfuzjwi .gt_indent_2 {
+#qhbmklkbnf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#oniqfuzjwi .gt_indent_3 {
+#qhbmklkbnf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#oniqfuzjwi .gt_indent_4 {
+#qhbmklkbnf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#oniqfuzjwi .gt_indent_5 {
+#qhbmklkbnf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#oniqfuzjwi .katex-display {
+#qhbmklkbnf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#oniqfuzjwi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qhbmklkbnf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2595,23 +2639,23 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
 </figcaption>
 <div aria-describedby="tbl-hr-soilmst-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="pnlnijzjsf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pnlnijzjsf table {
+<div id="qistzhussx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qistzhussx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pnlnijzjsf thead, #pnlnijzjsf tbody, #pnlnijzjsf tfoot, #pnlnijzjsf tr, #pnlnijzjsf td, #pnlnijzjsf th {
+#qistzhussx thead, #qistzhussx tbody, #qistzhussx tfoot, #qistzhussx tr, #qistzhussx td, #qistzhussx th {
   border-style: none;
 }
 
-#pnlnijzjsf p {
+#qistzhussx p {
   margin: 0;
   padding: 0;
 }
 
-#pnlnijzjsf .gt_table {
+#qistzhussx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2637,12 +2681,12 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   border-left-color: #D3D3D3;
 }
 
-#pnlnijzjsf .gt_caption {
+#qistzhussx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pnlnijzjsf .gt_title {
+#qistzhussx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2654,7 +2698,7 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   border-bottom-width: 0;
 }
 
-#pnlnijzjsf .gt_subtitle {
+#qistzhussx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2666,7 +2710,7 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   border-top-width: 0;
 }
 
-#pnlnijzjsf .gt_heading {
+#qistzhussx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2678,13 +2722,13 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   border-right-color: #D3D3D3;
 }
 
-#pnlnijzjsf .gt_bottom_border {
+#qistzhussx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pnlnijzjsf .gt_col_headings {
+#qistzhussx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2699,7 +2743,7 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   border-right-color: #D3D3D3;
 }
 
-#pnlnijzjsf .gt_col_heading {
+#qistzhussx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2719,7 +2763,7 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   overflow-x: hidden;
 }
 
-#pnlnijzjsf .gt_column_spanner_outer {
+#qistzhussx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2731,15 +2775,15 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   padding-right: 4px;
 }
 
-#pnlnijzjsf .gt_column_spanner_outer:first-child {
+#qistzhussx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pnlnijzjsf .gt_column_spanner_outer:last-child {
+#qistzhussx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pnlnijzjsf .gt_column_spanner {
+#qistzhussx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2751,11 +2795,11 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   width: 100%;
 }
 
-#pnlnijzjsf .gt_spanner_row {
+#qistzhussx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pnlnijzjsf .gt_group_heading {
+#qistzhussx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2781,7 +2825,7 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   text-align: left;
 }
 
-#pnlnijzjsf .gt_empty_group_heading {
+#qistzhussx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2796,15 +2840,15 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   vertical-align: middle;
 }
 
-#pnlnijzjsf .gt_from_md > :first-child {
+#qistzhussx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pnlnijzjsf .gt_from_md > :last-child {
+#qistzhussx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pnlnijzjsf .gt_row {
+#qistzhussx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2823,7 +2867,7 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   overflow-x: hidden;
 }
 
-#pnlnijzjsf .gt_stub {
+#qistzhussx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2836,7 +2880,7 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   padding-right: 5px;
 }
 
-#pnlnijzjsf .gt_stub_row_group {
+#qistzhussx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2850,15 +2894,15 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   vertical-align: top;
 }
 
-#pnlnijzjsf .gt_row_group_first td {
+#qistzhussx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pnlnijzjsf .gt_row_group_first th {
+#qistzhussx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pnlnijzjsf .gt_summary_row {
+#qistzhussx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2868,16 +2912,16 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   padding-right: 5px;
 }
 
-#pnlnijzjsf .gt_first_summary_row {
+#qistzhussx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pnlnijzjsf .gt_first_summary_row.thick {
+#qistzhussx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pnlnijzjsf .gt_last_summary_row {
+#qistzhussx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2887,7 +2931,7 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   border-bottom-color: #D3D3D3;
 }
 
-#pnlnijzjsf .gt_grand_summary_row {
+#qistzhussx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2897,7 +2941,7 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   padding-right: 5px;
 }
 
-#pnlnijzjsf .gt_first_grand_summary_row {
+#qistzhussx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2907,7 +2951,7 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   border-top-color: #D3D3D3;
 }
 
-#pnlnijzjsf .gt_last_grand_summary_row_top {
+#qistzhussx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2917,11 +2961,11 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   border-bottom-color: #D3D3D3;
 }
 
-#pnlnijzjsf .gt_striped {
+#qistzhussx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pnlnijzjsf .gt_table_body {
+#qistzhussx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2930,7 +2974,7 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   border-bottom-color: #D3D3D3;
 }
 
-#pnlnijzjsf .gt_footnotes {
+#qistzhussx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2944,7 +2988,7 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   border-right-color: #D3D3D3;
 }
 
-#pnlnijzjsf .gt_footnote {
+#qistzhussx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2953,7 +2997,7 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   padding-right: 5px;
 }
 
-#pnlnijzjsf .gt_sourcenotes {
+#qistzhussx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2967,7 +3011,7 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   border-right-color: #D3D3D3;
 }
 
-#pnlnijzjsf .gt_sourcenote {
+#qistzhussx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2975,72 +3019,72 @@ Table&nbsp;11.5: Soil water status (adapted from <span class="citation" data-cit
   padding-right: 5px;
 }
 
-#pnlnijzjsf .gt_left {
+#qistzhussx .gt_left {
   text-align: left;
 }
 
-#pnlnijzjsf .gt_center {
+#qistzhussx .gt_center {
   text-align: center;
 }
 
-#pnlnijzjsf .gt_right {
+#qistzhussx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pnlnijzjsf .gt_font_normal {
+#qistzhussx .gt_font_normal {
   font-weight: normal;
 }
 
-#pnlnijzjsf .gt_font_bold {
+#qistzhussx .gt_font_bold {
   font-weight: bold;
 }
 
-#pnlnijzjsf .gt_font_italic {
+#qistzhussx .gt_font_italic {
   font-style: italic;
 }
 
-#pnlnijzjsf .gt_super {
+#qistzhussx .gt_super {
   font-size: 65%;
 }
 
-#pnlnijzjsf .gt_footnote_marks {
+#qistzhussx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pnlnijzjsf .gt_asterisk {
+#qistzhussx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pnlnijzjsf .gt_indent_1 {
+#qistzhussx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pnlnijzjsf .gt_indent_2 {
+#qistzhussx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pnlnijzjsf .gt_indent_3 {
+#qistzhussx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pnlnijzjsf .gt_indent_4 {
+#qistzhussx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pnlnijzjsf .gt_indent_5 {
+#qistzhussx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pnlnijzjsf .katex-display {
+#qistzhussx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pnlnijzjsf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qistzhussx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3139,23 +3183,23 @@ Table&nbsp;11.6: Free water location
 </figcaption>
 <div aria-describedby="tbl-hr-frw-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="bzslsljbva" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bzslsljbva table {
+<div id="emqwbhswkv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#emqwbhswkv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bzslsljbva thead, #bzslsljbva tbody, #bzslsljbva tfoot, #bzslsljbva tr, #bzslsljbva td, #bzslsljbva th {
+#emqwbhswkv thead, #emqwbhswkv tbody, #emqwbhswkv tfoot, #emqwbhswkv tr, #emqwbhswkv td, #emqwbhswkv th {
   border-style: none;
 }
 
-#bzslsljbva p {
+#emqwbhswkv p {
   margin: 0;
   padding: 0;
 }
 
-#bzslsljbva .gt_table {
+#emqwbhswkv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3181,12 +3225,12 @@ Table&nbsp;11.6: Free water location
   border-left-color: #D3D3D3;
 }
 
-#bzslsljbva .gt_caption {
+#emqwbhswkv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bzslsljbva .gt_title {
+#emqwbhswkv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -3198,7 +3242,7 @@ Table&nbsp;11.6: Free water location
   border-bottom-width: 0;
 }
 
-#bzslsljbva .gt_subtitle {
+#emqwbhswkv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3210,7 +3254,7 @@ Table&nbsp;11.6: Free water location
   border-top-width: 0;
 }
 
-#bzslsljbva .gt_heading {
+#emqwbhswkv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3222,13 +3266,13 @@ Table&nbsp;11.6: Free water location
   border-right-color: #D3D3D3;
 }
 
-#bzslsljbva .gt_bottom_border {
+#emqwbhswkv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bzslsljbva .gt_col_headings {
+#emqwbhswkv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3243,7 +3287,7 @@ Table&nbsp;11.6: Free water location
   border-right-color: #D3D3D3;
 }
 
-#bzslsljbva .gt_col_heading {
+#emqwbhswkv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3263,7 +3307,7 @@ Table&nbsp;11.6: Free water location
   overflow-x: hidden;
 }
 
-#bzslsljbva .gt_column_spanner_outer {
+#emqwbhswkv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3275,15 +3319,15 @@ Table&nbsp;11.6: Free water location
   padding-right: 4px;
 }
 
-#bzslsljbva .gt_column_spanner_outer:first-child {
+#emqwbhswkv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bzslsljbva .gt_column_spanner_outer:last-child {
+#emqwbhswkv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bzslsljbva .gt_column_spanner {
+#emqwbhswkv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3295,11 +3339,11 @@ Table&nbsp;11.6: Free water location
   width: 100%;
 }
 
-#bzslsljbva .gt_spanner_row {
+#emqwbhswkv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bzslsljbva .gt_group_heading {
+#emqwbhswkv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3325,7 +3369,7 @@ Table&nbsp;11.6: Free water location
   text-align: left;
 }
 
-#bzslsljbva .gt_empty_group_heading {
+#emqwbhswkv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3340,15 +3384,15 @@ Table&nbsp;11.6: Free water location
   vertical-align: middle;
 }
 
-#bzslsljbva .gt_from_md > :first-child {
+#emqwbhswkv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bzslsljbva .gt_from_md > :last-child {
+#emqwbhswkv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bzslsljbva .gt_row {
+#emqwbhswkv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3367,7 +3411,7 @@ Table&nbsp;11.6: Free water location
   overflow-x: hidden;
 }
 
-#bzslsljbva .gt_stub {
+#emqwbhswkv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3380,7 +3424,7 @@ Table&nbsp;11.6: Free water location
   padding-right: 5px;
 }
 
-#bzslsljbva .gt_stub_row_group {
+#emqwbhswkv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3394,15 +3438,15 @@ Table&nbsp;11.6: Free water location
   vertical-align: top;
 }
 
-#bzslsljbva .gt_row_group_first td {
+#emqwbhswkv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bzslsljbva .gt_row_group_first th {
+#emqwbhswkv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bzslsljbva .gt_summary_row {
+#emqwbhswkv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3412,16 +3456,16 @@ Table&nbsp;11.6: Free water location
   padding-right: 5px;
 }
 
-#bzslsljbva .gt_first_summary_row {
+#emqwbhswkv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bzslsljbva .gt_first_summary_row.thick {
+#emqwbhswkv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bzslsljbva .gt_last_summary_row {
+#emqwbhswkv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3431,7 +3475,7 @@ Table&nbsp;11.6: Free water location
   border-bottom-color: #D3D3D3;
 }
 
-#bzslsljbva .gt_grand_summary_row {
+#emqwbhswkv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3441,7 +3485,7 @@ Table&nbsp;11.6: Free water location
   padding-right: 5px;
 }
 
-#bzslsljbva .gt_first_grand_summary_row {
+#emqwbhswkv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3451,7 +3495,7 @@ Table&nbsp;11.6: Free water location
   border-top-color: #D3D3D3;
 }
 
-#bzslsljbva .gt_last_grand_summary_row_top {
+#emqwbhswkv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3461,11 +3505,11 @@ Table&nbsp;11.6: Free water location
   border-bottom-color: #D3D3D3;
 }
 
-#bzslsljbva .gt_striped {
+#emqwbhswkv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bzslsljbva .gt_table_body {
+#emqwbhswkv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3474,7 +3518,7 @@ Table&nbsp;11.6: Free water location
   border-bottom-color: #D3D3D3;
 }
 
-#bzslsljbva .gt_footnotes {
+#emqwbhswkv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3488,7 +3532,7 @@ Table&nbsp;11.6: Free water location
   border-right-color: #D3D3D3;
 }
 
-#bzslsljbva .gt_footnote {
+#emqwbhswkv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3497,7 +3541,7 @@ Table&nbsp;11.6: Free water location
   padding-right: 5px;
 }
 
-#bzslsljbva .gt_sourcenotes {
+#emqwbhswkv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3511,7 +3555,7 @@ Table&nbsp;11.6: Free water location
   border-right-color: #D3D3D3;
 }
 
-#bzslsljbva .gt_sourcenote {
+#emqwbhswkv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3519,72 +3563,72 @@ Table&nbsp;11.6: Free water location
   padding-right: 5px;
 }
 
-#bzslsljbva .gt_left {
+#emqwbhswkv .gt_left {
   text-align: left;
 }
 
-#bzslsljbva .gt_center {
+#emqwbhswkv .gt_center {
   text-align: center;
 }
 
-#bzslsljbva .gt_right {
+#emqwbhswkv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bzslsljbva .gt_font_normal {
+#emqwbhswkv .gt_font_normal {
   font-weight: normal;
 }
 
-#bzslsljbva .gt_font_bold {
+#emqwbhswkv .gt_font_bold {
   font-weight: bold;
 }
 
-#bzslsljbva .gt_font_italic {
+#emqwbhswkv .gt_font_italic {
   font-style: italic;
 }
 
-#bzslsljbva .gt_super {
+#emqwbhswkv .gt_super {
   font-size: 65%;
 }
 
-#bzslsljbva .gt_footnote_marks {
+#emqwbhswkv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bzslsljbva .gt_asterisk {
+#emqwbhswkv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bzslsljbva .gt_indent_1 {
+#emqwbhswkv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bzslsljbva .gt_indent_2 {
+#emqwbhswkv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bzslsljbva .gt_indent_3 {
+#emqwbhswkv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bzslsljbva .gt_indent_4 {
+#emqwbhswkv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bzslsljbva .gt_indent_5 {
+#emqwbhswkv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bzslsljbva .katex-display {
+#emqwbhswkv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bzslsljbva div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#emqwbhswkv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3771,23 +3815,23 @@ Table&nbsp;11.8: Parent material origin
 </figcaption>
 <div aria-describedby="tbl-ss-pmo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ixelnskogp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ixelnskogp table {
+<div id="dxnneajyim" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dxnneajyim table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ixelnskogp thead, #ixelnskogp tbody, #ixelnskogp tfoot, #ixelnskogp tr, #ixelnskogp td, #ixelnskogp th {
+#dxnneajyim thead, #dxnneajyim tbody, #dxnneajyim tfoot, #dxnneajyim tr, #dxnneajyim td, #dxnneajyim th {
   border-style: none;
 }
 
-#ixelnskogp p {
+#dxnneajyim p {
   margin: 0;
   padding: 0;
 }
 
-#ixelnskogp .gt_table {
+#dxnneajyim .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3813,12 +3857,12 @@ Table&nbsp;11.8: Parent material origin
   border-left-color: #D3D3D3;
 }
 
-#ixelnskogp .gt_caption {
+#dxnneajyim .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ixelnskogp .gt_title {
+#dxnneajyim .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -3830,7 +3874,7 @@ Table&nbsp;11.8: Parent material origin
   border-bottom-width: 0;
 }
 
-#ixelnskogp .gt_subtitle {
+#dxnneajyim .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3842,7 +3886,7 @@ Table&nbsp;11.8: Parent material origin
   border-top-width: 0;
 }
 
-#ixelnskogp .gt_heading {
+#dxnneajyim .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3854,13 +3898,13 @@ Table&nbsp;11.8: Parent material origin
   border-right-color: #D3D3D3;
 }
 
-#ixelnskogp .gt_bottom_border {
+#dxnneajyim .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ixelnskogp .gt_col_headings {
+#dxnneajyim .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3875,7 +3919,7 @@ Table&nbsp;11.8: Parent material origin
   border-right-color: #D3D3D3;
 }
 
-#ixelnskogp .gt_col_heading {
+#dxnneajyim .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3895,7 +3939,7 @@ Table&nbsp;11.8: Parent material origin
   overflow-x: hidden;
 }
 
-#ixelnskogp .gt_column_spanner_outer {
+#dxnneajyim .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3907,15 +3951,15 @@ Table&nbsp;11.8: Parent material origin
   padding-right: 4px;
 }
 
-#ixelnskogp .gt_column_spanner_outer:first-child {
+#dxnneajyim .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ixelnskogp .gt_column_spanner_outer:last-child {
+#dxnneajyim .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ixelnskogp .gt_column_spanner {
+#dxnneajyim .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3927,11 +3971,11 @@ Table&nbsp;11.8: Parent material origin
   width: 100%;
 }
 
-#ixelnskogp .gt_spanner_row {
+#dxnneajyim .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ixelnskogp .gt_group_heading {
+#dxnneajyim .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3957,7 +4001,7 @@ Table&nbsp;11.8: Parent material origin
   text-align: left;
 }
 
-#ixelnskogp .gt_empty_group_heading {
+#dxnneajyim .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3972,15 +4016,15 @@ Table&nbsp;11.8: Parent material origin
   vertical-align: middle;
 }
 
-#ixelnskogp .gt_from_md > :first-child {
+#dxnneajyim .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ixelnskogp .gt_from_md > :last-child {
+#dxnneajyim .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ixelnskogp .gt_row {
+#dxnneajyim .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3999,7 +4043,7 @@ Table&nbsp;11.8: Parent material origin
   overflow-x: hidden;
 }
 
-#ixelnskogp .gt_stub {
+#dxnneajyim .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4012,7 +4056,7 @@ Table&nbsp;11.8: Parent material origin
   padding-right: 5px;
 }
 
-#ixelnskogp .gt_stub_row_group {
+#dxnneajyim .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4026,15 +4070,15 @@ Table&nbsp;11.8: Parent material origin
   vertical-align: top;
 }
 
-#ixelnskogp .gt_row_group_first td {
+#dxnneajyim .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ixelnskogp .gt_row_group_first th {
+#dxnneajyim .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ixelnskogp .gt_summary_row {
+#dxnneajyim .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4044,16 +4088,16 @@ Table&nbsp;11.8: Parent material origin
   padding-right: 5px;
 }
 
-#ixelnskogp .gt_first_summary_row {
+#dxnneajyim .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ixelnskogp .gt_first_summary_row.thick {
+#dxnneajyim .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ixelnskogp .gt_last_summary_row {
+#dxnneajyim .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4063,7 +4107,7 @@ Table&nbsp;11.8: Parent material origin
   border-bottom-color: #D3D3D3;
 }
 
-#ixelnskogp .gt_grand_summary_row {
+#dxnneajyim .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4073,7 +4117,7 @@ Table&nbsp;11.8: Parent material origin
   padding-right: 5px;
 }
 
-#ixelnskogp .gt_first_grand_summary_row {
+#dxnneajyim .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4083,7 +4127,7 @@ Table&nbsp;11.8: Parent material origin
   border-top-color: #D3D3D3;
 }
 
-#ixelnskogp .gt_last_grand_summary_row_top {
+#dxnneajyim .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4093,11 +4137,11 @@ Table&nbsp;11.8: Parent material origin
   border-bottom-color: #D3D3D3;
 }
 
-#ixelnskogp .gt_striped {
+#dxnneajyim .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ixelnskogp .gt_table_body {
+#dxnneajyim .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4106,7 +4150,7 @@ Table&nbsp;11.8: Parent material origin
   border-bottom-color: #D3D3D3;
 }
 
-#ixelnskogp .gt_footnotes {
+#dxnneajyim .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4120,7 +4164,7 @@ Table&nbsp;11.8: Parent material origin
   border-right-color: #D3D3D3;
 }
 
-#ixelnskogp .gt_footnote {
+#dxnneajyim .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4129,7 +4173,7 @@ Table&nbsp;11.8: Parent material origin
   padding-right: 5px;
 }
 
-#ixelnskogp .gt_sourcenotes {
+#dxnneajyim .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4143,7 +4187,7 @@ Table&nbsp;11.8: Parent material origin
   border-right-color: #D3D3D3;
 }
 
-#ixelnskogp .gt_sourcenote {
+#dxnneajyim .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4151,72 +4195,72 @@ Table&nbsp;11.8: Parent material origin
   padding-right: 5px;
 }
 
-#ixelnskogp .gt_left {
+#dxnneajyim .gt_left {
   text-align: left;
 }
 
-#ixelnskogp .gt_center {
+#dxnneajyim .gt_center {
   text-align: center;
 }
 
-#ixelnskogp .gt_right {
+#dxnneajyim .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ixelnskogp .gt_font_normal {
+#dxnneajyim .gt_font_normal {
   font-weight: normal;
 }
 
-#ixelnskogp .gt_font_bold {
+#dxnneajyim .gt_font_bold {
   font-weight: bold;
 }
 
-#ixelnskogp .gt_font_italic {
+#dxnneajyim .gt_font_italic {
   font-style: italic;
 }
 
-#ixelnskogp .gt_super {
+#dxnneajyim .gt_super {
   font-size: 65%;
 }
 
-#ixelnskogp .gt_footnote_marks {
+#dxnneajyim .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ixelnskogp .gt_asterisk {
+#dxnneajyim .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ixelnskogp .gt_indent_1 {
+#dxnneajyim .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ixelnskogp .gt_indent_2 {
+#dxnneajyim .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ixelnskogp .gt_indent_3 {
+#dxnneajyim .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ixelnskogp .gt_indent_4 {
+#dxnneajyim .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ixelnskogp .gt_indent_5 {
+#dxnneajyim .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ixelnskogp .katex-display {
+#dxnneajyim .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ixelnskogp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dxnneajyim div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4359,23 +4403,23 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
 </figcaption>
 <div aria-describedby="tbl-hr-antype-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="yilsslfqhb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yilsslfqhb table {
+<div id="pjwvyzhhda" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pjwvyzhhda table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yilsslfqhb thead, #yilsslfqhb tbody, #yilsslfqhb tfoot, #yilsslfqhb tr, #yilsslfqhb td, #yilsslfqhb th {
+#pjwvyzhhda thead, #pjwvyzhhda tbody, #pjwvyzhhda tfoot, #pjwvyzhhda tr, #pjwvyzhhda td, #pjwvyzhhda th {
   border-style: none;
 }
 
-#yilsslfqhb p {
+#pjwvyzhhda p {
   margin: 0;
   padding: 0;
 }
 
-#yilsslfqhb .gt_table {
+#pjwvyzhhda .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4401,12 +4445,12 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   border-left-color: #D3D3D3;
 }
 
-#yilsslfqhb .gt_caption {
+#pjwvyzhhda .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yilsslfqhb .gt_title {
+#pjwvyzhhda .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -4418,7 +4462,7 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   border-bottom-width: 0;
 }
 
-#yilsslfqhb .gt_subtitle {
+#pjwvyzhhda .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4430,7 +4474,7 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   border-top-width: 0;
 }
 
-#yilsslfqhb .gt_heading {
+#pjwvyzhhda .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4442,13 +4486,13 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   border-right-color: #D3D3D3;
 }
 
-#yilsslfqhb .gt_bottom_border {
+#pjwvyzhhda .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yilsslfqhb .gt_col_headings {
+#pjwvyzhhda .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4463,7 +4507,7 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   border-right-color: #D3D3D3;
 }
 
-#yilsslfqhb .gt_col_heading {
+#pjwvyzhhda .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4483,7 +4527,7 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   overflow-x: hidden;
 }
 
-#yilsslfqhb .gt_column_spanner_outer {
+#pjwvyzhhda .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4495,15 +4539,15 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   padding-right: 4px;
 }
 
-#yilsslfqhb .gt_column_spanner_outer:first-child {
+#pjwvyzhhda .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yilsslfqhb .gt_column_spanner_outer:last-child {
+#pjwvyzhhda .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yilsslfqhb .gt_column_spanner {
+#pjwvyzhhda .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4515,11 +4559,11 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   width: 100%;
 }
 
-#yilsslfqhb .gt_spanner_row {
+#pjwvyzhhda .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yilsslfqhb .gt_group_heading {
+#pjwvyzhhda .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4545,7 +4589,7 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   text-align: left;
 }
 
-#yilsslfqhb .gt_empty_group_heading {
+#pjwvyzhhda .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4560,15 +4604,15 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   vertical-align: middle;
 }
 
-#yilsslfqhb .gt_from_md > :first-child {
+#pjwvyzhhda .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yilsslfqhb .gt_from_md > :last-child {
+#pjwvyzhhda .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yilsslfqhb .gt_row {
+#pjwvyzhhda .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4587,7 +4631,7 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   overflow-x: hidden;
 }
 
-#yilsslfqhb .gt_stub {
+#pjwvyzhhda .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4600,7 +4644,7 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   padding-right: 5px;
 }
 
-#yilsslfqhb .gt_stub_row_group {
+#pjwvyzhhda .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4614,15 +4658,15 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   vertical-align: top;
 }
 
-#yilsslfqhb .gt_row_group_first td {
+#pjwvyzhhda .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yilsslfqhb .gt_row_group_first th {
+#pjwvyzhhda .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yilsslfqhb .gt_summary_row {
+#pjwvyzhhda .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4632,16 +4676,16 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   padding-right: 5px;
 }
 
-#yilsslfqhb .gt_first_summary_row {
+#pjwvyzhhda .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yilsslfqhb .gt_first_summary_row.thick {
+#pjwvyzhhda .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yilsslfqhb .gt_last_summary_row {
+#pjwvyzhhda .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4651,7 +4695,7 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   border-bottom-color: #D3D3D3;
 }
 
-#yilsslfqhb .gt_grand_summary_row {
+#pjwvyzhhda .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4661,7 +4705,7 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   padding-right: 5px;
 }
 
-#yilsslfqhb .gt_first_grand_summary_row {
+#pjwvyzhhda .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4671,7 +4715,7 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   border-top-color: #D3D3D3;
 }
 
-#yilsslfqhb .gt_last_grand_summary_row_top {
+#pjwvyzhhda .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4681,11 +4725,11 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   border-bottom-color: #D3D3D3;
 }
 
-#yilsslfqhb .gt_striped {
+#pjwvyzhhda .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yilsslfqhb .gt_table_body {
+#pjwvyzhhda .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4694,7 +4738,7 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   border-bottom-color: #D3D3D3;
 }
 
-#yilsslfqhb .gt_footnotes {
+#pjwvyzhhda .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4708,7 +4752,7 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   border-right-color: #D3D3D3;
 }
 
-#yilsslfqhb .gt_footnote {
+#pjwvyzhhda .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4717,7 +4761,7 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   padding-right: 5px;
 }
 
-#yilsslfqhb .gt_sourcenotes {
+#pjwvyzhhda .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4731,7 +4775,7 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   border-right-color: #D3D3D3;
 }
 
-#yilsslfqhb .gt_sourcenote {
+#pjwvyzhhda .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4739,72 +4783,72 @@ Table&nbsp;11.9: Subtypes of Anthropic soil materials
   padding-right: 5px;
 }
 
-#yilsslfqhb .gt_left {
+#pjwvyzhhda .gt_left {
   text-align: left;
 }
 
-#yilsslfqhb .gt_center {
+#pjwvyzhhda .gt_center {
   text-align: center;
 }
 
-#yilsslfqhb .gt_right {
+#pjwvyzhhda .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yilsslfqhb .gt_font_normal {
+#pjwvyzhhda .gt_font_normal {
   font-weight: normal;
 }
 
-#yilsslfqhb .gt_font_bold {
+#pjwvyzhhda .gt_font_bold {
   font-weight: bold;
 }
 
-#yilsslfqhb .gt_font_italic {
+#pjwvyzhhda .gt_font_italic {
   font-style: italic;
 }
 
-#yilsslfqhb .gt_super {
+#pjwvyzhhda .gt_super {
   font-size: 65%;
 }
 
-#yilsslfqhb .gt_footnote_marks {
+#pjwvyzhhda .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yilsslfqhb .gt_asterisk {
+#pjwvyzhhda .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yilsslfqhb .gt_indent_1 {
+#pjwvyzhhda .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yilsslfqhb .gt_indent_2 {
+#pjwvyzhhda .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yilsslfqhb .gt_indent_3 {
+#pjwvyzhhda .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yilsslfqhb .gt_indent_4 {
+#pjwvyzhhda .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yilsslfqhb .gt_indent_5 {
+#pjwvyzhhda .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yilsslfqhb .katex-display {
+#pjwvyzhhda .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yilsslfqhb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pjwvyzhhda div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
