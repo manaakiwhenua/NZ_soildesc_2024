@@ -21,7 +21,7 @@ All soil classification systems use particular soil horizons to help locate a so
 
 The soil surface has a slightly more restrictive definition than the land surface. The soil surface begins below the layer of fresh leaf litter or small living plants, and at the top of organic soil materials such as decomposing litter or peat. The mineral soil surface is further restricted, identified as the top of the first horizon that is dominated by mineral soil material. Horizon depths are defined with reference to the soil surface overall - thus only fresh litter and/or small plants should be scraped back before measuring.
 
-[draw this]{.diags}
+![Distinguishing the soil surface from the mineral soil surface.](data/FIGS_soil_surface-c.png){#fig-ssurf img-alt="Diagram showing the difference between the land surface, the soil surface and the mineral soil surface." width=80%}
 
 ## Recording depths {#sec-pr-depths}
 
@@ -34,27 +34,34 @@ Where a wider exposure (see @tbl-pr-gear, type [E]{.ceg}, [P1]{.ceg}, [P2]{.ceg}
 Measure boundaries to and from the midpoint of each horizon transition zone (see @sec-pr-bdydist). Where depths are correctly measured, horizon thicknesses can be calculated after fieldwork.
 
 ::: {#imp-stp .callout-important collapse="true" appearance="minimal" title="Defining horizons on steep slopes"}
-On steeper slopes, measuring horizons from vertical exposures can exaggerate horizon thicknesses, as the soil horizons mantle the landscape perpendicular to the sloping surface [@prietzel2019]. This starts to matter at slopes \> 25°, and progressively becomes more important - especially when calculating volumetric stocks of soil components. @fig-hr-slpex shows how a vertical 30-cm depth represents a progressively shallower 'true depth' as slope increases.
+On steeper slopes, measuring horizons from vertical exposures can exaggerate horizon thicknesses, as the soil horizons mantle the landscape perpendicular to the sloping surface [@prietzel2019]. This starts to become noticeable at slopes \> 10°, and progressively becomes more important - especially when calculating volumetric stocks of soil components. @fig-hr-slpdpth shows the relative difference between measuring perpendicular and measuring vertically, and @fig-hr-slpex charts the degree of exaggeration with increasing slope.
 
-Where depths are measured perpendicular to the surface, no adjustment needs to be made. To adjust vertically measured horizon depths to correct for slope, apply the formula $depth × cos(slope)$. Supply depth in cm and slope in radians. Slopes measured in degrees can be converted to radians using the formula $(slope × \pi) ÷ 180$. If this correction is made, record that it has been done in the site notes to prevent the horizon depths from being adjusted any further.
+Where depths are measured perpendicular to the surface, no adjustment needs to be made. To adjust vertically measured horizon depths to correct for slope, apply the formula $depth × cos(slope)$. Supply depth in cm and slope in radians. Slopes measured in degrees can be converted to radians using the formula $(slope × \pi) ÷ 180$. If this correction is made, clearly indicate this is the profile description record to prevent the horizon depths from being adjusted any further.
+
+::: {layout-ncol=2}
+
+![Representation of the difference between measuring perpendicular to the slope (*a*) and measuring vertically (*b*). On non-flat land, *b* is always longer than *a* and measuring *b* overestimates the horizon thickness.](data/FIGS_slope-depths.png){#fig-hr-slpdpth fig-alt="Diagram showing the way that measuring horizons vertically on steep slopes exaggerates their thickness." width="80%"}
 
 ```{r}
 #| label: fig-hr-slpex
-#| fig-cap: "Depth exaggeration by slope."
+#| fig-cap: "Depth exaggeration by slope, for a nominal 30-cm thick horizon. At low slope, perpendicular thickness is almost equal to vertical, but by 50°, vertical thickness exceeds perpendicular by a factor of over 1.5."
 
 deg2rad <- function(deg) {(deg * pi) / (180)}
 
 slp_dat <- data.frame('Slope' = seq(0, 50, 1),
-                      'Thickness' = 30 * cos(deg2rad(seq(0, 50, 1)))) |>
+                      'Thickness' = 30 / cos(deg2rad(seq(0, 50, 1)))) |>
                         mutate('Ratio' = Thickness/30)
 
 ggplot(slp_dat) +
   geom_line(aes(y = Thickness, x = Slope),
             linewidth = 1, colour = 'grey40') +
-  labs(x= 'Slope (°)', y = 'Horizon thickness (cm)') +
-  theme_minimal()
+  labs(x= 'Slope (°)', y = 'Apparent vertical thickness (cm)') +
+  theme_minimal() 
 
 ```
+
+:::
+
 :::
 
 ## Boundary shape {#sec-pr-bdyshp}
@@ -89,6 +96,8 @@ tbl_hr_bshp <- gt(dat_hr_bshp) |>
 
 tbl_hr_bshp
 ```
+
+![Horizon boundary shape classes.](data/FIGS_boundary_shape.png){#fig-bdy-shp fig-alt="A diagrammatic representation of horizon boundary shape classes."}
 
 ## Boundary distinctness {#sec-pr-bdydist}
 
@@ -127,7 +136,7 @@ tbl_hr_bdst
 
 Where a transition is thicker than 30 cm, it should be defined as a new horizon. Use transitional horizon names as needed (see @sec-hor-tran).
 
-[put a diagram unifying the previous three concepts here]{.diags}
+![Horizon boundary distinctness classes.](data/FIGS_boundary_distinctness.png){#fig-bdy-dist fig-alt="A diagrammatic representation of horizon boundary distinctness classes."}
 
 ## Infill features {#sec-pr-inf}
 
