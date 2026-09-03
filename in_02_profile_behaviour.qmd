@@ -14,19 +14,21 @@ Soil drainage is an assessment of how fast water leaves a soil profile relative 
 
 ### Horizon drainage {#sec-in-hdrng}
 
-Drainage should first be assessed on a per-horizon basis. These interpretations may then be summarised at profile level (see @sec-in-pdrng). @tbl-in-hdrng below highlights the common characteristics associated with each horizon drainage class.
+Drainage should first be assessed on a per-horizon basis. These interpretations may then be summarised at profile level (see @sec-in-pdrng). @tbl-in-hdrng below highlights the diagnostic characteristics associated with each horizon drainage class as well as some typical but non-diagnostic features. See @tbl-hr-horredox for the full horizon definitions.
+
+For drainage assessment, the term 'redox segregations' includes redox mottling as well as the development of iron and/or manganese-rich secondary features - concentrations like soft masses, concretions and nodules - as well as Fe/Mn pans and ped coatings. See 
 
 ```{r}
 #| label: tbl-in-hdrng
 #| tbl-cap: "Horizon-level drainage characteristics"
 
 dat_in_hdrng <-
-  tribble(~Code, ~Name, ~HNames, ~sws, ~mcol, ~secfts,
-          'v', 'Very poor', 'O*, *r', 'Saturated or wet', 'Low-chroma', 'Few to none',  
-          'p', 'Poor', '*r, *g', 'Wet', 'Low-chroma', 'Few to none, mottles more often on ped surfaces than internals',
-          'i', 'Imperfect', '*(g)', 'Wet to Moist', 'Low-chroma patterns on brighter matrix', 'Fe and/or Mn-rich segregations, nodules and pans',
-          'm', 'Moderately Well', '*(f)', 'Wet to Dry', 'Colour patterns but no low chroma colours', 'Mottles more often in ped interiors' ,
-          'w', 'Well', 'No redox suffixes', 'Moist to Dry', 'No low chroma colours',  'Few to none')
+  tribble(~Code, ~Name, ~HNames,  ~segs, ~cols, ~sws, ~typfts,
+          'v', 'Very poor', 'O*, *r',  'not diagnostic', 'Matrix >85%',  'Saturated or wet', 'Redox mottling usually absent. Consistence often fluid',
+          'p', 'Poor', '*r, *g',       '≥2%', 'Matrix 50–85%, or ped faces >50%', 'Wet', 'Redox mottles more often on ped surfaces than interiors',
+          'i', 'Imperfect', '*(g)',    '≥2%', '<50%', 'Wet to Moist', 'Often strongest profile expression of Fe/Mn conctrations, nodules, pans',
+          'm', 'Moderately Well', '*(f)', '≥2%', 'None', 'Wet to Dry', 'Redox mottles more often in ped interiors',
+          'w', 'Well', 'No redox suffixes', '<2%', 'None', 'Moist to Dry', '')
 
 tbl_in_hdrng <- gt(dat_in_hdrng) |>
    tab_options(
@@ -43,8 +45,9 @@ tbl_in_hdrng <- gt(dat_in_hdrng) |>
             locations = cells_body(columns = 3)) |>
   cols_label(HNames = 'Horizon Names',
              sws    = 'Typical Moisture',
-             secfts  = 'Redox concentrations',
-             mcol   = 'Main colours') |>
+             segs   = 'Redox segregations',
+             cols   = 'Low chroma colours',
+             typfts = 'Typical features') |>
   cols_width(Code ~pct(10), Name ~ pct(20))
 
 tbl_in_hdrng
@@ -52,7 +55,7 @@ tbl_in_hdrng
 
 #### Classifying topsoil drainage {#sec-in-tsdrng}
 
-Morphological features associated with drainage status can be hard to observe accurately in [A]{.ceg} horizons, mostly due to their darker colour. *When otherwise in doubt*, a well developed [A]{.ceg} horizon should be assigned a drainage class one better than the horizon below it (usually a [B]{.ceg}, [E]{.ceg}, or [C]{.ceg} horizon). A poorly developed [A]{.ceg} horizon should receive the same class assignment as the horizon below. Use the 'distinct topsoil' NZSC diagnostic criteria to identify well developed [A]{.ceg} horizons.
+Morphological features associated with drainage status can be hard to observe accurately in [A]{.ceg} horizons, mostly due to their darker, and low-chroma colours, which are caused by organic matter accumulation rather than reduction. *When otherwise in doubt*, a well developed [A]{.ceg} horizon should be assigned a drainage class that is either the same or one better than the horizon below it (usually a [B]{.ceg}, [E]{.ceg}, or [C]{.ceg} horizon). A poorly developed [A]{.ceg} horizon should receive the same class assignment as the horizon below. Use the 'distinct topsoil' NZSC diagnostic criteria to identify well developed [A]{.ceg} horizons.
 
 The reasoning behind this rule of thumb is that the lack of topsoil development may be partially explained by lack of contrast in the drainage regime between the topsoil and the layer below.
 
@@ -60,7 +63,7 @@ The reasoning behind this rule of thumb is that the lack of topsoil development 
 
 ### Profile Drainage {#sec-in-pdrng}
 
-The drainage status of the profile as a whole is determined using horizon depths and per-horizon drainage ratings completed according to @sec-in-hdrng. Note that 'perch-gley profiles', where a zone of impeded drainage rests above a low-permeability layer that appears less affected by redox processes, are treated the same as any other soil profile. The depth to the shallowest zone of impeded drainage is used to determine the profile drainage class.
+The drainage status of the profile as a whole is determined using horizon depths and per-horizon drainage ratings completed according to @sec-in-hdrng. Note that 'perch-gley profiles', where a zone of impeded drainage rests above a low-permeability layer that appears less affected by redox processes, are treated the same as any other soil profile. The depth to the shallowest zone of impeded drainage is used to determine the profile drainage class. Treat @tbl-in-pdrng as a key, stopping at the first class that fits the profile.
 
 Workers classifying drainage for NZSC Sibling construction have no need to subdivide within the profile ratings in @tbl-in-pdrng. For other types of work e.g. agricultural suitability assessment, it may be useful to recognise subgroups – e.g. for a deep-rooted, wetness-intolerant crop, there is a difference between an imperfectly drained profile that is at its *worst* imperfectly drained in the top 1 m, and one that has poor drainage below 60 cm.
 
@@ -76,11 +79,11 @@ dat_in_pdrng <-
     'IP',  'Imperfect', 'Profiles with poorly drained horizons starting 30–60 cm from the land surface, *or*
     
 Profiles with imperfectly drained horizons starting <30 cm from the land surface',
-    'MW', 'Moderately Well', 'Profiles with moderately well-drained horizons starting <90 cm from the surface, *or*
-    
-Profiles with poorly-drained horizons starting 60–90 cm from the surface, *or*
+    'MW', 'Moderately Well', 'Profiles with moderately well-drained horizons starting <90 cm from the surface, *or*
 
-Profiles with imperfectly drained horizons starting 30–90 cm from the surface', 
+Profiles with poorly-drained horizons starting 60–90 cm from the surface, *or*
+
+Profiles with imperfectly drained horizons starting 30–90 cm from the surface', 
     'WE', 'Well', 'All horizons starting within 90 cm of the surface are well-drained.'  )
 
 tbl_in_pdrng <- gt(dat_in_pdrng) |>
