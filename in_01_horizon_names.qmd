@@ -351,7 +351,13 @@ tbl_hr_hortwoc
 
 ## Redox suffixes {#sec-hor-redox}
 
-Redox suffixes are used to signify the drainage status of a horizon, as evidenced by the degree of development of redoxic soil features (redoxic mottles and concentrations, as well as gleying). The following suffixes can be added to most primary horizon designations to signify the degree to which they have been affected by redox processes, e.g. [Bg]{.ceg}. Some exceptions exist:
+Redox suffixes are used to signify the drainage status of a horizon, as evidenced by both the matrix colour (@sec-col-matrix) and the degree of development of redox segregations. Redox segregations include any or all of:
+
+- Redox-induced colour patterns ('redox mottles', @sec-patt-type),
+- Redox-related concentrations and coatings (@sec-hr-conc, @sec-hr-coat) - those involving iron and/or manganese,
+- Iron pans (@sec-pan). 
+
+The suffixes in @tbl-hr-horredox can be added to most primary or secondary horizon designations, e.g. [Bg]{.ceg}, [Btg]{.ceg}. Some exceptions exist:
 
 -   [g]{.ceg} and [r]{.ceg} suffixes cannot be used with [Ea]{.ceg}, [Ew]{.ceg} or [Bw]{.ceg} horizons, which are defined by their development under well-aerated conditions.
 -   The [g]{.ceg} suffix may be added to [A]{.ceg} horizons, in cases where ≥ 2% redox segregations occur. *Note:* As [A]{.ceg} horizons are expected to generally be dark and/or low-chroma from elevated organic matter, the other redox suffixes may not be applied.
@@ -368,12 +374,13 @@ See @nte-lowch for more detail.
 #| tbl-cap: "Redox suffixes"
 
 dat_hr_hortwor <-
-  tribble(~Code, ~Name, ~segs, ~cols, ~usewith,
-          '*no code*', 'Unaffected' , '<2%', 'None', 'Any',
-          '(f)', 'Slightly reduced', '≥2%', 'None', 'B, C',
-          '(g)', 'Reduced', '≥2%', '<50%', 'E (alone), B, C',
-          'g' , 'Very reduced', '≥2%', 'Matrix 50–85%, and/or ped faces >50%', 'A, E (alone), B, C',
-          'r', 'Completely reduced', 'not diagnostic', 'Matrix >85%', 'E (alone), B, C')
+  tribble(
+          ~Code,                ~Name, ~segs, ~cols, ~usewith,
+    '*no code*',   'Unaffected' , '<2%', 'None', 'Any',
+          '(f)',   'Slightly reduced', '≥2%', 'None', 'B, C',
+          '(g)',            'Reduced', '≥2%', '<50%', 'E (alone), B, C',
+           'g' ,       'Very reduced', '≥2%', 'Matrix 50–85%, or ped faces >50%', 'A, E (alone), B, C',
+            'r', 'Completely reduced', 'not diagnostic', 'Matrix >85%', 'E (alone), B, C')
 
 tbl_hr_hortwor <- gt(dat_hr_hortwor) |>
    tab_options(
@@ -422,6 +429,7 @@ The suffix is used with **Bs**, **Bt**, **Bw** and **BC** horizons and also with
 'i', 'Nodular', 'To denote that the horizon contains \\>5% by volume of nodules, subrounded or irregular segregations of iron or aluminium oxyhydroxides with some kaolin.', 'A, E, B, C',
 'j', 'Jarositic', 'To denote the presence of straw-coloured jarosite, most commonly in **\\*g** or **\\*r** horizons.', 'A, E, B, C',
 'k', 'Calcareous', 'To denote an accumulation of fine-earth carbonate, CaCO~3~, usually detectable using field testing with HCl. The carbonate may be primary (inherited from soil parent materials) or secondary (precipitated from the soil solution). Coarse primary carbonate particles may or may not also be present but do not by themselves contribute to the definition of a calcareous horizon.', 'B, BC, C',
+'l', 'Redox', 'To denote accumulation of \\>5% by volume iron-rich precipitated segregations (along with varying amounts of other redox-sensitive elements, notably manganese) sourced from groundwater aeration. The segregations may be soft or hard, and may or may not exhibit an internal structure. They form primarily on aggregate surfaces or along root channels in fine-textured soil materials, or throughout the interconnected void space in coarser soil materials.', 'A, E, B, C',
 'm', 'Cemented', 'To denote a continuously cemented horizon that is strong enough to resist root penetration. A continuously cemented horizon is one in which the primary mineral particles are chemically bound together by precipitated secondary minerals (e.g. silica, carbonate, metal oxides, or ice). A cemented horizon is at least weakly indurated and has no (or no closely-spaced) cracks, pores or soft spots that could allow root penetration. Where the agent cementing the horizon can be identified with confidence, the \'m\' suffix is combined with the appropriate modifier e.g. qm for a duripan.', 'B, BC, C',
 'n', 'Sodic', 'To denote a significant accumulation of exchangeable sodium. Sodic soil materials have an exchangeable sodium percentage (ESP) of ≥6% and an uncemented dry sample will exhibit moderate to complete dispersion. Natural sodicity is most common in B horizons.', 'B, BC, C',
 'q', 'Silicic', 'To denote an accumulation of secondary silica. Silica accumulations are cemented, pale, and do not react to 10% HCl. They may exist as nodules, patches, hard coatings, or most often as continuous pans, called duripans.', 'B, BC, C',
