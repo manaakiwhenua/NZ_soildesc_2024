@@ -8,19 +8,21 @@ library(gt)
 
 Land cover is the physical cover over the soil, both natural and human made. Land use is the purpose(s) for which the land is used and provides context for why a particular land cover is present. Land management describes specific activities that affect land cover, and are driven by land use.
 
-Land cover, use and management information may be captured as part of soil survey when it is relevant to interpreting the landscape, landform, site, and soil profile description, and especially where it is likely to have affected the soil classification. Land use and management practice data is particularly important for long-term monitoring sites, where uses may change significantly between sampling events. Specific recording requirements for routine survey work are listed in @sec-ss-cvusmg.
+Land cover, use, and management information can be captured as part of soil description when it is relevant to interpreting the landscape, landform, site, and soil profile, and especially where it is likely to have affected the soil classification. Land-use and management practice data are particularly important for long-term monitoring sites, where uses may change significantly between sampling events. Specific recording requirements for routine survey work are listed in @sec-ss-cvusmg.
 
 ## Land cover {#sec-lcov}
 
-Land cover in New Zealand is monitored using the Land Cover Database [LCDB, @manaakiwhenualandcareresearchLCDBV60Land2025a]. The database is used to publish a semi-automated map of land cover, derived from satellite imagery, with a minimum unit size of 1 hectare. The LCDB categories can also be applied on-ground. The categories are listed below, excluding some where it would be physically impossible to observe the soil. The first six are currently mapped to over 80% of New Zealand's land area and so are the most likely to be encountered. The full set of category definitions are available in @manaakiwhenualandcareresearchNewZealandLand2025a.
+Land cover in New Zealand is monitored using the Land Cover Database [LCDB, @manaakiwhenualandcareresearchLCDBV60Land2025a]. The database is used to publish a semi-automated map of land cover, derived from satellite imagery, with a minimum unit size of 1 ha. The LCDB categories can also be applied on-ground. 
+
+The categories are listed below, excluding some where it would be physically impossible to observe the soil. The first six are currently mapped to over 80% of New Zealand's land area and so are the ones most likely to be encountered.
 
 ```{r}
 #| label: tbl-ss-lcdb
-#| tbl-cap: "Land Cover Database categories. The six most common categories are listed first."
+#| tbl-cap: "Land Cover Database categories: the six most common categories are listed first."
 
 dat_ss_lcdb <-
   tribble(~Code, ~Name, ~Description, 
-          40, 'High producing Exotic Grassland', 'Exotic sward grassland of good pastoral quality and vigour reflecting relatively high soil fertility and intensive grazing management.',
+          40, 'High Producing Exotic Grassland', 'Exotic sward grassland of good pastoral quality and vigour reflecting relatively high soil fertility and intensive grazing management.',
           41, 'Low Producing Grassland', 'Exotic sward grassland and indigenous short tussock grassland of poor pastoral quality reflecting lower soil fertility and extensive grazing management or non-agricultural use.',
           43, 'Tall Tussock Grassland', 'Indigenous snow tussocks in mainly alpine mountain-lands and red tussock in the central North Island and locally in poorly-drained valley floors, terraces and basins of both islands.',
           52, 'Mānuka and/or Kānuka', 'Scrub dominated by mānuka and/or kānuka.',
@@ -66,22 +68,23 @@ tbl_ss_lcdb <- gt(dat_ss_lcdb) |>
             locations = cells_body(rows = 6)) |>
   # italics etc for Description:
   fmt_markdown(columns = 3) |>
-  cols_width(Code ~pct(10), Name ~ pct(25))
+  cols_width(Code ~pct(10), Name ~ pct(25)) |>
+  tab_source_note(source_note = md("Source: @manaakiwhenualandcareresearchNewZealandLand2025a"))
   
 tbl_ss_lcdb
 ```
 
-## Land Use {#sec-luse}
+## Land use {#sec-luse}
 
-New Zealand currently lacks an official land use classification framework, but a proposal has been developed based on the framework described in @law2024 and can be implemented during soil survey work. This proposed New Zealand Land Use Management (NZLUM) has three nested levels with increasing specificity (@fig-ss-nzlum), and allows for recording further information as 'attributes' of the land use (e.g., tenure or management practices).
+New Zealand currently lacks an official land use classification framework, but a proposal has been developed based on the framework described in @law2024 that can be implemented during soil description work. This proposed New Zealand Land Use Management (NZLUM) has three nested levels with increasing specificity (@fig-ss-nzlum), and allows for recording further information as 'attributes' of the land use (e.g. tenure or management practices).
 
-Land use classification does not have to be carried out in the field provided adequate supporting information (e.g. notes and photographs) are available for later use. Given that the NZLUM is expected to evolve over time, the observation date can be used to infer the edition in use.
+Land-use classification does not have to be carried out in the field provided adequate supporting information (e.g. notes and photographs) are available for later use. Given that the NZLUM is expected to evolve over time, the observation date can be used to infer the edition in use.
 
-![Overview of the NZLUM categories at version 0.3 (reproduced from @manaakiwhenualandcareresearch)](data/nzlum_snip.png){#fig-ss-nzlum .lightbox fig-alt="A diagram of the New Zealand Land Use Management (NZLUM) system, v 0.3" width="95%"}
+![Overview of the NZLUM categories at version 0.3 (Source: reproduced from @manaakiwhenualandcareresearch)](data/nzlum_snip.png){#fig-ss-nzlum .lightbox fig-alt="A diagram of the New Zealand Land Use Management (NZLUM) system, v 0.3" width="95%"}
 
-## Land Management {#sec-lman}
+## Land management {#sec-lman}
 
-A fully developed vocabulary for land management practices does not currently exist for New Zealand. Given the multidimensional and constantly evolving nature of land management practice, it will generally be easier to record such information as free text and use text-mining techniques to extract patterns. Key soil-relevant aspects to record may include (but are not limited to) the following:
+A fully developed vocabulary for land management practices does not currently exist for New Zealand. Given the multidimensional and constantly evolving nature of land management practices, it will generally be easier to record such information as free text and use text-mining techniques to extract patterns. Key soil-relevant aspects to record may include (but are not limited to):
 
 - Tillage practices (for arable land)
 - Harvest practices (for tree and vine crops)
@@ -93,6 +96,6 @@ A fully developed vocabulary for land management practices does not currently ex
 - Irrigation schedule
 - Periodic drainage or flooding
 - Permanent drainage or land surface alterations
-- Time since clearing
+- Time since clearing.
 
-In the long term, some of these parameters may become formalised as land use attributes (@sec-luse).
+In the long term some of these parameters may become formalised as land-use attributes (@sec-luse).
