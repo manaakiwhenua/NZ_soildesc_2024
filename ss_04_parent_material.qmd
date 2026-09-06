@@ -10,20 +10,22 @@ Parent material can be explored in terms of geological units, lithology, and min
 
 ## Geology {#sec-pm-geol}
 
-Geological maps are the primary data source representing the spatial distribution of soil parent material. In particular, surface and near-surface stratigraphic maps are an essential resource for understanding the landscape. However, the scale and focus of the available products don't always align with soil observation needs. Some caution is needed when interpreting geological maps in a soils context. Keep the following in mind:
+Geological maps are the primary data source representing the spatial distribution of soil parent material. In particular, surface and near-surface stratigraphic maps are an essential resource for understanding the landscape. However, the scale and focus of the available products don't always align with soil observation needs, so some caution is needed when interpreting geological maps in a soils context. Keep the following in mind.
 
 - Read the accompanying reports for a given area as well as looking at geological maps. They contain a wealth of contextual information.
-- When working in an area covered by transported soil materials, get familiar with the 'source' geologies - upstream, uphill, upwind. Those will be the main contributors to the soil parent material.
-- In landscapes where transported materials make up the uppermost materials of the land as unconsolidated cover beds (such as in central North Island), it is common for such cover beds to be missing from geological maps [although they will likely be noted in the accompanying text, e.g., see @leonard2010]. This because the map units selected in geological mapping tend to reflect the underlying, large-scale deposits that have been land-forming in emplacement.
+- When working in an area covered by transported soil materials, get familiar with the 'source' geologies – upstream, uphill, upwind. These will be the main contributors to the soil parent material.
+- In landscapes where transported materials make up the uppermost materials of the land as unconsolidated cover beds (such as in central North Island), it is common for such cover beds to be missing from geological maps (although they will probably be noted in the accompanying text; e.g. see @leonard2010). This is because the map units selected in geological mapping tend to reflect the underlying, large-scale deposits that have been land-forming in emplacement.
 - The unit boundaries of broad-scale geology maps don't always align cleanly with landscape features on the ground, so they may not make reliable inputs for digital models of soil distribution without substantial refinement.
 
-Due to these scale and purpose differences, recording the geological map code at a profile is optional, and if recorded, the surveyor should be confident that code is correct at the scale of the site. The source of the code should also be noted.
+Due to these scale and purpose differences, recording the geological map code at a profile is optional, and if recorded the surveyor should be confident that the code is correct at the scale of the site. The source of the code should also be noted.
 
-Geology mapping in New Zealand can be accessed through resources provided by [Earth Sciences New Zealand](https://earthsciences.nz/). These include QMAP, a unified 1:250,000 scale geological map of the country, and a large set of legacy geology maps produced at scales as detailed as 1:25,000. In areas where volcanic ash deposition is extensive (e.g., the central North Island), tephra isopach maps showing the thickness and location of ash deposits from particular eruptive events will also be essential for understanding the landscape [@hopkins2021].
+Geology mapping in New Zealand can be accessed through resources provided by [Earth Sciences New Zealand](https://earthsciences.nz/). These include QMAP, a unified 1:250,000 scale geological map of the country, and a large set of legacy geology maps produced at scales as detailed as 1:25,000. In areas where volcanic ash deposition is extensive (e.g. the central North Island), tephra isopach maps showing the thickness and location of ash deposits from particular eruptive events will also be essential for understanding the landscape [@hopkins2021].
 
 ## Lithology {#sec-pm-lith}
 
-The specific rock(s) contributing to the soil parent material, or its lithology, offers a more specific and soil-relevant categorisation than geology mapping supplies. Lithology should be recorded when describing the soil's fine earth fraction (mineral material \<2 mm), surface and in-profile rock fragments (mineral material \>2 mm), subsolum rock, and profile-adjacent rock outcrops. Specific recording requirements for all of these characteristics are defined in @sec-pr-surface, @sec-hr-arch and @sec-tex. @tbl-ss-pm below provides a list of parent rocks common in New Zealand that can be applied in each case. Where lithology is difficult to determine, users may record using the second-level groupings (e.g. in mixed-origin alluvia), but it is always preferable to use the third level for rock fragments, subsolum material and outcrops. @tbl-ss-ss provides some additional mineral modifiers that may be applied to the clastic sedimentary rocks.
+The specific rock(s) contributing to the soil parent material, or its lithology, offer a more specific and soil-relevant categorisation than that supplied by geology mapping. Lithology should be recorded when describing the soil's fine-earth fraction (mineral material \<2 mm), surface and in-profile rock fragments (mineral material \>2 mm), subsolum rock, and profile-adjacent rock outcrops. Specific recording requirements for all of these characteristics are defined in @sec-pr-surface, @sec-hr-arch and @sec-tex. 
+
+@tbl-ss-pm below provides a list of parent rocks common in New Zealand that can be applied in each case. Where lithology is difficult to determine, users can record using the second-level groupings (e.g. in mixed-origin alluvia), but it is always preferable to use the third level for rock fragments, subsolum material, and outcrops. @tbl-ss-ss provides some additional mineral modifiers for the clastic sedimentary rocks.
 
 Lithology data is required for classifying some orders of the *New Zealand Soil Classification* (e.g., Melanic Soils) and is also required when determining the Family and Sibling [@webb2011]. The code list used for this task is highly generalised but can be mapped to the rock types list in @tbl-ss-pm.
 
@@ -64,7 +66,7 @@ Lithology data is required for classifying some orders of the *New Zealand Soil 
 |  |  |  | Schist | [FSCH]{.ceg} |
 |  |  |  | Semi-schist slate, phyllite | [FSLT]{.ceg} |
 |  | Mafic | [MM]{.ceg} | Mafic gneiss, migmatite, mylonite | [MGNS]{.ceg} |
-|  |  |  | Amphibolite, Eclogite | [AMPH]{.ceg} |
+|  |  |  | Amphibolite, eclogite | [AMPH]{.ceg} |
 |  | Ultramafic | [MU]{.ceg} | Serpentinite | [SERP]{.ceg} |
 |  |  |  | Greenstone | [GNST]{.ceg} |
 |  | Calcareous | [MC]{.ceg} | Marble | [MBLE]{.ceg} |
@@ -89,17 +91,17 @@ Lithology data is required for classifying some orders of the *New Zealand Soil 
 
 dat_ss_ss <-
   tribble(~Code, ~Name, ~Description,
-          'Cb', 'Carbonaceous',        'containing a large proportion of organic material',
-          'Cl', 'Calcareous',          'containing a large proportion of carbonate minerals (but below the threshold for a limestone)',
-          'Si', 'Siliceous',           'containing a large proportion of secondary silica minerals',
-          'Qz', 'Quartzitic',          'containing a large proportion of quartz grains',
-          'Qf', 'Quartzo-feldspathic', 'containing a large proportion of quartz and feldspar minerals',
-          'Gl', 'Glauconitic',         'containing a large proportion of the greenish mineral glauconite',
-          'Ch', 'Chloritic',           'containing a large proportion of the greenish mineral chlorite',
-          'Be', 'Bentonitic',          'containing a large proportion of the swelling clay mineral bentonite',
-          'Mi', 'Micaceous',           'containing a large proportion of the platy, shiny mineral mica',
-          'Mf', 'Mafic',               'containing a large proportion of mafic or ultramafic minerals',
-          'Tf', 'Tuffaceous',          'containing a large proportion of pyroclastic materials')
+          'Cb', 'Carbonaceous',        'Containing a large proportion of organic material',
+          'Cl', 'Calcareous',          'Containing a large proportion of carbonate minerals (but below the threshold for a limestone)',
+          'Si', 'Siliceous',           'Containing a large proportion of secondary silica minerals',
+          'Qz', 'Quartzitic',          'Containing a large proportion of quartz grains',
+          'Qf', 'Quartzo-feldspathic', 'Containing a large proportion of quartz and feldspar minerals',
+          'Gl', 'Glauconitic',         'Containing a large proportion of the greenish mineral glauconite',
+          'Ch', 'Chloritic',           'Containing a large proportion of the greenish mineral chlorite',
+          'Be', 'Bentonitic',          'Containing a large proportion of the swelling clay mineral bentonite',
+          'Mi', 'Micaceous',           'Containing a large proportion of the platy, shiny mineral mica',
+          'Mf', 'Mafic',               'Containing a large proportion of mafic or ultramafic minerals',
+          'Tf', 'Tuffaceous',          'Containing a large proportion of pyroclastic materials')
       
 tbl_ss_ss <- gt(dat_ss_ss) |>
    tab_options(
@@ -123,19 +125,19 @@ delete me
 :::
 
 ::: {#nte-softrock .callout-note appearance="minimal" collapse="true" title="What are soft rocks?"}
-'Soft' rocks in this context can at most be broken readily with a light hammer blow, and can be scraped and peeled by a pocket knife. 'Hard' rocks can at best be scratched with a knife but not scraped or peeled, and require a firm hammer blow to crack [@lynn1991, p. 11].
+'Soft' rocks in this context can be broken readily with a light hammer blow, and can be scraped and peeled by a pocket knife. 'Hard' rocks can be scratched with a knife but not scraped or peeled, and require a firm hammer blow to crack [@lynn1991, p. 11].
 :::
 
 ::: {#nte-litho .callout-note appearance="minimal" collapse="true" title="Geological research vocabularies and other approaches to recording lithology"}
-To encourage consistent geological terminology in scientific communication, several research-grade vocabularies for describing lithology have been developed in recent years, including @geoscienceaustralia2016 and @mccormick2023. These offer a detailed set of rock and mineral definitions in a hierarchical relationship structure, but are currently missing one or more terms essential to the New Zealand context. Additionally, the hierarchies don't always align cleanly with those used in New Zealand geology. Research vocabularies are expected to develop over time and may be recommended in future editions of this handbook.
+To encourage consistent geological terminology in scientific communication, several research-grade vocabularies for describing lithology have been developed in recent years, including by @geoscienceaustralia2016 and @mccormick2023. These offer a detailed set of rock and mineral definitions in a hierarchical relationship structure, but are currently missing one or more terms essential to the New Zealand context. Also, the hierarchies don't always align cleanly with those used in New Zealand geology. Research vocabularies are expected to develop over time and may be recommended in future editions of this handbook.
 
-Other, simpler lithological vocabularies available in New Zealand and elsewhere often conflate lithology with mode of deposition and particle size when describing unconsolidated, transported materials (e.g. NZLRI rock types, @lynn1991 and WRB parent material, @iussworkinggroupwrb2022). Parent material origin and particle size distribution are described separately for soil materials in this handbook (@sec-pr-orig, @sec-tex). However, workers describing soils as part of an LUC assessment may still wish to use the NZLRI rock types list for compatibility reasons [@lynn1991].
+Other, simpler lithological vocabularies available in New Zealand and elsewhere often conflate lithology with mode of deposition and particle size when describing unconsolidated, transported materials (e.g. New Zealand Land Resource Inventory \[NZLRI\] rock types @lynn1991, and WRB parent material, @iussworkinggroupwrb2022). Parent material origin and particle size distribution are described separately for soil materials in this handbook (@sec-pr-orig, @sec-tex). However, workers describing soils as part of a Land Use Capability (LUC) assessment may still wish to use the NZLRI rock types list for compatibility reasons [@lynn1991].
 
-Soil parent material classifications have largely focused on major geological origin (igneous, metamorphic, sedimentary), grain size, and some obvious compositional classes. @gray2016 contend that the major differentiator for soil formation should first be silica (SiO~2~) content and propose an alternate lithology classification on that basis.
+Soil parent material classifications have largely focused on major geological origin (igneous, metamorphic, sedimentary), grain size, and some obvious compositional classes. @gray2016 contend that the major differentiator for soil formation should be silica (SiO~2~) content, and they propose an alternative lithology classification on that basis.
 :::
 
 ## Mineralogy
 
-Soil mineral composition influences nutrient availability, pH, buffering capacity and many other chemical properties. Some plants have a preference for, or are specifically adapted to, soils with particular mineral profiles. Mineralogy information can also be used to help trace the origin of transported soil materials back to their parent rocks. An comprehensive review of minerals in soils can be found in @churchman2012.
+Soil mineral composition influences nutrient availability, pH, buffering capacity, and many other chemical properties. Some plants have a preference for, or are specifically adapted to, soils with particular mineral profiles. Mineralogy information can also be used to help trace the origin of transported soil materials back to their parent rocks. A comprehensive review of minerals in soils can be found in @churchman2012.
 
-The New Zealand Soil Classification [@hewitt2025] references a previous version of the *Soil Taxonomy* mineralogy classification, adapted to New Zealand conditions and extensively tested [@whitton1989; @childs1990]. The classes are mentioned in relation to soil Orders but are not used in the key or the diagnostic materials, so there is no requirement to record these in the field. Where mineralogy is of interest during fieldwork, the current mineralogy classes of *Soil Taxonomy* [@soilsurveystaff2022] may be estimated, but these will require laboratory confirmation and the ability to classify the profile against *Soil Taxonomy* at least to Great Group level.
+The *New Zealand Soil Classification* references a previous version of the *Soil Taxonomy* mineralogy classification [@soilsurveystaff2022], adapted to New Zealand conditions and extensively tested [@whitton1989; @childs1990]. The classes are mentioned in relation to Soil Orders but are not used in the key or the diagnostic materials, so there is no requirement to record these in the field. Where mineralogy is of interest during fieldwork, the current mineralogy classes of *Soil Taxonomy* can be estimated, but these will require laboratory confirmation and the ability to classify the profile against *Soil Taxonomy* to at least Great Group level.
