@@ -8,48 +8,48 @@ library(gt)
 
 Each soil horizon may include any or all of the following major components:
 
-- Solid fraction
-  - Fine earth
-  - Rock Fragments
-  - Artefacts
-- Biological fraction
-  - Fine organic matter
-  - Coarse organic matter
-  - Living plant roots
-- Liquid fraction
-  - Soil solution
-- Void space fraction
-  - Voids
-  - Pores
-    - Macropores
-    - Micropores
+- solid fraction:
+  - fine-earth
+  - rock fragments
+  - artefacts
+- biological fraction:
+  - fine organic matter
+  - coarse organic matter
+  - living plant roots
+- liquid fraction:
+  - soil solution
+- void space fraction:
+  - voids
+  - pores:
+    - macropores
+    - micropores
 
-Soil horizon architecture includes both composition and the physical arrangement of the above components, which can be communicated as compositional percentage by volume, adding to 100%.
-
-[complicated exploding pie chart or similar goes here]{.diags}
+Soil horizon architecture includes both the composition and the physical arrangement of the above components, which can be communicated as compositional percentage by volume, summing to 100%.
 
 ## Structure {#sec-hr-stru}
 
-Structure refers to the physical arrangement of the fine-earth fraction (mineral materials \< 2 mm). The type of structure present in a horizon and the extent of its development is determined by the fine-earth texture (@sec-hr-eatxt), mineralogy, chemistry, the action of soil biota, weathering, and land use history. Well-developed structural units are commonly referred to as 'peds' and can be identified by observing any or all of the following:
+Structure refers to the physical arrangement of the fine-earth fraction (mineral materials \< 2 mm). The type of structure present in a horizon and the extent of its development are determined by the fine-earth texture (@sec-hr-eatxt), mineralogy, chemistry, the action of soil biota, weathering, and land-use history.
+
+Well-developed structural units are commonly referred to as 'peds' and can be identified by observing any or all of the following:
 
 - repeating, regular units of similar shape and size
 - small gaps or planes of physical weakness between units
 - outer surfaces that have a distinct appearance when compared to the ped interior.
 
-Peds can range in size from \<1 mm to \>1 m and sometimes 'nest', where larger units break down into smaller units. Given their potential size range, the method of profile exposure determines whether structures can be reliably observed and what maximum unit size will be detectable.
+Peds can range in size from \<1 mm to \>1 m and sometimes 'nest', whereby larger units break down into smaller units. Given their potential size range, the method of profile exposure determines whether structures can be reliably observed and what maximum unit size will be detectable.
 
 ### Structure origin {#sec-str-origin}
 
-Structural development can be controlled by different processes depending on vertical position within the profile and land use history [@anderson2024]. Record the dominant mode of origin for the structural units observed in each horizon using the options in @tbl-hr-form.
+Structural development can be controlled by different processes depending on vertical position within the profile and land-use history [@anderson2024]. Record the dominant mode of origin for the structural units observed in each horizon using the options in @tbl-hr-form.
 
 ```{r}
 #| label: tbl-hr-form
-#| tbl-cap: "Type of structural development (adapted from @anderson2024)"
+#| tbl-cap: "Type of structural development"
 
 dat_hr_form <-
   tribble(~Code, ~Name,  ~Description,
           'P', 'Pedogenic', 'Structural units meet the definition of natural soil peds and occur largely within the solum',
-          'G', 'Geogenic', 'Structural units are inherited from parent materials that have undergone limited weathering e.g., bedding planes, and occur largely below the solum',
+          'G', 'Geogenic', 'Structural units are inherited from parent materials that have undergone limited weathering (e.g. bedding planes), and occur largely below the solum',
           'A', 'Anthropogenic', 'Structural units have been induced by human activity, usually within the solum and most commonly in surface horizons',
           'U', 'Unknown', 'Type of structural development could not be determined with confidence')
 
@@ -64,7 +64,8 @@ tbl_hr_form <- gt(dat_hr_form) |>
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20)) |>
+  tab_source_note(source_note = md("Source: adapted from @anderson2024."))
   
 tbl_hr_form
 
@@ -72,9 +73,9 @@ tbl_hr_form
 
 ### Structure development {#sec-hr-stru-pedality}
 
-Degree of structural development (also frequently referred to as, 'grade', 'pedality' or 'aggregation') refers to how distinctive ped appearance is and how much of the soil within a horizon is organised into peds. Developed ped structure can suggest information about mineralogy, biological activity, and soil age. Structural development also provides information about permeability, in concert with texture and firmness.
+Degree of structural development (also frequently referred to as, 'grade', 'pedality' or 'aggregation') refers to how distinctive the ped appearance is and how much of the soil within a horizon is organised into peds. Developed ped structure can provide information about mineralogy, biological activity, and soil age. Structural development also provides information about permeability, in concert with texture and firmness.
 
-For rapid assessment, record degree of overall structural development once per horizon using @tbl-hr-pedality. For routine or detailed assessment, record degree of development for each type of structural unit observed (if more than one is seen; see also @sec-hr-stru-nest).
+For rapid assessment, record the degree of overall structural development once per horizon using @tbl-hr-pedality. For routine or detailed assessment, record the degree of development for each type of structural unit observed (if more than one is seen; see also @sec-hr-stru-nest).
 
 ```{r}
 #| label: tbl-hr-pedality
@@ -82,8 +83,8 @@ For rapid assessment, record degree of overall structural development once per h
 
 dat_hr_pedality <-
   tribble(~p, ~Code, ~Name,  ~Description,
-          'Apedal',  'G', 'Single grain', 'Material is structureless or has <15% identifiable structural units, is uncemented and falls apart into single grains when disturbed',
-          'Apedal', 'V', 'Massive', 'Material is structureless or has <15% identifiable structural units, is uncemented and holds together until substantially disturbed, and has no fissures spaced closer than 200 mm',
+          'Apedal',  'G', 'Single grain', 'Material is structureless or has <15% identifiable structural units, is uncemented, and falls apart into single grains when disturbed',
+          'Apedal', 'V', 'Massive', 'Material is structureless or has <15% identifiable structural units, is uncemented, holds together until substantially disturbed, and has no fissures spaced closer than 200 mm',
           'Pedal', 'W', 'Weak', 'Material where 15–25% of the material comprises coherent structural units',
           'Pedal', 'M', 'Moderate', 'Material where 25–75% of the material comprises coherent structural units',
           'Pedal', 'S', 'Strong', 'Material where >75% of the material comprises coherent structural units')
@@ -113,26 +114,41 @@ tbl_hr_pedality
 
 Structural units take on a range of distinctive shapes depending on their mineralogy, profile position, organic matter content, and the hydrological and climatic regime. Briefly, four major classes can be recognised, each with a few subtypes:
 
-- **Blocky:** Blocky peds are roughly cubic (having six faces) and pack relatively closely together, but still have defined interped spaces. Blocky peds are most common in the upper subsoil but can be found in any part of the solum.
-  - **Angular blocky:** Angular blocky peds have sharp corners and flat faces, so can pack closely together.
-  - **Subangular blocky:** Subangular blocky peds have slightly rounded corners and more irregular faces, while still being recognisably rectangular.
-- **Rounded:** Rounded peds have more than six faces and sometimes pack relatively loosely, creating a large proportion of irregular macrovoid space. Rounded peds are most commonly observed in surface horizons.
-  - **Polyhedral:** Polyhedral peds have a rounded shape with more than six faces and angular edges. Their surfaces are irregular, with small divots that align with protrusions in neighbouring peds. As such, they fit together relatively closely, a characteristic sometimes described as 'accommodation to surrounding peds'. Polyhedral peds can be observed throughout the solum.
-  - **Granular:** Granular peds are rounded but lack sharp edges or the divots that allow close packing, and can be very porous. They are most common in near-surface horizons with high organic matter, and can sometimes be held in a net of fine roots.
-  - **Cast:** Cast peds are created by soil fauna, comprising a mix of excreted soil and biological material like mucous or saliva. They are smooth and rounded or ovate and can be observed scattered through surface horizons or down channels extending into subsoil layers. Most are made by earthworms, but beetles and other insects can also create casts.
-- **Platelike:** Platelike peds are wider than they are tall and develop roughly horizontally or in parallel to the soil surface. Layers of platelike structures overlap each other, creating a convoluted path for water or roots moving downwards.
-  - **Platy:** Platy structures are flat-faced and sharp-edged, like angular blocky structures, but are usually very thin. Platy structures can be pedogenic, emerging from freeze-thaw processes, geogenic, reflecting the structure left by rock weathering in place, or anthropogenic, reflecting compaction from heavy machinery use.
-  - **Lenticular:** Lenticular structures have thicker middles and curved surfaces that come to a point along their outer edge. Lenticular structures emerge from shrink-swell clay activity and often have striated faces (@sec-hr-stress).
-  - **Wedgelike:** Wedge structures are related to lenticular structures and appear like a lenticular shape that has been cut in half vertically through its thickest part.
-- **Prismlike:** Prismlike peds are taller than they are wide and have relatively flat faces that fit together closely. They are confined to subsoils and would only be observable near the surface if erosion has recently removed the topsoil.
-  - **Prismatic:** Prismatic peds have a flat top surface with sharp edges.
-  - **Columnar:** Columnar peds have a rounded, or domed, top surface, creating an irregular horizon boundary with the overlying material.
+#### Blocky {#sec-str-shp-blk}
 
-Where distinct structural units can be identified in a horizon (development types [W]{.ceg}, [M]{.ceg}, [S]{.ceg}), record their dominant shape using @tbl-hr-pedshp.
+Blocky peds are roughly cubic (have six faces) and pack relatively closely together, but still have defined inter-ped spaces. Blocky peds are most common in the upper subsoil but can be found in any part of the solum.
+
+- *Angular blocky:* angular blocky peds have sharp corners and flat faces, so can pack closely together.
+- *Subangular blocky:* subangular blocky peds have slightly rounded corners and more irregular faces, while still being recognisably rectangular.
+
+#### Rounded {#sec-str-shp-rnd}
+
+Rounded peds have more than six faces and can pack relatively loosely, creating a large proportion of irregular macrovoid space. Rounded peds are most commonly observed in surface horizons.
+
+- *Polyhedral:* polyhedral peds have a rounded shape with more than six faces and angular edges. Their surfaces are irregular, with small divots that align with protrusions in neighbouring peds. As such, they fit together relatively closely, a characteristic sometimes described as 'accommodation to surrounding peds'. Polyhedral peds can be observed throughout the solum.
+- *Granular:* granular peds are rounded but lack sharp edges or the divots that allow close packing, and can be very porous. They are most common in near-surface horizons with high organic matter, and can sometimes be held in a net of fine roots.
+- *Cast:* cast peds are created by soil fauna, comprising a mix of excreted soil and biological material like mucous or saliva. They are smooth and rounded or ovate and can be observed scattered through surface horizons or down channels extending into subsoil layers. Most are made by earthworms, but beetles and other insects can also create casts.
+
+#### Platelike {#sec-str-shp-plt}
+
+Platelike peds are wider than they are tall and develop roughly horizontally or in parallel to the soil surface. Layers of platelike structures overlap each other, creating a convoluted path for water or roots moving downwards.
+
+- *Platy:* Platy structures are flat-faced and sharp-edged, like angular blocky structures, but are usually very thin. Platy structures can be pedogenic, emerging from freeze–thaw processes; geogenic, reflecting the structure left by rock weathering in place; or anthropogenic, reflecting compaction from heavy machinery use.
+- *Lenticular:* Lenticular structures have thicker middles and curved surfaces that come to a point along their outer edge. Lenticular structures emerge from shrink–swell clay activity and often have striated faces (@sec-hr-stress).
+- *Wedgelike:* Wedge structures are related to lenticular structures and look like a lenticular shape that has been cut in half vertically through its thickest part.
+
+#### Prismlike {#sec-str-shp-prs}
+
+Prismlike peds are taller than they are wide and have relatively flat faces that fit together closely. They are confined to subsoils and would only be observable near the surface if erosion had recently removed the topsoil.
+
+- *Prismatic:* Prismatic peds have a flat top surface with sharp edges.
+- *Columnar:* Columnar peds have a rounded, or domed, top surface, creating an irregular horizon boundary with the overlying material.
+
+Where distinct structural units can be identified in a horizon (development types [W]{.ceg}, [M]{.ceg}, [S]{.ceg}, see @tbl-hr-pedality), record their dominant shape using @tbl-hr-pedshp.
 
 ```{r}
 #| label: tbl-hr-pedshp
-#| tbl-cap: "Structural shapes (adapted from @milne1995, @iussworkinggroupwrb2022, and @ncst2024)"
+#| tbl-cap: "Structural shapes"
 
 dat_hr_pedshp <-
   tribble(~Group,     ~Code, ~Name,              ~Diagram,
@@ -169,57 +185,58 @@ tbl_hr_pedshp <- gt(group_by(dat_hr_pedshp, Group)) |>
   tab_style(style = list(cell_text(align  = 'center')),
             locations = cells_column_labels()) |> 
   fmt_image(columns = 4, height = '3em') |>
-  cols_width(Group ~pct(20), Code ~pct(20), Name ~ pct(30))
+  cols_width(Group ~pct(20), Code ~pct(20), Name ~ pct(30)) |>
+  tab_source_note(source_note = md("Source: adapted from @milne1995, @iussworkinggroupwrb2022, and the *Australian Soil and Land Survey Field Handbook."))
   
 tbl_hr_pedshp
 ```
 
 ::: {#nte-nut .callout-note collapse="true" title="Older terms for structural units" appearance="minimal"}
-Some structural terms that don't seem to fit into @tbl-hr-pedshp can be found in older soils literature. These terms should no longer be used in structured data recording because they conflate size and shape in a way that modern schemas seek to avoid, but they are useful conversational shortcuts.
+Some structural terms that don't seem to fit into @tbl-hr-pedshp can be found in older soils literature. These terms should no longer be used in structured data recording because they conflate size and shape in a way that modern schemas seek to avoid. However, they are useful conversational shortcuts.
 
-- *Crumb:* a very fine structure seen in many silty to loamy horizons. The appearance is as of breadcrumbs, with 0.5–2 mm rounded peds loosely to firmly packed, depending on depth and drainage. Larger weak subangular blocky structures in well-drained Allophanic Soils almost always break down into moderately or strongly developed crumb structure. Crumb should be recorded as type [P]{.ceg} with [GR]{.ceg} shape.
+- *Crumb:* a very fine structure seen in many silty to loamy horizons. The appearance is like breadcrumbs, with 0.5–2 mm rounded peds loosely to firmly packed, depending on depth and drainage. Larger, weakly developed, subangular blocky structures in well-drained Allophanic Soils almost always break down into a moderately or strongly developed crumb structure. Crumb should be recorded as type [P]{.ceg} with [GR]{.ceg} shape.
 - *Nut:* a larger version of crumb, usually 5–20 mm in diameter, often encased in a network of grass roots. Nut structures are more common in topsoils but can also occur in well-drained loamy subsoils. Nut should be recorded as type [P]{.ceg} with [GR]{.ceg} or [PR]{.ceg} shape.
-- *Clod:* a tillage-induced structure \> 100 mm in length. Clods should be recorded as type [A]{.ceg} structures with [SB]{.ceg} or [PH]{.ceg} shape.
-- *Fragment:* a tillage-induced structure \< 100 mm in length. Fragments should be recorded as type [A]{.ceg} structures with [SB]{.ceg} or [PH]{.ceg} shape.
+- *Clod:* a tillage-induced structure \>100 mm in length. Clods should be recorded as type [A]{.ceg} structures with [SB]{.ceg} or [PH]{.ceg} shape.
+- *Fragment:* a tillage-induced structure \<100 mm in length. Fragments should be recorded as type [A]{.ceg} structures with [SB]{.ceg} or [PH]{.ceg} shape.
 - *Earthy:* refers to the appearance of a horizon with crumb or apedal-massive structure from a distance.
 
-Ped strength (@sec-cn-stra) can assist in identifying tillage-induced structures, as they can be compacted and firmer than pedogenic structural units.
+Ped strength (@sec-cn-stra) can assist in identifying tillage-induced structures, because they can be compacted and firmer than pedogenic structural units.
 :::
 
 ### Structure size {#sec-hr-stru-size}
 
-Record the median length of the structural units observed, along their shortest axis. Record in millimetres with a range estimate, e.g. [25 ± 2 mm]{.ceg}. Options for classifying the recorded measurements may be found in @sec-in-solsz.
+Record the median length of the structural units observed, along their shortest axis, in millimetres with a range estimate (e.g. [25 ± 2 mm]{.ceg}). Options for classifying the recorded measurements may be found in @sec-in-solsz.
 
-For rapid assessment, rather than recording a numeric value, the dominant size may be noted as [C]{.ceg} for Coarse when over 20 mm in size, and [F]{.ceg} for Fine when \<20 mm.
+For rapid assessment rather than recording a numeric value, the dominant size may be noted as [C]{.ceg} (coarse) when over 20 mm in size, and [F]{.ceg} (fine) when \<20 mm.
 
 #### Associated structures {#sec-hr-stru-assc}
 
-Many horizons only have one major structure, but multiple structural units may also coexist. For instance, casts may be interspersed among polyhedral, granular or blocky peds in a surface horizon, or a saprolith layer (@sec-pr-wdeg) might have remnant geogenic bedding among more heavily weathered, apedal-massive material. In such cases, record the structures separately. Where the horizon is partly apedal, estimate the volume of apedal material.
+Many horizons only have one major structure, but multiple types of structural unit may coexist. For instance, casts may be interspersed among polyhedral, granular or blocky peds in a surface horizon, or a saprolith layer (@sec-pr-wdeg) might have remnant geogenic bedding among more heavily weathered, apedal-massive material. In such cases, record the structures separately. Where the horizon is partly apedal, estimate the volume of apedal material.
 
-Example: [G M PL 20 ± 3]{.ceg} with [V 35%]{.ceg}
+**For example:** use [G M PL 20 ± 3]{.ceg} with [P V 35%]{.ceg} for a horizon with platy geogenic structure and a component of apedal-massive pedogenic material.
 
 #### Nested structures {#sec-hr-stru-nest}
 
-Well-developed peds may be nested, with large structures breaking down to smaller ones that may also be a different type and shape. For highly detailed descriptions, multiple sets of nesting peds may be described in terms of their origin, development, shape and size.
+Well-developed peds may be nested, with large structures breaking down to smaller ones that may also be a different type and shape. For highly detailed descriptions, multiple sets of nesting peds can be described in terms of their origin, development, shape and size, from largest to smallest.
 
-For example, [P S PR 80 ± 10]{.ceg} breaking to [P M AB 20 ± 2]{.ceg}.
+**For example:** use [P S PR 80 ± 10]{.ceg} breaking to [P M AB 20 ± 2]{.ceg} for a horizon comprising large prismatic peds that break down to smaller, angular blocky peds.
 
-### Method: Assessing structure in the field {#sec-str-method}
+### Method: assessing structure in the field {#sec-str-method}
 
-- To assess the structure in an [E]{.ceg} or [P2]{.ceg} type profile (@tbl-pr-gear), insert a spade horizontally near the base of the horizon and push down on the handle, levering out a section of soil. Drop the spade blade with the soil, approximately 0.3 m onto a hard surface, e.g., the blade of another spade. Remove major roots that bind the mass together and again note the attributes of the newly produced solids. Note that this procedure will not necessarily disaggregate very moist or wet soils.
-- Structure may also be observed *in situ* by using a small hand tool to gently pick back the profile face. See @sec-dig. Structure of hard layers may need to be assessed in place, or by careful removal of individual units, and will usually require an [E]{.ceg} or [P2]{.ceg} type profile.
+- To assess the structure in an [E]{.ceg} or [P2]{.ceg} type profile (@tbl-pr-gear), insert a spade horizontally near the base of the horizon and push down on the handle, levering out a section of soil. Drop the spade blade, with the soil, approximately 0.3 m onto a hard surface (e.g. the blade of another spade). Remove major roots that bind the mass together and again note the attributes of the newly produced solids. Note that this procedure will not necessarily disaggregate very moist or wet soils.
+- Structure may also be observed *in situ* by using a small hand tool to gently pick back the profile face. See @sec-dig. The structure of hard layers may need to be assessed in place, or by careful removal of individual units, and will usually require an [E]{.ceg}- or [P2]{.ceg}-type profile.
 - For smaller exposures ([P1]{.ceg}, [C1]{.ceg}, [C2]{.ceg}), remove a handful of soil from the extracted horizon and carefully use your fingers to disaggregate the soil mass to segregate all peds. Do not destroy peds to create fragments, or disaggregate existing apedal material. When coring, also use a spade to extract a block of adjacent surface material so that at least the topmost horizon can be assessed in detail.
-- Assessing structure is generally impossible for [A]{.ceg} augered profiles, as the extraction method destroys it. The surface horizon should still be extracted with a spade and assessed if possible.
+- Assessing structure is generally impossible for [A]{.ceg} augered profiles because the extraction method destroys it. The surface horizon should still be extracted with a spade and assessed if possible.
 
-Direct measurement of peds will help estimate size. Weighing, or filling volumetric containers, may help estimate abundance.
+Direct measurement of peds will help estimate size. Weighing, or filling volumetric containers may help to estimate abundance.
 
 ::: {#nte-stro .callout-note collapse="true" title="Structure in organic horizons" appearance="minimal"}
-Organic soil materials cannot be described in terms of the structural parameters in this section. Their architecture is flexible and determined largely by water content, species of origin and degree of decomposition, and are effectively all apedal-massive. The physical nature of organic soil materials is otherwise largely inferred from their textural characteristics (@sec-hr-ortxt). However, drained peats and peaty mineral soils may have some recognisable structural development.
+Organic soil materials cannot be described in terms of the structural parameters described in this section. Their architecture is flexible and determined largely by water content, species of origin, and degree of decomposition, and they are effectively all apedal-massive. The physical nature of organic soil materials is otherwise largely inferred from their textural characteristics (@sec-hr-ortxt). However, drained peats and peaty mineral soils may have some recognisable structural development.
 :::
 
 ## Fragments {#sec-frag}
 
-Fragments are mineral or non‑mineral components \>2 mm within a soil horizon. They provide information about soil development, particularly mode of emplacement (@sec-pr-orig). They also reduce the soil’s water‑holding capacity and, when large and abundant enough, can restrict land use and management practices.
+Fragments are mineral or non‑mineral components \>2 mm within a soil horizon. They provide information about soil development, particularly mode of emplacement (@sec-pr-orig). They also reduce the soil’s water‑holding capacity and, when large and abundant enough, can restrict land-use and management practices.
 
 For very rapid assessment, estimate total fragment abundance (rocks and non-rock materials as well as any artefacts) as an integer percentage of the whole horizon volume. Where fragments are absent, always record [0%]{.ceg} as confirmation.
 
@@ -227,21 +244,21 @@ For very rapid assessment, estimate total fragment abundance (rocks and non-rock
 
 Rock fragments are soil mineral particles \>2 mm. For rapid assessment, use the texture class code modifiers provided for rock fragments in @sec-hr-rftex, or confirm absence by recording an abundance of [0%]{.ceg}.
 
-Example: [SL(G)]{.ceg} for a sandy loam soil with 5–35% gravels (size range 2–20 mm).
+**For example:** use [SL(G)]{.ceg} for a sandy loam soil with 5–35% gravels (size range 2–20 mm).
 
-For routine assessment, append an estimate of rock fragment abundance as integer percentage of the whole horizon volume, as well as dominant lithology class using @tbl-ss-pm and shape using @tbl-hr-rockfrfrm, @tbl-hr-rockfrrnd and @tbl-hr-rockfrrgh.
+For routine assessment, append an estimate of rock fragment abundance as an integer percentage of the whole horizon volume, as well as dominant lithology class using @tbl-ss-pm, and shape using @tbl-hr-rockfrfrm, @tbl-hr-rockfrrnd, and @tbl-hr-rockfrrgh.
 
-Example: [SL(G) 15% SAHD CRS]{.ceg} for a sandy loam soil with 15% compact, rounded, smooth greywacke gravels.
+**For example:** use [SL(G) 15% SAHD CRS]{.ceg} for a sandy loam soil with 15% compact, rounded, smooth, greywacke gravels.
 
-For detailed assessment, one may optionally continue to add detail by recording volumetric abundance, lithology, shape and weathering status for each of the three rock fragment size classes given in @tbl-hr-rocksz. The three additional gravel size subdivisions in @tbl-hr-gvquals may also be used. Picking and sieving from a known volume of soil will likely be required for sufficient accuracy when making detailed assessments. Abundance data can be classified according to @tbl-in-abgen where needed.
+For a detailed assessment, the surveyor may optionally continue to add detail by recording volumetric abundance, lithology, shape, and weathering status for each of the three rock fragment size classes given in @tbl-hr-rocksz. The three additional gravel size subdivisions in @tbl-hr-gvquals can also be used. Picking and sieving from a known volume of soil will probably be required for sufficient accuracy when making detailed assessments. Abundance data can be classified according to @tbl-in-abgen, where needed.
 
 #### Rock fragment shape {#sec-rockfrag-shp}
 
-Rock fragment shape is partly determined by parent rock lithology and stratigraphy, and otherwise by the effects of chemical and particularly physical weathering. Abrasion during transport, freeze/thaw processes, and relief of overburden pressure can contribute to rounding-off of corners and can smooth or roughen outer surfaces. Fragment shape affects how individual particles move and at a broader scale, affects processes like slope stability. Rock fragment shape is a function of form, roundedness, and roughness.
+Rock fragment shape is partly determined by parent rock lithology and stratigraphy, and otherwise by the effects of chemical and (particularly) physical weathering. Abrasion during transport, freeze–thaw processes, and relief of overburden pressure can contribute to rounding-off of corners and can smooth or roughen outer surfaces. Fragment shape affects how individual particles move, and at a broader scale affects processes such as slope stability. Rock fragment shape is a function of form, roundedness, and roughness.
 
-The ratios between the three side lengths of the smallest box that can contain a rock fragment are used to classify its form. Various indices can be built from these three measurements [@blott2008; @angelidakis2022], but overall they coalesce into four major classes as shown in @fig-hr-rockfrm and @tbl-hr-rockfrfrm.
+The ratios between the three side lengths of the smallest box that can contain a rock fragment are used to classify its form. Various indices can be built from these three measurements [@blott2008; @angelidakis2022], but overall they coalesce into four major classes, as shown in @fig-hr-rockfrm and @tbl-hr-rockfrfrm.
 
-![Rock fragment form classification, adapted from @angelidakis2022. With a, b, c representing the long, intermediate, and short dimensions of a box containing a rock fragment, ratios c/b and b/a together define the range of possible shapes.](data/shape_form_plot.png){#fig-hr-rockfrm fig-align="center" width="85%"}
+![Rock fragment form classification, with a, b, and c representing the long, intermediate, and short dimensions of a box containing a rock fragment, ratios c/b and b/a together define the range of possible shapes. Source: adapted from @angelidakis2022](data/shape_form_plot.png){#fig-hr-rockfrm fig-align="center" width="85%"}
 
 ```{r}
 #| label: tbl-hr-rockfrfrm
@@ -249,9 +266,9 @@ The ratios between the three side lengths of the smallest box that can contain a
 
 dat_hr_rockfrfrm <-
   tribble(~Code, ~Name, ~Description, ~Ratio,
-          'C', 'Compact',   'Rock fragments where all dimensions are similar to each other.', 'b/a and c/b >~2/3',
+          'C', 'Compact',   'Rock fragments where all dimensions are similar to each other.', 'b/a and c/b > ~2/3',
           'E', 'Elongated', 'Rock fragments where the two shorter dimensions are similar, and notably smaller than the longest dimension', 'b/a <2/3, c/b usually >2/3',
-          'B', 'Bladed',    'Rock fragments where all dimensions differ from each other', 'b/a and c/b <~2/3',
+          'B', 'Bladed',    'Rock fragments where all dimensions differ from each other', 'b/a and c/b < ~2/3',
           'F', 'Flat',      'Rock fragments where the two longer dimensions are similar, and notably larger than the shortest dimension', 'b/a usually >2/3, c/b <2/3') 
 
 tbl_hr_rockfrfrm <- gt(dat_hr_rockfrfrm) |>
@@ -270,7 +287,7 @@ tbl_hr_rockfrfrm <- gt(dat_hr_rockfrfrm) |>
 tbl_hr_rockfrfrm
 ```
 
-Roundedness refers specifically to how sharp any corners or edges present on the form might be. Precise measurement is not possible in the field, but the proportion of flat faces and visible edges and corners can be used to make a quick assessment, along with the ease of rolling the fragment in the hand or along a surface.
+Roundedness refers specifically to how sharp any corners or edges present on the form might be. Precise measurement is not possible in the field, but the proportion of flat faces and visible edges and corners can be used to make a quick assessment, along with the ease of rolling the fragment along a surface.
 
 ```{r}
 #| label: tbl-hr-rockfrrnd
@@ -278,9 +295,9 @@ Roundedness refers specifically to how sharp any corners or edges present on the
 
 dat_hr_rockfrrnd <-
   tribble(~Code, ~Name, ~Description,
-          'A', 'Angular', 'Rock fragments with clear, well-defined corners separated by flat and sometimes concave outer faces.',
-          'S', 'Sub-angular', 'Rock fragments with visible but blunt corners and edges. Outer faces may be flat, concave or convex.',
-          'U', 'Sub-rounded', 'Rock fragments with poorly defined but appreciable corners and edges. Faces will be discernible but usually not flat.',
+          'A', 'Angular', 'Rock fragments with clear, well-defined corners separated by flat and sometimes concave outer faces',
+          'S', 'Sub-angular', 'Rock fragments with visible but blunt corners and edges; outer faces may be flat, concave or convex',
+          'U', 'Sub-rounded', 'Rock fragments with poorly defined but appreciable corners and edges; faces will be discernible but usually not flat',
           'R', 'Rounded', 'Rock fragments with no discernible flat faces, edges or corners.') 
 
 tbl_hr_rockfrrnd <- gt(dat_hr_rockfrrnd) |>
@@ -299,7 +316,7 @@ tbl_hr_rockfrrnd <- gt(dat_hr_rockfrrnd) |>
 tbl_hr_rockfrrnd
 ```
 
-Finally, roughness represents how many smaller-scale deviations are present on the outer surfaces, and their size relative to the overall fragment. Again, precise quantification is not a field task, but can be quickly assessed with reference to visual appearance and hand-feel.
+Finally, roughness represents how many smaller-scale deviations are present on the outer surfaces and their size relative to the overall fragment. Again, precise quantification is not a field task, but can be quickly assessed with reference to visual appearance and hand-feel.
 
 ```{r}
 #| label: tbl-hr-rockfrrgh
@@ -308,7 +325,7 @@ Finally, roughness represents how many smaller-scale deviations are present on t
 dat_hr_rockfrrgh <-
   tribble(~Code, ~Name, ~Description,
           'S', 'Smooth',    'Surfaces are smooth to touch and appear solid and continuous.',
-          'R', 'Rough',     'Surfaces appear smooth but feel rough or abrasive. Small, shallow pits may intrude into the surface, embedded crystals or grains may protrude slightly.',
+          'R', 'Rough',     'Surfaces appear smooth but feel rough or abrasive. Small, shallow pits may intrude into the surface; embedded crystals or grains may protrude slightly.',
           'B', 'Bumpy',     'Surfaces have visible divots and/or protrusions that make the fragment appear uneven from a short distance.',
           'I', 'Irregular', 'Surfaces have pronounced divots, protrusions, or large holes that make it difficult to assess overall form.') 
 
@@ -330,17 +347,17 @@ tbl_hr_rockfrrgh
 
 #### Rock fragment weathering {#sec-rockfrag-wth}
 
-Weathering status of rock fragments provides some information on profile age and stability, and is used in the NZSC. Weathering status may need to be assessed in relation to fresh rock from nearby exposures, where available. The weathering schema in @tbl-hr-rockfrwth may also be applied to subsolum rock masses when determining the weathering status of the horizon as a whole (@sec-pr-wdeg).
+Weathering status of rock fragments provides some information on profile age and stability, and is used in the *New Zealand Soil Classification*. Weathering status may need to be assessed in relation to fresh rock from nearby exposures, where available. The weathering schema in @tbl-hr-rockfrwth may also be applied to subsolum rock masses when determining the weathering status of the horizon as a whole (@sec-pr-wdeg).
 
 ```{r}
 #| label: tbl-hr-rockfrwth
-#| tbl-cap: "Rock fragment weathering status (adapted from @newzealandgeotechnicalsociety2005)"
+#| tbl-cap: "Rock fragment weathering status"
 
 dat_hr_rockfrwth <-
   tribble(~Code, ~Name, ~Description,
-          1, 'Fresh', 'Rock fragments show no discolouration, loss of strength, or any other effects due to chemical weathering. Fragments may still be rounded from transport',
-          2, 'Slightly weathered', 'Rock fragments are not significantly weaker than when unweathered, but may be discoloured along defects, some of which may have been opened slightly',
-          3, 'Moderately weathered', 'Rock fragments are significantly weaker than fresh rock of similar lithology and may be broken by hammer or spade. Fragments may be discoloured both along defects and on surfaces. Discolouration will penetrate slightly into the rock material. ',
+          1, 'Fresh', 'Rock fragments show no discoloration, loss of strength, or any other effects due to chemical weathering. Fragments may still be rounded from transport.',
+          2, 'Slightly weathered', 'Rock fragments are not significantly weaker than when unweathered, but may be discoloured along defects, some of which may have been opened slightly.',
+          3, 'Moderately weathered', 'Rock fragments are significantly weaker than fresh rock of similar lithology and may be broken by a hammer or spade. Fragments may be discoloured, both along defects and on surfaces. Discoloration will penetrate slightly into the rock material.',
           4, 'Highly weathered', 'Most of the original rock fragment\'s strength is lost and the fragment may be broken by hand. Decomposition adjacent to defects and at the surface of clasts penetrates deeply into the rock material.',
           5, 'Completely weathered', 'Original rock strength is lost and the rock mass changed to a soil. Former presence of rock is only evident from \'ghost rock\' structures preserved in the soil matrix.'
   )
@@ -356,20 +373,21 @@ tbl_hr_rockfrwth <- gt(dat_hr_rockfrwth) |>
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20)) |>
+  tab_source_note(source_note = md("Source: adapted from @newzealandgeotechnicalsociety2005."))
   
 tbl_hr_rockfrwth
 ```
 
 ### Natural fragments {#sec-hr-nonrock}
 
-Biologically-derived coarse materials can alter the soil's water holding capacity and other parameters just as rock fragments can, although in general they can themselves hold more water. They will also break down faster.
+Biologically derived coarse materials can alter the soil's water-holding capacity and other parameters just as rock fragments can, although in general they can themselves hold more water. They will also break down faster.
 
-Where present in significant amounts, for rapid assessment simply record total volumetric percentage of natural fragments per horizon. Confirm absence as [0%]{.ceg}. For routine assessment, record each type present using @tbl-hr-nonrock and estimate percentage volume and median fragment size in centimetres.
+Where present in significant amounts, for rapid assessment simply record the total volumetric percentage of natural fragments per horizon. Confirm absence as [0%]{.ceg}. For routine assessment, record each type present using @tbl-hr-nonrock and estimate percentage volume and median fragment size in centimetres.
 
-E.g., [Sh 10% 5 cm]{.ceg} for a horizon containing some oyster shell fragments.
+**For example:** use [Sh 10% 5 cm]{.ceg} for a horizon containing some oyster shell fragments.
 
-For detailed assessment, additionally record size range (median, min, max) and any other notes about the nature of the material (e.g. species of origin) in free text form.
+For detailed assessment, also record size range (median, min., max.) and any other notes about the nature of the material (e.g. species of origin) in free text form.
 
 ```{r}
 #| label: tbl-hr-nonrock
@@ -381,7 +399,7 @@ dat_hr_nonrock <-
          'Bo', 'Bone',     'Skeletal fragments',
          'Ti', 'Timber',   'Dead wood from trees and shrubs, coarse roots',
          'Ch', 'Charcoal', 'Burnt organic materials',
-         'Gu', 'Gum',      'Solidified plant exudates (e.g. Kauri gum)')
+         'Gu', 'Gum',      'Solidified plant exudates (e.g. kauri gum)')
 
 tbl_hr_nonrock <- gt(dat_hr_nonrock) |>
   tab_options(
@@ -402,15 +420,13 @@ tbl_hr_nonrock
 
 ### Artefacts {#sec-hr-artef}
 
-Artefacts can both function like rock fragments and signify strong human influence on the soil profile.
+Artefacts can both function like rock fragments and signify strong human influence on the soil profile. Where present in significant amounts, for rapid assessment simply record total the volumetric percentage of artefacts per horizon. Confirm absence as [0%]{.ceg}. For routine assessment, record each type present using @tbl-hr-artefacts and estimate percentage volume and median fragment size in centimetres.
 
-Where present in significant amounts, for rapid assessment simply record total volumetric percentage of artefacts per horizon. Confirm absence as [0%]{.ceg}. For routine assessment, record each type present using @tbl-hr-artefacts and estimate percentage volume and median fragment size in centimetres.
+**For example:** use [Ra 5% 6–10 cm]{.ceg} for a horizon containing some chert flake tools.
 
-Example: [Ra 5% 6-10 cm]{.ceg} for a horizon containing some chert flake tools.
+For a detailed assessment, for each fragment type also record size range (median, min., max.) and append any or all of the origin (@tbl-hr-aorg), fixation (@tbl-hr-afix), shape (@tbl-hr-ashp), and degradation (@tbl-hr-adeg) codes supplied below. Colour may also be described using common terms. Additional free-text notes and photos may also be useful.
 
-For detailed assessment, for each fragment type, additionally record size range (median, min, max) and append any or all of the origin (@tbl-hr-aorg), fixation (@tbl-hr-afix), shape (@tbl-hr-ashp), and degradation (@tbl-hr-adeg) codes supplied below. Colour may also be described using common terms. Additional free-text notes and photos may also be useful.
-
-Example: [Pl 10% 2 cm (1-6 cm) A SF F D]{.ceg} for a horizon containing some broken down remnants of horticultural film.
+**For example:** use [Pl 10% 2 cm (1–6 cm) A SF F D]{.ceg} for a horizon containing some broken down remnants of horticultural film.
 
 Artefact fragments smaller than 2 mm and non-solid soil contaminants are beyond the scope of this handbook.
 
@@ -421,19 +437,19 @@ Artefact fragments smaller than 2 mm and non-solid soil contaminants are beyon
 dat_hr_artefs <-
   tribble(~Code, ~Name, ~Description,
          'As', 'Asphalt',  'Asphalt and other bitumen-containing materials',
-         'Ba', 'Bone - altered', 'Human-altered bone fragments',
+         'Ba', 'Bone – altered', 'Human-altered bone fragments',
          'Br', 'Brick',    'Fired clay building materials, usually unglazed',
          'Cr', 'Ceramic',  'Fired clay objects, usually glazed',
          'Ce', 'Concrete', 'Concrete materials, cements',
-         'Gl', 'Glass',    'Fragments from windows, containers, etc',
+         'Gl', 'Glass',    'Fragments from windows, containers, etc.',
          'Pl', 'Plastics', 'Artificial polymers (non-textile)',
-         'Ra', 'Rock - altered', 'Human-altered rock fragments',
-         'Sa', 'Shell - altered', 'Human-altered shells',
-         'Ta', 'Timber - altered', 'Human-altered timber',
-         'Tn', 'Textiles - natural', 'Fabrics and carpets made from e.g. wool',
-         'Tx', 'Textiles - artificial', 'Fabrics and carpets derived from or dominated by plastics',
+         'Ra', 'Rock – altered', 'Human-altered rock fragments',
+         'Sa', 'Shell – altered', 'Human-altered shells',
+         'Ta', 'Timber – altered', 'Human-altered timber',
+         'Tn', 'Textiles – natural', 'Fabrics and carpets (e.g. made from wool)',
+         'Tx', 'Textiles – artificial', 'Fabrics and carpets derived from or dominated by plastics',
          'Mt', 'Metals', 'Refined ore products',
-         'Ms', 'Mine Spoil', 'Materials leftover from ore processing activities, excluding overburden',
+         'Ms', 'Mine spoil', 'Materials left over from ore-processing activities, excluding overburden',
          'Ws', 'Wastes', 'Other domestic or commercial rubbish')
 
 tbl_hr_artefs <- gt(dat_hr_artefs) |>
@@ -455,15 +471,15 @@ tbl_hr_artefs
 
 ```{r}
 #| label: tbl-hr-aorg
-#| tbl-cap: "Artefact origin (adapted from @weber2022)"
+#| tbl-cap: "Artefact origin"
 
 dat_hr_aorg <-
   tribble(~Code, ~Name, ~Description,
          'N', 'Not verifiable', 'Designation not possible / uncertain',
-         'C', 'Consumer', 'Consumer-products (everyday-products) like tools, decorative items, etc', 
-         'A', 'Agricultural', 'Agricultural products like straw bale nets, wire etc',
-         'I', 'Industrial', 'Industrial products like broken pieces of industrial equipment, industrial waste',
-         'B', 'Construction', 'All materials which were placed in soil for construction and supply purposes (e.g., pipes, power cables, geomembranes)')
+         'C', 'Consumer', 'Consumer products (everyday-products) such as tools, decorative items', 
+         'A', 'Agricultural', 'Agricultural products such as straw bale nets, wire',
+         'I', 'Industrial', 'Industrial products such as broken pieces of industrial equipment, industrial waste',
+         'B', 'Construction', 'All materials that were placed in soil for construction and supply purposes (e.g. pipes, power cables, geomembranes)')
 
 tbl_hr_aorg <- gt(dat_hr_aorg) |>
   tab_options(
@@ -476,7 +492,8 @@ tbl_hr_aorg <- gt(dat_hr_aorg) |>
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20)) |>
+  tab_source_note(source_note = md("Source: adapted from @weber2022."))
   
 tbl_hr_aorg
 
@@ -512,12 +529,12 @@ tbl_hr_afix
 
 ```{r}
 #| label: tbl-hr-ashp
-#| tbl-cap: "Artefact shape (adapted from @weber2022)"
+#| tbl-cap: "Artefact shape"
 
 dat_hr_ashp <-
   tribble(~Code, ~Name, ~Description,
-         'P', 'Preserved', 'The original manufactured shape of the object is recognisable',  
-         'B', 'Broken', 'The fragment is recognisable as having been part of a larger object',
+         'P', 'Preserved', 'The original manufactured shape of the object is recognisable.',  
+         'B', 'Broken', 'The fragment is recognisable as having been part of a larger object.',
          'F', 'Flat', 'Tabular or sheet-like',
          'A', 'Angular', 'Sharp-edged',
          'R', 'Rounded', 'Has edges that are not sharp',
@@ -534,7 +551,8 @@ tbl_hr_ashp <- gt(dat_hr_ashp) |>
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20)) |>
+  tab_source_note(source_note = md("Source: adapted from @weber2022."))
   
 tbl_hr_ashp
 
@@ -542,14 +560,14 @@ tbl_hr_ashp
 
 ```{r}
 #| label: tbl-hr-adeg
-#| tbl-cap: "Artefact degradation (adapted from @weber2022)"
+#| tbl-cap: "Artefact degradation"
 
 dat_hr_adeg <-
   tribble(~Code, ~Name, ~Description,
          'N', 'Not verifiable', 'Designation not possible / uncertain',    
          'F', 'Fresh', 'Fresh artefacts with bright colours, unaffected shape, without signs of deterioration (cracks, broken edges, rough surfaces)', 
          'I', 'Incipient alteration', 'Artefacts with incipient deterioration surface, such as first cracks, broken edges or roughened/grooved surfaces',
-         'D', 'Degraded', 'Artefacts with clear indications of ageing such as pale colours or obvious discolouration, strong fragmentation, frayed edges',
+         'D', 'Degraded', 'Artefacts with clear indications of ageing, such as pale colours or obvious discoloration, strong fragmentation, frayed edges',
          'S', 'Strongly degraded', 'Artefacts with strongly degraded surfaces, faded colours, soft surface, frayed areas or edges')
 
 tbl_hr_adeg <- gt(dat_hr_adeg) |>
@@ -563,7 +581,8 @@ tbl_hr_adeg <- gt(dat_hr_adeg) |>
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10), Name ~ pct(20))
+  cols_width(Code ~pct(10), Name ~ pct(20)) |>
+  tab_source_note(source_note = md("Source: adapted from @weber2022."))
   
 tbl_hr_adeg
 
@@ -571,23 +590,23 @@ tbl_hr_adeg
 
 ## Roots {#sec-root}
 
-Plant roots affect water infiltration, bind and rework the soil as they grow, and exert strong local control over soil chemistry. Their position in the soil profile can provide information about ped development, particle packing, and the presence of pans. Accurate measurement of root volumes *in situ* is technically challenging [@measurin2012; @freschet2021], requiring extensive sampling to account for spatial, temporal and interspecies variability. Such sampling may be necessary for accurate assessment of total soil composition. The majority of the root mass, particularly fine roots of herbaceous species and grasses, will be found in the topsoil. For soil classification, presence of roots and their relative position within the soil are key characteristics.
+Plant roots affect water infiltration, bind and rework the soil as they grow, and exert strong local control over soil chemistry. Their position in the soil profile can provide information about ped development, particle packing, and the presence of pans. Accurate measurement of root volumes *in situ* is technically challenging [@measurin2012; @freschet2021], requiring extensive sampling to account for spatial, temporal, and interspecies variability. Such sampling may be necessary for accurate assessment of total soil composition. The majority of the root mass, particularly fine roots of herbaceous species and grasses, will be found in the topsoil. For soil classification, presence of roots and their relative position within the soil are key characteristics.
 
 Note that this section applies to the live root mass only.
 
 ### Root abundance {#sec-root-abund}
 
-Estimation of root volume from cross-sectional analyses is not accurate, and so the following method, reproduced from @internationalorganizationforstandardizationa must be considered at best a relative assessment of root abundance.
+Estimation of root volume from cross-sectional analyses is not accurate, and so the following method, reproduced from @internationalorganizationforstandardizationa, must be considered at best a relative assessment of root abundance.
 
-Abundance is communicated as a count per square decimetre (100 cm^2^), undertaken on a pit or exposure face. For very thin horizons, a 50 cm horizontal linear transect at the horizon midpoint may be used instead. Multiple split-open cores may also be examined provided the minimum 100 cm^2^ area can be examined.
+Abundance is communicated as a count per square decimetre (100 cm^2^), undertaken on a pit or exposure face. For very thin horizons, a 50 cm horizontal linear transect at the horizon midpoint can be used instead. Multiple split-open cores may also be examined, provided the minimum 100 cm^2^ area can be examined.
 
-For rapid assessment, report the total number of roots. For routine assessment, report counts separately for the size classes in @tbl-hr-rsz. Always confirm absence of roots by recording a [0]{.ceg}.
+For rapid assessment report the total number of roots. For routine assessment report counts separately for the size classes in @tbl-hr-rsz. Always confirm absence of roots by recording a [0]{.ceg}.
 
-E.g. [V 30, F 5, M 5, C 0]{.ceg} for a mixture of very fine, fine and medium roots.
+**For example:** use [V 30, F 5, M 5, C 0]{.ceg} for a mixture of very fine, fine, and medium roots.
 
-With adequate size data, count per area can be converted to an areal percentage, e.g. 10 roots with diameter 5 mm in a 10 x 10 cm space gives a total area of $\pi × 0.25^{2} × 10 = {2\ cm^{2}}$, or 2%.
+With adequate size data, count per area can be converted to an areal percentage, e.g. 10 roots with diameter 5 mm in a 10 × 10 cm space gives a total area of $\pi × 0.25^{2} × 10 = {2\ cm^{2}}$, or 2%.
 
-The count data may be classified using @tbl-hr-rtab.
+The count data can be classified using Appendix @tbl-hr-rtab.
 
 ```{r}
 #| label: tbl-hr-rsz
@@ -596,8 +615,8 @@ The count data may be classified using @tbl-hr-rtab.
 dat_hr_rsz <-
   tribble(~Code,       ~Name,  ~Description,
             'V', 'Very Fine',        '<0.5',
-            'F',      'Fine',   '≥0.5–<2.0',
-            'M',    'Medium',   '≥2.0–<5.0',
+            'F',      'Fine',   '≥0.5 to <2.0',
+            'M',    'Medium',   '≥2.0 to <5.0',
             'C',    'Coarse',        '≥5.0')
 
 tbl_hr_rsz <- gt(dat_hr_rsz) |>
@@ -620,9 +639,9 @@ tbl_hr_rsz
 
 ### Root position {#sec-root-pos}
 
-Where roots are present in a horizon, record how the roots are spatially distributed using the codes in @tbl-hr-rpos. For rapid assessment, record the dominant position of all roots. For routine assessment, split by size. Root position cannot be reliably observed in augered samples, or in cores where structural units are known to be larger than the core diameter.
+Where roots are present in a horizon, record how the roots are spatially distributed using the codes in @tbl-hr-rpos. For rapid assessment, record the dominant position of all roots; for routine assessment, split by size. Root position cannot be reliably observed in augered soil material, or in cores where structural units are known to be larger than the core diameter.
 
-E.g. [F B, C T]{.ceg} for a soil where fine roots are confined to voids but coarse roots are not.
+**For example:** use [F B, C T]{.ceg} for a soil where fine roots are confined to voids but coarse roots are not.
 
 ```{r}
 #| label: tbl-hr-rpos
@@ -630,10 +649,10 @@ E.g. [F B, C T]{.ceg} for a soil where fine roots are confined to voids but coar
 
 dat_hr_rpos <-
   tribble(~Code,        ~Name,  ~Description,
-            'W',     'Within', 'Roots are primarily located within peds',
-            'B',    'Between', 'Roots are primarily located between peds, within fissures or along bedding planes',
-            'T', 'Throughout', 'Roots are evenly distributed within and between peds',
-            'U',    'Unknown', 'Sampling method did not allow reliable observation')
+            'W',     'Within', 'Roots are primarily located within peds.',
+            'B',    'Between', 'Roots are primarily located between peds., within fissures or along bedding planes',
+            'T', 'Throughout', 'Roots are evenly distributed within and between peds.',
+            'U',    'Unknown', 'The sampling method did not allow reliable observation.')
 
 tbl_hr_rpos <- gt(dat_hr_rpos) |>
   tab_options(
@@ -658,17 +677,19 @@ Information about particular plant species contributing to the root mass and spa
 
 ## Voids and pores {#sec-voidpore}
 
-Voids and pores are an integral part of soil structure, forming the spaces that occur between and within the aggregates described in @sec-hr-stru. They may contain air, water, or both, and play a key role in aeration, drainage, and root penetration. They are also habitat for soil meso- and microfauna. Horizon voids exclude open surface cracks, which are noted in @sec-pr-crack, and fine pores, which are described in @sec-pore. Infill features, where voids have previously been created but are no longer empty of solid material, are described in @sec-pr-inf. Voids and pores range in size from many centimetres down to nano-scale gaps in clay minerals. Only the larger end of the scale can be reasonably assessed in the field. As with measurement of roots, void space is most accurately determined in the laboratory.
+Voids and pores are an integral part of soil structure, forming the spaces that occur between and within the aggregates described in @sec-hr-stru. They may contain air, water, or both, and play a key role in aeration, drainage, and root penetration. They are also habitat for soil meso- and microfauna.
+
+Horizon voids exclude open surface cracks, which are noted in @sec-pr-crack, and fine pores, which are described in @sec-pore. Infill features, where voids have previously been created but are no longer empty of solid material, are described in @sec-pr-inf. Voids and pores range in size from many centimetres down to nano-scale gaps in clay minerals. Only the larger end of the scale can be reasonably assessed in the field. As with measurement of roots, void space is most accurately determined in the laboratory.
 
 ### Voids {#sec-void}
 
-Voids comprise the fissures and gaps between peds, as well as pores \>2 mm wide. Dimensions of large, isolated voids like burrows can be measured directly and volume calculated. Areal percentage of smaller inter-ped spaces can be assessed across a cut face using the abundance charts in @sec-in-abgen or by counting void openings. Use a minimum area of 100 cm^2^ for this assessment.
+Voids comprise the fissures and gaps between peds, as well as pores \>2 mm wide. The dimensions of large, isolated voids such as burrows can be measured directly and their volume calculated. Areal percentage of smaller inter-ped spaces can be assessed across a cut face using the abundance charts in @sec-in-abgen or by counting void openings. Use a minimum area of 100 cm^2^ for this assessment.
 
 For rapid assessment, estimate the areal percentage of the horizon volume occupied by void space. Always confirm absence of voids by recording a [0]{.ceg}.
 
-For detailed assessment, identify void types using @tbl-hr-voidtype and estimate the percentage of each type seen. Optionally, add connectivity using @tbl-hr-voidcon. Note that void connectivity may vary with soil water status.
+For a detailed assessment, identify void types using @tbl-hr-voidtype and estimate the percentage of each type seen. Optionally, add connectivity using @tbl-hr-voidcon. Note that void connectivity may vary with soil-water status.
 
-Example: [10% IT C]{.ceg} for the void space in a strongly pedal, polyhedral topsoil.
+**For example:** use [10% IT C]{.ceg} for the void space in a strongly pedal, polyhedral topsoil.
 
 ```{r}
 #| label: tbl-hr-voidtype
@@ -676,10 +697,10 @@ Example: [10% IT C]{.ceg} for the void space in a strongly pedal, polyhedral t
 
 dat_hr_voidtype <-
   tribble(~Code, ~Name, ~Description,
-          'BP', 'Bedding plane', 'A parting or discontinuity due to stratification during deposition of sedimentary particles.', 
-          'CH', 'Channel', 'Tubular void of biological origin that is less than 20 mm in diameter (e.g. insect burrow)',
-          'TU', 'Tunnel',  'Tubular void of biological origin that is 20 mm or more in diameter (e.g. rabbit burrow) ',
-          'FS', 'Fissure', 'Planar void with a width much smaller than length and depth. Fissures represent the release of strain caused by drying and usually bound individual structural units and form repetitively.',
+          'BP', 'Bedding plane', 'A parting or discontinuity due to stratification during deposition of sedimentary particles', 
+          'CH', 'Channel', 'A tubular void of biological origin that is less than 20 mm in diameter (e.g. insect burrow)',
+          'TU', 'Tunnel',  'A tubular void of biological origin that is 20 mm or more in diameter (e.g. rabbit burrow) ',
+          'FS', 'Fissure', 'A narrow, vertically oriented void (i.e. width much smaller than length and depth) usually caused by soil material shrinkage on drying; fissures are smaller than surface cracks, are more closely spaced, and are absent from the topsoil.',
           'IT', 'Interstitial', 'Irregular voids occupying space between aggregates that do not fit together',
           )
 
@@ -706,9 +727,9 @@ tbl_hr_voidtype
 
 dat_hr_voidcon <-
   tribble(~Code, ~Name, ~Description,
-          'I', 'Isolated', 'Void spaces are closed off from each other',
-          'P', 'Partly connected', 'Void spaces are sometimes connected to each other within the horizon, or continue into neighbouring horizons',
-          'C', 'Continuous',  'Void spaces are well connected and form a continuous network')
+          'I', 'Isolated', 'Void spaces are closed off from each other.',
+          'P', 'Partly connected', 'Void spaces are sometimes connected to each other within the horizon, or continue into neighbouring horizons.',
+          'C', 'Continuous',  'Void spaces are well connected and form a continuous network.')
 
 tbl_hr_voidcon <- gt(dat_hr_voidcon) |>
    tab_options(
@@ -729,17 +750,17 @@ tbl_hr_voidcon
 
 ### Pores {#sec-pore}
 
-Pores are open voids \<2 mm in diameter. Macropores are ≥0.75 mm, and micropores are \<0.75 mm. This division is based on the diameter above which pores are regarded as generated by soil fauna. Pores can be observed on freshly broken ped faces or broken faces of a block cut from an apedal massive horizon, but will not be observable in loose, apedal single-grain materials. Cut surfaces in moist or wet soils may smear, obscuring pore openings.
+Pores are open voids \<2 mm in diameter. Macropores are ≥0.75 mm, and micropores are \<0.75 mm. This division is based on the diameter above which pores are regarded as generated by soil fauna. Pores can be observed on freshly broken ped faces or broken faces of a block cut from an apedal massive horizon, but will not be observable in loose, apedal, single-grain materials. Cut surfaces in moist or wet soils may smear, obscuring pore openings.
 
-For routine assessment, note presence or absence of any pores visible without magnification. Ideally, make observations from at least 2-5 small samples from within a horizon.
+For routine assessment, note the presence or absence of any pores visible without magnification. Ideally, make observations from at least two to five test specimens from within a horizon.
 
-For detailed assessment, count the number of macropores and micropores separately over a minimum area of 100 cm^2^. This may necessitate sampling several peds or small blocks from the target horizon. Counting micropores will require the use of a magnifier.
+For a detailed assessment, count the number of macropores and micropores separately over a minimum area of 100 cm^2^. This may necessitate sampling several peds or small blocks from the target horizon. Counting micropores will require the use of a magnifier.
 
 ![Relative sizes of voids and pores.](data/FIGS_Pores.png){#fig-voidporesize width="80%" fig-alt="Conceptual diagram showing the relative sizes of voids and pores" fig-align="center"}
 
 ## Subsolum features {#sec-reg}
 
-Horizons that have experienced limited weathering may exhibit geogenic features that relate to their parent material and its mode of emplacement. These can affect water movement, slope stability and plant growth [@wysocki2005; @juilleret2016].
+Horizons that have experienced limited weathering may exhibit geogenic features that relate to their parent material and its mode of emplacement. These features can affect water movement, slope stability and plant growth [@wysocki2005; @juilleret2016].
 
 ### Lithology {#sec-reg-lith}
 
@@ -751,13 +772,13 @@ Record the degree to which geogenic features have weathered using the code list 
 
 ### Bedding {#sec-reg-bed}
 
-Transported soil parent materials may comprise multiple thin layers of alternating texture or lithology. These layers can be unconsolidated (e.g. lamina or cross-bedding in aeolian and fluvial sediments), partly or fully consolidated, and may subsequently have been compressed, folded and/or faulted. Where layers of subsolum geogenic material have been identified (@sec-pr-wdeg) and bedding is apparent, for rapid assessment note the steepness of the bedding using @tbl-reg-bstp. For routine assessment, measure the median angle of the bedding off horizontal. For detailed assessment, add a thickness range for the bedding in centimetres.
+Transported soil parent materials may comprise multiple thin layers of alternating texture or lithology. These layers can be unconsolidated (e.g. laminae or cross-bedding in aeolian and fluvial sediments), partly or fully consolidated, and may subsequently have been compressed, folded and/or faulted. Where layers of subsolum geogenic material have been identified (@sec-pr-wdeg) and bedding is apparent, for rapid assessment note the steepness of the bedding using @tbl-reg-bstp. For a routine assessment, measure the median angle of the bedding off horizontal. For a detailed assessment, add a thickness range for the bedding in centimetres.
 
-E.g., [25° 10-30 cm]{.ceg} for thinly bedded, shallow-angle marine sediments.
+**For example:** use [25° 10–30 cm]{.ceg} for thinly bedded, shallow-angle marine sediments.
 
 ```{r}
 #| label: tbl-reg-bstp
-#| tbl-cap: "Bedding angle classes (adapted from @juilleret2016)."
+#| tbl-cap: "Bedding angle classes"
 
 dat_reg_bstp <-
   tribble(~Code, ~Name, ~Description,
@@ -776,16 +797,17 @@ tbl_reg_bstp <- gt(dat_reg_bstp) |>
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10), Name ~pct(20)) 
+  cols_width(Code ~pct(10), Name ~pct(20)) |>
+  tab_source_note(source_note = md("Source: adapted from @juilleret2016."))
 
 tbl_reg_bstp
 ```
 
 ### Fractures {#sec-reg-fra}
 
-Rock at the base of the profile may be significantly fractured by tectonic and weathering processes. Where layers of subsolum geogenic material (@sec-pr-wdeg) have been identified and fractures are apparent, for rapid assessment note whether the spacing between fractures is closer than 10 cm (ignore single fractures and faults). For routine or detailed assessment, note fracture type using @tbl-hr-fractyp, orientation using @tbl-hr-fracotyp, and median spacing in centimetres, with single fractures recorded as 0 cm.
+Rock at the base of the profile may be significantly fractured by tectonic and weathering processes. Where layers of subsolum geogenic material (@sec-pr-wdeg) have been identified and fractures are apparent, for rapid assessment note whether the spacing between fractures is closer than 10 cm (ignore single fractures and faults). For a routine or detailed assessment, note the fracture type using @tbl-hr-fractyp, orientation using @tbl-hr-fracotyp, and median spacing in centimetres, with single fractures recorded as 0 cm.
 
-E.g., [F S 0]{.ceg} For a single fault showing vertical displacement.
+**For example:** use [F S 0]{.ceg} For a single fault showing vertical displacement.
 
 ```{r}
 #| label: tbl-hr-fractyp
@@ -793,7 +815,7 @@ E.g., [F S 0]{.ceg} For a single fault showing vertical displacement.
 
 dat_hr_fractyp <-
   tribble(~Code, ~Name, ~Description,
-          'T', 'Fault', 'Tectonically induced fractures that may cut across bedding. Bedding displacement will be apparent along the fault',
+          'T', 'Faults', 'Tectonically induced fractures that may cut across bedding. Bedding displacement will be apparent along the fault.',
           'C', 'Crush', 'Fracture patterns induced by crushing and shearing forces. Fractures will have uneven spacing and irregular orientation.',
           'P', 'Pressure', 'Fracture patterns induced by release of overburden pressure. Fractures are likely to be near-horizontal or parallel to the surface and may be curved.',
           'F', 'Fritter', 'Fracture patterns induced by chemical weathering. Fractures are likely to be dense, forming a grid or net pattern.')
@@ -821,7 +843,7 @@ tbl_hr_fractyp
 
 dat_hr_fracotyp <-
   tribble(~Code, ~Name, ~Description,
-          'S', 'Shallow', 'Fractures are oriented roughly horizontally or parallel to the land surface',
+          'S', 'Shallow', 'Fractures are oriented roughly horizontally or parallel to the land surface.',
           'T', 'Steep', 'Fractures are oriented roughly vertically or perpendicular to the land surface.',
           'M', 'Mixed', 'Fractures do not have a single dominant orientation.')
 
@@ -841,5 +863,3 @@ tbl_hr_fracotyp <- gt(dat_hr_fracotyp) |>
 
 tbl_hr_fracotyp
 ```
-
-[diagrams or photos - one for each type]{.diags}
