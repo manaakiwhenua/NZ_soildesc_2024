@@ -4,6 +4,8 @@
 library(tidyverse) 
 library(gt)
 library(ggtern) 
+library(extrafont)
+loadfonts(quiet = TRUE)
 ```
 
 A great deal of soil physical and chemical behaviour is dependant on the particle size distribution within the solid fraction: the relative dominance of particular sizes, as well as the total size range present. This includes both mineral and organic matter. In the field, particle size distribution is estimated on a per-horizon basis using a combination of visual examination and hand manipulation under moist conditions.
@@ -125,11 +127,41 @@ nz_tri <-
         legend.position = 'bottom')
 
 nz_tri
+
+#ggsave(filename = file.path('data', 'NZ_tri_nice.png'), plot = nz_tri, width = 12, units = 'cm', dpi = 300)
+```
+
+```{r}
+#| label: tbl-texgrp-tri
+#| tbl-cap: "Texture group names and compositional limits"
+#| classes : no-stripe
+
+dat_hr_texgrptri <- tribble(~Code, ~Name, ~Clay, ~Silt, ~Sand,
+                            'S', 'Sandy', '<8%', '<40%', '≥52%',
+                            'L', 'Loamy', '≥8 to <35%', '<40%', '≥25 to <92%',
+                            'Z', 'Silty', '<35%', '≥40%', '<60%',
+                            'C', 'Clayey', '≥35%', '<65%', '<65%')
+
+tbl_hr_texgrptri <- gt(dat_hr_texgrptri) |>
+  tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~ pct(20))
+  
+tbl_hr_texgrptri
+
 ```
 
 ```{r}
 #| label: tbl-texture-tri
-#| tbl-cap: "New Zealand Texture Triangle class names and compositional limits"
+#| tbl-cap: "Texture class names and compositional limits"
 #| classes : no-stripe
 
 dat_hr_textri <- nztt_labels |>
@@ -191,7 +223,7 @@ The loamy and sandy texture classes in @tbl-texture-tri can be accompanied by ad
 
 ```{r}
 #| label: tbl-hr-sandquals
-#| tbl-cap: "Sand fraction modifiers"
+#| tbl-cap: "Sand fraction size modifiers"
 
 dat_hr_sandquals <-
   tribble(~Code,    ~Name,                       ~Description,
