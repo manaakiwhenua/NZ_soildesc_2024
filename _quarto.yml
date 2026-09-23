@@ -20,7 +20,6 @@ book:
       name:
         given: "Kirstin"
         family: "Deuss"
-      email: "soilstandards@landcareresearch.co.nz"
       orcid: "0000-0002-6531-0830"
       degrees: "PhD"
       roles:
@@ -30,17 +29,40 @@ book:
       name:
         given: "Andre"
         family: "Eger"
-      email: "soilstandards@landcareresearch.co.nz"
       orcid: "0000-0001-8442-6815"
       degrees: "PhD"
       roles:
         - editing: supporting
         - writing: supporting
+    - id: mjdg
+      name:
+        given: "J. D. G."
+        family: "Milne"
+      roles:
+        - writing: supporting
+    - id: cb
+      name:
+        given: "B."
+        family: "Clayden"
+      roles:
+        - writing: supporting
+    - id: pgs
+      name:
+        given: "P. G."
+        family: "Singleton"
+      roles:
+        - writing: supporting
+    - id: adw
+      name:
+        given: "A. D."
+        family: "Wilson"
+      roles:
+        - writing: supporting
     - id: sdwg
-        name:
-          literal: "Soil Description Working Group"
-        roles:
-          - writing: supporting
+      name:
+        literal: "Soil Description Working Group"
+      roles:
+        - writing: supporting
   date: "2024-01-23"
   language: en
   page-navigation: true
@@ -48,8 +70,8 @@ book:
   publisher-place: "Palmerston North, New Zealand"
   reader-mode: true
   search: true
-  downloads: [docx]
-  output-file: MWLR_2024_DRAFT_soil-description-handbook
+  downloads: [pdf]
+  output-file: BSI_2026_nz-soil-description-handbook
   repo-url: https://github.com/manaakiwhenua/NZ_soildesc_2024
   back-to-top-navigation: true
   chapters:
@@ -86,19 +108,18 @@ book:
         - in_01_horizon_names.qmd
         - in_02_profile_behaviour.qmd
         - in_03_nzsc_reqs.qmd
+    - acknowledgements.qmd
     - references.qmd
   appendices:
     - ap_equipment.qmd
     - ap_field_recording.qmd
     - ap_sampling.qmd
-    - ap_data_model.qmd
     - ap_classification.qmd
     - ap_compat.qmd
     - ap_province.qmd
-    - changelog.qmd
 
 bibliography: soil_desc_refs_2024.bib
-csl: bsi-citation-style-202603.csl
+csl: bsi-citation-style-202609.csl
 
 format:
   html:
@@ -111,14 +132,15 @@ format:
     toc-expand: true
     mermaid:
       theme: neutral
-  docx:
-    reference-doc: bsi-custom-reference-doc.docx
-    toc: true
-    toc-depth: 2
-    toc-title: "Contents"
-    number-sections: true
-    number-depth: 4
-    link-citations: true
+## no longer actively using:
+#  docx:
+#    reference-doc: bsi-custom-reference-doc.docx
+#    toc: true
+#    toc-depth: 2
+#    toc-title: "Contents"
+#    number-sections: true
+#    number-depth: 4
+#    link-citations: true
 
 # global knitr options
 knitr:
