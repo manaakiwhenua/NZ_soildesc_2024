@@ -6,7 +6,7 @@ library(tibble)
 library(gt)
 ```
 
-A site is placed in its landform and landscape context using the system described in @sec-ss-set. The land surface at a site is then described primarily in terms of its slope, aspect, and surface cover. If present, surface water and microrelief features should also be recorded. Ongoing or recent erosion and/or deposition events can be briefly noted or described in more detail.
+A soil profile description is placed in its landform and landscape context using the system described in @sec-ss-set. The land surface is then described primarily in terms of its slope, aspect, and surface cover. If present, surface water and microrelief features should also be recorded. Ongoing or recent erosion and/or deposition events can be briefly noted or described in more detail.
 
 ## Slope {#sec-pr-slope}
 
@@ -95,7 +95,7 @@ The slope measurement method in use can restrict the recordable limit of flat la
 
 Slope calculated from a DEM also has inherent limitations. For example, a DEM with a cell size of 20 m and a vertical resolution of 0.5 m cannot discriminate slope increments of less than \~1.43° ($tan^{-1}(0.5/20)$).
 
-For site-scale aspect measurement, a flatness threshold of 1° (1.75%) is acceptable. This equates to a \~35 cm fall over 20 m.
+For localised aspect measurement, a flatness threshold of 1° (1.75%) is acceptable. This equates to a \~35 cm fall over 20 m.
 :::
 
 ::: {#nte-slopegear .callout-note appearance="minimal" collapse="true" title="Equipment for measuring slope and aspect"}
@@ -103,13 +103,13 @@ Slope and aspect are conventionally measured with analogue tools: a clinometer f
 :::
 
 ::: {#nte-slpdem .callout-note appearance="minimal" collapse="true" title="Extracting slope and aspect from DEMs"}
-Slope data for a site can be extracted from a DEM, provided some conditions are met.
+Slope data can be extracted from a DEM, provided some conditions are met.
 
 -   Cell size should be less than 10 m; larger cells systematically underestimate local slope.
 -   DEM source should ideally be of type [D]{.ceg} for acceptable accuracy (see @tbl-ss-elevsrc).
 -   Extract the median slope within a 10 m radius, not the single value directly under the recorded point.
 
-Review and, if necessary, adjust slopes extracted from sites described on exposures. These may be overestimates (e.g. where a track cuts into a slope, the values upslope behind the site would better represent the soil-forming environment). Sites located close to landform or landscape boundaries may also need review. For example, for a site in the base of a narrow valley, the slope of the valley sides will differ from the slope of the valley floor. If the extraction window includes both the valley floor and sides, median slope will be overestimated.
+Review and, if necessary, adjust slopes extracted from locations described on exposures. These may be overestimates (e.g. where a track cuts into a slope, the values upslope behind the profile would better represent the soil-forming environment). Profile descriptions located close to landform or landscape boundaries may also need review. For example, for a description made in the base of a narrow valley, the slope of the valley sides will differ from the slope of the valley floor. If the extraction window includes both the valley floor and sides, the median slope most relevant to the profile will be overestimated.
 
 Aspect data are subject to similar constraints, with two additional issues to consider.
 
@@ -120,7 +120,7 @@ Aspect data are subject to similar constraints, with two additional issues to co
 
 ## Surface cover {#sec-pr-surfcov}
 
-Surface cover helps visualise the site and its landform and provides some information on infiltration behaviour. Surface cover, specifically 'the number of days in a year that the soil (agricultural land) is covered with vegetation', is a key agricultural performance indicator [@oecd2001].
+Surface cover helps visualise the are around a profile description and provides some information on infiltration behaviour. Surface cover, specifically 'the number of days in a year that the soil (agricultural land) is covered with vegetation', is a key agricultural performance indicator [@oecd2001].
 
 Estimate and record the generalised surface cover components as a percentage composition of the site (@sec-pr-site), using the codes in @tbl-pr-surfcov. Consider the surface cover from the surface to a height of 1.35 m, for consistency with @hurst2022. Note the lithology of surface rock fragments or outcrop according to @sec-pm-lith. Optionally, describe surface rock cover in detail according to @sec-rockfrag.
 
@@ -171,7 +171,7 @@ tbl_pr_surfcov
 
 Disturbances have the potential to influence the soil as well as its cover. Noting these events can provide context for the parameters recorded, and some are especially useful when interpreting laboratory results. @tbl-ss-eventp provides a list of disturbance categories. Free-text notes can be used if additional detail is needed.
 
-Only record recent events directly affecting the site. 'Recent' is a relatively flexible concept which highlights the reasons some parameters observed might be locally unusual. Some of these events recur regularly (e.g. tillage) so only need to be noted if the are very recent (e.g. the previous week).
+Only record recent events directly affecting the profile. 'Recent' is a relatively flexible concept which highlights the reasons some parameters observed might be locally unusual. Some of these events recur regularly (e.g. tillage) so only need to be noted if the are very recent (e.g. the previous week).
 
 If the time since the event is uncertain, record an estimate using one of the options in @tbl-ss-eventt.
 
@@ -183,7 +183,7 @@ If the time since the event is known with high certainty, record days since the 
 
 ```{r}
 #| label: tbl-ss-eventp
-#| tbl-cap: "Recent site-affecting events"
+#| tbl-cap: "Recent profile-affecting events"
 
 dat_ss_eventp <-
   tribble(~Code, ~Name,
@@ -389,7 +389,7 @@ Recent weather data are useful for interpreting surface crack information (@sec-
 
 'Microrelief' is a term covering small-scale, regular or semi-regular repeating patterns of surface deformation. Microrelief occurs within a landform, so its components are smaller than the landform itself – often too small to be reliably sensed remotely. 
 
-Consider the following example of how microrelief fits into a particular site-setting context. In a hill-country landscape a north-facing slope landform is used for sheep grazing. Over time, stock movement has created small, step-like terraces on the slope surface. The terraces, known as terracettes, are a form of biotic microrelief. They are 20–30 cm high and spaced 1–2 m apart. While the terracettes do not alter the overall form of the slope, they influence local surface water movement and erosion.
+Consider the following example of how microrelief fits into a particular landscape context. In a hill-country landscape a north-facing slope landform is used for sheep grazing. Over time, stock movement has created small, step-like terraces on the slope surface. The terraces, known as terracettes, are a form of biotic microrelief. They are 20–30 cm high and spaced 1–2 m apart. While the terracettes do not alter the overall form of the slope, they influence local surface water movement and erosion.
 
 Microrelief presence and character can help signify particular soil types, and also influence many small-scale soil processes such as local water infiltration, accumulation of surface litter, and topsoil development.
 
@@ -503,11 +503,11 @@ tbl_pr_amicreltype
 
 ## Erosion and deposition {#sec-pr-erdep}
 
-Erosion and deposition processes operate at the landscape and landform scale and have effects on the site and profile description. When documenting erosion and deposition at broader scales than the site, the LUC erosion assessment framework should be applied [@lynn2009]. At the site scale (radius up to ~10 m, see @sec-pr-site), the system below allows description of the localised nature and impact of these processes.
+Erosion and deposition processes operate at the landscape and landform scale and have effects on the site and profile description. When documenting erosion and deposition across landforms and landscapes, the LUC erosion assessment framework should be applied [@lynn2009]. At the site scale (radius up to ~10 m, see @sec-pr-site), the system below allows description of the localised nature and impact of these processes.
 
 ### Erosion {#sec-pr-erosion}
 
-Where there are active signs of erosion at a site, its presence can simply be noted using the site disturbance code [SL]{.ceg} (see @sec-pr-dist). If a more detailed assessment is desired, note using the type(s) given in @tbl-pr-erosion. If erosion is present, note also severity and activity using @tbl-pr-erosev and @tbl-pr-eroact. Only record erosion directly affecting the site.
+Where there are active signs of erosion, its presence can simply be noted using the profile disturbance code [SL]{.ceg} (see @sec-pr-dist). If a more detailed assessment is desired, note using the type(s) given in @tbl-pr-erosion. If erosion is present, note also severity and activity using @tbl-pr-erosev and @tbl-pr-eroact. Only record erosion directly affecting the profile.
 
 **For example:** use [RI S PR]{.ceg} for rills observed on a tilled paddock after a storm, or [NO - -]{.ceg} for an unaffected site.
 
@@ -629,11 +629,9 @@ tbl_pr_erosev
 
 ### Deposition {#sec-pr-deposition}
 
-Where there are signs of deposition at a site, its presence can simply be noted using the site disturbance code [SD]{.ceg} (see @sec-pr-dist). If a more detailed assessment is desired, note using the type(s) given in @tbl-pr-deposition. If deposition is present, note also severity and activity using @tbl-pr-depsev and @tbl-pr-eroact. Only record deposition directly affecting the site.
+Where there are signs of deposition, its presence can simply be noted using the profile disturbance code [SD]{.ceg} (see @sec-pr-dist). If a more detailed assessment is desired, note using the type(s) given in @tbl-pr-deposition. If deposition is present, note also severity and activity using @tbl-pr-depsev and @tbl-pr-eroact. Only record deposition directly affecting the profile.
 
-**For example:** use [FL M FR]{.ceg} for a recent flood that has dropped sediment on a low terrace and partly smothered grass, or [NO - -]{.ceg} for an unaffected site. 
-
-Optionally, the generalised texture class of the deposited material can be reported using the rapid options for recording soil texture described in @sec-tex-rec.
+**For example:** use [FL M FR]{.ceg} for a recent flood that has dropped sediment on a low terrace and partly smothered grass, or [NO - -]{.ceg} for an unaffected area.
 
 ```{r}
 #| label: tbl-pr-deposition
@@ -720,4 +718,4 @@ tbl_pr_depsev <- gt(dat_pr_depsev) |>
 tbl_pr_depsev
 ```
 
-More detailed assessments of site-scale erosion and deposition are possible using the characterisation principles in @turner1996, but they are considered beyond the scope of a soil profile description.
+More detailed assessments of local erosion and deposition are possible using the characterisation principles in @turner1996, but they are considered beyond the scope of a soil profile description.
