@@ -15,7 +15,9 @@ Some additional, highly local geomorphological parameters are captured when desc
 
 ## Province {#sec-gmph-prov}
 
-Provinces identify major geomorphic zones in New Zealand, which express large-scale lithological associations, tectonic regimes, and climate. @tbl-ss-lftp lists their names, and @fig-ss-lftp shows their general distribution. Full definitions of the provinces are given in @sec-ap-prov.
+Provinces identify major geomorphic zones in New Zealand, which express large-scale lithological associations, tectonic regimes, and climate. @tbl-ss-lftp lists their names, and @fig-ss-lftp shows their general distribution.
+
+Given their very broad extent, provinces do not need to be recorded in the field. The province boundaries are not currently strictly defined, so an understanding of their conceptual basis (@sec-ap-prov) is required before a confident allocation can be made.
 
 |   | Northern provinces |   | Southern provinces |   | Offshore provinces |
 |:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
@@ -39,7 +41,7 @@ Given their very broad extent, provinces do not need to be recorded in the field
 
 ## Landscape {#sec-gmph-lsc}
 
-The landscape around a soil observation comprises a distinct geomorphological pattern with repeating landforms, or landforms that are otherwise spatially related. The scale of observation varies but commonly extends from a few hundred to a few thousand metres [@heck2017]. Landscapes nest within provinces but are not exclusive to one province or another.
+The landscape around a soil observation comprises a distinct geomorphological pattern with repeating landforms, or landforms that are otherwise spatially related. The scale of observation varies but commonly extends from a few hundred to a few thousand metres [@heck2017]. Landscapes nest within provinces but are not restricted to one province or another.
 
 ### Naming landscapes {#sec-gmph-lscnm}
 
@@ -47,7 +49,7 @@ No universal set of landscape names and definitions exists. The schema given in 
 
 ```{r}
 #| label: tbl-gmph-lsnames
-#| tbl-cap: "Common landscape terms"
+#| tbl-cap: "Common landscapes of New Zealand"
 
 dat_gmph_lsnames <-
   tribble(~Code, ~Name, ~Description, ~Synonyms,
@@ -75,7 +77,7 @@ tbl_gmph_lsnames <- gt(dat_gmph_lsnames) |>
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
-  cols_label(Synonyms = 'Synonyms and subtypes') |>
+  cols_label(Synonyms = 'Related terms') |>
   cols_width(Code ~pct(10), Name ~pct(20), Synonyms ~pct(20))
 
 tbl_gmph_lsnames
@@ -228,7 +230,7 @@ tbl_gmph_lfnames <- gt(dat_gmph_lfnames) |>
   row_group_order(groups = c('n', 'a')) |>
   tab_style(style = list(cell_text(weight = 'bold')),
             locations = cells_row_groups()) |>
-  cols_label(Synonyms = 'Synonyms and subtypes') |>
+  cols_label(Synonyms = 'Related terms') |>
   cols_width(Code ~pct(10), Name ~pct(20), Synonyms ~pct(20)) |>
   tab_source_note(source_note =  md("Sources: adapted from @milne1995, @johnson2004, @tielidze2021, and @ncst2024."))
 

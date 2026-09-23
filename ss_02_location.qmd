@@ -17,7 +17,7 @@ A soil description is essentially useless without a confident location. Confiden
 
 ### Recording location {#sec-loc-rec}
 
-Locations are recorded using a coordinate reference system (CRS), that defines a grid over the land surface. Geographical coordinate systems use angular coordinates (degrees latitude and longitude) and model the Earth as a sphere or ellipsoid. Projected coordinate systems, as implied by the name, project all or part of the Earth's surface onto a flat plane by various methods, allowing the use of linear coordinates (e.g. metres). 
+Locations are recorded using a coordinate reference system (CRS), that defines a grid over the land surface. Geographical coordinate systems use angular coordinates (degrees latitude and longitude) and model the Earth as a sphere or ellipsoid. Projected coordinate systems, as implied by the name, project all or part of the Earth's surface onto a flat plane by various methods, allowing the use of linear coordinates (e.g. metres).
 
 Different types of projection have different strengths and weaknesses in terms of preserving distance and direction accuracy. Elevation can also be determined from a global model, or a locally calibrated one.
 
@@ -183,7 +183,7 @@ tbl_ss_elevsrc
 
 [G]{.ceg}-type elevation measurements are unlikely to be accurate if a [GR]{.ceg}-type sensor is not being used (see @sec-loc-eq), and may require additional conversion to NZVD2016. However, some specialist GNSS systems can achieve elevation accuracies exceeding ±0.01 m.
 
-The [M]{.ceg} code should be used for most non-Lidar digital elevation models (DEMs), because those available for public use were constructed from interpolated contour data or other methods with comparable vertical accuracy [see @barringer2002; @uuemaa2020]. [M]{.ceg} DEMs can be off by over 10 m in some areas, such as valley floors, where small landscape features are not captured [@barringer2002].
+The [M]{.ceg} code should be used for most non-lidar digital elevation models (DEMs), because those available for public use were constructed from interpolated contour data or other methods with comparable vertical accuracy [see @barringer2002; @uuemaa2020]. [M]{.ceg} DEMs can be off by over 10 m in some areas, such as valley floors, where small landscape features are not captured [@barringer2002].
 
 Where the [A]{.ceg} code is used, the time and location of the most recent altimeter calibration should be noted. Hand-held altimeters can be expected to be accurate to within ±3 m.
 
