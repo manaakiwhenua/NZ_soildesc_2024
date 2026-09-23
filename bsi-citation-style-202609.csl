@@ -14,13 +14,13 @@
     <category citation-format="author-date"/>
     <category field="science"/>
     <summary>Adapted from provided endnote style</summary>
-    <published>2026-03</published>
-    <updated>2026-03-11T06:45:46+00:00</updated>
+    <published>2026-09</published>
+    <updated>2026-09-18T04:44:39+00:00</updated>
   </info>
   <macro name="editor-translator">
     <names variable="editor translator" delimiter="; ">
-      <name name-as-sort-order="all" sort-separator=" " initialize-with="" delimiter=", " delimiter-precedes-last="always"/>
-      <label form="long" prefix=", "/>
+      <name delimiter-precedes-last="always" initialize-with="" name-as-sort-order="all" sort-separator=" "/>
+      <label form="short" prefix=", "/>
     </names>
   </macro>
   <macro name="author">
@@ -62,7 +62,7 @@
       <choose>
         <if type="report" match="any">
           <text variable="genre"/>
-          <text variable="number" suffix="."/>
+          <text variable="number" suffix=","/>
         </if>
       </choose>
       <choose>
@@ -89,7 +89,7 @@
   </macro>
   <macro name="publisher">
     <group delimiter="; ">
-      <group delimiter=": ">
+      <group delimiter=", ">
         <text macro="publisher-place"/>
         <text variable="publisher"/>
       </group>
@@ -112,7 +112,7 @@
   </macro>
   <macro name="pages">
     <label plural="never" suffix=" " variable="page" form="short"/>
-    <text variable="page"/>
+    <text variable="page" text-case="capitalize-first"/>
   </macro>
   <macro name="year-date">
     <date delimiter="" variable="issued">
@@ -120,7 +120,7 @@
     </date>
   </macro>
   <macro name="container">
-    <text variable="container-title" form="short" strip-periods="true"/>
+    <text variable="container-title" strip-periods="true"/>
     <choose>
       <if type="webpage post post-weblog" match="any">
         <text term="internet" prefix=" [" suffix="]" text-case="capitalize-first"/>
@@ -136,7 +136,7 @@
         </group>
       </if>
       <else>
-        <text variable="edition" suffix="."/>
+        <text variable="edition" form="short" suffix="."/>
       </else>
     </choose>
   </macro>
@@ -186,12 +186,11 @@
             <text prefix=" " macro="publisher"/>
           </if>
           <else-if type="chapter paper-conference" match="any">
-            <text term="in" text-case="capitalize-first" suffix=":" prefix=" "/>
             <group prefix=" " delimiter=". ">
               <text macro="editor-translator"/>
               <text macro="container"/>
-              <text variable="volume" prefix="Vol. "/>
               <text macro="edition"/>
+              <text variable="volume" prefix="Vol. "/>
               <group suffix="." delimiter="; ">
                 <text macro="publisher"/>
                 <text macro="pages"/>
@@ -201,7 +200,7 @@
           <else>
             <text macro="editor-translator" suffix="."/>
             <group prefix=" " suffix=".">
-              <text macro="container" suffix="."/>
+              <text macro="container"/>
               <group delimiter=" ">
                 <text macro="cited"/>
                 <group>
@@ -209,7 +208,7 @@
                   <text variable="issue" prefix="(" suffix=")"/>
                 </group>
               </group>
-              <text variable="page" prefix=":"/>
+              <text variable="page" prefix=": "/>
             </group>
           </else>
         </choose>
