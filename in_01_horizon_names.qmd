@@ -309,46 +309,6 @@ tbl_hr_hortwob <- gt(dat_hr_hortwob) |>
 tbl_hr_hortwob
 ```
 
-### Transitional horizons {#sec-hor-tran}
-
-Two main kinds of transitional horizons are distinguished by specific conventions.
-
--  Transitional horizons having properties of two master horizons, as in gradational horizons in vertical sequence (e.g. Ap-AB-Bw). In other cases a horizon can be designated as transitional even if one of the master horizons to which it is apparently transitional is not present. For example, an AB horizon can be recognised where the underlying layer is bedrock (R), and a BC horizon can be recognised even if no underlying C horizon is identified. Lower-case suffixes (see @sec-hor-redox and @sec-hor-other) are used following the two capital letters where the property denoted by the suffix applies to the whole horizon (e.g. ABg, BCt, BCx).
--  Transitional horizons in which discrete parts have recognisable properties of two kinds of master horizon (e.g. where pieces of A horizon are incorporated in a B horizon, or where horizons interfinger). In this case the horizon is designated by two capital letters separated by a solidus (e.g. B/C). Appropriate suffixes should be used where the components of the material are clearly identifiable (e.g. Ap/Bw).
-
-For simplicity the capital letters for all transitional horizons are used in the order A, E, B, C, irrespective of which properties dominate. For example, all horizons transitional between A and B horizons are designated AB or A/B, with suffixes as appropriate.
-
-```{r}
-#| label: tbl-hr-hortra
-#| tbl-cap: "Common transitional horizons"
-
-dat_hr_hortwoc <-
-  tribble(~Code, ~Description,
-          'A/B', 'A transitional horizon at the interface between the A and B horizons, where substantial biological mixing or dense, shrink–swell cracking has produced a horizon with distinct but intermingled zones of A and B horizon material. More than one-third of the material is clearly identifiable as originating from the overlying A horizon. The B horizon material may qualify as Bo, Bs, Bw or Bt and may or may not also have a redox suffix applied (e.g. Apg/Bg).',
-          'AB', 'A horizon transitional in character between an A and a B horizon, usually below an A horizon. It is distinguished from a B horizon by any or all of: having a darker colour due to relatively elevated organic matter, having less-developed structural units, and/or having a structure closer in character to the overlying A horizon. An AB horizon may also lack secondary features expressed lower in the B horizon, or show weaker development of the same.',
-          'BC', "A horizon transitional in character between a B and a C horizon, usually below a B horizon. It is distinguished from a B horizon in similar material by lacking some required characteristic of colour, pedality or degree of weathering. It differs from a C horizon by having some B horizon feature, albeit weakly expressed.
-Note that a BC horizon can be identified in a profile without needing to first identify an overlying B (e.g. a horizon sequence of A-BC-C down-profile).",
-          'CR', "A weakly consolidated C horizon that is sufficiently dense and coherent to form a significant barrier to roots. Soft rocks (with a hardness on Moh's scale of <3), such as shale and siltstone and some exceptionally dense glacial tills and pyroclastic deposits, are included. The material can be dug with difficulty with a spade when moist.
-
-The concept of the CR horizon is similar to that of the material underlying a paralithic contact, but without the restrictive requirement for the spacing of cracks.")
-
-tbl_hr_hortwoc <- gt(dat_hr_hortwoc) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  tab_style(style = "vertical-align:top",
-            locations = cells_body(columns = c(1, 2))) |>
-  cols_width(Code ~pct(10))
-
-tbl_hr_hortwoc
-```
 
 ## Redox suffixes {#sec-hor-redox}
 
@@ -390,12 +350,13 @@ tbl_hr_horredox <- gt(dat_hr_horredox) |>
 tbl_hr_horredox
 ```
 
-The suffixes in @tbl-hr-horredox can be added to most primary or secondary horizon designations (e.g. Bg, Btg). Some exceptions exist:
+Rule for use follow.
 
+-   Only choose one redox suffix per horizon, if needed (e.g. Bg); the definitions are mutually exclusive.
 -   g and r suffixes cannot be used with Ea, Ew or Bw horizons because they are partly defined by their development under well-aerated conditions and so will not have enough low-chroma colours in the matrix or on ped faces to qualify.
--   The g suffix can be added to A horizons in cases where ≥2% redox segregations occur (e.g. Ahg, Apg). A horizons are expected to be low-chroma from elevated organic matter, so do not meet the requirements for (f) or (g) suffixes. The use of the g suffix in A horizons may not necessarily signify *strong* reduction.
+-   only the g suffix can be added to A horizons, in cases where ≥2% redox segregations occur. This is because A horizons are expected to be low-chroma from elevated organic matter, so do not meet the requirements for (f) or (g) suffixes. The use of the g suffix in A horizons may not necessarily signify *strong* reduction.
 
-@tbl-hr-rdrules summarises the colour and redox segregation requirements in @tbl-hr-horredox for quick reference.
+For further discussion about assessing redox intensity in soils, see @sec-in-drng. @tbl-hr-rdrules summarises the colour and redox segregation requirements in @tbl-hr-horredox for quick reference.
 
 ```{r}
 #| label: tbl-hr-rdrules
@@ -500,6 +461,47 @@ tbl_hr_horother <- gt(dat_hr_horother) |>
   cols_width(Code ~pct(10), Name ~pct(20), usewith ~pct(20))
 
 tbl_hr_horother
+```
+
+## Transitional horizons {#sec-hor-tran}
+
+Two main kinds of transitional horizons are distinguished by specific conventions.
+
+-  Transitional horizons having properties of two master horizons, as in gradational horizons in vertical sequence (e.g. Ap-AB-Bw). In other cases a horizon can be designated as transitional even if one of the master horizons to which it is apparently transitional is not present. For example, an AB horizon can be recognised where the underlying layer is bedrock (R), and a BC horizon can be recognised even if no underlying C horizon is identified. Lower-case suffixes (see @sec-hor-redox and @sec-hor-other) are used following the two capital letters where the property denoted by the suffix applies to the whole horizon (e.g. ABg, BCt, BCx).
+-  Transitional horizons in which discrete parts have recognisable properties of two kinds of master horizon (e.g. where pieces of A horizon are incorporated in a B horizon, or where horizons interfinger). In this case the horizon is designated by two capital letters separated by a solidus (e.g. B/C). Appropriate suffixes should be used where the components of the material are clearly identifiable (e.g. Ap/Bw).
+
+For simplicity the capital letters for all transitional horizons are used in the order A, E, B, C, irrespective of which properties dominate. For example, all horizons transitional between A and B horizons are designated AB or A/B, with suffixes as appropriate.
+
+```{r}
+#| label: tbl-hr-hortra
+#| tbl-cap: "Common transitional horizons"
+
+dat_hr_hortwoc <-
+  tribble(~Code, ~Description,
+          'A/B', 'A transitional horizon at the interface between the A and B horizons, where substantial biological mixing or dense, shrink–swell cracking has produced a horizon with distinct but intermingled zones of A and B horizon material. More than one-third of the material is clearly identifiable as originating from the overlying A horizon. The B horizon material may qualify as Bo, Bs, Bw or Bt and may or may not also have a redox suffix applied (e.g. Apg/Bg).',
+          'AB', 'A horizon transitional in character between an A and a B horizon, usually below an A horizon. It is distinguished from a B horizon by any or all of: having a darker colour due to relatively elevated organic matter, having less-developed structural units, and/or having a structure closer in character to the overlying A horizon. An AB horizon may also lack secondary features expressed lower in the B horizon, or show weaker development of the same.',
+          'BC', "A horizon transitional in character between a B and a C horizon, usually below a B horizon. It is distinguished from a B horizon in similar material by lacking some required characteristic of colour, pedality or degree of weathering. It differs from a C horizon by having some B horizon feature, albeit weakly expressed.
+Note that a BC horizon can be identified in a profile without needing to first identify an overlying B (e.g. a horizon sequence of A-BC-C down-profile).",
+          'CR', "A weakly consolidated C horizon that is sufficiently dense and coherent to form a significant barrier to roots. Soft rocks (with a hardness on Moh's scale of <3), such as shale and siltstone and some exceptionally dense glacial tills and pyroclastic deposits, are included. The material can be dug with difficulty with a spade when moist.
+
+The concept of the CR horizon is similar to that of the material underlying a paralithic contact, but without the restrictive requirement for the spacing of cracks.")
+
+tbl_hr_hortwoc <- gt(dat_hr_hortwoc) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  tab_style(style = "vertical-align:top",
+            locations = cells_body(columns = c(1, 2))) |>
+  cols_width(Code ~pct(10))
+
+tbl_hr_hortwoc
 ```
 
 ## Numbering similar horizons {#sec-hzn-num}
