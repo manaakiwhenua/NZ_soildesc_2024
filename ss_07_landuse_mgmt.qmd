@@ -6,7 +6,7 @@ library(tibble)
 library(gt)
 ```
 
-Land cover is the physical cover over the soil, both natural and human made. Land use is the purpose(s) for which the land is used and provides context for why a particular land cover is present. Land management describes specific activities that affect land cover, and are driven by land use.
+Land cover is the physical cover over the soil, both natural and human-made. Land use is the purpose(s) for which the land is used and provides context for why a particular land cover is present. Land management describes specific activities that affect land cover and are driven by land use.
 
 Land cover, use, and management information can be captured as part of soil description when it is relevant to interpreting the landscape, landform, site, and soil profile, and especially where it is likely to have affected the soil classification. Land-use and management practice data are particularly important for long-term monitoring sites, where uses may change significantly between sampling events. Specific recording requirements for routine survey work are listed in @sec-ss-cvusmg.
 
@@ -14,7 +14,7 @@ Land cover, use, and management information can be captured as part of soil desc
 
 Land cover in New Zealand is monitored using the Land Cover Database [LCDB, @manaakiwhenualandcareresearchLCDBV60Land2025a]. The database is used to publish a semi-automated map of land cover, derived from satellite imagery, with a minimum unit size of 1 ha. The LCDB categories can also be applied on-ground. 
 
-The categories are listed below, excluding some where it would be physically impossible to observe the soil. The first six are currently mapped to over 80% of New Zealand's land area and so are the ones most likely to be encountered.
+The categories are listed below, excluding some where it would be physically impossible to observe the soil. The first six (see @tbl-ss-lcdb) are currently mapped to over 80% of New Zealand's land area and so are the ones most likely to be encountered. The full set of category definitions is available in @manaakiwhenualandcareresearchNewZealandLand2025a. 
 
 ```{r}
 #| label: tbl-ss-lcdb
@@ -27,30 +27,7 @@ dat_ss_lcdb <-
           43, 'Tall Tussock Grassland', 'Indigenous snow tussocks in mainly alpine mountain-lands and red tussock in the central North Island and locally in poorly-drained valley floors, terraces and basins of both islands.',
           52, 'Mānuka and/or Kānuka', 'Scrub dominated by mānuka and/or kānuka.',
           69, 'Indigenous Forest', 'Tall forest dominated by indigenous conifer, broadleaved or beech species.',
-          71, 'Exotic Forest', 'Planted or naturalised forest.',
-          1, 'Built-up Area (settlement)', 'Commercial, industrial or residential buildings, including associated infrastructure and amenities, not resolvable as other classes. Low density \'lifestyle\' residential areas are included where hard surfaces, landscaping and gardens dominate other land covers.',
-          2, 'Urban Parkland/Open Space', 'Open, mainly grassed or sparsely-treed, amenity, utility and recreation areas. The class includes parks and playing fields, public gardens, cemeteries, golf courses, berms and other vegetated areas usually within or associated with built-up areas.',
-          6, 'Surface Mine or Dump', 'Bare surfaces arising from open-cast and other surface mining activities, quarries, gravel-pits and areas of solid waste disposal such as refuse dumps, clean-fill dumps and active reclamation sites.',
-          10, 'Sand or Gravel', 'Bare surfaces dominated by unconsolidated materials generally finer than coarse gravel (60 mm). Typically mapped along sandy seashores and the margins of lagoons and estuaries, lakes and rivers and some areas subject to surficial erosion, soil toxicity and extreme exposure.',
-          12, 'Landslide', 'Bare surfaces arising from mass-movement erosion generally in mountain-lands and steep hill-country.',
-          15, 'Alpine Grass/Herbfield', 'Typically, sparse communities above the actual or theoretical treeline dominated by herbaceous cushion, mat, turf, and rosette plants and lichens. Grasses are a minor or infrequent component, whereas stones, boulders and bare rock are usually conspicuous.',
-          30, 'Short-rotation Cropland', 'Land regularly cultivated for the production of cereal, root, and seed crops, vegetables, strawberries and field nurseries, often including intervening grassland, fallow land, and other covers not delineated separately',
-          33, 'Orchards, Vineyards or Other Perennial Crops', 'Land managed for the production of grapes, pip, citrus and stone fruit, nuts, olives, berries, kiwifruit, and other perennial crops.',
-          44, 'Depleted Grassland', 'Areas, of mainly former short tussock grassland in the drier eastern South Island high country, degraded by over-grazing, fire, rabbits and weed invasion among which Hieracium species are conspicuous. Short tussocks usually occur, as do exotic grasses, but bare ground is more prominent.',
-          45, 'Herbaceous Freshwater Vegetation', 'Herbaceous wetland communities occurring in freshwater habitats where the water table is above or just below the substrate surface for most of the year. The class includes rush, sedge, restiad, and sphagnum communities and other wetland species, but not flax nor willows which are mapped as Flaxland and Deciduous Hardwoods respectively.',
-          46, 'Herbaceous Saline Vegetation', 'Herbaceous wetland communities occurring in saline habitats subject to tidal inundation or saltwater intrusion. Commonly includes club rush, wire rush and glasswort, but not mangrove which is mapped separately.',
-          47, 'Flaxland', 'Areas dominated by New Zealand flax usually swamp flax (harakeke) but occasionally mountain flax (wharariki) on cliffs and mountain slopes.',
-          50, 'Fernland', 'Bracken fern, umbrella fern, or ring fern, commonly on sites with low fertility and a history of burning. Mānuka, gorse, and/or other shrubs are often a component of these communities.',
-          51, 'Gorse and/or Broom', 'Scrub communities dominated by gorse or Scotch broom.',
-          54, 'Broadleaved Indigenous Hardwoods', 'Lowland scrub communities dominated by indigenous mixed broadleaved shrubs such as wineberry, mahoe, five-finger, *Pittosporum* spp, fuchsia, tutu, titoki and tree ferns. This class is usually indicative of advanced succession toward indigenous forest.', 
-          55, 'Sub Alpine Shrubland', 'Highland scrub dominated by indigenous low-growing shrubs including species of *Hebe*, *Dracophyllum*, *Olearia*, and *Cassinia*. This class is also recorded where temperature inversions have created cooler micro-climates at lower elevations e.g. the \'frost flats\' of the central North Island.',
-          56, 'Mixed exotic shrubland', 'Communities of introduced shrubs and climbers such as boxthorn, hawthorn, elderberry, blackberry, sweet briar, buddleja, and old man\'s beard.',
-          58, 'Matagouri or Grey Scrub', 'Scrub and shrubland comprising small-leaved, often divaricating shrubs such as matagouri, *Coprosma* spp., *Muehlenbeckia* spp., *Cassinia* spp., and *Parsonsia* spp. These, from a distance, often have a grey appearance.',
-          64, 'Forest - Harvested', 'Predominantly bare ground arising from the harvesting of exotic forest or, less commonly, the clearing of indigenous forest.',
-          68, 'Deciduous Hardwoods', 'Exotic deciduous woodlands, predominantly of willows or poplars but also of oak, elm, ash or other species. Commonly alongside inland water (or as part of wetlands), or as erosion-control, shelter and amenity plantings.',
-          70, 'Mangrove', 'Shrubs or small trees of the New Zealand mangrove (*Avicennia marina* subspecies *australascia*).',
-          80, 'Peat Shrubland (Chatham Is)', 'Low-growing shrubland communities usually dominated by *Dracophyllum* spp. in association with *Cyathodes* spp. and ground ferns. Mapped only on the Chatham Islands.',
-          81, 'Dune Shrubland (Chatham Is)', 'Low-growing shrubland communities dominated by *Leucopogon* spp., *Pimelia arenaria* and *Coprosma* spp., in association with sedges and scattered herbs and grasses. Mapped only on the Chatham Islands.')
+          71, 'Exotic Forest', 'Planted or naturalised forest.')
           
 tbl_ss_lcdb <- gt(dat_ss_lcdb) |>
   tab_options(
@@ -80,7 +57,7 @@ New Zealand currently lacks an official land use classification framework, but a
 
 Land-use classification does not have to be carried out in the field provided adequate supporting information (e.g. notes and photographs) are available for later use. Given that the NZLUM is expected to evolve over time, the observation date can be used to infer the edition in use.
 
-![Overview of the NZLUM categories at version 0.3 (Source: reproduced from @manaakiwhenualandcareresearch)](data/nzlum_snip.png){#fig-ss-nzlum .lightbox fig-alt="A diagram of the New Zealand Land Use Management (NZLUM) system, v 0.3" width="95%"}
+![Overview of the NZLUM categories at version 0.4.0 (Source: https://nzlum.landcareresearch.co.nz/)](data/nzlum_v0.4.0_summary.svg){#fig-ss-nzlum .lightbox fig-alt="A diagram of the New Zealand Land Use Management (NZLUM) system, v 0.4.0" width="95%"}
 
 ## Land management {#sec-lman}
 
