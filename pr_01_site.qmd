@@ -148,7 +148,7 @@ Some of these methods can be used in a sequence that progressively narrows down 
 Estimating the number of profile descriptions required to complete a project and choosing an optimal sampling strategy are outside the scope of this document. Advice on these topics can be found in @grealish2017 and @mckenzie2008.
 :::
 
-### Exposure type {#sec-pr-exptype}
+### Profile exposure method {#sec-pr-exptype}
 
 The method by which the soil was exposed for observation affects which parameters can be recorded, or at least recorded reliably. Record the profile exposure method using one of the options in @tbl-pr-gear.
 
@@ -225,15 +225,13 @@ tbl_ss_stoppage <- gt(dat_ss_stoppage) |>
 tbl_ss_stoppage
 ```
 
-## Profile description setting {#sec-ss-set}
+## Setting {#sec-ss-set}
 
-With the reference data established, the next task is to describe the profile's location in relation to its setting. As noted in earlier chapters, some of these parameters can be recorded remotely or after fieldwork, by referring to notes and photographs.
-
-The following requirements comprise a minimum data set for any soil profile description. Data are gathered at the site scale. Further measurements are taken when observing the land surface (@sec-pr-surface).
+With the reference data established, the next task is to describe the profile's location in relation to its setting. As noted in earlier chapters, some of these parameters can be recorded remotely or after fieldwork, by referring to notes and photographs. Further measurements are taken when observing the land surface (@sec-pr-surface).
 
 ### Location {#sec-ss-recloc}
 
-Location coordinates are captured as reference data (@sec-ref-loc). Also, record elevation in metres, and note the sensor or data source used to obtain location and elevation data using @tbl-ss-locsrc and @tbl-ss-elevsrc, respectively. If the equipment in use does not estimate expected error automatically, estimate it manually.
+Location coordinates are captured as reference data (@sec-ref-loc). For routine and detailed descriptions, record elevation in metres along with expected error, and record the sensor or data source used to obtain location and elevation data using @tbl-ss-locsrc and @tbl-ss-elevsrc, respectively. If the equipment in use does not estimate expected error automatically, estimate it manually.
 
 **For example:** use [1586090E, 5405722N ± 3 GS (462 ± 5 m A)]{.ceg} for a location obtained using a smartphone, and an elevation measured with a calibrated altimeter.
 
@@ -241,29 +239,39 @@ When establishing a monitoring location, record additional data relevant to relo
 
 ### Geomorphology {#sec-ss-recgmph}
 
-Record one each of landscape and landform using the codes in @tbl-gmph-lsnames, @tbl-gmph-lfnames respectively. If relevant, note any significant structural control on the landscape using @tbl-hr-slopeenc. 
+Record the landscape using a code from @tbl-gmph-lsnames. If relevant, note any significant structural control on the landscape using @tbl-hr-slopeenc. 
 
-For detailed sites, record the landform's slope and orientation, then record the landform element using @tbl-gmph-elnames, including any necessary modifiers available in @tbl-hr-slopeinc and @tbl-hr-slopeenc. These parameters are optional for routine descriptions.
+Record the landform using a code from @tbl-gmph-lfnames. For detailed descriptions, record the landform's slope and orientation as median and range in whole degrees. This is optional for routine descriptions. 
 
-**For example:** use [Te Fn Sl]{.ceg} for a site on the side of a low-angle fan at the back of a terrace.
+For detailed descriptions, record the landform element's morphology according to @sec-gmph-lfmelem. 
 
-Optional detail may be added to the landscape description using the options in @sec-gmph-lscpar, and to the landform using the options in @sec-gmph-lfmdsc.
+**For example:** use [Te Fn Sl]{.ceg} for a profile description made on the side of a low-angle fan at the back of a terrace.
 
 ### Parent material {#sec-ss-pm}
 
-Record the dominant parent material origin (@tbl-ss-pmo) and lithology (@tbl-ss-pm).
+For rapid descriptions, record the dominant lithology as rock type at the profile (i.e. the rock type comprising the parent materials of the fine earth, as well as any profile stone) using a rock type code from @tbl-ss-pm. If in doubt, use a rock composition code. For clastic sedimentary rocks, record any relevant modifiers using the codes in @tbl-ss-ss.
 
-**For example:** use [Tp RHYL]{.ceg} for a landform blanketed in rhyolitic tephra.
+If subsolum material is encountered in the profile and its dominant lithology is not the same as the profile lithology, record it separately.
+
+Record the parent material origin code (@tbl-ss-pmo) for the materials encountered, again recording separately if the solum and subsolum contrast. 
+
+**For example:** use [RHYL Tp]{.ceg} for a landform blanketed in rhyolitic tephra.
+
+For routine and detailed descriptions, parent material lithology and origin are recorded on a per-horizon basis – see @sec-pr-pm.
 
 ### Climate and weather {#sec-ss-clw}
 
-Record the current weather using an option from @tbl-ss-weatherc, and note the temperature (optional). For routine or detailed recording, describe any recent rainfall using @tbl-ss-weatherp.
+For rapid descriptions, record the current weather using a code from @tbl-ss-weatherc, and record the air temperature (this may be estimated).
+
+For routine descriptions, also record recent rainfall using a code from @tbl-ss-weatherp. If possible, for detailed descriptions record the number of days since the last rainfall event and the total mm in the previous 24 hours.
 
 **For example:** use [SU 21°C, NW]{.ceg} for fine weather with no rainfall in the previous week.
 
 ### Biota {#sec-ss-bio}
 
-For rapid assessment of vegetation, record the LCDB cover class (see @sec-ss-cvusmg). For routine work, record the dominant LUC vegetation class [see @lynn2009, Appendix 3]. For detailed work, complete a RECCE description.
+The LCDB cover class is sufficient for rapid vegetation description (see @sec-lcov).
+
+For routine descriptions, record the dominant LUC vegetation class. For detailed descriptions, complete a separate RECCE description (see @sec-veg).
 
 **For example:** use [fP]{.ceg} for a profile description made in a podocarp forest.
 
@@ -271,11 +279,15 @@ Direct assessment of earthworm presence in the topsoil is sometimes desired [@sh
 
 ### Land cover, use, and management {#sec-ss-cvusmg}
 
-Record the current dominant land-cover class using an option from @sec-lcov. Record the dominant land use using an option from @fig-ss-nzlum. Ancillary land uses may also be recorded if they are impacting the soil profile.
+Record the land cover at the profile using one of the LCDB cover classes (see @sec-lcov). 
+
+Record the main land use using the NZLUM classification (see @sec-luse), to at least level 2 for rapid descriptions.
+
+For routine or detailed descriptions, record to level 3. Ancillary land uses may also be recorded if they are impacting the soil profile.
 
 **For example:** use [2.7.3]{.ceg} for a profile description made in a paddock on a dairy farm that is regularly receiving waste water.
 
-Prior land uses may be recorded if they are known and are considered to have been capable of affecting the profile (e.g. cropping prior to vineyard conversion). Time since land-use change should also be noted.
+Prior land uses may be recorded if they are known and are considered to have been capable of affecting the profile (e.g. cropping prior to vineyard conversion). Time since land-use change should also be recorded
 
 Land management activities (current and past, where known) should be noted in free text when they are considered to be affecting the soil profile. Minimise the use of jargon and clearly separate information on current and past land uses.
 
