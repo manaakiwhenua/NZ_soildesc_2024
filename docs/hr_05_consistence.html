@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>16&nbsp; Consistence – Soil Description Handbook for New Zealand</title>
+<title>16&nbsp; Consistence – Soil description handbook for New Zealand</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -64,6 +64,9 @@ div.csl-indent {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -91,10 +94,6 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<meta name="mermaid-theme" content="neutral">
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -124,10 +123,10 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Soil Description Handbook for New Zealand</a> 
+      <a href="./">Soil description handbook for New Zealand</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/manaakiwhenua/NZ_soildesc_2024" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./MWLR_2024_DRAFT_soil-description-handbook.docx" title="Download Docx" class="quarto-navigation-tool px-1" aria-label="Download Docx"><i class="bi bi-file-word"></i></a>
+    <a href="./BSI_2026_nz-soil-description-handbook.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -226,7 +225,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pr_01_site.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The soil site</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Profile description</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -238,7 +237,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pr_03_horizons.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Defining soil horizons</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Soil profile</span></span></a>
   </div>
 </li>
       </ul>
@@ -285,7 +284,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hr_06_chemical_properties.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Chemical properties</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field tests</span></span></a>
   </div>
 </li>
       </ul>
@@ -321,6 +320,12 @@ div.csl-indent {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -354,32 +359,20 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ap_data_model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Data model</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./ap_classification.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Classifying numeric measures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Classifying numeric measures</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ap_compat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Cross-compatibility</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Cross-compatibility</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ap_province.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Land provinces</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./changelog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Changes in the third edition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Land provinces</span></span></a>
   </div>
 </li>
       </ul>
@@ -410,7 +403,7 @@ div.csl-indent {
   <li><a href="#sec-cn-strr" id="toc-sec-cn-strr" class="nav-link" data-scroll-target="#sec-cn-strr"><span class="header-section-number">16.3.3</span> Remoulded soil strength</a></li>
   </ul></li>
   <li><a href="#sec-cn-fail" id="toc-sec-cn-fail" class="nav-link" data-scroll-target="#sec-cn-fail"><span class="header-section-number">16.4</span> Mode of failure</a></li>
-  <li><a href="#sec-cn-pack" id="toc-sec-cn-pack" class="nav-link" data-scroll-target="#sec-cn-pack"><span class="header-section-number">16.5</span> Particle Packing</a></li>
+  <li><a href="#sec-cn-pack" id="toc-sec-cn-pack" class="nav-link" data-scroll-target="#sec-cn-pack"><span class="header-section-number">16.5</span> Particle packing</a></li>
   <li><a href="#sec-cn-pres" id="toc-sec-cn-pres" class="nav-link" data-scroll-target="#sec-cn-pres"><span class="header-section-number">16.6</span> Penetration resistance</a></li>
   <li><a href="#sec-cn-sens" id="toc-sec-cn-sens" class="nav-link" data-scroll-target="#sec-cn-sens"><span class="header-section-number">16.7</span> Sensitivity</a></li>
   <li><a href="#sec-cn-pla" id="toc-sec-cn-pla" class="nav-link" data-scroll-target="#sec-cn-pla"><span class="header-section-number">16.8</span> Plasticity</a></li>
@@ -439,7 +432,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 27, 2026</p>
+      <p class="date-modified">September 11, 2026</p>
     </div>
   </div>
     
@@ -452,15 +445,15 @@ div.csl-indent {
 
 <section id="sec-cons-bg" class="level2" data-number="16.1">
 <h2 data-number="16.1" class="anchored" data-anchor-id="sec-cons-bg"><span class="header-section-number">16.1</span> Background</h2>
-<p>Consistence is a general term for the field-assessed behaviour of soil materials in response to applied physical stress over a range of soil-water states from wet to dry. The consistence properties described for mineral soil materials are strength, failure, fluidity, penetration resistance, packing, sensitivity, induration, plasticity, stickiness, dilatancy, and dry coherence. For organic materials, rubbed fibre content is relevant.</p>
+<p>‘Consistence’ is a general term for the field-assessed behaviour of soil materials in response to applied physical stress over a range of soil-water states from wet to dry. The consistence properties described for mineral soil materials are strength, failure, fluidity, penetration resistance, packing, sensitivity, induration, plasticity, stickiness, dilatancy, and dry coherence. For organic materials, rubbed fibre content is relevant.</p>
 <section id="sec-cons-bg-swc" class="level3" data-number="16.1.1">
 <h3 data-number="16.1.1" class="anchored" data-anchor-id="sec-cons-bg-swc"><span class="header-section-number">16.1.1</span> Soil-water content</h3>
-<p>Some consistence properties (strength, failure, penetration resistance) vary markedly with soil-water content. The soil moisture status of the material should therefore be recorded at the time of description (see <a href="pr_03_horizons.html#sec-pr-sws" class="quarto-xref"><span>Section 11.6</span></a>) . Consistence descriptions on the same soils at different moisture states allow the change in consistence with moisture to be described. Other consistence properties are described at reference water contents.</p>
+<p>Some consistence properties (strength, failure, penetration resistance) vary markedly with soil-water content. The soil moisture status of the material should therefore be recorded at the time of description (see <a href="pr_03_horizons.html#sec-pr-sws" class="quarto-xref"><span>Section 11.6</span></a>) . Consistence descriptions of the same soils at different moisture states allow the change in consistence with moisture to be described. Other consistence properties are described at reference water contents.</p>
 </section>
 <section id="sec-cons-bg-samp" class="level3" data-number="16.1.2">
 <h3 data-number="16.1.2" class="anchored" data-anchor-id="sec-cons-bg-samp"><span class="header-section-number">16.1.2</span> Sampling for consistence tests</h3>
-<p>Consistence tests should be performed down-profile, with at least one sample tested per horizon. Samples should be taken from the mid-point of each horizon. Additional samples in transition zones may also be of interest. For most of these tests, a 30&nbsp;mm sample cube of soil (27&nbsp;cm<sup>3</sup>) must be carefully extracted, preferably with a sharp knife. Keeping the sample size and shape consistent helps produce consistent results. Tests which involve remoulding the soil may use smaller volumes, but must use no less than ~3 cm<sup>3</sup> (a 15&nbsp;mm cube).</p>
-<p>Within each horizon, the consistence tests that can and should be undertaken will depend on the cohesion (<a href="#sec-dn-prep" class="quarto-xref"><span>Section 16.2</span></a>) of the soil materials in that horizon. <a href="#tbl-cn-ct" class="quarto-xref">Table&nbsp;<span>16.1</span></a> illustrates which tests are appropriate for different soil materials.</p>
+<p>Consistence tests should be performed down-profile, with at least one sample tested per horizon. Samples should be taken from the mid-point of each horizon. Additional samples in transition zones may also be of interest. For most of these tests, a 30&nbsp;mm sample cube of soil (27&nbsp;cm<sup>3</sup>) must be carefully extracted, preferably with a sharp knife. Keeping the sample size and shape consistent helps produce consistent results. Tests that involve remoulding the soil may use smaller volumes, but must use no less than ~3 cm<sup>3</sup> (a 15&nbsp;mm cube).</p>
+<p>Within each horizon the consistence tests that can and should be undertaken will depend on the cohesion (<a href="#sec-dn-prep" class="quarto-xref"><span>Section 16.2</span></a>) of the soil materials in that horizon. <a href="#tbl-cn-ct" class="quarto-xref">Table&nbsp;<span>16.1</span></a> illustrates which tests are appropriate for different soil materials.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-cn-ct" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -469,23 +462,23 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
 </figcaption>
 <div aria-describedby="tbl-cn-ct-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="oeyrzmhnkx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#oeyrzmhnkx table {
+<div id="awqxvdzqun" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#awqxvdzqun table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#oeyrzmhnkx thead, #oeyrzmhnkx tbody, #oeyrzmhnkx tfoot, #oeyrzmhnkx tr, #oeyrzmhnkx td, #oeyrzmhnkx th {
+#awqxvdzqun thead, #awqxvdzqun tbody, #awqxvdzqun tfoot, #awqxvdzqun tr, #awqxvdzqun td, #awqxvdzqun th {
   border-style: none;
 }
 
-#oeyrzmhnkx p {
+#awqxvdzqun p {
   margin: 0;
   padding: 0;
 }
 
-#oeyrzmhnkx .gt_table {
+#awqxvdzqun .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -511,12 +504,12 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   border-left-color: #D3D3D3;
 }
 
-#oeyrzmhnkx .gt_caption {
+#awqxvdzqun .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#oeyrzmhnkx .gt_title {
+#awqxvdzqun .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -528,7 +521,7 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   border-bottom-width: 0;
 }
 
-#oeyrzmhnkx .gt_subtitle {
+#awqxvdzqun .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -540,7 +533,7 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   border-top-width: 0;
 }
 
-#oeyrzmhnkx .gt_heading {
+#awqxvdzqun .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -552,13 +545,13 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   border-right-color: #D3D3D3;
 }
 
-#oeyrzmhnkx .gt_bottom_border {
+#awqxvdzqun .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#oeyrzmhnkx .gt_col_headings {
+#awqxvdzqun .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -573,7 +566,7 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   border-right-color: #D3D3D3;
 }
 
-#oeyrzmhnkx .gt_col_heading {
+#awqxvdzqun .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -593,7 +586,7 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   overflow-x: hidden;
 }
 
-#oeyrzmhnkx .gt_column_spanner_outer {
+#awqxvdzqun .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -605,15 +598,15 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   padding-right: 4px;
 }
 
-#oeyrzmhnkx .gt_column_spanner_outer:first-child {
+#awqxvdzqun .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#oeyrzmhnkx .gt_column_spanner_outer:last-child {
+#awqxvdzqun .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#oeyrzmhnkx .gt_column_spanner {
+#awqxvdzqun .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -625,11 +618,11 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   width: 100%;
 }
 
-#oeyrzmhnkx .gt_spanner_row {
+#awqxvdzqun .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#oeyrzmhnkx .gt_group_heading {
+#awqxvdzqun .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -655,7 +648,7 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   text-align: left;
 }
 
-#oeyrzmhnkx .gt_empty_group_heading {
+#awqxvdzqun .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -670,15 +663,15 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   vertical-align: middle;
 }
 
-#oeyrzmhnkx .gt_from_md > :first-child {
+#awqxvdzqun .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#oeyrzmhnkx .gt_from_md > :last-child {
+#awqxvdzqun .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#oeyrzmhnkx .gt_row {
+#awqxvdzqun .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -697,7 +690,7 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   overflow-x: hidden;
 }
 
-#oeyrzmhnkx .gt_stub {
+#awqxvdzqun .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -710,7 +703,7 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   padding-right: 5px;
 }
 
-#oeyrzmhnkx .gt_stub_row_group {
+#awqxvdzqun .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -724,15 +717,15 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   vertical-align: top;
 }
 
-#oeyrzmhnkx .gt_row_group_first td {
+#awqxvdzqun .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#oeyrzmhnkx .gt_row_group_first th {
+#awqxvdzqun .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#oeyrzmhnkx .gt_summary_row {
+#awqxvdzqun .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -742,16 +735,16 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   padding-right: 5px;
 }
 
-#oeyrzmhnkx .gt_first_summary_row {
+#awqxvdzqun .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#oeyrzmhnkx .gt_first_summary_row.thick {
+#awqxvdzqun .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#oeyrzmhnkx .gt_last_summary_row {
+#awqxvdzqun .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -761,7 +754,7 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   border-bottom-color: #D3D3D3;
 }
 
-#oeyrzmhnkx .gt_grand_summary_row {
+#awqxvdzqun .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -771,7 +764,7 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   padding-right: 5px;
 }
 
-#oeyrzmhnkx .gt_first_grand_summary_row {
+#awqxvdzqun .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -781,7 +774,7 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   border-top-color: #D3D3D3;
 }
 
-#oeyrzmhnkx .gt_last_grand_summary_row_top {
+#awqxvdzqun .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -791,11 +784,11 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   border-bottom-color: #D3D3D3;
 }
 
-#oeyrzmhnkx .gt_striped {
+#awqxvdzqun .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#oeyrzmhnkx .gt_table_body {
+#awqxvdzqun .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -804,7 +797,7 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   border-bottom-color: #D3D3D3;
 }
 
-#oeyrzmhnkx .gt_footnotes {
+#awqxvdzqun .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -818,7 +811,7 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   border-right-color: #D3D3D3;
 }
 
-#oeyrzmhnkx .gt_footnote {
+#awqxvdzqun .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -827,7 +820,7 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   padding-right: 5px;
 }
 
-#oeyrzmhnkx .gt_sourcenotes {
+#awqxvdzqun .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -841,7 +834,7 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   border-right-color: #D3D3D3;
 }
 
-#oeyrzmhnkx .gt_sourcenote {
+#awqxvdzqun .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -849,72 +842,72 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
   padding-right: 5px;
 }
 
-#oeyrzmhnkx .gt_left {
+#awqxvdzqun .gt_left {
   text-align: left;
 }
 
-#oeyrzmhnkx .gt_center {
+#awqxvdzqun .gt_center {
   text-align: center;
 }
 
-#oeyrzmhnkx .gt_right {
+#awqxvdzqun .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#oeyrzmhnkx .gt_font_normal {
+#awqxvdzqun .gt_font_normal {
   font-weight: normal;
 }
 
-#oeyrzmhnkx .gt_font_bold {
+#awqxvdzqun .gt_font_bold {
   font-weight: bold;
 }
 
-#oeyrzmhnkx .gt_font_italic {
+#awqxvdzqun .gt_font_italic {
   font-style: italic;
 }
 
-#oeyrzmhnkx .gt_super {
+#awqxvdzqun .gt_super {
   font-size: 65%;
 }
 
-#oeyrzmhnkx .gt_footnote_marks {
+#awqxvdzqun .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#oeyrzmhnkx .gt_asterisk {
+#awqxvdzqun .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#oeyrzmhnkx .gt_indent_1 {
+#awqxvdzqun .gt_indent_1 {
   text-indent: 5px;
 }
 
-#oeyrzmhnkx .gt_indent_2 {
+#awqxvdzqun .gt_indent_2 {
   text-indent: 10px;
 }
 
-#oeyrzmhnkx .gt_indent_3 {
+#awqxvdzqun .gt_indent_3 {
   text-indent: 15px;
 }
 
-#oeyrzmhnkx .gt_indent_4 {
+#awqxvdzqun .gt_indent_4 {
   text-indent: 20px;
 }
 
-#oeyrzmhnkx .gt_indent_5 {
+#awqxvdzqun .gt_indent_5 {
   text-indent: 25px;
 }
 
-#oeyrzmhnkx .katex-display {
+#awqxvdzqun .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#oeyrzmhnkx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#awqxvdzqun div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1068,32 +1061,32 @@ Table&nbsp;16.1: Consistence tests for different kinds of soil material
 </figure>
 </div>
 </div>
-<div id="nte-consnzsc" class="callout callout-style-simple callout-note no-icon callout-titled" title="Consistence tests and the New Zealand Soil Classification (NZSC)">
+<div id="nte-consnzsc" class="callout callout-style-simple callout-note no-icon callout-titled" title="Consistence tests and the *New Zealand Soil Classification*">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;16.1: Consistence tests and the New Zealand Soil Classification (NZSC)
+Note&nbsp;16.1: Consistence tests and the <em>New Zealand Soil Classification</em>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>For classifying using the New Zealand Soil Classification, particular tests down to or at a certain depth may be required to progress through the Key to Soil Orders. At the soil order level, these are:</p>
+<p>For classifying using the <em>New Zealand Soil Classification</em>, particular tests down to or at a certain depth may be required to progress through the ‘Key to Soil Orders’. At the soil order level, these are as follows.</p>
 <ul>
 <li><strong>Gley Soils:</strong> must not have any moderately or very fluid (<a href="#sec-cn-flu" class="quarto-xref"><span>Section 16.11</span></a>) layers within 30&nbsp;cm of the soil surface. Unconfined soil strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>) and cementation (<a href="#sec-cn-ind" class="quarto-xref"><span>Section 16.12</span></a>) tests may be required to confirm absence of an underlying fragipan.</li>
-<li><strong>Ultic Soils:</strong> need an assessment of soil strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>) in the B horizon under moist conditions. May need assessment of failure mode (<a href="#sec-cn-fail" class="quarto-xref"><span>Section 16.4</span></a>) over a range of moisture conditions to rule out oxidic or cutanoxidic horizons. May need assessment of sensitivity (<a href="#sec-cn-sens" class="quarto-xref"><span>Section 16.7</span></a>) and stickiness (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 16.9</span></a>) to rule out allophanic soil materials.</li>
+<li><strong>Ultic Soils:</strong> need an assessment of soil strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>) in the B horizon under moist conditions. May need assessment of failure mode (<a href="#sec-cn-fail" class="quarto-xref"><span>Section 16.4</span></a>) over a range of moisture conditions to rule out oxidic or cutanoxidic horizons; and may need assessment of sensitivity (<a href="#sec-cn-sens" class="quarto-xref"><span>Section 16.7</span></a>) and stickiness (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 16.9</span></a>) to rule out allophanic soil materials.</li>
 <li><strong>Podzol Soils:</strong> may need unconfined strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>) and failure mode (<a href="#sec-cn-fail" class="quarto-xref"><span>Section 16.4</span></a>) tests to help identify a Podzolic B horizon, as well as the presence of humus- and ortstein-pans.</li>
 <li><strong>Allophanic Soils:</strong> may need assessment of sensitivity (<a href="#sec-cn-sens" class="quarto-xref"><span>Section 16.7</span></a>) and stickiness (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 16.9</span></a>) to help confirm the presence of allophanic soil materials.</li>
 <li><strong>Melanic Soils:</strong> may require stickiness assessment (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 16.9</span></a>) in the B horizon.</li>
 <li><strong>Semiarid Soils:</strong> may require cementation tests (<a href="#sec-cn-ind" class="quarto-xref"><span>Section 16.12</span></a>) to confirm fragipan absence.</li>
-<li><strong>Oxidic Soils:</strong> May need assessment of ped strength (<a href="#sec-cn-stra" class="quarto-xref"><span>Section 16.3.2</span></a>), soil strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>), and failure mode (<a href="#sec-cn-fail" class="quarto-xref"><span>Section 16.4</span></a>) over a range of moisture conditions to confirm presence of an oxidic horizon. Stickiness (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 16.9</span></a>) and plasticity (<a href="#sec-cn-pla" class="quarto-xref"><span>Section 16.8</span></a>) may also be helpful.</li>
-<li><strong>Granular Soils:</strong> May need assessment of ped strength (<a href="#sec-cn-stra" class="quarto-xref"><span>Section 16.3.2</span></a>), soil strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>), and failure mode (<a href="#sec-cn-fail" class="quarto-xref"><span>Section 16.4</span></a>) over a range of moisture conditions to confirm presence of a cutanoxidic horizon. Stickiness (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 16.9</span></a>) and plasticity (<a href="#sec-cn-pla" class="quarto-xref"><span>Section 16.8</span></a>) may also be helpful.</li>
-<li><strong>Pallic Soils:</strong> may require a negative cementation test (<a href="#sec-cn-ind" class="quarto-xref"><span>Section 16.12</span></a>) to help identify any fragipans. May require assessment of failure mode (<a href="#sec-cn-fail" class="quarto-xref"><span>Section 16.4</span></a>) to help confirm Brittle-B horizon presence. May require ped strength assessment in the B horizon.</li>
+<li><strong>Oxidic Soils:</strong> may need assessment of ped strength (<a href="#sec-cn-stra" class="quarto-xref"><span>Section 16.3.2</span></a>), soil strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>), and failure mode (<a href="#sec-cn-fail" class="quarto-xref"><span>Section 16.4</span></a>) over a range of moisture conditions to confirm presence of an oxidic horizon. Stickiness (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 16.9</span></a>) and plasticity (<a href="#sec-cn-pla" class="quarto-xref"><span>Section 16.8</span></a>) may also be helpful.</li>
+<li><strong>Granular Soils:</strong> may need assessment of ped strength (<a href="#sec-cn-stra" class="quarto-xref"><span>Section 16.3.2</span></a>), soil strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>), and failure mode (<a href="#sec-cn-fail" class="quarto-xref"><span>Section 16.4</span></a>) over a range of moisture conditions to confirm presence of a cutanoxidic horizon. Stickiness (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 16.9</span></a>) and plasticity (<a href="#sec-cn-pla" class="quarto-xref"><span>Section 16.8</span></a>) may also be helpful.</li>
+<li><strong>Pallic Soils:</strong> may require a negative cementation test (<a href="#sec-cn-ind" class="quarto-xref"><span>Section 16.12</span></a>) to help identify any fragipans. May require assessment of failure mode (<a href="#sec-cn-fail" class="quarto-xref"><span>Section 16.4</span></a>) to help confirm a Brittle-B horizon presence. May require ped strength assessment in the B horizon.</li>
 <li><strong>Recent Soils:</strong> must not have any moderately or very fluid (<a href="#sec-cn-flu" class="quarto-xref"><span>Section 16.11</span></a>) layers within 30&nbsp;cm of the soil surface.</li>
 </ul>
-<p>Strength, fluidity, stickiness, mode of failure, and rubbed fibre content tests are also common diagnostic features at the group and subgroup level in the NZSC.</p>
+<p>Note: Strength, fluidity, stickiness, mode of failure, and rubbed fibre content tests are also common diagnostic features at the group and subgroup level in the <em>New Zealand Soil Classification</em>.</p>
 </div>
 </div>
 </div>
@@ -1101,12 +1094,12 @@ Note&nbsp;16.1: Consistence tests and the New Zealand Soil Classification (NZSC)
 </section>
 <section id="sec-dn-prep" class="level2" data-number="16.2">
 <h2 data-number="16.2" class="anchored" data-anchor-id="sec-dn-prep"><span class="header-section-number">16.2</span> Cohesion</h2>
-<p>The nature of the soil materials in each horizon determines what tests can and should be done. The first step is to determine if the sample is cohesive. Cohesion refers to the tendency of soil particles (i.e., grains of sand, silt and clay) to stick together under pressure, due to internal forces of attraction between them. Whether soil materials are cohesive affects which consistency tests can and should be undertaken in each horizon.</p>
+<p>The nature of the soil materials in each horizon determines what tests can and should be done. The first step is to determine if the sample is <em>cohesive</em>. Cohesion refers to the tendency of soil particles (i.e.&nbsp;grains of sand, silt, and clay) to stick together under pressure due to internal forces of attraction between them. Whether soil materials are cohesive affects which consistence tests can and should be undertaken in each horizon.</p>
 <ul>
-<li><strong>Cohesive soil materials</strong> adhere together strongly enough that they do not easily break up into individual grains. They may have plasticity and stickiness characteristics and have a strength which can be measured in unconfined compression. All listed properties, except particle packing, can be described for non-stony, cohesive soils.</li>
-<li><strong>Non-cohesive soil materials</strong> have no shear resistance other than that developed by internal friction between grains and will fall apart when disturbed. Non-cohesive soil materials, by definition, have no unconfined dry strength or plasticity, and the only property that can be meaningfully described is degree of packing or particle packing.</li>
+<li><strong>Cohesive soil materials</strong> adhere together strongly enough so that they do not easily break up into individual grains. They may have plasticity and stickiness characteristics and have a strength that can be measured in unconfined compression. All listed properties, except particle packing, can be described for non-stony, cohesive soils.</li>
+<li><strong>Non-cohesive soil materials</strong> have no shear resistance other than that developed by internal friction between grains, and will fall apart when disturbed. Non-cohesive soil materials, by definition, have no unconfined dry strength or plasticity, and the only property that can be meaningfully described is degree of packing or particle packing.</li>
 </ul>
-<p>The range of properties which can be described in stony, cohesive soils varies with rock fragment content. In practice, this depends on the feasibility of obtaining samples for the required tests.</p>
+<p>The range of properties that can be described in stony, cohesive soils varies with rock fragment content. In practice this depends on the feasibility of obtaining samples for the required tests.</p>
 <p>The distinction between cohesive and non-cohesive is recognised by performing remoulding (<a href="#sec-cn-strr" class="quarto-xref"><span>Section 16.3.3</span></a>), plasticity (<a href="#sec-cn-pla" class="quarto-xref"><span>Section 16.8</span></a>), and dilatancy (<a href="#sec-cn-dil" class="quarto-xref"><span>Section 16.10</span></a>) tests in the following sequence (<a href="#fig-cn-cohes" class="quarto-xref">Figure&nbsp;<span>16.1</span></a>). Where doubt still remains after these tests have been completed, the dry coherence test (<a href="#sec-cn-dryco" class="quarto-xref"><span>Section 16.2.1</span></a>) may be necessary.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -1114,19 +1107,7 @@ Note&nbsp;16.1: Consistence tests and the New Zealand Soil Classification (NZSC)
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cn-cohes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
-<pre class="mermaid mermaid-js" data-label="fig-cn-cohes">flowchart TD
-  q1["Can a sample cube be formed from remoulded material?"] --&gt;|yes| q2["Is the material plastic?"]
-  q2 ----&gt;|yes| a1(["**Cohesive**"])
-  q1 --&gt;|no| q3["Is the material plastic?"]
-  q3 --&gt;|yes| q4
-  q2 --&gt;|no| q4["Does the material have a fast positive reaction to the dilatancy test?"]
-  q4 --&gt;|no| q5["Does the material have a distinctly negative reaction to the dilatancy test?"]
-  q4 ---&gt;|yes| a2
-  q3 ----&gt;|no| a2(["**Non-cohesive**"])
-  q5 --&gt;|yes| a1
-  q5 --&gt;|no| a2
-
-</pre>
+<p><a href="hr_05_consistence_files\figure-html\mermaid-figure-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;16.1: Determining sample cohesion"><img src="hr_05_consistence_files\figure-html\mermaid-figure-1.png" style="width:6.76in;height:7.66in" class="figure-img"></a></p>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cn-cohes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1138,18 +1119,18 @@ Figure&nbsp;16.1: Determining sample cohesion
 </div>
 <section id="sec-cn-dryco" class="level3" data-number="16.2.1">
 <h3 data-number="16.2.1" class="anchored" data-anchor-id="sec-cn-dryco"><span class="header-section-number">16.2.1</span> Dry coherence</h3>
-<p>This test may be used as the final arbiter for distinguishing cohesive from non-cohesive soils if other test results are inconclusive, e.g.&nbsp;in fine silt.</p>
+<p>This test can be used as the final arbiter for distinguishing cohesive from non-cohesive soils if other test results are inconclusive (e.g.&nbsp;in fine silt).</p>
 <p><em>Procedure</em></p>
 <ol type="1">
-<li>Remould a 30&nbsp;mm test sample into a cube, and air-dry.</li>
+<li>Remould a 30&nbsp;mm test sample into a cube and air-dry it.</li>
 <li>If the cube collapses under its own weight or after being lightly touched, treat the soil as non-cohesive.</li>
 </ol>
 </section>
 </section>
 <section id="sec-cn-str" class="level2" data-number="16.3">
 <h2 data-number="16.3" class="anchored" data-anchor-id="sec-cn-str"><span class="header-section-number">16.3</span> Strength</h2>
-<p>Strength is also known as ‘resistance to crushing’. This property is assessed using hand or body-weight strength, so the user must calibrate themselves against the classes in <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>16.2</span></a>. <span class="citation" data-cites="drohan2020">Drohan et al. (<a href="references.html#ref-drohan2020" role="doc-biblioref">2020</a>)</span> discuss various options for calibration, including the use of pinch gauges or push-pull gauges to learn what different levels of force feel like.</p>
-<p>Each of the tests in this section are evaluated against <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>16.2</span></a>.</p>
+<p>Strength is also known as ‘resistance to crushing’. This property is assessed using hand or body-weight strength, so users must calibrate themselves against the classes in <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>16.2</span></a>. <span class="citation" data-cites="drohan2020">Drohan et al. (<a href="references.html#ref-drohan2020" role="doc-biblioref">2020</a>)</span> discuss various options for calibration, including the use of pinch gauges or push-pull gauges to learn what different levels of force feel like.</p>
+<p>Each of the tests in this section is evaluated against <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>16.2</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-cn-str" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1158,23 +1139,23 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
 </figcaption>
 <div aria-describedby="tbl-cn-str-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="zoaltvbixb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zoaltvbixb table {
+<div id="itwatuthha" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#itwatuthha table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zoaltvbixb thead, #zoaltvbixb tbody, #zoaltvbixb tfoot, #zoaltvbixb tr, #zoaltvbixb td, #zoaltvbixb th {
+#itwatuthha thead, #itwatuthha tbody, #itwatuthha tfoot, #itwatuthha tr, #itwatuthha td, #itwatuthha th {
   border-style: none;
 }
 
-#zoaltvbixb p {
+#itwatuthha p {
   margin: 0;
   padding: 0;
 }
 
-#zoaltvbixb .gt_table {
+#itwatuthha .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1200,12 +1181,12 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   border-left-color: #D3D3D3;
 }
 
-#zoaltvbixb .gt_caption {
+#itwatuthha .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zoaltvbixb .gt_title {
+#itwatuthha .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1217,7 +1198,7 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   border-bottom-width: 0;
 }
 
-#zoaltvbixb .gt_subtitle {
+#itwatuthha .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1229,7 +1210,7 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   border-top-width: 0;
 }
 
-#zoaltvbixb .gt_heading {
+#itwatuthha .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1241,13 +1222,13 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   border-right-color: #D3D3D3;
 }
 
-#zoaltvbixb .gt_bottom_border {
+#itwatuthha .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zoaltvbixb .gt_col_headings {
+#itwatuthha .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1262,7 +1243,7 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   border-right-color: #D3D3D3;
 }
 
-#zoaltvbixb .gt_col_heading {
+#itwatuthha .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1282,7 +1263,7 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   overflow-x: hidden;
 }
 
-#zoaltvbixb .gt_column_spanner_outer {
+#itwatuthha .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1294,15 +1275,15 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   padding-right: 4px;
 }
 
-#zoaltvbixb .gt_column_spanner_outer:first-child {
+#itwatuthha .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zoaltvbixb .gt_column_spanner_outer:last-child {
+#itwatuthha .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zoaltvbixb .gt_column_spanner {
+#itwatuthha .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1314,11 +1295,11 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   width: 100%;
 }
 
-#zoaltvbixb .gt_spanner_row {
+#itwatuthha .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zoaltvbixb .gt_group_heading {
+#itwatuthha .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1344,7 +1325,7 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   text-align: left;
 }
 
-#zoaltvbixb .gt_empty_group_heading {
+#itwatuthha .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1359,15 +1340,15 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   vertical-align: middle;
 }
 
-#zoaltvbixb .gt_from_md > :first-child {
+#itwatuthha .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zoaltvbixb .gt_from_md > :last-child {
+#itwatuthha .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zoaltvbixb .gt_row {
+#itwatuthha .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1386,7 +1367,7 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   overflow-x: hidden;
 }
 
-#zoaltvbixb .gt_stub {
+#itwatuthha .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1399,7 +1380,7 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   padding-right: 5px;
 }
 
-#zoaltvbixb .gt_stub_row_group {
+#itwatuthha .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1413,15 +1394,15 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   vertical-align: top;
 }
 
-#zoaltvbixb .gt_row_group_first td {
+#itwatuthha .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zoaltvbixb .gt_row_group_first th {
+#itwatuthha .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zoaltvbixb .gt_summary_row {
+#itwatuthha .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1431,16 +1412,16 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   padding-right: 5px;
 }
 
-#zoaltvbixb .gt_first_summary_row {
+#itwatuthha .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zoaltvbixb .gt_first_summary_row.thick {
+#itwatuthha .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zoaltvbixb .gt_last_summary_row {
+#itwatuthha .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1450,7 +1431,7 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   border-bottom-color: #D3D3D3;
 }
 
-#zoaltvbixb .gt_grand_summary_row {
+#itwatuthha .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1460,7 +1441,7 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   padding-right: 5px;
 }
 
-#zoaltvbixb .gt_first_grand_summary_row {
+#itwatuthha .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1470,7 +1451,7 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   border-top-color: #D3D3D3;
 }
 
-#zoaltvbixb .gt_last_grand_summary_row_top {
+#itwatuthha .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1480,11 +1461,11 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   border-bottom-color: #D3D3D3;
 }
 
-#zoaltvbixb .gt_striped {
+#itwatuthha .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zoaltvbixb .gt_table_body {
+#itwatuthha .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1493,7 +1474,7 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   border-bottom-color: #D3D3D3;
 }
 
-#zoaltvbixb .gt_footnotes {
+#itwatuthha .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1507,7 +1488,7 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   border-right-color: #D3D3D3;
 }
 
-#zoaltvbixb .gt_footnote {
+#itwatuthha .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1516,7 +1497,7 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   padding-right: 5px;
 }
 
-#zoaltvbixb .gt_sourcenotes {
+#itwatuthha .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1530,7 +1511,7 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   border-right-color: #D3D3D3;
 }
 
-#zoaltvbixb .gt_sourcenote {
+#itwatuthha .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1538,72 +1519,72 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
   padding-right: 5px;
 }
 
-#zoaltvbixb .gt_left {
+#itwatuthha .gt_left {
   text-align: left;
 }
 
-#zoaltvbixb .gt_center {
+#itwatuthha .gt_center {
   text-align: center;
 }
 
-#zoaltvbixb .gt_right {
+#itwatuthha .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zoaltvbixb .gt_font_normal {
+#itwatuthha .gt_font_normal {
   font-weight: normal;
 }
 
-#zoaltvbixb .gt_font_bold {
+#itwatuthha .gt_font_bold {
   font-weight: bold;
 }
 
-#zoaltvbixb .gt_font_italic {
+#itwatuthha .gt_font_italic {
   font-style: italic;
 }
 
-#zoaltvbixb .gt_super {
+#itwatuthha .gt_super {
   font-size: 65%;
 }
 
-#zoaltvbixb .gt_footnote_marks {
+#itwatuthha .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zoaltvbixb .gt_asterisk {
+#itwatuthha .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zoaltvbixb .gt_indent_1 {
+#itwatuthha .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zoaltvbixb .gt_indent_2 {
+#itwatuthha .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zoaltvbixb .gt_indent_3 {
+#itwatuthha .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zoaltvbixb .gt_indent_4 {
+#itwatuthha .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zoaltvbixb .gt_indent_5 {
+#itwatuthha .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zoaltvbixb .katex-display {
+#itwatuthha .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zoaltvbixb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#itwatuthha div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1677,7 +1658,7 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
 </div>
 <section id="sec-cn-stru" class="level3" data-number="16.3.1">
 <h3 data-number="16.3.1" class="anchored" data-anchor-id="sec-cn-stru"><span class="header-section-number">16.3.1</span> Unconfined soil strength</h3>
-<p>Unconfined soil strength describes how strongly soil material resists crushing when unsupported by surrounding material. It provides a simple field indicator of structural integrity in cohesive soils.</p>
+<p>Unconfined soil strength describes how strongly soil material resists crushing when not supported by surrounding material. It provides a simple field indicator of structural integrity in cohesive soils. Note the following.</p>
 <ul>
 <li>Test at observed field moisture condition.</li>
 <li>If a test cube cannot be formed, the result is strength class <span class="ceg">1</span> ‘Very Weak’ (see <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>16.2</span></a>). This can happen when soil pedality is weak or absent, but also when pedality is strong and peds are small.</li>
@@ -1686,30 +1667,30 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
 <p><em>Procedure</em></p>
 <ol type="1">
 <li>Perform the test on a minimally disturbed 30&nbsp;mm cube.</li>
-<li>Hold the cube between the thumb and forefinger. Both digits must be straight and fully extended.</li>
+<li>Hold the cube between thumb and forefinger. Both digits must be straight and fully extended.</li>
 <li>Pinch down. If the cube can be crushed, rate the difficulty using categories <span class="ceg">1</span>–<span class="ceg">4</span> in <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>16.2</span></a>.</li>
 <li>If the cube cannot be crushed by hand, attempt to crush it slowly underfoot, against a hard surface. Rate the difficulty using categories <span class="ceg">5</span>–<span class="ceg">7</span> in <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>16.2</span></a>.</li>
 </ol>
 </section>
 <section id="sec-cn-stra" class="level3" data-number="16.3.2">
 <h3 data-number="16.3.2" class="anchored" data-anchor-id="sec-cn-stra"><span class="header-section-number">16.3.2</span> Unconfined aggregate strength</h3>
-<p>Unconfined aggregate strength describes the physical integrity of soil aggregates (peds) under natural conditions. It provides a simple field indicator of soil structural stability in response to management practices and different environmental conditions.</p>
+<p>Unconfined aggregate strength describes the physical integrity of soil aggregates (peds) under natural conditions. It provides a simple field indicator of soil structural stability in response to management practices and different environmental conditions, but note the following.</p>
 <ul>
 <li>Test at observed field moisture condition.</li>
-<li>Only peds 30&nbsp;mm or larger can be reliably tested; peds larger than 50&nbsp;mm should be trimmed down to 30&nbsp;mm.</li>
+<li>Only peds 30&nbsp;mm or larger can be reliably tested, but peds larger than 50&nbsp;mm should be trimmed down to 30&nbsp;mm.</li>
 <li>This test cannot be reliably performed on auger-extracted samples.</li>
 </ul>
 <p><em>Procedure</em></p>
 <ol type="1">
 <li>Perform the test on an extracted ped.</li>
-<li>Hold the ped between the thumb and forefinger. Both digits must be straight and fully extended.</li>
+<li>Hold the ped between thumb and forefinger. Both digits must be straight and fully extended.</li>
 <li>Pinch down. If the ped can be crushed, rate the difficulty using categories <span class="ceg">1–4</span> in <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>16.2</span></a>.</li>
 <li>If the ped cannot be crushed by hand, attempt to crush it slowly underfoot, against a hard surface. Rate the difficulty using categories <span class="ceg">5–7</span> in <a href="#tbl-cn-str" class="quarto-xref">Table&nbsp;<span>16.2</span></a>.</li>
 </ol>
 </section>
 <section id="sec-cn-strr" class="level3" data-number="16.3.3">
 <h3 data-number="16.3.3" class="anchored" data-anchor-id="sec-cn-strr"><span class="header-section-number">16.3.3</span> Remoulded soil strength</h3>
-<p>This test determines the strength of the soil after significant disturbance and reworking, disrupting the structure and any other binding materials like plant roots.</p>
+<p>This test determines the strength of the soil after significant disturbance and reworking, disrupting the structure and any other binding materials like plant roots. Note the following.</p>
 <ul>
 <li>Test at observed field moisture condition.</li>
 <li>Perform the test on an extracted 30&nbsp;mm cube or sample of equivalent volume.</li>
@@ -1726,16 +1707,16 @@ Table&nbsp;16.2: Strength (resistance to crushing) classes
 </section>
 <section id="sec-cn-fail" class="level2" data-number="16.4">
 <h2 data-number="16.4" class="anchored" data-anchor-id="sec-cn-fail"><span class="header-section-number">16.4</span> Mode of failure</h2>
-<p>Failure is the manner in which unconfined soil yields to increasing stress. This property varies with soil moisture content.</p>
+<p>Failure is the manner in which unconfined soil yields to increasing stress. This property varies with soil moisture content. Note the following.</p>
 <ul>
 <li>Test at observed field moisture condition.</li>
 <li>Perform the test on a minimally disturbed 30&nbsp;mm cube, or an aggregate.</li>
-<li>If diagnosing oxidic or cutanoxidic soil material for the New Zealand Soil Classification, repeat the test under dry to wet moisture conditions.</li>
+<li>If diagnosing oxidic or cutanoxidic soil material for the <em>New Zealand Soil Classification</em>, repeat the test under dry to wet moisture conditions.</li>
 </ul>
 <p><em>Procedure</em></p>
 <ol type="1">
 <li>Perform the unconfined strength test according to <a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>.</li>
-<li>At strengths of class <span class="ceg">5</span> or less, mode of failure can be observed. Assess and record per <a href="#tbl-cn-fail" class="quarto-xref">Table&nbsp;<span>16.3</span></a>.</li>
+<li>At strengths of class <span class="ceg">5</span> or less mode of failure can be observed. Assess and record according to <a href="#tbl-cn-fail" class="quarto-xref">Table&nbsp;<span>16.3</span></a>.</li>
 </ol>
 <div class="cell" data-layout-align="center">
 <div id="tbl-cn-fail" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
@@ -1745,23 +1726,23 @@ Table&nbsp;16.3: Failure mode classes
 </figcaption>
 <div aria-describedby="tbl-cn-fail-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="jueopjisnd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jueopjisnd table {
+<div id="shkcvvmawb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#shkcvvmawb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jueopjisnd thead, #jueopjisnd tbody, #jueopjisnd tfoot, #jueopjisnd tr, #jueopjisnd td, #jueopjisnd th {
+#shkcvvmawb thead, #shkcvvmawb tbody, #shkcvvmawb tfoot, #shkcvvmawb tr, #shkcvvmawb td, #shkcvvmawb th {
   border-style: none;
 }
 
-#jueopjisnd p {
+#shkcvvmawb p {
   margin: 0;
   padding: 0;
 }
 
-#jueopjisnd .gt_table {
+#shkcvvmawb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1787,12 +1768,12 @@ Table&nbsp;16.3: Failure mode classes
   border-left-color: #D3D3D3;
 }
 
-#jueopjisnd .gt_caption {
+#shkcvvmawb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jueopjisnd .gt_title {
+#shkcvvmawb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1804,7 +1785,7 @@ Table&nbsp;16.3: Failure mode classes
   border-bottom-width: 0;
 }
 
-#jueopjisnd .gt_subtitle {
+#shkcvvmawb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1816,7 +1797,7 @@ Table&nbsp;16.3: Failure mode classes
   border-top-width: 0;
 }
 
-#jueopjisnd .gt_heading {
+#shkcvvmawb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1828,13 +1809,13 @@ Table&nbsp;16.3: Failure mode classes
   border-right-color: #D3D3D3;
 }
 
-#jueopjisnd .gt_bottom_border {
+#shkcvvmawb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jueopjisnd .gt_col_headings {
+#shkcvvmawb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1849,7 +1830,7 @@ Table&nbsp;16.3: Failure mode classes
   border-right-color: #D3D3D3;
 }
 
-#jueopjisnd .gt_col_heading {
+#shkcvvmawb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1869,7 +1850,7 @@ Table&nbsp;16.3: Failure mode classes
   overflow-x: hidden;
 }
 
-#jueopjisnd .gt_column_spanner_outer {
+#shkcvvmawb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1881,15 +1862,15 @@ Table&nbsp;16.3: Failure mode classes
   padding-right: 4px;
 }
 
-#jueopjisnd .gt_column_spanner_outer:first-child {
+#shkcvvmawb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jueopjisnd .gt_column_spanner_outer:last-child {
+#shkcvvmawb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jueopjisnd .gt_column_spanner {
+#shkcvvmawb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1901,11 +1882,11 @@ Table&nbsp;16.3: Failure mode classes
   width: 100%;
 }
 
-#jueopjisnd .gt_spanner_row {
+#shkcvvmawb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jueopjisnd .gt_group_heading {
+#shkcvvmawb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1931,7 +1912,7 @@ Table&nbsp;16.3: Failure mode classes
   text-align: left;
 }
 
-#jueopjisnd .gt_empty_group_heading {
+#shkcvvmawb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1946,15 +1927,15 @@ Table&nbsp;16.3: Failure mode classes
   vertical-align: middle;
 }
 
-#jueopjisnd .gt_from_md > :first-child {
+#shkcvvmawb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jueopjisnd .gt_from_md > :last-child {
+#shkcvvmawb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jueopjisnd .gt_row {
+#shkcvvmawb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1973,7 +1954,7 @@ Table&nbsp;16.3: Failure mode classes
   overflow-x: hidden;
 }
 
-#jueopjisnd .gt_stub {
+#shkcvvmawb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1986,7 +1967,7 @@ Table&nbsp;16.3: Failure mode classes
   padding-right: 5px;
 }
 
-#jueopjisnd .gt_stub_row_group {
+#shkcvvmawb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2000,15 +1981,15 @@ Table&nbsp;16.3: Failure mode classes
   vertical-align: top;
 }
 
-#jueopjisnd .gt_row_group_first td {
+#shkcvvmawb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jueopjisnd .gt_row_group_first th {
+#shkcvvmawb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jueopjisnd .gt_summary_row {
+#shkcvvmawb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2018,16 +1999,16 @@ Table&nbsp;16.3: Failure mode classes
   padding-right: 5px;
 }
 
-#jueopjisnd .gt_first_summary_row {
+#shkcvvmawb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jueopjisnd .gt_first_summary_row.thick {
+#shkcvvmawb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jueopjisnd .gt_last_summary_row {
+#shkcvvmawb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2037,7 +2018,7 @@ Table&nbsp;16.3: Failure mode classes
   border-bottom-color: #D3D3D3;
 }
 
-#jueopjisnd .gt_grand_summary_row {
+#shkcvvmawb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2047,7 +2028,7 @@ Table&nbsp;16.3: Failure mode classes
   padding-right: 5px;
 }
 
-#jueopjisnd .gt_first_grand_summary_row {
+#shkcvvmawb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2057,7 +2038,7 @@ Table&nbsp;16.3: Failure mode classes
   border-top-color: #D3D3D3;
 }
 
-#jueopjisnd .gt_last_grand_summary_row_top {
+#shkcvvmawb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2067,11 +2048,11 @@ Table&nbsp;16.3: Failure mode classes
   border-bottom-color: #D3D3D3;
 }
 
-#jueopjisnd .gt_striped {
+#shkcvvmawb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jueopjisnd .gt_table_body {
+#shkcvvmawb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2080,7 +2061,7 @@ Table&nbsp;16.3: Failure mode classes
   border-bottom-color: #D3D3D3;
 }
 
-#jueopjisnd .gt_footnotes {
+#shkcvvmawb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2094,7 +2075,7 @@ Table&nbsp;16.3: Failure mode classes
   border-right-color: #D3D3D3;
 }
 
-#jueopjisnd .gt_footnote {
+#shkcvvmawb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2103,7 +2084,7 @@ Table&nbsp;16.3: Failure mode classes
   padding-right: 5px;
 }
 
-#jueopjisnd .gt_sourcenotes {
+#shkcvvmawb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2117,7 +2098,7 @@ Table&nbsp;16.3: Failure mode classes
   border-right-color: #D3D3D3;
 }
 
-#jueopjisnd .gt_sourcenote {
+#shkcvvmawb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2125,72 +2106,72 @@ Table&nbsp;16.3: Failure mode classes
   padding-right: 5px;
 }
 
-#jueopjisnd .gt_left {
+#shkcvvmawb .gt_left {
   text-align: left;
 }
 
-#jueopjisnd .gt_center {
+#shkcvvmawb .gt_center {
   text-align: center;
 }
 
-#jueopjisnd .gt_right {
+#shkcvvmawb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jueopjisnd .gt_font_normal {
+#shkcvvmawb .gt_font_normal {
   font-weight: normal;
 }
 
-#jueopjisnd .gt_font_bold {
+#shkcvvmawb .gt_font_bold {
   font-weight: bold;
 }
 
-#jueopjisnd .gt_font_italic {
+#shkcvvmawb .gt_font_italic {
   font-style: italic;
 }
 
-#jueopjisnd .gt_super {
+#shkcvvmawb .gt_super {
   font-size: 65%;
 }
 
-#jueopjisnd .gt_footnote_marks {
+#shkcvvmawb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jueopjisnd .gt_asterisk {
+#shkcvvmawb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jueopjisnd .gt_indent_1 {
+#shkcvvmawb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jueopjisnd .gt_indent_2 {
+#shkcvvmawb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jueopjisnd .gt_indent_3 {
+#shkcvvmawb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jueopjisnd .gt_indent_4 {
+#shkcvvmawb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jueopjisnd .gt_indent_5 {
+#shkcvvmawb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jueopjisnd .katex-display {
+#shkcvvmawb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jueopjisnd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#shkcvvmawb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2212,7 +2193,7 @@ Table&nbsp;16.3: Failure mode classes
 <tr class="odd">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">N</td>
 <td class="gt_row gt_left" headers="Name">Not determinable</td>
-<td class="gt_row gt_left" headers="Description">Soil is either too dry or too wet to reliably test</td>
+<td class="gt_row gt_left" headers="Description">Soil is either too dry or too wet to reliably test.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">V</td>
@@ -2227,17 +2208,17 @@ Table&nbsp;16.3: Failure mode classes
 <tr class="even">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">B</td>
 <td class="gt_row gt_left" headers="Name">Brittle</td>
-<td class="gt_row gt_left" headers="Description">Under slowly increasing pressure between the extended thumb and forefinger, a test specimen retains its size and shape with few or no cracks until it fractures abruptly into aggregates predominantly &gt;2&nbsp;mm in size.</td>
+<td class="gt_row gt_left" headers="Description">Under slowly increasing pressure between extended thumb and forefinger a test specimen retains its size and shape with few or no cracks until it fractures abruptly into aggregates predominantly &gt;2&nbsp;mm in size.</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">S</td>
 <td class="gt_row gt_left" headers="Name">Semi-deformable</td>
-<td class="gt_row gt_left" headers="Description">Under increasing pressure between the extended thumb and forefinger the test specimen as a whole is perceptibly compressed in the direction along which pressure is exerted, but cracks develop and the specimen ruptures before it has been compressed to half its original thickness. Before rupture, parts crumble and fall away if the specimen is shaken while held between the thumb and forefinger.</td>
+<td class="gt_row gt_left" headers="Description">Under increasing pressure between extended thumb and forefinger the test specimen as a whole is perceptibly compressed in the direction along which pressure is exerted, but cracks develop and the specimen ruptures before it has been compressed to half its original thickness. Before rupture, parts crumble and fall away if the specimen is shaken while held between thumb and forefinger.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">D</td>
 <td class="gt_row gt_left" headers="Name">Deformable</td>
-<td class="gt_row gt_left" headers="Description">Under slowly increasing pressure between the extended thumb and forefinger, the test specimen can be compressed to at least half its original thickness without the appearance of cracks and without rupture.</td>
+<td class="gt_row gt_left" headers="Description">Under slowly increasing pressure between extended thumb and forefinger, the test specimen can be compressed to at least half its original thickness without the appearance of cracks and without rupture.</td>
 </tr>
 </tbody>
 </table>
@@ -2250,12 +2231,12 @@ Table&nbsp;16.3: Failure mode classes
 </div>
 </section>
 <section id="sec-cn-pack" class="level2" data-number="16.5">
-<h2 data-number="16.5" class="anchored" data-anchor-id="sec-cn-pack"><span class="header-section-number">16.5</span> Particle Packing</h2>
-<p>Particle packing assesses the stability of a non-cohesive soil.</p>
+<h2 data-number="16.5" class="anchored" data-anchor-id="sec-cn-pack"><span class="header-section-number">16.5</span> Particle packing</h2>
+<p>Particle packing assesses the stability of a non-cohesive soil. Note the following.</p>
 <ul>
-<li>Test only on soils where unconfined strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>) cannot be assessed e.g., gravelly, cobbly or bouldery soils, or loose sands</li>
-<li>This test requires a large pit or exposure</li>
-<li>Do not test at wet or saturated field moisture conditions, as this is unsafe</li>
+<li>Test only on soils where unconfined strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>) cannot be assessed (e.g.&nbsp;gravelly, cobbly or bouldery soils, or loose sands)</li>
+<li>This test requires a large pit or exposure.</li>
+<li>Do not test at wet or saturated field moisture conditions, as this is unsafe.</li>
 </ul>
 <p><em>Procedure</em></p>
 <ol type="1">
@@ -2270,23 +2251,23 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
 </figcaption>
 <div aria-describedby="tbl-cn-pack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ogxkyadfsi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ogxkyadfsi table {
+<div id="abdhacqizo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#abdhacqizo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ogxkyadfsi thead, #ogxkyadfsi tbody, #ogxkyadfsi tfoot, #ogxkyadfsi tr, #ogxkyadfsi td, #ogxkyadfsi th {
+#abdhacqizo thead, #abdhacqizo tbody, #abdhacqizo tfoot, #abdhacqizo tr, #abdhacqizo td, #abdhacqizo th {
   border-style: none;
 }
 
-#ogxkyadfsi p {
+#abdhacqizo p {
   margin: 0;
   padding: 0;
 }
 
-#ogxkyadfsi .gt_table {
+#abdhacqizo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2312,12 +2293,12 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   border-left-color: #D3D3D3;
 }
 
-#ogxkyadfsi .gt_caption {
+#abdhacqizo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ogxkyadfsi .gt_title {
+#abdhacqizo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2329,7 +2310,7 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   border-bottom-width: 0;
 }
 
-#ogxkyadfsi .gt_subtitle {
+#abdhacqizo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2341,7 +2322,7 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   border-top-width: 0;
 }
 
-#ogxkyadfsi .gt_heading {
+#abdhacqizo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2353,13 +2334,13 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   border-right-color: #D3D3D3;
 }
 
-#ogxkyadfsi .gt_bottom_border {
+#abdhacqizo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ogxkyadfsi .gt_col_headings {
+#abdhacqizo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2374,7 +2355,7 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   border-right-color: #D3D3D3;
 }
 
-#ogxkyadfsi .gt_col_heading {
+#abdhacqizo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2394,7 +2375,7 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   overflow-x: hidden;
 }
 
-#ogxkyadfsi .gt_column_spanner_outer {
+#abdhacqizo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2406,15 +2387,15 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   padding-right: 4px;
 }
 
-#ogxkyadfsi .gt_column_spanner_outer:first-child {
+#abdhacqizo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ogxkyadfsi .gt_column_spanner_outer:last-child {
+#abdhacqizo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ogxkyadfsi .gt_column_spanner {
+#abdhacqizo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2426,11 +2407,11 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   width: 100%;
 }
 
-#ogxkyadfsi .gt_spanner_row {
+#abdhacqizo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ogxkyadfsi .gt_group_heading {
+#abdhacqizo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2456,7 +2437,7 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   text-align: left;
 }
 
-#ogxkyadfsi .gt_empty_group_heading {
+#abdhacqizo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2471,15 +2452,15 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   vertical-align: middle;
 }
 
-#ogxkyadfsi .gt_from_md > :first-child {
+#abdhacqizo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ogxkyadfsi .gt_from_md > :last-child {
+#abdhacqizo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ogxkyadfsi .gt_row {
+#abdhacqizo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2498,7 +2479,7 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   overflow-x: hidden;
 }
 
-#ogxkyadfsi .gt_stub {
+#abdhacqizo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2511,7 +2492,7 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   padding-right: 5px;
 }
 
-#ogxkyadfsi .gt_stub_row_group {
+#abdhacqizo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2525,15 +2506,15 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   vertical-align: top;
 }
 
-#ogxkyadfsi .gt_row_group_first td {
+#abdhacqizo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ogxkyadfsi .gt_row_group_first th {
+#abdhacqizo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ogxkyadfsi .gt_summary_row {
+#abdhacqizo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2543,16 +2524,16 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   padding-right: 5px;
 }
 
-#ogxkyadfsi .gt_first_summary_row {
+#abdhacqizo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ogxkyadfsi .gt_first_summary_row.thick {
+#abdhacqizo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ogxkyadfsi .gt_last_summary_row {
+#abdhacqizo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2562,7 +2543,7 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   border-bottom-color: #D3D3D3;
 }
 
-#ogxkyadfsi .gt_grand_summary_row {
+#abdhacqizo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2572,7 +2553,7 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   padding-right: 5px;
 }
 
-#ogxkyadfsi .gt_first_grand_summary_row {
+#abdhacqizo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2582,7 +2563,7 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   border-top-color: #D3D3D3;
 }
 
-#ogxkyadfsi .gt_last_grand_summary_row_top {
+#abdhacqizo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2592,11 +2573,11 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   border-bottom-color: #D3D3D3;
 }
 
-#ogxkyadfsi .gt_striped {
+#abdhacqizo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ogxkyadfsi .gt_table_body {
+#abdhacqizo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2605,7 +2586,7 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   border-bottom-color: #D3D3D3;
 }
 
-#ogxkyadfsi .gt_footnotes {
+#abdhacqizo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2619,7 +2600,7 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   border-right-color: #D3D3D3;
 }
 
-#ogxkyadfsi .gt_footnote {
+#abdhacqizo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2628,7 +2609,7 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   padding-right: 5px;
 }
 
-#ogxkyadfsi .gt_sourcenotes {
+#abdhacqizo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2642,7 +2623,7 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   border-right-color: #D3D3D3;
 }
 
-#ogxkyadfsi .gt_sourcenote {
+#abdhacqizo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2650,72 +2631,72 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
   padding-right: 5px;
 }
 
-#ogxkyadfsi .gt_left {
+#abdhacqizo .gt_left {
   text-align: left;
 }
 
-#ogxkyadfsi .gt_center {
+#abdhacqizo .gt_center {
   text-align: center;
 }
 
-#ogxkyadfsi .gt_right {
+#abdhacqizo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ogxkyadfsi .gt_font_normal {
+#abdhacqizo .gt_font_normal {
   font-weight: normal;
 }
 
-#ogxkyadfsi .gt_font_bold {
+#abdhacqizo .gt_font_bold {
   font-weight: bold;
 }
 
-#ogxkyadfsi .gt_font_italic {
+#abdhacqizo .gt_font_italic {
   font-style: italic;
 }
 
-#ogxkyadfsi .gt_super {
+#abdhacqizo .gt_super {
   font-size: 65%;
 }
 
-#ogxkyadfsi .gt_footnote_marks {
+#abdhacqizo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ogxkyadfsi .gt_asterisk {
+#abdhacqizo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ogxkyadfsi .gt_indent_1 {
+#abdhacqizo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ogxkyadfsi .gt_indent_2 {
+#abdhacqizo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ogxkyadfsi .gt_indent_3 {
+#abdhacqizo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ogxkyadfsi .gt_indent_4 {
+#abdhacqizo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ogxkyadfsi .gt_indent_5 {
+#abdhacqizo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ogxkyadfsi .katex-display {
+#abdhacqizo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ogxkyadfsi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#abdhacqizo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2763,26 +2744,26 @@ Table&nbsp;16.4: Particle-packing classes for non-cohesive soils
 </figure>
 </div>
 </div>
-<div id="nte-singbl" class="callout callout-style-simple callout-note no-icon callout-titled" title="Use of the Singleton Blade">
+<div id="nte-singbl" class="callout callout-style-simple callout-note no-icon callout-titled" title="Use of the Singleton blade">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;16.2: Use of the Singleton Blade
+Note&nbsp;16.2: Use of the Singleton blade
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The Singleton blade was a device invented in the 1980s by the New Zealand pedologist Peter Singleton to improve on packing density assessment methods available at the time. The device was a thin, flexible piece of metal with a notched blade that was inserted into the pit face, leaving a longer end protruding. A pocket penetrometer was then used to push the protruding end of the blade sideways until it reached 45° or the blade fell out of the pit face. The penetrometer reading was empirically correlated to packing density. Mention of this device can be found in many New Zealand soil publications from ~1980-2000 <span class="citation" data-cites="griffiths1999">(<a href="references.html#ref-griffiths1999" role="doc-biblioref">Griffiths et al. 1999</a>)</span> but has not been made commercially available and is now rarely used.</p>
+<p>The Singleton blade was a device invented in the 1980s by the New Zealand pedologist Peter Singleton to improve the packing density assessment methods available at the time. The device was a thin, flexible piece of metal with a notched blade, which was inserted into the pit face, leaving a longer end protruding. A pocket penetrometer was then used to push the protruding end of the blade sideways until it reached 45° or the blade fell out of the pit face. The penetrometer reading was empirically correlated to packing density. Mention of this device can be found in many New Zealand soil publications from ~1980 to -2000 <span class="citation" data-cites="griffiths1999">(<a href="references.html#ref-griffiths1999" role="doc-biblioref">Griffiths et al. 1999</a>)</span>, but was not made commercially available and is now rarely used.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="sec-cn-pres" class="level2" data-number="16.6">
 <h2 data-number="16.6" class="anchored" data-anchor-id="sec-cn-pres"><span class="header-section-number">16.6</span> Penetration resistance</h2>
-<p>Penetration resistance is the capacity of the soil, in its natural confined state, to resist penetration by rigid objects. This property is commonly related to strength by empirical means (<a href="#tbl-cn-penr" class="quarto-xref">Table&nbsp;<span>16.5</span></a>).</p>
+<p>Penetration resistance is the capacity of the soil, in its natural confined state, to resist penetration by rigid objects. This property is commonly related to strength by empirical means (<a href="#tbl-cn-penr" class="quarto-xref">Table&nbsp;<span>16.5</span></a>). Note the following.</p>
 <ul>
 <li>This test requires a large pit or exposure.</li>
 </ul>
@@ -2803,7 +2784,7 @@ Note&nbsp;16.3: Use of pocket penetrometers
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Pocket-sized penetrometers with a 6&nbsp;mm flat tip are often recommended for assessing penetration resistance of cohesive materials in the field. These devices can usually measure no more than 400–1000 kPa and so may not be adequate for measurements of hard materials.</p>
+<p>Pocket-sized penetrometers with a 6&nbsp;mm flat tip are often recommended for assessing penetration resistance of cohesive materials in the field. These devices can usually measure no more than 400–1,000 kPa and so may not be adequate for measurements of hard materials.</p>
 <p>If a pocket penetrometer is used, take at least 10 readings from across the target horizon and record a median and range for resistance. The soil material being measured must be at or near field capacity when measured for the readings to be valid.</p>
 </div>
 </div>
@@ -2816,23 +2797,23 @@ Table&nbsp;16.5: Penetration resistance classes
 </figcaption>
 <div aria-describedby="tbl-cn-penr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="esitclwvip" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#esitclwvip table {
+<div id="uvhimrsdla" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uvhimrsdla table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#esitclwvip thead, #esitclwvip tbody, #esitclwvip tfoot, #esitclwvip tr, #esitclwvip td, #esitclwvip th {
+#uvhimrsdla thead, #uvhimrsdla tbody, #uvhimrsdla tfoot, #uvhimrsdla tr, #uvhimrsdla td, #uvhimrsdla th {
   border-style: none;
 }
 
-#esitclwvip p {
+#uvhimrsdla p {
   margin: 0;
   padding: 0;
 }
 
-#esitclwvip .gt_table {
+#uvhimrsdla .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2858,12 +2839,12 @@ Table&nbsp;16.5: Penetration resistance classes
   border-left-color: #D3D3D3;
 }
 
-#esitclwvip .gt_caption {
+#uvhimrsdla .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#esitclwvip .gt_title {
+#uvhimrsdla .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2875,7 +2856,7 @@ Table&nbsp;16.5: Penetration resistance classes
   border-bottom-width: 0;
 }
 
-#esitclwvip .gt_subtitle {
+#uvhimrsdla .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2887,7 +2868,7 @@ Table&nbsp;16.5: Penetration resistance classes
   border-top-width: 0;
 }
 
-#esitclwvip .gt_heading {
+#uvhimrsdla .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2899,13 +2880,13 @@ Table&nbsp;16.5: Penetration resistance classes
   border-right-color: #D3D3D3;
 }
 
-#esitclwvip .gt_bottom_border {
+#uvhimrsdla .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#esitclwvip .gt_col_headings {
+#uvhimrsdla .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2920,7 +2901,7 @@ Table&nbsp;16.5: Penetration resistance classes
   border-right-color: #D3D3D3;
 }
 
-#esitclwvip .gt_col_heading {
+#uvhimrsdla .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2940,7 +2921,7 @@ Table&nbsp;16.5: Penetration resistance classes
   overflow-x: hidden;
 }
 
-#esitclwvip .gt_column_spanner_outer {
+#uvhimrsdla .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2952,15 +2933,15 @@ Table&nbsp;16.5: Penetration resistance classes
   padding-right: 4px;
 }
 
-#esitclwvip .gt_column_spanner_outer:first-child {
+#uvhimrsdla .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#esitclwvip .gt_column_spanner_outer:last-child {
+#uvhimrsdla .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#esitclwvip .gt_column_spanner {
+#uvhimrsdla .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2972,11 +2953,11 @@ Table&nbsp;16.5: Penetration resistance classes
   width: 100%;
 }
 
-#esitclwvip .gt_spanner_row {
+#uvhimrsdla .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#esitclwvip .gt_group_heading {
+#uvhimrsdla .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3002,7 +2983,7 @@ Table&nbsp;16.5: Penetration resistance classes
   text-align: left;
 }
 
-#esitclwvip .gt_empty_group_heading {
+#uvhimrsdla .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3017,15 +2998,15 @@ Table&nbsp;16.5: Penetration resistance classes
   vertical-align: middle;
 }
 
-#esitclwvip .gt_from_md > :first-child {
+#uvhimrsdla .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#esitclwvip .gt_from_md > :last-child {
+#uvhimrsdla .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#esitclwvip .gt_row {
+#uvhimrsdla .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3044,7 +3025,7 @@ Table&nbsp;16.5: Penetration resistance classes
   overflow-x: hidden;
 }
 
-#esitclwvip .gt_stub {
+#uvhimrsdla .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3057,7 +3038,7 @@ Table&nbsp;16.5: Penetration resistance classes
   padding-right: 5px;
 }
 
-#esitclwvip .gt_stub_row_group {
+#uvhimrsdla .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3071,15 +3052,15 @@ Table&nbsp;16.5: Penetration resistance classes
   vertical-align: top;
 }
 
-#esitclwvip .gt_row_group_first td {
+#uvhimrsdla .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#esitclwvip .gt_row_group_first th {
+#uvhimrsdla .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#esitclwvip .gt_summary_row {
+#uvhimrsdla .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3089,16 +3070,16 @@ Table&nbsp;16.5: Penetration resistance classes
   padding-right: 5px;
 }
 
-#esitclwvip .gt_first_summary_row {
+#uvhimrsdla .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#esitclwvip .gt_first_summary_row.thick {
+#uvhimrsdla .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#esitclwvip .gt_last_summary_row {
+#uvhimrsdla .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3108,7 +3089,7 @@ Table&nbsp;16.5: Penetration resistance classes
   border-bottom-color: #D3D3D3;
 }
 
-#esitclwvip .gt_grand_summary_row {
+#uvhimrsdla .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3118,7 +3099,7 @@ Table&nbsp;16.5: Penetration resistance classes
   padding-right: 5px;
 }
 
-#esitclwvip .gt_first_grand_summary_row {
+#uvhimrsdla .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3128,7 +3109,7 @@ Table&nbsp;16.5: Penetration resistance classes
   border-top-color: #D3D3D3;
 }
 
-#esitclwvip .gt_last_grand_summary_row_top {
+#uvhimrsdla .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3138,11 +3119,11 @@ Table&nbsp;16.5: Penetration resistance classes
   border-bottom-color: #D3D3D3;
 }
 
-#esitclwvip .gt_striped {
+#uvhimrsdla .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#esitclwvip .gt_table_body {
+#uvhimrsdla .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3151,7 +3132,7 @@ Table&nbsp;16.5: Penetration resistance classes
   border-bottom-color: #D3D3D3;
 }
 
-#esitclwvip .gt_footnotes {
+#uvhimrsdla .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3165,7 +3146,7 @@ Table&nbsp;16.5: Penetration resistance classes
   border-right-color: #D3D3D3;
 }
 
-#esitclwvip .gt_footnote {
+#uvhimrsdla .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3174,7 +3155,7 @@ Table&nbsp;16.5: Penetration resistance classes
   padding-right: 5px;
 }
 
-#esitclwvip .gt_sourcenotes {
+#uvhimrsdla .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3188,7 +3169,7 @@ Table&nbsp;16.5: Penetration resistance classes
   border-right-color: #D3D3D3;
 }
 
-#esitclwvip .gt_sourcenote {
+#uvhimrsdla .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3196,72 +3177,72 @@ Table&nbsp;16.5: Penetration resistance classes
   padding-right: 5px;
 }
 
-#esitclwvip .gt_left {
+#uvhimrsdla .gt_left {
   text-align: left;
 }
 
-#esitclwvip .gt_center {
+#uvhimrsdla .gt_center {
   text-align: center;
 }
 
-#esitclwvip .gt_right {
+#uvhimrsdla .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#esitclwvip .gt_font_normal {
+#uvhimrsdla .gt_font_normal {
   font-weight: normal;
 }
 
-#esitclwvip .gt_font_bold {
+#uvhimrsdla .gt_font_bold {
   font-weight: bold;
 }
 
-#esitclwvip .gt_font_italic {
+#uvhimrsdla .gt_font_italic {
   font-style: italic;
 }
 
-#esitclwvip .gt_super {
+#uvhimrsdla .gt_super {
   font-size: 65%;
 }
 
-#esitclwvip .gt_footnote_marks {
+#uvhimrsdla .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#esitclwvip .gt_asterisk {
+#uvhimrsdla .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#esitclwvip .gt_indent_1 {
+#uvhimrsdla .gt_indent_1 {
   text-indent: 5px;
 }
 
-#esitclwvip .gt_indent_2 {
+#uvhimrsdla .gt_indent_2 {
   text-indent: 10px;
 }
 
-#esitclwvip .gt_indent_3 {
+#uvhimrsdla .gt_indent_3 {
   text-indent: 15px;
 }
 
-#esitclwvip .gt_indent_4 {
+#uvhimrsdla .gt_indent_4 {
   text-indent: 20px;
 }
 
-#esitclwvip .gt_indent_5 {
+#uvhimrsdla .gt_indent_5 {
   text-indent: 25px;
 }
 
-#esitclwvip .katex-display {
+#uvhimrsdla .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#esitclwvip div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#uvhimrsdla div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3292,37 +3273,37 @@ Table&nbsp;16.5: Penetration resistance classes
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">2</td>
 <td class="gt_row gt_left" headers="Name">Very low</td>
 <td class="gt_row gt_left" headers="Description">Easily penetrated by thumb</td>
-<td class="gt_row gt_left" headers="kpa">500–1000</td>
+<td class="gt_row gt_left" headers="kpa">500–1,000</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">3</td>
 <td class="gt_row gt_left" headers="Name">Low</td>
-<td class="gt_row gt_left" headers="Description">Readily indented by thumb but penetrated with considerable effort. Imprinted by finger with some effort.</td>
-<td class="gt_row gt_left" headers="kpa">1000–1500</td>
+<td class="gt_row gt_left" headers="Description">Readily indented by thumb but penetrated with considerable effort. Imprinted by finger with some effort</td>
+<td class="gt_row gt_left" headers="kpa">1,000–1,500</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">4</td>
 <td class="gt_row gt_left" headers="Name">Moderate</td>
 <td class="gt_row gt_left" headers="Description">Readily indented by thumbnail</td>
-<td class="gt_row gt_left" headers="kpa">1500–2200</td>
+<td class="gt_row gt_left" headers="kpa">1,500–2,200</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">5</td>
 <td class="gt_row gt_left" headers="Name">High</td>
 <td class="gt_row gt_left" headers="Description">Barely imprinted by thumb or forefinger</td>
-<td class="gt_row gt_left" headers="kpa">2200–3000</td>
+<td class="gt_row gt_left" headers="kpa">2,200–3,000</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">6</td>
 <td class="gt_row gt_left" headers="Name">Very high</td>
 <td class="gt_row gt_left" headers="Description">Indented by thumbnail. No imprint by thumb or finger</td>
-<td class="gt_row gt_left" headers="kpa">3000–4000</td>
+<td class="gt_row gt_left" headers="kpa">3,000–4,000</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">7</td>
 <td class="gt_row gt_left" headers="Name">Extremely high</td>
 <td class="gt_row gt_left" headers="Description">Barely indented by thumbnail</td>
-<td class="gt_row gt_left" headers="kpa">&gt;4000</td>
+<td class="gt_row gt_left" headers="kpa">&gt;4,000</td>
 </tr>
 </tbody>
 </table>
@@ -3336,25 +3317,31 @@ Table&nbsp;16.5: Penetration resistance classes
 </section>
 <section id="sec-cn-sens" class="level2" data-number="16.7">
 <h2 data-number="16.7" class="anchored" data-anchor-id="sec-cn-sens"><span class="header-section-number">16.7</span> Sensitivity</h2>
-<p>The sensitivity of a soil reflects the extent to which its structure contributes to its strength, and how that strength is reduced when the structure is destroyed. In soils with an unconfined strength class of <span class="ceg">4</span> firm or greater, sensitivity is reported as the ratio of unconfined soil strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>) to remoulded strength (<a href="#sec-cn-strr" class="quarto-xref"><span>Section 16.3.3</span></a>). For soils with an unconfined strength class of 1–3, the ‘shear test’ is performed. The two methods are assigned equivalent classes in <a href="#tbl-cn-sens" class="quarto-xref">Table&nbsp;<span>16.6</span></a>.</p>
+<p>The sensitivity of a soil reflects the extent to which its structure contributes to its strength, and how that strength is reduced when the structure is destroyed. In soils with an unconfined strength class of <span class="ceg">4</span> firm or greater, sensitivity is reported as the ratio of unconfined soil strength (<a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>) to remoulded strength (<a href="#sec-cn-strr" class="quarto-xref"><span>Section 16.3.3</span></a>). For soils with an unconfined strength class of 1–3, the ‘shear test’ is performed. The two methods are assigned equivalent classes in <a href="#tbl-cn-sens" class="quarto-xref">Table&nbsp;<span>16.6</span></a>. Note the following.</p>
 <ul>
-<li>Test soil at a moist or wet state.</li>
+<li>Test soil in a moist or wet state.</li>
 <li>Perform the test on a minimally disturbed 30&nbsp;mm sample cube.</li>
 <li>This test cannot be reliably performed on auger-extracted samples.</li>
 </ul>
 <p><em>Procedure</em></p>
 <ol type="1">
-<li>Hold the sample cube between extended thumb and forefinger as for <a href="#sec-cn-str" class="quarto-xref"><span>Section 16.3</span></a>.</li>
-<li>Pinch and press the sample to create a lateral, ‘shear’ force, moving the finger forward and down over the thumb.</li>
+<li>Hold the sample cube between extended thumb and forefinger, as for <a href="#sec-cn-str" class="quarto-xref"><span>Section 16.3</span></a>.</li>
+<li>Pinch and press the sample to create a lateral ‘shear’ force, moving the finger forward and down over the thumb.</li>
 <li>Assess the sample behaviour against <a href="#tbl-cn-sens" class="quarto-xref">Table&nbsp;<span>16.6</span></a>.</li>
 </ol>
-<div class="callout callout-style-simple callout-warning no-icon">
-<div class="callout-body d-flex">
+<div id="wrn-shv" class="callout callout-style-simple callout-warning no-icon callout-titled" title="Other similar tests">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<p>Note that this test is not analogous to the shear vane test of <span class="citation" data-cites="newzealandgeotechnicalsociety2005">New Zealand Geotechnical Society (<a href="references.html#ref-newzealandgeotechnicalsociety2005" role="doc-biblioref">2005</a>)</span> and cannot be used as a substitute.</p>
+<div class="callout-title-container flex-fill">
+Warning&nbsp;16.1: Other similar tests
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This test is not analogous to the shear vane-based sensitivity test of <span class="citation" data-cites="newzealandgeotechnicalsociety2005">Burns et al. (<a href="references.html#ref-newzealandgeotechnicalsociety2005" role="doc-biblioref">2005</a>)</span> and cannot be used as a substitute.</p>
 </div>
 </div>
 </div>
@@ -3366,23 +3353,23 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
 </figcaption>
 <div aria-describedby="tbl-cn-sens-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="xodnomibzr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xodnomibzr table {
+<div id="vczkihjvtz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vczkihjvtz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xodnomibzr thead, #xodnomibzr tbody, #xodnomibzr tfoot, #xodnomibzr tr, #xodnomibzr td, #xodnomibzr th {
+#vczkihjvtz thead, #vczkihjvtz tbody, #vczkihjvtz tfoot, #vczkihjvtz tr, #vczkihjvtz td, #vczkihjvtz th {
   border-style: none;
 }
 
-#xodnomibzr p {
+#vczkihjvtz p {
   margin: 0;
   padding: 0;
 }
 
-#xodnomibzr .gt_table {
+#vczkihjvtz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3408,12 +3395,12 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   border-left-color: #D3D3D3;
 }
 
-#xodnomibzr .gt_caption {
+#vczkihjvtz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xodnomibzr .gt_title {
+#vczkihjvtz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -3425,7 +3412,7 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   border-bottom-width: 0;
 }
 
-#xodnomibzr .gt_subtitle {
+#vczkihjvtz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3437,7 +3424,7 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   border-top-width: 0;
 }
 
-#xodnomibzr .gt_heading {
+#vczkihjvtz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3449,13 +3436,13 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   border-right-color: #D3D3D3;
 }
 
-#xodnomibzr .gt_bottom_border {
+#vczkihjvtz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xodnomibzr .gt_col_headings {
+#vczkihjvtz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3470,7 +3457,7 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   border-right-color: #D3D3D3;
 }
 
-#xodnomibzr .gt_col_heading {
+#vczkihjvtz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3490,7 +3477,7 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   overflow-x: hidden;
 }
 
-#xodnomibzr .gt_column_spanner_outer {
+#vczkihjvtz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3502,15 +3489,15 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   padding-right: 4px;
 }
 
-#xodnomibzr .gt_column_spanner_outer:first-child {
+#vczkihjvtz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xodnomibzr .gt_column_spanner_outer:last-child {
+#vczkihjvtz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xodnomibzr .gt_column_spanner {
+#vczkihjvtz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3522,11 +3509,11 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   width: 100%;
 }
 
-#xodnomibzr .gt_spanner_row {
+#vczkihjvtz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xodnomibzr .gt_group_heading {
+#vczkihjvtz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3552,7 +3539,7 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   text-align: left;
 }
 
-#xodnomibzr .gt_empty_group_heading {
+#vczkihjvtz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3567,15 +3554,15 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   vertical-align: middle;
 }
 
-#xodnomibzr .gt_from_md > :first-child {
+#vczkihjvtz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xodnomibzr .gt_from_md > :last-child {
+#vczkihjvtz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xodnomibzr .gt_row {
+#vczkihjvtz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3594,7 +3581,7 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   overflow-x: hidden;
 }
 
-#xodnomibzr .gt_stub {
+#vczkihjvtz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3607,7 +3594,7 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   padding-right: 5px;
 }
 
-#xodnomibzr .gt_stub_row_group {
+#vczkihjvtz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3621,15 +3608,15 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   vertical-align: top;
 }
 
-#xodnomibzr .gt_row_group_first td {
+#vczkihjvtz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xodnomibzr .gt_row_group_first th {
+#vczkihjvtz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xodnomibzr .gt_summary_row {
+#vczkihjvtz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3639,16 +3626,16 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   padding-right: 5px;
 }
 
-#xodnomibzr .gt_first_summary_row {
+#vczkihjvtz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xodnomibzr .gt_first_summary_row.thick {
+#vczkihjvtz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xodnomibzr .gt_last_summary_row {
+#vczkihjvtz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3658,7 +3645,7 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   border-bottom-color: #D3D3D3;
 }
 
-#xodnomibzr .gt_grand_summary_row {
+#vczkihjvtz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3668,7 +3655,7 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   padding-right: 5px;
 }
 
-#xodnomibzr .gt_first_grand_summary_row {
+#vczkihjvtz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3678,7 +3665,7 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   border-top-color: #D3D3D3;
 }
 
-#xodnomibzr .gt_last_grand_summary_row_top {
+#vczkihjvtz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3688,11 +3675,11 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   border-bottom-color: #D3D3D3;
 }
 
-#xodnomibzr .gt_striped {
+#vczkihjvtz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xodnomibzr .gt_table_body {
+#vczkihjvtz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3701,7 +3688,7 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   border-bottom-color: #D3D3D3;
 }
 
-#xodnomibzr .gt_footnotes {
+#vczkihjvtz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3715,7 +3702,7 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   border-right-color: #D3D3D3;
 }
 
-#xodnomibzr .gt_footnote {
+#vczkihjvtz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3724,7 +3711,7 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   padding-right: 5px;
 }
 
-#xodnomibzr .gt_sourcenotes {
+#vczkihjvtz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3738,7 +3725,7 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   border-right-color: #D3D3D3;
 }
 
-#xodnomibzr .gt_sourcenote {
+#vczkihjvtz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3746,72 +3733,72 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
   padding-right: 5px;
 }
 
-#xodnomibzr .gt_left {
+#vczkihjvtz .gt_left {
   text-align: left;
 }
 
-#xodnomibzr .gt_center {
+#vczkihjvtz .gt_center {
   text-align: center;
 }
 
-#xodnomibzr .gt_right {
+#vczkihjvtz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xodnomibzr .gt_font_normal {
+#vczkihjvtz .gt_font_normal {
   font-weight: normal;
 }
 
-#xodnomibzr .gt_font_bold {
+#vczkihjvtz .gt_font_bold {
   font-weight: bold;
 }
 
-#xodnomibzr .gt_font_italic {
+#vczkihjvtz .gt_font_italic {
   font-style: italic;
 }
 
-#xodnomibzr .gt_super {
+#vczkihjvtz .gt_super {
   font-size: 65%;
 }
 
-#xodnomibzr .gt_footnote_marks {
+#vczkihjvtz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xodnomibzr .gt_asterisk {
+#vczkihjvtz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xodnomibzr .gt_indent_1 {
+#vczkihjvtz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xodnomibzr .gt_indent_2 {
+#vczkihjvtz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xodnomibzr .gt_indent_3 {
+#vczkihjvtz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xodnomibzr .gt_indent_4 {
+#vczkihjvtz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xodnomibzr .gt_indent_5 {
+#vczkihjvtz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xodnomibzr .katex-display {
+#vczkihjvtz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xodnomibzr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vczkihjvtz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3836,25 +3823,25 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">1</td>
 <td class="gt_row gt_left" headers="Name">Non-sensitive</td>
 <td class="gt_row gt_left" headers="rel_loss">0–1</td>
-<td class="gt_row gt_left" headers="Description">the sample does not smear under shear force, and may soften only slightly</td>
+<td class="gt_row gt_left" headers="Description">The sample does not smear under shear force and may soften only slightly.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">2</td>
 <td class="gt_row gt_left" headers="Name">Weakly sensitive</td>
 <td class="gt_row gt_left" headers="rel_loss">2</td>
-<td class="gt_row gt_left" headers="Description">the sample smears and skids under moderate shear force (20-40&nbsp;kPa)</td>
+<td class="gt_row gt_left" headers="Description">The sample smears and skids under moderate shear force (20–40&nbsp;kPa).</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">3</td>
 <td class="gt_row gt_left" headers="Name">Moderately sensitive</td>
 <td class="gt_row gt_left" headers="rel_loss">3</td>
-<td class="gt_row gt_left" headers="Description">the sample suddenly turns fluid under moderate shear force (20-40&nbsp;kPa) and the fingers skid. Some free water is evident on fingers after shearing</td>
+<td class="gt_row gt_left" headers="Description">The sample suddenly turns fluid under moderate shear force (20–40&nbsp;kPa) and the fingers skid. Some free water is evident on fingers after shearing.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">4</td>
 <td class="gt_row gt_left" headers="Name">Very sensitive</td>
 <td class="gt_row gt_left" headers="rel_loss">&gt;3</td>
-<td class="gt_row gt_left" headers="Description">the soil suddenly turns fluid and slippery under only gentle shear force (&lt;20&nbsp;kPa). Free water is easily seen on the fingers after shearing</td>
+<td class="gt_row gt_left" headers="Description">The soil suddenly turns fluid and slippery under only gentle shear force (&lt;20&nbsp;kPa). Free water is easily seen on the fingers after shearing.</td>
 </tr>
 </tbody>
 </table>
@@ -3868,17 +3855,17 @@ Table&nbsp;16.6: Sensitivity (strength loss on remoulding) classes
 </section>
 <section id="sec-cn-pla" class="level2" data-number="16.8">
 <h2 data-number="16.8" class="anchored" data-anchor-id="sec-cn-pla"><span class="header-section-number">16.8</span> Plasticity</h2>
-<p>Plasticity is the capacity of soil material to change shape continuously when stress is applied and to retain that shape after the removal of stress. Plasticity can help distinguish clayey from silty textures, with silts having relatively low plasticity.</p>
+<p>Plasticity is the capacity of soil material to change shape continuously when stress is applied and to retain that shape after the removal of stress. Plasticity can help distinguish clayey from silty textures, with silts having relatively low plasticity. Note the following.</p>
 <ul>
-<li>Test soil at a wet state.</li>
+<li>Test soil in a wet state.</li>
 <li>Perform the test on 3-4 cm<sup>3</sup> of soil (a 15–20&nbsp;mm cube).</li>
 <li>This test may be performed on auger-extracted samples.</li>
 </ul>
 <p><em>Procedure</em></p>
 <ol type="1">
 <li>Thoroughly remould the sample, keeping it in a wet state.</li>
-<li>Adjust the water content to slightly above the plastic limit. In practice this water content is slightly above that at which a 4-mm diameter roll of sample crumbles but less than that when sample becomes sticky (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 16.9</span></a>), if stickiness is exhibited.</li>
-<li>Attempt to roll the sample out into a rod of 40&nbsp;mm length. Assess the minimum achievable diameter of the rod and its behaviour using <a href="#tbl-cn-plas" class="quarto-xref">Table&nbsp;<span>16.7</span></a>. To test whether the roll will support its own weight, attempt to pick it up from one end and see if the roll breaks.</li>
+<li>Adjust the water content to slightly above the plastic limit. In practice this water content is slightly above that at which a 4 mm diameter roll of sample crumbles, but less than that when a sample becomes sticky (<a href="#sec-cn-sti" class="quarto-xref"><span>Section 16.9</span></a>), if stickiness is exhibited.</li>
+<li>Attempt to roll the sample out into a rod 40&nbsp;mm long. Assess the minimum achievable diameter of the rod and its behaviour using <a href="#tbl-cn-plas" class="quarto-xref">Table&nbsp;<span>16.7</span></a>. To test whether the roll will support its own weight, attempt to pick it up from one end and see if the roll breaks.</li>
 </ol>
 <div class="cell" data-layout-align="center">
 <div id="tbl-cn-plas" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
@@ -3888,23 +3875,23 @@ Table&nbsp;16.7: Plasticity classes
 </figcaption>
 <div aria-describedby="tbl-cn-plas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="xnumwbaikl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xnumwbaikl table {
+<div id="hzujsktlov" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hzujsktlov table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xnumwbaikl thead, #xnumwbaikl tbody, #xnumwbaikl tfoot, #xnumwbaikl tr, #xnumwbaikl td, #xnumwbaikl th {
+#hzujsktlov thead, #hzujsktlov tbody, #hzujsktlov tfoot, #hzujsktlov tr, #hzujsktlov td, #hzujsktlov th {
   border-style: none;
 }
 
-#xnumwbaikl p {
+#hzujsktlov p {
   margin: 0;
   padding: 0;
 }
 
-#xnumwbaikl .gt_table {
+#hzujsktlov .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3930,12 +3917,12 @@ Table&nbsp;16.7: Plasticity classes
   border-left-color: #D3D3D3;
 }
 
-#xnumwbaikl .gt_caption {
+#hzujsktlov .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xnumwbaikl .gt_title {
+#hzujsktlov .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -3947,7 +3934,7 @@ Table&nbsp;16.7: Plasticity classes
   border-bottom-width: 0;
 }
 
-#xnumwbaikl .gt_subtitle {
+#hzujsktlov .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3959,7 +3946,7 @@ Table&nbsp;16.7: Plasticity classes
   border-top-width: 0;
 }
 
-#xnumwbaikl .gt_heading {
+#hzujsktlov .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3971,13 +3958,13 @@ Table&nbsp;16.7: Plasticity classes
   border-right-color: #D3D3D3;
 }
 
-#xnumwbaikl .gt_bottom_border {
+#hzujsktlov .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xnumwbaikl .gt_col_headings {
+#hzujsktlov .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3992,7 +3979,7 @@ Table&nbsp;16.7: Plasticity classes
   border-right-color: #D3D3D3;
 }
 
-#xnumwbaikl .gt_col_heading {
+#hzujsktlov .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4012,7 +3999,7 @@ Table&nbsp;16.7: Plasticity classes
   overflow-x: hidden;
 }
 
-#xnumwbaikl .gt_column_spanner_outer {
+#hzujsktlov .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4024,15 +4011,15 @@ Table&nbsp;16.7: Plasticity classes
   padding-right: 4px;
 }
 
-#xnumwbaikl .gt_column_spanner_outer:first-child {
+#hzujsktlov .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xnumwbaikl .gt_column_spanner_outer:last-child {
+#hzujsktlov .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xnumwbaikl .gt_column_spanner {
+#hzujsktlov .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4044,11 +4031,11 @@ Table&nbsp;16.7: Plasticity classes
   width: 100%;
 }
 
-#xnumwbaikl .gt_spanner_row {
+#hzujsktlov .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xnumwbaikl .gt_group_heading {
+#hzujsktlov .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4074,7 +4061,7 @@ Table&nbsp;16.7: Plasticity classes
   text-align: left;
 }
 
-#xnumwbaikl .gt_empty_group_heading {
+#hzujsktlov .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4089,15 +4076,15 @@ Table&nbsp;16.7: Plasticity classes
   vertical-align: middle;
 }
 
-#xnumwbaikl .gt_from_md > :first-child {
+#hzujsktlov .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xnumwbaikl .gt_from_md > :last-child {
+#hzujsktlov .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xnumwbaikl .gt_row {
+#hzujsktlov .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4116,7 +4103,7 @@ Table&nbsp;16.7: Plasticity classes
   overflow-x: hidden;
 }
 
-#xnumwbaikl .gt_stub {
+#hzujsktlov .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4129,7 +4116,7 @@ Table&nbsp;16.7: Plasticity classes
   padding-right: 5px;
 }
 
-#xnumwbaikl .gt_stub_row_group {
+#hzujsktlov .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4143,15 +4130,15 @@ Table&nbsp;16.7: Plasticity classes
   vertical-align: top;
 }
 
-#xnumwbaikl .gt_row_group_first td {
+#hzujsktlov .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xnumwbaikl .gt_row_group_first th {
+#hzujsktlov .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xnumwbaikl .gt_summary_row {
+#hzujsktlov .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4161,16 +4148,16 @@ Table&nbsp;16.7: Plasticity classes
   padding-right: 5px;
 }
 
-#xnumwbaikl .gt_first_summary_row {
+#hzujsktlov .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xnumwbaikl .gt_first_summary_row.thick {
+#hzujsktlov .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xnumwbaikl .gt_last_summary_row {
+#hzujsktlov .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4180,7 +4167,7 @@ Table&nbsp;16.7: Plasticity classes
   border-bottom-color: #D3D3D3;
 }
 
-#xnumwbaikl .gt_grand_summary_row {
+#hzujsktlov .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4190,7 +4177,7 @@ Table&nbsp;16.7: Plasticity classes
   padding-right: 5px;
 }
 
-#xnumwbaikl .gt_first_grand_summary_row {
+#hzujsktlov .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4200,7 +4187,7 @@ Table&nbsp;16.7: Plasticity classes
   border-top-color: #D3D3D3;
 }
 
-#xnumwbaikl .gt_last_grand_summary_row_top {
+#hzujsktlov .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4210,11 +4197,11 @@ Table&nbsp;16.7: Plasticity classes
   border-bottom-color: #D3D3D3;
 }
 
-#xnumwbaikl .gt_striped {
+#hzujsktlov .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xnumwbaikl .gt_table_body {
+#hzujsktlov .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4223,7 +4210,7 @@ Table&nbsp;16.7: Plasticity classes
   border-bottom-color: #D3D3D3;
 }
 
-#xnumwbaikl .gt_footnotes {
+#hzujsktlov .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4237,7 +4224,7 @@ Table&nbsp;16.7: Plasticity classes
   border-right-color: #D3D3D3;
 }
 
-#xnumwbaikl .gt_footnote {
+#hzujsktlov .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4246,7 +4233,7 @@ Table&nbsp;16.7: Plasticity classes
   padding-right: 5px;
 }
 
-#xnumwbaikl .gt_sourcenotes {
+#hzujsktlov .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4260,7 +4247,7 @@ Table&nbsp;16.7: Plasticity classes
   border-right-color: #D3D3D3;
 }
 
-#xnumwbaikl .gt_sourcenote {
+#hzujsktlov .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4268,72 +4255,72 @@ Table&nbsp;16.7: Plasticity classes
   padding-right: 5px;
 }
 
-#xnumwbaikl .gt_left {
+#hzujsktlov .gt_left {
   text-align: left;
 }
 
-#xnumwbaikl .gt_center {
+#hzujsktlov .gt_center {
   text-align: center;
 }
 
-#xnumwbaikl .gt_right {
+#hzujsktlov .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xnumwbaikl .gt_font_normal {
+#hzujsktlov .gt_font_normal {
   font-weight: normal;
 }
 
-#xnumwbaikl .gt_font_bold {
+#hzujsktlov .gt_font_bold {
   font-weight: bold;
 }
 
-#xnumwbaikl .gt_font_italic {
+#hzujsktlov .gt_font_italic {
   font-style: italic;
 }
 
-#xnumwbaikl .gt_super {
+#hzujsktlov .gt_super {
   font-size: 65%;
 }
 
-#xnumwbaikl .gt_footnote_marks {
+#hzujsktlov .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xnumwbaikl .gt_asterisk {
+#hzujsktlov .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xnumwbaikl .gt_indent_1 {
+#hzujsktlov .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xnumwbaikl .gt_indent_2 {
+#hzujsktlov .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xnumwbaikl .gt_indent_3 {
+#hzujsktlov .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xnumwbaikl .gt_indent_4 {
+#hzujsktlov .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xnumwbaikl .gt_indent_5 {
+#hzujsktlov .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xnumwbaikl .katex-display {
+#hzujsktlov .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xnumwbaikl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hzujsktlov div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4384,16 +4371,16 @@ Table&nbsp;16.7: Plasticity classes
 </section>
 <section id="sec-cn-sti" class="level2" data-number="16.9">
 <h2 data-number="16.9" class="anchored" data-anchor-id="sec-cn-sti"><span class="header-section-number">16.9</span> Stickiness</h2>
-<p>Stickiness is the degree to which remoulded soil adheres to external objects. Stickiness can suggest the presence of clay (particularly 2:1 phyllosilicates) and has agricultural and mechanical implications, e.g.&nbsp;root crop harvesting can be difficult in sticky materials, as can excavation.</p>
+<p>Stickiness is the degree to which remoulded soil adheres to external objects. Stickiness can suggest the presence of clay (particularly 2:1 phyllosilicates) and has agricultural and mechanical implications (e.g.&nbsp;root crop harvesting can be difficult in sticky materials, as can excavation).</p>
 <ul>
-<li>Test soil at a wet state.</li>
-<li>Perform the test on 3-4 cm<sup>3</sup> of soil (a 15–20&nbsp;mm cube).</li>
+<li>Test soil in a wet state.</li>
+<li>Perform the test on 3–4 cm<sup>3</sup> of soil (a 15–20&nbsp;mm cube).</li>
 <li>This test may be performed on auger-extracted samples.</li>
 </ul>
 <p><em>Procedure</em></p>
 <ol type="1">
 <li>Thoroughly remould the sample, keeping it in a wet state.</li>
-<li>Press the remoulded material between thumb and forefinger, and note its adherence to the fingers.</li>
+<li>Press the remoulded material between thumb and forefinger and note its adherence to the fingers.</li>
 <li>Adjust the water content by working the sample in the hand to remove water, or by adding water as necessary to achieve the maximum stickiness that the material will exhibit.</li>
 <li>Assess maximum stickiness and record using <a href="#tbl-cn-stik" class="quarto-xref">Table&nbsp;<span>16.8</span></a>.</li>
 </ol>
@@ -4405,23 +4392,23 @@ Table&nbsp;16.8: Stickiness classes
 </figcaption>
 <div aria-describedby="tbl-cn-stik-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ovgxbythqf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ovgxbythqf table {
+<div id="wijjbeomox" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wijjbeomox table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ovgxbythqf thead, #ovgxbythqf tbody, #ovgxbythqf tfoot, #ovgxbythqf tr, #ovgxbythqf td, #ovgxbythqf th {
+#wijjbeomox thead, #wijjbeomox tbody, #wijjbeomox tfoot, #wijjbeomox tr, #wijjbeomox td, #wijjbeomox th {
   border-style: none;
 }
 
-#ovgxbythqf p {
+#wijjbeomox p {
   margin: 0;
   padding: 0;
 }
 
-#ovgxbythqf .gt_table {
+#wijjbeomox .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4447,12 +4434,12 @@ Table&nbsp;16.8: Stickiness classes
   border-left-color: #D3D3D3;
 }
 
-#ovgxbythqf .gt_caption {
+#wijjbeomox .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ovgxbythqf .gt_title {
+#wijjbeomox .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -4464,7 +4451,7 @@ Table&nbsp;16.8: Stickiness classes
   border-bottom-width: 0;
 }
 
-#ovgxbythqf .gt_subtitle {
+#wijjbeomox .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4476,7 +4463,7 @@ Table&nbsp;16.8: Stickiness classes
   border-top-width: 0;
 }
 
-#ovgxbythqf .gt_heading {
+#wijjbeomox .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4488,13 +4475,13 @@ Table&nbsp;16.8: Stickiness classes
   border-right-color: #D3D3D3;
 }
 
-#ovgxbythqf .gt_bottom_border {
+#wijjbeomox .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ovgxbythqf .gt_col_headings {
+#wijjbeomox .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4509,7 +4496,7 @@ Table&nbsp;16.8: Stickiness classes
   border-right-color: #D3D3D3;
 }
 
-#ovgxbythqf .gt_col_heading {
+#wijjbeomox .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4529,7 +4516,7 @@ Table&nbsp;16.8: Stickiness classes
   overflow-x: hidden;
 }
 
-#ovgxbythqf .gt_column_spanner_outer {
+#wijjbeomox .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4541,15 +4528,15 @@ Table&nbsp;16.8: Stickiness classes
   padding-right: 4px;
 }
 
-#ovgxbythqf .gt_column_spanner_outer:first-child {
+#wijjbeomox .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ovgxbythqf .gt_column_spanner_outer:last-child {
+#wijjbeomox .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ovgxbythqf .gt_column_spanner {
+#wijjbeomox .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4561,11 +4548,11 @@ Table&nbsp;16.8: Stickiness classes
   width: 100%;
 }
 
-#ovgxbythqf .gt_spanner_row {
+#wijjbeomox .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ovgxbythqf .gt_group_heading {
+#wijjbeomox .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4591,7 +4578,7 @@ Table&nbsp;16.8: Stickiness classes
   text-align: left;
 }
 
-#ovgxbythqf .gt_empty_group_heading {
+#wijjbeomox .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4606,15 +4593,15 @@ Table&nbsp;16.8: Stickiness classes
   vertical-align: middle;
 }
 
-#ovgxbythqf .gt_from_md > :first-child {
+#wijjbeomox .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ovgxbythqf .gt_from_md > :last-child {
+#wijjbeomox .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ovgxbythqf .gt_row {
+#wijjbeomox .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4633,7 +4620,7 @@ Table&nbsp;16.8: Stickiness classes
   overflow-x: hidden;
 }
 
-#ovgxbythqf .gt_stub {
+#wijjbeomox .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4646,7 +4633,7 @@ Table&nbsp;16.8: Stickiness classes
   padding-right: 5px;
 }
 
-#ovgxbythqf .gt_stub_row_group {
+#wijjbeomox .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4660,15 +4647,15 @@ Table&nbsp;16.8: Stickiness classes
   vertical-align: top;
 }
 
-#ovgxbythqf .gt_row_group_first td {
+#wijjbeomox .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ovgxbythqf .gt_row_group_first th {
+#wijjbeomox .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ovgxbythqf .gt_summary_row {
+#wijjbeomox .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4678,16 +4665,16 @@ Table&nbsp;16.8: Stickiness classes
   padding-right: 5px;
 }
 
-#ovgxbythqf .gt_first_summary_row {
+#wijjbeomox .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ovgxbythqf .gt_first_summary_row.thick {
+#wijjbeomox .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ovgxbythqf .gt_last_summary_row {
+#wijjbeomox .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4697,7 +4684,7 @@ Table&nbsp;16.8: Stickiness classes
   border-bottom-color: #D3D3D3;
 }
 
-#ovgxbythqf .gt_grand_summary_row {
+#wijjbeomox .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4707,7 +4694,7 @@ Table&nbsp;16.8: Stickiness classes
   padding-right: 5px;
 }
 
-#ovgxbythqf .gt_first_grand_summary_row {
+#wijjbeomox .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4717,7 +4704,7 @@ Table&nbsp;16.8: Stickiness classes
   border-top-color: #D3D3D3;
 }
 
-#ovgxbythqf .gt_last_grand_summary_row_top {
+#wijjbeomox .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4727,11 +4714,11 @@ Table&nbsp;16.8: Stickiness classes
   border-bottom-color: #D3D3D3;
 }
 
-#ovgxbythqf .gt_striped {
+#wijjbeomox .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ovgxbythqf .gt_table_body {
+#wijjbeomox .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4740,7 +4727,7 @@ Table&nbsp;16.8: Stickiness classes
   border-bottom-color: #D3D3D3;
 }
 
-#ovgxbythqf .gt_footnotes {
+#wijjbeomox .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4754,7 +4741,7 @@ Table&nbsp;16.8: Stickiness classes
   border-right-color: #D3D3D3;
 }
 
-#ovgxbythqf .gt_footnote {
+#wijjbeomox .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4763,7 +4750,7 @@ Table&nbsp;16.8: Stickiness classes
   padding-right: 5px;
 }
 
-#ovgxbythqf .gt_sourcenotes {
+#wijjbeomox .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4777,7 +4764,7 @@ Table&nbsp;16.8: Stickiness classes
   border-right-color: #D3D3D3;
 }
 
-#ovgxbythqf .gt_sourcenote {
+#wijjbeomox .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4785,72 +4772,72 @@ Table&nbsp;16.8: Stickiness classes
   padding-right: 5px;
 }
 
-#ovgxbythqf .gt_left {
+#wijjbeomox .gt_left {
   text-align: left;
 }
 
-#ovgxbythqf .gt_center {
+#wijjbeomox .gt_center {
   text-align: center;
 }
 
-#ovgxbythqf .gt_right {
+#wijjbeomox .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ovgxbythqf .gt_font_normal {
+#wijjbeomox .gt_font_normal {
   font-weight: normal;
 }
 
-#ovgxbythqf .gt_font_bold {
+#wijjbeomox .gt_font_bold {
   font-weight: bold;
 }
 
-#ovgxbythqf .gt_font_italic {
+#wijjbeomox .gt_font_italic {
   font-style: italic;
 }
 
-#ovgxbythqf .gt_super {
+#wijjbeomox .gt_super {
   font-size: 65%;
 }
 
-#ovgxbythqf .gt_footnote_marks {
+#wijjbeomox .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ovgxbythqf .gt_asterisk {
+#wijjbeomox .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ovgxbythqf .gt_indent_1 {
+#wijjbeomox .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ovgxbythqf .gt_indent_2 {
+#wijjbeomox .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ovgxbythqf .gt_indent_3 {
+#wijjbeomox .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ovgxbythqf .gt_indent_4 {
+#wijjbeomox .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ovgxbythqf .gt_indent_5 {
+#wijjbeomox .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ovgxbythqf .katex-display {
+#wijjbeomox .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ovgxbythqf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wijjbeomox div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4872,22 +4859,22 @@ Table&nbsp;16.8: Stickiness classes
 <tr class="odd">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">1</td>
 <td class="gt_row gt_left" headers="Name">Non-sticky</td>
-<td class="gt_row gt_left" headers="Description">After release of pressure, practically no soil material adheres to the thumb or forefinger</td>
+<td class="gt_row gt_left" headers="Description">After release of pressure, practically no soil material adheres to the thumb or forefinger.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">2</td>
 <td class="gt_row gt_left" headers="Name">Slightly sticky</td>
-<td class="gt_row gt_left" headers="Description">After release of pressure, soil material adheres perceptibly to both thumb and forefinger but, as the digits are separated, it tends to come off one or the other cleanly. The material is not stretched appreciably when the thumb and finger are separated</td>
+<td class="gt_row gt_left" headers="Description">After release of pressure, soil material adheres perceptibly to both thumb and forefinger but, as the digits are separated it tends to come off one or the other cleanly. The material is not stretched appreciably when the thumb and finger are separated.</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">3</td>
 <td class="gt_row gt_left" headers="Name">Moderately sticky</td>
-<td class="gt_row gt_left" headers="Description">After release of pressure, soil material adheres to both thumb and forefinger and tends to stretch somewhat and pull apart rather than pulling free from either digit</td>
+<td class="gt_row gt_left" headers="Description">After release of pressure, soil material adheres to both thumb and forefinger and tends to stretch somewhat and pull apart rather than pulling free from either digit.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">4</td>
 <td class="gt_row gt_left" headers="Name">Very sticky</td>
-<td class="gt_row gt_left" headers="Description">After release of pressure, soil material adheres so strongly to both thumb and forefinger that it is decidedly stretched when they are separated, and finally pulls apart leaving part of the soil on thumb and part on the forefinger.</td>
+<td class="gt_row gt_left" headers="Description">After release of pressure, soil material adheres so strongly to both thumb and forefinger that it is decidedly stretched when they are separated and finally pulls apart leaving part of the soil on the thumb and part on the forefinger.</td>
 </tr>
 </tbody>
 </table>
@@ -4901,23 +4888,23 @@ Table&nbsp;16.8: Stickiness classes
 </section>
 <section id="sec-cn-dil" class="level2" data-number="16.10">
 <h2 data-number="16.10" class="anchored" data-anchor-id="sec-cn-dil"><span class="header-section-number">16.10</span> Dilatancy</h2>
-<p>Dilatancy occurs due to volume change during shearing and is used as a criterion for distinguishing non-cohesive from cohesive soil materials. The test can also help determine the relative dominance of silt and clay (silty textures are more prone to exhibiting dilatant behaviour).</p>
+<p>Dilatancy occurs due to volume change during shearing and is used as a criterion for distinguishing non-cohesive from cohesive soil materials. The test can also help to determine the relative dominance of silt and clay (silty textures are more prone to exhibiting dilatant behaviour). Note the following.</p>
 <ul>
-<li>Test soil at a moist to wet state.</li>
+<li>Test soil in a moist to wet state.</li>
 <li>Perform the test on 3-4 cm<sup>3</sup> of soil (a 15–20&nbsp;mm cube).</li>
 <li>This test may be performed on auger-extracted samples.</li>
 </ul>
 <p><em>Procedure</em></p>
 <ol type="1">
 <li>Adjust the soil to a moist to wet state.</li>
-<li>Roll into a ball ~30&nbsp;mm diameter.</li>
-<li>Hold sample in upturned palm and slap the back of the hand containing the sample several times with the other hand, or shake the hand vigorously from side to side.</li>
+<li>Roll into a ball ~30&nbsp;mm in diameter.</li>
+<li>Hold the sample in an upturned palm and slap the back of the hand containing the sample several times with the other hand, or shake the hand vigorously from side to side.</li>
 </ol>
-<p>A dilatant reaction is shown by a shiny surface caused by water extrusion, and by a dull surface when the palm of the hand is folded to partly remould the sample, causing water to be drawn into the sample. Dilatant samples will also lose their ball shape, flattening down. Record dilatant behaviour as a binary, <span class="ceg">true/false</span>.</p>
+<p>A dilatant reaction is shown by a shiny surface caused by water extrusion, and by a dull surface when the palm of the hand is folded to partly remould the sample, causing water to be drawn into the sample. Dilatant samples will also lose their ball shape, flattening down. Record dilatant behaviour as a binary: <span class="ceg">true/false</span>.</p>
 </section>
 <section id="sec-cn-flu" class="level2" data-number="16.11">
 <h2 data-number="16.11" class="anchored" data-anchor-id="sec-cn-flu"><span class="header-section-number">16.11</span> Fluidity</h2>
-<p>Fluidity tests whether saturated soils have an unconfined strength that is largely eliminated by saturation. Such materials were generally emplaced under water, have never been drained, have a fine texture that minimises gravity-based settling, and are not overlain by enough other sediment to have been compressed.</p>
+<p>Fluidity tests whether saturated soils have an unconfined strength that is largely eliminated by saturation. Such materials were generally emplaced under water, have never been drained, have a fine texture that minimises gravity-based settling, and are not overlain by enough other sediment to have been compressed. Note the following.</p>
 <ul>
 <li>Test soil at a saturated state.</li>
 <li>Only test soils that are saturated under field conditions.</li>
@@ -4927,7 +4914,7 @@ Table&nbsp;16.8: Stickiness classes
 <p><em>Procedure</em></p>
 <ol type="1">
 <li>Extract the sample and squeeze firmly in the hand.</li>
-<li>Evaluate the sample behaviour using <a href="#tbl-cn-fluid" class="quarto-xref">Table&nbsp;<span>16.9</span></a>.</li>
+<li>Evaluate the sample’s behaviour using <a href="#tbl-cn-fluid" class="quarto-xref">Table&nbsp;<span>16.9</span></a>.</li>
 </ol>
 <div class="cell" data-layout-align="center">
 <div id="tbl-cn-fluid" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
@@ -4937,23 +4924,23 @@ Table&nbsp;16.9: Fluidity classes
 </figcaption>
 <div aria-describedby="tbl-cn-fluid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="zioeoihcno" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zioeoihcno table {
+<div id="bbbsrwsvcx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bbbsrwsvcx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zioeoihcno thead, #zioeoihcno tbody, #zioeoihcno tfoot, #zioeoihcno tr, #zioeoihcno td, #zioeoihcno th {
+#bbbsrwsvcx thead, #bbbsrwsvcx tbody, #bbbsrwsvcx tfoot, #bbbsrwsvcx tr, #bbbsrwsvcx td, #bbbsrwsvcx th {
   border-style: none;
 }
 
-#zioeoihcno p {
+#bbbsrwsvcx p {
   margin: 0;
   padding: 0;
 }
 
-#zioeoihcno .gt_table {
+#bbbsrwsvcx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4979,12 +4966,12 @@ Table&nbsp;16.9: Fluidity classes
   border-left-color: #D3D3D3;
 }
 
-#zioeoihcno .gt_caption {
+#bbbsrwsvcx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zioeoihcno .gt_title {
+#bbbsrwsvcx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -4996,7 +4983,7 @@ Table&nbsp;16.9: Fluidity classes
   border-bottom-width: 0;
 }
 
-#zioeoihcno .gt_subtitle {
+#bbbsrwsvcx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5008,7 +4995,7 @@ Table&nbsp;16.9: Fluidity classes
   border-top-width: 0;
 }
 
-#zioeoihcno .gt_heading {
+#bbbsrwsvcx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5020,13 +5007,13 @@ Table&nbsp;16.9: Fluidity classes
   border-right-color: #D3D3D3;
 }
 
-#zioeoihcno .gt_bottom_border {
+#bbbsrwsvcx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zioeoihcno .gt_col_headings {
+#bbbsrwsvcx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5041,7 +5028,7 @@ Table&nbsp;16.9: Fluidity classes
   border-right-color: #D3D3D3;
 }
 
-#zioeoihcno .gt_col_heading {
+#bbbsrwsvcx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5061,7 +5048,7 @@ Table&nbsp;16.9: Fluidity classes
   overflow-x: hidden;
 }
 
-#zioeoihcno .gt_column_spanner_outer {
+#bbbsrwsvcx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5073,15 +5060,15 @@ Table&nbsp;16.9: Fluidity classes
   padding-right: 4px;
 }
 
-#zioeoihcno .gt_column_spanner_outer:first-child {
+#bbbsrwsvcx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zioeoihcno .gt_column_spanner_outer:last-child {
+#bbbsrwsvcx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zioeoihcno .gt_column_spanner {
+#bbbsrwsvcx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5093,11 +5080,11 @@ Table&nbsp;16.9: Fluidity classes
   width: 100%;
 }
 
-#zioeoihcno .gt_spanner_row {
+#bbbsrwsvcx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zioeoihcno .gt_group_heading {
+#bbbsrwsvcx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5123,7 +5110,7 @@ Table&nbsp;16.9: Fluidity classes
   text-align: left;
 }
 
-#zioeoihcno .gt_empty_group_heading {
+#bbbsrwsvcx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5138,15 +5125,15 @@ Table&nbsp;16.9: Fluidity classes
   vertical-align: middle;
 }
 
-#zioeoihcno .gt_from_md > :first-child {
+#bbbsrwsvcx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zioeoihcno .gt_from_md > :last-child {
+#bbbsrwsvcx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zioeoihcno .gt_row {
+#bbbsrwsvcx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5165,7 +5152,7 @@ Table&nbsp;16.9: Fluidity classes
   overflow-x: hidden;
 }
 
-#zioeoihcno .gt_stub {
+#bbbsrwsvcx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5178,7 +5165,7 @@ Table&nbsp;16.9: Fluidity classes
   padding-right: 5px;
 }
 
-#zioeoihcno .gt_stub_row_group {
+#bbbsrwsvcx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5192,15 +5179,15 @@ Table&nbsp;16.9: Fluidity classes
   vertical-align: top;
 }
 
-#zioeoihcno .gt_row_group_first td {
+#bbbsrwsvcx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zioeoihcno .gt_row_group_first th {
+#bbbsrwsvcx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zioeoihcno .gt_summary_row {
+#bbbsrwsvcx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5210,16 +5197,16 @@ Table&nbsp;16.9: Fluidity classes
   padding-right: 5px;
 }
 
-#zioeoihcno .gt_first_summary_row {
+#bbbsrwsvcx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zioeoihcno .gt_first_summary_row.thick {
+#bbbsrwsvcx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zioeoihcno .gt_last_summary_row {
+#bbbsrwsvcx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5229,7 +5216,7 @@ Table&nbsp;16.9: Fluidity classes
   border-bottom-color: #D3D3D3;
 }
 
-#zioeoihcno .gt_grand_summary_row {
+#bbbsrwsvcx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5239,7 +5226,7 @@ Table&nbsp;16.9: Fluidity classes
   padding-right: 5px;
 }
 
-#zioeoihcno .gt_first_grand_summary_row {
+#bbbsrwsvcx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5249,7 +5236,7 @@ Table&nbsp;16.9: Fluidity classes
   border-top-color: #D3D3D3;
 }
 
-#zioeoihcno .gt_last_grand_summary_row_top {
+#bbbsrwsvcx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5259,11 +5246,11 @@ Table&nbsp;16.9: Fluidity classes
   border-bottom-color: #D3D3D3;
 }
 
-#zioeoihcno .gt_striped {
+#bbbsrwsvcx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zioeoihcno .gt_table_body {
+#bbbsrwsvcx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5272,7 +5259,7 @@ Table&nbsp;16.9: Fluidity classes
   border-bottom-color: #D3D3D3;
 }
 
-#zioeoihcno .gt_footnotes {
+#bbbsrwsvcx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5286,7 +5273,7 @@ Table&nbsp;16.9: Fluidity classes
   border-right-color: #D3D3D3;
 }
 
-#zioeoihcno .gt_footnote {
+#bbbsrwsvcx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5295,7 +5282,7 @@ Table&nbsp;16.9: Fluidity classes
   padding-right: 5px;
 }
 
-#zioeoihcno .gt_sourcenotes {
+#bbbsrwsvcx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5309,7 +5296,7 @@ Table&nbsp;16.9: Fluidity classes
   border-right-color: #D3D3D3;
 }
 
-#zioeoihcno .gt_sourcenote {
+#bbbsrwsvcx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5317,72 +5304,72 @@ Table&nbsp;16.9: Fluidity classes
   padding-right: 5px;
 }
 
-#zioeoihcno .gt_left {
+#bbbsrwsvcx .gt_left {
   text-align: left;
 }
 
-#zioeoihcno .gt_center {
+#bbbsrwsvcx .gt_center {
   text-align: center;
 }
 
-#zioeoihcno .gt_right {
+#bbbsrwsvcx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zioeoihcno .gt_font_normal {
+#bbbsrwsvcx .gt_font_normal {
   font-weight: normal;
 }
 
-#zioeoihcno .gt_font_bold {
+#bbbsrwsvcx .gt_font_bold {
   font-weight: bold;
 }
 
-#zioeoihcno .gt_font_italic {
+#bbbsrwsvcx .gt_font_italic {
   font-style: italic;
 }
 
-#zioeoihcno .gt_super {
+#bbbsrwsvcx .gt_super {
   font-size: 65%;
 }
 
-#zioeoihcno .gt_footnote_marks {
+#bbbsrwsvcx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zioeoihcno .gt_asterisk {
+#bbbsrwsvcx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zioeoihcno .gt_indent_1 {
+#bbbsrwsvcx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zioeoihcno .gt_indent_2 {
+#bbbsrwsvcx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zioeoihcno .gt_indent_3 {
+#bbbsrwsvcx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zioeoihcno .gt_indent_4 {
+#bbbsrwsvcx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zioeoihcno .gt_indent_5 {
+#bbbsrwsvcx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zioeoihcno .katex-display {
+#bbbsrwsvcx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zioeoihcno div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#bbbsrwsvcx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5404,17 +5391,17 @@ Table&nbsp;16.9: Fluidity classes
 <tr class="odd">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">1</td>
 <td class="gt_row gt_left" headers="Name">Slightly fluid</td>
-<td class="gt_row gt_left" headers="Description">Some material tends to flow into the spaces between the fingers, but after full pressure is exerted most of the residue is left in the hand</td>
+<td class="gt_row gt_left" headers="Description">Some material tends to flow into the spaces between the fingers, but after full pressure is exerted most of the residue is left in the hand.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">2</td>
 <td class="gt_row gt_left" headers="Name">Moderately fluid</td>
-<td class="gt_row gt_left" headers="Description">Soil material flows easily between the fingers, but a small residue is left in the hand after full pressure is exerted</td>
+<td class="gt_row gt_left" headers="Description">Soil material flows easily between the fingers, but a small residue is left in the hand after full pressure is exerted.</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">3</td>
 <td class="gt_row gt_left" headers="Name">Very fluid</td>
-<td class="gt_row gt_left" headers="Description">Soil material flows like a slightly viscous liquid between the fingers, and very little or no residue is left in the hand after full pressure is exerted</td>
+<td class="gt_row gt_left" headers="Description">Soil material flows like a slightly viscous liquid between the fingers, and very little or no residue is left in the hand after full pressure is exerted.</td>
 </tr>
 </tbody>
 </table>
@@ -5428,24 +5415,25 @@ Table&nbsp;16.9: Fluidity classes
 </section>
 <section id="sec-cn-ind" class="level2" data-number="16.12">
 <h2 data-number="16.12" class="anchored" data-anchor-id="sec-cn-ind"><span class="header-section-number">16.12</span> Induration</h2>
-<p>Induration is the degree to which soil particles are held together by some combination of cementation and close packing.</p>
+<p>Induration is the degree to which soil particles are held together by some combination of cementation and close packing. Note the following.</p>
 <ul>
-<li>Perform the test on a minimally disturbed 30&nbsp;mm cube, or aggregate.</li>
-<li>This test may also be performed on individual nodules and other solids &lt; 30&nbsp;mm.</li>
+<li>Perform the test on a minimally disturbed 30&nbsp;mm cube or aggregate.</li>
+<li>This test may also be performed on individual nodules and other solids &lt;30&nbsp;mm.</li>
 <li>This test cannot be reliably performed on auger-extracted samples.</li>
-<li>This test requires a minimum one hour to complete so may be done immediately following fieldwork.</li>
+<li>This test requires a minimum 1 hour to complete and can be done immediately following fieldwork.</li>
 </ul>
 <p><em>Equipment</em></p>
+<p>This test requires:</p>
 <ul>
-<li>Sponge (~50&nbsp;mm diameter, flat)</li>
-<li>Deionised (DI) water</li>
-<li>Sample container at least 40–50&nbsp;mm deep</li>
+<li>a sponge (~50&nbsp;mm diameter, flat)</li>
+<li>deionised water</li>
+<li>a sample container at least 40–50&nbsp;mm deep.</li>
 </ul>
 <p><em>Procedure</em></p>
 <ol type="1">
-<li>Test the soil strength at field-moist condition according to <a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>.</li>
-<li>Place the sample on a wet sponge until thoroughly moistened, then immerse the sample in DI water for 1 hour.</li>
-<li>If the sample has not slaked (see <a href="hr_06_chemical_properties.html#sec-ft-slak" class="quarto-xref"><span>Section 17.1.10</span></a>), retest the soil strength of the wet sample according to <a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>.</li>
+<li>Test the soil strength at field-moist condition, according to <a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>.</li>
+<li>Place the sample on a wet sponge until thoroughly moistened, then immerse the sample in deionised water for 1 hour.</li>
+<li>If the sample has not slaked (see <a href="hr_06_chemical_properties.html#sec-ft-slak" class="quarto-xref"><span>Section 17.8</span></a>), retest the soil strength of the wet sample according to <a href="#sec-cn-stru" class="quarto-xref"><span>Section 16.3.1</span></a>.</li>
 <li>Assess the behaviour of the sample using <a href="#tbl-cn-ind" class="quarto-xref">Table&nbsp;<span>16.10</span></a>.</li>
 </ol>
 <div class="cell" data-layout-align="center">
@@ -5456,23 +5444,23 @@ Table&nbsp;16.10: Induration classes
 </figcaption>
 <div aria-describedby="tbl-cn-ind-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="mbbezfpvvd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mbbezfpvvd table {
+<div id="lkryrgoyqt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lkryrgoyqt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mbbezfpvvd thead, #mbbezfpvvd tbody, #mbbezfpvvd tfoot, #mbbezfpvvd tr, #mbbezfpvvd td, #mbbezfpvvd th {
+#lkryrgoyqt thead, #lkryrgoyqt tbody, #lkryrgoyqt tfoot, #lkryrgoyqt tr, #lkryrgoyqt td, #lkryrgoyqt th {
   border-style: none;
 }
 
-#mbbezfpvvd p {
+#lkryrgoyqt p {
   margin: 0;
   padding: 0;
 }
 
-#mbbezfpvvd .gt_table {
+#lkryrgoyqt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5498,12 +5486,12 @@ Table&nbsp;16.10: Induration classes
   border-left-color: #D3D3D3;
 }
 
-#mbbezfpvvd .gt_caption {
+#lkryrgoyqt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mbbezfpvvd .gt_title {
+#lkryrgoyqt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -5515,7 +5503,7 @@ Table&nbsp;16.10: Induration classes
   border-bottom-width: 0;
 }
 
-#mbbezfpvvd .gt_subtitle {
+#lkryrgoyqt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5527,7 +5515,7 @@ Table&nbsp;16.10: Induration classes
   border-top-width: 0;
 }
 
-#mbbezfpvvd .gt_heading {
+#lkryrgoyqt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5539,13 +5527,13 @@ Table&nbsp;16.10: Induration classes
   border-right-color: #D3D3D3;
 }
 
-#mbbezfpvvd .gt_bottom_border {
+#lkryrgoyqt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mbbezfpvvd .gt_col_headings {
+#lkryrgoyqt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5560,7 +5548,7 @@ Table&nbsp;16.10: Induration classes
   border-right-color: #D3D3D3;
 }
 
-#mbbezfpvvd .gt_col_heading {
+#lkryrgoyqt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5580,7 +5568,7 @@ Table&nbsp;16.10: Induration classes
   overflow-x: hidden;
 }
 
-#mbbezfpvvd .gt_column_spanner_outer {
+#lkryrgoyqt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5592,15 +5580,15 @@ Table&nbsp;16.10: Induration classes
   padding-right: 4px;
 }
 
-#mbbezfpvvd .gt_column_spanner_outer:first-child {
+#lkryrgoyqt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mbbezfpvvd .gt_column_spanner_outer:last-child {
+#lkryrgoyqt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mbbezfpvvd .gt_column_spanner {
+#lkryrgoyqt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5612,11 +5600,11 @@ Table&nbsp;16.10: Induration classes
   width: 100%;
 }
 
-#mbbezfpvvd .gt_spanner_row {
+#lkryrgoyqt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mbbezfpvvd .gt_group_heading {
+#lkryrgoyqt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5642,7 +5630,7 @@ Table&nbsp;16.10: Induration classes
   text-align: left;
 }
 
-#mbbezfpvvd .gt_empty_group_heading {
+#lkryrgoyqt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5657,15 +5645,15 @@ Table&nbsp;16.10: Induration classes
   vertical-align: middle;
 }
 
-#mbbezfpvvd .gt_from_md > :first-child {
+#lkryrgoyqt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mbbezfpvvd .gt_from_md > :last-child {
+#lkryrgoyqt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mbbezfpvvd .gt_row {
+#lkryrgoyqt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5684,7 +5672,7 @@ Table&nbsp;16.10: Induration classes
   overflow-x: hidden;
 }
 
-#mbbezfpvvd .gt_stub {
+#lkryrgoyqt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5697,7 +5685,7 @@ Table&nbsp;16.10: Induration classes
   padding-right: 5px;
 }
 
-#mbbezfpvvd .gt_stub_row_group {
+#lkryrgoyqt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5711,15 +5699,15 @@ Table&nbsp;16.10: Induration classes
   vertical-align: top;
 }
 
-#mbbezfpvvd .gt_row_group_first td {
+#lkryrgoyqt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mbbezfpvvd .gt_row_group_first th {
+#lkryrgoyqt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mbbezfpvvd .gt_summary_row {
+#lkryrgoyqt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5729,16 +5717,16 @@ Table&nbsp;16.10: Induration classes
   padding-right: 5px;
 }
 
-#mbbezfpvvd .gt_first_summary_row {
+#lkryrgoyqt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mbbezfpvvd .gt_first_summary_row.thick {
+#lkryrgoyqt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mbbezfpvvd .gt_last_summary_row {
+#lkryrgoyqt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5748,7 +5736,7 @@ Table&nbsp;16.10: Induration classes
   border-bottom-color: #D3D3D3;
 }
 
-#mbbezfpvvd .gt_grand_summary_row {
+#lkryrgoyqt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5758,7 +5746,7 @@ Table&nbsp;16.10: Induration classes
   padding-right: 5px;
 }
 
-#mbbezfpvvd .gt_first_grand_summary_row {
+#lkryrgoyqt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5768,7 +5756,7 @@ Table&nbsp;16.10: Induration classes
   border-top-color: #D3D3D3;
 }
 
-#mbbezfpvvd .gt_last_grand_summary_row_top {
+#lkryrgoyqt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5778,11 +5766,11 @@ Table&nbsp;16.10: Induration classes
   border-bottom-color: #D3D3D3;
 }
 
-#mbbezfpvvd .gt_striped {
+#lkryrgoyqt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mbbezfpvvd .gt_table_body {
+#lkryrgoyqt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5791,7 +5779,7 @@ Table&nbsp;16.10: Induration classes
   border-bottom-color: #D3D3D3;
 }
 
-#mbbezfpvvd .gt_footnotes {
+#lkryrgoyqt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5805,7 +5793,7 @@ Table&nbsp;16.10: Induration classes
   border-right-color: #D3D3D3;
 }
 
-#mbbezfpvvd .gt_footnote {
+#lkryrgoyqt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5814,7 +5802,7 @@ Table&nbsp;16.10: Induration classes
   padding-right: 5px;
 }
 
-#mbbezfpvvd .gt_sourcenotes {
+#lkryrgoyqt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5828,7 +5816,7 @@ Table&nbsp;16.10: Induration classes
   border-right-color: #D3D3D3;
 }
 
-#mbbezfpvvd .gt_sourcenote {
+#lkryrgoyqt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5836,72 +5824,72 @@ Table&nbsp;16.10: Induration classes
   padding-right: 5px;
 }
 
-#mbbezfpvvd .gt_left {
+#lkryrgoyqt .gt_left {
   text-align: left;
 }
 
-#mbbezfpvvd .gt_center {
+#lkryrgoyqt .gt_center {
   text-align: center;
 }
 
-#mbbezfpvvd .gt_right {
+#lkryrgoyqt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mbbezfpvvd .gt_font_normal {
+#lkryrgoyqt .gt_font_normal {
   font-weight: normal;
 }
 
-#mbbezfpvvd .gt_font_bold {
+#lkryrgoyqt .gt_font_bold {
   font-weight: bold;
 }
 
-#mbbezfpvvd .gt_font_italic {
+#lkryrgoyqt .gt_font_italic {
   font-style: italic;
 }
 
-#mbbezfpvvd .gt_super {
+#lkryrgoyqt .gt_super {
   font-size: 65%;
 }
 
-#mbbezfpvvd .gt_footnote_marks {
+#lkryrgoyqt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mbbezfpvvd .gt_asterisk {
+#lkryrgoyqt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mbbezfpvvd .gt_indent_1 {
+#lkryrgoyqt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mbbezfpvvd .gt_indent_2 {
+#lkryrgoyqt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mbbezfpvvd .gt_indent_3 {
+#lkryrgoyqt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mbbezfpvvd .gt_indent_4 {
+#lkryrgoyqt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mbbezfpvvd .gt_indent_5 {
+#lkryrgoyqt .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mbbezfpvvd .katex-display {
+#lkryrgoyqt .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mbbezfpvvd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#lkryrgoyqt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5923,27 +5911,27 @@ Table&nbsp;16.10: Induration classes
 <tr class="odd">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">1</td>
 <td class="gt_row gt_left" headers="Name">Non-indurated</td>
-<td class="gt_row gt_left" headers="Description">Sample slakes within one hour</td>
+<td class="gt_row gt_left" headers="Description">Sample slakes within 1 hour</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">2</td>
 <td class="gt_row gt_left" headers="Name">Very weakly indurated</td>
-<td class="gt_row gt_left" headers="Description">Has not slaked, strength class of 2–4</td>
+<td class="gt_row gt_left" headers="Description">Has not slaked; strength class of 2–4</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">3</td>
 <td class="gt_row gt_left" headers="Name">Weakly indurated</td>
-<td class="gt_row gt_left" headers="Description">strength class of 5–6</td>
+<td class="gt_row gt_left" headers="Description">Strength class of 5–6</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">4</td>
 <td class="gt_row gt_left" headers="Name">Strongly indurated</td>
-<td class="gt_row gt_left" headers="Description">strength class of 7 but will break when struck by a sharp blow with a hammer</td>
+<td class="gt_row gt_left" headers="Description">Strength class of 7, but will break when struck by a sharp blow with a hammer</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Code" style="text-align: center; color: #FF0000; font-weight: bold;">5</td>
 <td class="gt_row gt_left" headers="Name">Very strongly indurated</td>
-<td class="gt_row gt_left" headers="Description">strength class of 7 but does not break when struck by a sharp blow with a hammer.</td>
+<td class="gt_row gt_left" headers="Description">Strength class of 7, and does not break when struck by a sharp blow with a hammer.</td>
 </tr>
 </tbody>
 </table>
@@ -5957,20 +5945,20 @@ Table&nbsp;16.10: Induration classes
 </section>
 <section id="sec-cn-fib" class="level2" data-number="16.13">
 <h2 data-number="16.13" class="anchored" data-anchor-id="sec-cn-fib"><span class="header-section-number">16.13</span> Rubbed fibre content</h2>
-<p>Rubbed fibre content is an indicator of the degree of organic decomposition and can be used to help determine whether organic material qualifies as fibric, mesic or humic (<a href="hr_03_texture.html#sec-tex-orgmod" class="quarto-xref"><span>Section 14.1.3.1</span></a>, <a href="in_01_horizon_names.html#sec-hor-o" class="quarto-xref"><span>Section 18.2.2</span></a>).</p>
+<p>Rubbed fibre content is an indicator of the degree of organic decomposition and can be used to help determine whether organic material qualifies as fibric, mesic or humic (<a href="hr_03_texture.html#sec-tex-orgmod" class="quarto-xref"><span>Section 14.1.3.1</span></a>, <a href="in_01_horizon_names.html#sec-hor-o" class="quarto-xref"><span>Section 18.2.2</span></a>). Note the following.</p>
 <ul>
 <li>This test can be performed on any sample with an appreciable amount of visible and decomposing organic matter. Live plant roots should be removed before performing the test.</li>
-<li>This test can be performed on auger-extracted samples. However, exercise caution when extracting samples from below the water table as they may easily become cross-contaminated by overlying material.</li>
-<li>Perform the test on ~100 cm<sup>3</sup> of soil (a small handful)</li>
+<li>This test can be performed on auger-extracted samples. However, exercise caution when extracting samples from below the water-table as they may easily become cross-contaminated by overlying material.</li>
+<li>Perform the test on ~100 cm<sup>3</sup> of soil (a small handful).</li>
 <li>Perform the test on wet materials.</li>
 </ul>
 <p><em>Procedure</em></p>
 <ol type="1">
 <li>Extract the sample and squeeze to remove excess water</li>
-<li>Rub the wet sample 10 times between thumb and forefinger, or knead a ball of sample ten times firmly in the palm of the hand.</li>
+<li>Rub the wet sample 10 times between the thumb and forefinger, or knead a ball of sample 10 times firmly in the palm of the hand.</li>
 <li>Examine the proportion of visible plant fibres.</li>
 </ol>
-<p>Note that larger pieces of rotting solid or soft timber (e.g.&nbsp;buried branches) should also be included in the total proportion of fibrous material.</p>
+<p>Note that larger pieces of rotting solid or soft timber (e.g.&nbsp;buried branches) should be included in the total proportion of fibrous material.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-cn-fib" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -5979,23 +5967,23 @@ Table&nbsp;16.11: Fibric organic material classes
 </figcaption>
 <div aria-describedby="tbl-cn-fib-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="lduahsxapr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lduahsxapr table {
+<div id="rqetemqipn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rqetemqipn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#lduahsxapr thead, #lduahsxapr tbody, #lduahsxapr tfoot, #lduahsxapr tr, #lduahsxapr td, #lduahsxapr th {
+#rqetemqipn thead, #rqetemqipn tbody, #rqetemqipn tfoot, #rqetemqipn tr, #rqetemqipn td, #rqetemqipn th {
   border-style: none;
 }
 
-#lduahsxapr p {
+#rqetemqipn p {
   margin: 0;
   padding: 0;
 }
 
-#lduahsxapr .gt_table {
+#rqetemqipn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -6021,12 +6009,12 @@ Table&nbsp;16.11: Fibric organic material classes
   border-left-color: #D3D3D3;
 }
 
-#lduahsxapr .gt_caption {
+#rqetemqipn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#lduahsxapr .gt_title {
+#rqetemqipn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -6038,7 +6026,7 @@ Table&nbsp;16.11: Fibric organic material classes
   border-bottom-width: 0;
 }
 
-#lduahsxapr .gt_subtitle {
+#rqetemqipn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6050,7 +6038,7 @@ Table&nbsp;16.11: Fibric organic material classes
   border-top-width: 0;
 }
 
-#lduahsxapr .gt_heading {
+#rqetemqipn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -6062,13 +6050,13 @@ Table&nbsp;16.11: Fibric organic material classes
   border-right-color: #D3D3D3;
 }
 
-#lduahsxapr .gt_bottom_border {
+#rqetemqipn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lduahsxapr .gt_col_headings {
+#rqetemqipn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6083,7 +6071,7 @@ Table&nbsp;16.11: Fibric organic material classes
   border-right-color: #D3D3D3;
 }
 
-#lduahsxapr .gt_col_heading {
+#rqetemqipn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6103,7 +6091,7 @@ Table&nbsp;16.11: Fibric organic material classes
   overflow-x: hidden;
 }
 
-#lduahsxapr .gt_column_spanner_outer {
+#rqetemqipn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6115,15 +6103,15 @@ Table&nbsp;16.11: Fibric organic material classes
   padding-right: 4px;
 }
 
-#lduahsxapr .gt_column_spanner_outer:first-child {
+#rqetemqipn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lduahsxapr .gt_column_spanner_outer:last-child {
+#rqetemqipn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lduahsxapr .gt_column_spanner {
+#rqetemqipn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6135,11 +6123,11 @@ Table&nbsp;16.11: Fibric organic material classes
   width: 100%;
 }
 
-#lduahsxapr .gt_spanner_row {
+#rqetemqipn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#lduahsxapr .gt_group_heading {
+#rqetemqipn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6165,7 +6153,7 @@ Table&nbsp;16.11: Fibric organic material classes
   text-align: left;
 }
 
-#lduahsxapr .gt_empty_group_heading {
+#rqetemqipn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6180,15 +6168,15 @@ Table&nbsp;16.11: Fibric organic material classes
   vertical-align: middle;
 }
 
-#lduahsxapr .gt_from_md > :first-child {
+#rqetemqipn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lduahsxapr .gt_from_md > :last-child {
+#rqetemqipn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lduahsxapr .gt_row {
+#rqetemqipn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6207,7 +6195,7 @@ Table&nbsp;16.11: Fibric organic material classes
   overflow-x: hidden;
 }
 
-#lduahsxapr .gt_stub {
+#rqetemqipn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6220,7 +6208,7 @@ Table&nbsp;16.11: Fibric organic material classes
   padding-right: 5px;
 }
 
-#lduahsxapr .gt_stub_row_group {
+#rqetemqipn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6234,15 +6222,15 @@ Table&nbsp;16.11: Fibric organic material classes
   vertical-align: top;
 }
 
-#lduahsxapr .gt_row_group_first td {
+#rqetemqipn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#lduahsxapr .gt_row_group_first th {
+#rqetemqipn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#lduahsxapr .gt_summary_row {
+#rqetemqipn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6252,16 +6240,16 @@ Table&nbsp;16.11: Fibric organic material classes
   padding-right: 5px;
 }
 
-#lduahsxapr .gt_first_summary_row {
+#rqetemqipn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#lduahsxapr .gt_first_summary_row.thick {
+#rqetemqipn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#lduahsxapr .gt_last_summary_row {
+#rqetemqipn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6271,7 +6259,7 @@ Table&nbsp;16.11: Fibric organic material classes
   border-bottom-color: #D3D3D3;
 }
 
-#lduahsxapr .gt_grand_summary_row {
+#rqetemqipn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6281,7 +6269,7 @@ Table&nbsp;16.11: Fibric organic material classes
   padding-right: 5px;
 }
 
-#lduahsxapr .gt_first_grand_summary_row {
+#rqetemqipn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6291,7 +6279,7 @@ Table&nbsp;16.11: Fibric organic material classes
   border-top-color: #D3D3D3;
 }
 
-#lduahsxapr .gt_last_grand_summary_row_top {
+#rqetemqipn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6301,11 +6289,11 @@ Table&nbsp;16.11: Fibric organic material classes
   border-bottom-color: #D3D3D3;
 }
 
-#lduahsxapr .gt_striped {
+#rqetemqipn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lduahsxapr .gt_table_body {
+#rqetemqipn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6314,7 +6302,7 @@ Table&nbsp;16.11: Fibric organic material classes
   border-bottom-color: #D3D3D3;
 }
 
-#lduahsxapr .gt_footnotes {
+#rqetemqipn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6328,7 +6316,7 @@ Table&nbsp;16.11: Fibric organic material classes
   border-right-color: #D3D3D3;
 }
 
-#lduahsxapr .gt_footnote {
+#rqetemqipn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6337,7 +6325,7 @@ Table&nbsp;16.11: Fibric organic material classes
   padding-right: 5px;
 }
 
-#lduahsxapr .gt_sourcenotes {
+#rqetemqipn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6351,7 +6339,7 @@ Table&nbsp;16.11: Fibric organic material classes
   border-right-color: #D3D3D3;
 }
 
-#lduahsxapr .gt_sourcenote {
+#rqetemqipn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6359,72 +6347,72 @@ Table&nbsp;16.11: Fibric organic material classes
   padding-right: 5px;
 }
 
-#lduahsxapr .gt_left {
+#rqetemqipn .gt_left {
   text-align: left;
 }
 
-#lduahsxapr .gt_center {
+#rqetemqipn .gt_center {
   text-align: center;
 }
 
-#lduahsxapr .gt_right {
+#rqetemqipn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lduahsxapr .gt_font_normal {
+#rqetemqipn .gt_font_normal {
   font-weight: normal;
 }
 
-#lduahsxapr .gt_font_bold {
+#rqetemqipn .gt_font_bold {
   font-weight: bold;
 }
 
-#lduahsxapr .gt_font_italic {
+#rqetemqipn .gt_font_italic {
   font-style: italic;
 }
 
-#lduahsxapr .gt_super {
+#rqetemqipn .gt_super {
   font-size: 65%;
 }
 
-#lduahsxapr .gt_footnote_marks {
+#rqetemqipn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#lduahsxapr .gt_asterisk {
+#rqetemqipn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#lduahsxapr .gt_indent_1 {
+#rqetemqipn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#lduahsxapr .gt_indent_2 {
+#rqetemqipn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#lduahsxapr .gt_indent_3 {
+#rqetemqipn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#lduahsxapr .gt_indent_4 {
+#rqetemqipn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#lduahsxapr .gt_indent_5 {
+#rqetemqipn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#lduahsxapr .katex-display {
+#rqetemqipn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#lduahsxapr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rqetemqipn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -6475,14 +6463,14 @@ Table&nbsp;16.11: Fibric organic material classes
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-newzealandgeotechnicalsociety2005" class="csl-entry" role="listitem">
+Burns D, Farquar G, Mills M, Williams A, editors 2005. Field description of soil and rock: Guideline for the field classification and description of soil and rock for engineering purposes. Wellington, New Zealand, New Zealand Geotechnical Society. <a href="https://www.nzgs.org/libraries/field-description-of-soil-and-rock/">https://www.nzgs.org/libraries/field-description-of-soil-and-rock/</a>
+</div>
 <div id="ref-drohan2020" class="csl-entry" role="listitem">
-Drohan PJ, Thompson JA, Lindbo DL, Beaudette DE, Dadio SD 2020. Redefining the fragipan to improve field recognition and land use relevance. Soil Science Society of America Journal. 84(4):1055–1066. <a href="https://doi.org/10.1002/saj2.20098">https://doi.org/10.1002/saj2.20098</a>
+Drohan PJ, Thompson JA, Lindbo DL, Beaudette DE, Dadio SD 2020. Redefining the fragipan to improve field recognition and land use relevance. Soil Science Society of America Journal 84(4): 1055–1066. <a href="https://doi.org/10.1002/saj2.20098">https://doi.org/10.1002/saj2.20098</a>
 </div>
 <div id="ref-griffiths1999" class="csl-entry" role="listitem">
-Griffiths E, Webb TH, Watt JPC, Singleton PL 1999. Development of soil morphological descriptors to improve field estimation of hydraulic conductivity. Australian Journal of Soil Research. 37(5):971. <a href="https://doi.org/10.1071/SR98066">https://doi.org/10.1071/SR98066</a>
-</div>
-<div id="ref-newzealandgeotechnicalsociety2005" class="csl-entry" role="listitem">
-New Zealand Geotechnical Society 2005. Field description of soil and rock: Guideline for the field classification and description of soil and rock for engineering purposes. Burns D, Farquar G, Mills M, Williams A, editors. Wellington, New Zealand: New Zealand Geotechnical Society, Inc. <a href="https://www.nzgs.org/libraries/field-description-of-soil-and-rock/">https://www.nzgs.org/libraries/field-description-of-soil-and-rock/</a>
+Griffiths E, Webb TH, Watt JPC, Singleton PL 1999. Development of soil morphological descriptors to improve field estimation of hydraulic conductivity. Australian Journal of Soil Research 37(5): 971. <a href="https://doi.org/10.1071/SR98066">https://doi.org/10.1071/SR98066</a>
 </div>
 </div>
 </section>
@@ -6895,12 +6883,44 @@ New Zealand Geotechnical Society 2005. Field description of soil and rock: Guide
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./hr_06_chemical_properties.html" class="pagination-link" aria-label="Chemical properties">
-        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Chemical properties</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./hr_06_chemical_properties.html" class="pagination-link" aria-label="Field tests">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field tests</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
