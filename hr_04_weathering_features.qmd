@@ -12,37 +12,9 @@ Weathering features are distinct bodies formed within the soil through pedogenic
 
 Concentrations are secondary features that are not associated with specific surfaces within the soil (i.e. they do not form coatings on peds or void spaces, but rather permeate the soil mass; compare with coatings, @sec-hr-coat). Some concentrations contrast sharply with the surrounding soil material due to differences in colour, hardness, or composition, while others may be more subtle.
 
-For rapid assessment, record the concentration form and abundance percentage using @tbl-hr-concform. For a detailed assessment, note the form, type, abundance in percentage, and size range in millimetres. Colour is not required because it is usually determined by type and may have already been recorded as a colour pattern (@sec-col-patt). Abundance and size can be classified using @tbl-in-size and @tbl-in-abgen respectively.
+For rapid assessment, record the concentration type and abundance percentage using @tbl-hr-concform. For a routine assessment, add form. For a detailed description, add size range in millimetres. Colour is not required because it is usually determined by type and may have already been recorded as a colour pattern (@sec-col-patt). Abundance and size can be classified using @tbl-in-size and @tbl-in-abgen respectively.
 
-**For example:** use [NO F 10% 6-8 mm]{.ceg} for scattered small ironstone nodules.
-
-```{r}
-#| label: tbl-hr-concform
-#| tbl-cap: "Concentration forms"
-
-dat_hr_concform <-
-  tribble(~Code, ~Name, ~Description,
-          'CC', 'Concretion', 'Hard concentrations with a layered internal structure, usually rounded',
-          'NO', 'Nodule', 'Hard concentrations with no internal structure, usually irregular',
-          'CT', 'Crystal', 'A mineral arranged as interlocking or twinned macroscopic crystals, or as a single macroscopic crystal (e.g. gypsum)',
-          'SS', 'Soft mass', 'A non-cemented concentration that can seldom be removed from the soil as a discrete unit',
-          'LM', 'Lamellae', 'A thin band of uncemented material with sharp upper and lower boundaries')
-
-tbl_hr_concform <- gt(dat_hr_concform) |>
-   tab_options(
-    column_labels.font.weight = 'bold', 
-    heading.title.font.weight = 'bold',
-    table.align = 'center',
-    table.width = '85%'
-  ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
-                                   weight = 'bold',
-                                   align  = 'center')),
-            locations = cells_body(columns = 1)) |>
-  cols_width(Code ~pct(10), Name ~pct(20))
-
-tbl_hr_concform
-```
+**For example:** use [F NO 10% 6-8 mm]{.ceg} for scattered small ironstone nodules.
 
 ```{r}
 #| label: tbl-hr-conctype
@@ -50,18 +22,18 @@ tbl_hr_concform
 
 dat_hr_conctype <-
   tribble(~Code, ~Name, ~Description,
-          'A',  'Sandy', 'Sandy texture within a loamy, silty, or clayey matrix',
-          'E',  'Earthy', 'Loamy or silty texture within a sandy or clayey matrix',
-          'L',  'Argillaceous', 'Clayey texture within a silty, loamy or sandy matrix',
-          'F',  'Ferruginous', 'Iron-dominated minerals',
-          'M',  'Manganiferous', 'Manganese-dominated minerals',
+          'A',  'Sandy',              'Sandy texture within a loamy, silty, or clayey matrix',
+          'E',  'Earthy',             'Loamy or silty texture within a sandy or clayey matrix',
+          'L',  'Argillaceous',       'Clayey texture within a silty, loamy or sandy matrix',
+          'F',  'Ferruginous',        'Iron-dominated minerals',
+          'M',  'Manganiferous',      'Manganese-dominated minerals',
           'N',  'Ferromanganiferous', 'Dominated by a mix of iron and manganese',
-          'K',  'Calcareous', 'Dominated by calcium carbonate (CaCO~3~)',
-          'Y',  'Gypseous', 'Dominated by calcium sulfate (gypsum, CaSO~4~)',
-          'Z',  'Salty', 'Dominated by salts more soluble than CaCO~3~ or CaSO~4~',
-          'S',  'Sulfurous', 'Dominated by sulfur-bearing minerals (e.g. jarosite in acid sulfate soils)',
-          'O',  'Organic', 'Organic texture in a low-organic or mineral matrix',
-          'UK', 'Unknown', 'Composition cannot be reliably determined'
+          'K',  'Calcareous',         'Dominated by calcium carbonate (CaCO~3~)',
+          'Y',  'Gypseous',           'Dominated by calcium sulfate (gypsum, CaSO~4~)',
+          'Z',  'Salty',              'Dominated by salts more soluble than CaCO~3~ or CaSO~4~',
+          'S',  'Sulfurous',          'Dominated by sulfur-bearing minerals (e.g. jarosite in acid sulfate soils)',
+          'O',  'Organic',            'Organic texture in a low-organic or mineral matrix',
+          'UK', 'Unknown',            'Composition cannot be reliably determined'
           )
 
 tbl_hr_conctype <- gt(dat_hr_conctype) |>
@@ -80,6 +52,34 @@ tbl_hr_conctype <- gt(dat_hr_conctype) |>
   tab_source_note(source_note = md('Adapted from the *Australian Soil and Land Survey Field Handbook*.'))
 
 tbl_hr_conctype
+```
+
+```{r}
+#| label: tbl-hr-concform
+#| tbl-cap: "Concentration forms"
+
+dat_hr_concform <-
+  tribble(~Code, ~Name, ~Description,
+          'CC', 'Concretion', 'Hard concentrations with a layered internal structure, usually rounded',
+          'NO', 'Nodule',     'Hard concentrations with no internal structure, usually irregular',
+          'CT', 'Crystal',    'A mineral arranged as interlocking or twinned macroscopic crystals, or as a single macroscopic crystal (e.g. gypsum)',
+          'SS', 'Soft mass',  'A non-cemented concentration that can seldom be removed from the soil as a discrete unit',
+          'LM', 'Lamellae',   'A thin band of uncemented material with sharp upper and lower boundaries')
+
+tbl_hr_concform <- gt(dat_hr_concform) |>
+   tab_options(
+    column_labels.font.weight = 'bold', 
+    heading.title.font.weight = 'bold',
+    table.align = 'center',
+    table.width = '85%'
+  ) |>
+  tab_style(style = list(cell_text(color  = 'red', 
+                                   weight = 'bold',
+                                   align  = 'center')),
+            locations = cells_body(columns = 1)) |>
+  cols_width(Code ~pct(10), Name ~pct(20))
+
+tbl_hr_concform
 ```
 
 ::: {#nte-lamn .callout-note appearance="minimal" collapse="true" title="Lamellae and laminae"}
@@ -249,7 +249,7 @@ tbl_hr_panstr
 
 Stress features develop along fissures or on ped faces in soils that shrink and swell as water content changes. Stress features are usually shiny but do not differ in colour from the soil matrix. Magnification may be required to observe them clearly. Stress features will not develop in sandy soil textures (see @tbl-hr-earthgrps).
 
-Stress features can be optionally noted during a detailed soil description. Describe type using @tbl-hr-pftype and abundance as the integer percentage of ped faces covered.
+Stress features can be optionally recorded during a routine or detailed soil description. Describe type using @tbl-hr-pftype and abundance as the integer percentage of ped faces covered.
 
 **For example:** use [SL 30%]{.ceg} in a well-developed Vertic Melanic Soil.
 

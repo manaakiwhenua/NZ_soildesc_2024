@@ -1,4 +1,4 @@
-# Defining soil horizons {#sec-hor}
+# Soil profile {#sec-hor}
 
 ```{r}
 library(dplyr)
@@ -109,7 +109,7 @@ tbl_hr_bshp
 
 Horizon boundaries mark changes in soil properties over short vertical distances. The distinctness is variable, from very sudden to gradual, and can signify particular soil characteristics (e.g. a change in parent material). Horizon boundary distinctness is used when classifying soils.
 
-Measure the distinctness of a horizon's lower boundary in terms of its width. Report a median and range in 0.1 cm increments (e.g. [2.0 cm ± 0.5 cm]{.ceg}). For rapid assessment, horizon boundary distinctness can be noted using one of the options in @tbl-hr-bdst.
+Measure the distinctness of a horizon's lower boundary in terms of its width. Report a median and range in 0.1 cm increments (e.g. [2.0 cm ± 0.5 cm]{.ceg}). For rapid assessment, horizon boundary distinctness can be recorded using one of the options in @tbl-hr-bdst.
 
 ```{r}
 #| label: tbl-hr-bdst
@@ -146,7 +146,7 @@ Where a transition is thicker than 30 cm it should be defined as a new horizon.
 
 ## Infill features {#sec-pr-inf}
 
-Infill features are interruptions to the horizonation pattern caused by relatively recent biological or physical disturbances. Infill features are large enough such that they can usually only be clearly observed at exposures or large pit faces. The interruption may extend across several horizons, and the infilled material may be from adjacent horizon(s) or comprise reworked material from the affected horizon(s). Where infill features are present, for each affected horizon note the type using the options in @tbl-hr-infl and the infill material using the options in @tbl-hr-infm.
+Infill features are interruptions to the horizonation pattern caused by relatively recent biological or physical disturbances. Infill features are large enough such that they can usually only be clearly observed at exposures or large pit faces. The interruption may extend across several horizons, and the infilled material may be from adjacent horizon(s) or comprise reworked material from the affected horizon(s). Where infill features are present, for each affected horizon record the type using the options in @tbl-hr-infl and the infill material using the options in @tbl-hr-infm.
 
 **For example:** use [C T]{.ceg} for infilled shrink–swell cracks.
 
@@ -294,11 +294,11 @@ Information about the lithology, origin, and weathering degree of the soil paren
 
 ### Lithology {#sec-pr-lith}
 
-For rapid assessment, dominant lithology is recorded once for the profile (@sec-ss-recgmph). Where the subsolum is encountered, note its lithology (@sec-reg-lith) separately if it differs from the overlying material.
+For rapid assessment, dominant lithology is recorded once for the profile (@sec-ss-recgmph). Where the subsolum is encountered, record its lithology (@sec-reg-lith) separately if it differs from the overlying material.
 
 **For example:** use [ANDS, SAFT]{.ceg} for a mix of eroded sedimentary rocks and volcanic ash.
 
-For routine assessment, the lithology of the fine-earth (mineral particles \<2 mm) is noted separately for each soil horizon, as are any rock fragments observed in each horizon (see also @sec-rockfrag). In the subsolum, each distinct layer observed should have its lithology captured separately. In all cases, use the codes in @tbl-ss-pm and record only the dominant lithologies present.
+For routine assessment, the lithology of the fine-earth (mineral particles \<2 mm) is recorded separately for each soil horizon, as are any rock fragments observed in each horizon (see also @sec-rockfrag). In the subsolum, each distinct layer observed should have its lithology captured separately. In all cases, use the codes in @tbl-ss-pm and record only the dominant lithologies present.
 
 For a detailed assessment, a more complete list of lithologies may be defined for each mineral component.
 
@@ -309,7 +309,6 @@ Parent material origin, or mode of emplacement, describes how soil parent materi
 For rapid assessment, dominant parent material origin is recorded once for the profile, using up to two codes from @tbl-ss-pmo. For routine assessment, record one parent material origin code per soil horizon using the codes in @tbl-ss-pmo. At the horizon level, the [An]{.ceg} (Anthropic) class can be subdivided by origin using the codes in @tbl-hr-antype.
 
 **For example:** use [Ann]{.ceg} for a fill pad in a residential housing development.
-
 
 ```{r}
 #| label: tbl-ss-pmo
@@ -395,6 +394,7 @@ In New Zealand, and particularly on the North Island, many soils form in cover b
 
 The effects of weathering and pedogenesis vary down-profile (usually, but not always, decreasing with depth). Horizons that have experienced limited weathering may require specific descriptors. For example, texture (@sec-tex-rec) cannot usually be determined on paralithic material, but bedding (@sec-reg-bed) may need to be described, so the need for these should be assessed early in the description process. Use the guidance in @tbl-pr-wdeg to clearly identify the solum, as well as any subsolum materials encountered. The weathering status of rock material specifically may be assessed using the schema in @sec-rockfrag-wth.
 
+::: {#tbl-pr-wdeg .striped .hover tbl-colwidths="[10,20,70]"}
 +------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |            |                      |                                                                                                                                                                                                                                                                                                                         |
 +:===========+:=====================+:========================================================================================================================================================================================================================================================================================================================+
@@ -440,10 +440,11 @@ The effects of weathering and pedogenesis vary down-profile (usually, but not al
 |            |                      | 3.  has either of the following:                                                                                                                                                                                                                                                                                        |
 |            |                      |     a)  no visible chemical or physical weathering (to the naked eye) along geogenic features along cracks, sedimentary bedding or metamorphic foliations, *or*                                                                                                                                                         |
 |            |                      |     b)  when chemical or physical weathering is visible (to the naked eye), it is only expressed by a discoloration or staining along geogenic features such as cracks, sedimentary bedding or metamorphic foliations, and representing ≤25% of the visible material, *and*                                             |
-|            |                      | 4.  has no roots – neither along geogenic features nor in the                                                                                                                                                                                                                                                           |
+|            |                      | 4.  has no roots – neither along geogenic features nor in the matrix.                                                                                                                                                                                                                                                   |
 +------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-: Weathering status of soil-forming materials. Source: adapted from @juilleret2016. {#tbl-pr-wdeg .striped .hover tbl-colwidths="[10,20,70]"}
+: Weathering status of soil-forming materials. Source: adapted from @juilleret2016.
+:::
 
 ::: {#nte-stp .callout-note collapse="true" title="Degree of weathering and the *New Zealand Soil Classification*" appearance="minimal"}
 For the purposes of classifying soils according to the *New Zealand Soil Classification*, profiles overlying a layer of Lithic material, as defined in @tbl-pr-wdeg, would qualify for the 'lithic contact', while profiles overlying Saprolithic or Paralithic material would qualify for the 'paralithic contact'.
