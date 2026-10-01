@@ -23,11 +23,11 @@ Internal drainage is partly determined by soil permeability (see @sec-in-perm), 
 
 The profile drainage classification defined in this handbook was originally developed for the *New Zealand Soil Classification*. The classes are relatively simple, based on the intensity of reduction observed within a given distance of the soil surface. Horizons are assessed for their reduction intensity using the rules in @tbl-in-hdrng (along with the guidance in @sec-in-tsdrng and @sec-in-trdrng), and then profile drainage is determined using @tbl-in-pdrng.
 
-**For example:** use [MW]{.ceg} for a soil profile with the sequence Ap (0-25 cm) over Bw(f) (25-45 cm) over B(g) (45-75 cm) over Bg (75-95 cm).
+**For example:** use [MW]{.ceg} for a soil profile with the sequence Ap (0–25 cm) over Bw(f) (25–45 cm) over B(g) (45–75 cm) over Bg (75–95 cm).
 
 ```{r}
 #| label: tbl-in-hdrng
-#| tbl-cap: "Reduction intensity classification"
+#| tbl-cap: "Redox intensity classification"
 
 dat_in_hdrng <-
   tribble(~Code, ~Name, ~HNames,   ~sws, ~typfts, 
@@ -35,7 +35,7 @@ dat_in_hdrng <-
           'p', 'Strongly anaerobic', '*g',        'Wet', 'Redox mottles more often on ped surfaces than interiors. Topsoils may have peaty-mineral textures',
           'i', 'Moderately anaerobic', '*(g)',    'Wet to Moist', 'Often strongest profile expression of redox segregations',
           'm', 'Slightly anaerobic', '*(f)', 'Wet to Dry', 'Redox mottles more often in ped interiors, otherwise often faint and small',
-          'w', 'Not anaerobic', 'No redox suffixes', 'Moist to Dry', 'Often friable or very friable')
+          'w', 'Aerobic', 'No redox suffixes', 'Moist to Dry', 'Often friable or very friable')
 
 tbl_in_hdrng <- gt(dat_in_hdrng) |>
    tab_options(
@@ -65,12 +65,14 @@ tbl_in_hdrng
 dat_in_pdrng <-
   tribble(   
     ~Code,      ~Name,              ~Description,
-    'VP', 'Very Poor', 'Profiles with an intensely anaerobic horizon starting <30 cm from the soil surface',
+    'VP', 'Very poor', 'Profiles with an intensely anaerobic horizon starting <30 cm from the soil surface; and
+
+all horizons above 30 cm at least strongly anerobic.',
     'PO',    'Poor', 'Profiles with a strongly anaerobic horizon starting <30 cm from the soil surface',
     'IP',  'Imperfect', 'Profiles with a strongly or intensely anaerobic horizon starting 30 to <60 cm from the soil surface, *or*
     
 profiles with a moderately anaerobic horizon starting <30 cm from the soil surface',
-    'MW', 'Moderately Well', 'Profiles with a slightly anaerobic horizon starting <90 cm from the soil surface, *or*
+    'MW', 'Moderately well', 'Profiles with a slightly anaerobic horizon starting <90 cm from the soil surface, *or*
     
 profiles with a moderately anaerobic horizon starting 30 to <90 cm from the soil surface, *or*
 
@@ -103,9 +105,9 @@ It follows that only profiles with overall imperfect drainage are considered to 
 
 ### Classifying perched profiles {#sec-in-pdpch}
 
-Soil profiles sometimes exhibit perching behaviour, where a zone of more intense reduction in the subsoil exists directly above a low-permeability layer that appears to be less intensely reduced. These must be treated the same as any other soil profile when classifying. The depth to the shallowest zone of impeded drainage is used to determine the profile drainage class. Treat @tbl-in-pdrng as a key, stopping at the first class that fits the profile.
+Soil profiles sometimes exhibit perching behaviour, where a zone of more intense reduction in the subsoil exists directly above a low-permeability layer that appears to be less intensely reduced. These must be treated the same as any other soil profile when classifying. The depth to the shallowest hoorizon exhibiting the effects of impeded drainage, as defined by assessment of horizon reduction intensity in @tbl-in-hdrng, is used to determine the profile drainage class. Treat @tbl-in-pdrng as a key, stopping at the first class that fits the profile.
 
-**For example:** use [PO]{.ceg} for a soil profile with the sequence Ap (0-15 cm) over Bg (15-35 cm) over B(g)x (35-65 cm) over BC(g)(x) (65-95 cm).
+**For example:** Consider the sequence Ap (0–15 cm) over Bg (15–35 cm) over B(g)x (35–65 cm) over BC(g)(x) (65–95 cm). In this soil profile the Bg horizon meets the strongly anaerobic criteria in @tbl-in-hdrng, and because this horizon occurs <30 cm from the soil surface the soil profile is classified as poorly drained ([PO]{.ceg}) following criteria in @tbl-in-pdrng.
 
 ### Assessing redox intensity in mineral topsoils {#sec-in-tsdrng}
 
@@ -113,29 +115,29 @@ Morphological features associated with anaerobic conditions can be hard to obser
 
 General principles for assessing the reduction intensity of an A horizon are as follows.
 
-- A horizons that are darkened but that do not have low-chroma matrix colours (e.g. 10YR 3/3 [{{< fa circle >}}]{style="color: #59442c"} ) should be considered aerobic.
-- A horizons that do have a low-chroma matrix but otherwise meet the criteria for 'distinct topsoils' in the *New Zealand Soil Classification* (i.e. visibly darker than the subsoil and at least 5 cm thick) should be considered to be subject to less intense reduction than the horizon immediately underneath. For example, a 15 cm thick Ap horizon with moderate structure over a Bw(f) horizon would be considered aerobic, while an Ap immediately over a B(g) would be considered slightly anaerobic. The degree of underlying reduction in the latter case suggests that some limited periods of wetness should occur in the topsoil.
+- 'A' horizons that are darkened (e.g. 10YR 3/3 [{{< fa circle >}}]{style="color: #59442c"} ) but that do not have low-chroma matrix colours should be considered aerobic.
+- 'A' horizons that do have a low-chroma matrix but otherwise meet the criteria for 'distinct topsoils' in the *New Zealand Soil Classification* (i.e. visibly darker than the subsoil and at least 5 cm thick) should be considered to be subject to less intense reduction than the horizon immediately underneath. For example, a 15 cm thick Ap horizon with moderate structure over a Bw(f) horizon would be considered aerobic, while an Ap immediately over a B(g) would be considered slightly anaerobic. The degree of underlying reduction in the latter case suggests that some limited periods of wetness should occur in the overlying topsoil.
 - Other weakly developed or very thin A horizons should usually be considered to have the same degree of redox intensity as the horizon below.
 - Apg horizons, with their identifiable redox segregations, must be considered to be moderately anaerobic under the majority of circumstances.
 - If an Apg horizon has a slightly peaty texture with weak or massive apedal structure, or clearly identifiable gley colour patterns, it can be considered strongly anaerobic.
 
-Some caution should be exercised when assessing topsoils in agricultural landscapes. In some cases, topsoil redox segregations form in response to surface compaction from stock pugging, vehicle traffic, or tillage under wet conditions, while the deeper profile remains relatively unaffected. Clear description of the soil surface (@sec-pr-surface) will help prevent the presence of an Apg horizon from inappropriately downgrading profile drainage in this situation.
+Some caution should be exercised when assessing topsoils in agricultural landscapes. In some cases, topsoil redox segregations form in response to surface compaction from stock pugging, vehicle traffic, or tillage under wet conditions, while the deeper profile remains relatively unaffected. Clear description of the soil surface (@sec-pr-surface) will help prevent the presence of a management-induced Apg horizon from inappropriately downgrading profile drainage in this situation.
 
 ### Assessing redox intensity in mixed transitional horizons {#sec-in-trdrng}
 
 For transitional A/B horizons, if the A horizon component is sub-dominant by volume, then it should simply be ignored for the assessment of redox intensity.
 
-**For example:** in an A/B horizon where earthworm activity has moved dark A horizon material down through vertical burrows that occupy about 25% of the cut face of the soil horizon, the infilled burrows should not contribute to the total percentage of low-chroma colours in the soil matrix. The horizon would be assessed as if it were an unmixed B.
+**For example:** in an A/B horizon where earthworm activity has moved dark A horizon material down through vertical burrows that occupy about 25% of the cut face of the soil horizon, the infilled burrows should not contribute to the total percentage of low-chroma colours in the soil matrix. The horizon would be assessed as if it were an unmixed B. In this case a transition horizon with 25% A horizon material and 75% subsoil material that classifies as a Bg horizon would classify in @tbl-in-hdrng as a strongly anaerobic horizon.
 
-Where the A horizon material occupies the majority of the transitional zone, it can no longer be ignored. The topsoil component of the horizon should be assessed using the instructions in @sec-in-tsdrng, but the subsoil component of the horizon sets a lower limit on reduction intensity.
+Where the A horizon material occupies the majority of the transitional zone, it can no longer be ignored. The topsoil component of the horizon should be assessed using the instructions in @sec-in-tsdrng. The redox intensity of the topsoil component determines the minimum overall rating for the horizon, and the redox intensity of the subsoil component determines its maximum rating. The topsoil component should never be rated as more intensely anaerobic than the subsoil component.
 
-**For example:** in an Ap/B(g) horizon where tillage has partially mixed the topsoil and subsoil, the transition zone can be considered slightly anaerobic.
+**For example:** in an Ap/B(g) horizon where tillage has partially mixed the topsoil and subsoil and about 30% of the horizon comprises subsoil material, the horizon would classify per @tbl-in-hdrng as slightly anaerobic. An Apg/B(g) with a similar proportional mix would classify as moderately anaerobic, but never strongly anaerobic.
 
 ### Assessing redox intensity in low-chroma parent materials {#sec-in-dark}
 
-Exercise caution when assigning redox suffixes to soil horizons dominated by mafic/intermediate parent materials (e.g. basalt andesite, see @sec-pm-lith) because their colour usually appears darker than that of felsic parent materials (i.e. low chroma and low value) due to their mineralogy. Consequently, low-chroma colours appear less distinct.
+Exercise caution when assigning redox suffixes to soil horizons dominated by mafic/intermediate parent materials (e.g. basalt, andesite, see @sec-pm-lith) because their colour usually appears darker than that of felsic parent materials (i.e. low-chroma and low-value) due to their mineralogy. Consequently, low-chroma colours appear less distinct.
 
-Other soil parent materials can have low-chroma colours when relatively unweathered, e.g. young pumice deposits, unweathered greywacke sands, and marine-deposited sedimentary rocks. Heavily leached soil horizons (e.g. E horizons) will often be both high-value and low-chroma. Distinguishing the influence of drainage in these materials requires examining them under a range of drainage conditions, to better understand their natural variability.
+Other soil parent materials can have low-chroma colours when relatively unweathered (e.g. young pumice deposits, unweathered schist and greywacke sands, and marine-deposited sedimentary rocks). Heavily leached soil horizons (e.g. E horizons) will often be both high-value and low-chroma. Distinguishing the influence of drainage in these materials requires examining them under a range of drainage conditions to better understand their natural variability.
 
 As well as becoming familiar with the range of parent material appearance, using field tests for reducing conditions (@sec-ft-rdx) can help increase the accuracy of horizon notation provided sufficient free iron (Fe^2+^) remains in the soil solution.
 
@@ -153,7 +155,7 @@ dat_in_natdrng <-
   tribble(~Code, ~Name, ~Description, 
          'N', 'Natural', 'No evidence of human impacts on the local drainage regime', 
          'M', 'Minor', 'Drainage regime passively altered (e.g. by conversion to or from forest), or ambiguous evidence of any human impacts beyond clearing',
-         'A', 'Major', 'Clear evidence of directed human alteration to the drainage regime (e.g. drain or dam construction adjacent to site, flow diversions, infill, levelling or contouring works)')
+         'A', 'Major', 'Clear evidence of directed human alteration to the drainage regime (e.g. drain or dam construction adjacent to site, flow diversions, infill, levelling or contouring works, mole or tile drainage)')
 
 tbl_in_natdrng <- gt(dat_in_natdrng) |>
   tab_options(
@@ -176,9 +178,9 @@ tbl_in_natdrng
 
 Users of this handbook may sometimes wish to distinguish between soil profiles that have the same profile drainage class but a variable expression of reduction depth and intensity within the class limits. For example, for a deep-rooted, wetness-intolerant crop, there is a difference between an imperfectly drained profile that is at its *worst* moderately reduced throughout the top 90 cm, and one that has strong or intense reduction at depth.
 
-Within-class distinctions can be highlighted by appending the most intense reduction class observed within the profile.
+Within-class distinctions can be highlighted by appending the most intense redox class observed within the profile.
 
-**For example**, use [IP(v)]{.ceg} for an imperfectly drained profile with intense reduction deep in the profile, vs [IP(i)]{.ceg} for an imperfectly drained profile where the reduction intensity does not exceed moderate.
+**For example**, use [IP(v)]{.ceg} for an imperfectly drained profile that is intensely anaerobic deep in the profile, vs [IP(i)]{.ceg} for an imperfectly drained profile where the redox intensity does not exceed moderate.
 
 ## Permeability {#sec-in-perm}
 

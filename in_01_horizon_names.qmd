@@ -312,7 +312,7 @@ tbl_hr_hortwob
 
 ## Redox suffixes {#sec-hor-redox}
 
-Redox suffixes are used to signify the degree to which a horizon is affected by reduction due to persistent waterlogging, as evidenced by both the matrix colour (@sec-col-matrix) and the degree of development of redox segregations. 
+Redox suffixes are used to signify the degree to which a horizon is affected by anaerobic conditions due to persistent or temporary water saturation. Under such conditions of oxygen scarcity, some elements become effective electron acceptors (i.e. are being reduced) leading to changes in the matrix colour (@sec-col-matrix) and the development of redox segregations. 
 
 Redox segregations are formed as a result of the reduction and solubilisation of iron and/or manganese, their translocation and concentration, and their re-oxidation and precipitation in the form of oxides. They may comprise any of the following: redox mottles (@sec-col-patt), concentrations, coatings, and pans (@sec-weathering). 
 
@@ -323,7 +323,7 @@ Redox segregations are formed as a result of the reduction and solubilisation of
 dat_hr_horredox <-
   tribble(
           ~Code,                ~Name, ~Description, ~usewith,
-          '(f)',   'Slightly reduced', 'A horizon that contains more than 2% redox segregations, but no evidence of reduction. No low-chroma colours can be found in the matrix, on ped surfaces or in their interiors', 'B, C',
+          '(f)',   'Slightly reduced', 'A horizon that contains more than 2% redox segregations, but no evidence of reduction. No low-chroma colours (see @nte-lowch) can be found in the matrix, on ped surfaces or in their interiors', 'B, C',
           '(g)',            'Moderately reduced', 'A horizon that contains more than 2% redox segregations, and evidence of partial reduction. The matrix colour is not low-chroma, but low-chroma colours will be evident. These colours must occupy less than 50% of the cut face of a horizon, or less than 50% of ped surfaces', 'E, B, C',
            'g' ,       'Strongly reduced', 'A horizon that contains more than 2% redox segregations, and evidence of extensive reduction. The matrix colour is low-chroma, and low-chroma colours occupy 50-85% of the cut face of a horizon, or over 50% of ped surfaces', 'A, E, B, C',
             'r', 'Intensely reduced', 'A horizon that shows evidence of complete or near-complete reduction. The soil matrix comprises >85% low-chroma colours, either on the cut face of a horizon or on ped surfaces. Usually few to no redox segregations are present, and any that are will usually be confined to voids (e.g. in root channels).', 'E, B, C')
@@ -350,13 +350,16 @@ tbl_hr_horredox <- gt(dat_hr_horredox) |>
 tbl_hr_horredox
 ```
 
-Rule for use follow.
+The suffixes in @tbl-hr-horredox can be added to most primary or secondary horizon designations (e.g. Bg, Btg). There are some exceptions:
 
--   Only choose one redox suffix per horizon, if needed (e.g. Bg); the definitions are mutually exclusive.
--   g and r suffixes cannot be used with Ea, Ew or Bw horizons because they are partly defined by their development under well-aerated conditions and so will not have enough low-chroma colours in the matrix or on ped faces to qualify.
+-   Only choose one redox suffix per horizon, if needed; the definitions are mutually exclusive
+-   g and r suffixes cannot be used with Ea, Ew or Bw horizons because they are partly defined by their development under well-aerated conditions and so will not have enough low-chroma colours in the matrix or on ped faces.
 -   only the g suffix can be added to A horizons, in cases where ≥2% redox segregations occur. This is because A horizons are expected to be low-chroma from elevated organic matter, so do not meet the requirements for (f) or (g) suffixes. The use of the g suffix in A horizons may not necessarily signify *strong* reduction.
+-   do not use redox suffixes with L horizons. These require free drainage to form and so are regarded as not reduced.
 
-For further discussion about assessing redox intensity in soils, see @sec-in-drng. @tbl-hr-rdrules summarises the colour and redox segregation requirements in @tbl-hr-horredox for quick reference.
+For further discussion about assessing redox intensity in soils, see @sec-in-drng.
+
+@tbl-hr-rdrules summarises the colour and redox segregation requirements in @tbl-hr-horredox for quick reference.
 
 ```{r}
 #| label: tbl-hr-rdrules
@@ -365,7 +368,7 @@ For further discussion about assessing redox intensity in soils, see @sec-in-drn
 dat_hr_rdrules <-
   tribble(
           ~Code,                ~Name, ~segs, ~cols, 
-    '*No code*',        'Unaffected' , '<2%', 'None', 
+    '*No code*',         'Unaffected', '<2%', 'None', 
           '(f)',   'Slightly reduced', '≥2%', 'None', 
           '(g)', 'Moderately reduced', '≥2%', '<50%', 
            'g' ,   'Strongly Reduced', '≥2%', 'Matrix 50–85%, or
