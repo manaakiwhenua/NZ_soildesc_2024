@@ -20,14 +20,14 @@ In New Zealand many landscapes are underlain by sedimentary rocks that were not 
 While this handbook focuses on describing the solum, the subsolum, when encountered, should be described as well. Subsolum materials play a key role in deep drainage, groundwater recharge, slope stability, and ecological support [@juilleret2016]. 'Horizon' boundaries within the subsolum will most commonly relate to lithological or depositional discontinuities.
 
 ::: {#nte-hzn-cls .callout-note collapse="true" appearance="minimal" title="Soil horizons and classification systems"}
-All soil classification systems use particular soil horizons to help locate a soil within the system. To be classification-relevant, such horizons must not be merely present but must also meet particular thresholds of development (e.g. by having a minimum thickness or a particular abundance range for a key property).
+All soil classification systems use particular soil horizons to help locate a soil within the system. To be classification-relevant, such horizons must not be merely present but must also meet defined thresholds of development (e.g. by having a minimum thickness or a limited abundance range for a key property).
 :::
 
 ## Defining the soil surface {#sec-pr-ssurf}
 
 The soil surface has a slightly more restrictive definition than the land surface. The soil surface begins below the layer of fresh leaf litter or small living plants, and at the top of organic soil materials such as decomposing litter or peat. The mineral soil surface is further restricted, identified as the top of the first horizon that is dominated by mineral soil material. Horizon depths are defined with reference to the soil surface overall, so only fresh litter and/or small plants should be scraped back before measuring.
 
-![Distinguishing the soil surface from the mineral soil surface.](data/FIGS_soil_surface-c.png){#fig-ssurf img-alt="Diagram showing the difference between the land surface, the soil surface and the mineral soil surface." width="80%"}
+![Distinguishing the soil surface from the mineral soil surface.](data/FIG_11-1.jpg){#fig-ssurf img-alt="Diagram showing the difference between the land surface, the soil surface and the mineral soil surface." fig-align="center" width="80%"}
 
 ## Boundary depth {#sec-pr-depths}
 
@@ -45,7 +45,7 @@ On steeper slopes, measuring horizons from vertical exposures can exaggerate hor
 Where depths are measured perpendicular to the surface no adjustment needs to be made. To adjust vertically measured horizon depths to correct for slope, apply the formula $depth × cos(slope)$. Supply depth in centimetres and slope in radians. Slopes measured in degrees can be converted to radians using the formula $(slope × \pi) ÷ 180$. If this correction is made, clearly indicate this is the profile description record to prevent the horizon depths from being adjusted any further.
 
 ::: {layout-ncol="2"}
-![Representation of the difference between measuring perpendicular to the slope (*a*) and measuring vertically (*b*). On non-flat land, *b* is always longer than *a* and measuring *b* overestimates the horizon thickness.](data/FIGS_slope-depths.png){#fig-hr-slpdpth fig-alt="Diagram showing the way that measuring horizons vertically on steep slopes exaggerates their thickness." width="80%"}
+![Representation of the difference between measuring perpendicular to the slope (*a*) and measuring vertically (*b*). On non-flat land, *b* is always longer than *a* and measuring *b* overestimates the horizon thickness.](data/FIG_11-2.png){#fig-hr-slpdpth fig-alt="Diagram showing the way that measuring horizons vertically on steep slopes exaggerates their thickness." width="80%"}
 
 ```{r}
 #| label: fig-hr-slpex
@@ -63,7 +63,7 @@ ggplot(slp_dat) +
   labs(x= 'Slope (°)', y = 'Apparent vertical thickness (cm)') +
   theme_minimal() 
 
-#ggsave(filename = file.path('data', 'plot_depth-slope.png'),
+#ggsave(filename = file.path('data', 'FIG_11-3.png'),
 #       width = 12, height = 12, units = 'cm', dpi = 300, bg = '#ffffff00' )
 
 ```
@@ -103,7 +103,7 @@ tbl_hr_bshp <- gt(dat_hr_bshp) |>
 tbl_hr_bshp
 ```
 
-![Horizon boundary shape classes.](data/FIGS_boundary_shape.png){#fig-bdy-shp fig-alt="A diagrammatic representation of horizon boundary shape classes."}
+![Horizon boundary shape classes.](data/FIG_11-4.png){#fig-bdy-shp fig-alt="A diagrammatic representation of horizon boundary shape classes." width="80%"}
 
 ## Boundary distinctness {#sec-pr-bdydist}
 
@@ -142,7 +142,7 @@ tbl_hr_bdst
 
 Where a transition is thicker than 30 cm it should be defined as a new horizon. Use transitional horizon names as needed (see @sec-hor-tran).
 
-![Horizon boundary distinctness classes.](data/FIGS_boundary_distinctness.png){#fig-bdy-dist fig-alt="A diagrammatic representation of horizon boundary distinctness classes."}
+![Horizon boundary distinctness classes.](data/FIG_11-5.png){#fig-bdy-dist fig-alt="A diagrammatic representation of horizon boundary distinctness classes." width="80%"}
 
 ## Infill features {#sec-pr-inf}
 
@@ -254,7 +254,7 @@ tbl_hr_bdst
 
 ## Depth to free water {#sec-pr-freewater}
 
-Depth to free water can be determined from the depth to the uppermost [S]{.ceg} saturated horizon (@tbl-hr-soilmst), or may be recorded directly, in whole centimetres. Depending on the soil's transmissivity, the water-table may also become evident by the pit or core filling with water. In this case, wait for the water level to stabilise before measuring.
+Depth to free water can be determined from the depth to the uppermost [S]{.ceg} saturated horizon (@tbl-hr-soilmst), or can be recorded directly, in whole centimetres. Depending on the soil's transmissivity, the water-table may also become evident by the pit or core filling with water. In this case, wait for the water level to stabilise before measuring.
 
 - Use a code from @tbl-hr-frw to record the water-table's position in the profile (or its absence).
 - Where the water-table is present, record its depth above or below the soil surface in whole centimetres. Do not record negative numbers to signify a water-table above the surface.
@@ -294,13 +294,13 @@ Information about the lithology, origin, and weathering degree of the soil paren
 
 ### Lithology {#sec-pr-lith}
 
-For rapid assessment, dominant lithology is recorded once for the profile (@sec-ss-recgmph). Where the subsolum is encountered, record its lithology (@sec-reg-lith) separately if it differs from the overlying material.
+For rapid description, dominant lithology is recorded once for the profile (@sec-ss-recgmph). Where the subsolum is encountered, record its lithology (@sec-reg-lith) separately if it differs from the overlying material.
 
-**For example:** use [ANDS, SAFT]{.ceg} for a mix of eroded sedimentary rocks and volcanic ash.
+**For example:** use [SAFT]{.ceg}, [ANDS]{.ceg} for a mix of eroded sedimentary rocks and volcanic ash.
 
-For routine assessment, the lithology of the fine-earth (mineral particles \<2 mm) is recorded separately for each soil horizon, as are any rock fragments observed in each horizon (see also @sec-rockfrag). In the subsolum, each distinct layer observed should have its lithology captured separately. In all cases, use the codes in @tbl-ss-pm and record only the dominant lithologies present.
+For routine description, the lithology of the fine-earth fraction (mineral particles \<2 mm) is recorded separately for each soil horizon, as are any rock fragments observed in each horizon (see also @sec-rockfrag). In the subsolum, each distinct layer observed should have its lithology captured separately. In all cases, use the codes in @tbl-ss-pm and record only the dominant lithologies present.
 
-For a detailed assessment, a more complete list of lithologies may be defined for each mineral component.
+For a detailed description, a more complete list of lithologies may be defined for each mineral component.
 
 ### Origin {#sec-pr-orig}
 

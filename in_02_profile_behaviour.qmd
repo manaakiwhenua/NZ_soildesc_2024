@@ -67,7 +67,7 @@ dat_in_pdrng <-
     ~Code,      ~Name,              ~Description,
     'VP', 'Very poor', 'Profiles with an intensely anaerobic horizon starting <30 cm from the soil surface; and
 
-all horizons above 30 cm at least strongly anerobic.',
+all horizons above 30 cm are at least strongly anerobic.',
     'PO',    'Poor', 'Profiles with a strongly anaerobic horizon starting <30 cm from the soil surface',
     'IP',  'Imperfect', 'Profiles with a strongly or intensely anaerobic horizon starting 30 to <60 cm from the soil surface, *or*
     
@@ -100,7 +100,7 @@ tbl_in_pdrng
 ::: {#nte-nzscdrng .callout-note appearance="minimal" collapse="true" title="Drainage classification and the *New Zealand Soil Classification*"}
 In the *New Zealand Soil Classification*, \*(f) or \*(g) horizons (slightly to moderately anaerobic) qualify for the diagnostic 'redox-mottled horizon'. Horizons with O\*, \*g, or \*r notation (strongly to intensely anaerobic) qualify for the diagnostic 'reductimorphic horizon'. However, \*(f) horizons do not contribute to the 'mottled profile form' diagnostic.
 
-It follows that only profiles with overall imperfect drainage are considered to have a 'Mottled Profile Form', and (non-peat) profiles with poor or very poor drainage have a 'Gley Profile Form'.
+It follows that only profiles with overall imperfect drainage are considered to have a 'Mottled profile form', and (non-peat) profiles with poor or very poor drainage have a 'Gley profile form'.
 :::
 
 ### Classifying perched profiles {#sec-in-pdpch}
@@ -129,7 +129,7 @@ For transitional A/B horizons, if the A horizon component is sub-dominant by vol
 
 **For example:** in an A/B horizon where earthworm activity has moved dark A horizon material down through vertical burrows that occupy about 25% of the cut face of the soil horizon, the infilled burrows should not contribute to the total percentage of low-chroma colours in the soil matrix. The horizon would be assessed as if it were an unmixed B. In this case a transition horizon with 25% A horizon material and 75% subsoil material that classifies as a Bg horizon would classify in @tbl-in-hdrng as a strongly anaerobic horizon.
 
-Where the A horizon material occupies the majority of the transitional zone, it can no longer be ignored. The topsoil component of the horizon should be assessed using the instructions in @sec-in-tsdrng. The redox intensity of the topsoil component determines the minimum overall rating for the horizon, and the redox intensity of the subsoil component determines its maximum rating. The topsoil component should never be rated as more intensely anaerobic than the subsoil component.
+Where the A horizon material occupies the majority of the transitional zone, it can no longer be ignored. The topsoil component of the horizon should be assessed using the instructions in @sec-in-tsdrng. The topsoil component will usually determine the overall redox intensity of the horizon, unless it classifies as more intensely reduced than the subsoil. In this case, use the intensity of the subsoil component.
 
 **For example:** in an Ap/B(g) horizon where tillage has partially mixed the topsoil and subsoil and about 30% of the horizon comprises subsoil material, the horizon would classify per @tbl-in-hdrng as slightly anaerobic. An Apg/B(g) with a similar proportional mix would classify as moderately anaerobic, but never strongly anaerobic.
 
@@ -149,13 +149,13 @@ Profile drainage is often modified by human activity, and many of these modifica
 
 ```{r}
 #| label: tbl-in-natdrng
-#| tbl-cap: "Profile drainage modification level"
+#| tbl-cap: "Profile drainage modification"
 
 dat_in_natdrng <-
   tribble(~Code, ~Name, ~Description, 
          'N', 'Natural', 'No evidence of human impacts on the local drainage regime', 
          'M', 'Minor', 'Drainage regime passively altered (e.g. by conversion to or from forest), or ambiguous evidence of any human impacts beyond clearing',
-         'A', 'Major', 'Clear evidence of directed human alteration to the drainage regime (e.g. drain or dam construction adjacent to site, flow diversions, infill, levelling or contouring works, mole or tile drainage)')
+         'A', 'Major', 'Clear evidence of direct human alteration to the drainage regime (e.g. drain or dam construction adjacent to site, flow diversions, infill, levelling or contouring works, mole or tile drainage)')
 
 tbl_in_natdrng <- gt(dat_in_natdrng) |>
   tab_options(

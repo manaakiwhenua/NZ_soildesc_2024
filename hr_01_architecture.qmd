@@ -28,7 +28,7 @@ Soil horizon architecture includes both the composition and the physical arrange
 
 ## Structure {#sec-hr-stru}
 
-Structure refers to the physical arrangement of the fine-earth fraction (mineral materials \< 2 mm). The type of structure present in a horizon and the extent of its development are determined by the fine-earth texture (@sec-hr-eatxt), mineralogy, chemistry, the action of soil biota, weathering, and land-use history.
+Structure refers to the physical arrangement of the fine-earth fraction (mineral materials \<2 mm). The type of structure present in a horizon and the extent of its development are determined by the fine-earth texture (@sec-hr-eatxt), mineralogy, chemistry, the action of soil biota, weathering, and land-use history.
 
 Well-developed structural units are commonly referred to as 'peds' and can be identified by observing any or all of the following:
 
@@ -44,7 +44,7 @@ Structural development can be controlled by different processes depending on ver
 
 ```{r}
 #| label: tbl-hr-form
-#| tbl-cap: "Type of structural development"
+#| tbl-cap: "Types of structural development"
 
 dat_hr_form <-
   tribble(~Code, ~Name,  ~Description,
@@ -79,7 +79,7 @@ For rapid assessment, record the degree of overall structural development once p
 
 ```{r}
 #| label: tbl-hr-pedality
-#| tbl-cap: "Degree of structural development"
+#| tbl-cap: "Degrees of structural development"
 
 dat_hr_pedality <-
   tribble(~p, ~Code, ~Name,  ~Description,
@@ -152,16 +152,16 @@ Where distinct structural units can be identified in a horizon (development type
 
 dat_hr_pedshp <-
   tribble(~Group,     ~Code, ~Name,              ~Diagram,
-          'Blocky',    'AB', 'Angular blocky',       'data/FIGS_blocky_angular.png',
-          'Blocky',    'SB', 'Subangular blocky',    'data/FIGS_subangular.png',
-          'Rounded',   'PH', 'Polyhedral',           'data/FIGS_polyhedral.png',
-          'Rounded',   'GR', 'Granular',             'data/FIGS_granular.png',
-          'Rounded',   'CA', 'Cast',                 'data/FIGS_cast.png',
-          'Platelike', 'PL', 'Platy',                'data/FIGS_platy.png',
-          'Platelike', 'LE', 'Lenticular',           'data/FIGS_lentiform.png',
-          'Platelike', 'WE', 'Wedgelike',            'data/FIGS_wedge.png',
-          'Prismlike', 'PR', 'Prismatic',            'data/FIGS_prismatic.png',
-          'Prismlike', 'CO', 'Columnar',             'data/FIGS_columnar.png') 
+          'Blocky',    'AB', 'Angular blocky',       'data/FIG_STR_AB.png',
+          'Blocky',    'SB', 'Subangular blocky',    'data/FIG_STR_SB.png',
+          'Rounded',   'PH', 'Polyhedral',           'data/FIG_STR_PH.png',
+          'Rounded',   'GR', 'Granular',             'data/FIG_STR_GR.png',
+          'Rounded',   'CA', 'Cast',                 'data/FIG_STR_CA.png',
+          'Platelike', 'PL', 'Platy',                'data/FIG_STR_PL.png',
+          'Platelike', 'LE', 'Lenticular',           'data/FIG_STR_LE.png',
+          'Platelike', 'WE', 'Wedgelike',            'data/FIG_STR_WE.png',
+          'Prismlike', 'PR', 'Prismatic',            'data/FIG_STR_PR.png',
+          'Prismlike', 'CO', 'Columnar',             'data/FIG_STR_CO.png') 
 
 tbl_hr_pedshp <- gt(group_by(dat_hr_pedshp, Group)) |>
   tab_options(
@@ -231,7 +231,7 @@ Well-developed peds may be nested, with large structures breaking down to smalle
 Direct measurement of peds will help estimate size. Weighing, or filling volumetric containers may help to estimate abundance.
 
 ::: {#nte-stro .callout-note collapse="true" title="Structure in organic horizons" appearance="minimal"}
-Organic soil materials cannot be described in terms of the structural parameters described in this section. Their architecture is flexible and determined largely by water content, species of origin, and degree of decomposition, and they are effectively all apedal-massive. The physical nature of organic soil materials is otherwise largely inferred from their textural characteristics (@sec-hr-ortxt). However, drained peats and peaty mineral soils may have some recognisable structural development.
+Organic soil materials cannot be described in terms of the structural parameters contained in this section. Their architecture is flexible and determined largely by water content, species of origin, and degree of decomposition, and they are effectively all apedal-massive. The physical nature of organic soil materials is otherwise largely inferred from their textural characteristics (@sec-hr-ortxt). However, drained peats and peaty mineral soils may have some recognisable structural development.
 :::
 
 ## Fragments {#sec-frag}
@@ -258,7 +258,7 @@ Rock fragment shape is partly determined by parent rock lithology and stratigrap
 
 The ratios between the three side lengths of the smallest box that can contain a rock fragment are used to classify its form. Various indices can be built from these three measurements [@blott2008; @angelidakis2022], but overall they coalesce into four major classes, as shown in @fig-hr-rockfrm and @tbl-hr-rockfrfrm.
 
-![Rock fragment form classification, with a, b, and c representing the long, intermediate, and short dimensions of a box containing a rock fragment, ratios c/b and b/a together define the range of possible shapes. Source: adapted from @angelidakis2022](data/shape_form_plot.png){#fig-hr-rockfrm fig-align="center" width="85%"}
+![Rock fragment form classification, with a, b, and c representing the long, intermediate, and short dimensions of a box containing a rock fragment, ratios c/b and b/a together define the range of possible shapes. Source: adapted from @angelidakis2022](data/FIG_12-1.png){#fig-hr-rockfrm fig-alt="Rock fragment form classification, with a, b, and c representing the long, intermediate, and short dimensions of a box containing a rock fragment, ratios c/b and b/a together define the range of possible shapes." fig-align="center" width="80%"}
 
 ```{r}
 #| label: tbl-hr-rockfrfrm
@@ -600,7 +600,7 @@ Estimation of root volume from cross-sectional analyses is not accurate, and so 
 
 Abundance is communicated as a count per square decimetre (100 cm^2^), undertaken on a pit or exposure face. For very thin horizons, a 50 cm horizontal linear transect at the horizon midpoint can be used instead. Multiple split-open cores may also be examined, provided the minimum 100 cm^2^ area can be examined.
 
-For rapid assessment report roots as present or absence. For routine assessment report a total root count, and for detailed assesment report counts separately for the size classes in @tbl-hr-rsz. Always confirm absence of roots by recording a [0]{.ceg}.
+For rapid description, report root abundance as present or absent. For routine description report a total root count, and for detailed description report counts separately for the size classes in @tbl-hr-rsz. Always confirm absence of roots by recording a [0]{.ceg}.
 
 **For example:** use [V 30, F 5, M 5, C 0]{.ceg} for a mixture of very fine, fine, and medium roots.
 
@@ -639,7 +639,7 @@ tbl_hr_rsz
 
 ### Root position {#sec-root-pos}
 
-Where roots are present in a horizon, record how the roots are spatially distributed using the codes in @tbl-hr-rpos. For rapid assessment, record the dominant position of all roots; for routine assessment, split by size. Root position cannot be reliably observed in augered soil material, or in cores where structural units are known to be larger than the core diameter.
+Where roots are present in a horizon, record how the roots are spatially distributed using the codes in @tbl-hr-rpos. For rapid and routine description, record the dominant position of all roots; for detailed description, split by size. Root position cannot be reliably observed in augered soil material, or in cores where structural units are known to be larger than the core diameter.
 
 **For example:** use [F B, C T]{.ceg} for a soil where fine roots are confined to voids but coarse roots are not.
 
@@ -673,7 +673,7 @@ tbl_hr_rpos
 
 ### Other parameters {#sec-root-other}
 
-Information about particular plant species contributing to the root mass and spatial organisation beyond the positional classes above (e.g. presence of mats) may prove useful in certain contexts. No coding system is provided for these; record as free-text notes.
+Information about plant species contributing to the root mass and spatial organisation beyond the positional classes above (e.g. presence of mats) may prove useful in certain contexts. No coding system is provided for these; record as free-text notes.
 
 ## Voids and pores {#sec-voidpore}
 
@@ -756,7 +756,7 @@ For routine assessment, record the presence or absence of any pores visible with
 
 For a detailed assessment, count the number of macropores and micropores separately over a minimum area of 100 cm^2^. This may necessitate sampling several peds or small blocks from the target horizon. Counting micropores will require the use of a magnifier.
 
-![Relative sizes of voids and pores.](data/FIGS_Pores.png){#fig-voidporesize width="80%" fig-alt="Conceptual diagram showing the relative sizes of voids and pores" fig-align="center"}
+![Relative sizes of voids and pores.](data/FIG_12-2.png){#fig-voidporesize fig-alt="Conceptual diagram showing the relative sizes of voids and pores" fig-align="center" width="80%"}
 
 ## Subsolum features {#sec-reg}
 

@@ -19,7 +19,7 @@ A soil description is essentially useless without a confident location. Confiden
 
 Locations are recorded using a coordinate reference system (CRS), that defines a grid over the land surface. Geographical coordinate systems use angular coordinates (degrees latitude and longitude) and model the Earth as a sphere or ellipsoid. Projected coordinate systems, as implied by the name, project all or part of the Earth's surface onto a flat plane by various methods, allowing the use of linear coordinates (e.g. metres).
 
-Different types of projection have different strengths and weaknesses in terms of preserving distance and direction accuracy. Elevation can also be determined from a global model, or a locally calibrated one.
+Different types of projection have different strengths and weaknesses in terms of preserving distance, area, and direction accuracy. Elevation can also be determined from a global model, or a locally calibrated one.
 
 In New Zealand the official projected coordinate reference system for the mainland and nearby islands is New Zealand Transverse Mercator 2000 (NZTM2000, EPSG:2193). Separate projections are available for outlying islands (e.g. the Chatham Island group) and parts of Antarctica. Elevation is defined with reference to New Zealand Vertical Datum 2016 (NZVD2016, EPSG:1169). For more information on these systems, see @linz2025a.
 
@@ -44,13 +44,18 @@ nzch <- rnaturalearth::ne_countries(country = 'New Zealand', scale = 10) |>
   st_crop(xmin = 952959.375186378, ymin = 4659879.67004712,
           xmax = 2489543.47037023, ymax = 6237836.51954394)
 
-tm_shape(nzch) +
-  tm_fill() +
-  tm_borders() +
+nzdot <- tm_shape(nzch) +
+  tm_fill(fill = '#7FA0A480', col = '#00424a') +
+  #tm_borders() +
 tm_shape(loc) +
-  tm_symbols(fill = 'red', shape = 20) +
+  tm_symbols(fill = '#C75115', shape = 20) +
   tm_compass(type = 'arrow', position = tm_pos_in('left', 'top')) +
   tm_scalebar(breaks = c(0, 100, 200)) 
+
+nzdot
+
+tmap_save(tm = nzdot, filename = file.path('data', 'FIG_2-1.png'), 
+          width = 9, units = 'cm', dpi = 300)
 
 # tmap is currently used to generate the Koppen figure in Ch 5, so I'm keeping
 # the aesthetics consistent. If that's ever revisited, the ggplot version of
@@ -203,7 +208,7 @@ Absolute location data can be backed up by measuring to nearby permanent or long
 
 For single-point sites, measure distance and direction using a tape and compass. Accuracy is improved by measuring to two or more features. For plot-based sites, measure from at least two corners to the target feature. Photographing the point/plot and reference points together is also useful (see @sec-ap-fieldrec-pics for guidance on field photography).
 
-![Triangulating a site with reference to local features.](data/FIGS_loc_triangulating.png){#fig-loc-tri fig-alt="A diagrammataic representation of a site location being measured with reference to a nearby gate and rocky outcrop." width="80%"}
+![Triangulating a site with reference to local features](data/FIG_2-2.jpg){#fig-loc-tri fig-alt="A diagrammataic representation of a site location being measured with reference to a nearby gate and rocky outcrop." width="80%"}
 
 ### Recording relative elevation {#sec-loc-relel}
 

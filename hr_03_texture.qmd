@@ -8,7 +8,7 @@ library(extrafont)
 loadfonts(quiet = TRUE)
 ```
 
-A great deal of soil physical and chemical behaviour is dependant on the particle size distribution within the solid fraction: the relative dominance of particular sizes, as well as the total size range present. This includes both mineral and organic matter. In the field, particle size distribution is estimated on a per-horizon basis using a combination of visual examination and hand manipulation under moist conditions.
+A great deal of soil physical and chemical behaviour is dependent on the particle size distribution within the solid fraction: the relative dominance of particular sizes, as well as the total size range present. This includes both mineral and organic matter. In the field, particle size distribution is estimated on a per-horizon basis using a combination of visual examination and hand manipulation under moist conditions.
 
 The true particle size distribution is continuous and open-ended. For ease of communication, particle size distribution is divided into set ranges, the broadest of which are the fine earth (\<2 mm) and coarse mineral (≥2 mm, 'rock fragments') fractions. Within the fine-earth fraction, three fractions are defined:
 
@@ -54,7 +54,7 @@ tbl_hr_texcompar
 
 ```
 
-Size fraction boundaries also vary by discipline: sedimentologists set the limit of 'clay' at 0.004 mm, while colloid chemists use 0.001 mm. Clay mineralogists use an alternative definition of clay that does not rely on particle size at all, instead highlighting physical behaviour [@guggenheim1995]. Alternativee soil texture classifications compatible with this concept have been proposed but cannot be applied in the field [@moreno-maroto2022].
+Size fraction boundaries also vary by discipline: sedimentologists set the limit of 'clay' at 0.004 mm, while colloid chemists use 0.001 mm. Clay mineralogists use an alternative definition of clay that does not rely on particle size at all, instead highlighting physical behaviour [@guggenheim1995]. Alternative soil texture classifications compatible with this concept have been proposed but cannot be applied in the field [@moreno-maroto2022].
 :::
 
 ## Describing texture components {#sec-hr-texture}
@@ -63,7 +63,7 @@ Size fraction boundaries also vary by discipline: sedimentologists set the limit
 
 The composition of the fine-earth mineral fraction is assessed separately to that of larger rock fragments for practical reasons, not least because rock fragments are not always present. The fine fraction is assessed in the field by removing any rock fragments present by picking or sieving, and then manipulating the remaining sample in a moist state (see @sec-pr-sws).
 
-The New Zealand soil texture triangle is organised into two levels. At the broadest level there are four major texture groups (clayey, silty, sandy, loamy), which are defined in @tbl-hr-earthgrps. Within these groups there are 11 recognised texture classes, which are the categories most commonly used in description and interpretation. The texture classes are most easily visualised on a ternary diagram, as seen in @fig-texture-tri. The range limits for each class are given in @tbl-texture-tri.
+The New Zealand soil texture triangle is organised into two levels. At the broadest level there are four major texture groups (clayey, silty, sandy, loamy), which are defined in @tbl-hr-earthgrps. Within these groups there are 11 recognised texture classes, which are the categories most commonly used in description and interpretation. The texture classes are most easily visualised on a ternary diagram, as seen in @fig-texture-tri. The range limits for each group are given in @tbl-texgrp-tri, and each class in @tbl-texture-tri.
 
 These divisions can reflect significant changes in measurable properties, such as hydraulic conductivity, but it is important to note that there are no sudden and obvious changes in hand-feel or visual appearance at each boundary.
 
@@ -96,7 +96,7 @@ tbl_hr_earthgrps
 
 ```{r}
 #| label: fig-texture-tri
-#| fig-cap: "New Zealand Soil Texture Triangle."
+#| fig-cap: "New Zealand Soil Texture Triangle [@milne1995]."
 
 nztt_dat <- readRDS(file.path('data', 'NZTT.RDS')) 
 
@@ -128,7 +128,7 @@ nz_tri <-
 
 nz_tri
 
-#ggsave(filename = file.path('data', 'NZ_tri_nice.png'), plot = nz_tri, width = 12, units = 'cm', dpi = 300)
+#ggsave(filename = file.path('data', 'FIG_14-1.png'), plot = nz_tri, width = 12, units = 'cm', dpi = 300)
 ```
 
 ```{r}
@@ -435,7 +435,7 @@ If a horizon has ≥50% organic material and \>5% mineral material, mineral code
 More precise field estimates of organic matter content within the ranges in @tbl-hr-cftex are unlikely to be accurate; direct measurement of soil organic carbon paired with bulk density is preferred.
 
 ::: {#nte-ocom .callout-note collapse="true" title="Soil organic matter and soil organic carbon" appearance="minimal"}
-Soil organic matter is not estimated to a high precision in the field due to accuracy concerns. Lab-based soil organic matter methods (e.g. wet or low-temperature combustion) also produce results that vary by soil type. As a result, soil organic carbon is the far more frequent measurement, and is most often assessed by high-temperature combustion methods. The best way to estimate soil organic matter from soil organic carbon remains contested [@pribyl2010; @klingenfuß2014], but the most commonly used method at present is a conversion factor of $SOM = 1.72 \times SOC$ .
+Soil organic matter is not estimated to a high precision in the field due to accuracy concerns. Lab-based soil organic matter methods (e.g. wet or low-temperature combustion) also produce results that vary by soil type. As a result, soil organic carbon is the far more frequent measurement, and is most often assessed by high-temperature combustion methods. The best way to estimate soil organic matter from soil organic carbon is contested [@pribyl2010; @klingenfuß2014], but the most commonly used method at present is a conversion factor of $SOM = 1.72 \times SOC$ .
 :::
 
 #### Organic material modifiers {#sec-tex-orgmod}
@@ -511,7 +511,7 @@ The following method is recommended for use in the field. It can also be used on
 1.  Collect a handful of soil material (no smaller than a \~30 mm block) from the target soil horizon, avoiding macrofeatures and boundary transition zones as much as possible.
 2.  Pick out or sieve to remove rock fragments and other coarse material.
 3.  If the sample is not already moist, add small amounts of water while working the sample to bring its moisture content up. If the sample is too moist, work it in the hand until it dries. Additional soil might be required if too much water is added at once. A suitable moisture state is indicated when the sample feels moist to the touch but releases little, if any, water when squeezed.
-4.  Continue working the sample in the hand until structural units are broken down and the mixture is homogenised.
+4.  Continue working the sample in your hand until structural units are broken down and the mixture is homogenised.
 5.  Attempt to roll the sample into a ball. Can this be done easily? Does the ball hold together, or break apart under gentle pressure?
 6.  If a ball can be reliably formed, compress the ball between thumb and forefinger. How much force is required to compress the ball by half? Does the ball crack, or keep a smooth outer surface?
 7.  Check the look and feel of the ball. Does it feel gritty, floury, or buttery? Is it easy to mould and reshape? Can it be polished to a shiny surface?
@@ -572,14 +572,14 @@ All of these confounding factors can be minimised with regular training, using a
 
 ## Recording soil texture {#sec-tex-rec}
 
-To rapidly assess texture:
+For rapid description:
 
 - for the fine-earth fraction use one of the texture group codes in @tbl-hr-earthgrps per horizon
 - where rock fragments need to be recorded use the dominant rock fragment code in @tbl-hr-rocksz
 - where organic materials need to be recorded use one of the options in @tbl-hr-omtyp
 - do not use any further modifiers.
 
-For routine assessment record one of the texture class codes in @tbl-hr-texchar per horizon. Where further detail is required, apply the relevant modifiers, as described in @sec-hr-texture.
+For routine or detailed description, record one of the texture class codes in @tbl-hr-texchar per horizon. Where further detail is required, apply the relevant modifiers, as described in @sec-hr-texture.
 
 **For example:** for a coarse sandy loam with fine gravel: for rapid use: [L(G)]{.ceg}, for routine use : [KSL(FG)]{.ceg}.
 
@@ -596,7 +596,7 @@ As discussed in @wrn-tex, fine-earth texture estimated by hand in the field can 
 
 Laboratory particle size measurement also has its limitations. Available methods can incorporate particle shape and mineralogy, but these methods are labour-intensive and generally confined to research contexts. High-throughput analyses are far more common and usually involve the removal of organic materials and soluble minerals, along with more aggressive aggregate dispersion using shaking and chemical solutions.
 
-Below approximately 0.04 mm the method of measurement switches from sieving to less direct observations (commonly based on settling time in a liquid column). The calculations used to translate these observations into particle size estimates make some assumptions about shape and mineralogy that may not hold true for the sample under examination (see @loveland2001, for a more detailed discussion).
+Below approximately 0.04 mm the method of measurement switches from sieving to less direct observations (commonly based on settling time in a liquid column). The calculations used to translate these observations into particle size estimates make some assumptions about shape and mineralogy that may not hold true for the sample under examination (see @loveland2001 for a more detailed discussion).
 :::
 
 ### Recording whole-soil particle size estimates {#sec-tex-rec-wt}

@@ -12,13 +12,13 @@ Land cover, use, and management information can be captured as part of soil desc
 
 ## Land cover {#sec-lcov}
 
-Land cover in New Zealand is monitored using the Land Cover Database [LCDB, @manaakiwhenualandcareresearchLCDBV60Land2025a]. The database is used to publish a semi-automated map of land cover, derived from satellite imagery, with a minimum unit size of 1 ha. The LCDB categories can also be applied on-ground. 
+Land cover in New Zealand is monitored using the Land Cover Database [LCDB, @manaakiwhenualandcareresearchLCDBV60Land2025a]. The database is used to publish a semi-automated map of land cover, derived from satellite imagery, with a minimum unit size of 1 ha. The LCDB categories can also be applied on-ground.
 
-The categories are listed below, excluding some where it would be physically impossible to observe the soil. The first six (see @tbl-ss-lcdb) are currently mapped to over 80% of New Zealand's land area and so are the ones most likely to be encountered. The full set of category definitions is available in @manaakiwhenualandcareresearchNewZealandLand2025a. 
+The six most common categories by area are listed in @tbl-ss-lcdb. These are currently mapped to over 80% of New Zealand's land area. The full set of category definitions is available in @manaakiwhenualandcareresearchNewZealandLand2025a.
 
 ```{r}
 #| label: tbl-ss-lcdb
-#| tbl-cap: "Land Cover Database categories: the six most common categories are listed first."
+#| tbl-cap: "Common Land Cover Database (LCDB) categories"
 
 dat_ss_lcdb <-
   tribble(~Code, ~Name, ~Description, 
@@ -53,11 +53,11 @@ tbl_ss_lcdb
 
 ## Land use {#sec-luse}
 
-Land use in New Zealand is recorded using the New Zealand Land Use Management classification (NZLUM, [https://nzlum.landcareresearch.co.nz](https://nzlum.landcareresearch.co.nz)), based on the framework developed in @law2024. The classification uses three nested levels of land use with increasing specificity (@fig-ss-nzlum), and allows for recording further information as 'attributes' of the land use (e.g. tenure or management practices).
+Land use in New Zealand is recorded using the New Zealand Land Use Management classification (NZLUM, <https://nzlum.landcareresearch.co.nz>), based on the framework developed in @law2024. The classification uses three nested levels of land use with increasing specificity (@fig-ss-nzlum), and allows for recording further information as 'attributes' of the land use (e.g. tenure or management practices).
 
 Land-use classification does not have to be carried out in the field provided adequate supporting information (e.g. notes and photographs) are available for later use. Given that the NZLUM is expected to evolve over time, the observation date can be used to infer the version in use.
 
-![Overview of the NZLUM categories at version 0.4.0 (Source: [https://nzlum.landcareresearch.co.nz](https://nzlum.landcareresearch.co.nz))](data/nzlum_v0.4.0_summary.svg){#fig-ss-nzlum .lightbox fig-alt="A diagram of the New Zealand Land Use Management (NZLUM) system, v 0.4.0" width="95%"}
+![Overview of the NZLUM categories at version 0.4.0 [@bioeconomyscienceinstituteNewZealandLand2026].](data/nzlum_v0.4.0_summary.svg){#fig-ss-nzlum .lightbox fig-alt="A diagram of the New Zealand Land Use Management (NZLUM) system, v 0.4.0" width="95%"}
 
 ## Land management {#sec-lman}
 
