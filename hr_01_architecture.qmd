@@ -60,7 +60,7 @@ tbl_hr_form <- gt(dat_hr_form) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -100,7 +100,7 @@ tbl_hr_pedality <- gt(group_by(dat_hr_pedality, p)) |>
   tab_style(style = list(cell_text(weight = 'bold',
                                    v_align = 'middle')),
             locations = cells_row_groups()) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 2)) |>
@@ -171,7 +171,7 @@ tbl_hr_pedshp <- gt(group_by(dat_hr_pedshp, Group)) |>
     table.width = '85%',
     row_group.as_column = TRUE
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 2)) |>
@@ -278,7 +278,7 @@ tbl_hr_rockfrfrm <- gt(dat_hr_rockfrfrm) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -307,7 +307,7 @@ tbl_hr_rockfrrnd <- gt(dat_hr_rockfrrnd) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -336,7 +336,7 @@ tbl_hr_rockfrrgh <- gt(dat_hr_rockfrrgh) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -369,7 +369,7 @@ tbl_hr_rockfrwth <- gt(dat_hr_rockfrwth) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -408,7 +408,7 @@ tbl_hr_nonrock <- gt(dat_hr_nonrock) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -459,7 +459,7 @@ tbl_hr_artefs <- gt(dat_hr_artefs) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -488,7 +488,7 @@ tbl_hr_aorg <- gt(dat_hr_aorg) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -517,7 +517,7 @@ tbl_hr_afix <- gt(dat_hr_afix) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -547,7 +547,7 @@ tbl_hr_ashp <- gt(dat_hr_ashp) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -577,7 +577,7 @@ tbl_hr_adeg <- gt(dat_hr_adeg) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -626,7 +626,7 @@ tbl_hr_rsz <- gt(dat_hr_rsz) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -661,7 +661,7 @@ tbl_hr_rpos <- gt(dat_hr_rpos) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
+  tab_style(style = list(cell_text(color  = '#c13003', 
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -711,7 +711,7 @@ tbl_hr_voidtype <- gt(dat_hr_voidtype) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
+  tab_style(style = list(cell_text(color  = '#c13003', 
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -738,7 +738,7 @@ tbl_hr_voidcon <- gt(dat_hr_voidcon) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -793,7 +793,7 @@ tbl_reg_bstp <- gt(dat_reg_bstp) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -827,7 +827,7 @@ tbl_hr_fractyp <- gt(dat_hr_fractyp) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -854,7 +854,7 @@ tbl_hr_fracotyp <- gt(dat_hr_fracotyp) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red',
+  tab_style(style = list(cell_text(color  = '#c13003',
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>

@@ -64,7 +64,7 @@ tmap_save(tm = nzdot, filename = file.path('data', 'FIG_2-1.png'),
 #ggplot() +
 #  geom_sf(data = nzch, fill = 'grey80', colour = 'grey20', 
 #          alpha = 0.8, show.legend = FALSE) +
-#  geom_sf(data = loc, col = 'red', shape  = 20, size = 5) + 
+#  geom_sf(data = loc, col = '#c13003', shape  = 20, size = 5) + 
 #  theme_void() +
 #  theme(panel.border = element_rect(colour = 'grey20')) +
 #  coord_sf(datum = 2193) +
@@ -123,7 +123,7 @@ tbl_ss_locsrc <- gt(dat_ss_locsrc) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
+  tab_style(style = list(cell_text(color  = '#c13003', 
                                    weight = 'bold',
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>
@@ -174,7 +174,7 @@ tbl_ss_elevsrc <- gt(dat_ss_elevsrc) |>
     table.align = 'center',
     table.width = '85%'
   ) |>
-  tab_style(style = list(cell_text(color  = 'red', 
+  tab_style(style = list(cell_text(color  = '#c13003', 
                                    weight = 'bold', 
                                    align  = 'center')),
             locations = cells_body(columns = 1)) |>

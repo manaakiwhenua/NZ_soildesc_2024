@@ -351,12 +351,12 @@ ggplot(r) +
   annotate(geom = 'segment', x =  0, y = 20, xend = 20, yend =  0, colour = 'grey50', linetype = 2) +
   annotate(geom = 'segment', x =  0, y = 0, xend = 20, yend =  20, colour = 'grey50', linetype = 2) +
   # marker pegs
-  annotate(geom = 'point', x =  0, y =  0, colour = 'red', size = 3) +
-  annotate(geom = 'point', x = 10, y = 10, colour = 'red', size = 3) +
-  annotate(geom = 'point', x = 10, y = 20, colour = 'red', size = 3) +
-  annotate(geom = 'point', x =  0, y = 20, colour = 'red', size = 3) +
-  annotate(geom = 'point', x = 20, y =  0, colour = 'red', size = 3) +
-  annotate(geom = 'point', x = 20, y = 20, colour = 'red', size = 3) +
+  annotate(geom = 'point', x =  0, y =  0, colour = '#c13003', size = 3) +
+  annotate(geom = 'point', x = 10, y = 10, colour = '#c13003', size = 3) +
+  annotate(geom = 'point', x = 10, y = 20, colour = '#c13003', size = 3) +
+  annotate(geom = 'point', x =  0, y = 20, colour = '#c13003', size = 3) +
+  annotate(geom = 'point', x = 20, y =  0, colour = '#c13003', size = 3) +
+  annotate(geom = 'point', x = 20, y = 20, colour = '#c13003', size = 3) +
   annotate(geom = 'label', label = 'North', x = 10, y = 20, vjust = -0.25)  +
   scale_fill_manual(values =   c('TRUE' = 'grey80'), na.value = '#ffffff00') +
   scale_colour_manual(values = c('TRUE' = 'black'),  na.value = '#ffffff00') +
