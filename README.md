@@ -1,10 +1,11 @@
 # New Zealand Soil Description Handbook
-## 2024 update
 
-© Landcare Research New Zealand Ltd 2024
+*3^rd^ edition*
 
-Welcome!
+*© New Zealand Institute for Bioeconomy Science Ltd 2026*
 
-This is the draft 3^rd^ edition of the New Zealand Soil Description Handbook. 
+No part of this work covered by copyright may be reproduced or copied in any form or by any means (graphic, electronic or mechanical, including photocopying, recording, taping, information retrieval systems, or otherwise) without the written permission of the publisher.
 
-🚧 This draft is being actively edited in response to reviewer comments 🚧.
+Published by New Zealand Institute for Bioeconomy Science, 74 Gerald Street, Lincoln 7608, New Zealand
+
+Please email [soilstandards@landcareresearch.co.nz](mailto:soilstandards@landcareresearch.co.nz?subject=SDH%203rd%20edition) if you have any questions or comments about this new edition.
