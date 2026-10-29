@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -60,10 +63,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9036632fe5f72b3577feb813a6bc7d5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e7cdd1b6b1b697d2d4b3908556b8d945.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -96,7 +99,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -505,23 +508,23 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
 </figcaption>
 <div aria-describedby="tbl-hr-texcompar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="lfwpjdzwqi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lfwpjdzwqi table {
+<div id="vwligolroy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vwligolroy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#lfwpjdzwqi thead, #lfwpjdzwqi tbody, #lfwpjdzwqi tfoot, #lfwpjdzwqi tr, #lfwpjdzwqi td, #lfwpjdzwqi th {
+#vwligolroy thead, #vwligolroy tbody, #vwligolroy tfoot, #vwligolroy tr, #vwligolroy td, #vwligolroy th {
   border-style: none;
 }
 
-#lfwpjdzwqi p {
+#vwligolroy p {
   margin: 0;
   padding: 0;
 }
 
-#lfwpjdzwqi .gt_table {
+#vwligolroy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -547,12 +550,12 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   border-left-color: #D3D3D3;
 }
 
-#lfwpjdzwqi .gt_caption {
+#vwligolroy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#lfwpjdzwqi .gt_title {
+#vwligolroy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -564,7 +567,7 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   border-bottom-width: 0;
 }
 
-#lfwpjdzwqi .gt_subtitle {
+#vwligolroy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -576,7 +579,7 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   border-top-width: 0;
 }
 
-#lfwpjdzwqi .gt_heading {
+#vwligolroy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -588,13 +591,13 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   border-right-color: #D3D3D3;
 }
 
-#lfwpjdzwqi .gt_bottom_border {
+#vwligolroy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lfwpjdzwqi .gt_col_headings {
+#vwligolroy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -609,7 +612,7 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   border-right-color: #D3D3D3;
 }
 
-#lfwpjdzwqi .gt_col_heading {
+#vwligolroy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -629,7 +632,7 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   overflow-x: hidden;
 }
 
-#lfwpjdzwqi .gt_column_spanner_outer {
+#vwligolroy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -641,15 +644,15 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   padding-right: 4px;
 }
 
-#lfwpjdzwqi .gt_column_spanner_outer:first-child {
+#vwligolroy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lfwpjdzwqi .gt_column_spanner_outer:last-child {
+#vwligolroy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lfwpjdzwqi .gt_column_spanner {
+#vwligolroy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -661,11 +664,11 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   width: 100%;
 }
 
-#lfwpjdzwqi .gt_spanner_row {
+#vwligolroy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#lfwpjdzwqi .gt_group_heading {
+#vwligolroy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -691,7 +694,7 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   text-align: left;
 }
 
-#lfwpjdzwqi .gt_empty_group_heading {
+#vwligolroy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -706,15 +709,15 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   vertical-align: middle;
 }
 
-#lfwpjdzwqi .gt_from_md > :first-child {
+#vwligolroy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lfwpjdzwqi .gt_from_md > :last-child {
+#vwligolroy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lfwpjdzwqi .gt_row {
+#vwligolroy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -733,7 +736,7 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   overflow-x: hidden;
 }
 
-#lfwpjdzwqi .gt_stub {
+#vwligolroy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -746,7 +749,7 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   padding-right: 5px;
 }
 
-#lfwpjdzwqi .gt_stub_row_group {
+#vwligolroy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -760,15 +763,15 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   vertical-align: top;
 }
 
-#lfwpjdzwqi .gt_row_group_first td {
+#vwligolroy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#lfwpjdzwqi .gt_row_group_first th {
+#vwligolroy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#lfwpjdzwqi .gt_summary_row {
+#vwligolroy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -778,16 +781,16 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   padding-right: 5px;
 }
 
-#lfwpjdzwqi .gt_first_summary_row {
+#vwligolroy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#lfwpjdzwqi .gt_first_summary_row.thick {
+#vwligolroy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#lfwpjdzwqi .gt_last_summary_row {
+#vwligolroy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -797,7 +800,7 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   border-bottom-color: #D3D3D3;
 }
 
-#lfwpjdzwqi .gt_grand_summary_row {
+#vwligolroy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -807,7 +810,7 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   padding-right: 5px;
 }
 
-#lfwpjdzwqi .gt_first_grand_summary_row {
+#vwligolroy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -817,7 +820,7 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   border-top-color: #D3D3D3;
 }
 
-#lfwpjdzwqi .gt_last_grand_summary_row_top {
+#vwligolroy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -827,11 +830,11 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   border-bottom-color: #D3D3D3;
 }
 
-#lfwpjdzwqi .gt_striped {
+#vwligolroy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lfwpjdzwqi .gt_table_body {
+#vwligolroy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -840,7 +843,7 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   border-bottom-color: #D3D3D3;
 }
 
-#lfwpjdzwqi .gt_footnotes {
+#vwligolroy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -854,7 +857,7 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   border-right-color: #D3D3D3;
 }
 
-#lfwpjdzwqi .gt_footnote {
+#vwligolroy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -863,7 +866,7 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   padding-right: 5px;
 }
 
-#lfwpjdzwqi .gt_sourcenotes {
+#vwligolroy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -877,7 +880,7 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   border-right-color: #D3D3D3;
 }
 
-#lfwpjdzwqi .gt_sourcenote {
+#vwligolroy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -885,72 +888,72 @@ Table&nbsp;14.1: Size fraction limits: New Zealand and elsewhere
   padding-right: 5px;
 }
 
-#lfwpjdzwqi .gt_left {
+#vwligolroy .gt_left {
   text-align: left;
 }
 
-#lfwpjdzwqi .gt_center {
+#vwligolroy .gt_center {
   text-align: center;
 }
 
-#lfwpjdzwqi .gt_right {
+#vwligolroy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lfwpjdzwqi .gt_font_normal {
+#vwligolroy .gt_font_normal {
   font-weight: normal;
 }
 
-#lfwpjdzwqi .gt_font_bold {
+#vwligolroy .gt_font_bold {
   font-weight: bold;
 }
 
-#lfwpjdzwqi .gt_font_italic {
+#vwligolroy .gt_font_italic {
   font-style: italic;
 }
 
-#lfwpjdzwqi .gt_super {
+#vwligolroy .gt_super {
   font-size: 65%;
 }
 
-#lfwpjdzwqi .gt_footnote_marks {
+#vwligolroy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#lfwpjdzwqi .gt_asterisk {
+#vwligolroy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#lfwpjdzwqi .gt_indent_1 {
+#vwligolroy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#lfwpjdzwqi .gt_indent_2 {
+#vwligolroy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#lfwpjdzwqi .gt_indent_3 {
+#vwligolroy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#lfwpjdzwqi .gt_indent_4 {
+#vwligolroy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#lfwpjdzwqi .gt_indent_5 {
+#vwligolroy .gt_indent_5 {
   text-indent: 25px;
 }
 
-#lfwpjdzwqi .katex-display {
+#vwligolroy .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#lfwpjdzwqi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vwligolroy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1023,23 +1026,23 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
 </figcaption>
 <div aria-describedby="tbl-hr-earthgrps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="wievlnlfnx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wievlnlfnx table {
+<div id="dgxirryycg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dgxirryycg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wievlnlfnx thead, #wievlnlfnx tbody, #wievlnlfnx tfoot, #wievlnlfnx tr, #wievlnlfnx td, #wievlnlfnx th {
+#dgxirryycg thead, #dgxirryycg tbody, #dgxirryycg tfoot, #dgxirryycg tr, #dgxirryycg td, #dgxirryycg th {
   border-style: none;
 }
 
-#wievlnlfnx p {
+#dgxirryycg p {
   margin: 0;
   padding: 0;
 }
 
-#wievlnlfnx .gt_table {
+#dgxirryycg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1065,12 +1068,12 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   border-left-color: #D3D3D3;
 }
 
-#wievlnlfnx .gt_caption {
+#dgxirryycg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wievlnlfnx .gt_title {
+#dgxirryycg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1082,7 +1085,7 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   border-bottom-width: 0;
 }
 
-#wievlnlfnx .gt_subtitle {
+#dgxirryycg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1094,7 +1097,7 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   border-top-width: 0;
 }
 
-#wievlnlfnx .gt_heading {
+#dgxirryycg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1106,13 +1109,13 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   border-right-color: #D3D3D3;
 }
 
-#wievlnlfnx .gt_bottom_border {
+#dgxirryycg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wievlnlfnx .gt_col_headings {
+#dgxirryycg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1127,7 +1130,7 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   border-right-color: #D3D3D3;
 }
 
-#wievlnlfnx .gt_col_heading {
+#dgxirryycg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1147,7 +1150,7 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   overflow-x: hidden;
 }
 
-#wievlnlfnx .gt_column_spanner_outer {
+#dgxirryycg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1159,15 +1162,15 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   padding-right: 4px;
 }
 
-#wievlnlfnx .gt_column_spanner_outer:first-child {
+#dgxirryycg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wievlnlfnx .gt_column_spanner_outer:last-child {
+#dgxirryycg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wievlnlfnx .gt_column_spanner {
+#dgxirryycg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1179,11 +1182,11 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   width: 100%;
 }
 
-#wievlnlfnx .gt_spanner_row {
+#dgxirryycg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wievlnlfnx .gt_group_heading {
+#dgxirryycg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1209,7 +1212,7 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   text-align: left;
 }
 
-#wievlnlfnx .gt_empty_group_heading {
+#dgxirryycg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1224,15 +1227,15 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   vertical-align: middle;
 }
 
-#wievlnlfnx .gt_from_md > :first-child {
+#dgxirryycg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wievlnlfnx .gt_from_md > :last-child {
+#dgxirryycg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wievlnlfnx .gt_row {
+#dgxirryycg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1251,7 +1254,7 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   overflow-x: hidden;
 }
 
-#wievlnlfnx .gt_stub {
+#dgxirryycg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1264,7 +1267,7 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   padding-right: 5px;
 }
 
-#wievlnlfnx .gt_stub_row_group {
+#dgxirryycg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1278,15 +1281,15 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   vertical-align: top;
 }
 
-#wievlnlfnx .gt_row_group_first td {
+#dgxirryycg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wievlnlfnx .gt_row_group_first th {
+#dgxirryycg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wievlnlfnx .gt_summary_row {
+#dgxirryycg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1296,16 +1299,16 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   padding-right: 5px;
 }
 
-#wievlnlfnx .gt_first_summary_row {
+#dgxirryycg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wievlnlfnx .gt_first_summary_row.thick {
+#dgxirryycg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wievlnlfnx .gt_last_summary_row {
+#dgxirryycg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1315,7 +1318,7 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   border-bottom-color: #D3D3D3;
 }
 
-#wievlnlfnx .gt_grand_summary_row {
+#dgxirryycg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1325,7 +1328,7 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   padding-right: 5px;
 }
 
-#wievlnlfnx .gt_first_grand_summary_row {
+#dgxirryycg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1335,7 +1338,7 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   border-top-color: #D3D3D3;
 }
 
-#wievlnlfnx .gt_last_grand_summary_row_top {
+#dgxirryycg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1345,11 +1348,11 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   border-bottom-color: #D3D3D3;
 }
 
-#wievlnlfnx .gt_striped {
+#dgxirryycg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wievlnlfnx .gt_table_body {
+#dgxirryycg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1358,7 +1361,7 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   border-bottom-color: #D3D3D3;
 }
 
-#wievlnlfnx .gt_footnotes {
+#dgxirryycg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1372,7 +1375,7 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   border-right-color: #D3D3D3;
 }
 
-#wievlnlfnx .gt_footnote {
+#dgxirryycg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1381,7 +1384,7 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   padding-right: 5px;
 }
 
-#wievlnlfnx .gt_sourcenotes {
+#dgxirryycg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1395,7 +1398,7 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   border-right-color: #D3D3D3;
 }
 
-#wievlnlfnx .gt_sourcenote {
+#dgxirryycg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1403,72 +1406,72 @@ Table&nbsp;14.2: Major divisions of the fine-earth mineral fraction
   padding-right: 5px;
 }
 
-#wievlnlfnx .gt_left {
+#dgxirryycg .gt_left {
   text-align: left;
 }
 
-#wievlnlfnx .gt_center {
+#dgxirryycg .gt_center {
   text-align: center;
 }
 
-#wievlnlfnx .gt_right {
+#dgxirryycg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wievlnlfnx .gt_font_normal {
+#dgxirryycg .gt_font_normal {
   font-weight: normal;
 }
 
-#wievlnlfnx .gt_font_bold {
+#dgxirryycg .gt_font_bold {
   font-weight: bold;
 }
 
-#wievlnlfnx .gt_font_italic {
+#dgxirryycg .gt_font_italic {
   font-style: italic;
 }
 
-#wievlnlfnx .gt_super {
+#dgxirryycg .gt_super {
   font-size: 65%;
 }
 
-#wievlnlfnx .gt_footnote_marks {
+#dgxirryycg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wievlnlfnx .gt_asterisk {
+#dgxirryycg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wievlnlfnx .gt_indent_1 {
+#dgxirryycg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wievlnlfnx .gt_indent_2 {
+#dgxirryycg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wievlnlfnx .gt_indent_3 {
+#dgxirryycg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wievlnlfnx .gt_indent_4 {
+#dgxirryycg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wievlnlfnx .gt_indent_5 {
+#dgxirryycg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wievlnlfnx .katex-display {
+#dgxirryycg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wievlnlfnx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dgxirryycg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1538,23 +1541,23 @@ Table&nbsp;14.3: Texture group names and compositional limits
 </figcaption>
 <div aria-describedby="tbl-texgrp-tri-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="xmdqhqqlkp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xmdqhqqlkp table {
+<div id="hrimexgaxb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hrimexgaxb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xmdqhqqlkp thead, #xmdqhqqlkp tbody, #xmdqhqqlkp tfoot, #xmdqhqqlkp tr, #xmdqhqqlkp td, #xmdqhqqlkp th {
+#hrimexgaxb thead, #hrimexgaxb tbody, #hrimexgaxb tfoot, #hrimexgaxb tr, #hrimexgaxb td, #hrimexgaxb th {
   border-style: none;
 }
 
-#xmdqhqqlkp p {
+#hrimexgaxb p {
   margin: 0;
   padding: 0;
 }
 
-#xmdqhqqlkp .gt_table {
+#hrimexgaxb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1580,12 +1583,12 @@ Table&nbsp;14.3: Texture group names and compositional limits
   border-left-color: #D3D3D3;
 }
 
-#xmdqhqqlkp .gt_caption {
+#hrimexgaxb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xmdqhqqlkp .gt_title {
+#hrimexgaxb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -1597,7 +1600,7 @@ Table&nbsp;14.3: Texture group names and compositional limits
   border-bottom-width: 0;
 }
 
-#xmdqhqqlkp .gt_subtitle {
+#hrimexgaxb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1609,7 +1612,7 @@ Table&nbsp;14.3: Texture group names and compositional limits
   border-top-width: 0;
 }
 
-#xmdqhqqlkp .gt_heading {
+#hrimexgaxb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1621,13 +1624,13 @@ Table&nbsp;14.3: Texture group names and compositional limits
   border-right-color: #D3D3D3;
 }
 
-#xmdqhqqlkp .gt_bottom_border {
+#hrimexgaxb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xmdqhqqlkp .gt_col_headings {
+#hrimexgaxb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1642,7 +1645,7 @@ Table&nbsp;14.3: Texture group names and compositional limits
   border-right-color: #D3D3D3;
 }
 
-#xmdqhqqlkp .gt_col_heading {
+#hrimexgaxb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1662,7 +1665,7 @@ Table&nbsp;14.3: Texture group names and compositional limits
   overflow-x: hidden;
 }
 
-#xmdqhqqlkp .gt_column_spanner_outer {
+#hrimexgaxb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1674,15 +1677,15 @@ Table&nbsp;14.3: Texture group names and compositional limits
   padding-right: 4px;
 }
 
-#xmdqhqqlkp .gt_column_spanner_outer:first-child {
+#hrimexgaxb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xmdqhqqlkp .gt_column_spanner_outer:last-child {
+#hrimexgaxb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xmdqhqqlkp .gt_column_spanner {
+#hrimexgaxb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1694,11 +1697,11 @@ Table&nbsp;14.3: Texture group names and compositional limits
   width: 100%;
 }
 
-#xmdqhqqlkp .gt_spanner_row {
+#hrimexgaxb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xmdqhqqlkp .gt_group_heading {
+#hrimexgaxb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1724,7 +1727,7 @@ Table&nbsp;14.3: Texture group names and compositional limits
   text-align: left;
 }
 
-#xmdqhqqlkp .gt_empty_group_heading {
+#hrimexgaxb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1739,15 +1742,15 @@ Table&nbsp;14.3: Texture group names and compositional limits
   vertical-align: middle;
 }
 
-#xmdqhqqlkp .gt_from_md > :first-child {
+#hrimexgaxb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xmdqhqqlkp .gt_from_md > :last-child {
+#hrimexgaxb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xmdqhqqlkp .gt_row {
+#hrimexgaxb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1766,7 +1769,7 @@ Table&nbsp;14.3: Texture group names and compositional limits
   overflow-x: hidden;
 }
 
-#xmdqhqqlkp .gt_stub {
+#hrimexgaxb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1779,7 +1782,7 @@ Table&nbsp;14.3: Texture group names and compositional limits
   padding-right: 5px;
 }
 
-#xmdqhqqlkp .gt_stub_row_group {
+#hrimexgaxb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1793,15 +1796,15 @@ Table&nbsp;14.3: Texture group names and compositional limits
   vertical-align: top;
 }
 
-#xmdqhqqlkp .gt_row_group_first td {
+#hrimexgaxb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xmdqhqqlkp .gt_row_group_first th {
+#hrimexgaxb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xmdqhqqlkp .gt_summary_row {
+#hrimexgaxb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1811,16 +1814,16 @@ Table&nbsp;14.3: Texture group names and compositional limits
   padding-right: 5px;
 }
 
-#xmdqhqqlkp .gt_first_summary_row {
+#hrimexgaxb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xmdqhqqlkp .gt_first_summary_row.thick {
+#hrimexgaxb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xmdqhqqlkp .gt_last_summary_row {
+#hrimexgaxb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1830,7 +1833,7 @@ Table&nbsp;14.3: Texture group names and compositional limits
   border-bottom-color: #D3D3D3;
 }
 
-#xmdqhqqlkp .gt_grand_summary_row {
+#hrimexgaxb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1840,7 +1843,7 @@ Table&nbsp;14.3: Texture group names and compositional limits
   padding-right: 5px;
 }
 
-#xmdqhqqlkp .gt_first_grand_summary_row {
+#hrimexgaxb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1850,7 +1853,7 @@ Table&nbsp;14.3: Texture group names and compositional limits
   border-top-color: #D3D3D3;
 }
 
-#xmdqhqqlkp .gt_last_grand_summary_row_top {
+#hrimexgaxb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1860,11 +1863,11 @@ Table&nbsp;14.3: Texture group names and compositional limits
   border-bottom-color: #D3D3D3;
 }
 
-#xmdqhqqlkp .gt_striped {
+#hrimexgaxb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xmdqhqqlkp .gt_table_body {
+#hrimexgaxb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1873,7 +1876,7 @@ Table&nbsp;14.3: Texture group names and compositional limits
   border-bottom-color: #D3D3D3;
 }
 
-#xmdqhqqlkp .gt_footnotes {
+#hrimexgaxb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1887,7 +1890,7 @@ Table&nbsp;14.3: Texture group names and compositional limits
   border-right-color: #D3D3D3;
 }
 
-#xmdqhqqlkp .gt_footnote {
+#hrimexgaxb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1896,7 +1899,7 @@ Table&nbsp;14.3: Texture group names and compositional limits
   padding-right: 5px;
 }
 
-#xmdqhqqlkp .gt_sourcenotes {
+#hrimexgaxb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1910,7 +1913,7 @@ Table&nbsp;14.3: Texture group names and compositional limits
   border-right-color: #D3D3D3;
 }
 
-#xmdqhqqlkp .gt_sourcenote {
+#hrimexgaxb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1918,72 +1921,72 @@ Table&nbsp;14.3: Texture group names and compositional limits
   padding-right: 5px;
 }
 
-#xmdqhqqlkp .gt_left {
+#hrimexgaxb .gt_left {
   text-align: left;
 }
 
-#xmdqhqqlkp .gt_center {
+#hrimexgaxb .gt_center {
   text-align: center;
 }
 
-#xmdqhqqlkp .gt_right {
+#hrimexgaxb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xmdqhqqlkp .gt_font_normal {
+#hrimexgaxb .gt_font_normal {
   font-weight: normal;
 }
 
-#xmdqhqqlkp .gt_font_bold {
+#hrimexgaxb .gt_font_bold {
   font-weight: bold;
 }
 
-#xmdqhqqlkp .gt_font_italic {
+#hrimexgaxb .gt_font_italic {
   font-style: italic;
 }
 
-#xmdqhqqlkp .gt_super {
+#hrimexgaxb .gt_super {
   font-size: 65%;
 }
 
-#xmdqhqqlkp .gt_footnote_marks {
+#hrimexgaxb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xmdqhqqlkp .gt_asterisk {
+#hrimexgaxb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xmdqhqqlkp .gt_indent_1 {
+#hrimexgaxb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xmdqhqqlkp .gt_indent_2 {
+#hrimexgaxb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xmdqhqqlkp .gt_indent_3 {
+#hrimexgaxb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xmdqhqqlkp .gt_indent_4 {
+#hrimexgaxb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xmdqhqqlkp .gt_indent_5 {
+#hrimexgaxb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xmdqhqqlkp .katex-display {
+#hrimexgaxb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xmdqhqqlkp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hrimexgaxb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2051,23 +2054,23 @@ Table&nbsp;14.4: Texture class names and compositional limits
 </figcaption>
 <div aria-describedby="tbl-texture-tri-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="vfoynrjzhh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vfoynrjzhh table {
+<div id="aerwyhftss" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#aerwyhftss table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vfoynrjzhh thead, #vfoynrjzhh tbody, #vfoynrjzhh tfoot, #vfoynrjzhh tr, #vfoynrjzhh td, #vfoynrjzhh th {
+#aerwyhftss thead, #aerwyhftss tbody, #aerwyhftss tfoot, #aerwyhftss tr, #aerwyhftss td, #aerwyhftss th {
   border-style: none;
 }
 
-#vfoynrjzhh p {
+#aerwyhftss p {
   margin: 0;
   padding: 0;
 }
 
-#vfoynrjzhh .gt_table {
+#aerwyhftss .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2093,12 +2096,12 @@ Table&nbsp;14.4: Texture class names and compositional limits
   border-left-color: #D3D3D3;
 }
 
-#vfoynrjzhh .gt_caption {
+#aerwyhftss .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vfoynrjzhh .gt_title {
+#aerwyhftss .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2110,7 +2113,7 @@ Table&nbsp;14.4: Texture class names and compositional limits
   border-bottom-width: 0;
 }
 
-#vfoynrjzhh .gt_subtitle {
+#aerwyhftss .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2122,7 +2125,7 @@ Table&nbsp;14.4: Texture class names and compositional limits
   border-top-width: 0;
 }
 
-#vfoynrjzhh .gt_heading {
+#aerwyhftss .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2134,13 +2137,13 @@ Table&nbsp;14.4: Texture class names and compositional limits
   border-right-color: #D3D3D3;
 }
 
-#vfoynrjzhh .gt_bottom_border {
+#aerwyhftss .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vfoynrjzhh .gt_col_headings {
+#aerwyhftss .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2155,7 +2158,7 @@ Table&nbsp;14.4: Texture class names and compositional limits
   border-right-color: #D3D3D3;
 }
 
-#vfoynrjzhh .gt_col_heading {
+#aerwyhftss .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2175,7 +2178,7 @@ Table&nbsp;14.4: Texture class names and compositional limits
   overflow-x: hidden;
 }
 
-#vfoynrjzhh .gt_column_spanner_outer {
+#aerwyhftss .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2187,15 +2190,15 @@ Table&nbsp;14.4: Texture class names and compositional limits
   padding-right: 4px;
 }
 
-#vfoynrjzhh .gt_column_spanner_outer:first-child {
+#aerwyhftss .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vfoynrjzhh .gt_column_spanner_outer:last-child {
+#aerwyhftss .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vfoynrjzhh .gt_column_spanner {
+#aerwyhftss .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2207,11 +2210,11 @@ Table&nbsp;14.4: Texture class names and compositional limits
   width: 100%;
 }
 
-#vfoynrjzhh .gt_spanner_row {
+#aerwyhftss .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vfoynrjzhh .gt_group_heading {
+#aerwyhftss .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2237,7 +2240,7 @@ Table&nbsp;14.4: Texture class names and compositional limits
   text-align: left;
 }
 
-#vfoynrjzhh .gt_empty_group_heading {
+#aerwyhftss .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2252,15 +2255,15 @@ Table&nbsp;14.4: Texture class names and compositional limits
   vertical-align: middle;
 }
 
-#vfoynrjzhh .gt_from_md > :first-child {
+#aerwyhftss .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vfoynrjzhh .gt_from_md > :last-child {
+#aerwyhftss .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vfoynrjzhh .gt_row {
+#aerwyhftss .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2279,7 +2282,7 @@ Table&nbsp;14.4: Texture class names and compositional limits
   overflow-x: hidden;
 }
 
-#vfoynrjzhh .gt_stub {
+#aerwyhftss .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2292,7 +2295,7 @@ Table&nbsp;14.4: Texture class names and compositional limits
   padding-right: 5px;
 }
 
-#vfoynrjzhh .gt_stub_row_group {
+#aerwyhftss .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2306,15 +2309,15 @@ Table&nbsp;14.4: Texture class names and compositional limits
   vertical-align: top;
 }
 
-#vfoynrjzhh .gt_row_group_first td {
+#aerwyhftss .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vfoynrjzhh .gt_row_group_first th {
+#aerwyhftss .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vfoynrjzhh .gt_summary_row {
+#aerwyhftss .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2324,16 +2327,16 @@ Table&nbsp;14.4: Texture class names and compositional limits
   padding-right: 5px;
 }
 
-#vfoynrjzhh .gt_first_summary_row {
+#aerwyhftss .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vfoynrjzhh .gt_first_summary_row.thick {
+#aerwyhftss .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vfoynrjzhh .gt_last_summary_row {
+#aerwyhftss .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2343,7 +2346,7 @@ Table&nbsp;14.4: Texture class names and compositional limits
   border-bottom-color: #D3D3D3;
 }
 
-#vfoynrjzhh .gt_grand_summary_row {
+#aerwyhftss .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2353,7 +2356,7 @@ Table&nbsp;14.4: Texture class names and compositional limits
   padding-right: 5px;
 }
 
-#vfoynrjzhh .gt_first_grand_summary_row {
+#aerwyhftss .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2363,7 +2366,7 @@ Table&nbsp;14.4: Texture class names and compositional limits
   border-top-color: #D3D3D3;
 }
 
-#vfoynrjzhh .gt_last_grand_summary_row_top {
+#aerwyhftss .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2373,11 +2376,11 @@ Table&nbsp;14.4: Texture class names and compositional limits
   border-bottom-color: #D3D3D3;
 }
 
-#vfoynrjzhh .gt_striped {
+#aerwyhftss .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vfoynrjzhh .gt_table_body {
+#aerwyhftss .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2386,7 +2389,7 @@ Table&nbsp;14.4: Texture class names and compositional limits
   border-bottom-color: #D3D3D3;
 }
 
-#vfoynrjzhh .gt_footnotes {
+#aerwyhftss .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2400,7 +2403,7 @@ Table&nbsp;14.4: Texture class names and compositional limits
   border-right-color: #D3D3D3;
 }
 
-#vfoynrjzhh .gt_footnote {
+#aerwyhftss .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2409,7 +2412,7 @@ Table&nbsp;14.4: Texture class names and compositional limits
   padding-right: 5px;
 }
 
-#vfoynrjzhh .gt_sourcenotes {
+#aerwyhftss .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2423,7 +2426,7 @@ Table&nbsp;14.4: Texture class names and compositional limits
   border-right-color: #D3D3D3;
 }
 
-#vfoynrjzhh .gt_sourcenote {
+#aerwyhftss .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2431,72 +2434,72 @@ Table&nbsp;14.4: Texture class names and compositional limits
   padding-right: 5px;
 }
 
-#vfoynrjzhh .gt_left {
+#aerwyhftss .gt_left {
   text-align: left;
 }
 
-#vfoynrjzhh .gt_center {
+#aerwyhftss .gt_center {
   text-align: center;
 }
 
-#vfoynrjzhh .gt_right {
+#aerwyhftss .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vfoynrjzhh .gt_font_normal {
+#aerwyhftss .gt_font_normal {
   font-weight: normal;
 }
 
-#vfoynrjzhh .gt_font_bold {
+#aerwyhftss .gt_font_bold {
   font-weight: bold;
 }
 
-#vfoynrjzhh .gt_font_italic {
+#aerwyhftss .gt_font_italic {
   font-style: italic;
 }
 
-#vfoynrjzhh .gt_super {
+#aerwyhftss .gt_super {
   font-size: 65%;
 }
 
-#vfoynrjzhh .gt_footnote_marks {
+#aerwyhftss .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vfoynrjzhh .gt_asterisk {
+#aerwyhftss .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vfoynrjzhh .gt_indent_1 {
+#aerwyhftss .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vfoynrjzhh .gt_indent_2 {
+#aerwyhftss .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vfoynrjzhh .gt_indent_3 {
+#aerwyhftss .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vfoynrjzhh .gt_indent_4 {
+#aerwyhftss .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vfoynrjzhh .gt_indent_5 {
+#aerwyhftss .gt_indent_5 {
   text-indent: 25px;
 }
 
-#vfoynrjzhh .katex-display {
+#aerwyhftss .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#vfoynrjzhh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#aerwyhftss div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2639,23 +2642,23 @@ Table&nbsp;14.5: Sand fraction size modifiers
 </figcaption>
 <div aria-describedby="tbl-hr-sandquals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="qhpyrmwlxg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qhpyrmwlxg table {
+<div id="aozqbjloyx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#aozqbjloyx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qhpyrmwlxg thead, #qhpyrmwlxg tbody, #qhpyrmwlxg tfoot, #qhpyrmwlxg tr, #qhpyrmwlxg td, #qhpyrmwlxg th {
+#aozqbjloyx thead, #aozqbjloyx tbody, #aozqbjloyx tfoot, #aozqbjloyx tr, #aozqbjloyx td, #aozqbjloyx th {
   border-style: none;
 }
 
-#qhpyrmwlxg p {
+#aozqbjloyx p {
   margin: 0;
   padding: 0;
 }
 
-#qhpyrmwlxg .gt_table {
+#aozqbjloyx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2681,12 +2684,12 @@ Table&nbsp;14.5: Sand fraction size modifiers
   border-left-color: #D3D3D3;
 }
 
-#qhpyrmwlxg .gt_caption {
+#aozqbjloyx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qhpyrmwlxg .gt_title {
+#aozqbjloyx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -2698,7 +2701,7 @@ Table&nbsp;14.5: Sand fraction size modifiers
   border-bottom-width: 0;
 }
 
-#qhpyrmwlxg .gt_subtitle {
+#aozqbjloyx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2710,7 +2713,7 @@ Table&nbsp;14.5: Sand fraction size modifiers
   border-top-width: 0;
 }
 
-#qhpyrmwlxg .gt_heading {
+#aozqbjloyx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2722,13 +2725,13 @@ Table&nbsp;14.5: Sand fraction size modifiers
   border-right-color: #D3D3D3;
 }
 
-#qhpyrmwlxg .gt_bottom_border {
+#aozqbjloyx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qhpyrmwlxg .gt_col_headings {
+#aozqbjloyx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2743,7 +2746,7 @@ Table&nbsp;14.5: Sand fraction size modifiers
   border-right-color: #D3D3D3;
 }
 
-#qhpyrmwlxg .gt_col_heading {
+#aozqbjloyx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2763,7 +2766,7 @@ Table&nbsp;14.5: Sand fraction size modifiers
   overflow-x: hidden;
 }
 
-#qhpyrmwlxg .gt_column_spanner_outer {
+#aozqbjloyx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2775,15 +2778,15 @@ Table&nbsp;14.5: Sand fraction size modifiers
   padding-right: 4px;
 }
 
-#qhpyrmwlxg .gt_column_spanner_outer:first-child {
+#aozqbjloyx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qhpyrmwlxg .gt_column_spanner_outer:last-child {
+#aozqbjloyx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qhpyrmwlxg .gt_column_spanner {
+#aozqbjloyx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2795,11 +2798,11 @@ Table&nbsp;14.5: Sand fraction size modifiers
   width: 100%;
 }
 
-#qhpyrmwlxg .gt_spanner_row {
+#aozqbjloyx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qhpyrmwlxg .gt_group_heading {
+#aozqbjloyx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2825,7 +2828,7 @@ Table&nbsp;14.5: Sand fraction size modifiers
   text-align: left;
 }
 
-#qhpyrmwlxg .gt_empty_group_heading {
+#aozqbjloyx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2840,15 +2843,15 @@ Table&nbsp;14.5: Sand fraction size modifiers
   vertical-align: middle;
 }
 
-#qhpyrmwlxg .gt_from_md > :first-child {
+#aozqbjloyx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qhpyrmwlxg .gt_from_md > :last-child {
+#aozqbjloyx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qhpyrmwlxg .gt_row {
+#aozqbjloyx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2867,7 +2870,7 @@ Table&nbsp;14.5: Sand fraction size modifiers
   overflow-x: hidden;
 }
 
-#qhpyrmwlxg .gt_stub {
+#aozqbjloyx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2880,7 +2883,7 @@ Table&nbsp;14.5: Sand fraction size modifiers
   padding-right: 5px;
 }
 
-#qhpyrmwlxg .gt_stub_row_group {
+#aozqbjloyx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2894,15 +2897,15 @@ Table&nbsp;14.5: Sand fraction size modifiers
   vertical-align: top;
 }
 
-#qhpyrmwlxg .gt_row_group_first td {
+#aozqbjloyx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qhpyrmwlxg .gt_row_group_first th {
+#aozqbjloyx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qhpyrmwlxg .gt_summary_row {
+#aozqbjloyx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2912,16 +2915,16 @@ Table&nbsp;14.5: Sand fraction size modifiers
   padding-right: 5px;
 }
 
-#qhpyrmwlxg .gt_first_summary_row {
+#aozqbjloyx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qhpyrmwlxg .gt_first_summary_row.thick {
+#aozqbjloyx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qhpyrmwlxg .gt_last_summary_row {
+#aozqbjloyx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2931,7 +2934,7 @@ Table&nbsp;14.5: Sand fraction size modifiers
   border-bottom-color: #D3D3D3;
 }
 
-#qhpyrmwlxg .gt_grand_summary_row {
+#aozqbjloyx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2941,7 +2944,7 @@ Table&nbsp;14.5: Sand fraction size modifiers
   padding-right: 5px;
 }
 
-#qhpyrmwlxg .gt_first_grand_summary_row {
+#aozqbjloyx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2951,7 +2954,7 @@ Table&nbsp;14.5: Sand fraction size modifiers
   border-top-color: #D3D3D3;
 }
 
-#qhpyrmwlxg .gt_last_grand_summary_row_top {
+#aozqbjloyx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2961,11 +2964,11 @@ Table&nbsp;14.5: Sand fraction size modifiers
   border-bottom-color: #D3D3D3;
 }
 
-#qhpyrmwlxg .gt_striped {
+#aozqbjloyx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qhpyrmwlxg .gt_table_body {
+#aozqbjloyx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2974,7 +2977,7 @@ Table&nbsp;14.5: Sand fraction size modifiers
   border-bottom-color: #D3D3D3;
 }
 
-#qhpyrmwlxg .gt_footnotes {
+#aozqbjloyx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2988,7 +2991,7 @@ Table&nbsp;14.5: Sand fraction size modifiers
   border-right-color: #D3D3D3;
 }
 
-#qhpyrmwlxg .gt_footnote {
+#aozqbjloyx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2997,7 +3000,7 @@ Table&nbsp;14.5: Sand fraction size modifiers
   padding-right: 5px;
 }
 
-#qhpyrmwlxg .gt_sourcenotes {
+#aozqbjloyx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3011,7 +3014,7 @@ Table&nbsp;14.5: Sand fraction size modifiers
   border-right-color: #D3D3D3;
 }
 
-#qhpyrmwlxg .gt_sourcenote {
+#aozqbjloyx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3019,72 +3022,72 @@ Table&nbsp;14.5: Sand fraction size modifiers
   padding-right: 5px;
 }
 
-#qhpyrmwlxg .gt_left {
+#aozqbjloyx .gt_left {
   text-align: left;
 }
 
-#qhpyrmwlxg .gt_center {
+#aozqbjloyx .gt_center {
   text-align: center;
 }
 
-#qhpyrmwlxg .gt_right {
+#aozqbjloyx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qhpyrmwlxg .gt_font_normal {
+#aozqbjloyx .gt_font_normal {
   font-weight: normal;
 }
 
-#qhpyrmwlxg .gt_font_bold {
+#aozqbjloyx .gt_font_bold {
   font-weight: bold;
 }
 
-#qhpyrmwlxg .gt_font_italic {
+#aozqbjloyx .gt_font_italic {
   font-style: italic;
 }
 
-#qhpyrmwlxg .gt_super {
+#aozqbjloyx .gt_super {
   font-size: 65%;
 }
 
-#qhpyrmwlxg .gt_footnote_marks {
+#aozqbjloyx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qhpyrmwlxg .gt_asterisk {
+#aozqbjloyx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qhpyrmwlxg .gt_indent_1 {
+#aozqbjloyx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qhpyrmwlxg .gt_indent_2 {
+#aozqbjloyx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qhpyrmwlxg .gt_indent_3 {
+#aozqbjloyx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qhpyrmwlxg .gt_indent_4 {
+#aozqbjloyx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qhpyrmwlxg .gt_indent_5 {
+#aozqbjloyx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qhpyrmwlxg .katex-display {
+#aozqbjloyx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qhpyrmwlxg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#aozqbjloyx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3141,23 +3144,23 @@ Table&nbsp;14.6: Rock fragment size fractions
 </figcaption>
 <div aria-describedby="tbl-hr-rocksz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="iffruifnof" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#iffruifnof table {
+<div id="ihohatlyxy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ihohatlyxy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#iffruifnof thead, #iffruifnof tbody, #iffruifnof tfoot, #iffruifnof tr, #iffruifnof td, #iffruifnof th {
+#ihohatlyxy thead, #ihohatlyxy tbody, #ihohatlyxy tfoot, #ihohatlyxy tr, #ihohatlyxy td, #ihohatlyxy th {
   border-style: none;
 }
 
-#iffruifnof p {
+#ihohatlyxy p {
   margin: 0;
   padding: 0;
 }
 
-#iffruifnof .gt_table {
+#ihohatlyxy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3183,12 +3186,12 @@ Table&nbsp;14.6: Rock fragment size fractions
   border-left-color: #D3D3D3;
 }
 
-#iffruifnof .gt_caption {
+#ihohatlyxy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#iffruifnof .gt_title {
+#ihohatlyxy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -3200,7 +3203,7 @@ Table&nbsp;14.6: Rock fragment size fractions
   border-bottom-width: 0;
 }
 
-#iffruifnof .gt_subtitle {
+#ihohatlyxy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3212,7 +3215,7 @@ Table&nbsp;14.6: Rock fragment size fractions
   border-top-width: 0;
 }
 
-#iffruifnof .gt_heading {
+#ihohatlyxy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3224,13 +3227,13 @@ Table&nbsp;14.6: Rock fragment size fractions
   border-right-color: #D3D3D3;
 }
 
-#iffruifnof .gt_bottom_border {
+#ihohatlyxy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iffruifnof .gt_col_headings {
+#ihohatlyxy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3245,7 +3248,7 @@ Table&nbsp;14.6: Rock fragment size fractions
   border-right-color: #D3D3D3;
 }
 
-#iffruifnof .gt_col_heading {
+#ihohatlyxy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3265,7 +3268,7 @@ Table&nbsp;14.6: Rock fragment size fractions
   overflow-x: hidden;
 }
 
-#iffruifnof .gt_column_spanner_outer {
+#ihohatlyxy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3277,15 +3280,15 @@ Table&nbsp;14.6: Rock fragment size fractions
   padding-right: 4px;
 }
 
-#iffruifnof .gt_column_spanner_outer:first-child {
+#ihohatlyxy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iffruifnof .gt_column_spanner_outer:last-child {
+#ihohatlyxy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iffruifnof .gt_column_spanner {
+#ihohatlyxy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3297,11 +3300,11 @@ Table&nbsp;14.6: Rock fragment size fractions
   width: 100%;
 }
 
-#iffruifnof .gt_spanner_row {
+#ihohatlyxy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#iffruifnof .gt_group_heading {
+#ihohatlyxy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3327,7 +3330,7 @@ Table&nbsp;14.6: Rock fragment size fractions
   text-align: left;
 }
 
-#iffruifnof .gt_empty_group_heading {
+#ihohatlyxy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3342,15 +3345,15 @@ Table&nbsp;14.6: Rock fragment size fractions
   vertical-align: middle;
 }
 
-#iffruifnof .gt_from_md > :first-child {
+#ihohatlyxy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iffruifnof .gt_from_md > :last-child {
+#ihohatlyxy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iffruifnof .gt_row {
+#ihohatlyxy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3369,7 +3372,7 @@ Table&nbsp;14.6: Rock fragment size fractions
   overflow-x: hidden;
 }
 
-#iffruifnof .gt_stub {
+#ihohatlyxy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3382,7 +3385,7 @@ Table&nbsp;14.6: Rock fragment size fractions
   padding-right: 5px;
 }
 
-#iffruifnof .gt_stub_row_group {
+#ihohatlyxy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3396,15 +3399,15 @@ Table&nbsp;14.6: Rock fragment size fractions
   vertical-align: top;
 }
 
-#iffruifnof .gt_row_group_first td {
+#ihohatlyxy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#iffruifnof .gt_row_group_first th {
+#ihohatlyxy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#iffruifnof .gt_summary_row {
+#ihohatlyxy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3414,16 +3417,16 @@ Table&nbsp;14.6: Rock fragment size fractions
   padding-right: 5px;
 }
 
-#iffruifnof .gt_first_summary_row {
+#ihohatlyxy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#iffruifnof .gt_first_summary_row.thick {
+#ihohatlyxy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#iffruifnof .gt_last_summary_row {
+#ihohatlyxy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3433,7 +3436,7 @@ Table&nbsp;14.6: Rock fragment size fractions
   border-bottom-color: #D3D3D3;
 }
 
-#iffruifnof .gt_grand_summary_row {
+#ihohatlyxy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3443,7 +3446,7 @@ Table&nbsp;14.6: Rock fragment size fractions
   padding-right: 5px;
 }
 
-#iffruifnof .gt_first_grand_summary_row {
+#ihohatlyxy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3453,7 +3456,7 @@ Table&nbsp;14.6: Rock fragment size fractions
   border-top-color: #D3D3D3;
 }
 
-#iffruifnof .gt_last_grand_summary_row_top {
+#ihohatlyxy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3463,11 +3466,11 @@ Table&nbsp;14.6: Rock fragment size fractions
   border-bottom-color: #D3D3D3;
 }
 
-#iffruifnof .gt_striped {
+#ihohatlyxy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iffruifnof .gt_table_body {
+#ihohatlyxy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3476,7 +3479,7 @@ Table&nbsp;14.6: Rock fragment size fractions
   border-bottom-color: #D3D3D3;
 }
 
-#iffruifnof .gt_footnotes {
+#ihohatlyxy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3490,7 +3493,7 @@ Table&nbsp;14.6: Rock fragment size fractions
   border-right-color: #D3D3D3;
 }
 
-#iffruifnof .gt_footnote {
+#ihohatlyxy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3499,7 +3502,7 @@ Table&nbsp;14.6: Rock fragment size fractions
   padding-right: 5px;
 }
 
-#iffruifnof .gt_sourcenotes {
+#ihohatlyxy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3513,7 +3516,7 @@ Table&nbsp;14.6: Rock fragment size fractions
   border-right-color: #D3D3D3;
 }
 
-#iffruifnof .gt_sourcenote {
+#ihohatlyxy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3521,72 +3524,72 @@ Table&nbsp;14.6: Rock fragment size fractions
   padding-right: 5px;
 }
 
-#iffruifnof .gt_left {
+#ihohatlyxy .gt_left {
   text-align: left;
 }
 
-#iffruifnof .gt_center {
+#ihohatlyxy .gt_center {
   text-align: center;
 }
 
-#iffruifnof .gt_right {
+#ihohatlyxy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iffruifnof .gt_font_normal {
+#ihohatlyxy .gt_font_normal {
   font-weight: normal;
 }
 
-#iffruifnof .gt_font_bold {
+#ihohatlyxy .gt_font_bold {
   font-weight: bold;
 }
 
-#iffruifnof .gt_font_italic {
+#ihohatlyxy .gt_font_italic {
   font-style: italic;
 }
 
-#iffruifnof .gt_super {
+#ihohatlyxy .gt_super {
   font-size: 65%;
 }
 
-#iffruifnof .gt_footnote_marks {
+#ihohatlyxy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#iffruifnof .gt_asterisk {
+#ihohatlyxy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#iffruifnof .gt_indent_1 {
+#ihohatlyxy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#iffruifnof .gt_indent_2 {
+#ihohatlyxy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#iffruifnof .gt_indent_3 {
+#ihohatlyxy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#iffruifnof .gt_indent_4 {
+#ihohatlyxy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#iffruifnof .gt_indent_5 {
+#ihohatlyxy .gt_indent_5 {
   text-indent: 25px;
 }
 
-#iffruifnof .katex-display {
+#ihohatlyxy .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#iffruifnof div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ihohatlyxy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3637,23 +3640,23 @@ Table&nbsp;14.7: Rock fragment code usage
 </figcaption>
 <div aria-describedby="tbl-hr-cftex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="bqomkoqosb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bqomkoqosb table {
+<div id="gksdawkrte" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gksdawkrte table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bqomkoqosb thead, #bqomkoqosb tbody, #bqomkoqosb tfoot, #bqomkoqosb tr, #bqomkoqosb td, #bqomkoqosb th {
+#gksdawkrte thead, #gksdawkrte tbody, #gksdawkrte tfoot, #gksdawkrte tr, #gksdawkrte td, #gksdawkrte th {
   border-style: none;
 }
 
-#bqomkoqosb p {
+#gksdawkrte p {
   margin: 0;
   padding: 0;
 }
 
-#bqomkoqosb .gt_table {
+#gksdawkrte .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3679,12 +3682,12 @@ Table&nbsp;14.7: Rock fragment code usage
   border-left-color: #D3D3D3;
 }
 
-#bqomkoqosb .gt_caption {
+#gksdawkrte .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bqomkoqosb .gt_title {
+#gksdawkrte .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -3696,7 +3699,7 @@ Table&nbsp;14.7: Rock fragment code usage
   border-bottom-width: 0;
 }
 
-#bqomkoqosb .gt_subtitle {
+#gksdawkrte .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3708,7 +3711,7 @@ Table&nbsp;14.7: Rock fragment code usage
   border-top-width: 0;
 }
 
-#bqomkoqosb .gt_heading {
+#gksdawkrte .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3720,13 +3723,13 @@ Table&nbsp;14.7: Rock fragment code usage
   border-right-color: #D3D3D3;
 }
 
-#bqomkoqosb .gt_bottom_border {
+#gksdawkrte .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bqomkoqosb .gt_col_headings {
+#gksdawkrte .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3741,7 +3744,7 @@ Table&nbsp;14.7: Rock fragment code usage
   border-right-color: #D3D3D3;
 }
 
-#bqomkoqosb .gt_col_heading {
+#gksdawkrte .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3761,7 +3764,7 @@ Table&nbsp;14.7: Rock fragment code usage
   overflow-x: hidden;
 }
 
-#bqomkoqosb .gt_column_spanner_outer {
+#gksdawkrte .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3773,15 +3776,15 @@ Table&nbsp;14.7: Rock fragment code usage
   padding-right: 4px;
 }
 
-#bqomkoqosb .gt_column_spanner_outer:first-child {
+#gksdawkrte .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bqomkoqosb .gt_column_spanner_outer:last-child {
+#gksdawkrte .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bqomkoqosb .gt_column_spanner {
+#gksdawkrte .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3793,11 +3796,11 @@ Table&nbsp;14.7: Rock fragment code usage
   width: 100%;
 }
 
-#bqomkoqosb .gt_spanner_row {
+#gksdawkrte .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bqomkoqosb .gt_group_heading {
+#gksdawkrte .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3823,7 +3826,7 @@ Table&nbsp;14.7: Rock fragment code usage
   text-align: left;
 }
 
-#bqomkoqosb .gt_empty_group_heading {
+#gksdawkrte .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3838,15 +3841,15 @@ Table&nbsp;14.7: Rock fragment code usage
   vertical-align: middle;
 }
 
-#bqomkoqosb .gt_from_md > :first-child {
+#gksdawkrte .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bqomkoqosb .gt_from_md > :last-child {
+#gksdawkrte .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bqomkoqosb .gt_row {
+#gksdawkrte .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3865,7 +3868,7 @@ Table&nbsp;14.7: Rock fragment code usage
   overflow-x: hidden;
 }
 
-#bqomkoqosb .gt_stub {
+#gksdawkrte .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3878,7 +3881,7 @@ Table&nbsp;14.7: Rock fragment code usage
   padding-right: 5px;
 }
 
-#bqomkoqosb .gt_stub_row_group {
+#gksdawkrte .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3892,15 +3895,15 @@ Table&nbsp;14.7: Rock fragment code usage
   vertical-align: top;
 }
 
-#bqomkoqosb .gt_row_group_first td {
+#gksdawkrte .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bqomkoqosb .gt_row_group_first th {
+#gksdawkrte .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bqomkoqosb .gt_summary_row {
+#gksdawkrte .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3910,16 +3913,16 @@ Table&nbsp;14.7: Rock fragment code usage
   padding-right: 5px;
 }
 
-#bqomkoqosb .gt_first_summary_row {
+#gksdawkrte .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bqomkoqosb .gt_first_summary_row.thick {
+#gksdawkrte .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bqomkoqosb .gt_last_summary_row {
+#gksdawkrte .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3929,7 +3932,7 @@ Table&nbsp;14.7: Rock fragment code usage
   border-bottom-color: #D3D3D3;
 }
 
-#bqomkoqosb .gt_grand_summary_row {
+#gksdawkrte .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3939,7 +3942,7 @@ Table&nbsp;14.7: Rock fragment code usage
   padding-right: 5px;
 }
 
-#bqomkoqosb .gt_first_grand_summary_row {
+#gksdawkrte .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3949,7 +3952,7 @@ Table&nbsp;14.7: Rock fragment code usage
   border-top-color: #D3D3D3;
 }
 
-#bqomkoqosb .gt_last_grand_summary_row_top {
+#gksdawkrte .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3959,11 +3962,11 @@ Table&nbsp;14.7: Rock fragment code usage
   border-bottom-color: #D3D3D3;
 }
 
-#bqomkoqosb .gt_striped {
+#gksdawkrte .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bqomkoqosb .gt_table_body {
+#gksdawkrte .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3972,7 +3975,7 @@ Table&nbsp;14.7: Rock fragment code usage
   border-bottom-color: #D3D3D3;
 }
 
-#bqomkoqosb .gt_footnotes {
+#gksdawkrte .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3986,7 +3989,7 @@ Table&nbsp;14.7: Rock fragment code usage
   border-right-color: #D3D3D3;
 }
 
-#bqomkoqosb .gt_footnote {
+#gksdawkrte .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3995,7 +3998,7 @@ Table&nbsp;14.7: Rock fragment code usage
   padding-right: 5px;
 }
 
-#bqomkoqosb .gt_sourcenotes {
+#gksdawkrte .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4009,7 +4012,7 @@ Table&nbsp;14.7: Rock fragment code usage
   border-right-color: #D3D3D3;
 }
 
-#bqomkoqosb .gt_sourcenote {
+#gksdawkrte .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4017,72 +4020,72 @@ Table&nbsp;14.7: Rock fragment code usage
   padding-right: 5px;
 }
 
-#bqomkoqosb .gt_left {
+#gksdawkrte .gt_left {
   text-align: left;
 }
 
-#bqomkoqosb .gt_center {
+#gksdawkrte .gt_center {
   text-align: center;
 }
 
-#bqomkoqosb .gt_right {
+#gksdawkrte .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bqomkoqosb .gt_font_normal {
+#gksdawkrte .gt_font_normal {
   font-weight: normal;
 }
 
-#bqomkoqosb .gt_font_bold {
+#gksdawkrte .gt_font_bold {
   font-weight: bold;
 }
 
-#bqomkoqosb .gt_font_italic {
+#gksdawkrte .gt_font_italic {
   font-style: italic;
 }
 
-#bqomkoqosb .gt_super {
+#gksdawkrte .gt_super {
   font-size: 65%;
 }
 
-#bqomkoqosb .gt_footnote_marks {
+#gksdawkrte .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bqomkoqosb .gt_asterisk {
+#gksdawkrte .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bqomkoqosb .gt_indent_1 {
+#gksdawkrte .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bqomkoqosb .gt_indent_2 {
+#gksdawkrte .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bqomkoqosb .gt_indent_3 {
+#gksdawkrte .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bqomkoqosb .gt_indent_4 {
+#gksdawkrte .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bqomkoqosb .gt_indent_5 {
+#gksdawkrte .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bqomkoqosb .katex-display {
+#gksdawkrte .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bqomkoqosb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#gksdawkrte div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4179,23 +4182,23 @@ Table&nbsp;14.8: Gravel fraction modifiers
 </figcaption>
 <div aria-describedby="tbl-hr-gvquals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="urydgghhek" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#urydgghhek table {
+<div id="aegnrahszm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#aegnrahszm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#urydgghhek thead, #urydgghhek tbody, #urydgghhek tfoot, #urydgghhek tr, #urydgghhek td, #urydgghhek th {
+#aegnrahszm thead, #aegnrahszm tbody, #aegnrahszm tfoot, #aegnrahszm tr, #aegnrahszm td, #aegnrahszm th {
   border-style: none;
 }
 
-#urydgghhek p {
+#aegnrahszm p {
   margin: 0;
   padding: 0;
 }
 
-#urydgghhek .gt_table {
+#aegnrahszm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4221,12 +4224,12 @@ Table&nbsp;14.8: Gravel fraction modifiers
   border-left-color: #D3D3D3;
 }
 
-#urydgghhek .gt_caption {
+#aegnrahszm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#urydgghhek .gt_title {
+#aegnrahszm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -4238,7 +4241,7 @@ Table&nbsp;14.8: Gravel fraction modifiers
   border-bottom-width: 0;
 }
 
-#urydgghhek .gt_subtitle {
+#aegnrahszm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4250,7 +4253,7 @@ Table&nbsp;14.8: Gravel fraction modifiers
   border-top-width: 0;
 }
 
-#urydgghhek .gt_heading {
+#aegnrahszm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4262,13 +4265,13 @@ Table&nbsp;14.8: Gravel fraction modifiers
   border-right-color: #D3D3D3;
 }
 
-#urydgghhek .gt_bottom_border {
+#aegnrahszm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#urydgghhek .gt_col_headings {
+#aegnrahszm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4283,7 +4286,7 @@ Table&nbsp;14.8: Gravel fraction modifiers
   border-right-color: #D3D3D3;
 }
 
-#urydgghhek .gt_col_heading {
+#aegnrahszm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4303,7 +4306,7 @@ Table&nbsp;14.8: Gravel fraction modifiers
   overflow-x: hidden;
 }
 
-#urydgghhek .gt_column_spanner_outer {
+#aegnrahszm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4315,15 +4318,15 @@ Table&nbsp;14.8: Gravel fraction modifiers
   padding-right: 4px;
 }
 
-#urydgghhek .gt_column_spanner_outer:first-child {
+#aegnrahszm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#urydgghhek .gt_column_spanner_outer:last-child {
+#aegnrahszm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#urydgghhek .gt_column_spanner {
+#aegnrahszm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4335,11 +4338,11 @@ Table&nbsp;14.8: Gravel fraction modifiers
   width: 100%;
 }
 
-#urydgghhek .gt_spanner_row {
+#aegnrahszm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#urydgghhek .gt_group_heading {
+#aegnrahszm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4365,7 +4368,7 @@ Table&nbsp;14.8: Gravel fraction modifiers
   text-align: left;
 }
 
-#urydgghhek .gt_empty_group_heading {
+#aegnrahszm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4380,15 +4383,15 @@ Table&nbsp;14.8: Gravel fraction modifiers
   vertical-align: middle;
 }
 
-#urydgghhek .gt_from_md > :first-child {
+#aegnrahszm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#urydgghhek .gt_from_md > :last-child {
+#aegnrahszm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#urydgghhek .gt_row {
+#aegnrahszm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4407,7 +4410,7 @@ Table&nbsp;14.8: Gravel fraction modifiers
   overflow-x: hidden;
 }
 
-#urydgghhek .gt_stub {
+#aegnrahszm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4420,7 +4423,7 @@ Table&nbsp;14.8: Gravel fraction modifiers
   padding-right: 5px;
 }
 
-#urydgghhek .gt_stub_row_group {
+#aegnrahszm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4434,15 +4437,15 @@ Table&nbsp;14.8: Gravel fraction modifiers
   vertical-align: top;
 }
 
-#urydgghhek .gt_row_group_first td {
+#aegnrahszm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#urydgghhek .gt_row_group_first th {
+#aegnrahszm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#urydgghhek .gt_summary_row {
+#aegnrahszm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4452,16 +4455,16 @@ Table&nbsp;14.8: Gravel fraction modifiers
   padding-right: 5px;
 }
 
-#urydgghhek .gt_first_summary_row {
+#aegnrahszm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#urydgghhek .gt_first_summary_row.thick {
+#aegnrahszm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#urydgghhek .gt_last_summary_row {
+#aegnrahszm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4471,7 +4474,7 @@ Table&nbsp;14.8: Gravel fraction modifiers
   border-bottom-color: #D3D3D3;
 }
 
-#urydgghhek .gt_grand_summary_row {
+#aegnrahszm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4481,7 +4484,7 @@ Table&nbsp;14.8: Gravel fraction modifiers
   padding-right: 5px;
 }
 
-#urydgghhek .gt_first_grand_summary_row {
+#aegnrahszm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4491,7 +4494,7 @@ Table&nbsp;14.8: Gravel fraction modifiers
   border-top-color: #D3D3D3;
 }
 
-#urydgghhek .gt_last_grand_summary_row_top {
+#aegnrahszm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4501,11 +4504,11 @@ Table&nbsp;14.8: Gravel fraction modifiers
   border-bottom-color: #D3D3D3;
 }
 
-#urydgghhek .gt_striped {
+#aegnrahszm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#urydgghhek .gt_table_body {
+#aegnrahszm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4514,7 +4517,7 @@ Table&nbsp;14.8: Gravel fraction modifiers
   border-bottom-color: #D3D3D3;
 }
 
-#urydgghhek .gt_footnotes {
+#aegnrahszm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4528,7 +4531,7 @@ Table&nbsp;14.8: Gravel fraction modifiers
   border-right-color: #D3D3D3;
 }
 
-#urydgghhek .gt_footnote {
+#aegnrahszm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4537,7 +4540,7 @@ Table&nbsp;14.8: Gravel fraction modifiers
   padding-right: 5px;
 }
 
-#urydgghhek .gt_sourcenotes {
+#aegnrahszm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4551,7 +4554,7 @@ Table&nbsp;14.8: Gravel fraction modifiers
   border-right-color: #D3D3D3;
 }
 
-#urydgghhek .gt_sourcenote {
+#aegnrahszm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4559,72 +4562,72 @@ Table&nbsp;14.8: Gravel fraction modifiers
   padding-right: 5px;
 }
 
-#urydgghhek .gt_left {
+#aegnrahszm .gt_left {
   text-align: left;
 }
 
-#urydgghhek .gt_center {
+#aegnrahszm .gt_center {
   text-align: center;
 }
 
-#urydgghhek .gt_right {
+#aegnrahszm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#urydgghhek .gt_font_normal {
+#aegnrahszm .gt_font_normal {
   font-weight: normal;
 }
 
-#urydgghhek .gt_font_bold {
+#aegnrahszm .gt_font_bold {
   font-weight: bold;
 }
 
-#urydgghhek .gt_font_italic {
+#aegnrahszm .gt_font_italic {
   font-style: italic;
 }
 
-#urydgghhek .gt_super {
+#aegnrahszm .gt_super {
   font-size: 65%;
 }
 
-#urydgghhek .gt_footnote_marks {
+#aegnrahszm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#urydgghhek .gt_asterisk {
+#aegnrahszm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#urydgghhek .gt_indent_1 {
+#aegnrahszm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#urydgghhek .gt_indent_2 {
+#aegnrahszm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#urydgghhek .gt_indent_3 {
+#aegnrahszm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#urydgghhek .gt_indent_4 {
+#aegnrahszm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#urydgghhek .gt_indent_5 {
+#aegnrahszm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#urydgghhek .katex-display {
+#aegnrahszm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#urydgghhek div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#aegnrahszm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4681,23 +4684,23 @@ Table&nbsp;14.9: Organic matter types
 </figcaption>
 <div aria-describedby="tbl-hr-omtyp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="egttqrygeh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#egttqrygeh table {
+<div id="fbqcknydyx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fbqcknydyx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#egttqrygeh thead, #egttqrygeh tbody, #egttqrygeh tfoot, #egttqrygeh tr, #egttqrygeh td, #egttqrygeh th {
+#fbqcknydyx thead, #fbqcknydyx tbody, #fbqcknydyx tfoot, #fbqcknydyx tr, #fbqcknydyx td, #fbqcknydyx th {
   border-style: none;
 }
 
-#egttqrygeh p {
+#fbqcknydyx p {
   margin: 0;
   padding: 0;
 }
 
-#egttqrygeh .gt_table {
+#fbqcknydyx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4723,12 +4726,12 @@ Table&nbsp;14.9: Organic matter types
   border-left-color: #D3D3D3;
 }
 
-#egttqrygeh .gt_caption {
+#fbqcknydyx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#egttqrygeh .gt_title {
+#fbqcknydyx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -4740,7 +4743,7 @@ Table&nbsp;14.9: Organic matter types
   border-bottom-width: 0;
 }
 
-#egttqrygeh .gt_subtitle {
+#fbqcknydyx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4752,7 +4755,7 @@ Table&nbsp;14.9: Organic matter types
   border-top-width: 0;
 }
 
-#egttqrygeh .gt_heading {
+#fbqcknydyx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4764,13 +4767,13 @@ Table&nbsp;14.9: Organic matter types
   border-right-color: #D3D3D3;
 }
 
-#egttqrygeh .gt_bottom_border {
+#fbqcknydyx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#egttqrygeh .gt_col_headings {
+#fbqcknydyx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4785,7 +4788,7 @@ Table&nbsp;14.9: Organic matter types
   border-right-color: #D3D3D3;
 }
 
-#egttqrygeh .gt_col_heading {
+#fbqcknydyx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4805,7 +4808,7 @@ Table&nbsp;14.9: Organic matter types
   overflow-x: hidden;
 }
 
-#egttqrygeh .gt_column_spanner_outer {
+#fbqcknydyx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4817,15 +4820,15 @@ Table&nbsp;14.9: Organic matter types
   padding-right: 4px;
 }
 
-#egttqrygeh .gt_column_spanner_outer:first-child {
+#fbqcknydyx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#egttqrygeh .gt_column_spanner_outer:last-child {
+#fbqcknydyx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#egttqrygeh .gt_column_spanner {
+#fbqcknydyx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4837,11 +4840,11 @@ Table&nbsp;14.9: Organic matter types
   width: 100%;
 }
 
-#egttqrygeh .gt_spanner_row {
+#fbqcknydyx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#egttqrygeh .gt_group_heading {
+#fbqcknydyx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4867,7 +4870,7 @@ Table&nbsp;14.9: Organic matter types
   text-align: left;
 }
 
-#egttqrygeh .gt_empty_group_heading {
+#fbqcknydyx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4882,15 +4885,15 @@ Table&nbsp;14.9: Organic matter types
   vertical-align: middle;
 }
 
-#egttqrygeh .gt_from_md > :first-child {
+#fbqcknydyx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#egttqrygeh .gt_from_md > :last-child {
+#fbqcknydyx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#egttqrygeh .gt_row {
+#fbqcknydyx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4909,7 +4912,7 @@ Table&nbsp;14.9: Organic matter types
   overflow-x: hidden;
 }
 
-#egttqrygeh .gt_stub {
+#fbqcknydyx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4922,7 +4925,7 @@ Table&nbsp;14.9: Organic matter types
   padding-right: 5px;
 }
 
-#egttqrygeh .gt_stub_row_group {
+#fbqcknydyx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4936,15 +4939,15 @@ Table&nbsp;14.9: Organic matter types
   vertical-align: top;
 }
 
-#egttqrygeh .gt_row_group_first td {
+#fbqcknydyx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#egttqrygeh .gt_row_group_first th {
+#fbqcknydyx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#egttqrygeh .gt_summary_row {
+#fbqcknydyx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4954,16 +4957,16 @@ Table&nbsp;14.9: Organic matter types
   padding-right: 5px;
 }
 
-#egttqrygeh .gt_first_summary_row {
+#fbqcknydyx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#egttqrygeh .gt_first_summary_row.thick {
+#fbqcknydyx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#egttqrygeh .gt_last_summary_row {
+#fbqcknydyx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4973,7 +4976,7 @@ Table&nbsp;14.9: Organic matter types
   border-bottom-color: #D3D3D3;
 }
 
-#egttqrygeh .gt_grand_summary_row {
+#fbqcknydyx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4983,7 +4986,7 @@ Table&nbsp;14.9: Organic matter types
   padding-right: 5px;
 }
 
-#egttqrygeh .gt_first_grand_summary_row {
+#fbqcknydyx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4993,7 +4996,7 @@ Table&nbsp;14.9: Organic matter types
   border-top-color: #D3D3D3;
 }
 
-#egttqrygeh .gt_last_grand_summary_row_top {
+#fbqcknydyx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5003,11 +5006,11 @@ Table&nbsp;14.9: Organic matter types
   border-bottom-color: #D3D3D3;
 }
 
-#egttqrygeh .gt_striped {
+#fbqcknydyx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#egttqrygeh .gt_table_body {
+#fbqcknydyx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5016,7 +5019,7 @@ Table&nbsp;14.9: Organic matter types
   border-bottom-color: #D3D3D3;
 }
 
-#egttqrygeh .gt_footnotes {
+#fbqcknydyx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5030,7 +5033,7 @@ Table&nbsp;14.9: Organic matter types
   border-right-color: #D3D3D3;
 }
 
-#egttqrygeh .gt_footnote {
+#fbqcknydyx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5039,7 +5042,7 @@ Table&nbsp;14.9: Organic matter types
   padding-right: 5px;
 }
 
-#egttqrygeh .gt_sourcenotes {
+#fbqcknydyx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5053,7 +5056,7 @@ Table&nbsp;14.9: Organic matter types
   border-right-color: #D3D3D3;
 }
 
-#egttqrygeh .gt_sourcenote {
+#fbqcknydyx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5061,72 +5064,72 @@ Table&nbsp;14.9: Organic matter types
   padding-right: 5px;
 }
 
-#egttqrygeh .gt_left {
+#fbqcknydyx .gt_left {
   text-align: left;
 }
 
-#egttqrygeh .gt_center {
+#fbqcknydyx .gt_center {
   text-align: center;
 }
 
-#egttqrygeh .gt_right {
+#fbqcknydyx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#egttqrygeh .gt_font_normal {
+#fbqcknydyx .gt_font_normal {
   font-weight: normal;
 }
 
-#egttqrygeh .gt_font_bold {
+#fbqcknydyx .gt_font_bold {
   font-weight: bold;
 }
 
-#egttqrygeh .gt_font_italic {
+#fbqcknydyx .gt_font_italic {
   font-style: italic;
 }
 
-#egttqrygeh .gt_super {
+#fbqcknydyx .gt_super {
   font-size: 65%;
 }
 
-#egttqrygeh .gt_footnote_marks {
+#fbqcknydyx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#egttqrygeh .gt_asterisk {
+#fbqcknydyx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#egttqrygeh .gt_indent_1 {
+#fbqcknydyx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#egttqrygeh .gt_indent_2 {
+#fbqcknydyx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#egttqrygeh .gt_indent_3 {
+#fbqcknydyx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#egttqrygeh .gt_indent_4 {
+#fbqcknydyx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#egttqrygeh .gt_indent_5 {
+#fbqcknydyx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#egttqrygeh .katex-display {
+#fbqcknydyx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#egttqrygeh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fbqcknydyx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5172,23 +5175,23 @@ Table&nbsp;14.10: Organic code rules
 </figcaption>
 <div aria-describedby="tbl-hr-omtex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="vjqldzshpd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vjqldzshpd table {
+<div id="slkedmadlc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#slkedmadlc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vjqldzshpd thead, #vjqldzshpd tbody, #vjqldzshpd tfoot, #vjqldzshpd tr, #vjqldzshpd td, #vjqldzshpd th {
+#slkedmadlc thead, #slkedmadlc tbody, #slkedmadlc tfoot, #slkedmadlc tr, #slkedmadlc td, #slkedmadlc th {
   border-style: none;
 }
 
-#vjqldzshpd p {
+#slkedmadlc p {
   margin: 0;
   padding: 0;
 }
 
-#vjqldzshpd .gt_table {
+#slkedmadlc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5214,12 +5217,12 @@ Table&nbsp;14.10: Organic code rules
   border-left-color: #D3D3D3;
 }
 
-#vjqldzshpd .gt_caption {
+#slkedmadlc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vjqldzshpd .gt_title {
+#slkedmadlc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -5231,7 +5234,7 @@ Table&nbsp;14.10: Organic code rules
   border-bottom-width: 0;
 }
 
-#vjqldzshpd .gt_subtitle {
+#slkedmadlc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5243,7 +5246,7 @@ Table&nbsp;14.10: Organic code rules
   border-top-width: 0;
 }
 
-#vjqldzshpd .gt_heading {
+#slkedmadlc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5255,13 +5258,13 @@ Table&nbsp;14.10: Organic code rules
   border-right-color: #D3D3D3;
 }
 
-#vjqldzshpd .gt_bottom_border {
+#slkedmadlc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vjqldzshpd .gt_col_headings {
+#slkedmadlc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5276,7 +5279,7 @@ Table&nbsp;14.10: Organic code rules
   border-right-color: #D3D3D3;
 }
 
-#vjqldzshpd .gt_col_heading {
+#slkedmadlc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5296,7 +5299,7 @@ Table&nbsp;14.10: Organic code rules
   overflow-x: hidden;
 }
 
-#vjqldzshpd .gt_column_spanner_outer {
+#slkedmadlc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5308,15 +5311,15 @@ Table&nbsp;14.10: Organic code rules
   padding-right: 4px;
 }
 
-#vjqldzshpd .gt_column_spanner_outer:first-child {
+#slkedmadlc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vjqldzshpd .gt_column_spanner_outer:last-child {
+#slkedmadlc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vjqldzshpd .gt_column_spanner {
+#slkedmadlc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5328,11 +5331,11 @@ Table&nbsp;14.10: Organic code rules
   width: 100%;
 }
 
-#vjqldzshpd .gt_spanner_row {
+#slkedmadlc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vjqldzshpd .gt_group_heading {
+#slkedmadlc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5358,7 +5361,7 @@ Table&nbsp;14.10: Organic code rules
   text-align: left;
 }
 
-#vjqldzshpd .gt_empty_group_heading {
+#slkedmadlc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5373,15 +5376,15 @@ Table&nbsp;14.10: Organic code rules
   vertical-align: middle;
 }
 
-#vjqldzshpd .gt_from_md > :first-child {
+#slkedmadlc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vjqldzshpd .gt_from_md > :last-child {
+#slkedmadlc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vjqldzshpd .gt_row {
+#slkedmadlc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5400,7 +5403,7 @@ Table&nbsp;14.10: Organic code rules
   overflow-x: hidden;
 }
 
-#vjqldzshpd .gt_stub {
+#slkedmadlc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5413,7 +5416,7 @@ Table&nbsp;14.10: Organic code rules
   padding-right: 5px;
 }
 
-#vjqldzshpd .gt_stub_row_group {
+#slkedmadlc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5427,15 +5430,15 @@ Table&nbsp;14.10: Organic code rules
   vertical-align: top;
 }
 
-#vjqldzshpd .gt_row_group_first td {
+#slkedmadlc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vjqldzshpd .gt_row_group_first th {
+#slkedmadlc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vjqldzshpd .gt_summary_row {
+#slkedmadlc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5445,16 +5448,16 @@ Table&nbsp;14.10: Organic code rules
   padding-right: 5px;
 }
 
-#vjqldzshpd .gt_first_summary_row {
+#slkedmadlc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vjqldzshpd .gt_first_summary_row.thick {
+#slkedmadlc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vjqldzshpd .gt_last_summary_row {
+#slkedmadlc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5464,7 +5467,7 @@ Table&nbsp;14.10: Organic code rules
   border-bottom-color: #D3D3D3;
 }
 
-#vjqldzshpd .gt_grand_summary_row {
+#slkedmadlc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5474,7 +5477,7 @@ Table&nbsp;14.10: Organic code rules
   padding-right: 5px;
 }
 
-#vjqldzshpd .gt_first_grand_summary_row {
+#slkedmadlc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5484,7 +5487,7 @@ Table&nbsp;14.10: Organic code rules
   border-top-color: #D3D3D3;
 }
 
-#vjqldzshpd .gt_last_grand_summary_row_top {
+#slkedmadlc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5494,11 +5497,11 @@ Table&nbsp;14.10: Organic code rules
   border-bottom-color: #D3D3D3;
 }
 
-#vjqldzshpd .gt_striped {
+#slkedmadlc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vjqldzshpd .gt_table_body {
+#slkedmadlc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5507,7 +5510,7 @@ Table&nbsp;14.10: Organic code rules
   border-bottom-color: #D3D3D3;
 }
 
-#vjqldzshpd .gt_footnotes {
+#slkedmadlc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5521,7 +5524,7 @@ Table&nbsp;14.10: Organic code rules
   border-right-color: #D3D3D3;
 }
 
-#vjqldzshpd .gt_footnote {
+#slkedmadlc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5530,7 +5533,7 @@ Table&nbsp;14.10: Organic code rules
   padding-right: 5px;
 }
 
-#vjqldzshpd .gt_sourcenotes {
+#slkedmadlc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5544,7 +5547,7 @@ Table&nbsp;14.10: Organic code rules
   border-right-color: #D3D3D3;
 }
 
-#vjqldzshpd .gt_sourcenote {
+#slkedmadlc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5552,72 +5555,72 @@ Table&nbsp;14.10: Organic code rules
   padding-right: 5px;
 }
 
-#vjqldzshpd .gt_left {
+#slkedmadlc .gt_left {
   text-align: left;
 }
 
-#vjqldzshpd .gt_center {
+#slkedmadlc .gt_center {
   text-align: center;
 }
 
-#vjqldzshpd .gt_right {
+#slkedmadlc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vjqldzshpd .gt_font_normal {
+#slkedmadlc .gt_font_normal {
   font-weight: normal;
 }
 
-#vjqldzshpd .gt_font_bold {
+#slkedmadlc .gt_font_bold {
   font-weight: bold;
 }
 
-#vjqldzshpd .gt_font_italic {
+#slkedmadlc .gt_font_italic {
   font-style: italic;
 }
 
-#vjqldzshpd .gt_super {
+#slkedmadlc .gt_super {
   font-size: 65%;
 }
 
-#vjqldzshpd .gt_footnote_marks {
+#slkedmadlc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vjqldzshpd .gt_asterisk {
+#slkedmadlc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vjqldzshpd .gt_indent_1 {
+#slkedmadlc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vjqldzshpd .gt_indent_2 {
+#slkedmadlc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vjqldzshpd .gt_indent_3 {
+#slkedmadlc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vjqldzshpd .gt_indent_4 {
+#slkedmadlc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vjqldzshpd .gt_indent_5 {
+#slkedmadlc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#vjqldzshpd .katex-display {
+#slkedmadlc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#vjqldzshpd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#slkedmadlc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5703,23 +5706,23 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
 </figcaption>
 <div aria-describedby="tbl-hr-omdec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="qegckhnczd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qegckhnczd table {
+<div id="mfleazchex" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mfleazchex table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qegckhnczd thead, #qegckhnczd tbody, #qegckhnczd tfoot, #qegckhnczd tr, #qegckhnczd td, #qegckhnczd th {
+#mfleazchex thead, #mfleazchex tbody, #mfleazchex tfoot, #mfleazchex tr, #mfleazchex td, #mfleazchex th {
   border-style: none;
 }
 
-#qegckhnczd p {
+#mfleazchex p {
   margin: 0;
   padding: 0;
 }
 
-#qegckhnczd .gt_table {
+#mfleazchex .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5745,12 +5748,12 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   border-left-color: #D3D3D3;
 }
 
-#qegckhnczd .gt_caption {
+#mfleazchex .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qegckhnczd .gt_title {
+#mfleazchex .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -5762,7 +5765,7 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   border-bottom-width: 0;
 }
 
-#qegckhnczd .gt_subtitle {
+#mfleazchex .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5774,7 +5777,7 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   border-top-width: 0;
 }
 
-#qegckhnczd .gt_heading {
+#mfleazchex .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5786,13 +5789,13 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   border-right-color: #D3D3D3;
 }
 
-#qegckhnczd .gt_bottom_border {
+#mfleazchex .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qegckhnczd .gt_col_headings {
+#mfleazchex .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5807,7 +5810,7 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   border-right-color: #D3D3D3;
 }
 
-#qegckhnczd .gt_col_heading {
+#mfleazchex .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5827,7 +5830,7 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   overflow-x: hidden;
 }
 
-#qegckhnczd .gt_column_spanner_outer {
+#mfleazchex .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5839,15 +5842,15 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   padding-right: 4px;
 }
 
-#qegckhnczd .gt_column_spanner_outer:first-child {
+#mfleazchex .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qegckhnczd .gt_column_spanner_outer:last-child {
+#mfleazchex .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qegckhnczd .gt_column_spanner {
+#mfleazchex .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5859,11 +5862,11 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   width: 100%;
 }
 
-#qegckhnczd .gt_spanner_row {
+#mfleazchex .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qegckhnczd .gt_group_heading {
+#mfleazchex .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5889,7 +5892,7 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   text-align: left;
 }
 
-#qegckhnczd .gt_empty_group_heading {
+#mfleazchex .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5904,15 +5907,15 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   vertical-align: middle;
 }
 
-#qegckhnczd .gt_from_md > :first-child {
+#mfleazchex .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qegckhnczd .gt_from_md > :last-child {
+#mfleazchex .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qegckhnczd .gt_row {
+#mfleazchex .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5931,7 +5934,7 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   overflow-x: hidden;
 }
 
-#qegckhnczd .gt_stub {
+#mfleazchex .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5944,7 +5947,7 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   padding-right: 5px;
 }
 
-#qegckhnczd .gt_stub_row_group {
+#mfleazchex .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5958,15 +5961,15 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   vertical-align: top;
 }
 
-#qegckhnczd .gt_row_group_first td {
+#mfleazchex .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qegckhnczd .gt_row_group_first th {
+#mfleazchex .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qegckhnczd .gt_summary_row {
+#mfleazchex .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5976,16 +5979,16 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   padding-right: 5px;
 }
 
-#qegckhnczd .gt_first_summary_row {
+#mfleazchex .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qegckhnczd .gt_first_summary_row.thick {
+#mfleazchex .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qegckhnczd .gt_last_summary_row {
+#mfleazchex .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5995,7 +5998,7 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   border-bottom-color: #D3D3D3;
 }
 
-#qegckhnczd .gt_grand_summary_row {
+#mfleazchex .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6005,7 +6008,7 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   padding-right: 5px;
 }
 
-#qegckhnczd .gt_first_grand_summary_row {
+#mfleazchex .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6015,7 +6018,7 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   border-top-color: #D3D3D3;
 }
 
-#qegckhnczd .gt_last_grand_summary_row_top {
+#mfleazchex .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6025,11 +6028,11 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   border-bottom-color: #D3D3D3;
 }
 
-#qegckhnczd .gt_striped {
+#mfleazchex .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qegckhnczd .gt_table_body {
+#mfleazchex .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6038,7 +6041,7 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   border-bottom-color: #D3D3D3;
 }
 
-#qegckhnczd .gt_footnotes {
+#mfleazchex .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6052,7 +6055,7 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   border-right-color: #D3D3D3;
 }
 
-#qegckhnczd .gt_footnote {
+#mfleazchex .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6061,7 +6064,7 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   padding-right: 5px;
 }
 
-#qegckhnczd .gt_sourcenotes {
+#mfleazchex .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6075,7 +6078,7 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   border-right-color: #D3D3D3;
 }
 
-#qegckhnczd .gt_sourcenote {
+#mfleazchex .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6083,72 +6086,72 @@ Table&nbsp;14.11: Organic matter modifiers – decomposition
   padding-right: 5px;
 }
 
-#qegckhnczd .gt_left {
+#mfleazchex .gt_left {
   text-align: left;
 }
 
-#qegckhnczd .gt_center {
+#mfleazchex .gt_center {
   text-align: center;
 }
 
-#qegckhnczd .gt_right {
+#mfleazchex .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qegckhnczd .gt_font_normal {
+#mfleazchex .gt_font_normal {
   font-weight: normal;
 }
 
-#qegckhnczd .gt_font_bold {
+#mfleazchex .gt_font_bold {
   font-weight: bold;
 }
 
-#qegckhnczd .gt_font_italic {
+#mfleazchex .gt_font_italic {
   font-style: italic;
 }
 
-#qegckhnczd .gt_super {
+#mfleazchex .gt_super {
   font-size: 65%;
 }
 
-#qegckhnczd .gt_footnote_marks {
+#mfleazchex .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qegckhnczd .gt_asterisk {
+#mfleazchex .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qegckhnczd .gt_indent_1 {
+#mfleazchex .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qegckhnczd .gt_indent_2 {
+#mfleazchex .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qegckhnczd .gt_indent_3 {
+#mfleazchex .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qegckhnczd .gt_indent_4 {
+#mfleazchex .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qegckhnczd .gt_indent_5 {
+#mfleazchex .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qegckhnczd .katex-display {
+#mfleazchex .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qegckhnczd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mfleazchex div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -6199,23 +6202,23 @@ Table&nbsp;14.12: Organic matter modifiers – origin
 </figcaption>
 <div aria-describedby="tbl-hr-omo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ldvtsezrxe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ldvtsezrxe table {
+<div id="rulgrtyjgg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rulgrtyjgg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ldvtsezrxe thead, #ldvtsezrxe tbody, #ldvtsezrxe tfoot, #ldvtsezrxe tr, #ldvtsezrxe td, #ldvtsezrxe th {
+#rulgrtyjgg thead, #rulgrtyjgg tbody, #rulgrtyjgg tfoot, #rulgrtyjgg tr, #rulgrtyjgg td, #rulgrtyjgg th {
   border-style: none;
 }
 
-#ldvtsezrxe p {
+#rulgrtyjgg p {
   margin: 0;
   padding: 0;
 }
 
-#ldvtsezrxe .gt_table {
+#rulgrtyjgg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -6241,12 +6244,12 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   border-left-color: #D3D3D3;
 }
 
-#ldvtsezrxe .gt_caption {
+#rulgrtyjgg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ldvtsezrxe .gt_title {
+#rulgrtyjgg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -6258,7 +6261,7 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   border-bottom-width: 0;
 }
 
-#ldvtsezrxe .gt_subtitle {
+#rulgrtyjgg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6270,7 +6273,7 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   border-top-width: 0;
 }
 
-#ldvtsezrxe .gt_heading {
+#rulgrtyjgg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -6282,13 +6285,13 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   border-right-color: #D3D3D3;
 }
 
-#ldvtsezrxe .gt_bottom_border {
+#rulgrtyjgg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ldvtsezrxe .gt_col_headings {
+#rulgrtyjgg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6303,7 +6306,7 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   border-right-color: #D3D3D3;
 }
 
-#ldvtsezrxe .gt_col_heading {
+#rulgrtyjgg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6323,7 +6326,7 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   overflow-x: hidden;
 }
 
-#ldvtsezrxe .gt_column_spanner_outer {
+#rulgrtyjgg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6335,15 +6338,15 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   padding-right: 4px;
 }
 
-#ldvtsezrxe .gt_column_spanner_outer:first-child {
+#rulgrtyjgg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ldvtsezrxe .gt_column_spanner_outer:last-child {
+#rulgrtyjgg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ldvtsezrxe .gt_column_spanner {
+#rulgrtyjgg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6355,11 +6358,11 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   width: 100%;
 }
 
-#ldvtsezrxe .gt_spanner_row {
+#rulgrtyjgg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ldvtsezrxe .gt_group_heading {
+#rulgrtyjgg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6385,7 +6388,7 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   text-align: left;
 }
 
-#ldvtsezrxe .gt_empty_group_heading {
+#rulgrtyjgg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6400,15 +6403,15 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   vertical-align: middle;
 }
 
-#ldvtsezrxe .gt_from_md > :first-child {
+#rulgrtyjgg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ldvtsezrxe .gt_from_md > :last-child {
+#rulgrtyjgg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ldvtsezrxe .gt_row {
+#rulgrtyjgg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6427,7 +6430,7 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   overflow-x: hidden;
 }
 
-#ldvtsezrxe .gt_stub {
+#rulgrtyjgg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6440,7 +6443,7 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   padding-right: 5px;
 }
 
-#ldvtsezrxe .gt_stub_row_group {
+#rulgrtyjgg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6454,15 +6457,15 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   vertical-align: top;
 }
 
-#ldvtsezrxe .gt_row_group_first td {
+#rulgrtyjgg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ldvtsezrxe .gt_row_group_first th {
+#rulgrtyjgg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ldvtsezrxe .gt_summary_row {
+#rulgrtyjgg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6472,16 +6475,16 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   padding-right: 5px;
 }
 
-#ldvtsezrxe .gt_first_summary_row {
+#rulgrtyjgg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ldvtsezrxe .gt_first_summary_row.thick {
+#rulgrtyjgg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ldvtsezrxe .gt_last_summary_row {
+#rulgrtyjgg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6491,7 +6494,7 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   border-bottom-color: #D3D3D3;
 }
 
-#ldvtsezrxe .gt_grand_summary_row {
+#rulgrtyjgg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6501,7 +6504,7 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   padding-right: 5px;
 }
 
-#ldvtsezrxe .gt_first_grand_summary_row {
+#rulgrtyjgg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6511,7 +6514,7 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   border-top-color: #D3D3D3;
 }
 
-#ldvtsezrxe .gt_last_grand_summary_row_top {
+#rulgrtyjgg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6521,11 +6524,11 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   border-bottom-color: #D3D3D3;
 }
 
-#ldvtsezrxe .gt_striped {
+#rulgrtyjgg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ldvtsezrxe .gt_table_body {
+#rulgrtyjgg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6534,7 +6537,7 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   border-bottom-color: #D3D3D3;
 }
 
-#ldvtsezrxe .gt_footnotes {
+#rulgrtyjgg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6548,7 +6551,7 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   border-right-color: #D3D3D3;
 }
 
-#ldvtsezrxe .gt_footnote {
+#rulgrtyjgg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6557,7 +6560,7 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   padding-right: 5px;
 }
 
-#ldvtsezrxe .gt_sourcenotes {
+#rulgrtyjgg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6571,7 +6574,7 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   border-right-color: #D3D3D3;
 }
 
-#ldvtsezrxe .gt_sourcenote {
+#rulgrtyjgg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6579,72 +6582,72 @@ Table&nbsp;14.12: Organic matter modifiers – origin
   padding-right: 5px;
 }
 
-#ldvtsezrxe .gt_left {
+#rulgrtyjgg .gt_left {
   text-align: left;
 }
 
-#ldvtsezrxe .gt_center {
+#rulgrtyjgg .gt_center {
   text-align: center;
 }
 
-#ldvtsezrxe .gt_right {
+#rulgrtyjgg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ldvtsezrxe .gt_font_normal {
+#rulgrtyjgg .gt_font_normal {
   font-weight: normal;
 }
 
-#ldvtsezrxe .gt_font_bold {
+#rulgrtyjgg .gt_font_bold {
   font-weight: bold;
 }
 
-#ldvtsezrxe .gt_font_italic {
+#rulgrtyjgg .gt_font_italic {
   font-style: italic;
 }
 
-#ldvtsezrxe .gt_super {
+#rulgrtyjgg .gt_super {
   font-size: 65%;
 }
 
-#ldvtsezrxe .gt_footnote_marks {
+#rulgrtyjgg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ldvtsezrxe .gt_asterisk {
+#rulgrtyjgg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ldvtsezrxe .gt_indent_1 {
+#rulgrtyjgg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ldvtsezrxe .gt_indent_2 {
+#rulgrtyjgg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ldvtsezrxe .gt_indent_3 {
+#rulgrtyjgg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ldvtsezrxe .gt_indent_4 {
+#rulgrtyjgg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ldvtsezrxe .gt_indent_5 {
+#rulgrtyjgg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ldvtsezrxe .katex-display {
+#rulgrtyjgg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ldvtsezrxe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rulgrtyjgg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -6733,23 +6736,23 @@ Table&nbsp;14.13: Texture class characteristics
 </figcaption>
 <div aria-describedby="tbl-hr-texchar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="zmivxdbvrv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zmivxdbvrv table {
+<div id="umpyfsezgf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#umpyfsezgf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zmivxdbvrv thead, #zmivxdbvrv tbody, #zmivxdbvrv tfoot, #zmivxdbvrv tr, #zmivxdbvrv td, #zmivxdbvrv th {
+#umpyfsezgf thead, #umpyfsezgf tbody, #umpyfsezgf tfoot, #umpyfsezgf tr, #umpyfsezgf td, #umpyfsezgf th {
   border-style: none;
 }
 
-#zmivxdbvrv p {
+#umpyfsezgf p {
   margin: 0;
   padding: 0;
 }
 
-#zmivxdbvrv .gt_table {
+#umpyfsezgf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -6775,12 +6778,12 @@ Table&nbsp;14.13: Texture class characteristics
   border-left-color: #D3D3D3;
 }
 
-#zmivxdbvrv .gt_caption {
+#umpyfsezgf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zmivxdbvrv .gt_title {
+#umpyfsezgf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -6792,7 +6795,7 @@ Table&nbsp;14.13: Texture class characteristics
   border-bottom-width: 0;
 }
 
-#zmivxdbvrv .gt_subtitle {
+#umpyfsezgf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6804,7 +6807,7 @@ Table&nbsp;14.13: Texture class characteristics
   border-top-width: 0;
 }
 
-#zmivxdbvrv .gt_heading {
+#umpyfsezgf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -6816,13 +6819,13 @@ Table&nbsp;14.13: Texture class characteristics
   border-right-color: #D3D3D3;
 }
 
-#zmivxdbvrv .gt_bottom_border {
+#umpyfsezgf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zmivxdbvrv .gt_col_headings {
+#umpyfsezgf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6837,7 +6840,7 @@ Table&nbsp;14.13: Texture class characteristics
   border-right-color: #D3D3D3;
 }
 
-#zmivxdbvrv .gt_col_heading {
+#umpyfsezgf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6857,7 +6860,7 @@ Table&nbsp;14.13: Texture class characteristics
   overflow-x: hidden;
 }
 
-#zmivxdbvrv .gt_column_spanner_outer {
+#umpyfsezgf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6869,15 +6872,15 @@ Table&nbsp;14.13: Texture class characteristics
   padding-right: 4px;
 }
 
-#zmivxdbvrv .gt_column_spanner_outer:first-child {
+#umpyfsezgf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zmivxdbvrv .gt_column_spanner_outer:last-child {
+#umpyfsezgf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zmivxdbvrv .gt_column_spanner {
+#umpyfsezgf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6889,11 +6892,11 @@ Table&nbsp;14.13: Texture class characteristics
   width: 100%;
 }
 
-#zmivxdbvrv .gt_spanner_row {
+#umpyfsezgf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zmivxdbvrv .gt_group_heading {
+#umpyfsezgf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6919,7 +6922,7 @@ Table&nbsp;14.13: Texture class characteristics
   text-align: left;
 }
 
-#zmivxdbvrv .gt_empty_group_heading {
+#umpyfsezgf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6934,15 +6937,15 @@ Table&nbsp;14.13: Texture class characteristics
   vertical-align: middle;
 }
 
-#zmivxdbvrv .gt_from_md > :first-child {
+#umpyfsezgf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zmivxdbvrv .gt_from_md > :last-child {
+#umpyfsezgf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zmivxdbvrv .gt_row {
+#umpyfsezgf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6961,7 +6964,7 @@ Table&nbsp;14.13: Texture class characteristics
   overflow-x: hidden;
 }
 
-#zmivxdbvrv .gt_stub {
+#umpyfsezgf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6974,7 +6977,7 @@ Table&nbsp;14.13: Texture class characteristics
   padding-right: 5px;
 }
 
-#zmivxdbvrv .gt_stub_row_group {
+#umpyfsezgf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6988,15 +6991,15 @@ Table&nbsp;14.13: Texture class characteristics
   vertical-align: top;
 }
 
-#zmivxdbvrv .gt_row_group_first td {
+#umpyfsezgf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zmivxdbvrv .gt_row_group_first th {
+#umpyfsezgf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zmivxdbvrv .gt_summary_row {
+#umpyfsezgf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7006,16 +7009,16 @@ Table&nbsp;14.13: Texture class characteristics
   padding-right: 5px;
 }
 
-#zmivxdbvrv .gt_first_summary_row {
+#umpyfsezgf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zmivxdbvrv .gt_first_summary_row.thick {
+#umpyfsezgf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zmivxdbvrv .gt_last_summary_row {
+#umpyfsezgf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7025,7 +7028,7 @@ Table&nbsp;14.13: Texture class characteristics
   border-bottom-color: #D3D3D3;
 }
 
-#zmivxdbvrv .gt_grand_summary_row {
+#umpyfsezgf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7035,7 +7038,7 @@ Table&nbsp;14.13: Texture class characteristics
   padding-right: 5px;
 }
 
-#zmivxdbvrv .gt_first_grand_summary_row {
+#umpyfsezgf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7045,7 +7048,7 @@ Table&nbsp;14.13: Texture class characteristics
   border-top-color: #D3D3D3;
 }
 
-#zmivxdbvrv .gt_last_grand_summary_row_top {
+#umpyfsezgf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7055,11 +7058,11 @@ Table&nbsp;14.13: Texture class characteristics
   border-bottom-color: #D3D3D3;
 }
 
-#zmivxdbvrv .gt_striped {
+#umpyfsezgf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zmivxdbvrv .gt_table_body {
+#umpyfsezgf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7068,7 +7071,7 @@ Table&nbsp;14.13: Texture class characteristics
   border-bottom-color: #D3D3D3;
 }
 
-#zmivxdbvrv .gt_footnotes {
+#umpyfsezgf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7082,7 +7085,7 @@ Table&nbsp;14.13: Texture class characteristics
   border-right-color: #D3D3D3;
 }
 
-#zmivxdbvrv .gt_footnote {
+#umpyfsezgf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -7091,7 +7094,7 @@ Table&nbsp;14.13: Texture class characteristics
   padding-right: 5px;
 }
 
-#zmivxdbvrv .gt_sourcenotes {
+#umpyfsezgf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7105,7 +7108,7 @@ Table&nbsp;14.13: Texture class characteristics
   border-right-color: #D3D3D3;
 }
 
-#zmivxdbvrv .gt_sourcenote {
+#umpyfsezgf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -7113,72 +7116,72 @@ Table&nbsp;14.13: Texture class characteristics
   padding-right: 5px;
 }
 
-#zmivxdbvrv .gt_left {
+#umpyfsezgf .gt_left {
   text-align: left;
 }
 
-#zmivxdbvrv .gt_center {
+#umpyfsezgf .gt_center {
   text-align: center;
 }
 
-#zmivxdbvrv .gt_right {
+#umpyfsezgf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zmivxdbvrv .gt_font_normal {
+#umpyfsezgf .gt_font_normal {
   font-weight: normal;
 }
 
-#zmivxdbvrv .gt_font_bold {
+#umpyfsezgf .gt_font_bold {
   font-weight: bold;
 }
 
-#zmivxdbvrv .gt_font_italic {
+#umpyfsezgf .gt_font_italic {
   font-style: italic;
 }
 
-#zmivxdbvrv .gt_super {
+#umpyfsezgf .gt_super {
   font-size: 65%;
 }
 
-#zmivxdbvrv .gt_footnote_marks {
+#umpyfsezgf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zmivxdbvrv .gt_asterisk {
+#umpyfsezgf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zmivxdbvrv .gt_indent_1 {
+#umpyfsezgf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zmivxdbvrv .gt_indent_2 {
+#umpyfsezgf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zmivxdbvrv .gt_indent_3 {
+#umpyfsezgf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zmivxdbvrv .gt_indent_4 {
+#umpyfsezgf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zmivxdbvrv .gt_indent_5 {
+#umpyfsezgf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zmivxdbvrv .katex-display {
+#umpyfsezgf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zmivxdbvrv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#umpyfsezgf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -7358,23 +7361,23 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
 </figcaption>
 <div aria-describedby="tbl-hr-txab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ysvrtnmtku" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ysvrtnmtku table {
+<div id="hwizkonioa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hwizkonioa table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ysvrtnmtku thead, #ysvrtnmtku tbody, #ysvrtnmtku tfoot, #ysvrtnmtku tr, #ysvrtnmtku td, #ysvrtnmtku th {
+#hwizkonioa thead, #hwizkonioa tbody, #hwizkonioa tfoot, #hwizkonioa tr, #hwizkonioa td, #hwizkonioa th {
   border-style: none;
 }
 
-#ysvrtnmtku p {
+#hwizkonioa p {
   margin: 0;
   padding: 0;
 }
 
-#ysvrtnmtku .gt_table {
+#hwizkonioa .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -7400,12 +7403,12 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   border-left-color: #D3D3D3;
 }
 
-#ysvrtnmtku .gt_caption {
+#hwizkonioa .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ysvrtnmtku .gt_title {
+#hwizkonioa .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bold;
@@ -7417,7 +7420,7 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   border-bottom-width: 0;
 }
 
-#ysvrtnmtku .gt_subtitle {
+#hwizkonioa .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -7429,7 +7432,7 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   border-top-width: 0;
 }
 
-#ysvrtnmtku .gt_heading {
+#hwizkonioa .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -7441,13 +7444,13 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   border-right-color: #D3D3D3;
 }
 
-#ysvrtnmtku .gt_bottom_border {
+#hwizkonioa .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ysvrtnmtku .gt_col_headings {
+#hwizkonioa .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7462,7 +7465,7 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   border-right-color: #D3D3D3;
 }
 
-#ysvrtnmtku .gt_col_heading {
+#hwizkonioa .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7482,7 +7485,7 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   overflow-x: hidden;
 }
 
-#ysvrtnmtku .gt_column_spanner_outer {
+#hwizkonioa .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7494,15 +7497,15 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   padding-right: 4px;
 }
 
-#ysvrtnmtku .gt_column_spanner_outer:first-child {
+#hwizkonioa .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ysvrtnmtku .gt_column_spanner_outer:last-child {
+#hwizkonioa .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ysvrtnmtku .gt_column_spanner {
+#hwizkonioa .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -7514,11 +7517,11 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   width: 100%;
 }
 
-#ysvrtnmtku .gt_spanner_row {
+#hwizkonioa .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ysvrtnmtku .gt_group_heading {
+#hwizkonioa .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7544,7 +7547,7 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   text-align: left;
 }
 
-#ysvrtnmtku .gt_empty_group_heading {
+#hwizkonioa .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -7559,15 +7562,15 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   vertical-align: middle;
 }
 
-#ysvrtnmtku .gt_from_md > :first-child {
+#hwizkonioa .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ysvrtnmtku .gt_from_md > :last-child {
+#hwizkonioa .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ysvrtnmtku .gt_row {
+#hwizkonioa .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7586,7 +7589,7 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   overflow-x: hidden;
 }
 
-#ysvrtnmtku .gt_stub {
+#hwizkonioa .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7599,7 +7602,7 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   padding-right: 5px;
 }
 
-#ysvrtnmtku .gt_stub_row_group {
+#hwizkonioa .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7613,15 +7616,15 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   vertical-align: top;
 }
 
-#ysvrtnmtku .gt_row_group_first td {
+#hwizkonioa .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ysvrtnmtku .gt_row_group_first th {
+#hwizkonioa .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ysvrtnmtku .gt_summary_row {
+#hwizkonioa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7631,16 +7634,16 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   padding-right: 5px;
 }
 
-#ysvrtnmtku .gt_first_summary_row {
+#hwizkonioa .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ysvrtnmtku .gt_first_summary_row.thick {
+#hwizkonioa .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ysvrtnmtku .gt_last_summary_row {
+#hwizkonioa .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7650,7 +7653,7 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   border-bottom-color: #D3D3D3;
 }
 
-#ysvrtnmtku .gt_grand_summary_row {
+#hwizkonioa .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7660,7 +7663,7 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   padding-right: 5px;
 }
 
-#ysvrtnmtku .gt_first_grand_summary_row {
+#hwizkonioa .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7670,7 +7673,7 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   border-top-color: #D3D3D3;
 }
 
-#ysvrtnmtku .gt_last_grand_summary_row_top {
+#hwizkonioa .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7680,11 +7683,11 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   border-bottom-color: #D3D3D3;
 }
 
-#ysvrtnmtku .gt_striped {
+#hwizkonioa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ysvrtnmtku .gt_table_body {
+#hwizkonioa .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7693,7 +7696,7 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   border-bottom-color: #D3D3D3;
 }
 
-#ysvrtnmtku .gt_footnotes {
+#hwizkonioa .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7707,7 +7710,7 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   border-right-color: #D3D3D3;
 }
 
-#ysvrtnmtku .gt_footnote {
+#hwizkonioa .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -7716,7 +7719,7 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   padding-right: 5px;
 }
 
-#ysvrtnmtku .gt_sourcenotes {
+#hwizkonioa .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7730,7 +7733,7 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   border-right-color: #D3D3D3;
 }
 
-#ysvrtnmtku .gt_sourcenote {
+#hwizkonioa .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -7738,72 +7741,72 @@ Table&nbsp;14.14: Describing relative abundance of particle size ranges
   padding-right: 5px;
 }
 
-#ysvrtnmtku .gt_left {
+#hwizkonioa .gt_left {
   text-align: left;
 }
 
-#ysvrtnmtku .gt_center {
+#hwizkonioa .gt_center {
   text-align: center;
 }
 
-#ysvrtnmtku .gt_right {
+#hwizkonioa .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ysvrtnmtku .gt_font_normal {
+#hwizkonioa .gt_font_normal {
   font-weight: normal;
 }
 
-#ysvrtnmtku .gt_font_bold {
+#hwizkonioa .gt_font_bold {
   font-weight: bold;
 }
 
-#ysvrtnmtku .gt_font_italic {
+#hwizkonioa .gt_font_italic {
   font-style: italic;
 }
 
-#ysvrtnmtku .gt_super {
+#hwizkonioa .gt_super {
   font-size: 65%;
 }
 
-#ysvrtnmtku .gt_footnote_marks {
+#hwizkonioa .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ysvrtnmtku .gt_asterisk {
+#hwizkonioa .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ysvrtnmtku .gt_indent_1 {
+#hwizkonioa .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ysvrtnmtku .gt_indent_2 {
+#hwizkonioa .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ysvrtnmtku .gt_indent_3 {
+#hwizkonioa .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ysvrtnmtku .gt_indent_4 {
+#hwizkonioa .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ysvrtnmtku .gt_indent_5 {
+#hwizkonioa .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ysvrtnmtku .katex-display {
+#hwizkonioa .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ysvrtnmtku div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hwizkonioa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
